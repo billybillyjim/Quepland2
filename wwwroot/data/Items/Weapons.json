@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Copper Knife",
+    "Description": "Maybe the softest knife you've ever seen.",
+    "id": 10000,
+    "value": 150,
+    "skillRequired": "Knifesmanship",
+    "actionsEnabled": "Knifesmanship",
+    "requiredLevel": 0,
+    "equipSlot": "Right Hand",
+    "damage": 3,
+    "attackSpeed": 5,
+    "icon": "Knife"
+  }
+]

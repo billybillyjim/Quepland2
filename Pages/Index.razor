@@ -1,0 +1,39 @@
+﻿@page "/"
+@inject GameState GameState
+@inject HttpClient Http
+@implements IDisposable
+
+@if (GameState.ShowStartMenu)
+{
+    <StartMenuComponent></StartMenuComponent>
+}
+else
+{
+    
+}
+
+@code{ 
+
+    protected async override Task OnInitializedAsync()
+    {
+        if(GameState.InitCompleted == false)
+        {
+            await AreaManager.Instance.LoadAreas(Http);
+            await ItemManager.Instance.LoadItems(Http);
+            await PlayFabManager.Connect();
+            GameState.Start();
+            GameState.InitCompleted = true;
+
+        }
+
+        GameState.StateChanged += OnGameStateChanged;
+    }
+
+    
+    public void Dispose()
+    {
+
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

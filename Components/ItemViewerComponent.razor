@@ -1,0 +1,30 @@
+﻿@inject GameState GameState
+    <div style="        height: 80px;
+        width: 290px;
+        border: solid black 1px;
+        padding: 5px;
+        margin: 5px;
+">
+        @if (Item != null)
+        {
+            <div>@Item.Name</div>
+            <div>@Item.Description</div>
+            <div>@Player.Instance.Inventory.GetNumberOfItem(Item)</div>
+        }
+    </div>
+
+
+@code {
+    [Parameter]
+    public GameItem Item { get; set; }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}
+

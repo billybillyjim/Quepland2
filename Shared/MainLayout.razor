@@ -1,0 +1,46 @@
+﻿@inherits LayoutComponentBase
+@inject GameState GameState
+
+
+    <div style="width:1200px;display:flex;">
+        @if (GameState.ShowStartMenu == false)
+        {
+            <div class="sidebar" style="width:300px!important">
+                <NavMenu />
+            </div>
+        }
+        <div class="main" style="min-width:600px!important;">
+            <div class="top-row px-4">
+
+            </div>
+
+            <div>
+                @Body
+            </div>
+            <div><Quepland_2.Components.MessagesMenuComponent></Quepland_2.Components.MessagesMenuComponent></div>
+        </div>
+
+        @if (GameState.ShowStartMenu == false)
+        {
+            <div style="width: 300px!important;background-color:darkgray;">
+                <Quepland_2.Components.InventoryViewerComponent></Quepland_2.Components.InventoryViewerComponent>
+            </div>
+        }
+        @if (TooltipManager.Show)
+        {
+            <Quepland_2.Components.TooltipComponent Tip="@TooltipManager.CurrentTip" xPos="@TooltipManager.xPos" yPos="@TooltipManager.yPos"></Quepland_2.Components.TooltipComponent>
+        }
+    </div>
+
+@code{
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+
+}

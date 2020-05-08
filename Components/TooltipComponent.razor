@@ -1,0 +1,77 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+
+    <pre style="        
+        z-index: 1000;
+        white-space: pre-line;
+        max-width: 800px;
+        display: flex;
+        position: absolute !important; 
+        background-color:darkslategrey;
+        color:whitesmoke;
+        @GetStyle()">       
+             @if(Tip.TitleText != "")
+            {
+                @Tip.TitleText
+                <br />
+
+            }
+            @((MarkupString)Tip.DataText)
+        </pre>
+
+
+
+
+
+@code {
+
+    [Parameter]
+    public Tooltip Tip { get; set; }
+    [Parameter]
+    public double xPos { get; set; }
+    [Parameter]
+    public double yPos { get; set; }
+
+    private int distanceFromMouse = 15;
+
+
+    private bool faceRight;
+
+    protected override void OnParametersSet()
+    {
+        if (xPos >= GameState.GameWindowWidth)
+        {
+            faceRight = true;
+        }
+        else
+        {
+            faceRight = false;
+        }
+    }
+
+    private string GetStyle()
+    {
+        if (faceRight)
+        {
+
+            return "text-align:" + Tip.Alignment + ";top:" + (yPos + distanceFromMouse) + "px;right:" + (GameState.GameWindowWidth - xPos) + "px;";
+        }
+        else
+        {
+            return "text-align:" + Tip.Alignment + ";top:" + (yPos + distanceFromMouse) + "px;left:" + xPos + "px;";
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+
+    }
+
+    void IDisposable.Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

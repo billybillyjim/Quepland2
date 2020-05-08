@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Quepland Fields",
+    "id": 0,
+    "isUnlocked": true,
+    "description": "There is a small stream and a forest of white pine trees. A large poplar tree has fallen and blocks your path forward.",
+    "areaURL": "QueplandFields",
+    "image": "oi oi-fire",
+    "Actions": [
+      "Chop White Pine:White Pine Logs"
+    ]
+  },
+  {
+    "name": "Quepland Woods",
+    "id": 1,
+    "isUnlocked": false,
+    "description": "You enter a thick woods consisting of mostly poplar trees. The path meanders up the mountain along a brook full of sunfish.",
+    "areaURL": "QueplandWoods",
+    "icon": "oi oi-rain"
+  }
+]

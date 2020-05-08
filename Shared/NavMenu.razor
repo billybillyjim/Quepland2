@@ -1,0 +1,50 @@
+﻿@inject NavigationManager UriHelper
+@inject GameState GameState
+
+<div class="top-row pl-4 navbar navbar-dark">
+    <div style="color:white;">Quepland 2</div>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+
+        @foreach (Area a in AreaManager.Instance.Areas)
+        {
+            if (a.IsUnlocked && a.IsHidden == false)
+            {
+                <li class="nav-item px-3">
+                    <button onclick="@(new Action(() => GoToArea(a.AreaURL)))">@a.Name</button>
+                </li>
+            }
+        }
+    </ul>
+</div>
+
+@code {
+
+    private bool collapseNavMenu = true;
+
+    public void GoToArea(string name)
+    {
+        UriHelper.NavigateTo("World/" + name + "/");
+        GameState.UpdateState();
+    }
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

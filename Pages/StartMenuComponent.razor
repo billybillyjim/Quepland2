@@ -1,0 +1,23 @@
+﻿@inject GameState GameState
+
+<h1>Welcome to Quepland</h1>
+<p>Quepland 2 is a semi-idle adventure game set in the world of Quepland.</p>
+
+<button onclick="@(new Action(() => StartGame()))">Begin New Game</button>
+
+@code {
+
+    public void StartGame()
+    {
+        GameState.ShowStartMenu = false;
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

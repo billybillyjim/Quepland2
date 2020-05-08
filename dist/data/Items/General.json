@@ -1,0 +1,22 @@
+[
+  {
+    "Name": "Coins",
+    "Description": "Cash Money.",
+    "id": 0,
+    "value": 1,
+    "isStackable": true,
+    "icon": "Gold"
+  },
+  {
+    "Name": "White Pine Logs",
+    "Description": "It's a very soft wood.",
+    "gatherString": "You chop some white pine logs.",
+    "id": 1,
+    "value": 3,
+    "gatherSpeed": 10,
+    "requiredLevel": 1,
+    "experienceGained": "Woodcutting:8",
+    "skillRequired": "Woodcutting",
+    "icon": "Log"
+  }
+]

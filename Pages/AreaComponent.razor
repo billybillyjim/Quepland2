@@ -1,0 +1,57 @@
+﻿@page "/World/{areaName}"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+
+@if (thisArea != null)
+{
+    <div>Welcome to @thisArea.Name</div>
+    <p>@thisArea.Description</p>
+
+    @foreach (string a in thisArea.Actions ?? Enumerable.Empty<string>())
+    {
+        if (GameState.CurrentGatherItem != null && a.Split(':')[1] == GameState.CurrentGatherItem.Name)
+        {
+            <button onclick="@(new Action(() => GatherItem(null)))">Stop Gathering</button>
+
+        }
+        else
+        {
+            <button onclick="@(new Action(() => GatherItem(a.Split(':')[1])))">@a.Split(':')[0]</button>
+
+        }
+    }
+}
+
+@code {
+    [Parameter]
+    public string areaName { get; set; }
+    public Area thisArea { get; set; }
+
+    public void GatherItem(string itemName)
+    {
+        if(itemName == null)
+        {
+            GameState.CurrentGatherItem = null;
+            GameState.UpdateState();
+            return;
+        }
+        GameState.CurrentGatherItem = ItemManager.Instance.GetItemByName(itemName);
+        GameState.TicksToNextGather = GameState.CurrentGatherItem.GatherSpeed.ToGaussianRandom();
+        GameState.UpdateState();
+    }
+
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    protected override void OnParametersSet()
+    {
+        thisArea = AreaManager.Instance.GetAreaByURL(areaName);
+        GameState.UpdateState();
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

@@ -1,0 +1,41 @@
+﻿@inject GameState GameState
+
+<ItemViewerComponent Item="@SelectedItem"></ItemViewerComponent>
+<div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:5px;margin:5px;">
+    @foreach(GameItem item in Player.Instance.Inventory.GetItems().Keys)
+    {
+        <div style="border:solid black 1px;margin:2px;height:50px;width:50px;background-color:darkgray;position:relative;" 
+             onclick="@(new Action(() => SelectItem(item)))">
+            <div style="position:absolute;margin-left:2px;margin-top:-2px;color:white">@Player.Instance.Inventory.GetNumberOfItem(item)</div>
+            <img style="height: 46px;width: 46px;margin:2px;" src="/data/Images/@(item.Icon).png" 
+                 onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, item.Name, item.Description)))"
+                 onmouseout="@(new Action(() => GameState.HideTooltip()))"/>
+            </div>
+    }
+    @for (int i = 0; i < Player.Instance.Inventory.GetSize() - Player.Instance.Inventory.GetItems().Keys.Count; i++)
+    {
+        <div style="border:solid black 1px;margin:2px;height:50px;width:50px;background-color:gray"></div>
+    }
+    <div>Slots Used:@Player.Instance.Inventory.GetTotalNumberOfItems() / @Player.Instance.Inventory.GetSize()</div>
+</div>
+
+@code {
+
+    private GameItem SelectedItem;
+
+    private void SelectItem(GameItem item)
+    {
+        SelectedItem = item;
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}
+
