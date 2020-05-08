@@ -51,16 +51,8 @@ using System.Threading.Tasks;
         GameTimer = new Timer(new TimerCallback(_ =>
         {
             if(TicksToNextGather <= 0 && CurrentGatherItem != null)
-            {          
-                if(Player.Instance.Inventory.AddItem(CurrentGatherItem) == false)
-                {
-                    CurrentGatherItem = null;
-                }
-                else
-                {
-                    TicksToNextGather = CurrentGatherItem.GatherSpeed.ToGaussianRandom();
-                    MessageManager.AddMessage(CurrentGatherItem.GatherString);
-                }
+            {
+                GatherItem();
             }
             TicksToNextGather--;
             StateHasChanged();
@@ -73,6 +65,19 @@ using System.Threading.Tasks;
         GameTimer.Change(Timeout.Infinite, Timeout.Infinite);
     }
 
+    private void GatherItem()
+    {
+        Player.Instance.GainExperience(CurrentGatherItem.ExperienceGained);
+        if (Player.Instance.Inventory.AddItem(CurrentGatherItem) == false)
+        {
+            CurrentGatherItem = null;
+        }
+        else
+        {
+            TicksToNextGather = CurrentGatherItem.GatherSpeed.ToGaussianRandom();
+            MessageManager.AddMessage(CurrentGatherItem.GatherString);
+        }
+    }
     public void ShowTooltip(MouseEventArgs args, string tipName, bool alignRight)
     {
         if (alignRight)

@@ -1,0 +1,97 @@
+[
+  {
+    "Name": "HP",
+    "Level": 1,
+    "Description": "HP is short for hitpoints, and it is trained by taking damage during combat. When your HP reaches 0, it means you are no longer in a condition to continue fighting, and you must flee your current battle. When you flee, some opponents will not pursue you, but others may require a bribe to let you go."
+  },
+  {
+    "name": "Knifesmanship",
+    "level": 1,
+    "description": "Knifesmanship is your ability to use all kinds of knives as weapons. Knives are the fastest weapons you can wield, but also the weakest. They tend to be good for killing weak things quickly, and rely entirely on your deftness to deal damage."
+  },
+  {
+    "name": "Swordsmanship",
+    "level": 1,
+    "description": "Swordsmanship is your ability to wield swords. Swords are slower than knives, but quite a bit stronger. They have well-rounded stats that deal decent damage at reasonable speeds. The use both strength and deftness to deal damage."
+  },
+  {
+    "name": "Axemanship",
+    "level": 1,
+    "description": "Axemanship is your ability to use axes in combat. They are slower than swords or knives, but faster than hammers. Some enemies are exceptionally weak to axes. They use both strength and deftness to deal damage."
+  },
+  {
+    "name": "Hammermanship",
+    "level": 1,
+    "description": "Hammermanship is your ability to swing hammers properly in combat. Hammers are the slowest weapon type you can wield, but also the strongest. They rely heavily on your strength level to function properly."
+  },
+  {
+    "name": "Deftness",
+    "level": 1,
+    "description": "Deftness is the speed at which you use weapons. Knives, swords, and axes all use deftness in calculating damage dealt, but knives and swords are more reliant on it."
+  },
+  {
+    "name": "Strength",
+    "level": 1,
+    "description": "Strength is the power with which you use weapons. Swords, axes, and hammers all use strength when calculating your damage dealt, but axes and hammers are more reliant on it. Every level also increases your inventory capacity by 1, and every 10th level by 5."
+  },
+  {
+    "name": "Archery",
+    "level": 1,
+    "description": "Archery is your ability to wield a bow and shoot arrows. It also helps ensure a player going hunting doesn't return empty handed after a trip."
+  },
+  {
+    "name": "Mining",
+    "level": 1,
+    "description": "Mining can be trained anywhere you can find ores in the ground. Above ground, ore veins must be found before you mine them. Each ore you acquire deplete the vein further, requiring more time to get the next ore. This does not apply to ore veins you find beneath the surface of Quepland."
+  },
+  {
+    "name": "Smithing",
+    "level": 1,
+    "description": "Smithing consists of two parts: the creation of bars from ores, and the creation of items from those bars. Ores mined or purchased can be transported to a smithy where they can be melted down into bars, or hammered into weapons, armor, and tools. There are a variety of metals in the world of Quepland, each with their own special properties."
+  },
+  {
+    "name": "Alchemy",
+    "level": 1,
+    "description": "Alchemy is the most difficult skill in the world of Quepland, but mastering it can be quite lucrative. Around Mount Queple reside four Great Halls, built before the current settlers arrived here. Using the special properties of each hall, an alchemist can combine the base metals with one of the four base elements to transmute their metal into a more valuable one. As you learn more alchemical recipes, they will appear in this menu for future reference."
+  },
+  {
+    "name": "Fishing",
+    "level": 1,
+    "description": "Fishing is the act of capturing creatures that live in the water. There are a variety of fish around Quepland, and the most lucrative and interesting ones will require a good bit of fishing knowledge to capture."
+  },
+  {
+    "name": "Woodcutting",
+    "level": 1,
+    "description": "Woodcutting is the first skill you learned in the world of Quepland, and it has a variety of uses. Some paths on your journey will only be accesible with a high enough woodcutting level."
+  },
+  {
+    "name": "Woodworking",
+    "level": 1,
+    "description": "Woodworking is the act of cutting away parts of logs to make them more useful. You can train it by chiselling away at logs, or by finding one of the totems around Quepland."
+  },
+  {
+    "name": "Hunting",
+    "level": 1,
+    "description": "Hunting is a skill that can only be trained on hunting trips. Taking a hunting trip can take a long time, but it also can offer a bounty of rewards. Legends tell of a number of secret hunting locations throughout Quepland. Try to find them!"
+  },
+  {
+    "name": "Culinary Arts",
+    "level": 1,
+    "description": "Culinary Arts involves taking raw materials and converting them into digestible materials through physical and chemical changes. Ultimately this boils down to making sushi rolls and curing meats into jerky."
+  },
+  {
+    "name": "Leatherworking",
+    "level": 1,
+    "description": "Leatherworking is working with leather. To acquire leather you need to find a tannery and tan your pelts you acquire from hunting animals. There is a mysterious traveller in the Rising Hills who can guide you closer to what you need."
+  },
+  {
+    "name": "Magic",
+    "level": 1,
+    "description": "The secret power to manipulate objects using the extracted essence of other objects. A difficult skill to master, but a powerful one."
+  },
+  {
+    "name": "Lapidary",
+    "level": 1,
+    "description": "The ability to engrave, cut, and polish gemstones, and to apply them to weapons and armor."
+  }
+]

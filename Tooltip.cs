@@ -1,8 +1,8 @@
 ﻿public class Tooltip
 {
     public string Name { get; set; }
-    public string TitleText { get; set; }
-    public string DataText { get; set; }
+    public string Title { get; set; }
+    public string Text { get; set; }
     public bool RightAlignData { get; set; }
     public string Alignment { get
         {
@@ -23,8 +23,8 @@
     public Tooltip(string name, string title, string data)
     {
         Name = name;
-        TitleText = title;
-        DataText = data;
+        Title = title;
+        Text = data;
     }
     
 }

@@ -11,13 +11,13 @@
         background-color:darkslategrey;
         color:whitesmoke;
         @GetStyle()">       
-             @if(Tip.TitleText != "")
+             @if(Tip.Title != "")
             {
-                @Tip.TitleText
+                @Tip.Title
                 <br />
 
             }
-            @((MarkupString)Tip.DataText)
+            @((MarkupString)Tip.Text)
         </pre>
 
 

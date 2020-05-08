@@ -1,0 +1,10 @@
+[
+  {
+    "Title": "Lacking Tool",
+    "Text": "You don't have the right tool to do this."
+  },
+  {
+    "Title": "Lacking Skill",
+    "Text": "You don't have the skill level required to do this."
+  }
+]

@@ -29,6 +29,7 @@ public static class MessageManager
         {
             repeatMessageCount++;
             Messages.Last().Text = lastMessage + "(" + repeatMessageCount + ")";
+            Messages.Last().Style = "font-weight:bold;";
         }
         else
         {

@@ -20,6 +20,7 @@ else
         {
             await AreaManager.Instance.LoadAreas(Http);
             await ItemManager.Instance.LoadItems(Http);
+            await Player.Instance.LoadSkills(Http);
             await PlayFabManager.Connect();
             GameState.Start();
             GameState.InitCompleted = true;

@@ -17,7 +17,7 @@ public static class TooltipManager
 
     public static async Task LoadTooltips(HttpClient Http)
     {
-        Tooltips.AddRange(await Http.GetJsonAsync<Tooltip[]>("data/Other/Tooltips.json"));
+        Tooltips.AddRange(await Http.GetJsonAsync<Tooltip[]>("data/Tooltips.json"));
     }
 
     public static void ShowTip(MouseEventArgs args, string tipName, bool alignRight)
