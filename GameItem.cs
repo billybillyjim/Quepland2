@@ -7,7 +7,7 @@ public class GameItem
 	public string GatherString { get; set; } = "You get an item";
 	public string ExperienceGained { get; set; } = "None";
 	public string ActionsEnabled { get; set; } = "None";
-	public string SkillRequired { get; set; } = "None";
+	public string RequiredSkill { get; set; } = "None";
 	public string Icon { get; set; } = "Unset";
 
 	public bool IsStackable { get; set; }
@@ -22,4 +22,5 @@ public class GameItem
 	{
 		return Name;
 	}
+
 }

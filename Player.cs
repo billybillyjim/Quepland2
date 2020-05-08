@@ -113,5 +113,37 @@ public class Player
 
         }
     }
+    public bool HasSkillRequirement(string itemName)
+    {
+        GameItem i = ItemManager.Instance.GetItemByName(itemName);
+        if(i == null)
+        {
+            Console.WriteLine("Failed to find game item:" + itemName);
+            return false;
+        }
+        return HasSkillRequirement(i);
+    }
+    public bool HasSkillRequirement(string skill, int lvl)
+    {
+        Skill s = Skills.FirstOrDefault(x => x.Name == skill);
+        if(s == null)
+        {
+            Console.WriteLine("Failed to find game item:" + skill);
+            return false;
+        }
+        return s.Level >= lvl;
+    }
+    public bool HasSkillRequirement(GameItem item)
+    {
+        if(item.RequiredSkill == null || item.RequiredSkill == "")
+        {
+            return true;
+        }
+        return HasSkillRequirement(item.RequiredSkill, item.RequiredLevel);
+    }
+    public bool HasToolRequirement(GameItem item)
+    {
+        return Inventory.HasItem(item);
+    }
 }
 

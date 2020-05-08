@@ -16,7 +16,16 @@
         }
         else
         {
-            <button onclick="@(new Action(() => GatherItem(a.Split(':')[1])))">@a.Split(':')[0]</button>
+            if (Player.Instance.HasSkillRequirement(a.Split(':')[1]))
+            {
+                <button onclick="@(new Action(() => GatherItem(a.Split(':')[1])))">@a.Split(':')[0]</button>
+            }
+            else
+            {
+                <button style="background-color:gray;color:darkgray;"
+                 onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GetRequirementTooltip(a.Split(':')[1]))))"
+                 onmouseout="@(new Action(() => GameState.HideTooltip()))">@a.Split(':')[0]</button>
+            }
 
         }
     }
@@ -29,7 +38,7 @@
 
     public void GatherItem(string itemName)
     {
-        if(itemName == null)
+        if (itemName == null)
         {
             GameState.CurrentGatherItem = null;
             GameState.UpdateState();
@@ -39,7 +48,23 @@
         GameState.TicksToNextGather = GameState.CurrentGatherItem.GatherSpeed.ToGaussianRandom();
         GameState.UpdateState();
     }
-
+    public string GetRequirementTooltip(string itemName)
+    {
+        if (itemName == null)
+        {
+            return "";
+        }
+        GameItem item = ItemManager.Instance.GetItemByName(itemName);
+        if (item == null)
+        {
+            return "";
+        }
+        if (Player.Instance.HasSkillRequirement(item) == false)
+        {
+            return "You need " + item.RequiredLevel + " " + item.RequiredSkill + " to do this.";
+        }
+        return item.RequiredSkill;
+    }
     protected override void OnInitialized()
     {
         GameState.StateChanged += OnGameStateChanged;

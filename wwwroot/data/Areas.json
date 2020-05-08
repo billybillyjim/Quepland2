@@ -7,7 +7,8 @@
     "areaURL": "QueplandFields",
     "image": "oi oi-fire",
     "Actions": [
-      "Chop White Pine:White Pine Logs"
+      "Chop White Pine:White Pine Logs",
+      "Chop Poplar Logs:Poplar Logs"
     ]
   },
   {

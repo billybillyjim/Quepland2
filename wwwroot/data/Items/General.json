@@ -16,7 +16,19 @@
     "gatherSpeed": 10,
     "requiredLevel": 1,
     "experienceGained": "Woodcutting:8",
-    "skillRequired": "Woodcutting",
+    "requiredSkill": "Woodcutting",
+    "icon": "Log"
+  },
+  {
+    "Name": "Poplar Logs",
+    "Description": "It's a less soft wood.",
+    "gatherString": "You chop some poplar logs.",
+    "id": 2,
+    "value": 9,
+    "gatherSpeed": 30,
+    "requiredLevel": 8,
+    "experienceGained": "Woodcutting:24",
+    "requiredSkill": "Woodcutting",
     "icon": "Log"
   }
 ]
