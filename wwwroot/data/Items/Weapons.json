@@ -4,12 +4,25 @@
     "Description": "Maybe the softest knife you've ever seen.",
     "id": 10000,
     "value": 150,
-    "requiredSkill": "Knifesmanship",
-    "actionsEnabled": "Knifesmanship",
+    "requiredAction": "Knifesmanship",
+    "enabledActions": "Knifesmanship",
     "requiredLevel": 0,
     "equipSlot": "Right Hand",
     "damage": 3,
     "attackSpeed": 5,
     "icon": "Knife"
+  },
+  {
+    "Name": "Stone Axe",
+    "Description": "It's an axe made of stone.",
+    "id": 10001,
+    "value": 25,
+    "enabledActions": "Axemanship Woodcutting",
+    "equipSlot": "Right Hand",
+    "damage": 4,
+    "requiredAction": "Axemanship",
+    "attackSpeed": 15,
+    "gatherSpeedBonus": 0.1,
+    "icon": "Axe"
   }
 ]

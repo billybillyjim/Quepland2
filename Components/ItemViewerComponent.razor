@@ -4,12 +4,17 @@
         border: solid black 1px;
         padding: 5px;
         margin: 5px;
+        position:relative;
 ">
         @if (Item != null)
         {
             <div>@Item.Name</div>
             <div>@Item.Description</div>
             <div>@Player.Instance.Inventory.GetNumberOfItem(Item)</div>
+            @if(Item as Weapon != null)
+            {
+                <div style="float:right;position:relative;"><button @onclick="@(() => Player.Instance.Equip(Item))">Equip</button></div>
+            }
         }
     </div>
 

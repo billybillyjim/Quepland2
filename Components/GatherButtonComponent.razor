@@ -1,0 +1,99 @@
+﻿@inject GameState GameState
+@implements IDisposable
+@if (item != null)
+{
+    @if (GameState.CurrentGatherItem == item)
+    {
+        <button onclick="@(new Action(() => GatherItem(null)))">Stop Gathering</button>
+    }
+    else
+    {
+        if (Player.Instance.HasSkillRequirement(item) && Player.Instance.HasToolRequirement(item))
+        {
+            <button onclick="@(new Action(() => GatherItem(item)))">@gatherText</button>
+        }
+        else
+        {
+            <button style="background-color:gray;color:darkgray;"
+                    onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GetRequirementTooltip())))"
+                    onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                @gatherText
+            </button>
+        }
+
+    }
+}
+
+@code {
+    [Parameter]
+    public string ActionText { get; set; }
+    private GameItem item;
+    private string gatherText = "";
+    private string tooltip = "";
+
+    public void GatherItem(GameItem i)
+    {
+        if (i == null)
+        {
+            GameState.CurrentGatherItem = null;
+            GameState.UpdateState();
+            return;
+        }
+        GameState.CurrentGatherItem = i;
+        GameState.TicksToNextGather = GameState.CurrentGatherItem.GatherSpeed.ToGaussianRandom();
+        GameState.UpdateState();
+    }
+    public string GetRequirementTooltip()
+    {
+        if (tooltip != "")
+        {
+            return tooltip;
+        }
+        if (item == null)
+        {
+            return "";
+        }
+        if (item == null)
+        {
+            return "";
+        }
+        if (Player.Instance.HasSkillRequirement(item) == false)
+        {
+            tooltip = "You need " + item.RequiredLevel + " " + item.RequiredAction + " to do this.";
+        }
+        return tooltip;
+    }
+    protected override void OnInitialized()
+    {
+
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    protected override void OnParametersSet()
+    {
+        if(ActionText == null || ActionText.Contains(':') == false)
+        {
+            Console.WriteLine("Action Text was null or contained no colon.");
+            if(ActionText == null)
+            {
+                Console.WriteLine("ActionText null:" + (ActionText == null));
+            }
+            else
+            {
+                Console.WriteLine("ActionText:" + ActionText);
+            }
+
+        }
+        else
+        {
+            item = ItemManager.Instance.GetItemByName(ActionText.Split(':')[1]);
+            gatherText = ActionText.Split(':')[0];
+        }
+
+        GameState.UpdateState();
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

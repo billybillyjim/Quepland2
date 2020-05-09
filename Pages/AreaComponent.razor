@@ -9,61 +9,20 @@
 
     @foreach (string a in thisArea.Actions ?? Enumerable.Empty<string>())
     {
-        if (GameState.CurrentGatherItem != null && a.Split(':')[1] == GameState.CurrentGatherItem.Name)
-        {
-            <button onclick="@(new Action(() => GatherItem(null)))">Stop Gathering</button>
-
-        }
-        else
-        {
-            if (Player.Instance.HasSkillRequirement(a.Split(':')[1]))
-            {
-                <button onclick="@(new Action(() => GatherItem(a.Split(':')[1])))">@a.Split(':')[0]</button>
-            }
-            else
-            {
-                <button style="background-color:gray;color:darkgray;"
-                 onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GetRequirementTooltip(a.Split(':')[1]))))"
-                 onmouseout="@(new Action(() => GameState.HideTooltip()))">@a.Split(':')[0]</button>
-            }
-
-        }
+        <Quepland_2.Components.GatherButtonComponent ActionText="@a"></Quepland_2.Components.GatherButtonComponent>
     }
 }
+<button @onclick="@(e => GetAxe())">Get Axe</button>
 
 @code {
     [Parameter]
     public string areaName { get; set; }
     public Area thisArea { get; set; }
 
-    public void GatherItem(string itemName)
+    private void GetAxe()
     {
-        if (itemName == null)
-        {
-            GameState.CurrentGatherItem = null;
-            GameState.UpdateState();
-            return;
-        }
-        GameState.CurrentGatherItem = ItemManager.Instance.GetItemByName(itemName);
-        GameState.TicksToNextGather = GameState.CurrentGatherItem.GatherSpeed.ToGaussianRandom();
+        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItemByName("Stone Axe"));
         GameState.UpdateState();
-    }
-    public string GetRequirementTooltip(string itemName)
-    {
-        if (itemName == null)
-        {
-            return "";
-        }
-        GameItem item = ItemManager.Instance.GetItemByName(itemName);
-        if (item == null)
-        {
-            return "";
-        }
-        if (Player.Instance.HasSkillRequirement(item) == false)
-        {
-            return "You need " + item.RequiredLevel + " " + item.RequiredSkill + " to do this.";
-        }
-        return item.RequiredSkill;
     }
     protected override void OnInitialized()
     {

@@ -18,6 +18,7 @@ public class Player
         }
     }
     public Inventory Inventory = new Inventory(30);
+    private List<GameItem> equippedItems = new List<GameItem>();
     public List<Skill> Skills = new List<Skill>();
     public int MaxHP = 50;
     public string LastLevelledSkill;
@@ -49,6 +50,20 @@ public class Player
         if (int.TryParse(skillAndExp.Split(':')[1], out int amount))
         {
             GainExperience(Skills.FirstOrDefault(x => x.Name == skillAndExp.Split(':')[0]), amount);
+        }
+    }
+    public void Equip(GameItem item)
+    {
+        UnequipItem(equippedItems.Find(x => x.EquipSlot == item.EquipSlot));
+        equippedItems.Add(item);
+        item.IsEquipped = true;
+    }
+    public void UnequipItem(GameItem item)
+    {
+        if (item != null)
+        {
+            item.IsEquipped = false;
+            equippedItems.Remove(item);
         }
     }
     public void GainExperience(Skill skill, long amount)
@@ -135,15 +150,15 @@ public class Player
     }
     public bool HasSkillRequirement(GameItem item)
     {
-        if(item.RequiredSkill == null || item.RequiredSkill == "")
+        if(item.RequiredAction == null || item.RequiredAction == "")
         {
             return true;
         }
-        return HasSkillRequirement(item.RequiredSkill, item.RequiredLevel);
+        return HasSkillRequirement(item.RequiredAction, item.RequiredLevel);
     }
     public bool HasToolRequirement(GameItem item)
     {
-        return Inventory.HasItem(item);
+        return Inventory.HasToolRequirement(item);
     }
 }
 

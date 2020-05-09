@@ -7,8 +7,6 @@ public interface IEquippable
 	int ArmorBonus { get; set; }
 	string StatusEffect { get; set; }
 	int EffectDuration { get; set; }
-	string EquipSlot { get; set; }
 
-	void Equip();
 
 }

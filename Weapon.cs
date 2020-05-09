@@ -7,9 +7,5 @@ public class Weapon : GameItem, IEquippable
     public int ArmorBonus { get; set; }
     public string StatusEffect { get; set; }
     public int EffectDuration { get; set; }
-    public string EquipSlot { get; set; }
-    public void Equip()
-    {
-        
-    }
+
 }

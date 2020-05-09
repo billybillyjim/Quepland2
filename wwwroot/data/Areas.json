@@ -3,12 +3,20 @@
     "name": "Quepland Fields",
     "id": 0,
     "isUnlocked": true,
-    "description": "There is a small stream and a forest of white pine trees. A large poplar tree has fallen and blocks your path forward.",
+    "description": "There is a small stream and a forest of white pine trees. A large poplar tree has been chopped and laid across the path. You'll need to chop through it to continue on the path.",
     "areaURL": "QueplandFields",
-    "image": "oi oi-fire",
+    "image": "Field",
     "Actions": [
-      "Chop White Pine:White Pine Logs",
-      "Chop Poplar Logs:Poplar Logs"
+      "Chop White Pine:White Pine Logs"
+    ],
+    "unlockableAreas": [
+      {
+        "AreaName": "Quepland Woods",
+        "ButtonText": "Clear away tree",
+        "RequiredSkills": "Woodcutting:2",
+        "RequiredTools": "Woodcutting"
+      } 
+
     ]
   },
   {
@@ -17,6 +25,6 @@
     "isUnlocked": false,
     "description": "You enter a thick woods consisting of mostly poplar trees. The path meanders up the mountain along a brook full of sunfish.",
     "areaURL": "QueplandWoods",
-    "icon": "oi oi-rain"
+    "image": "Forest"
   }
 ]

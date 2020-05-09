@@ -16,7 +16,7 @@
     "gatherSpeed": 10,
     "requiredLevel": 1,
     "experienceGained": "Woodcutting:8",
-    "requiredSkill": "Woodcutting",
+    "requiredAction": "Woodcutting",
     "icon": "Log"
   },
   {
@@ -28,7 +28,7 @@
     "gatherSpeed": 30,
     "requiredLevel": 8,
     "experienceGained": "Woodcutting:24",
-    "requiredSkill": "Woodcutting",
+    "requiredAction": "Woodcutting",
     "icon": "Log"
   }
 ]
