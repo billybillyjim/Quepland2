@@ -1,12 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class AreaUnlock
 {
-	public string AreaName { get; set; }
+	public string AreaURL { get; set; }
 	public string ButtonText { get; set; }
-	public string RequiredSkills { get; set; }
-	public string RequiredTools { get; set; }
-	public AreaUnlock()
-	{
-	}
+	public List<Requirement> Requirements { get; set; } = new List<Requirement>();
+	public bool HasRequirements()
+    {
+		foreach(Requirement r in Requirements)
+        {
+			if(r.IsMet() == false)
+            {
+				return false;
+            }
+        }
+		return true;
+    }
 }

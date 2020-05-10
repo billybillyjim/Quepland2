@@ -123,5 +123,18 @@ public class Inventory
         }
         return false;
     }
+    public bool HasToolRequirement(string action)
+    {
+        foreach (KeyValuePair<GameItem, int> i in items)
+        {
+            //item.Key.itemPos = inventorySlotPos;
+            if (i.Key.EnabledActions.Contains(action))
+            {
+                return true;
+            }
+        }
+        return false;
+
+    }
 }
 

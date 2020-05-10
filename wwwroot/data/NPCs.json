@@ -1,0 +1,32 @@
+[
+  {
+    "name": "The Ghost",
+    "id": -1,
+    "dialog": "Boo! How did you find me?? You'd better tell the dev."
+  },
+  {
+    "name": "The Mayor",
+    "id": 0,
+    "dialogs": [
+      {
+        "ResponseText": "Get out of my house.",
+        "buttonText": "Hello",
+        "questprogressValue": 1,
+        "quest": "Mayor's Assistant"
+      },
+      {
+        "ResponseText": "You started the quest now.",
+        "buttonText": "What now?",
+        "progressValue": 2,
+        "quest": "Mayor's Assistant",
+        "requirements": [
+          {
+            "quest": "Mayor's Assistant",
+            "questProgress": 1
+          }
+        ]
+      }
+
+    ]
+  }
+]

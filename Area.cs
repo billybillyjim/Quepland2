@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PlayFab.MultiplayerModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,6 +29,13 @@ public class Area
     public bool IsHidden { get; set; }
     public List<string> Actions { get; set; } = new List<string>();
     public List<AreaUnlock> UnlockableAreas { get; set; } = new List<AreaUnlock>();
+    public List<Building> Buildings { get; set; } = new List<Building>();
+
+
+    public Building GetBuildingByURL(string url)
+    {
+        return Buildings.FirstOrDefault(x => x.URL == url);
+    }
 
 }
 

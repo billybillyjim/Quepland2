@@ -1,0 +1,50 @@
+﻿@page "/World/{areaURL}/{buildingURL}"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+
+@if (thisBuilding != null)
+{
+    <div>@thisBuilding.Name</div>
+    <div>@thisBuilding.Description</div>
+    @foreach (string npc in thisBuilding.NPCs)
+    {
+        foreach (Dialog d in NPCManager.Instance.GetNPCByName(npc).Dialogs)
+        {
+            @if (d.HasRequirements())
+            {
+                <button @onclick="@(() => Talk(d))">@d.ButtonText</button>
+            }
+            
+        }
+
+    }
+}
+
+
+@code {
+    [Parameter]
+    public string areaURL { get; set; }
+    [Parameter]
+    public string buildingURL { get; set; }
+    public Building thisBuilding { get; set; }
+
+    public void Talk(Dialog d)
+    {
+        if(d.Quest != "None" && d.QuestProgressValue > QuestManager.Instance.GetQuestByName(d.Quest).Progress)
+        {
+            QuestManager.Instance.GetQuestByName(d.Quest).Progress = d.QuestProgressValue;
+        }
+        MessageManager.AddMessage(d.ResponseText);
+        GameState.UpdateState();
+    }
+    protected override void OnParametersSet()
+    {
+        thisBuilding = AreaManager.Instance.GetAreaByURL(areaURL).GetBuildingByURL(buildingURL);
+        GameState.UpdateState();
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

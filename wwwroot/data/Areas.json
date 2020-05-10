@@ -6,16 +6,23 @@
     "description": "There is a small stream and a forest of white pine trees. A large poplar tree has been chopped and laid across the path. You'll need to chop through it to continue on the path.",
     "areaURL": "QueplandFields",
     "image": "Field",
-    "Actions": [
+    "actions": [
       "Chop White Pine:White Pine Logs"
     ],
     "unlockableAreas": [
       {
-        "AreaName": "Quepland Woods",
-        "ButtonText": "Clear away tree",
-        "RequiredSkills": "Woodcutting:2",
-        "RequiredTools": "Woodcutting"
-      } 
+        "areaURL": "QueplandWoods",
+        "buttonText": "Clear away tree",
+        "requirements": [
+          {
+            "Skill": "Woodcutting",
+            "SkillLevel": 2
+          },
+          {
+            "Action": "Woodcutting"
+          }
+        ]
+      }
 
     ]
   },
@@ -23,8 +30,34 @@
     "name": "Quepland Woods",
     "id": 1,
     "isUnlocked": false,
-    "description": "You enter a thick woods consisting of mostly poplar trees. The path meanders up the mountain along a brook full of sunfish.",
+    "description": "You enter a thick woods consisting of mostly poplar trees. The path meanders up the mountain along a brook full of sunfish. In the distance you can see the smokestacks of a small village.",
     "areaURL": "QueplandWoods",
-    "image": "Forest"
+    "image": "Forest",
+    "unlockableAreas": [
+      {
+        "AreaURL": "Teppas",
+        "ButtonText": "Continue into the village"
+      }
+
+    ]
+  },
+  {
+    "name": "Teppas",
+    "id": 2,
+    "isUnlocked": false,
+    "description": "You reach a small mountain village, small houses and shops are scattered about inside a short stone wall. A massive mansion spans most of the far wall; a windy street continues through the hilly terrain.",
+    "areaURL": "Teppas",
+    "image": "Village",
+    "buildings": [
+      {
+        "name": "Mayor's House",
+        "buttonText": "Visit the Mansion",
+        "url": "MayorsHouse",
+        "description": "You enter a lavish mansion. A large chandelier hangs over a magnificent curved staircase to the second floor. The carpet near the entrance is faded and worn.",
+        "npcs": [
+          "The Mayor"
+        ]
+      }
+    ]
   }
 ]

@@ -15,6 +15,7 @@ using System.Threading.Tasks;
     public static string Version { get; set; } = "0.0.1";
     public static bool InitCompleted { get; set; } = false;
     public static bool ShowStartMenu { get; set; } = true;
+    private bool stopActions = false;
 
     private Timer GameTimer { get; set; }
     public int testInt = 0;
@@ -50,6 +51,10 @@ using System.Threading.Tasks;
         }
         GameTimer = new Timer(new TimerCallback(_ =>
         {
+            if (stopActions)
+            {
+                ClearActions();
+            }
             if(TicksToNextGather <= 0 && CurrentGatherItem != null)
             {
                 GatherItem();
@@ -59,7 +64,15 @@ using System.Threading.Tasks;
         }), null, 200, 200);
         StateHasChanged();
     }
-
+    public void StopActions()
+    {
+        stopActions = true;
+    }
+    private void ClearActions()
+    {
+        CurrentGatherItem = null;
+        stopActions = false;
+    }
     public void Pause()
     {
         GameTimer.Change(Timeout.Infinite, Timeout.Infinite);

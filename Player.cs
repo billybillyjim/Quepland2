@@ -160,5 +160,9 @@ public class Player
     {
         return Inventory.HasToolRequirement(item);
     }
+    public bool HasToolRequirement(string action)
+    {
+        return Inventory.HasToolRequirement(action);
+    }
 }
 

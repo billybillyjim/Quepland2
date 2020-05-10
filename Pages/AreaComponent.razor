@@ -11,6 +11,22 @@
     {
         <Quepland_2.Components.GatherButtonComponent ActionText="@a"></Quepland_2.Components.GatherButtonComponent>
     }
+    @foreach(Building b in thisArea.Buildings)
+    {
+        <button @onclick="@(() => EnterBuilding(b.URL))">@b.ButtonText</button>
+    }
+    @foreach(AreaUnlock a in thisArea.UnlockableAreas)
+    {
+        if (a.HasRequirements())
+        {
+            <button @onclick="(() => GoToArea(a.AreaURL))">@a.ButtonText</button>
+        }
+        else
+        {
+            <button>@a.ButtonText</button>
+        }
+
+    }
 }
 <button @onclick="@(e => GetAxe())">Get Axe</button>
 
@@ -23,6 +39,17 @@
     {
         Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItemByName("Stone Axe"));
         GameState.UpdateState();
+    }
+    private void GoToArea(string url)
+    {
+        GameState.StopActions();
+        AreaManager.Instance.GetAreaByURL(url).IsUnlocked = true;
+        UriHelper.NavigateTo("World/" + url);
+    }
+    private void EnterBuilding(string buildingURL)
+    {
+        GameState.StopActions();
+        UriHelper.NavigateTo("World/" + areaName + "/" + buildingURL);
     }
     protected override void OnInitialized()
     {

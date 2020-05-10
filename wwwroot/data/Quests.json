@@ -1,0 +1,11 @@
+[
+  {
+    "Name": "Mayor's Assistant",
+    "Requirements": [
+      {
+        "Skill": "Woodcutting",
+        "SkillLevel": 3
+      }
+    ]
+  }
+]
