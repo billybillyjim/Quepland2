@@ -28,11 +28,13 @@ else
             GameState.InitCompleted = true;
 
         }
-        Player.Instance.Skills.Find(x => x.Name == "Woodcutting").Level = 10;
+        Player.Instance.GainExperience("Woodcutting:1000");
+        Player.Instance.Inventory.AddItem("Shuniku Berries");
+        Player.Instance.Inventory.AddMultipleOfItem("White Pine Logs", 3);
         GameState.StateChanged += OnGameStateChanged;
     }
 
-    
+
     public void Dispose()
     {
 

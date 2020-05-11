@@ -1,10 +1,23 @@
 [
   {
-    "Name": "Mayor's Assistant",
-    "Requirements": [
+    "name": "Mayor's Assistant",
+    "id": 0,
+    "completionText": "Congratulations! You completed Mayor's Assistant! The mayor has rewarded you with a copper axe and you learned a thing or two about cutting wood along the way.",
+    "progressToComplete": 6,
+    "requirements": [
       {
-        "Skill": "Woodcutting",
-        "SkillLevel": 3
+        "skill": "Woodcutting",
+        "skillLevel": 3
+      }
+    ],
+    "rewards": [
+      {
+        "skill": "Woodcutting",
+        "experienceGain": 1500
+      },
+      {
+        "item": "Copper Axe",
+        "itemAmount": 1
       }
     ]
   }

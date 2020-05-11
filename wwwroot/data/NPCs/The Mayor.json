@@ -6,7 +6,14 @@
       "responseText": "Get out of my house. Actually, could you do me a favor before you leave?",
       "buttonText": "Hello",
       "newQuestprogressValue": 1,
-      "quest": "Mayor's Assistant"
+      "quest": "Mayor's Assistant",
+      "requirements": [
+        {
+          "quest": "Mayor's Assistant",
+          "minimumQuestProgress": 0,
+          "maximumQuestProgress": 0
+        }
+      ]
     },
     {
       "responseText": "Well if you change your mind come back here and talk to me.",
@@ -50,7 +57,6 @@
     {
       "buttonText": "How do I make a sign?",
       "responseText": "You offered to help without knowing that? How am I supposed to know? Go ask the sign maker who lives up the road, he probably can help you.",
-      "quest": "Mayor's Assistant",
       "requirements": [
         {
           "quest": "Mayor's Assistant",
@@ -64,6 +70,7 @@
       "responseText": "Great work. I'll take care of having it set up out front, you're free to go now.",
       "quest": "Mayor's Assistant",
       "newQuestProgressValue": 6,
+      "consumeRequiredItems": true,
       "requirements": [
         {
           "quest": "Mayor's Assistant",

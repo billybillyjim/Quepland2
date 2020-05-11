@@ -7,7 +7,6 @@ public class Skill
     public string Name { get; set; }
 
     public int Level { get; set; }
-    public int startExperience { get; set; }
     private long _experience;
 
     public long Experience {

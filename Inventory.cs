@@ -36,6 +36,10 @@ public class Inventory
     /// <returns></returns>
     public int GetNumberOfItem(GameItem item)
     {
+        if(items.ContainsKey(item) == false)
+        {
+            return 0;
+        }
         return items[item];
     }
     /// <summary>
@@ -91,6 +95,106 @@ public class Inventory
         }
         UpdateItemCount();
         return true;
+    }
+    public bool AddItem(string itemName)
+    {
+        return AddItem(ItemManager.Instance.GetItemByName(itemName));
+    }
+    public bool AddMultipleOfItem(GameItem item, int amount)
+    {
+        if (totalItems >= maxSize && (item.IsStackable == false || HasItem(item) == false))
+        {
+            return false;
+        }
+        if (amount < 0)
+        {
+            amount = 0;
+        }
+        if (item.IsStackable)
+        {
+            return AddItemStackable(item, amount);
+        }
+        else
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                if (AddItem(item) == false)
+                {
+                    return false;
+                }
+            }
+        }
+        UpdateItemCount();
+        return true;
+    }
+    public bool AddMultipleOfItem(string itemName, int amount)
+    {
+        return AddMultipleOfItem(ItemManager.Instance.GetItemByName(itemName), amount);
+    }
+    public bool AddItemStackable(GameItem item, int amount)
+    {
+        if (totalItems >= maxSize && (item.IsStackable == false || HasItem(item) == false))
+        {
+            return false;
+        }
+        if (amount < 0)
+        {
+            amount = 0;
+        }
+
+        if (items.TryGetValue(item, out int current))
+        {
+            if (item.IsStackable)
+            {
+                if (amount > 0 && current + amount < current)
+                {
+                    return false;
+                }
+                else
+                {
+                    items[item] = current + amount;
+                }
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            if (item.IsStackable)
+            {
+                //item.itemPos = inventorySlotPos;
+                items[item] = amount;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        UpdateItemCount();
+        return true;
+    }
+    public int RemoveItems(GameItem item, int amount)
+    {
+        if (items.TryGetValue(item, out int currentAmount))
+        {
+            if (currentAmount >= amount)
+            {
+                items[item] = currentAmount - amount;
+
+                if (items[item] <= 0)
+                {
+                    items.Remove(item);
+                }
+                UpdateItemCount();
+                return amount;
+            }
+
+        }
+        UpdateItemCount();
+        return 0;
     }
     private void UpdateItemCount()
     {

@@ -24,5 +24,19 @@
     "attackSpeed": 15,
     "gatherSpeedBonus": 0.1,
     "icon": "Axe"
+  },
+
+  {
+    "Name": "Copper Axe",
+    "Description": "It's an axe made of a soft metal copper.",
+    "id": 10002,
+    "value": 150,
+    "enabledActions": "Axemanship Woodcutting",
+    "equipSlot": "Right Hand",
+    "damage": 8,
+    "requiredAction": "Axemanship",
+    "attackSpeed": 15,
+    "gatherSpeedBonus": 0.2,
+    "icon": "Axe"
   }
 ]

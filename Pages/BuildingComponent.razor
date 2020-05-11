@@ -13,10 +13,10 @@
         @npc
         @foreach (Dialog d in NPCManager.Instance.GetNPCByName(npc).Dialogs)
         {
-        @if (d.HasRequirements())
-        {
-            <button @onclick="@(() => Talk(d))">@d.ButtonText</button>
-        }
+            @if (d.HasRequirements())
+            {
+                <button @onclick="@(() => Talk(d))">@d.ButtonText</button>
+            }
 
         }
     </div>
@@ -31,13 +31,9 @@
     public string buildingURL { get; set; }
     public Building thisBuilding { get; set; }
 
-    public void Talk(Dialog d)
+    private void Talk(Dialog d)
     {
-        if(d.Quest != "None")
-        {
-            QuestManager.Instance.GetQuestByName(d.Quest).Progress = d.NewQuestProgressValue;
-        }
-        MessageManager.AddMessage(d.ResponseText);
+        d.Talk();
         GameState.UpdateState();
     }
     protected override void OnParametersSet()

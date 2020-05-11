@@ -1,0 +1,22 @@
+﻿@inject GameState GameState
+@implements IDisposable 
+<h3>Quests</h3>
+
+@foreach(Quest q in QuestManager.Instance.Quests)
+{
+    <div>@q.Name</div>
+    <div>@q.Progress</div>
+    <div>@q.ProgressToComplete</div>
+    <br/>
+}
+@code {
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

@@ -39,5 +39,14 @@
     "value": 2,
     "gatherSpeed": 8,
     "icon": "Berries"
+  },
+  {
+    "Name": "No Soliciting Sign",
+    "Description": "A poorly written sign.",
+    "gatherString": "You get an ugly sign.",
+    "id": 4,
+    "value": 0,
+    "gatherSpeed": 8,
+    "icon": "Sign"
   }
 ]

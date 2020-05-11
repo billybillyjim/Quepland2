@@ -35,7 +35,7 @@ public class NPCManager
         NPC npc = NPCs.FirstOrDefault(x => x.Name == name);
         if(npc == null)
         {
-            Console.WriteLine("No NPC of name " + name + " was found.");
+            Console.WriteLine("No NPC of name " + name + " was found. Did you add it to NPCs.json?");
             return NPCs[0];
         }
         return npc;
