@@ -1,0 +1,81 @@
+{
+  "name": "The Mayor",
+  "id": 0,
+  "dialogs": [
+    {
+      "responseText": "Get out of my house. Actually, could you do me a favor before you leave?",
+      "buttonText": "Hello",
+      "newQuestprogressValue": 1,
+      "quest": "Mayor's Assistant"
+    },
+    {
+      "responseText": "Well if you change your mind come back here and talk to me.",
+      "buttonText": "No",
+      "newQuestProgressValue": 0,
+      "quest": "Mayor's Assistant",
+      "requirements": [
+        {
+          "quest": "Mayor's Assistant",
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 1
+        }
+      ]
+    },
+    {
+      "responseText": "You're the seventh guy today to barge into my house unannounced and mess up the floor. Look at this rug. It's filthy! I need you to build me a no solicting sign to keep these adventurers out of my house.",
+      "buttonText": "What would you like?",
+      "newQuestProgressValue": 2,
+      "quest": "Mayor's Assistant",
+      "requirements": [
+        {
+          "quest": "Mayor's Assistant",
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 1
+        }
+      ]
+    },
+    {
+      "responseText": "Excellent. Now please leave me alone until you've finished.",
+      "buttonText": "Sure, I'll go make a sign.",
+      "newQuestProgressValue": 3,
+      "quest": "Mayor's Assistant",
+      "requirements": [
+        {
+          "quest": "Mayor's Assistant",
+          "minimumQuestProgress": 2,
+          "maximumQuestProgress": 2
+        }
+      ]
+    },
+    {
+      "buttonText": "How do I make a sign?",
+      "responseText": "You offered to help without knowing that? How am I supposed to know? Go ask the sign maker who lives up the road, he probably can help you.",
+      "quest": "Mayor's Assistant",
+      "requirements": [
+        {
+          "quest": "Mayor's Assistant",
+          "minimumQuestProgress": 3,
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "I've finished your sign.",
+      "responseText": "Great work. I'll take care of having it set up out front, you're free to go now.",
+      "quest": "Mayor's Assistant",
+      "newQuestProgressValue": 6,
+      "requirements": [
+        {
+          "quest": "Mayor's Assistant",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 5
+        },
+        {
+          "item": "No Soliciting Sign",
+          "itemAmount": 1
+        }
+      ]
+    }
+
+  ]
+}

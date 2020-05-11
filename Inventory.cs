@@ -113,6 +113,10 @@ public class Inventory
     }
     public bool HasToolRequirement(GameItem item)
     {
+        if(item.RequiredAction == "None")
+        {
+            return true;
+        }
         foreach (KeyValuePair<GameItem, int> i in items)
         {
             //item.Key.itemPos = inventorySlotPos;
@@ -125,6 +129,10 @@ public class Inventory
     }
     public bool HasToolRequirement(string action)
     {
+        if(action == "None")
+        {
+            return true;
+        }
         foreach (KeyValuePair<GameItem, int> i in items)
         {
             //item.Key.itemPos = inventorySlotPos;

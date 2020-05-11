@@ -6,7 +6,14 @@ public class Requirement
 	public string Item { get; set; } = "None";
 	public string Action { get; set; } = "None";
 	public string Quest { get; set; } = "None";
-	public int QuestProgress { get; set; }
+	/// <summary>
+	/// The inclusive minimum step the quest must be at to fulfill the requirement.
+	/// </summary>
+	public int MinimumQuestProgress { get; set; }
+	/// <summary>
+	/// The inclusive maximum step the quest must be at to fulfill the requirement. Max value if unset.
+	/// </summary>
+	public int MaximumQuestProgress { get; set; } = int.MaxValue;
 	public int ItemAmount { get; set; }
 	public int SkillLevel { get; set; }
 
@@ -24,9 +31,13 @@ public class Requirement
         {
 			return false;
         }
-		if(Quest != "None" && QuestManager.Instance.GetQuestByName(Quest).Progress != QuestProgress)
+		if(Quest != "None")
         {
-			return false;
+			int progress = QuestManager.Instance.GetQuestByName(Quest).Progress;
+			if(progress < MinimumQuestProgress || progress > MaximumQuestProgress)
+            {
+				return false;
+            }
         }
 
 		return true;

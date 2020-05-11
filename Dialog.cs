@@ -6,7 +6,7 @@ public class Dialog
 	public string ButtonText { get; set; } = "Unset";
 	public string ResponseText { get; set; } = "Unset";
 	public string Quest { get; set; } = "None";
-	public int QuestProgressValue { get; set; }
+	public int NewQuestProgressValue { get; set; }
 	public List<Requirement> Requirements { get; set; } = new List<Requirement>();
 
 	public bool HasRequirements()
@@ -18,6 +18,8 @@ public class Dialog
 				return false;
 			}
 		}
+
 		return true;
 	}
+	
 }

@@ -43,7 +43,7 @@ public class Player
     }
     public void GainExperience(string skillAndExp)
     {
-        if (string.IsNullOrEmpty(skillAndExp))
+        if (string.IsNullOrEmpty(skillAndExp) || skillAndExp == "None")
         {
             return;
         }
@@ -150,7 +150,7 @@ public class Player
     }
     public bool HasSkillRequirement(GameItem item)
     {
-        if(item.RequiredAction == null || item.RequiredAction == "")
+        if(item.RequiredAction == null || item.RequiredAction == "None")
         {
             return true;
         }

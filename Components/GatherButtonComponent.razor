@@ -8,7 +8,7 @@
     }
     else
     {
-        if (Player.Instance.HasSkillRequirement(item) && Player.Instance.HasToolRequirement(item))
+        if ((Player.Instance.HasSkillRequirement(item) || item.RequiredAction == "None") && (Player.Instance.HasToolRequirement(item)))
         {
             <button onclick="@(new Action(() => GatherItem(item)))">@gatherText</button>
         }

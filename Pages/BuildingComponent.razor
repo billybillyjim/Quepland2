@@ -8,15 +8,18 @@
     <div>@thisBuilding.Description</div>
     @foreach (string npc in thisBuilding.NPCs)
     {
-        foreach (Dialog d in NPCManager.Instance.GetNPCByName(npc).Dialogs)
+    <div style="border:solid 1px black;padding:5px;">
+
+        @npc
+        @foreach (Dialog d in NPCManager.Instance.GetNPCByName(npc).Dialogs)
         {
-            @if (d.HasRequirements())
-            {
-                <button @onclick="@(() => Talk(d))">@d.ButtonText</button>
-            }
-            
+        @if (d.HasRequirements())
+        {
+            <button @onclick="@(() => Talk(d))">@d.ButtonText</button>
         }
 
+        }
+    </div>
     }
 }
 
@@ -30,9 +33,9 @@
 
     public void Talk(Dialog d)
     {
-        if(d.Quest != "None" && d.QuestProgressValue > QuestManager.Instance.GetQuestByName(d.Quest).Progress)
+        if(d.Quest != "None")
         {
-            QuestManager.Instance.GetQuestByName(d.Quest).Progress = d.QuestProgressValue;
+            QuestManager.Instance.GetQuestByName(d.Quest).Progress = d.NewQuestProgressValue;
         }
         MessageManager.AddMessage(d.ResponseText);
         GameState.UpdateState();

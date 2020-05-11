@@ -21,7 +21,13 @@ public class NPCManager
     public List<NPC> NPCs = new List<NPC>();
     public async Task LoadNPCs(HttpClient Http)
     {
-        NPCs.AddRange(await Http.GetJsonAsync<NPC[]>("data/NPCs.json"));
+        List<string> npcs = new List<string>();
+        npcs.AddRange(await Http.GetJsonAsync<string[]>("data/NPCs.json"));
+        foreach(string s in npcs)
+        {
+            NPCs.Add(await Http.GetJsonAsync<NPC>("data/NPCs/" + s + ".json"));
+        }
+        
     }
 
     public NPC GetNPCByName(string name)

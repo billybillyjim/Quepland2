@@ -33,6 +33,9 @@
     "description": "You enter a thick woods consisting of mostly poplar trees. The path meanders up the mountain along a brook full of sunfish. In the distance you can see the smokestacks of a small village.",
     "areaURL": "QueplandWoods",
     "image": "Forest",
+    "actions": [
+      "Gather Red Berries:Shuniku Berries"
+    ],
     "unlockableAreas": [
       {
         "AreaURL": "Teppas",
@@ -56,6 +59,32 @@
         "description": "You enter a lavish mansion. A large chandelier hangs over a magnificent curved staircase to the second floor. The carpet near the entrance is faded and worn.",
         "npcs": [
           "The Mayor"
+        ]
+      }
+    ],
+    "unlockableAreas": [
+      {
+        "AreaURL": "LowerMtQuepleTrail",
+        "ButtonText": "Continue Through Town"
+      }
+
+    ]
+  },
+  {
+    "name": "Lower Mt Queple Trail",
+    "id": 3,
+    "isUnlocked": false,
+    "description": "Beyond the village you find a rocky terrain, sparse with trees or wildlife. There is a small shack with a sign on the top that reads, \"Signs\"",
+    "areaURL": "LowerMtQuepleTrail",
+    "icon": "Mountain",
+    "buildings": [
+      {
+        "name": "Sign Man's Signs",
+        "buttonText": "Enter the Sign Shop",
+        "url": "SignMansSigns",
+        "description": "You enter the dimly lit shack to find a thin, gray-bearded man sitting behind a desk with the words \"Sign Man\" drawn in large red letters across it. ",
+        "npcs": [
+          "The Sign Man"
         ]
       }
     ]

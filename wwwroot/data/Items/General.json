@@ -30,5 +30,14 @@
     "experienceGained": "Woodcutting:24",
     "requiredAction": "Woodcutting",
     "icon": "Log"
+  },
+  {
+    "Name": "Shuniku Berries",
+    "Description": "Disgusting tasting berries that will stain your mouth red.",
+    "gatherString": "You gather some berries.",
+    "id": 3,
+    "value": 2,
+    "gatherSpeed": 8,
+    "icon": "Berries"
   }
 ]
