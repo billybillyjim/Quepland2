@@ -5,6 +5,7 @@ public class Requirement
 	public string Skill { get; set; } = "None";
 	public string Item { get; set; } = "None";
 	public string Action { get; set; } = "None";
+	public string Location { get; set; } = "None";
 	public string Quest { get; set; } = "None";
 	/// <summary>
 	/// The inclusive minimum step the quest must be at to fulfill the requirement.
@@ -19,6 +20,10 @@ public class Requirement
 
 	public bool IsMet()
 	{
+		if(Location != "None" && GameState.Location != Location)
+        {
+			return false;
+        }
 		if (Skill != "None" && Player.Instance.HasSkillRequirement(Skill, SkillLevel) == false)
         {
 			return false;

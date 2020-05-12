@@ -1,0 +1,29 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (Item != null)
+{
+    <div style="border:solid black 1px;margin:2px;height:50px;width:50px;background-color:darkgray;position:relative;">
+        <div style="position:absolute;margin-left:2px;margin-top:-2px;color:white">@Player.Instance.Inventory.GetNumberOfItem(Item)</div>
+        <img style="height: 46px;width: 46px;margin:2px;" src="/data/Images/@(Item.Icon).png"
+             onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.Name, Item.Description)))"
+             onmouseout="@(new Action(() => GameState.HideTooltip()))" />
+    </div>
+}
+else
+{
+    <div style="border:solid black 1px;margin:2px;height:50px;width:50px;background-color:gray"></div>
+}
+@code {
+    [Parameter]
+    public GameItem Item { get; set; }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

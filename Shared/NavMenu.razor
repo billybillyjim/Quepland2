@@ -10,7 +10,9 @@
 
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <ul class="nav flex-column">
-
+        <li class="nav-item px-3">
+            <button onclick="@(new Action(() => GoToArea("Bank")))">Bank</button>
+        </li>
         @foreach (Area a in AreaManager.Instance.Areas)
         {
             if (a.IsUnlocked && a.IsHidden == false)
@@ -29,6 +31,7 @@
 
     public void GoToArea(string name)
     {
+        GameState.Location = name;
         UriHelper.NavigateTo("World/" + name + "/");
         GameState.UpdateState();
     }

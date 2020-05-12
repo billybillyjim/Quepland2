@@ -1,0 +1,63 @@
+﻿@page "/World/Bank/"
+@inject GameState GameState
+@implements IDisposable
+
+<h3>Bank</h3>
+
+<div style="display:flex;flex-wrap:wrap;">
+@foreach(GameItem item in Bank.Instance.Inventory.GetItems().Keys)
+{
+    <div @onclick="@(() => Withdraw(item))">
+    <Quepland_2.Components.ItemBoxComponent Item="@item"></Quepland_2.Components.ItemBoxComponent>
+
+    </div>
+}
+@for(int i = 0; i< GetEmptyItemsToFillRow(); i++)
+{
+    int temp = i;
+    if(temp % itemsPerRow == 0)
+    {
+        <br/>
+    }
+    <Quepland_2.Components.ItemBoxComponent Item="@null"></Quepland_2.Components.ItemBoxComponent>
+}
+    </div>
+@code {
+    int WithdrawAmount = 1;
+    int itemsPerRow = 10;
+    private int GetEmptyItemsToFillRow()
+    {
+        return itemsPerRow - (Bank.Instance.Inventory.GetItems().Keys.Count % itemsPerRow);
+    }
+    private void Withdraw(GameItem item)
+    {
+        WithdrawAmount = Math.Max(0, WithdrawAmount);
+
+        int maxWithdraw;
+        //If the item is stackable and the player has a stack in their inventory already, or the player has space for another item
+        if ((item.IsStackable && Player.Instance.Inventory.HasItem(item) && Player.Instance.Inventory.GetAvailableSpaces() == 0) ||
+             (item.IsStackable && Player.Instance.Inventory.GetAvailableSpaces() > 0))
+        {
+            maxWithdraw = Math.Min(WithdrawAmount, Bank.Instance.Inventory.GetNumberOfItem(item));
+        }
+        else
+        {
+            //Gets the smallest of the amount, inventory space, and number in the bank.
+            maxWithdraw = Math.Min(Math.Min(WithdrawAmount, Player.Instance.Inventory.GetAvailableSpaces()), Bank.Instance.Inventory.GetNumberOfItem(item));
+        }
+        if (Player.Instance.Inventory.AddMultipleOfItem(item, maxWithdraw))
+        {
+            Bank.Instance.Inventory.RemoveItems(item, maxWithdraw);
+        }
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

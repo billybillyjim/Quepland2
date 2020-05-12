@@ -43,12 +43,14 @@
     private void GoToArea(string url)
     {
         GameState.StopActions();
+        GameState.Location = url;
         AreaManager.Instance.GetAreaByURL(url).IsUnlocked = true;
         UriHelper.NavigateTo("World/" + url);
     }
     private void EnterBuilding(string buildingURL)
     {
         GameState.StopActions();
+        GameState.Location = areaName + "/" + buildingURL;
         UriHelper.NavigateTo("World/" + areaName + "/" + buildingURL);
     }
     protected override void OnInitialized()

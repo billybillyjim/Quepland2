@@ -13,6 +13,7 @@ using System.Threading.Tasks;
     public IJSRuntime JSRuntime;
 
     public static string Version { get; set; } = "0.0.1";
+    public static string Location { get; set; } = "";
     public static bool InitCompleted { get; set; } = false;
     public static bool ShowStartMenu { get; set; } = true;
     private bool stopActions = false;
