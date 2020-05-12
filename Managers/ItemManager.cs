@@ -18,11 +18,15 @@ public class ItemManager
         }
     }
     public List<GameItem> Items = new List<GameItem>();
+    public List<Recipe> Recipes = new List<Recipe>();
     public async Task LoadItems(HttpClient Http)
     {
         Items.AddRange(await Http.GetJsonAsync<GameItem[]>("data/Items/General.json"));
         Items.AddRange(await Http.GetJsonAsync<Weapon[]>("data/Items/Weapons.json"));
         Items.AddRange(await Http.GetJsonAsync<Armor[]>("data/Items/Armors.json"));
+        Items.AddRange(await Http.GetJsonAsync<Armor[]>("data/Items/WoodworkingItems.json"));
+
+        Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/WoodworkingRecipes.json"));
     }
 
 

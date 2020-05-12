@@ -4,7 +4,7 @@
 @if (Item != null)
 {
     <div style="border:solid black 1px;margin:2px;height:50px;width:50px;background-color:darkgray;position:relative;">
-        <div style="position:absolute;margin-left:2px;margin-top:-2px;color:white">@Player.Instance.Inventory.GetNumberOfItem(Item)</div>
+        <div style="position:absolute;margin-left:2px;margin-top:-2px;color:white">@GetAmount()</div>
         <img style="height: 46px;width: 46px;margin:2px;" src="/data/Images/@(Item.Icon).png"
              onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.Name, Item.Description)))"
              onmouseout="@(new Action(() => GameState.HideTooltip()))" />
@@ -17,6 +17,17 @@ else
 @code {
     [Parameter]
     public GameItem Item { get; set; }
+    [Parameter]
+    public bool ShowAmount { get; set; }
+
+    private string GetAmount()
+    {
+        if (ShowAmount)
+        {
+            return Player.Instance.Inventory.GetNumberOfItem(Item);
+        }
+        return "";
+    }
     protected override void OnInitialized()
     {
         GameState.StateChanged += OnGameStateChanged;

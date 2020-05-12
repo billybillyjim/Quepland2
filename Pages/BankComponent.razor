@@ -8,7 +8,7 @@
 @foreach(GameItem item in Bank.Instance.Inventory.GetItems().Keys)
 {
     <div @onclick="@(() => Withdraw(item))">
-    <Quepland_2.Components.ItemBoxComponent Item="@item"></Quepland_2.Components.ItemBoxComponent>
+    <Quepland_2.Components.ItemBoxComponent Item="@item" ShowAmount="@true"></Quepland_2.Components.ItemBoxComponent>
 
     </div>
 }

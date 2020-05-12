@@ -1,0 +1,27 @@
+﻿@inject GameState GameState
+@implements IDisposable 
+
+@foreach (Recipe recipe in ItemManager.Instance.Recipes)
+{
+    if (recipe.CanCreate())
+    {
+        <div @onclick="@(() => Craft(recipe))"><ItemBoxComponent Item="@recipe.Output"></ItemBoxComponent></div>
+    }
+}
+
+@code {
+    private void Craft(Recipe r)
+    {
+        r.Create();
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

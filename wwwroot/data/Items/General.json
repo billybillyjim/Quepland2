@@ -48,5 +48,12 @@
     "value": 0,
     "gatherSpeed": 8,
     "icon": "Sign"
+  },
+  {
+    "Name": "Wood Carving Knife",
+    "Description": "A specially designed knife for carving wood.",
+    "id": 5,
+    "value": 60,
+    "icon": "Knife"
   }
 ]

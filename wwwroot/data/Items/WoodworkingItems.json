@@ -1,0 +1,13 @@
+[
+  {
+    "Name": "White Pine Arrow Shafts",
+    "Description": "They're like skinny, baby logs. Feathers can be attached to the end.",
+    "gatherString": "You make some arrow shafts from the white pine wood.",
+    "id": 30000,
+    "value": 1,
+    "requiredLevel": 1,
+    "experienceGained": "Woodworking:30",
+    "requiredAction": "Woodworking",
+    "icon": "ArrowShafts"
+  }
+]

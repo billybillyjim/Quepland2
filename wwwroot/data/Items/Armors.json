@@ -1,7 +1,7 @@
 [
   {
     "Name": "White Belt",
-    "id": 200000,
+    "id": 20000,
     "value": 500,
     "Description": "A white belt that proves you don't know anything yet.",
     "armorBonus": 1,

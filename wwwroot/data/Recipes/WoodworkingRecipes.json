@@ -1,0 +1,16 @@
+[
+  {
+    "outputItemName": "White Pine Arrow Shafts",
+    "ingredients": [
+      {
+        "item": "White Pine Logs"      
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ]
+
+    
+  }
+]
