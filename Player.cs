@@ -17,10 +17,13 @@ public class Player
             return instance;
         }
     }
+    public string Name { get; set; } = "";
     public Inventory Inventory = new Inventory(30);
     private List<GameItem> equippedItems = new List<GameItem>();
     public List<Skill> Skills = new List<Skill>();
     public int MaxHP = 50;
+    public int CurrentHP;
+    public int TicksToNextAttack;
     public string LastLevelledSkill;
     public bool LastLevelledSkillLocked;
     
@@ -65,6 +68,51 @@ public class Player
             item.IsEquipped = false;
             equippedItems.Remove(item);
         }
+    }
+    public int GetTotalDamage()
+    {
+        int total = 0;
+        total += Skills.Find(x => x.Name == "Strength").GetSkillLevel();
+        foreach(GameItem item in equippedItems)
+        {
+            Weapon w = item as Weapon;
+            if(w != null)
+            {
+                total += w.Damage;
+            }
+            Armor a = item as Armor;
+            if(a != null)
+            {
+                total += a.Damage;
+            }
+        }
+        return total;
+    }
+    public Weapon GetWeapon()
+    {
+        return (Weapon)equippedItems.Find(x => x.EquipSlot == "Right Hand");
+    }
+    public int GetWeaponAttackSpeed()
+    {
+        if (GetWeapon() != null)
+        {
+            return Math.Max(4, GetWeapon().AttackSpeed - (GetLevel("Deftness") / 15));
+        }
+        else
+        {
+            return Math.Max(8, 12 - (GetLevel("Deftness") / 15));
+        }
+    }
+    public int GetLevel(string skillName)
+    {
+        foreach (Skill skill in Skills)
+        {
+            if (skill.Name == skillName)
+            {
+                return skill.GetSkillLevel();
+            }
+        }
+        return 0;
     }
     public void GainExperience(Skill skill, long amount)
     {

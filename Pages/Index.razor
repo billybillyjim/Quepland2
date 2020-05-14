@@ -23,6 +23,7 @@ else
             await Player.Instance.LoadSkills(Http);
             await NPCManager.Instance.LoadNPCs(Http);
             await QuestManager.Instance.LoadQuests(Http);
+            await BattleManager.Instance.LoadMonsters(Http);
             await PlayFabManager.Connect();
             GameState.Start();
             GameState.InitCompleted = true;

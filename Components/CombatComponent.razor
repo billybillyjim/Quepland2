@@ -1,0 +1,33 @@
+﻿@page "/World/Battle/"
+@inject GameState GameState
+@implements IDisposable
+
+@if (BattleManager.Instance.CurrentOpponent != null)
+{
+    <div>
+        @BattleManager.Instance.CurrentOpponent.Name
+        <div>
+            @BattleManager.Instance.CurrentOpponent.CurrentHP / @BattleManager.Instance.CurrentOpponent.HP
+        </div>
+    </div>
+    <div>
+        @Player.Instance.Name
+        <div>
+            @Player.Instance.CurrentHP / @Player.Instance.MaxHP
+        </div>
+    </div>
+}
+
+
+@code {
+
+    protected override void OnInitialized()
+    {        
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

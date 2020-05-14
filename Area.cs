@@ -28,6 +28,7 @@ public class Area
     public bool IsUnlocked { get; set; }
     public bool IsHidden { get; set; }
     public List<string> Actions { get; set; } = new List<string>();
+    public List<string> Monsters { get; set; } = new List<string>();
     public List<AreaUnlock> UnlockableAreas { get; set; } = new List<AreaUnlock>();
     public List<Building> Buildings { get; set; } = new List<Building>();
 

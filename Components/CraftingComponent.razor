@@ -1,6 +1,14 @@
 ﻿@inject GameState GameState
 @implements IDisposable 
 
+@if(GameState.CurrentRecipe != null)
+{
+    <div style="height:30px;"><button @onclick="@(() => Stop())">Stop Crafting @GameState.CurrentRecipe.OutputItemName</button></div>
+}
+else
+{
+    <div style="height:30px"></div>
+}
 @foreach (Recipe recipe in ItemManager.Instance.Recipes)
 {
     if (recipe.CanCreate())
@@ -12,7 +20,12 @@
 @code {
     private void Craft(Recipe r)
     {
-        r.Create();
+        GameState.CurrentRecipe = r;
+        GameState.UpdateState();
+    }
+    private void Stop()
+    {
+        GameState.StopActions();
         GameState.UpdateState();
     }
     protected override void OnInitialized()

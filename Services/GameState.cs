@@ -41,7 +41,8 @@ using System.Threading.Tasks;
         }
     }
     public GameItem CurrentGatherItem;
-    public static int TicksToNextGather;
+    public Recipe CurrentRecipe;
+    public static int TicksToNextAction;
     public static int GameWindowWidth = 1200;
 
     public void Start()
@@ -56,15 +57,26 @@ using System.Threading.Tasks;
             {
                 ClearActions();
             }
-            if(TicksToNextGather <= 0 && CurrentGatherItem != null)
+            if(TicksToNextAction <= 0 && CurrentGatherItem != null)
             {
                 GatherItem();
             }
-            TicksToNextGather--;
+            else if(TicksToNextAction <= 0 && CurrentRecipe != null)
+            {
+                CraftItem();
+            }
+            else if(TicksToNextAction <= 0 && BattleManager.Instance.CurrentOpponent != null)
+            {
+                BattleManager.Instance.DoBattle();
+            }
+            TicksToNextAction--;
             StateHasChanged();
         }), null, 200, 200);
         StateHasChanged();
     }
+    /// <summary>
+    /// Pauses actions at the beginning of the next game tick.
+    /// </summary>
     public void StopActions()
     {
         stopActions = true;
@@ -72,6 +84,7 @@ using System.Threading.Tasks;
     private void ClearActions()
     {
         CurrentGatherItem = null;
+        CurrentRecipe = null;
         stopActions = false;
     }
     public void Pause()
@@ -88,9 +101,28 @@ using System.Threading.Tasks;
         }
         else
         {
-            TicksToNextGather = CurrentGatherItem.GatherSpeed.ToGaussianRandom();
+            TicksToNextAction = CurrentGatherItem.GatherSpeed.ToGaussianRandom();
             MessageManager.AddMessage(CurrentGatherItem.GatherString);
         }
+    }
+    private void CraftItem()
+    {
+        if (CurrentRecipe == null)
+        {
+            return;
+        }
+        if (CurrentRecipe.Create())
+        {
+            TicksToNextAction = CurrentRecipe.CraftingSpeed;
+            MessageManager.AddMessage(CurrentRecipe.Output.GatherString);
+        }
+        else
+        {
+            MessageManager.AddMessage("You have run out of materials.");
+            CurrentRecipe = null;
+        }
+
+        
     }
     public void ShowTooltip(MouseEventArgs args, string tipName, bool alignRight)
     {

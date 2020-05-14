@@ -3,7 +3,8 @@
 
 @if (Item != null)
 {
-    <div style="border:solid black 1px;margin:2px;height:50px;width:50px;background-color:darkgray;position:relative;">
+
+    <div style="@(GetBackground())margin:2px;height:50px;width:50px;position:relative;">
         <div style="position:absolute;margin-left:2px;margin-top:-2px;color:white">@GetAmount()</div>
         <img style="height: 46px;width: 46px;margin:2px;" src="/data/Images/@(Item.Icon).png"
              onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.Name, Item.Description)))"
@@ -19,14 +20,31 @@ else
     public GameItem Item { get; set; }
     [Parameter]
     public bool ShowAmount { get; set; }
+    [Parameter]
+    public Inventory Inventory { get; set; }
 
     private string GetAmount()
     {
         if (ShowAmount)
         {
-            return Player.Instance.Inventory.GetNumberOfItem(Item);
+            if(Inventory == null)
+            {
+                return "" + Player.Instance.Inventory.GetNumberOfItem(Item);
+            }
+            return "" + Inventory.GetNumberOfItem(Item);
         }
         return "";
+    }
+    private string GetBackground()
+    {
+        if(Item != null && Item.IsEquipped)
+        {
+            return "border:solid black 1px;background-color:green;";
+        }
+        else
+        {
+            return "border:solid black 1px;background-color:darkgray;";
+        }
     }
     protected override void OnInitialized()
     {
@@ -34,6 +52,7 @@ else
     }
     public void Dispose()
     {
+        GameState.HideTooltip();
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();

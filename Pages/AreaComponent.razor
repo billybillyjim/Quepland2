@@ -1,6 +1,7 @@
 ﻿@page "/World/{areaName}"
 @inject GameState GameState
 @inject NavigationManager UriHelper
+@implements IDisposable
 
 @if (thisArea != null)
 {
@@ -28,7 +29,7 @@
 
     }
 }
-<button @onclick="@(e => GetAxe())">Get Axe</button>
+<button @onclick="@(e => FindBattles())">Battle</button>
 
 @code {
     [Parameter]
@@ -39,6 +40,13 @@
     {
         Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItemByName("Stone Axe"));
         GameState.UpdateState();
+    }
+    private void FindBattles()
+    {
+        GameState.StopActions();
+        BattleManager.Instance.StartBattle(thisArea);
+        GameState.Location = "Battle";
+        UriHelper.NavigateTo("World/Battle/");
     }
     private void GoToArea(string url)
     {

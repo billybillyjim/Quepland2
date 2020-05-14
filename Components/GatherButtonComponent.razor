@@ -39,8 +39,9 @@
             GameState.UpdateState();
             return;
         }
+
         GameState.CurrentGatherItem = i;
-        GameState.TicksToNextGather = GameState.CurrentGatherItem.GatherSpeed.ToGaussianRandom();
+        GameState.TicksToNextAction = GameState.CurrentGatherItem.GatherSpeed.ToGaussianRandom();
         GameState.UpdateState();
     }
     public string GetRequirementTooltip()

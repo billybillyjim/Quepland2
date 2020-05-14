@@ -13,6 +13,7 @@ public class Recipe
         }
     }
     public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
+    public int CraftingSpeed { get; set; } = 12;
 
     /// <summary>
     /// Checks to see if the player has enough of each ingredient.
@@ -29,7 +30,7 @@ public class Recipe
         }
         return true;
     }
-    public void Create()
+    public bool Create()
     {
         if (CanCreate())
         {
@@ -40,7 +41,13 @@ public class Recipe
                     Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName(ingredient.Item), ingredient.Amount);
                 }
             }
+            Player.Instance.GainExperience(Output.ExperienceGained);
             Player.Instance.Inventory.AddItem(Output);
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

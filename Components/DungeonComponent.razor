@@ -1,0 +1,22 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+<button>Spelunk</button>
+<div>
+    Progress
+    <div class="progress">
+        <div class="progress-bar"></div>
+    </div>
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

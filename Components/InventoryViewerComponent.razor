@@ -2,11 +2,13 @@
 @implements IDisposable
 
 <ItemViewerComponent Item="@SelectedItem"></ItemViewerComponent>
-<div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:5px;margin:5px;">
-    @foreach(GameItem item in Player.Instance.Inventory.GetItems().Keys)
+<div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:8px;margin:5px;">
+    @foreach (GameItem item in Player.Instance.Inventory.GetItems().Keys)
     {
-        <div onclick="@(new Action(() => SelectItem(item)))"><ItemBoxComponent Item="@item" ShowAmount="@true"></ItemBoxComponent></div>
-        
+
+            <div onclick="@(new Action(() => SelectItem(item)))"><ItemBoxComponent Item="@item" ShowAmount="@true"></ItemBoxComponent></div>
+
+
     }
     @for (int i = 0; i < Player.Instance.Inventory.GetSize() - Player.Instance.Inventory.GetItems().Keys.Count; i++)
     {

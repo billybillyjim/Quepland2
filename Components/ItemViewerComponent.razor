@@ -1,4 +1,5 @@
 ﻿@inject GameState GameState
+@implements IDisposable
     <div style="        height: 80px;
         width: 290px;
         border: solid black 1px;
@@ -10,10 +11,18 @@
         {
             <div>@Item.Name</div>
             <div>@Item.Description</div>
-            <div>@Player.Instance.Inventory.GetNumberOfItem(Item)</div>
-            @if(Item as Weapon != null)
+            @if (Item as Weapon != null)
             {
-                <div style="float:right;position:relative;"><button @onclick="@(() => Player.Instance.Equip(Item))">Equip</button></div>
+                if (Item.IsEquipped)
+                {
+                    <div style="float:right;position:relative;bottom:35px;"><button @onclick="@(() => Player.Instance.UnequipItem(Item))">Unequip</button></div>
+
+                }
+                else
+                {
+                    <div style="float:right;position:relative;bottom:35px;"><button @onclick="@(() => Player.Instance.Equip(Item))">Equip</button></div>
+
+                }
             }
         }
     </div>

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Chicken",
+    "hp": 10,
+    "attackSpeed": 10,
+    "armor": 0,
+    "damage": 2
+  },
+  {
+    "name": "Rooster",
+    "hp": 15,
+    "attackSpeed": 8,
+    "armor": 0,
+    "damage": 3
+  }
+]
