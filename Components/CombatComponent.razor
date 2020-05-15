@@ -50,11 +50,11 @@
     }
     private string GetOpponentAttackProgress()
     {
-        return (((double)BattleManager.Instance.CurrentOpponent.TicksToNextAttack / BattleManager.Instance.CurrentOpponent.AttackSpeed) * 100d) + "%";
+        return (100 - (((double)BattleManager.Instance.CurrentOpponent.TicksToNextAttack / BattleManager.Instance.CurrentOpponent.AttackSpeed) * 100d)) + "%";
     }
     private string GetPlayerAttackProgress()
     {
-        return (((double)Player.Instance.TicksToNextAttack / Player.Instance.GetWeaponAttackSpeed()) * 100d) + "%";
+        return (100 - (((double)Player.Instance.TicksToNextAttack / Player.Instance.GetWeaponAttackSpeed()) * 100d)) + "%";
     }
     protected override void OnInitialized()
     {

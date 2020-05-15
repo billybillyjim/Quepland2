@@ -12,11 +12,11 @@
     {
         <Quepland_2.Components.GatherButtonComponent ActionText="@a"></Quepland_2.Components.GatherButtonComponent>
     }
-    @foreach(Building b in thisArea.Buildings)
+    @foreach (Building b in thisArea.Buildings)
     {
         <button @onclick="@(() => EnterBuilding(b.URL))">@b.ButtonText</button>
     }
-    @foreach(AreaUnlock a in thisArea.UnlockableAreas)
+    @foreach (AreaUnlock a in thisArea.UnlockableAreas)
     {
         if (a.HasRequirements())
         {
@@ -28,8 +28,17 @@
         }
 
     }
+    @if (thisArea.DungeonName != null)
+    {
+        <button @onclick="@(() => EnterDungeon(thisArea.Dungeon.URL))">Enter @thisArea.Dungeon.Name</button>
+    }
+    @if (thisArea.Monsters != null && thisArea.Monsters.Count > 0)
+    {
+        <button @onclick="@(e => FindBattles())">Battle</button>
+    }
 }
-<button @onclick="@(e => FindBattles())">Battle</button>
+
+
 
 @code {
     [Parameter]
@@ -61,6 +70,12 @@
         GameState.Location = areaName + "/" + buildingURL;
         UriHelper.NavigateTo("World/" + areaName + "/" + buildingURL);
     }
+    private void EnterDungeon(string dungeonURL)
+    {
+        GameState.StopActions();
+        GameState.Location = dungeonURL;
+        UriHelper.NavigateTo("Underworld/" + dungeonURL);
+    }
     protected override void OnInitialized()
     {
         GameState.StateChanged += OnGameStateChanged;
@@ -68,6 +83,7 @@
     protected override void OnParametersSet()
     {
         thisArea = AreaManager.Instance.GetAreaByURL(areaName);
+
         GameState.UpdateState();
     }
     public void Dispose()

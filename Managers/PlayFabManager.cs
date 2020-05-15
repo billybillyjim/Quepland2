@@ -93,7 +93,7 @@ public static class PlayFabManager
         }
 
     }
-    public async static Task SaveGame(string data)
+    public async static Task SaveGame()
     {
         var time = await PlayFabClientAPI.GetTimeAsync(new GetTimeRequest());
         DateTime t = new DateTime();
@@ -110,14 +110,14 @@ public static class PlayFabManager
         {
             Data = new Dictionary<string, string>()
             {
-                { "TestData", data }
+                { "LastSave", t.ToString() }
             }
         });
 
     }
     public async static Task LoadGameFromCloud()
     {
-        var serializerSettings = new JsonSerializerSettings { ObjectCreationHandling = ObjectCreationHandling.Replace };
+        //var serializerSettings = new JsonSerializerSettings { ObjectCreationHandling = ObjectCreationHandling.Replace };
         var result = (await PlayFabClientAPI.GetUserDataAsync(new GetUserDataRequest()));
         if (result.Error != null)
         {

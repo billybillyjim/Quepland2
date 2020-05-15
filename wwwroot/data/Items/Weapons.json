@@ -2,7 +2,6 @@
   {
     "Name": "Copper Knife",
     "Description": "Maybe the softest knife you've ever seen.",
-    "id": 10000,
     "value": 150,
     "requiredAction": "Knifesmanship",
     "enabledActions": "Knifesmanship",
@@ -15,7 +14,6 @@
   {
     "Name": "Stone Axe",
     "Description": "It's an axe made of stone.",
-    "id": 10001,
     "value": 25,
     "enabledActions": "Axemanship Woodcutting",
     "equipSlot": "Right Hand",
@@ -29,7 +27,6 @@
   {
     "Name": "Copper Axe",
     "Description": "It's an axe made of a soft metal copper.",
-    "id": 10002,
     "value": 150,
     "enabledActions": "Axemanship Woodcutting",
     "equipSlot": "Right Hand",

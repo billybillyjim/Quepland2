@@ -25,6 +25,7 @@ public class ItemManager
         Items.AddRange(await Http.GetJsonAsync<Weapon[]>("data/Items/Weapons.json"));
         Items.AddRange(await Http.GetJsonAsync<Armor[]>("data/Items/Armors.json"));
         Items.AddRange(await Http.GetJsonAsync<Armor[]>("data/Items/WoodworkingItems.json"));
+        Items.AddRange(await Http.GetJsonAsync<Armor[]>("data/Items/Ores.json"));
 
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/WoodworkingRecipes.json"));
     }

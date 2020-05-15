@@ -1,0 +1,24 @@
+[
+  {
+    "Name": "Copper Ore",
+    "Description": "It's a very soft, green ore.",
+    "gatherString": "You mine some copper ore.",
+    "value": 10,
+    "gatherSpeed": 15,
+    "requiredLevel": 1,
+    "experienceGained": "Mining:8",
+    "requiredAction": "Mining",
+    "icon": "Ore"
+  },
+  {
+    "Name": "Tin Ore",
+    "Description": "A beautiful ore with ditetragonal dipramidal crystals.",
+    "gatherString": "You mine some tin ore.",
+    "value": 10,
+    "gatherSpeed": 15,
+    "requiredLevel": 1,
+    "experienceGained": "Mining:8",
+    "requiredAction": "Mining",
+    "icon": "Ore"
+  }
+]

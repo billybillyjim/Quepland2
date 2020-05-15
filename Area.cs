@@ -31,6 +31,19 @@ public class Area
     public List<string> Monsters { get; set; } = new List<string>();
     public List<AreaUnlock> UnlockableAreas { get; set; } = new List<AreaUnlock>();
     public List<Building> Buildings { get; set; } = new List<Building>();
+    public string DungeonName { get; set; }
+    private Dungeon _dungeon;
+    public Dungeon Dungeon
+    {
+        get
+        {
+            if(_dungeon == null && DungeonName != null)
+            {
+                _dungeon = AreaManager.Instance.Dungeons.FirstOrDefault(x => x.Name == DungeonName);
+            }
+            return _dungeon;
+        }
+    }
 
 
     public Building GetBuildingByURL(string url)

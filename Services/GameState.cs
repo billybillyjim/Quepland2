@@ -65,7 +65,7 @@ using System.Threading.Tasks;
             {
                 CraftItem();
             }
-            else if(TicksToNextAction <= 0 && BattleManager.Instance.CurrentOpponent != null)
+            else if(BattleManager.Instance.CurrentOpponent != null)
             {
                 BattleManager.Instance.DoBattle();
             }

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Queple Cave",
+    "url": "QuepleCave",
+    "size": 50,
+    "areaURLs": [
+      "CopperMine",
+      "TinMine",
+      "QuepleCaveSmithy"
+    ],
+    "monsterNames": [
+      "Chicken",
+      "Rooster"
+    ]
+  }
+]

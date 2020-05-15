@@ -15,20 +15,15 @@ public class BattleManager
     public Monster CurrentOpponent;
     public Area CurrentArea;
     public bool BattleHasEnded;
-    private static Random random = new Random();
+    private static readonly Random random = new Random();
     public async Task LoadMonsters(HttpClient Http)
     {
         Monsters.AddRange(await Http.GetJsonAsync<Monster[]>("data/Monsters.json"));
     }
-    public void StartBattle(Area area)
+    public void StartBattle()
     {
-        CurrentArea = area;
-        int r = random.Next(0, CurrentArea.Monsters.Count);
-        CurrentOpponent = Monsters.FirstOrDefault(x => x.Name == CurrentArea.Monsters[r]);
-        Console.WriteLine("Random number:" + r + ", Count:" + CurrentArea.Monsters.Count);
-        if(CurrentOpponent == null)
+        if (CurrentOpponent == null)
         {
-            Console.WriteLine("Failed to find monster in area " + area.Name);
             return;
         }
         else
@@ -37,10 +32,19 @@ public class BattleManager
             CurrentOpponent.TicksToNextAttack = CurrentOpponent.AttackSpeed;
             BattleHasEnded = false;
         }
+
+    }
+    public void StartBattle(Area area)
+    {
+        CurrentArea = area;
+        int r = random.Next(0, CurrentArea.Monsters.Count);
+        CurrentOpponent = Monsters.FirstOrDefault(x => x.Name == CurrentArea.Monsters[r]);
+        StartBattle();
         
     }
     public void DoBattle()
     {
+        Console.WriteLine("Doing battle");
         if(BattleHasEnded == false)
         {
             CurrentOpponent.TicksToNextAttack--;
@@ -82,6 +86,10 @@ public class BattleManager
         BattleHasEnded = true;
     }
 
+    public Monster GetMonsterByName(string name)
+    {
+        return Monsters.FirstOrDefault(x => x.Name == name);
+    }
 
 }
 

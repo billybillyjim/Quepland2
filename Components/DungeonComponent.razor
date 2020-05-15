@@ -1,15 +1,83 @@
-﻿@inject GameState GameState
+﻿@page "/Underworld/{DungeonURL}"
+@inject GameState GameState
 @implements IDisposable
 
-<button>Spelunk</button>
-<div>
-    Progress
-    <div class="progress">
-        <div class="progress-bar"></div>
-    </div>
-</div>
+@if (Dungeon != null)
+{
+    @if (IsFighting)
+    {
+        <CombatComponent></CombatComponent>
+        @if(BattleManager.Instance.CurrentOpponent != null && BattleManager.Instance.CurrentOpponent.CurrentHP <= 0)
+        {
+            <button @onclick="@(() => EndFight())">Return</button>
+        }
+    }
+    else
+    {
+        @if (Dungeon.Progress < 100)
+        {
+            <button @onclick="@(() => Spelunk())">Spelunk</button>
+            <div>
+                Progress
+                <div class="progress">
+                    <div class="progress-bar" style="width:@(Dungeon.GetPercentProgress())%"></div>
+                </div>
+            </div>
+        }
+        <div>
+            Go to:
+            @foreach (Area area in Dungeon.GetUnlockedAreas() ?? Enumerable.Empty<Area>())
+            {
+                <button>@area.Name</button>
+            }
+        </div>
+    }
+
+}
+
 
 @code {
+    [Parameter]
+    public string DungeonURL { get; set; }
+    public Dungeon Dungeon { get; set; }
+    private static Random rand = new Random();
+    private bool IsFighting;
+
+    public void Spelunk()
+    {
+        int action = rand.Next(0, (int)(Dungeon.Size - Dungeon.Progress));
+        if (Dungeon.GetLockedAreas().Count > action)
+        {
+            Area areaToUnlock = Dungeon.GetRandomLockedArea();
+            if (areaToUnlock != null)
+            {
+                areaToUnlock.IsUnlocked = true;
+                MessageManager.AddMessage("While spelunking you discovered a new area:" + areaToUnlock.Name);
+            }
+        }
+        else
+        {
+            Monster monsterToFight = Dungeon.GetRandomMonster();
+            if (monsterToFight != null)
+            {
+                BattleManager.Instance.CurrentOpponent = monsterToFight;
+                BattleManager.Instance.StartBattle();
+                IsFighting = true;
+            }
+        }
+        Dungeon.Progress++;
+        GameState.UpdateState();
+    }
+    private void EndFight()
+    {
+        IsFighting = false;
+        GameState.UpdateState();
+    }
+    protected override void OnParametersSet()
+    {
+        Dungeon = AreaManager.Instance.Dungeons.FirstOrDefault(x => x.URL == DungeonURL);
+        GameState.UpdateState();
+    }
     protected override void OnInitialized()
     {
         GameState.StateChanged += OnGameStateChanged;

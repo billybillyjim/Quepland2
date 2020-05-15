@@ -2,7 +2,6 @@
   {
     "Name": "Coins",
     "Description": "Cash Money.",
-    "id": 0,
     "value": 1,
     "isStackable": true,
     "icon": "Gold"
@@ -11,7 +10,6 @@
     "Name": "White Pine Logs",
     "Description": "It's a very soft wood.",
     "gatherString": "You chop some white pine logs.",
-    "id": 1,
     "value": 3,
     "gatherSpeed": 10,
     "requiredLevel": 1,
@@ -23,7 +21,6 @@
     "Name": "Poplar Logs",
     "Description": "It's a less soft wood.",
     "gatherString": "You chop some poplar logs.",
-    "id": 2,
     "value": 9,
     "gatherSpeed": 30,
     "requiredLevel": 8,
@@ -35,7 +32,6 @@
     "Name": "Shuniku Berries",
     "Description": "Disgusting tasting berries that will stain your mouth red.",
     "gatherString": "You gather some berries.",
-    "id": 3,
     "value": 2,
     "gatherSpeed": 8,
     "icon": "Berries"
@@ -44,7 +40,6 @@
     "Name": "No Soliciting Sign",
     "Description": "A poorly written sign.",
     "gatherString": "You get an ugly sign.",
-    "id": 4,
     "value": 0,
     "gatherSpeed": 8,
     "icon": "Sign"
@@ -52,7 +47,6 @@
   {
     "Name": "Wood Carving Knife",
     "Description": "A specially designed knife for carving wood.",
-    "id": 5,
     "value": 60,
     "icon": "Knife"
   }

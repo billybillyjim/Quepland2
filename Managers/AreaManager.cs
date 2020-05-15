@@ -19,9 +19,11 @@ public class AreaManager
         }
     }
     public List<Area> Areas = new List<Area>();
+    public List<Dungeon> Dungeons = new List<Dungeon>();
     public async Task LoadAreas(HttpClient Http)
     {
-        Areas.AddRange(await Http.GetJsonAsync<Area[]>("data/Areas.json"));
+        Areas.AddRange(await Http.GetJsonAsync<Area[]>("data/Areas/MountQueple.json"));
+        Dungeons.AddRange(await Http.GetJsonAsync<Dungeon[]>("data/Dungeons/QueplandDungeons.json"));
     }
     public Area GetAreaByName(string name)
     {
