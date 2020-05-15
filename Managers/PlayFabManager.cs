@@ -18,7 +18,6 @@ public static class PlayFabManager
     public static DateTime DateLastSave;
     public static bool IsConnected;
     public static IJSRuntime jSRuntime;
-    public static IJSInProcessRuntime jSInProcessRuntime;
     public async static Task Connect()
     {
         await ConnectToKongregate();
@@ -29,12 +28,15 @@ public static class PlayFabManager
             var loginTask = await PlayFabClientAPI.LoginWithKongregateAsync(request);
             OnLoginComplete(loginTask);
         }
-        else
+
+        //To do:Without a good way to link a browser to a person, there's no point in making a custom ID save; if the player
+        //loses their save, they will lose the Guid, and won't be able to log in anyways.
+        /*else
         {
             var request = new LoginWithCustomIDRequest { CustomId = GameState.Guid.ToString(), CreateAccount = true };
             var loginTask = await PlayFabClientAPI.LoginWithCustomIDAsync(request);
             OnLoginComplete(loginTask);
-        }
+        }*/
 
     }
     public static async Task ConnectAccountToKongregate()

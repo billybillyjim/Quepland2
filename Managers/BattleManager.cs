@@ -45,7 +45,7 @@ public class BattleManager
         {
             CurrentOpponent.TicksToNextAttack--;
             Player.Instance.TicksToNextAttack--;
-            if (Player.Instance.TicksToNextAttack <= 0)
+            if (Player.Instance.TicksToNextAttack < 0)
             {
                 Attack();
                 Player.Instance.TicksToNextAttack = Player.Instance.GetWeaponAttackSpeed();
@@ -55,7 +55,7 @@ public class BattleManager
             {
                 EndBattle();
             }
-            if (CurrentOpponent.TicksToNextAttack <= 0)
+            if (CurrentOpponent.TicksToNextAttack < 0)
             {
                 BeAttacked();
                 CurrentOpponent.TicksToNextAttack = CurrentOpponent.AttackSpeed;

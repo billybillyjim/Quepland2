@@ -3,11 +3,22 @@
 @implements IDisposable
 
 @if (BattleManager.Instance.CurrentOpponent != null)
-{
+{<div style="width:590px;height:500px;">
     <div>
         @BattleManager.Instance.CurrentOpponent.Name
         <div>
             @BattleManager.Instance.CurrentOpponent.CurrentHP / @BattleManager.Instance.CurrentOpponent.HP
+        </div>
+        <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
+            <div style="position:absolute;">Attack</div>
+            <div class="progress-bar" style="width:@(GetOpponentAttackProgress());background-color:purple">
+
+            </div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar" style="width:@(BattleManager.Instance.CurrentOpponent.GetRemainingHPPercent())%;">
+
+            </div>
         </div>
     </div>
     <div>
@@ -15,14 +26,38 @@
         <div>
             @Player.Instance.CurrentHP / @Player.Instance.MaxHP
         </div>
+        <div class="progress">
+            <div class="progress-bar" style="width:@(GetPlayerHPPercent());">
+
+            </div>
+        </div>
+        <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
+            <div style="position:absolute;">Attack</div>
+
+            <div class="progress-bar" style="width:@(GetPlayerAttackProgress());background-color:purple">
+            </div>
+        </div>
     </div>
+</div>
 }
 
 
 @code {
 
+    private string GetPlayerHPPercent()
+    {
+        return (((double)Player.Instance.CurrentHP / Player.Instance.MaxHP) * 100d) + "%";
+    }
+    private string GetOpponentAttackProgress()
+    {
+        return (((double)BattleManager.Instance.CurrentOpponent.TicksToNextAttack / BattleManager.Instance.CurrentOpponent.AttackSpeed) * 100d) + "%";
+    }
+    private string GetPlayerAttackProgress()
+    {
+        return (((double)Player.Instance.TicksToNextAttack / Player.Instance.GetWeaponAttackSpeed()) * 100d) + "%";
+    }
     protected override void OnInitialized()
-    {        
+    {
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()

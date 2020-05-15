@@ -26,6 +26,14 @@ app {
     align-items: center;
 }
 
+.progress-bar {
+    -webkit-transition: width .2s cubic-bezier(0.65, 0.05, 0.36, 1) !important;
+    -moz-transition: width .2s cubic-bezier(0.65, 0.05, 0.36, 1) !important;
+    -o-transition: width .2s cubic-bezier(0.65, 0.05, 0.36, 1) !important;
+    -ms-transition: width .2s cubic-bezier(0.65, 0.05, 0.36, 1) !important;
+    transition: width .2s cubic-bezier(0.65, 0.05, 0.36, 1) !important;
+}​
+
 .main {
     flex: 1;
 }
