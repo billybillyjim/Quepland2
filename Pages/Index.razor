@@ -1,6 +1,7 @@
 ﻿@page "/"
 @inject GameState GameState
 @inject HttpClient Http
+@inject IJSRuntime JSRuntime
 @implements IDisposable
 
 @if (GameState.ShowStartMenu)
@@ -9,14 +10,14 @@
 }
 else
 {
-    
+
 }
 
-@code{ 
+@code{
 
     protected async override Task OnInitializedAsync()
     {
-        if(GameState.InitCompleted == false)
+        if (GameState.InitCompleted == false)
         {
             await AreaManager.Instance.LoadAreas(Http);
             await ItemManager.Instance.LoadItems(Http);
@@ -25,7 +26,8 @@ else
             await QuestManager.Instance.LoadQuests(Http);
             await BattleManager.Instance.LoadMonsters(Http);
             await PlayFabManager.Connect();
-
+            GameState.JSRuntime = JSRuntime;
+            GameState.GetDimensions();
             GameState.Start();
             GameState.InitCompleted = true;
 

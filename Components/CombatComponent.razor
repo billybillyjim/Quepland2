@@ -10,31 +10,33 @@
             @BattleManager.Instance.CurrentOpponent.CurrentHP / @BattleManager.Instance.CurrentOpponent.HP
         </div>
         <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
-            <div style="position:absolute;">Attack</div>
-            <div class="progress-bar" style="width:@(GetOpponentAttackProgress());background-color:purple">
+            <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+            <div class="progress-bar" style="width:@(GetOpponentAttackProgress());background-color:mediumpurple">
 
             </div>
         </div>
-        <div class="progress">
+        <div class="progress" style="width:550px;margin-top:10px;">
             <div class="progress-bar" style="width:@(BattleManager.Instance.CurrentOpponent.GetRemainingHPPercent())%;">
 
             </div>
         </div>
     </div>
     <div>
-        @Player.Instance.Name
+        You
         <div>
             @Player.Instance.CurrentHP / @Player.Instance.MaxHP
         </div>
-        <div class="progress">
+        <div class="progress" style="width:550px;margin-top:10px;">
             <div class="progress-bar" style="width:@(GetPlayerHPPercent());">
 
             </div>
         </div>
-        <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
-            <div style="position:absolute;">Attack</div>
+        <div class="progress" style="width:120px;height:40px;font-size:large;position:relative;margin-top:10px;">
 
-            <div class="progress-bar" style="width:@(GetPlayerAttackProgress());background-color:purple">
+                <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+            
+
+            <div class="progress-bar" style="width:@(GetPlayerAttackProgress());background-color:mediumpurple">
             </div>
         </div>
     </div>

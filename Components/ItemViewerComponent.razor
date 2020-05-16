@@ -11,7 +11,7 @@
         {
             <div>@Item.Name</div>
             <div>@Item.Description</div>
-            @if (Item as Weapon != null)
+            @if (Item.WeaponInfo != null || Item.ArmorInfo != null)
             {
                 if (Item.IsEquipped)
                 {

@@ -43,7 +43,7 @@ using System.Threading.Tasks;
     public GameItem CurrentGatherItem;
     public Recipe CurrentRecipe;
     public static int TicksToNextAction;
-    public static int GameWindowWidth = 1200;
+    public static int GameWindowWidth;
 
     public void Start()
     {
@@ -150,6 +150,10 @@ using System.Threading.Tasks;
     {
         TooltipManager.ShowTip(args, tip);
         UpdateState();
+    }
+    public async Task GetDimensions()
+    {
+        GameWindowWidth = await JSRuntime.InvokeAsync<int>("getWidth");
     }
     public void HideTooltip()
     {

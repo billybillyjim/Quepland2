@@ -1,8 +1,7 @@
 ﻿using System;
 
-public class Armor : GameItem, IEquippable
+public class Armor
 {
-    public int AttackSpeed { get; set; }
     public int Damage { get; set; }
     public int ArmorBonus { get; set; }
     public string StatusEffect { get; set; }

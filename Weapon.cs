@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Weapon : GameItem, IEquippable
+public class Weapon
 {
     public int AttackSpeed { get; set; }
     public int Damage { get; set; }

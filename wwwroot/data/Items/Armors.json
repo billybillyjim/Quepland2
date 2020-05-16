@@ -3,9 +3,11 @@
     "Name": "White Belt",
     "value": 500,
     "Description": "A white belt that proves you don't know anything yet.",
-    "armorBonus": 1,
-    "damage": 3,
     "icon": "Belt",
-    "equipSlot": "Waist"
+    "equipSlot": "Waist",
+    "armorInfo": {
+      "damage": 3,
+      "armorBonus": 1
+    }
   }
 ]

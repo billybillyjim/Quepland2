@@ -76,5 +76,16 @@ public static class Extensions
 
         return (int)(randNormal + 1);
     }
+    public static int ToRandomDamage(this int input)
+    {
+        double u1 = 1.0 - rand.NextDouble(); //uniform(0,1] random doubles
+        double u2 = 1.0 - rand.NextDouble();
+        double randStdNormal = Math.Sqrt(-2.0 * Math.Log(u1)) *
+                     Math.Sin(2.0 * Math.PI * u2); //random normal(0,1)
+        double randNormal =
+                     Math.Abs(input + (input / 2.5d) * randStdNormal); //random normal(mean,stdDev^2)
+
+        return (int)Math.Abs(randNormal);
+    }
 }
 

@@ -75,28 +75,27 @@ public class Player
         total += Skills.Find(x => x.Name == "Strength").GetSkillLevel();
         foreach(GameItem item in equippedItems)
         {
-            Weapon w = item as Weapon;
-            if(w != null)
+            if(item.WeaponInfo != null)
             {
-                total += w.Damage;
+                total += item.WeaponInfo.Damage;
             }
-            Armor a = item as Armor;
-            if(a != null)
+            if(item.ArmorInfo != null)
             {
-                total += a.Damage;
+                total += item.ArmorInfo.Damage;
             }
         }
         return total;
     }
-    public Weapon GetWeapon()
+    public GameItem GetWeapon()
     {
-        return (Weapon)equippedItems.Find(x => x.EquipSlot == "Right Hand");
+        return equippedItems.Find(x => x.EquipSlot == "Right Hand");
     }
     public int GetWeaponAttackSpeed()
     {
-        if (GetWeapon() != null)
+        GameItem weapon = GetWeapon();
+        if (weapon != null && weapon.WeaponInfo != null)
         {
-            return Math.Max(4, GetWeapon().AttackSpeed - (GetLevel("Deftness") / 15));
+            return Math.Max(4, GetWeapon().WeaponInfo.AttackSpeed - (GetLevel("Deftness") / 15));
         }
         else
         {

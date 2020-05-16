@@ -57,6 +57,8 @@ public class BattleManager
 
             if (CurrentOpponent.CurrentHP <= 0)
             {
+                CurrentOpponent.CurrentHP = 0;
+                MessageManager.AddMessage("You defeated the " + CurrentOpponent.Name + ".");
                 EndBattle();
             }
             if (CurrentOpponent.TicksToNextAttack < 0)
@@ -67,6 +69,7 @@ public class BattleManager
             if (Player.Instance.CurrentHP <= 0)
             {
                 Player.Instance.CurrentHP = Player.Instance.MaxHP;
+                MessageManager.AddMessage("Whoops! Looks like you died. Don't worry, you don't lose anything but pride when you die in Quepland.");
                 EndBattle();
             }
         }
@@ -75,11 +78,16 @@ public class BattleManager
 
     public void Attack()
     {
-        CurrentOpponent.CurrentHP -= Player.Instance.GetTotalDamage();
+        int total = Player.Instance.GetTotalDamage().ToRandomDamage();
+        CurrentOpponent.CurrentHP -= total;
+        MessageManager.AddMessage("You hit the " + CurrentOpponent.Name + " for " + total + " damage!");
+
     }
     public void BeAttacked()
     {
-        Player.Instance.CurrentHP -= CurrentOpponent.Damage;
+        int total = CurrentOpponent.Damage.ToRandomDamage();
+        Player.Instance.CurrentHP -= total;
+        MessageManager.AddMessage("The " + CurrentOpponent.Name + " hit you for " + total + " damage!");
     }
     public void EndBattle()
     {
@@ -90,6 +98,6 @@ public class BattleManager
     {
         return Monsters.FirstOrDefault(x => x.Name == name);
     }
-
+    
 }
 

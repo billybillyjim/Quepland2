@@ -5,4 +5,5 @@
 
 using System.Diagnostics.CodeAnalysis;
 
+//Stops Intellisense from recommending a code-breaking change
 [assembly: SuppressMessage("Style", "IDE0019:Use pattern matching", Justification = "<Pending>", Scope = "member", Target = "~M:Player.GetTotalDamage~System.Int32")]

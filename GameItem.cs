@@ -21,6 +21,8 @@ public class GameItem
 	/// </summary>
 	public int GatherSpeed { get; set; } = 10;
 	public int RequiredLevel { get; set; }
+	public Armor ArmorInfo { get; set; }
+	public Weapon WeaponInfo { get; set; }
 	public override string ToString()
 	{
 		return Name;
