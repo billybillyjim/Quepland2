@@ -4,21 +4,28 @@
 {
     @if (GameState.CurrentGatherItem == item)
     {
-        <button onclick="@(new Action(() => GatherItem(null)))">Stop Gathering</button>
+        <div style="position:relative">
+            <button onclick="@(new Action(() => GatherItem(null)))">Stop Gathering</button>
+        </div>
     }
     else
     {
-        if ((Player.Instance.HasSkillRequirement(item) || item.RequiredAction == "None") && (Player.Instance.HasToolRequirement(item)))
+        if (item.HasRequirements())
         {
-            <button onclick="@(new Action(() => GatherItem(item)))">@gatherText</button>
+            <div style="position:relative">
+                <button onclick="@(new Action(() => GatherItem(item)))">@gatherText</button>
+            </div>
         }
         else
         {
-            <button style="background-color:gray;color:darkgray;"
-                    onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, item.GetRequirementTooltip())))"
-                    onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                @gatherText
-            </button>
+            <div style="position:relative" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, item.GetRequirementTooltip())))"
+                 onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                <button class="action-btn" disabled>
+                    @gatherText
+                </button>
+                <div style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;"></div>
+            </div>
+
         }
 
     }

@@ -1,0 +1,96 @@
+﻿@page "/World/Battle/"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+@if (BattleManager.Instance.CurrentOpponent != null)
+{
+    <div style="width:550px;height:300px;">
+        <div>
+            @BattleManager.Instance.CurrentOpponent.Name
+            <div>
+                @BattleManager.Instance.CurrentOpponent.CurrentHP / @BattleManager.Instance.CurrentOpponent.HP
+            </div>
+            <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
+                <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+                <div class="progress-bar" style="width:@(GetOpponentAttackProgress());background-color:mediumpurple">
+
+                </div>
+            </div>
+            <div class="progress" style="width:550px;margin-top:10px;">
+                <div class="progress-bar" style="width:@(BattleManager.Instance.CurrentOpponent.GetRemainingHPPercent())%;background-color:forestgreen">
+
+                </div>
+            </div>
+        </div>
+        <div>
+            You
+            <div>
+                @Player.Instance.CurrentHP / @Player.Instance.MaxHP
+            </div>
+            <div class="progress" style="width:550px;margin-top:10px;">
+                <div class="progress-bar" style="width:@(GetPlayerHPPercent());background-color:forestgreen;">
+
+                </div>
+            </div>
+            <div class="progress" style="width:120px;height:40px;font-size:large;position:relative;margin-top:10px;">
+
+                <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+
+
+                <div class="progress-bar" style="width:@(GetPlayerAttackProgress());background-color:mediumpurple">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    if (BattleManager.Instance.CurrentArea != null && BattleManager.Instance.BattleHasEnded)
+    {
+        <div>
+            <button @onclick="@(() => ContinueBattles())">Keep Battling</button>
+        </div>
+        <div>
+            <button @onclick="@(() => Return())">Return</button>
+        </div>
+
+    }
+
+}
+
+
+@code {
+
+
+    private void ContinueBattles()
+    {
+        GameState.StopNonCombatActions();
+        BattleManager.Instance.StartBattle(BattleManager.Instance.CurrentArea);
+        GameState.UpdateState();
+    }
+    private string GetPlayerHPPercent()
+    {
+        return (((double)Player.Instance.CurrentHP / Player.Instance.MaxHP) * 100d) + "%";
+    }
+    private string GetOpponentAttackProgress()
+    {
+        return (100 - (((double)BattleManager.Instance.CurrentOpponent.TicksToNextAttack / BattleManager.Instance.CurrentOpponent.AttackSpeed) * 100d)) + "%";
+    }
+    private string GetPlayerAttackProgress()
+    {
+        return (100 - (((double)Player.Instance.TicksToNextAttack / Player.Instance.GetWeaponAttackSpeed()) * 100d)) + "%";
+    }
+    private void Return()
+    {
+        GameState.Location = BattleManager.Instance.CurrentArea.AreaURL;
+        UriHelper.NavigateTo("World/" + BattleManager.Instance.CurrentArea.AreaURL);
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

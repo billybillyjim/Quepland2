@@ -39,12 +39,15 @@ public class BattleManager
         CurrentArea = area;
         int r = random.Next(0, CurrentArea.Monsters.Count);
         CurrentOpponent = Monsters.FirstOrDefault(x => x.Name == CurrentArea.Monsters[r]);
+        if(CurrentOpponent == null)
+        {
+            Console.WriteLine("No monsters found for area.");
+        }
         StartBattle();
         
     }
     public void DoBattle()
     {
-        Console.WriteLine("Doing battle");
         if(BattleHasEnded == false)
         {
             CurrentOpponent.TicksToNextAttack--;
@@ -100,6 +103,7 @@ public class BattleManager
     }
     public void EndBattle()
     {
+        Console.WriteLine("Ending Battle");
         BattleHasEnded = true;
     }
 

@@ -111,6 +111,9 @@
       {
         "skill": "Fishing",
         "skillLevel": 1
+      },
+      {
+        "action": "Fishing"
       }
     ]
   },
@@ -126,6 +129,9 @@
       {
         "skill": "Fishing",
         "skillLevel": 6
+      },
+      {
+        "action": "Fishing"
       }
     ]
   }

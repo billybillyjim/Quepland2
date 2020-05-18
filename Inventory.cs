@@ -239,5 +239,43 @@ public class Inventory
         }
         return smithables;
     }
+    public bool HasToolRequirement(GameItem item)
+    {
+        foreach(Requirement r in item.Requirements)
+        {
+            if(r.Action != "None")
+            {
+                bool hasReq = true;
+                foreach (KeyValuePair<GameItem, int> i in items)
+                {
+                    //item.Key.itemPos = inventorySlotPos;
+                    if (i.Key.EnabledActions.Contains(r.Action) == false)
+                    {
+                        hasReq = false;
+                    }
+                }
+                return hasReq;
+            }
+        }
+
+        return true;
+    }
+    public bool HasToolRequirement(string action)
+    {
+        if (action == "None")
+        {
+            return true;
+        }
+        foreach (KeyValuePair<GameItem, int> i in items)
+        {
+            //item.Key.itemPos = inventorySlotPos;
+            if (i.Key.EnabledActions.Contains(action))
+            {
+                return true;
+            }
+        }
+        return false;
+
+    }
 }
 

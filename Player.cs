@@ -72,7 +72,7 @@ public class Player
     public int GetTotalDamage()
     {
         int total = 0;
-        total += Skills.Find(x => x.Name == "Strength").GetSkillLevel();
+        total += Skills.Find(x => x.Name == "Strength").GetSkillLevel() * 3;
         foreach(GameItem item in equippedItems)
         {
             if(item.WeaponInfo != null)
@@ -177,5 +177,23 @@ public class Player
         }
     }
 
+    public bool HasSkillRequirement(string skill, int lvl)
+    {
+        Skill s = Skills.FirstOrDefault(x => x.Name == skill);
+        if (s == null)
+        {
+            Console.WriteLine("Failed to find game item:" + skill);
+            return false;
+        }
+        return s.Level >= lvl;
+    }
+    public bool HasToolRequirement(GameItem item)
+    {
+        return Inventory.HasToolRequirement(item);
+    }
+    public bool HasToolRequirement(string action)
+    {
+        return Inventory.HasToolRequirement(action);
+    }
 }
 

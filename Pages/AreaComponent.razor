@@ -12,26 +12,19 @@
     @foreach (string a in thisArea.Actions ?? Enumerable.Empty<string>())
     {
         <Quepland_2.Components.GatherButtonComponent ActionText="@a"></Quepland_2.Components.GatherButtonComponent>
+        <br />
     }
     @foreach (Building b in thisArea.Buildings)
     {
         <button @onclick="@(() => EnterBuilding(b.URL))">@b.ButtonText</button>
+        <br />
     }
     @foreach (AreaUnlock a in thisArea.UnlockableAreas)
     {
         if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false)
         {
-            if (a.HasRequirements())
-            {
-                <button @onclick="(() => GoToArea(a.AreaURL))">@a.ButtonText</button>
-            }
-            else
-            {
-                <button onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, a.ToString())))"
-                        onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                    @a.ButtonText
-                </button>
-            }
+            <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@a"></Quepland_2.Components.AreaUnlockComponent>
+            <br />
         }
     }
     @foreach (string npc in thisArea.NPCs)
@@ -48,15 +41,18 @@
 
             }
         </div>
-        @if (thisArea.DungeonName != null)
-        {
-            <button @onclick="@(() => EnterDungeon(thisArea.Dungeon.URL))">Enter @thisArea.Dungeon.Name</button>
-        }
-        @if (thisArea.Monsters != null && thisArea.Monsters.Count > 0)
-        {
-            <button @onclick="@(e => FindBattles())">Battle</button>
-        }
+        <br />
     }
+    @if (thisArea.DungeonName != null)
+    {
+        <button @onclick="@(() => EnterDungeon(thisArea.Dungeon.URL))">Enter @thisArea.Dungeon.Name</button>
+        <br />
+    }
+    @if (thisArea.Monsters != null && thisArea.Monsters.Count > 0)
+    {
+        <button @onclick="@(e => FindBattles())">Battle</button>
+    }
+
 }
 
 @code {
@@ -70,21 +66,19 @@
         Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItemByName("Stone Axe"));
         GameState.UpdateState();
     }
+    private void Talk(Dialog d)
+    {
+        d.Talk();
+        GameState.UpdateState();
+    }
     private void FindBattles()
     {
-        GameState.StopActions();
+        GameState.StopNonCombatActions();
         BattleManager.Instance.StartBattle(thisArea);
         GameState.Location = "Battle";
         UriHelper.NavigateTo("World/Battle/");
     }
-    private void GoToArea(string url)
-    {
-        GameState.StopActions();
-        GameState.Location = url;
-        Area a = AreaManager.Instance.GetAreaByURL(url);
-        a.Unlock();
-        UriHelper.NavigateTo("World/" + url);
-    }
+
     private void EnterBuilding(string buildingURL)
     {
         GameState.StopActions();

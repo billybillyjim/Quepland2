@@ -12,6 +12,9 @@
       {
         "skill": "Woodcutting",
         "skillLevel": 1
+      },
+      {
+        "action": "Woodcutting"
       }
     ]
   },
@@ -27,6 +30,9 @@
       {
         "skill": "Woodcutting",
         "skillLevel": 8
+      },
+      {
+        "action": "Woodcutting"
       }
     ]
   }

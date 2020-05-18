@@ -2,6 +2,7 @@
 using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ using System.Threading.Tasks;
     public static bool InitCompleted { get; set; } = false;
     public static bool ShowStartMenu { get; set; } = true;
     private bool stopActions = false;
-
+    private bool stopNoncombatActions = false;
     private Timer GameTimer { get; set; }
     public int testInt = 0;
     private static Guid _guid;
@@ -61,6 +62,10 @@ using System.Threading.Tasks;
             {
                 ClearActions();
             }
+            else if (stopNoncombatActions)
+            {
+                ClearNonCombatActions();
+            }
             if(TicksToNextAction <= 0 && CurrentGatherItem != null)
             {
                 GatherItem();
@@ -90,6 +95,10 @@ using System.Threading.Tasks;
     {
         stopActions = true;
     }
+    public void StopNonCombatActions()
+    {
+        stopNoncombatActions = true;
+    }
     private void ClearActions()
     {
         CurrentGatherItem = null;
@@ -98,6 +107,14 @@ using System.Threading.Tasks;
         CurrentSmithingItem = null;
         CurrentSmeltingItem = null;
         stopActions = false;
+    }
+    private void ClearNonCombatActions()
+    {
+        CurrentGatherItem = null;
+        CurrentRecipe = null;
+        CurrentSmithingItem = null;
+        CurrentSmeltingItem = null;
+        stopNoncombatActions = false;
     }
     public void Pause()
     {
