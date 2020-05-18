@@ -3,10 +3,10 @@
 
 @if (Item != null)
 {
-
-    <div style="@(GetBackground())margin:2px;height:50px;width:50px;position:relative;">
+    
+    <div style="@(GetBackground())margin:2px;height:50px;width:50px;position:relative;box-sizing: border-box">
         <div style="position:absolute;margin-left:2px;margin-top:-2px;color:white">@GetAmount()</div>
-        <img style="height: 46px;width: 46px;margin:2px;" src="/data/Images/@(Item.Icon).png"
+        <img style="height: 46px;width: 46px;@GetMargin()" src="/data/Images/@(Item.Icon).png"
              onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.Name, Item.Description)))"
              onmouseout="@(new Action(() => GameState.HideTooltip()))" />
     </div>
@@ -22,6 +22,8 @@ else
     public bool ShowAmount { get; set; }
     [Parameter]
     public Inventory Inventory { get; set; }
+    [Parameter]
+    public bool IsSelected { get; set; }
 
     private string GetAmount()
     {
@@ -37,14 +39,30 @@ else
     }
     private string GetBackground()
     {
+        string style = "";
+        string border = "border:solid black 1px;";
         if(Item != null && Item.IsEquipped)
         {
-            return "border:solid black 1px;background-color:green;";
+            style = "background-color:green;";
+        }
+        if (IsSelected)
+        {
+            border = "border:solid white 2px;";
+            style = "background-color:lightgreen;";
         }
         else
         {
-            return "border:solid black 1px;background-color:darkgray;";
+            style = "background-color:darkgray;";
         }
+        return style + border;
+    }
+    private string GetMargin()
+    {
+        if (IsSelected)
+        {
+            return "margin:1px;";
+        }
+        return "margin:2px;";
     }
     protected override void OnInitialized()
     {

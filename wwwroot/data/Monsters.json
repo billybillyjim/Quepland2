@@ -4,13 +4,48 @@
     "hp": 10,
     "attackSpeed": 10,
     "armor": 0,
-    "damage": 2
+    "damage": 2,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        },
+        {
+          "itemName": "Chicken Egg",
+          "weight": 10
+        },
+        {
+          "itemName": "Chicken Meat",
+          "weight": 10
+        }
+      ],
+      "alwaysDrops": [
+        "Feather"
+      ]
+    }
+    
   },
   {
     "name": "Rooster",
     "hp": 15,
     "attackSpeed": 8,
     "armor": 0,
-    "damage": 3
+    "damage": 3,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Rooster Plumage",
+          "weight": 50
+        },
+        {
+          "itemName": "Chicken Meat",
+          "weight": 10
+        }
+      ],
+      "alwaysDrops": [
+        "Feather"
+      ]
+    }
   }
 ]

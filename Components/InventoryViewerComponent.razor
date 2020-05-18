@@ -5,16 +5,8 @@
 <div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:8px;margin:5px;">
     @foreach (GameItem item in Player.Instance.Inventory.GetItems().Keys.OrderBy(x => x.ID))
     {
-        if (Bank.Instance.IsBanking)
-        {
-            <div onclick="@(new Action(() => BankItem(item)))"><ItemBoxComponent Item="@item" ShowAmount="@true"></ItemBoxComponent></div>
 
-        }
-        else
-        {
-            <div onclick="@(new Action(() => SelectItem(item)))"><ItemBoxComponent Item="@item" ShowAmount="@true"></ItemBoxComponent></div>
-
-        }
+            <div onclick="@(new Action<MouseEventArgs>((args) => SelectItem(args, item)))"><ItemBoxComponent Item="@item" ShowAmount="@true" IsSelected="@(SelectedItem == item)"></ItemBoxComponent></div>
 
 
     }
@@ -39,12 +31,24 @@
         int amountToBank = Math.Min(Player.Instance.Inventory.GetNumberOfItem(item), Bank.Instance.Amount);
         Bank.Instance.Inventory.AddMultipleOfItem(item, amountToBank);
         Player.Instance.Inventory.RemoveItems(item, amountToBank);
+        if(Player.Instance.Inventory.GetNumberOfItem(SelectedItem) == 0)
+        {
+            SelectedItem = null;
+        }
         GameState.UpdateState();
     }
-    private void SelectItem(GameItem item)
+    private void SelectItem(MouseEventArgs args, GameItem item)
     {
-        SelectedItem = item;
-        GameState.UpdateState();
+        if (args.ShiftKey && Bank.Instance.IsBanking)
+        {
+            BankItem(item);
+        }
+        else
+        {
+            SelectedItem = item;
+            GameState.UpdateState();
+        }
+
     }
     protected override void OnInitialized()
     {

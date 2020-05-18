@@ -100,6 +100,17 @@ public class Inventory
     {
         return AddItem(ItemManager.Instance.GetItemByName(itemName));
     }
+    public bool AddItems(List<GameItem> items)
+    {
+        foreach(GameItem i in items)
+        {
+            if(AddItem(i) == false)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
     public bool AddMultipleOfItem(GameItem item, int amount)
     {
         if (totalItems >= maxSize && (item.IsStackable == false || HasItem(item) == false))

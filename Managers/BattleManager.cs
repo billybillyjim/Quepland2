@@ -62,6 +62,9 @@ public class BattleManager
             {
                 CurrentOpponent.CurrentHP = 0;
                 MessageManager.AddMessage("You defeated the " + CurrentOpponent.Name + ".");
+                Player.Instance.Inventory.AddItems(CurrentOpponent.DropTable.GetAlwaysDrops());
+                Player.Instance.Inventory.AddItem(CurrentOpponent.DropTable.GetDrop());
+
                 EndBattle();
             }
             if (CurrentOpponent.TicksToNextAttack < 0)

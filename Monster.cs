@@ -10,6 +10,7 @@ public class Monster
 	public int AttackSpeed { get; set; }
 	public int TicksToNextAttack { get; set; }
 
+	public DropTable DropTable { get; set; } = new DropTable();
 	public double GetRemainingHPPercent()
     {
 		return ((double)CurrentHP / HP) * 100d;

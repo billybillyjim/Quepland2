@@ -27,5 +27,31 @@
     "Description": "A specially designed knife for carving wood.",
     "value": 60,
     "icon": "Knife"
+  },
+  {
+    "name": "Feather",
+    "description": "Soft, fluffy, and useful for making arrows with.",
+    "value": 1,
+    "icon": "Feather",
+    "isStackable": true
+  },
+  {
+    "name": "Chicken Egg",
+    "description": "A small egg from a chicken.",
+    "value": 10,
+    "icon": "Egg"
+  },
+  {
+    "name": "Chicken Meat",
+    "description": "The meat of a chicken.",
+    "value": 10,
+    "icon": "Bird"
+  },
+  {
+    "name": "Rooster Plumage",
+    "description": "A bunch of feathers from a male chicken.",
+    "value": 15,
+    "icon": "Feather",
+    "isStackable": true
   }
 ]
