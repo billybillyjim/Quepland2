@@ -15,7 +15,7 @@
         else
         {
             <button style="background-color:gray;color:darkgray;"
-                    onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GetRequirementTooltip())))"
+                    onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, item.GetRequirementTooltip())))"
                     onmouseout="@(new Action(() => GameState.HideTooltip()))">
                 @gatherText
             </button>
@@ -44,26 +44,7 @@
         GameState.TicksToNextAction = GameState.CurrentGatherItem.GatherSpeed.ToGaussianRandom();
         GameState.UpdateState();
     }
-    public string GetRequirementTooltip()
-    {
-        if (tooltip != "")
-        {
-            return tooltip;
-        }
-        if (item == null)
-        {
-            return "";
-        }
-        if (Player.Instance.HasToolRequirement(item) == false)
-        {
-            return "You need a tool for " + item.RequiredAction + ".";
-        }
-        if (Player.Instance.HasSkillRequirement(item) == false)
-        {
-            tooltip = "You need " + item.RequiredLevel + " " + item.RequiredAction + " to do this.";
-        }
-        return tooltip;
-    }
+
     protected override void OnInitialized()
     {
 

@@ -78,7 +78,7 @@ public class Player
             if(item.WeaponInfo != null)
             {
                 total += item.WeaponInfo.Damage;
-                total += Skills.Find(x => x.Name == item.RequiredAction).GetSkillLevel() * 3;
+                total += Skills.Find(x => x.Name == item.GetSkillForWeaponExp()).GetSkillLevel() * 3;
             }
             if(item.ArmorInfo != null)
             {
@@ -176,41 +176,6 @@ public class Player
 
         }
     }
-    public bool HasSkillRequirement(string itemName)
-    {
-        GameItem i = ItemManager.Instance.GetItemByName(itemName);
-        if(i == null)
-        {
-            Console.WriteLine("Failed to find game item:" + itemName);
-            return false;
-        }
-        return HasSkillRequirement(i);
-    }
-    public bool HasSkillRequirement(string skill, int lvl)
-    {
-        Skill s = Skills.FirstOrDefault(x => x.Name == skill);
-        if(s == null)
-        {
-            Console.WriteLine("Failed to find game item:" + skill);
-            return false;
-        }
-        return s.Level >= lvl;
-    }
-    public bool HasSkillRequirement(GameItem item)
-    {
-        if(item.RequiredAction == null || item.RequiredAction == "None")
-        {
-            return true;
-        }
-        return HasSkillRequirement(item.RequiredAction, item.RequiredLevel);
-    }
-    public bool HasToolRequirement(GameItem item)
-    {
-        return Inventory.HasToolRequirement(item);
-    }
-    public bool HasToolRequirement(string action)
-    {
-        return Inventory.HasToolRequirement(action);
-    }
+
 }
 

@@ -7,12 +7,20 @@
     "gatherSpeed": 15,
     "requiredLevel": 1,
     "experienceGained": "Mining:8",
-    "requiredAction": "Mining",
     "icon": "Ore",
     "smithingInfo": {
       "smeltsIntoString": "Copper Bar",
       "smeltingExperience": 12
-    }
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 1
+      },
+      {
+        "action": "Mining"
+      }
+    ]
   },
   {
     "Name": "Tin Ore",
@@ -20,14 +28,21 @@
     "gatherString": "You mine some tin ore.",
     "value": 10,
     "gatherSpeed": 15,
-    "requiredLevel": 1,
     "experienceGained": "Mining:8",
-    "requiredAction": "Mining",
     "icon": "Ore",
     "smithingInfo": {
       "smeltsIntoString": "Tin Bar",
       "smeltingExperience": 18
-    }
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 1
+      },
+      {
+        "action": "Mining"
+      }
+    ]
   },
   {
     "Name": "Copper Bar",
@@ -35,9 +50,7 @@
     "gatherString": "You smelt a copper bar.",
     "value": 50,
     "gatherSpeed": 15,
-    "requiredLevel": 1,
     "experienceGained": "Smithing:15",
-    "requiredAction": "Smithing",
     "icon": "Bar",
     "smithingInfo": {
       "smeltsIntoString": "Copper Bar",
@@ -48,7 +61,13 @@
         "Copper Axe"
       ],
       "smithingExperience": 15
-    }
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 1
+      }
+    ]
   },
   {
     "Name": "Tin Bar",
@@ -69,6 +88,12 @@
         "Tin Axe"
       ],
       "smithingExperience": 20
-    }
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 4
+      }
+    ]
   }
 ]

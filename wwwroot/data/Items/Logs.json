@@ -6,10 +6,14 @@
     "gatherString": "You chop some white pine logs.",
     "value": 3,
     "gatherSpeed": 10,
-    "requiredLevel": 1,
     "experienceGained": "Woodcutting:8",
-    "requiredAction": "Woodcutting",
-    "icon": "Log"
+    "icon": "Log",
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 1
+      }
+    ]
   },
   {
     "Name": "Poplar Logs",
@@ -17,9 +21,13 @@
     "gatherString": "You chop some poplar logs.",
     "value": 9,
     "gatherSpeed": 30,
-    "requiredLevel": 8,
     "experienceGained": "Woodcutting:24",
-    "requiredAction": "Woodcutting",
-    "icon": "Log"
+    "icon": "Log",
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 8
+      }
+    ]
   }
 ]

@@ -1,0 +1,132 @@
+[
+  {
+    "name": "Minnow Net",
+    "description": "It's a small net made for minnows, but you can catch any fish with it, probably.",
+    "value": 10,
+    "enabledActions": "Fishing",
+    "damage": 1,
+    "equipSlot": "Right Hand",
+    "weaponInfo": {
+      "attackSpeed": 35,
+      "damage": 1
+    },
+    "gatherSpeedBonus": 0.1,
+    "icon": "Net",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 1
+      }
+    ]
+  },
+  {
+    "name": "Small Net",
+    "description": "A small fishing net.",
+    "value": 30,
+    "enabledActions": "Fishing",
+    "isEquipable": true,
+    "equipSlot": "Right Hand",
+    "weaponInfo": {
+      "attackSpeed": 35,
+      "damage": 2
+    },
+    "gatherSpeedBonus": 0.2,
+    "icon": "Net",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 15
+      }
+    ]
+  },
+  {
+    "name": "Medium Net",
+    "description": "A decently sized fishing net.",
+    "value": 80,
+    "enabledActions": "Fishing",
+    "isEquipable": true,
+    "equipSlot": "Right Hand",
+    "weaponInfo": {
+      "attackSpeed": 35,
+      "damage": 3
+    },
+    "gatherSpeedBonus": 0.30,
+    "icon": "Net",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 30
+      }
+    ]
+  },
+  {
+    "name": "Large Net",
+    "description": "A large net. It somehow makes it easier to catch fish with.",
+    "value": 300,
+    "enabledActions": "Fishing",
+    "isEquipable": true,
+    "equipSlot": "Right Hand",
+    "weaponInfo": {
+      "attackSpeed": 35,
+      "damage": 5
+    },
+    "gatherSpeedBonus": 0.45,
+    "icon": "Net",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 60
+      }
+    ]
+  },
+  {
+    "name": "Magic Net",
+    "description": "A magical net imbued with some strange power. It emits a soft green light.",
+    "value": 2500,
+    "enabledActions": "Fishing",
+    "isEquipable": true,
+    "equipSlot": "Right Hand",
+    "weaponInfo": {
+      "attackSpeed": 35,
+      "damage": 8
+    },
+    "gatherSpeedBonus": 0.6,
+    "icon": "Net",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "name": "Minnow",
+    "description": "The tiniest fish you can catch.",
+    "gatherString": "You catch some minnows.",
+    "value": 2,
+    "gatherSpeed": 6,
+    "experienceGained": "Fishing:8",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 1
+      }
+    ]
+  },
+  {
+    "name": "Sunfish",
+    "description": "Smallfry.",
+    "gatherString": "You catch a sunfish.",
+    "value": 6,
+    "gatherSpeed": 12,
+    "experienceGained": "Fishing:22",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 6
+      }
+    ]
+  }
+]

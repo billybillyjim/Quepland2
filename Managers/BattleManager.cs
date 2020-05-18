@@ -86,7 +86,7 @@ public class BattleManager
         }
         else
         {
-            Player.Instance.GainExperience(Player.Instance.GetWeapon().RequiredAction, total * 2);
+            Player.Instance.GainExperience(Player.Instance.GetWeapon().GetSkillForWeaponExp(), total * 2);
         }
         
         MessageManager.AddMessage("You hit the " + CurrentOpponent.Name + " for " + total + " damage!");

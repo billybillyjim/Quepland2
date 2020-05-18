@@ -221,39 +221,7 @@ public class Inventory
             //inventorySlotPos++;
         }
     }
-    public bool HasToolRequirement(GameItem item)
-    {
-        if(item.RequiredAction == "None")
-        {
-            return true;
-        }
-        foreach (KeyValuePair<GameItem, int> i in items)
-        {
-            //item.Key.itemPos = inventorySlotPos;
-            if (i.Key.EnabledActions.Contains(item.RequiredAction))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-    public bool HasToolRequirement(string action)
-    {
-        if(action == "None")
-        {
-            return true;
-        }
-        foreach (KeyValuePair<GameItem, int> i in items)
-        {
-            //item.Key.itemPos = inventorySlotPos;
-            if (i.Key.EnabledActions.Contains(action))
-            {
-                return true;
-            }
-        }
-        return false;
 
-    }
     public List<GameItem> GetSmeltableItems()
     {
         return items.Keys.Where(x => x.SmithingInfo != null && x.SmithingInfo.SmeltsInto != null).ToList();

@@ -3,6 +3,7 @@
 @inject NavigationManager UriHelper
 @implements IDisposable
 
+
 @if (thisArea != null)
 {
     <div>Welcome to @thisArea.Name</div>
@@ -29,10 +30,10 @@
                 <button onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, a.ToString())))"
                         onmouseout="@(new Action(() => GameState.HideTooltip()))">
                     @a.ButtonText
-                    </button>
-                }
+                </button>
             }
         }
+    }
     @foreach (string npc in thisArea.NPCs)
     {
         <div style="border:solid 1px black;padding:5px;">
@@ -56,13 +57,13 @@
             <button @onclick="@(e => FindBattles())">Battle</button>
         }
     }
+}
 
+@code {
 
-
-    @code {
-        [Parameter]
-        public string areaName { get; set; }
-public Area thisArea { get; set; }
+    [Parameter]
+    public string areaName { get; set; }
+    public Area thisArea { get; set; }
 
     private void GetAxe()
     {
@@ -111,4 +112,4 @@ public Area thisArea { get; set; }
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
-    }
+}

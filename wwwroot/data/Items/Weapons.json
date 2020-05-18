@@ -3,14 +3,19 @@
     "Name": "Copper Knife",
     "Description": "Maybe the softest knife you've ever seen.",
     "value": 150,
-    "requiredAction": "Knifesmanship",
     "enabledActions": "Knifesmanship",
     "equipSlot": "Right Hand",
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
       "damage": 3
-    }
+    },
+    "requirements": [
+      {
+        "skill": "Knifesmanship",
+        "skillLevel": 1
+      }
+    ]
   },
   {
     "Name": "Stone Axe",
@@ -18,13 +23,18 @@
     "value": 25,
     "enabledActions": "Axemanship Woodcutting",
     "equipSlot": "Right Hand",
-    "requiredAction": "Axemanship",
     "gatherSpeedBonus": 0.1,
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 15,
       "damage": 4
-    }
+    },
+    "requirements": [
+      {
+        "skill": "Axemanship",
+        "skillLevel": 1
+      }
+    ]
   },
   {
     "Name": "Copper Axe",
@@ -32,13 +42,18 @@
     "value": 150,
     "enabledActions": "Axemanship Woodcutting",
     "equipSlot": "Right Hand",
-    "requiredAction": "Axemanship",
     "gatherSpeedBonus": 0.2,
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 15,
       "damage": 8
-    }
+    },
+    "requirements": [
+      {
+        "skill": "Axemanship",
+        "skillLevel": 1
+      }
+    ]
   },
 
   {
@@ -52,7 +67,13 @@
     "weaponInfo": {
       "attackSpeed": 11,
       "damage": 5
-    }
+    },
+    "requirements": [
+      {
+        "skill": "Swordsmanship",
+        "skillLevel": 1
+      }
+    ]
   },
   {
     "Name": "Copper Hammer",
@@ -60,11 +81,16 @@
     "value": 150,
     "enabledActions": "Hammermanship",
     "equipSlot": "Right Hand",
-    "requiredAction": "Hammermanship",
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
       "damage": 18
-    }
+    },
+    "requirements": [
+      {
+        "skill": "Hammermanship",
+        "skillLevel": 1
+      }
+    ]
   }
 ]
