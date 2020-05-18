@@ -3,7 +3,7 @@
 @implements IDisposable
 
 @if (BattleManager.Instance.CurrentOpponent != null)
-{<div style="width:590px;height:500px;">
+{<div style="width:550px;height:300px;">
     <div>
         @BattleManager.Instance.CurrentOpponent.Name
         <div>
@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="progress" style="width:550px;margin-top:10px;">
-            <div class="progress-bar" style="width:@(BattleManager.Instance.CurrentOpponent.GetRemainingHPPercent())%;">
+            <div class="progress-bar" style="width:@(BattleManager.Instance.CurrentOpponent.GetRemainingHPPercent())%;background-color:forestgreen">
 
             </div>
         </div>
@@ -27,7 +27,7 @@
             @Player.Instance.CurrentHP / @Player.Instance.MaxHP
         </div>
         <div class="progress" style="width:550px;margin-top:10px;">
-            <div class="progress-bar" style="width:@(GetPlayerHPPercent());">
+            <div class="progress-bar" style="width:@(GetPlayerHPPercent());background-color:forestgreen;">
 
             </div>
         </div>

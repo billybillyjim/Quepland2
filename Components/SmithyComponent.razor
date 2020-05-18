@@ -1,5 +1,70 @@
-﻿<h3>Smithy</h3>
+﻿@page "/World/Smithy"
+@inject GameState GameState
+@implements IDisposable
+<h3>Smithy</h3>
 
+<CustomDropdownComponent BoxText="Select an Ore" EmptyText="You don't have any ores or bars." @bind-Value="Source" DropdownItems="@Player.Instance.Inventory.GetSmeltableItems().Select(x => x.Name).ToList()"></CustomDropdownComponent>
+
+<CustomDropdownComponent BoxText="Select a Product" EmptyText="Please select a source first." @bind-Value="Product" DropdownItems="@Player.Instance.Inventory.GetSmithableItems().Select(x => x.Name).ToList()"></CustomDropdownComponent>
+
+
+<br/>
+
+@if (Product != "" && Source != "" && Player.Instance.Inventory.HasItem(ItemManager.Instance.GetItemByName(Source)))
+{
+    <button @onclick="@(() => Smith())">Smith a @Product @amount Times</button>
+}
+<br/>
+<div>
+    <div class="progress" style="width:300px;">
+        <div class="progress-bar" style="@GetProgress()"></div>
+    </div>
+</div>
 @code {
 
+    string Source = "";
+    string Product = "";
+    int amount = 1;
+    GameItem ItemToCreate { get; set; }
+
+    public void Smith()
+    {
+        GameItem source = ItemManager.Instance.GetItemByName(Source);
+        GameItem product = ItemManager.Instance.GetItemByName(Product);
+
+        if (Player.Instance.Inventory.HasItem(source))
+        {
+            GameState.StopActions();
+            GameState.SmithingStage = 0;
+            GameState.CurrentSmeltingItem = source;
+            GameState.CurrentSmithingItem = product;
+            MessageManager.AddMessage("You begin smithing your " + Source + " into a " + Product);
+            GameState.TicksToNextAction = GameState.CurrentSmeltingItem.SmithingInfo.SmeltingSpeed;
+        }
+    }
+    private string GetProgress()
+    {
+        if(GameState.CurrentSmeltingItem != null)
+        {
+            if(GameState.SmithingStage == 0)
+            {
+                return "width:" + (100 - ((double)GameState.TicksToNextAction / GameState.CurrentSmeltingItem.SmithingInfo.SmeltingSpeed) * 100d) + "%";
+            }
+            else
+            {
+                return "width:" + (100 - ((double)GameState.TicksToNextAction / GameState.CurrentSmeltingItem.SmithingInfo.SmithingSpeed) * 100d) + "%";
+            }
+        }
+        return "width:0%";
+    }
+
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
 }

@@ -11,5 +11,6 @@ public class Bank
         } 
 	}
 	public Inventory Inventory = new Inventory(int.MaxValue);
-
+	public bool IsBanking { get; set; }
+	public int Amount { get; set; } = 1;
 }

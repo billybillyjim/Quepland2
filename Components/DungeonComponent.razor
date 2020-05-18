@@ -4,31 +4,42 @@
 
 @if (Dungeon != null)
 {
+    @if (Dungeon.Progress < 100)
+    {
+        if (IsFighting == false)
+        {
+            <button @onclick="@(() => Spelunk())">Spelunk</button>
+        }
+        else
+        {
+            <button disabled>Spelunk</button>
+        }
+        <div>
+            Progress
+            <div class="progress">
+                <div class="progress-bar" style="width:@(Dungeon.GetPercentProgress())%"></div>
+            </div>
+        </div>
+    }
     @if (IsFighting)
     {
         <CombatComponent></CombatComponent>
-        @if(BattleManager.Instance.CurrentOpponent != null && BattleManager.Instance.CurrentOpponent.CurrentHP <= 0)
+        @if (BattleManager.Instance.CurrentOpponent != null && BattleManager.Instance.CurrentOpponent.CurrentHP <= 0)
         {
+            <button @onclick="@(() => Spelunk())">Continue Spelunking</button>
+            <br />
             <button @onclick="@(() => EndFight())">Return</button>
         }
     }
     else
     {
-        @if (Dungeon.Progress < 100)
-        {
-            <button @onclick="@(() => Spelunk())">Spelunk</button>
-            <div>
-                Progress
-                <div class="progress">
-                    <div class="progress-bar" style="width:@(Dungeon.GetPercentProgress())%"></div>
-                </div>
-            </div>
-        }
+
         <div>
             Go to:
             @foreach (Area area in Dungeon.GetUnlockedAreas() ?? Enumerable.Empty<Area>())
             {
                 <button>@area.Name</button>
+                <br/>
             }
         </div>
     }
@@ -45,13 +56,14 @@
 
     public void Spelunk()
     {
+        IsFighting = false;
         int action = rand.Next(0, (int)(Dungeon.Size - Dungeon.Progress));
         if (Dungeon.GetLockedAreas().Count > action)
         {
             Area areaToUnlock = Dungeon.GetRandomLockedArea();
             if (areaToUnlock != null)
             {
-                areaToUnlock.IsUnlocked = true;
+                areaToUnlock.Unlock();
                 MessageManager.AddMessage("While spelunking you discovered a new area:" + areaToUnlock.Name);
             }
         }

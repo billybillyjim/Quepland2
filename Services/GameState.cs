@@ -41,9 +41,13 @@ using System.Threading.Tasks;
         }
     }
     public GameItem CurrentGatherItem;
+    public GameItem CurrentSmeltingItem;
+    public GameItem CurrentSmithingItem;
     public Recipe CurrentRecipe;
+    public Land CurrentLand;
     public static int TicksToNextAction;
     public static int GameWindowWidth;
+    public int SmithingStage;
 
     public void Start()
     {
@@ -65,10 +69,15 @@ using System.Threading.Tasks;
             {
                 CraftItem();
             }
+            else if(TicksToNextAction <= 0 && CurrentSmithingItem != null && CurrentSmeltingItem != null)
+            {
+                SmithItem();
+            }
             else if(BattleManager.Instance.CurrentOpponent != null)
             {
                 BattleManager.Instance.DoBattle();
             }
+            GetDimensions();
             TicksToNextAction--;
             StateHasChanged();
         }), null, 200, 200);
@@ -85,6 +94,9 @@ using System.Threading.Tasks;
     {
         CurrentGatherItem = null;
         CurrentRecipe = null;
+        BattleManager.Instance.CurrentOpponent = null;
+        CurrentSmithingItem = null;
+        CurrentSmeltingItem = null;
         stopActions = false;
     }
     public void Pause()
@@ -111,6 +123,11 @@ using System.Threading.Tasks;
         {
             return;
         }
+        else if(BattleManager.Instance.CurrentOpponent != null)
+        {
+            MessageManager.AddMessage("You can't make that while fighting a " + BattleManager.Instance.CurrentOpponent.Name + "!");
+            return;
+        }
         if (CurrentRecipe.Create())
         {
             TicksToNextAction = CurrentRecipe.CraftingSpeed;
@@ -123,6 +140,51 @@ using System.Threading.Tasks;
         }
 
         
+    }
+    private void SmithItem()
+    {
+        if(CurrentSmeltingItem == null || CurrentSmithingItem == null)
+        {
+            Console.WriteLine("Failed to start smithing, Smelting Item is null:" + (CurrentSmeltingItem == null) + " and Smithing Item is null:" + (CurrentSmithingItem == null));
+            return;
+        }
+        if(SmithingStage == 0)
+        {
+            if (Player.Instance.Inventory.RemoveItems(CurrentSmeltingItem, 1) > 0)
+            {
+                MessageManager.AddMessage("You smelt the " + CurrentSmeltingItem.Name + " into a " + CurrentSmeltingItem.SmithingInfo.SmeltsIntoString);
+                Player.Instance.Inventory.AddItem(CurrentSmeltingItem.SmithingInfo.SmeltsInto);
+                Player.Instance.GainExperience("Smithing", CurrentSmeltingItem.SmithingInfo.SmeltingExperience);
+                TicksToNextAction = CurrentSmeltingItem.SmithingInfo.SmithingSpeed;
+                SmithingStage = 1;
+            }
+            else
+            {
+                MessageManager.AddMessage("You have run out of ores.");
+                CurrentSmithingItem = null;
+                CurrentSmeltingItem = null;
+            }
+        }
+        else if(SmithingStage == 1)
+        {
+            if (Player.Instance.Inventory.RemoveItems(CurrentSmeltingItem.SmithingInfo.SmeltsInto, 1) > 0)
+            {
+                MessageManager.AddMessage("You hammer the " + CurrentSmeltingItem.SmithingInfo.SmeltsInto.Name + " into a " + CurrentSmithingItem.Name + " and place it in water to cool.");              
+                Player.Instance.GainExperience("Smithing", CurrentSmeltingItem.SmithingInfo.SmeltingExperience);
+                TicksToNextAction = CurrentSmeltingItem.SmithingInfo.SmithingSpeed;
+                SmithingStage = 2;
+            }
+        }
+        else if(SmithingStage == 2)
+        {
+            if (Player.Instance.Inventory.AddItem(CurrentSmithingItem))
+            {
+                MessageManager.AddMessage("You withdraw the " + CurrentSmithingItem.Name);
+                TicksToNextAction = CurrentSmeltingItem.SmithingInfo.SmeltingSpeed;
+                SmithingStage = 0;
+            }
+        }
+
     }
     public void ShowTooltip(MouseEventArgs args, string tipName, bool alignRight)
     {

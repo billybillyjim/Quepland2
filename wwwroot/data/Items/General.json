@@ -7,28 +7,6 @@
     "icon": "Gold"
   },
   {
-    "Name": "White Pine Logs",
-    "Description": "It's a very soft wood.",
-    "gatherString": "You chop some white pine logs.",
-    "value": 3,
-    "gatherSpeed": 10,
-    "requiredLevel": 1,
-    "experienceGained": "Woodcutting:8",
-    "requiredAction": "Woodcutting",
-    "icon": "Log"
-  },
-  {
-    "Name": "Poplar Logs",
-    "Description": "It's a less soft wood.",
-    "gatherString": "You chop some poplar logs.",
-    "value": 9,
-    "gatherSpeed": 30,
-    "requiredLevel": 8,
-    "experienceGained": "Woodcutting:24",
-    "requiredAction": "Woodcutting",
-    "icon": "Log"
-  },
-  {
     "Name": "Shuniku Berries",
     "Description": "Disgusting tasting berries that will stain your mouth red.",
     "gatherString": "You gather some berries.",

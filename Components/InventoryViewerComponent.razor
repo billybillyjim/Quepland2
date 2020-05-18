@@ -3,10 +3,18 @@
 
 <ItemViewerComponent Item="@SelectedItem"></ItemViewerComponent>
 <div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:8px;margin:5px;">
-    @foreach (GameItem item in Player.Instance.Inventory.GetItems().Keys)
+    @foreach (GameItem item in Player.Instance.Inventory.GetItems().Keys.OrderBy(x => x.ID))
     {
+        if (Bank.Instance.IsBanking)
+        {
+            <div onclick="@(new Action(() => BankItem(item)))"><ItemBoxComponent Item="@item" ShowAmount="@true"></ItemBoxComponent></div>
 
+        }
+        else
+        {
             <div onclick="@(new Action(() => SelectItem(item)))"><ItemBoxComponent Item="@item" ShowAmount="@true"></ItemBoxComponent></div>
+
+        }
 
 
     }
@@ -21,6 +29,18 @@
 
     private GameItem SelectedItem;
 
+    private void BankItem(GameItem item)
+    {
+        if (item.IsEquipped)
+        {
+            MessageManager.AddMessage("You'll need to unequip this item before banking it.");
+            return;
+        }
+        int amountToBank = Math.Min(Player.Instance.Inventory.GetNumberOfItem(item), Bank.Instance.Amount);
+        Bank.Instance.Inventory.AddMultipleOfItem(item, amountToBank);
+        Player.Instance.Inventory.RemoveItems(item, amountToBank);
+        GameState.UpdateState();
+    }
     private void SelectItem(GameItem item)
     {
         SelectedItem = item;

@@ -18,32 +18,51 @@
     }
     @foreach (AreaUnlock a in thisArea.UnlockableAreas)
     {
-        if (a.HasRequirements())
+        if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false)
         {
-            <button @onclick="(() => GoToArea(a.AreaURL))">@a.ButtonText</button>
+            if (a.HasRequirements())
+            {
+                <button @onclick="(() => GoToArea(a.AreaURL))">@a.ButtonText</button>
+            }
+            else
+            {
+                <button onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, a.ToString())))"
+                        onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                    @a.ButtonText
+                    </button>
+                }
+            }
         }
-        else
+    @foreach (string npc in thisArea.NPCs)
+    {
+        <div style="border:solid 1px black;padding:5px;">
+
+            @npc
+            @foreach (Dialog d in NPCManager.Instance.GetNPCByName(npc).Dialogs)
+            {
+                @if (d.HasRequirements())
+                {
+                    <button @onclick="@(() => Talk(d))">@d.ButtonText</button>
+                }
+
+            }
+        </div>
+        @if (thisArea.DungeonName != null)
         {
-            <button>@a.ButtonText</button>
+            <button @onclick="@(() => EnterDungeon(thisArea.Dungeon.URL))">Enter @thisArea.Dungeon.Name</button>
         }
-
+        @if (thisArea.Monsters != null && thisArea.Monsters.Count > 0)
+        {
+            <button @onclick="@(e => FindBattles())">Battle</button>
+        }
     }
-    @if (thisArea.DungeonName != null)
-    {
-        <button @onclick="@(() => EnterDungeon(thisArea.Dungeon.URL))">Enter @thisArea.Dungeon.Name</button>
-    }
-    @if (thisArea.Monsters != null && thisArea.Monsters.Count > 0)
-    {
-        <button @onclick="@(e => FindBattles())">Battle</button>
-    }
-}
 
 
 
-@code {
-    [Parameter]
-    public string areaName { get; set; }
-    public Area thisArea { get; set; }
+    @code {
+        [Parameter]
+        public string areaName { get; set; }
+public Area thisArea { get; set; }
 
     private void GetAxe()
     {
@@ -61,7 +80,8 @@
     {
         GameState.StopActions();
         GameState.Location = url;
-        AreaManager.Instance.GetAreaByURL(url).IsUnlocked = true;
+        Area a = AreaManager.Instance.GetAreaByURL(url);
+        a.Unlock();
         UriHelper.NavigateTo("World/" + url);
     }
     private void EnterBuilding(string buildingURL)
@@ -91,4 +111,4 @@
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
-}
+    }

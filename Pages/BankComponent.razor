@@ -3,7 +3,16 @@
 @implements IDisposable
 
 <h3>Bank</h3>
-
+<div>
+    Quantity:
+    <div>
+        <button style="@GetButtonStyle(1)" @onclick="@(() => UpdateBankAmount(1))">1</button> 
+        <button style="@GetButtonStyle(5)" @onclick="@(() => UpdateBankAmount(5))">5</button> 
+        <button style="@GetButtonStyle(10)" @onclick="@(() => UpdateBankAmount(10))">10</button> 
+        <button style="@GetButtonStyle(20)" @onclick="@(() => UpdateBankAmount(20))">x</button> 
+        <button style="@GetButtonStyle(int.MaxValue)" @onclick="@(() => UpdateBankAmount(int.MaxValue))">All</button>
+    </div>
+</div>
 <div style="display:flex;flex-wrap:wrap;">
 @foreach(GameItem item in Bank.Instance.Inventory.GetItems().Keys)
 {
@@ -23,7 +32,6 @@
 }
     </div>
 @code {
-    int WithdrawAmount = 1;
     int itemsPerRow = 10;
     private int GetEmptyItemsToFillRow()
     {
@@ -31,19 +39,19 @@
     }
     private void Withdraw(GameItem item)
     {
-        WithdrawAmount = Math.Max(0, WithdrawAmount);
 
-        int maxWithdraw;
+
+        int maxWithdraw = Math.Max(0, Bank.Instance.Amount);
         //If the item is stackable and the player has a stack in their inventory already, or the player has space for another item
         if ((item.IsStackable && Player.Instance.Inventory.HasItem(item) && Player.Instance.Inventory.GetAvailableSpaces() == 0) ||
-             (item.IsStackable && Player.Instance.Inventory.GetAvailableSpaces() > 0))
+         (item.IsStackable && Player.Instance.Inventory.GetAvailableSpaces() > 0))
         {
-            maxWithdraw = Math.Min(WithdrawAmount, Bank.Instance.Inventory.GetNumberOfItem(item));
+            maxWithdraw = Math.Min(Bank.Instance.Amount, Bank.Instance.Inventory.GetNumberOfItem(item));
         }
         else
         {
             //Gets the smallest of the amount, inventory space, and number in the bank.
-            maxWithdraw = Math.Min(Math.Min(WithdrawAmount, Player.Instance.Inventory.GetAvailableSpaces()), Bank.Instance.Inventory.GetNumberOfItem(item));
+            maxWithdraw = Math.Min(Math.Min(Bank.Instance.Amount, Player.Instance.Inventory.GetAvailableSpaces()), Bank.Instance.Inventory.GetNumberOfItem(item));
         }
         if (Player.Instance.Inventory.AddMultipleOfItem(item, maxWithdraw))
         {
@@ -51,12 +59,30 @@
         }
         GameState.UpdateState();
     }
+    private string GetButtonStyle(int amount)
+    {
+        if(Bank.Instance.Amount == amount)
+        {
+            return "cursor:normal;background-color:darkgray;";
+        }
+        else
+        {
+            return "cursor:pointer;";
+        }
+    }
+    private void UpdateBankAmount(int newAmount)
+    {
+        Bank.Instance.Amount = newAmount;
+        GameState.UpdateState();
+    }
     protected override void OnInitialized()
     {
+        Bank.Instance.IsBanking = true;
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()
     {
+        Bank.Instance.IsBanking = false;
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();

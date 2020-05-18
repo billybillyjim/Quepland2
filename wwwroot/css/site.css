@@ -32,7 +32,30 @@ app {
     -o-transition: width .2s cubic-bezier(0.65, 0.05, 0.36, 1) !important;
     -ms-transition: width .2s cubic-bezier(0.65, 0.05, 0.36, 1) !important;
     transition: width .2s cubic-bezier(0.65, 0.05, 0.36, 1) !important;
-}​
+}
+
+.custom-dropdown {
+    background-color: #6c757d;
+    border-radius: 0.25rem;
+    color: white;
+    width: 200px;
+    height: 35px;
+    padding: 5px;
+    position: relative;
+    margin:10px;
+}
+.custom-dropdown-item {
+    background-color: white;
+    color: #212529;
+    width:100%;
+}
+    .custom-dropdown-item:hover{
+        background-color:whitesmoke;
+    }
+    .custom-dropdown-item:active {
+        background-color: #6c757d;
+        color:white;
+    }
 
 .main {
     flex: 1;
@@ -55,7 +78,7 @@ app {
 }
 
 .sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-image: linear-gradient(180deg, rgb(109, 213, 250) 0%, rgb(41, 128, 185) 60%);
 }
 
     .sidebar .top-row {

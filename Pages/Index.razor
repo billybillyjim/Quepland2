@@ -1,12 +1,14 @@
 ﻿@page "/"
 @inject GameState GameState
 @inject HttpClient Http
+@inject NavigationManager UriHelper
 @inject IJSRuntime JSRuntime
 @implements IDisposable
 
 @if (GameState.ShowStartMenu)
 {
     <StartMenuComponent></StartMenuComponent>
+    <button @onclick="@(() => Test())">Smith</button>
 }
 else
 {
@@ -20,6 +22,7 @@ else
         if (GameState.InitCompleted == false)
         {
             await AreaManager.Instance.LoadAreas(Http);
+            GameState.CurrentLand = AreaManager.Instance.GetLandByName("Quepland");
             await ItemManager.Instance.LoadItems(Http);
             await Player.Instance.LoadSkills(Http);
             await NPCManager.Instance.LoadNPCs(Http);
@@ -27,7 +30,7 @@ else
             await BattleManager.Instance.LoadMonsters(Http);
             await PlayFabManager.Connect();
             GameState.JSRuntime = JSRuntime;
-            GameState.GetDimensions();
+            await GameState.GetDimensions();
             GameState.Start();
             GameState.InitCompleted = true;
 
@@ -36,11 +39,20 @@ else
         Player.Instance.Inventory.AddItem("Shuniku Berries");
         Player.Instance.Inventory.AddItem("Wood Carving Knife");
         Player.Instance.Inventory.AddMultipleOfItem("White Pine Logs", 3);
+        Player.Instance.Inventory.AddItem("Copper Ore");
+        Player.Instance.Inventory.AddItem("Copper Bar");
+
         Player.Instance.CurrentHP = 50;
         Bank.Instance.Inventory.AddItem("Stone Axe");
+
         GameState.StateChanged += OnGameStateChanged;
     }
+    private void Test()
+    {
 
+        GameState.Location = "Smithy";
+        UriHelper.NavigateTo("World/Smithy/");
+    }
 
     public void Dispose()
     {

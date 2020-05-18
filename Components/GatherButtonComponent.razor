@@ -54,9 +54,9 @@
         {
             return "";
         }
-        if (item == null)
+        if (Player.Instance.HasToolRequirement(item) == false)
         {
-            return "";
+            return "You need a tool for " + item.RequiredAction + ".";
         }
         if (Player.Instance.HasSkillRequirement(item) == false)
         {

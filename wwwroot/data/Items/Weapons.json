@@ -5,9 +5,8 @@
     "value": 150,
     "requiredAction": "Knifesmanship",
     "enabledActions": "Knifesmanship",
-    "requiredLevel": 0,
     "equipSlot": "Right Hand",
-    "icon": "Knife",
+    "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
       "damage": 3
@@ -27,7 +26,6 @@
       "damage": 4
     }
   },
-
   {
     "Name": "Copper Axe",
     "Description": "It's an axe made of a soft metal copper.",
@@ -40,6 +38,33 @@
     "weaponInfo": {
       "attackSpeed": 15,
       "damage": 8
+    }
+  },
+
+  {
+    "Name": "Copper Sword",
+    "Description": "A soft metal sword for swinging.",
+    "value": 150,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "Right Hand",
+    "requiredAction": "Swordsmanship",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 11,
+      "damage": 5
+    }
+  },
+  {
+    "Name": "Copper Hammer",
+    "Description": "It's a hammer made of a soft metal copper.",
+    "value": 150,
+    "enabledActions": "Hammermanship",
+    "equipSlot": "Right Hand",
+    "requiredAction": "Hammermanship",
+    "icon": "Hammer",
+    "weaponInfo": {
+      "attackSpeed": 21,
+      "damage": 18
     }
   }
 ]

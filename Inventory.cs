@@ -176,6 +176,12 @@ public class Inventory
         UpdateItemCount();
         return true;
     }
+    /// <summary>
+    /// Returns the number of items removed, 0 if none were removed.
+    /// </summary>
+    /// <param name="item"></param>
+    /// <param name="amount"></param>
+    /// <returns></returns>
     public int RemoveItems(GameItem item, int amount)
     {
         if (items.TryGetValue(item, out int currentAmount))
@@ -247,6 +253,23 @@ public class Inventory
         }
         return false;
 
+    }
+    public List<GameItem> GetSmeltableItems()
+    {
+        return items.Keys.Where(x => x.SmithingInfo != null && x.SmithingInfo.SmeltsInto != null).ToList();
+    }
+    public List<GameItem> GetSmithableItems()
+    {
+        List<GameItem> smithables = new List<GameItem>();
+        foreach(GameItem i in items.Keys)
+        {
+            if(i.SmithingInfo != null && i.SmithingInfo.SmithsInto != null)
+            {
+                smithables.AddRange(i.SmithingInfo.SmithsInto);
+            }
+            
+        }
+        return smithables;
     }
 }
 

@@ -47,4 +47,33 @@ public class Requirement
 
 		return true;
     }
+    public override string ToString()
+    {
+		string req = "";
+		if (Location != "None" && GameState.Location != Location)
+		{
+			req += "You must be at " + Location + ".";
+		}
+		if (Skill != "None" && Player.Instance.HasSkillRequirement(Skill, SkillLevel) == false)
+		{
+			req += "You need " + SkillLevel + " Skill.";
+		}
+		if (Action != "None" && Player.Instance.HasToolRequirement(Action) == false)
+		{
+			req += "You don't have any tool for " + Action + ".";
+		}
+		if (Item != "None" && Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(Item)) < ItemAmount)
+		{
+			req += "You need " + ItemAmount + " " + Item;
+		}
+		if (Quest != "None")
+		{
+			int progress = QuestManager.Instance.GetQuestByName(Quest).Progress;
+			if (progress < MinimumQuestProgress || progress > MaximumQuestProgress)
+			{
+				req += "You need to progress further in the quest " + Quest;
+			}
+		}
+		return req;
+    }
 }

@@ -17,4 +17,17 @@ public class AreaUnlock
         }
 		return true;
     }
+    public override string ToString()
+    {
+        string req = "";
+        foreach(Requirement r in Requirements)
+        {
+            if(r.IsMet() == false)
+            {
+                req += r.ToString() + "\n";
+            }        
+        }
+        req = req.Substring(0, req.Length - 1);
+        return req;
+    }
 }

@@ -1,0 +1,86 @@
+﻿@inject GameState GameState
+@implements IDisposable 
+
+
+        <div class="custom-dropdown" onmouseleave="@(new Action(() => Close()))" @onclick="@(() => Select())">
+            @if(DropdownItems == null || DropdownItems.Count == 0)
+            {
+                @EmptyText
+            }
+            else if(selectedValue != null)
+            {
+                @selectedValue
+            }
+            else if (BoxText != null)
+            {
+                @BoxText
+            }
+            <table style="@GetStyle() left:0px; background-color: white;z-index:10; position: absolute; @width">
+                @if (selected)
+                {
+                    @foreach (string item in DropdownItems)
+                    {
+                        <tr class="custom-dropdown-item">
+                            <td @onclick="@(() => Choose(item))">
+                                @item
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+
+
+
+@code 
+{
+    [Parameter]
+    public string Value { get; set; }
+    [Parameter]
+    public string BoxText { get; set; }
+    private string selectedValue;
+    [Parameter]
+    public List<string> DropdownItems { get; set; }
+    [Parameter]
+    public EventCallback<string> ValueChanged { get; set; }
+    private bool selected;
+    private string width = "width:300px;";
+    [Parameter]
+    public string EmptyText { get; set; } = "You don't have any.";
+
+    public Task Choose(string item)
+    {
+        Value = item;
+        selectedValue = item;
+        selected = false;
+        GameState.UpdateState();
+        return ValueChanged.InvokeAsync(Value);
+    }
+    public void Select()
+    {
+        selected = !selected;
+        GameState.UpdateState();
+    }
+    public void Close()
+    {
+        selected = false;
+        GameState.UpdateState();
+    }
+    public string GetStyle()
+    {
+        if(selected)
+        {
+            return "border-collapse: separate !important; border: solid gray 1px; border-radius: 0.25rem; ";
+        }
+        return "";
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

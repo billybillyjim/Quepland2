@@ -78,9 +78,9 @@
     "name": "Lower Mt Queple Trail",
     "id": 3,
     "isUnlocked": false,
-    "description": "Beyond the village you find a rocky terrain, sparse with trees or wildlife. There is a small shack with a sign on the top that reads, \"Signs\"",
+    "description": "Beyond the village you find a rocky terrain, sparse with trees or wildlife.  You spot a rocky overhang that appears to cover a cave entrance. There is a small shack with a sign on the top that reads, \"Signs\"",
     "areaURL": "LowerMtQuepleTrail",
-    "icon": "Mountain",
+    "image": "Mountain",
     "buildings": [
       {
         "name": "Sign Man's Signs",
@@ -92,39 +92,12 @@
         ]
       }
     ],
-    "dungeonName": "Queple Cave"
-  },
-  {
-    "name": "Copper Mine",
-    "id": 4,
-    "isUnlocked": false,
-    "description": "You find a large opening in the cave, the walls glitter with a bright metallic brown. It seems to be a motherlode of copper!",
-    "areaURL": "CopperMine",
-    "image": "Mine",
-    "actions": [
-      "Mine Copper:Copper Ore"
-    ]
-  },
-  {
-    "name": "Tin Mine",
-    "id": 5,
-    "isUnlocked": false,
-    "description": "The cave opens into a large cavern full of crystalic ore. It looks like a tin motherlode!",
-    "areaURL": "TinMine",
-    "image": "Mine",
-    "actions": [
-      "Mine Tin:Tin Ore"
-    ]
-  },
-  {
-    "name": "Queple Cave Smithy",
-    "id": 6,
-    "isUnlocked": false,
-    "description": "At the end of the cavern you see a glowing red light. You step through the opening to see a completely functioning smithy!",
-    "areaURL": "QuepleCaveSmithy",
-    "image": "Smithy",
-    "actions": [
-      "Smith"
+    "unlockableAreas": [
+      {
+        "AreaURL": "QuepleCaveEntrance",
+        "ButtonText": "Enter the Cave"
+      }
+
     ]
   }
 ]

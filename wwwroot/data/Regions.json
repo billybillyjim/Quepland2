@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Mount Queple",
+    "areaNames": [
+      "Quepland Fields",
+      "Quepland Woods",
+      "Teppas",
+      "Lower Mt Queple Trail"
+    ],
+    "isUnlocked": true
+  },
+  {
+    "name": "Queple Cave",
+    "areaNames": [
+      "Queple Cave Entrance",
+      "Copper Mine",
+      "Tin Mine",
+      "Queple Cave Smithy"
+    ]
+  }
+]

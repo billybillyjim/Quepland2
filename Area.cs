@@ -29,6 +29,7 @@ public class Area
     public bool IsHidden { get; set; }
     public List<string> Actions { get; set; } = new List<string>();
     public List<string> Monsters { get; set; } = new List<string>();
+    public List<string> NPCs { get; set; } = new List<string>();
     public List<AreaUnlock> UnlockableAreas { get; set; } = new List<AreaUnlock>();
     public List<Building> Buildings { get; set; } = new List<Building>();
     public string DungeonName { get; set; }
@@ -50,6 +51,10 @@ public class Area
     {
         return Buildings.FirstOrDefault(x => x.URL == url);
     }
-
+    public void Unlock()
+    {
+        IsUnlocked = true;
+        AreaManager.Instance.GetRegionForArea(this).IsUnlocked = true;
+    }
 }
 

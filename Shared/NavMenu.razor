@@ -1,8 +1,8 @@
 ﻿@inject NavigationManager UriHelper
 @inject GameState GameState
 
-<div class="top-row pl-4 navbar navbar-dark">
-    <div style="color:white;">Quepland 2</div>
+<div class="top-row pl-4 navbar navbar-light">
+    <div style="color:white;font-size:larger">Quepland 2 (@GameState.Version)</div>
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,16 +11,32 @@
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <ul class="nav flex-column">
         <li class="nav-item px-3">
-            <button onclick="@(new Action(() => GoToArea("Bank")))">Bank</button>
+            <span style="color:black;cursor:pointer;font-size:large;" onclick="@(new Action(() => GoToArea("Bank")))"><img style="height: 45px; width: 45px; padding: 5px; margin-right: 10px; border-radius: 0.25rem; background-color: white;" src="@("data/Images/Bank.png")" />Bank</span>
+
         </li>
-        @foreach (Area a in AreaManager.Instance.Areas)
+        @foreach (Region region in AreaManager.Instance.GetLandByName(GameState.CurrentLand.Name).Regions)
         {
-            if (a.IsUnlocked && a.IsHidden == false)
+            if (region.IsUnlocked)
             {
-                <li class="nav-item px-3">
-                    <button onclick="@(new Action(() => GoToArea(a.AreaURL)))">@a.Name</button>
-                </li>
+
+                    <li class="nav-item px-3" style="background-color:rgba(255, 255, 255, 0.2);cursor:pointer;" @onclick="@(() => ChangeOpenRegion(region))">
+                        <span style="color:black;font-size:large;display:inline-block;padding-top:10px;" >@region.Name  </span><img style="height:25px;width:25px;float:right;margin-top:11px;" src="data/Images/Hamburger.png" />
+                    </li>
+                
+                @if (region == openRegionMenu)
+                {
+                    foreach (Area a in region.Areas)
+                    {
+                        if (a.IsUnlocked && a.IsHidden == false)
+                        {
+                            <li class="nav-item px-3">
+                                <span style="color:black;cursor:pointer;font-size:large;" onclick="@(new Action(() => GoToArea(a.AreaURL)))"><img style="height:45px;width:45px;padding:5px;margin-right:10px;margin-top:3px;border-radius:0.25rem;background-color:white;" src="@("data/Images/" + a.Image + ".png")" />@a.Name</span>
+                            </li>
+                        }
+                    }
+                }
             }
+
         }
     </ul>
 </div>
@@ -28,6 +44,21 @@
 @code {
 
     private bool collapseNavMenu = true;
+    private Region openRegionMenu;
+
+    public void ChangeOpenRegion(Region newRegion)
+    {
+        if(openRegionMenu == newRegion)
+        {
+            openRegionMenu = null;
+        }
+        else
+        {
+            openRegionMenu = newRegion;
+        }
+
+        GameState.UpdateState();
+    }
 
     public void GoToArea(string name)
     {

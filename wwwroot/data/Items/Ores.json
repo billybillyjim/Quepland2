@@ -8,7 +8,11 @@
     "requiredLevel": 1,
     "experienceGained": "Mining:8",
     "requiredAction": "Mining",
-    "icon": "Ore"
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltsIntoString": "Copper Bar",
+      "smeltingExperience": 12
+    }
   },
   {
     "Name": "Tin Ore",
@@ -19,6 +23,52 @@
     "requiredLevel": 1,
     "experienceGained": "Mining:8",
     "requiredAction": "Mining",
-    "icon": "Ore"
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltsIntoString": "Tin Bar",
+      "smeltingExperience": 18
+    }
+  },
+  {
+    "Name": "Copper Bar",
+    "Description": "The squishiest metal bar.",
+    "gatherString": "You smelt a copper bar.",
+    "value": 50,
+    "gatherSpeed": 15,
+    "requiredLevel": 1,
+    "experienceGained": "Smithing:15",
+    "requiredAction": "Smithing",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smeltsIntoString": "Copper Bar",
+      "smithsIntoString": [
+        "Copper Knife",
+        "Copper Sword",
+        "Copper Hammer",
+        "Copper Axe"
+      ],
+      "smithingExperience": 15
+    }
+  },
+  {
+    "Name": "Tin Bar",
+    "Description": "A beautiful, soft metal bar.",
+    "gatherString": "You smelt a tin bar.",
+    "value": 50,
+    "gatherSpeed": 15,
+    "requiredLevel": 4,
+    "experienceGained": "Smithing:18",
+    "requiredAction": "Smithing",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smeltsIntoString": "Tin Bar",
+      "smithsIntoString": [
+        "Tin Knife",
+        "Tin Sword",
+        "Tin Hammer",
+        "Tin Axe"
+      ],
+      "smithingExperience": 20
+    }
   }
 ]

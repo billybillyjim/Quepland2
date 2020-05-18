@@ -80,6 +80,15 @@ public class BattleManager
     {
         int total = Player.Instance.GetTotalDamage().ToRandomDamage();
         CurrentOpponent.CurrentHP -= total;
+        if(Player.Instance.GetWeapon() == null)
+        {
+            Player.Instance.GainExperience("Strength", total * 2);
+        }
+        else
+        {
+            Player.Instance.GainExperience(Player.Instance.GetWeapon().RequiredAction, total * 2);
+        }
+        
         MessageManager.AddMessage("You hit the " + CurrentOpponent.Name + " for " + total + " damage!");
 
     }
