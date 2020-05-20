@@ -67,7 +67,7 @@ using System.Threading.Tasks;
                 ClearNonCombatActions();
             }
             if(TicksToNextAction <= 0 && CurrentGatherItem != null)
-            {
+            {                
                 GatherItem();
             }
             else if(TicksToNextAction <= 0 && CurrentRecipe != null)
@@ -81,6 +81,14 @@ using System.Threading.Tasks;
             else if(BattleManager.Instance.CurrentOpponent != null)
             {
                 BattleManager.Instance.DoBattle();
+            }
+            if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking)
+            {
+                Player.Instance.CurrentFollower.TicksToNextAction--;
+                if(Player.Instance.CurrentFollower.TicksToNextAction <= 0)
+                {
+                    Player.Instance.CurrentFollower.BankItems();
+                }
             }
             GetDimensions();
             TicksToNextAction--;
@@ -123,16 +131,50 @@ using System.Threading.Tasks;
 
     private void GatherItem()
     {
+        if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking == false)
+        {
+            if (Player.Instance.CurrentFollower.Inventory.GetAvailableSpaces() <= 0)
+            {
+                Player.Instance.CurrentFollower.IsBanking = true;
+                Player.Instance.CurrentFollower.TicksToNextAction = Player.Instance.CurrentFollower.AutoCollectSpeed;
+                PlayerGatherItem();
+                MessageManager.AddMessage(Player.Instance.CurrentFollower.AutoCollectMessage.Replace("$", CurrentGatherItem.Name));
+            }
+            else
+            {
+                Player.Instance.CurrentFollower.Inventory.AddItem(CurrentGatherItem);
+                MessageManager.AddMessage(CurrentGatherItem.GatherString + " and hand it over to " + Player.Instance.CurrentFollower.Name + ".");
+            }
+            
+        }
+        else {
+            PlayerGatherItem();
+        }
+        TicksToNextAction = GetTicksToNextGather();
         Player.Instance.GainExperience(CurrentGatherItem.ExperienceGained);
+
+
+
+    }
+    private bool PlayerGatherItem()
+    {
         if (Player.Instance.Inventory.AddItem(CurrentGatherItem) == false)
         {
-            CurrentGatherItem = null;
+            if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking)
+            {
+               
+            }
+            else
+            {
+                CurrentGatherItem = null;
+            }       
+            return false;
         }
         else
-        {
-            TicksToNextAction = CurrentGatherItem.GatherSpeed.ToGaussianRandom();
+        {            
             MessageManager.AddMessage(CurrentGatherItem.GatherString);
         }
+        return true;
     }
     private void CraftItem()
     {
@@ -202,6 +244,14 @@ using System.Threading.Tasks;
             }
         }
 
+    }
+    private int GetTicksToNextGather()
+    {
+        int baseValue = CurrentGatherItem.GatherSpeed.ToGaussianRandom();
+        Console.WriteLine("Base Value:" + baseValue);
+        baseValue = (int)Math.Max(1, (double)baseValue * Player.Instance.GetGearMultiplier(CurrentGatherItem));
+        Console.WriteLine("Modified Base Value:" + baseValue);
+        return baseValue;
     }
     public void ShowTooltip(MouseEventArgs args, string tipName, bool alignRight)
     {

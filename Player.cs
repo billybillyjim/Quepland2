@@ -21,6 +21,7 @@ public class Player
     public Inventory Inventory = new Inventory(30);
     private List<GameItem> equippedItems = new List<GameItem>();
     public List<Skill> Skills = new List<Skill>();
+    public Follower CurrentFollower { get; set; }
     public int MaxHP = 50;
     public int CurrentHP;
     public int TicksToNextAttack;
@@ -54,6 +55,20 @@ public class Player
         {
             GainExperience(Skills.FirstOrDefault(x => x.Name == skillAndExp.Split(':')[0]), amount);
         }
+    }
+    public double GetGearMultiplier(GameItem item)
+    {
+        if(item.Requirements == null || item.Requirements.Count == 0)
+        {
+            return 0;
+        }
+        string skill = item.Requirements.FirstOrDefault(x => x.Skill != "None").Skill;
+        double multi = 1;
+        foreach(GameItem i in equippedItems)
+        {
+            multi -= i.GatherSpeedBonus;
+        }
+        return Math.Max(multi, 0.01);
     }
     public void Equip(GameItem item)
     {

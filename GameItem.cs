@@ -21,6 +21,7 @@ public class GameItem
 	/// </summary>
 	public int GatherSpeed { get; set; } = 10;
 	public int ID { get; set; }
+	public double GatherSpeedBonus { get; set; }
 	public ArmorInfo ArmorInfo { get; set; }
 	public WeaponInfo WeaponInfo { get; set; }
 	public SmithingInfo SmithingInfo { get; set; }

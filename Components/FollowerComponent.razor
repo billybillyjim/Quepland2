@@ -1,0 +1,19 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@foreach(Follower follower in FollowerManager.Instance.Followers)
+{
+    <div>@follower.Name</div>
+}
+
+@code {
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

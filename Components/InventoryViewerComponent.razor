@@ -5,10 +5,10 @@
 <div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:8px;margin:5px;">
     @foreach (GameItem item in Player.Instance.Inventory.GetItems().Keys.OrderBy(x => x.ID))
     {
-
+        if (item != null)
+        {
             <div onclick="@(new Action<MouseEventArgs>((args) => SelectItem(args, item)))"><ItemBoxComponent Item="@item" ShowAmount="@true" IsSelected="@(SelectedItem == item)"></ItemBoxComponent></div>
-
-
+        }
     }
     @for (int i = 0; i < Player.Instance.Inventory.GetSize() - Player.Instance.Inventory.GetItems().Keys.Count; i++)
     {
@@ -16,13 +16,65 @@
     }
     <div>Slots Used:@Player.Instance.Inventory.GetTotalNumberOfItems() / @Player.Instance.Inventory.GetSize()</div>
 </div>
+@if (Player.Instance.CurrentFollower != null)
+{
+<div style="margin-left:5px;">
 
+    @if (Player.Instance.CurrentFollower.IsBanking)
+    {
+        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Banking...</div>
+        <div class="progress" style="height:15px;margin-right:5px;">
+            <div class="progress-bar" style="width:@((((double)Player.Instance.CurrentFollower.TicksToNextAction / Player.Instance.CurrentFollower.AutoCollectSpeed) * 100d))%">
+
+            </div>
+        </div>
+    }
+    else if (Player.Instance.CurrentFollower.MeetsRequirements(GameState.CurrentGatherItem))
+    {
+        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Gathering...</div>
+        <div class="progress" style="height:15px;margin-right:5px;">
+            <div class="progress-bar" style="width:@(100 -(((double)Player.Instance.CurrentFollower.Inventory.GetAvailableSpaces() / Player.Instance.CurrentFollower.InventorySize) * 100d))%">
+
+            </div>
+        </div>
+    }
+    else if (GameState.CurrentGatherItem != null && Player.Instance.CurrentFollower.MeetsRequirements(GameState.CurrentGatherItem) == false)
+    {
+        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Cannot Gather</div>
+    }
+    else
+    {
+        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Following...</div>
+    }
+</div>
+}
+
+<div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:8px;margin:5px;">
+    @if (Player.Instance.CurrentFollower != null)
+    {
+        @foreach (GameItem item in Player.Instance.CurrentFollower.Inventory.GetItems().Keys.OrderBy(x => x.ID))
+        {
+            if (item != null)
+            {
+                <ItemBoxComponent Item="@item" ShowAmount="@true" Inventory="@Player.Instance.CurrentFollower.Inventory"></ItemBoxComponent>
+            }
+        }
+        @for (int i = 0; i < Player.Instance.CurrentFollower.Inventory.GetSize() - Player.Instance.CurrentFollower.Inventory.GetItems().Keys.Count; i++)
+        {
+            <ItemBoxComponent Item="@null"></ItemBoxComponent>
+        }
+    }
+</div>
 @code {
 
     private GameItem SelectedItem;
 
     private void BankItem(GameItem item)
     {
+        if (item == null)
+        {
+            return;
+        }
         if (item.IsEquipped)
         {
             MessageManager.AddMessage("You'll need to unequip this item before banking it.");
@@ -31,7 +83,7 @@
         int amountToBank = Math.Min(Player.Instance.Inventory.GetNumberOfItem(item), Bank.Instance.Amount);
         Bank.Instance.Inventory.AddMultipleOfItem(item, amountToBank);
         Player.Instance.Inventory.RemoveItems(item, amountToBank);
-        if(Player.Instance.Inventory.GetNumberOfItem(SelectedItem) == 0)
+        if (Player.Instance.Inventory.GetNumberOfItem(SelectedItem) == 0)
         {
             SelectedItem = null;
         }

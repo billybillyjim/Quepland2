@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Lumpy The Gnome",
+    "description": "Lumpy is just barely capable of moving logs from one location to another.",
+    "autoCollectMessage": "Lumpy stubles off with a load of $.",
+    "autoCollectSkill": "Woodcutting",
+    "autoCollectLevel": 15,
+    "inventorySize": 10,
+    "autoCollectSpeed": 100,
+    "isUnlocked": true
+  }
+]

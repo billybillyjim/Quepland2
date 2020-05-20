@@ -1,11 +1,12 @@
 ﻿@inject GameState GameState
 @implements IDisposable
-    <div style="display:flex;">
-        <button onclick="@(new Action(() => ChangeView("Inventory")))">Inv</button>
-        <button onclick="@(new Action(() => ChangeView("Skills")))">Skill</button>
-        <button onclick="@(new Action(() => ChangeView("Quests")))">Quests</button>
-        <button onclick="@(new Action(() => ChangeView("Crafting")))">Crafting</button>
-    </div>
+<div style="display:flex;">
+    <button onclick="@(new Action(() => ChangeView("Inventory")))">Inv</button>
+    <button onclick="@(new Action(() => ChangeView("Skills")))">Skill</button>
+    <button onclick="@(new Action(() => ChangeView("Quests")))">Quests</button>
+    <button onclick="@(new Action(() => ChangeView("Crafting")))">Crafting</button>
+    <button onclick="@(new Action(() => ChangeView("Followers")))">Followers</button>
+</div>
 @if (activeWindow == "Inventory")
 {
     <InventoryViewerComponent></InventoryViewerComponent>
@@ -21,6 +22,10 @@ else if (activeWindow == "Quests")
 else if (activeWindow == "Crafting")
 {
     <CraftingComponent></CraftingComponent>
+}
+else if (activeWindow == "Followers")
+{
+    <FollowerComponent></FollowerComponent>
 }
 @code {
     private string activeWindow = "Inventory";

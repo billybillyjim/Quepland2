@@ -36,6 +36,10 @@ public class Inventory
     /// <returns></returns>
     public int GetNumberOfItem(GameItem item)
     {
+        if(item == null)
+        {
+            return 0;
+        }
         if(items.ContainsKey(item) == false)
         {
             return 0;
@@ -212,6 +216,11 @@ public class Inventory
         }
         UpdateItemCount();
         return 0;
+    }
+    public void Clear()
+    {
+        items.Clear();
+        UpdateItemCount();
     }
     private void UpdateItemCount()
     {

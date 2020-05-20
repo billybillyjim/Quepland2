@@ -28,6 +28,7 @@ else
             await NPCManager.Instance.LoadNPCs(Http);
             await QuestManager.Instance.LoadQuests(Http);
             await BattleManager.Instance.LoadMonsters(Http);
+            await FollowerManager.Instance.LoadFollowers(Http);
             await PlayFabManager.Connect();
             GameState.JSRuntime = JSRuntime;
             await GameState.GetDimensions();
@@ -41,6 +42,7 @@ else
         Player.Instance.Inventory.AddMultipleOfItem("White Pine Logs", 3);
         Player.Instance.Inventory.AddItem("Copper Ore");
         Player.Instance.Inventory.AddItem("Copper Bar");
+        Player.Instance.CurrentFollower = FollowerManager.Instance.Followers[0];
 
         Player.Instance.CurrentHP = 50;
         Bank.Instance.Inventory.AddItem("Stone Axe");
