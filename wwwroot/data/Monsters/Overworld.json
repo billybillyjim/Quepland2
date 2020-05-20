@@ -1,0 +1,133 @@
+[
+  {
+    "name": "Chicken",
+    "hp": 10,
+    "attackSpeed": 10,
+    "armor": 0,
+    "damage": 2,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        },
+        {
+          "itemName": "Chicken Egg",
+          "weight": 10
+        },
+        {
+          "itemName": "Chicken Meat",
+          "weight": 10
+        }
+      ],
+      "alwaysDrops": [
+        "Feather"
+      ]
+    }
+    
+  },
+  {
+    "name": "Rooster",
+    "hp": 15,
+    "attackSpeed": 8,
+    "armor": 0,
+    "damage": 3,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Rooster Plumage",
+          "weight": 50
+        },
+        {
+          "itemName": "Chicken Meat",
+          "weight": 10
+        }
+      ],
+      "alwaysDrops": [
+        "Feather"
+      ]
+    }
+  },
+  {
+    "name": "Bandit",
+    "hp": 50,
+    "weakness": "Swordsmanship",
+    "strength": "Hammermanship",
+    "damage": 9,
+    "armor": 4,
+    "attackSpeed": 5,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 5
+        },
+        {
+          "itemName": "Bandit's Knife",
+          "weight": 3
+        },
+        {
+          "itemName": "Bandit's Boots",
+          "weight": 3
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 10
+        },
+        {
+          "itemName": "Coins",
+          "weight": 2,
+          "amount": 30
+        },
+        {
+          "itemName": "Coins",
+          "weight": 1,
+          "amount": 100
+        }
+      ]
+    }
+  },
+  {
+    "name": "Big Bandit",
+    "hp": 90,
+    "weakness": "Swordsmanship",
+    "strength": "Hammermanship",
+    "damage": 18,
+    "armor": 8,
+    "attackSpeed": 15,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 15
+        },
+        {
+          "itemName": "Bandit's Knife",
+          "weight": 7
+        },
+        {
+          "itemName": "Bandit's Boots",
+          "weight": 7
+        },
+        {
+          "itemName": "Coins",
+          "weight": 20,
+          "amount": 20
+        },
+        {
+          "itemName": "Coins",
+          "weight": 8,
+          "amount": 60
+        },
+        {
+          "itemName": "Coins",
+          "weight": 4,
+          "amount": 300
+        }
+      ]
+    }
+  }
+]

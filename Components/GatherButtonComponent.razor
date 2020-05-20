@@ -5,7 +5,7 @@
     @if (GameState.CurrentGatherItem == item)
     {
         <div style="position:relative">
-            <button onclick="@(new Action(() => GatherItem(null)))">Stop Gathering</button>
+            <button class="btn btn-primary" onclick="@(new Action(() => GatherItem(null)))">Stop Gathering</button>
         </div>
     }
     else
@@ -13,14 +13,14 @@
         if (item.HasRequirements())
         {
             <div style="position:relative">
-                <button onclick="@(new Action(() => GatherItem(item)))">@gatherText</button>
+                <button class="btn btn-primary" onclick="@(new Action(() => GatherItem(item)))">@gatherText</button>
             </div>
         }
         else
         {
             <div style="position:relative" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, item.GetRequirementTooltip())))"
                  onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                <button class="action-btn" disabled>
+                <button  class="btn btn-primary" disabled>
                     @gatherText
                 </button>
                 <div style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;"></div>

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Swampedge",
+    "id": 20,
+    "image": "Swamp",
+    "description": "You enter an enormous, smelly swamp. The sunlight is blocked by thick, entangled trees. Rice grows wild here. The path leads into a dark wooded area.",
+    "areaURL": "Swampedge",
+    "actions": [
+      "Chop Snakewood Trees:Snakewood Logs",
+      "Gather Rice:Rice"
+    ],
+    "unlockableAreas": [
+      {
+        "AreaURL": "Swampwood",
+        "ButtonText": "Enter the Woods"
+      }
+
+    ]
+  },
+  {
+    "name": "Swampwood",
+    "id": 21,
+    "image": "forest",
+    "description": "The swamp grows dark under the tree canopy. The sound of bugs and swamp creatures is disorienting, it'll be hard to continue without a light source.",
+    "monsters": [
+      "Chicken",
+      "Rooster"
+    ]
+  }
+]

@@ -191,6 +191,10 @@ public class Inventory
         UpdateItemCount();
         return true;
     }
+    public bool AddDrop(Drop drop)
+    {
+        return AddMultipleOfItem(ItemManager.Instance.GetItemByName(drop.ItemName), drop.Amount);
+    }
     /// <summary>
     /// Returns the number of items removed, 0 if none were removed.
     /// </summary>

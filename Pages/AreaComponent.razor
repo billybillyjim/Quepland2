@@ -16,7 +16,10 @@
     }
     @foreach (Building b in thisArea.Buildings)
     {
-        <button @onclick="@(() => EnterBuilding(b.URL))">@b.ButtonText</button>
+        <div>
+            <button class="btn btn-success" @onclick="@(() => EnterBuilding(b.URL))">@b.ButtonText</button>
+        </div>
+        
         <br />
     }
     @foreach (AreaUnlock a in thisArea.UnlockableAreas)
@@ -29,28 +32,19 @@
     }
     @foreach (string npc in thisArea.NPCs)
     {
-        <div style="border:solid 1px black;padding:5px;">
-
-            @npc
-            @foreach (Dialog d in NPCManager.Instance.GetNPCByName(npc).Dialogs)
-            {
-                @if (d.HasRequirements())
-                {
-                    <button @onclick="@(() => Talk(d))">@d.ButtonText</button>
-                }
-
-            }
-        </div>
-        <br />
+        if (NPCManager.Instance.GetNPCByName(npc).AvailableDialogCount() > 0)
+        {
+            <Quepland_2.Components.NPCDialogComponent npc="@npc"></Quepland_2.Components.NPCDialogComponent>
+        }
     }
     @if (thisArea.DungeonName != null)
     {
-        <button @onclick="@(() => EnterDungeon(thisArea.Dungeon.URL))">Enter @thisArea.Dungeon.Name</button>
+        <button class="btn btn-dark" @onclick="@(() => EnterDungeon(thisArea.Dungeon.URL))">Enter @thisArea.Dungeon.Name</button>
         <br />
     }
     @if (thisArea.Monsters != null && thisArea.Monsters.Count > 0)
     {
-        <button @onclick="@(e => FindBattles())">Battle</button>
+        <button class="btn btn-outline-dark" @onclick="@(e => FindBattles())">Battle</button>
     }
 
 }
@@ -61,16 +55,6 @@
     public string areaName { get; set; }
     public Area thisArea { get; set; }
 
-    private void GetAxe()
-    {
-        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItemByName("Stone Axe"));
-        GameState.UpdateState();
-    }
-    private void Talk(Dialog d)
-    {
-        d.Talk();
-        GameState.UpdateState();
-    }
     private void FindBattles()
     {
         GameState.StopNonCombatActions();

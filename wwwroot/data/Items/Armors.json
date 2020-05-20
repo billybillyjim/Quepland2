@@ -9,5 +9,15 @@
       "damage": 3,
       "armorBonus": 1
     }
+  },
+  {
+    "name": "Bandit's Boots",
+    "value": 30,
+    "description": "A pair of boots taken from a bandit who probably won't be using them anymore.",
+    "icon": "Boots",
+    "armorInfo": {
+      "armorBonus": 1
+    }
+
   }
 ]

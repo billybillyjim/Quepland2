@@ -32,7 +32,7 @@
       "buttonText": "Leve me alone! I know what I'm doing.",
       "responseText": "Wow, okay. I see how it is. Well just so you know, you can grab the axe from your bank to chop down trees. See ya!",
       "quest": "Oriole Ornithology",
-      "newQuestprogressValue": 5,
+      "newQuestprogressValue": 6,
       "requirements": [
         {
           "quest": "Oriole Ornithology",
@@ -58,7 +58,7 @@
       "buttonText": "Where is my axe?",
       "responseText": "It should be right below here. Just click the icon with the axe on it to put it into your inventory.",
       "quest": "Oriole Ornithology",
-      "newQuestprogressValue": 3,
+      "newQuestprogressValue": 4,
       "requirements": [
         {
           "quest": "Oriole Ornithology",
@@ -74,16 +74,32 @@
       "buttonText": "Now What?",
       "responseText": "Just click to chop some White Pine trees and you'll gain experience in Woodcutting. You can see your experience by clicking Skills at the top of the right sidebar.",
       "quest": "Oriole Ornithology",
-      "newQuestprogressValue": 4,
+      "newQuestprogressValue": 5,
       "requirements": [
         {
           "quest": "Oriole Ornithology",
           "minimumQuestProgress": 3,
-          "maximumQuestProgress": 3
+          "maximumQuestProgress": 4
         },
         {
           "item": "Stone Axe",
           "itemAmount": 1
+        }
+      ]
+    },
+    {
+      "buttonText": "What do I do from here?",
+      "responseText": "You've done it! Beyond the tree is a world to explore. Keep heading up the mountain and you'll reach the Village of Teppas, where you can sell your logs and buy basic equipment. Further along you'll reach Queple Cave where you can go spelunking. Good luck!",
+      "quest": "Oriole Ornithology",
+      "newQuestprogressValue": 6,
+      "requirements": [
+        {
+          "quest": "Oriole Ornithology",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 5
+        },
+        {
+          "location": "QueplandWoods"
         }
       ]
     }

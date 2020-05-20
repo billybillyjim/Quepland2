@@ -9,7 +9,7 @@
     @if (areaToUnlock.HasRequirements())
     {
         <div style="position:relative">
-            <button @onclick="(() => GoToArea())">@areaToUnlock.ButtonText</button>
+            <button  class="btn btn-warning" @onclick="(() => GoToArea())">@areaToUnlock.ButtonText</button>
 
         </div>
     }
@@ -17,7 +17,7 @@
     {
         <div style="position:relative" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, areaToUnlock.ToString())))"
              onmouseout="@(new Action(() => GameState.HideTooltip()))">
-            <button disabled>
+            <button class="btn btn-warning" disabled>
                 @areaToUnlock.ButtonText
             </button>
             <div style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;"></div>

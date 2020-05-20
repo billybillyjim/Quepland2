@@ -92,5 +92,23 @@
         "skillLevel": 1
       }
     ]
+  },
+  {
+    "name": "Bandit's Knife",
+    "description": "The knife taken from a bandit. It probably wasn't his either.",
+    "value": 50,
+    "enabledActions": "Knifesmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Dagger",
+    "weaponInfo": {
+      "attackSpeed": 5,
+      "damage": 5
+    },
+    "requirements": [
+      {
+        "skill": "Knifesmanship",
+        "skillLevel": 5
+      }
+    ]
   }
 ]

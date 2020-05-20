@@ -4,6 +4,11 @@
     @foreach(Skill s in Player.Instance.Skills)
     {
         <div>@s.Name @s.Level @s.Experience</div>
+        <div class="progress">
+            <div class="progress-bar" style="width:@(s.Progress)%">
+
+            </div>
+        </div>
     }
 </div>
 

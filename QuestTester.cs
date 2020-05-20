@@ -4,8 +4,6 @@ using System.Collections.Generic;
 public class QuestTester
 {
 	public Quest CurrentQuest;
-    public int CompletedQuests = 0;
-    public int CurrentProgress;
     public List<Node> DialogTree;
     public List<Dialog> UsedDialogs;
 

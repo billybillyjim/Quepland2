@@ -13,7 +13,7 @@ public class DropTable
 
     }
 
-    public GameItem GetDrop()
+    public Drop GetDrop()
     {
         if(Drops.Count == 0)
         {
@@ -27,7 +27,7 @@ public class DropTable
             if(roll <= drop.Weight)
             {
                 MessageManager.AddMessage("You received a " + drop.ItemName);
-                return ItemManager.Instance.GetItemByName(drop.ItemName);
+                return drop;
             }
             roll -= drop.Weight;
         }

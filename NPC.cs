@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class NPC
 {
@@ -8,4 +9,8 @@ public class NPC
 	public List<Dialog> Dialogs { get; set; } = new List<Dialog>();
 
 
+	public int AvailableDialogCount()
+    {
+		return Dialogs.Where(x => x.HasRequirements()).ToList().Count;
+    }
 }

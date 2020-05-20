@@ -5,7 +5,9 @@
       "Quepland Fields",
       "Quepland Woods",
       "Teppas",
-      "Lower Mt Queple Trail"
+      "Lower Mt Queple Trail",
+      "Upper Mt Queple Trail",
+      "Eastern Trail"
     ],
     "isUnlocked": true
   },
@@ -16,6 +18,13 @@
       "Copper Mine",
       "Tin Mine",
       "Queple Cave Smithy"
+    ]
+  },
+  {
+    "name": "Sawabe Swamp",
+    "areaNames": [
+      "Swampedge",
+      "Swampwood"
     ]
   }
 ]

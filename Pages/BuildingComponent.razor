@@ -8,18 +8,7 @@
     <div>@thisBuilding.Description</div>
     @foreach (string npc in thisBuilding.NPCs)
     {
-    <div style="border:solid 1px black;padding:5px;">
-
-        @npc
-        @foreach (Dialog d in NPCManager.Instance.GetNPCByName(npc).Dialogs)
-        {
-            @if (d.HasRequirements())
-            {
-                <button @onclick="@(() => Talk(d))">@d.ButtonText</button>
-            }
-
-        }
-    </div>
+        <Quepland_2.Components.NPCDialogComponent npc="@npc"></Quepland_2.Components.NPCDialogComponent>
     }
 }
 

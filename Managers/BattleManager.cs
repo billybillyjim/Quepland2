@@ -18,7 +18,7 @@ public class BattleManager
     private static readonly Random random = new Random();
     public async Task LoadMonsters(HttpClient Http)
     {
-        Monsters.AddRange(await Http.GetJsonAsync<Monster[]>("data/Monsters.json"));
+        Monsters.AddRange(await Http.GetJsonAsync<Monster[]>("data/Monsters/Overworld.json"));
     }
     public void StartBattle()
     {
@@ -63,7 +63,8 @@ public class BattleManager
                 CurrentOpponent.CurrentHP = 0;
                 MessageManager.AddMessage("You defeated the " + CurrentOpponent.Name + ".");
                 Player.Instance.Inventory.AddItems(CurrentOpponent.DropTable.GetAlwaysDrops());
-                Player.Instance.Inventory.AddItem(CurrentOpponent.DropTable.GetDrop());
+
+                Player.Instance.Inventory.AddDrop(CurrentOpponent.DropTable.GetDrop());
 
                 EndBattle();
             }

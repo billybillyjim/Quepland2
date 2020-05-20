@@ -24,6 +24,9 @@
         ]
       }
 
+    ],
+    "npcs": [
+      "Tuto"
     ]
   },
   {
@@ -45,6 +48,9 @@
     "monsters": [
       "Chicken",
       "Rooster"
+    ],
+    "npcs": [
+      "Tuto"
     ]
   },
   {
@@ -95,8 +101,49 @@
       {
         "AreaURL": "QuepleCaveEntrance",
         "ButtonText": "Enter the Cave"
+      },
+      {
+        "areaURL": "UpperMtQuepleTrail",
+        "buttonText": "Continue Up the Trail"
       }
 
+    ]
+  },
+  {
+    "name": "Upper Mt Queple Trail",
+    "id": 4,
+    "image": "MountainTop",
+    "isUnlocked": false,
+    "description": "High up on the mountain you can see down into the valley below. Beyond the hilly forest there appears to be a desert to the east, and a swamp to the west. The path only leads higher up the mountain.",
+    "areaURL": "UpperMtQuepleTrail",
+    "trappingLocation": true,
+    "unlockableAreas": [
+      {
+        "AreaURL": "EasternTrail",
+        "ButtonText": "Continue Down into the Valley"
+      }
+
+    ]
+  },
+  {
+    "name": "Eastern Trail",
+    "id": 5,
+    "image": "Trail",
+    "description": "The trail winds down into the woods below. The smell of the swamp ahead greets you before you can even see it.",
+    "areaURL": "EasternTrail",
+    "actions": [
+      "Chop Oak Trees:Oak Logs"
+    ],
+    "unlockableAreas": [
+      {
+        "AreaURL": "Swampedge",
+        "ButtonText": "Enter the Swamp"
+      }
+
+    ],
+    "monsters": [
+      "Bandit",
+      "Big Bandit"
     ]
   }
 ]

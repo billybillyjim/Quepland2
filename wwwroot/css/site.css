@@ -13,9 +13,6 @@ a, .btn-link {
     background-color: #1b6ec2;
     border-color: #1861ac;
 }
-.action-btn[disabled]:hover{
-    display:normal;
-}
 
 app {
     position: relative;

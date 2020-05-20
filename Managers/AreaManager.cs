@@ -26,6 +26,7 @@ public class AreaManager
     {
         Areas.AddRange(await Http.GetJsonAsync<Area[]>("data/Areas/MountQueple.json"));
         Areas.AddRange(await Http.GetJsonAsync<Area[]>("data/Areas/QuepleCave.json"));
+        Areas.AddRange(await Http.GetJsonAsync<Area[]>("data/Areas/SawabeSwamp.json"));
         Regions.AddRange(await Http.GetJsonAsync<Region[]>("data/Regions.json"));
         Lands.AddRange(await Http.GetJsonAsync<Land[]>("data/Lands.json"));
         Dungeons.AddRange(await Http.GetJsonAsync<Dungeon[]>("data/Dungeons/QueplandDungeons.json"));

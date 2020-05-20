@@ -25,11 +25,11 @@
     "name": "Oriole Ornithology",
     "id": 1,
     "completionText": "Congratulations! You completed the tutorial! You now know everything you need to know to set out on an adventure! Good luck out there!",
-    "progressToComplete": 5,
+    "progressToComplete": 6,
     "rewards": [
       {
         "skill": "Woodcutting",
-        "experienceGain": 200
+        "experienceGain": 50
       }
     ]
   }
