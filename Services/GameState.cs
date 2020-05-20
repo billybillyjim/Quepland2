@@ -50,12 +50,15 @@ using System.Threading.Tasks;
     public static int GameWindowWidth;
     public int SmithingStage;
 
+    private QuestTester QuestTester = new QuestTester();
+
     public void Start()
     {
         if(GameTimer != null)
         {
             return;
         }
+        QuestTester.TestQuests();
         GameTimer = new Timer(new TimerCallback(_ =>
         {
             if (stopActions)

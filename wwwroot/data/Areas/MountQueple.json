@@ -24,10 +24,6 @@
         ]
       }
 
-    ],
-    "monsters": [
-      "Chicken",
-      "Rooster"
     ]
   },
   {
@@ -45,7 +41,10 @@
         "AreaURL": "Teppas",
         "ButtonText": "Continue into the village"
       }
-
+    ],
+    "monsters": [
+      "Chicken",
+      "Rooster"
     ]
   },
   {
