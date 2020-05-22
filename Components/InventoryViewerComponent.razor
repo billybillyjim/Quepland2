@@ -2,51 +2,67 @@
 @implements IDisposable
 
 <ItemViewerComponent Item="@SelectedItem"></ItemViewerComponent>
+@if (Bank.Instance.IsBanking)
+{
+    <div onclick="@(new Action<MouseEventArgs>((args) => BankItem(SelectedItem, -1)))">Deposit</div>
+}
 <div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:8px;margin:5px;">
     @foreach (GameItem item in Player.Instance.Inventory.GetItems().Keys.OrderBy(x => x.ID))
     {
         if (item != null)
         {
-            <div onclick="@(new Action<MouseEventArgs>((args) => SelectItem(args, item)))"><ItemBoxComponent Item="@item" ShowAmount="@true" IsSelected="@(SelectedItem == item)"></ItemBoxComponent></div>
+            if (item.IsStackable)
+            {
+                <div onclick="@(new Action<MouseEventArgs>((args) => SelectItem(args, item, 0)))"><ItemBoxComponent Item="@item" ShowAmount="@true" IsSelected="@(SelectedItem == item)"></ItemBoxComponent></div>
+
+            }
+            else
+            {
+                for (int i = 0; i < Player.Instance.Inventory.GetNumberOfItem(item); i++)
+                {
+                    int temp = i;
+                    <div onclick="@(new Action<MouseEventArgs>((args) => SelectItem(args, item, temp)))"><ItemBoxComponent Item="@item" ShowAmount="@false" IsSelected="@(selectedItemID == temp && SelectedItem == item)"></ItemBoxComponent></div>
+                }
+            }
+
         }
     }
-    @for (int i = 0; i < Player.Instance.Inventory.GetSize() - Player.Instance.Inventory.GetItems().Keys.Count; i++)
+    @for (int i = 0; i < Player.Instance.Inventory.GetSize() - Player.Instance.Inventory.GetUsedSpaces(); i++)
     {
         <ItemBoxComponent Item="@null"></ItemBoxComponent>
     }
-    <div>Slots Used:@Player.Instance.Inventory.GetTotalNumberOfItems() / @Player.Instance.Inventory.GetSize()</div>
 </div>
 @if (Player.Instance.CurrentFollower != null)
 {
-<div style="margin-left:5px;">
+    <div style="margin-left:5px;">
 
-    @if (Player.Instance.CurrentFollower.IsBanking)
-    {
-        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Banking...</div>
-        <div class="progress" style="height:15px;margin-right:5px;">
-            <div class="progress-bar" style="width:@((((double)Player.Instance.CurrentFollower.TicksToNextAction / Player.Instance.CurrentFollower.AutoCollectSpeed) * 100d))%">
+        @if (Player.Instance.CurrentFollower.IsBanking)
+        {
+            <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Banking...</div>
+            <div class="progress" style="height:15px;margin-right:5px;">
+                <div class="progress-bar" style="width:@((((double)Player.Instance.CurrentFollower.TicksToNextAction / Player.Instance.CurrentFollower.AutoCollectSpeed) * 100d))%">
 
+                </div>
             </div>
-        </div>
-    }
-    else if (Player.Instance.CurrentFollower.MeetsRequirements(GameState.CurrentGatherItem))
-    {
-        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Gathering...</div>
-        <div class="progress" style="height:15px;margin-right:5px;">
-            <div class="progress-bar" style="width:@(100 -(((double)Player.Instance.CurrentFollower.Inventory.GetAvailableSpaces() / Player.Instance.CurrentFollower.InventorySize) * 100d))%">
+        }
+        else if (Player.Instance.CurrentFollower.MeetsRequirements(GameState.CurrentGatherItem))
+        {
+            <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Gathering...</div>
+            <div class="progress" style="height:15px;margin-right:5px;">
+                <div class="progress-bar" style="width:@(100 -(((double)Player.Instance.CurrentFollower.Inventory.GetAvailableSpaces() / Player.Instance.CurrentFollower.InventorySize) * 100d))%">
 
+                </div>
             </div>
-        </div>
-    }
-    else if (GameState.CurrentGatherItem != null && Player.Instance.CurrentFollower.MeetsRequirements(GameState.CurrentGatherItem) == false)
-    {
-        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Cannot Gather</div>
-    }
-    else
-    {
-        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Following...</div>
-    }
-</div>
+        }
+        else if (GameState.CurrentGatherItem != null && Player.Instance.CurrentFollower.MeetsRequirements(GameState.CurrentGatherItem) == false)
+        {
+            <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Cannot Gather</div>
+        }
+        else
+        {
+            <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Following...</div>
+        }
+    </div>
 }
 
 <div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:8px;margin:5px;">
@@ -67,9 +83,10 @@
 </div>
 @code {
 
+    private int selectedItemID = -1;
     private GameItem SelectedItem;
 
-    private void BankItem(GameItem item)
+    private void BankItem(GameItem item, int pos)
     {
         if (item == null)
         {
@@ -83,20 +100,29 @@
         int amountToBank = Math.Min(Player.Instance.Inventory.GetNumberOfItem(item), Bank.Instance.Amount);
         Bank.Instance.Inventory.AddMultipleOfItem(item, amountToBank);
         Player.Instance.Inventory.RemoveItems(item, amountToBank);
-        if (Player.Instance.Inventory.GetNumberOfItem(SelectedItem) == 0)
+        if (item == SelectedItem)
         {
-            SelectedItem = null;
+            if (pos < selectedItemID)
+            {
+                selectedItemID--;
+            }
+
+            if (Player.Instance.Inventory.GetNumberOfItem(item) == 0)
+            {
+                SelectedItem = null;
+            }
         }
         GameState.UpdateState();
     }
-    private void SelectItem(MouseEventArgs args, GameItem item)
+    private void SelectItem(MouseEventArgs args, GameItem item, int pos)
     {
-        if (args.ShiftKey && Bank.Instance.IsBanking)
+        if (Bank.Instance.IsBanking && !args.ShiftKey)
         {
-            BankItem(item);
+            BankItem(item, pos);
         }
         else
         {
+            selectedItemID = pos;
             SelectedItem = item;
             GameState.UpdateState();
         }

@@ -9,6 +9,7 @@
 {
     <StartMenuComponent></StartMenuComponent>
     <button @onclick="@(() => Test())">Smith</button>
+    <a href="https://docs.google.com/document/u/0/" target="_blank">Open Google Docs</a>
 }
 else
 {
@@ -42,7 +43,7 @@ else
         Player.Instance.Inventory.AddMultipleOfItem("White Pine Logs", 3);
         Player.Instance.Inventory.AddItem("Copper Ore");
         Player.Instance.Inventory.AddItem("Copper Bar");
-        Player.Instance.CurrentFollower = FollowerManager.Instance.Followers[0];
+        //Player.Instance.CurrentFollower = FollowerManager.Instance.Followers[0];
 
         Player.Instance.CurrentHP = 50;
         Bank.Instance.Inventory.AddItem("Stone Axe");

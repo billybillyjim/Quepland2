@@ -146,6 +146,8 @@ using System.Threading.Tasks;
             else
             {
                 Player.Instance.CurrentFollower.Inventory.AddItem(CurrentGatherItem);
+                TicksToNextAction = GetTicksToNextGather();
+                Player.Instance.GainExperience(CurrentGatherItem.ExperienceGained);
                 MessageManager.AddMessage(CurrentGatherItem.GatherString + " and hand it over to " + Player.Instance.CurrentFollower.Name + ".");
             }
             
@@ -153,8 +155,8 @@ using System.Threading.Tasks;
         else {
             PlayerGatherItem();
         }
-        TicksToNextAction = GetTicksToNextGather();
-        Player.Instance.GainExperience(CurrentGatherItem.ExperienceGained);
+        
+        
 
 
 
@@ -165,16 +167,19 @@ using System.Threading.Tasks;
         {
             if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking)
             {
-               
+                MessageManager.AddMessage("Your inventory is full. You wait for your follower to return from banking.");
             }
             else
             {
+                MessageManager.AddMessage("Your inventory is full.");
                 CurrentGatherItem = null;
             }       
             return false;
         }
         else
-        {            
+        {
+            Player.Instance.GainExperience(CurrentGatherItem.ExperienceGained);
+            TicksToNextAction = GetTicksToNextGather();
             MessageManager.AddMessage(CurrentGatherItem.GatherString);
         }
         return true;
@@ -250,11 +255,15 @@ using System.Threading.Tasks;
     }
     private int GetTicksToNextGather()
     {
-        int baseValue = CurrentGatherItem.GatherSpeed.ToGaussianRandom();
-        Console.WriteLine("Base Value:" + baseValue);
-        baseValue = (int)Math.Max(1, (double)baseValue * Player.Instance.GetGearMultiplier(CurrentGatherItem));
-        Console.WriteLine("Modified Base Value:" + baseValue);
-        return baseValue;
+        if(CurrentGatherItem != null)
+        {
+            int baseValue = CurrentGatherItem.GatherSpeed.ToGaussianRandom();
+            baseValue = (int)Math.Max(1, (double)baseValue * Player.Instance.GetGearMultiplier(CurrentGatherItem));
+            return baseValue;
+        }
+        Console.WriteLine("Current Gather Item Was null.");
+        return 100000;
+       
     }
     public void ShowTooltip(MouseEventArgs args, string tipName, bool alignRight)
     {

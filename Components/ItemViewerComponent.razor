@@ -23,6 +23,10 @@
                     <div style="float:right;position:relative;bottom:35px;"><button @onclick="@(() => Player.Instance.Equip(Item))">Equip</button></div>
 
                 }
+                if (Bank.Instance.IsBanking)
+                {
+                    <div>Deposit</div>
+                }
             }
         }
     </div>
@@ -31,6 +35,8 @@
 @code {
     [Parameter]
     public GameItem Item { get; set; }
+
+
     protected override void OnInitialized()
     {
         GameState.StateChanged += OnGameStateChanged;

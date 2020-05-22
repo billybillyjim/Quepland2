@@ -25,8 +25,10 @@ public class Player
     public int MaxHP = 50;
     public int CurrentHP;
     public int TicksToNextAttack;
-    public string LastLevelledSkill;
-    public bool LastLevelledSkillLocked;
+
+    public Skill LastGainedExp { get; set; }
+    public Skill ExpTrackerSkill { get; set; }
+    
     
 
     public async Task LoadSkills(HttpClient Http)
@@ -140,10 +142,7 @@ public class Player
         {
             return;
         }
-        if (LastLevelledSkillLocked == false)
-        {
-            LastLevelledSkill = skill.Name;
-        }
+        LastGainedExp = skill;
 
         skill.Experience += (long)(amount);
         

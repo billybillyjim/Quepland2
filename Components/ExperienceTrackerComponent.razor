@@ -1,0 +1,33 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+    <div style="width:250px;height:50px;">
+        @if (Player.Instance.LastGainedExp != null)
+        {
+        <div>
+            @Player.Instance.LastGainedExp.Name
+        </div>
+            <div>
+                @Player.Instance.LastGainedExp.Experience
+            </div>
+            <div class="progress">
+                <div class="progress-bar" style="width:@(Player.Instance.LastGainedExp.Progress)%">
+
+                </div>
+            </div>
+        }
+
+    </div>
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

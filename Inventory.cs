@@ -47,20 +47,32 @@ public class Inventory
         return items[item];
     }
     /// <summary>
-    /// Returns the total amount of items in the inventory.
+    /// Returns the total amount of item slots used in the inventory.
     /// </summary>
     /// <returns></returns>
-    public int GetTotalNumberOfItems()
+    public int GetUsedSpaces()
     {
-        return items.Values.Sum();
+        int slotsUsed = 0;
+        foreach(KeyValuePair<GameItem, int> pair in items)
+        {
+            if (pair.Key.IsStackable)
+            {
+                slotsUsed++;
+            }
+            else
+            {
+                slotsUsed += pair.Value;
+            }
+        }
+        return slotsUsed;
     }
     public int GetAvailableSpaces()
     {
-        if (maxSize - GetTotalNumberOfItems() < 0)
+        if (maxSize - GetUsedSpaces() < 0)
         {
             return 0;
         }
-        return maxSize - GetTotalNumberOfItems();
+        return maxSize - GetUsedSpaces();
     }
     public Dictionary<GameItem, int> GetItems()
     {
