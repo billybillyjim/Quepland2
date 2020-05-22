@@ -32,5 +32,17 @@
         "experienceGain": 50
       }
     ]
+  },
+  {
+    "name": "Mound is Missing",
+    "id": 2,
+    "completionText": "Congratulations! You solved the mystery!",
+    "progressToComplete": 10,
+    "rewards": [
+      {
+        "skill": "Fishing",
+        "experienceGain": 1000
+      }
+    ]
   }
 ]

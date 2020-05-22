@@ -7,7 +7,8 @@
       "Teppas",
       "Lower Mt Queple Trail",
       "Upper Mt Queple Trail",
-      "Eastern Trail"
+      "Eastern Trail",
+      "Northern Trail"
     ],
     "isUnlocked": true
   },
@@ -25,6 +26,26 @@
     "areaNames": [
       "Swampedge",
       "Swampwood"
+    ]
+  },
+  {
+    "name": "Higashi Woods",
+    "areaNames": [
+      "Cochee Clearing",
+      "Higashi Woods",
+      "Deep Higashi Woods",
+      "Higashi Bridge",
+      "East Higashi Woods"
+    ]
+  },
+  {
+    "name": "Cantila Coast",
+    "areaNames": [
+      "Cantila Beach",
+      "Uragota Town",
+      "Darkbourne Bridge",
+      "West Uragota Docks",
+      "East Uragota Docks"
     ]
   }
 ]

@@ -24,10 +24,12 @@ public class AreaManager
     public List<Dungeon> Dungeons = new List<Dungeon>();
     public async Task LoadAreas(HttpClient Http)
     {
-        Areas.AddRange(await Http.GetJsonAsync<Area[]>("data/Areas/MountQueple.json"));
-        Areas.AddRange(await Http.GetJsonAsync<Area[]>("data/Areas/QuepleCave.json"));
-        Areas.AddRange(await Http.GetJsonAsync<Area[]>("data/Areas/SawabeSwamp.json"));
         Regions.AddRange(await Http.GetJsonAsync<Region[]>("data/Regions.json"));
+        foreach(Region region in Regions)
+        {
+            Areas.AddRange(await Http.GetJsonAsync<Area[]>("data/Areas/" + region.Name.RemoveWhitespace() + ".json"));
+        }
+        
         Lands.AddRange(await Http.GetJsonAsync<Land[]>("data/Lands.json"));
         Dungeons.AddRange(await Http.GetJsonAsync<Dungeon[]>("data/Dungeons/QueplandDungeons.json"));
     }
@@ -38,6 +40,7 @@ public class AreaManager
     }
     public Area GetAreaByURL(string url)
     {
+        Console.WriteLine(url);
         return Areas.FirstOrDefault(x => x.AreaURL == url);
     }
     public Region GetRegionByName(string name)

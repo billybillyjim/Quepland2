@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Cantila Beach",
+    "id": 50,
+    "image": "Beach",
+    "description": "You reach the water's edge. The stones almost sing as they roll back and forth in the waves. The path continues eastward into a small fishing town.",
+    "areaURL": "CantilaBeach",
+    "actions": [
+      "Chop Oak Trees:Oak Logs"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "UragotaTown",
+        "buttonText": "Follow the Trail to Town"
+      }
+
+    ],
+    "monsters": [
+      "Bandit",
+      "Big Bandit"
+    ]
+  },
+  {
+    "name": "Uragota Town",
+    "id": 51,
+    "image": "Village",
+    "description": "The small town is quite lively. Situated on the main coastline road, there are a number of shops and an inn to stay at. The road leads through the town and out of sight along the coast.",
+    "areaURL": "UragotaTown",
+    "actions": [
+      "Chop Oak Trees:Oak Logs"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "UragotaWestDocks",
+        "buttonText": "Head to the Docks"
+      },
+      {
+        "areaURL": "DarkbourneBridge",
+        "buttonText": "Continue Along the Road"
+      }
+
+    ],
+    "monsters": [
+      "Bandit",
+      "Big Bandit"
+    ]
+  },
+  {
+    "name": "Uragota West Docks",
+    "id": 52,
+    "image": "Docks",
+    "description": "The western side of the docks is mostly used for smaller boats. A number of fishermen sit at the edge with lines in the water. There's also a kiosk with a sign saying, \"Boats Fore Sail\" in poorly written letters on the front.",
+    "areaURL": "UragotaWestDocks",
+    "actions": [
+      "Chop Oak Trees:Oak Logs"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "UragotaEastDocks",
+        "buttonText": "Visit the Eastern Docks"
+      }
+
+    ],
+    "buildings": [
+      {
+        "name": "Mound's Boats",
+        "buttonText": "Approach the Boat Kiosk",
+        "url": "MoundsBoats",
+        "description": "The kiosk is run by a man named Gordo, who greets you nervously as you approach him. It appears to be selling both large and small fishing vessels.",
+        "npcs": [
+          "Gordo"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Uragota East Docks",
+    "id": 53,
+    "image": "Docks",
+    "description": "The eastern side of the docks contains the larger fishing vessels, as well as a ferry service to the northern isles.",
+    "areaURL": "UragotaEastDocks",
+    "unlockableAreas": [
+      {
+        "areaURL": "NorthernIsles",
+        "buttonText": "Take the Ferry"
+      }
+
+    ]
+  },
+  {
+    "name": "Darkbourne Bridge",
+    "id": 54,
+    "image": "Bridge",
+    "description": "",
+    "areaURL": "DarkbourneBridge",
+    "unlockableAreas": [
+      {
+        "areaURL": "CocheeClearing",
+        "buttonText": "Cross the Bridge"
+      }
+
+    ]
+  }
+]

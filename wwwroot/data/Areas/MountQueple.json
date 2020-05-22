@@ -119,8 +119,8 @@
     "trappingLocation": true,
     "unlockableAreas": [
       {
-        "AreaURL": "EasternTrail",
-        "ButtonText": "Continue Down into the Valley"
+        "areaURL": "EasternTrail",
+        "buttonText": "Continue Down into the Valley"
       }
 
     ]
@@ -129,7 +129,7 @@
     "name": "Eastern Trail",
     "id": 5,
     "image": "Trail",
-    "description": "The trail winds down into the woods below. The smell of the swamp ahead greets you before you can even see it.",
+    "description": "There is a split in the trail ahead. One path winds down into the woods below. The smell of the swamp ahead greets you before you can even see it. The other path rounds the mountain to the north.",
     "areaURL": "EasternTrail",
     "actions": [
       "Chop Oak Trees:Oak Logs"
@@ -138,6 +138,31 @@
       {
         "AreaURL": "Swampedge",
         "ButtonText": "Enter the Swamp"
+      },
+      {
+        "areaURL": "NorthernTrail",
+        "buttonText": "Follow the Trail North"
+      }
+
+    ],
+    "monsters": [
+      "Bandit",
+      "Big Bandit"
+    ]
+  },
+  {
+    "name": "Northern Trail",
+    "id": 6,
+    "image": "Trail",
+    "description": "As you come around the side of the mountain you spy the ocean beyond a large field. The path will lead you straight down to the water.",
+    "areaURL": "NorthernTrail",
+    "actions": [
+      "Chop Oak Trees:Oak Logs"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "CantilaBeach",
+        "buttonText": "Continue Down the Mountain"
       }
 
     ],

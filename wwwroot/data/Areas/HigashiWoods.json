@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Cochee Clearing",
+    "id": 40,
+    "image": "Tree",
+    "isUnlocked": false,
+    "description": "The forest beyond Uragota is different, somehow. An eerie stillness eminates from within, only perturbed by the sound of leaves in the breeze.",
+    "areaURL": "CocheeClearing",
+    "trappingLocation": true,
+    "unlockableAreas": [
+      {
+        "areaURL": "HigashiWoods",
+        "buttonText": "Enter the Forest"
+      }
+
+    ]
+  },
+  {
+    "name": "Higashi Woods",
+    "id": 41,
+    "image": "Woods",
+    "isUnlocked": false,
+    "description": "Trees blanket the hilly terrain, as you make your way further into the woods you find ample supplies for building traps. Large stones and sturdy sticks lie along the path.",
+    "areaURL": "HigashiWoods",
+    "actions": [
+      "Gather Stones:Large Stone",
+      "Gather Sticks:Sticks"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "DeepHigashiWoods",
+        "buttonText": "Continue into the Heart of the Forest"
+      }
+
+    ]
+  },
+  {
+    "name": "Deep Higashi Woods",
+    "id": 42,
+    "image": "Woods",
+    "isUnlocked": false,
+    "description": "You begin to smell a horrid stench as you reach the top of the next hill. Below you see piles of cheese which appear to have been rolled into heads from somewhere on the hill above. An excited man is lying on one of the largest piles, smiling and eating.",
+    "areaURL": "DeepHigashiWoods",
+    "actions": [
+      "Get Some Cheese:Cheese"
+    ]
+  }
+]
