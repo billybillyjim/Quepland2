@@ -1,21 +1,29 @@
 ﻿@inject GameState GameState
-@implements IDisposable 
+@implements IDisposable
 
-@if(GameState.CurrentRecipe != null)
+@if (GameState.CurrentRecipe != null)
 {
-    <div style="height:30px;"><button @onclick="@(() => Stop())">Stop Crafting @GameState.CurrentRecipe.OutputItemName</button></div>
+    <div style="height:60px;"><button @onclick="@(() => Stop())">Stop Crafting @GameState.CurrentRecipe.OutputItemName</button></div>
 }
 else
 {
-    <div style="height:30px"></div>
+    <div style="height:60px"></div>
 }
-@foreach (Recipe recipe in ItemManager.Instance.Recipes)
-{
-    if (recipe.CanCreate())
+<div style="display:flex;flex-wrap:wrap;width:280px;border:solid black 1px;border-radius:0.25rem;background-color:dimgray">
+    @foreach (Recipe recipe in ItemManager.Instance.Recipes)
     {
-        <div @onclick="@(() => Craft(recipe))"><ItemBoxComponent Item="@recipe.Output"></ItemBoxComponent></div>
+        if (recipe.CanCreate())
+        {
+            <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, recipe.OutputAmount + " " + recipe.Output.Name, recipe.GetIngredientsString())))" @onclick="@(() => Craft(recipe))"><ItemBoxComponent Item="@recipe.Output"></ItemBoxComponent></div>
+        }
+        else if (recipe.HasSomeIngredients())
+        {
+            <div style="opacity:0.5" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, recipe.Output.Name, recipe.GetMissingIngredients())))"
+                 onmouseout="@(new Action(() => GameState.HideTooltip()))"><ItemBoxComponent Item="@recipe.Output"></ItemBoxComponent></div>
+        }
     }
-}
+</div>
+
 
 @code {
     private void Craft(Recipe r)

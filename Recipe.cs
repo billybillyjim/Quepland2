@@ -14,6 +14,8 @@ public class Recipe
     }
     public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
     public int CraftingSpeed { get; set; } = 12;
+    public int OutputAmount { get; set; } = 1;
+    public int MaxOutputsPerAction { get; set; } = 1;
 
     /// <summary>
     /// Checks to see if the player has enough of each ingredient.
@@ -21,6 +23,11 @@ public class Recipe
     /// <returns></returns>
 	public bool CanCreate()
     {
+        if((Output.IsStackable && (Player.Instance.Inventory.GetAvailableSpaces() == 0 && Player.Instance.Inventory.HasItem(Output) == false)) ||
+            Player.Instance.Inventory.GetAvailableSpaces() < OutputAmount)
+        {
+            return false;
+        }
 		foreach(Ingredient ingredient in Ingredients)
         {
             if(Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(ingredient.Item)) < ingredient.Amount)
@@ -30,20 +37,79 @@ public class Recipe
         }
         return true;
     }
-    public bool Create()
+    public bool HasSomeIngredients()
     {
+        foreach(Ingredient i in Ingredients)
+        {
+            if (Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(i.Item)) >= i.Amount)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    public string GetMissingIngredients()
+    {
+        string ing = "Missing:" + "\n";
+        foreach (Ingredient i in Ingredients)
+        {
+            if (Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(i.Item)) < i.Amount)
+            {
+                ing += i.Amount + " " + i.Item + "\n";
+            }
+        }
+        return ing;
+    }
+    public string GetIngredientsString()
+    {
+        string ing = "Ingredients:" + "\n";
+        foreach (Ingredient i in Ingredients)
+        {
+                ing += i.Amount + " " + i.Item + "\n";           
+        }
+        return ing;
+    }
+    public int GetMaxOutput()
+    {
+        int max = MaxOutputsPerAction;
+        
+        foreach(Ingredient i in Ingredients)
+        {
+            if (i.DestroyOnUse)
+            {
+                max = Math.Min(MaxOutputsPerAction / i.Amount, Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(i.Item)));
+                Console.WriteLine(Output.Name + ":Max Output:" + max);
+                Console.WriteLine(i.Item + ":Player Has:" + Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(i.Item)));
+                Console.WriteLine(i.Item + ":Max outputs:" + MaxOutputsPerAction);
+            }
+        }
+        return max;
+    }
+    public bool Create(out int created)
+    {
+        created = 0;
         if (CanCreate())
         {
+            int maxOutput = GetMaxOutput();
             foreach(Ingredient ingredient in Ingredients)
             {
                 if (ingredient.DestroyOnUse)
                 {
-                    Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName(ingredient.Item), ingredient.Amount);
+                    Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName(ingredient.Item), ingredient.Amount * maxOutput);
+                    Console.WriteLine("Removing " + (ingredient.Amount * maxOutput) + " " + ingredient.Item);
                 }
             }
-            Player.Instance.GainExperience(Output.ExperienceGained);
-            Player.Instance.Inventory.AddItem(Output);
+            Player.Instance.GainExperienceMultipleTimes(Output.ExperienceGained, maxOutput);
+            Player.Instance.Inventory.AddMultipleOfItem(Output, OutputAmount * maxOutput);
+
+            created = maxOutput;
             return true;
+        }
+        else if ((Output.IsStackable && (Player.Instance.Inventory.GetAvailableSpaces() == 0 && Player.Instance.Inventory.HasItem(Output) == false)) ||
+            Player.Instance.Inventory.GetAvailableSpaces() < OutputAmount)
+        {
+            MessageManager.AddMessage("You don't have enough inventory space to create this.");
+            return false;
         }
         else
         {

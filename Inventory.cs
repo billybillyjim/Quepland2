@@ -217,18 +217,15 @@ public class Inventory
     {
         if (items.TryGetValue(item, out int currentAmount))
         {
-            if (currentAmount >= amount)
-            {
-                items[item] = currentAmount - amount;
+            int remainder = Math.Max(currentAmount - amount, 0);
 
+                items[item] = remainder;
                 if (items[item] <= 0)
                 {
                     items.Remove(item);
                 }
                 UpdateItemCount();
-                return amount;
-            }
-
+                return Math.Max(Math.Abs(currentAmount - amount), 0);
         }
         UpdateItemCount();
         return 0;

@@ -2,15 +2,61 @@
   {
     "Name": "White Pine Arrow Shafts",
     "Description": "They're like skinny, baby logs. Feathers can be attached to the end.",
-    "gatherString": "You make some arrow shafts from the white pine wood.",
-    "value": 1,
-    "experienceGained": "Woodworking:30",
+    "gatherString": "You make $ arrow shafts from the white pine wood.",
+    "value": 3,
+    "experienceGained": "Woodworking:2",
     "icon": "ArrowShafts",
     "requirements": [
       {
         "skill": "Woodworking",
         "skillLevel": 1
       }
-    ]
+    ],
+    "isStackable": true
+  },
+  {
+    "Name": "Headless White Pine Arrows",
+    "Description": "Skinny, wobbly sticks with feathers on the end. Add some arrow heads to make arrows.",
+    "gatherString": "You make $ headless arrows.",
+    "value": 1,
+    "experienceGained": "Woodworking:3",
+    "icon": "HeadlessArrows",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "isStackable": true
+  },
+  {
+    "Name": "Poplar Arrow Shafts",
+    "Description": "They're like skinny, baby logs. Feathers can be attached to the end.",
+    "gatherString": "You make $ arrow shafts from the poplar wood.",
+    "value": 2,
+    "experienceGained": "Woodworking:5",
+    "icon": "ArrowShafts",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 4
+      }
+    ],
+    "isStackable": true
+  },
+  {
+    "Name": "Headless Poplar Arrows",
+    "Description": "Skinny, wobbly sticks with feathers on the end. Add some arrow heads to make arrows.",
+    "gatherString": "You make $ headless poplar arrows.",
+    "value": 4,
+    "experienceGained": "Woodworking:7",
+    "icon": "HeadlessArrows",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 4
+      }
+    ],
+    "isStackable": true
   }
 ]

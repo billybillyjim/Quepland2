@@ -58,6 +58,13 @@ public class Player
             GainExperience(Skills.FirstOrDefault(x => x.Name == skillAndExp.Split(':')[0]), amount);
         }
     }
+    public void GainExperienceMultipleTimes(string skillAndExp, int times)
+    {
+        for(int i = 0; i < times; i++)
+        {
+            GainExperience(skillAndExp);
+        }
+    }
     public double GetGearMultiplier(GameItem item)
     {
         if(item.Requirements == null || item.Requirements.Count == 0)

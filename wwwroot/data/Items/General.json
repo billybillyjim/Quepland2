@@ -31,6 +31,7 @@
   {
     "name": "Feather",
     "description": "Soft, fluffy, and useful for making arrows with.",
+    "gatherString": "You separate the feathers into a pile.",
     "value": 1,
     "icon": "Feather",
     "isStackable": true
@@ -53,5 +54,11 @@
     "value": 15,
     "icon": "Feather",
     "isStackable": true
+  },
+  {
+    "name": "Cheese",
+    "description": "Some stinky cheese.",
+    "value": 5,
+    "icon": "Cheese"
   }
 ]

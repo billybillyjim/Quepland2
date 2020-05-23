@@ -195,10 +195,10 @@ using System.Threading.Tasks;
             MessageManager.AddMessage("You can't make that while fighting a " + BattleManager.Instance.CurrentOpponent.Name + "!");
             return;
         }
-        if (CurrentRecipe.Create())
+        if (CurrentRecipe.Create(out int created))
         {
             TicksToNextAction = CurrentRecipe.CraftingSpeed;
-            MessageManager.AddMessage(CurrentRecipe.Output.GatherString);
+            MessageManager.AddMessage(CurrentRecipe.Output.GatherString.Replace("$", created.ToString()));
         }
         else
         {

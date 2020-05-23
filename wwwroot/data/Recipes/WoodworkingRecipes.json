@@ -3,14 +3,52 @@
     "outputItemName": "White Pine Arrow Shafts",
     "ingredients": [
       {
-        "item": "White Pine Logs"      
+        "item": "White Pine Logs"
       },
       {
         "item": "Wood Carving Knife",
         "destroyOnUse": false
       }
-    ]
-
-    
+    ],
+    "maxOutputsPerAction": 1,
+    "outputAmount": 10
+  },
+  {
+    "outputItemName": "Poplar Arrow Shafts",
+    "ingredients": [
+      {
+        "item": "Poplar Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "outputAmount": 8
+  },
+  {
+    "outputItemName": "Headless White Pine Arrows",
+    "ingredients": [
+      {
+        "item": "White Pine Arrow Shafts"
+      },
+      {
+        "item": "Feather"
+      }
+    ],
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Poplar Arrows",
+    "ingredients": [
+      {
+        "item": "Poplar Arrow Shafts"
+      },
+      {
+        "item": "Feather"
+      }
+    ],
+    "maxOutputsPerAction": 10
   }
 ]
