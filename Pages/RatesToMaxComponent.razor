@@ -1,0 +1,135 @@
+﻿@page "/Rates/Max"
+@inject GameState GameState
+@implements IDisposable
+@inject NavigationManager UriHelper
+
+<button @onclick="@(() => Rates())">Rates</button>
+<button @onclick="@(() => Charts())">Charts</button>
+<div style="overflow-y:scroll">
+    @foreach (Skill skill in Player.Instance.Skills)
+    {
+        if (skill.Name == SkillString)
+        {
+            <div style="font-weight:bold">
+                @skill.Name
+            </div>
+        }
+        else
+        {
+            <div @onclick="@(() => SetSkill(skill.Name))">
+                @skill.Name
+            </div>
+        }
+
+    }
+
+</div>
+<br />
+<div style="width:1000px;position:relative;background-color:lightgray;">
+    <div>Max:@TimeToMax Hours</div>
+    @foreach (KeyValuePair<GameItem, double> action in BestRatesAtLevel)
+    {
+        <div>@action.Key.Name</div>
+        <div>@action.Value</div>
+    }
+
+</div>
+<div style="height:300px;width:1000px">
+
+</div>
+
+
+
+@code {
+
+    private string SkillString;
+    public double TimeToMax;
+    public List<KeyValuePair<GameItem, double>> BestRatesAtLevel = new List<KeyValuePair<GameItem, double>>();
+    private void SetSkill(string skill)
+    {
+        SkillString = skill;
+        CalculateMaxTime();
+        GameState.UpdateState();
+    }
+    private void CalculateMaxTime()
+    {
+        BestRatesAtLevel = new List<KeyValuePair<GameItem, double>>();
+        foreach (GameItem item in ItemManager.Instance.Items)
+        {
+            bool sameSkill = false;
+            foreach(Requirement req in item.Requirements)
+            {
+                if(req.Action == SkillString)
+                {
+                    sameSkill = true;
+                }
+            }
+            if (sameSkill)
+            {
+                if (item.ExperienceGained.Contains(':'))
+                {
+                    int xp = int.Parse(item.ExperienceGained.Split(':')[1]);
+                    double xpHr = (double)xp / item.GatherSpeed * 5 * 60 * 60;
+                    BestRatesAtLevel.Add(new KeyValuePair<GameItem, double>(item, xpHr));
+                }
+            }
+
+        }
+        BestRatesAtLevel = BestRatesAtLevel.OrderBy(x => x.Value).Reverse().ToList();
+        TimeToMax = 0;
+        Player.Instance.Skills.Find(x => x.Name == SkillString).Experience = 0;
+        Player.Instance.Skills.Find(x => x.Name == SkillString).SetSkillLevel(1);
+        for (int i = 1; i < 99; i++)
+        {
+            bool metReq = false;
+            if (metReq)
+            {
+                continue;
+            }
+            Player.Instance.GainExperience(SkillString, (long)Skill.GetExperienceRequired(i) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience);
+            foreach(KeyValuePair<GameItem, double> pair in BestRatesAtLevel)
+            {
+                if (metReq)
+                {
+                    continue;
+                }
+                foreach (Requirement req in pair.Key.Requirements)
+                {
+                    if (metReq)
+                    {
+                        continue;
+                    }
+                    if (req.SkillLevel <= Player.Instance.Skills.Find(x => x.Name == SkillString).GetSkillLevel() && req.SkillLevel > 0)
+                    {
+                        TimeToMax += (Skill.GetExperienceRequired(i + 1) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience) / pair.Value;
+                        Console.WriteLine("Adding Time:" + (Skill.GetExperienceRequired(i + 1) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience) + " / " + pair.Value + "(" + ((Skill.GetExperienceRequired(i + 1) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience) / pair.Value) + " hours) for item:" + pair.Key.Name + " at level:" + i);
+                        metReq = true;
+                        continue;
+                    }
+
+                }
+
+            }
+
+        }
+    }
+
+    private void Rates()
+    {
+        UriHelper.NavigateTo("/Rates/");
+    }
+    private void Charts()
+    {
+        UriHelper.NavigateTo("/Rates/Charts/");
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.HideTooltip();
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

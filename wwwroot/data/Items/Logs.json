@@ -5,7 +5,7 @@
     "Description": "It's a very soft wood.",
     "gatherString": "You chop some white pine logs.",
     "value": 3,
-    "gatherSpeed": 10,
+    "gatherSpeed": 15,
     "experienceGained": "Woodcutting:8",
     "icon": "Log",
     "requirements": [
@@ -24,7 +24,7 @@
     "gatherString": "You chop some poplar logs.",
     "value": 9,
     "gatherSpeed": 30,
-    "experienceGained": "Woodcutting:24",
+    "experienceGained": "Woodcutting:25",
     "icon": "Log",
     "requirements": [
       {
@@ -42,7 +42,7 @@
     "gatherString": "You chop some balsa logs.",
     "value": 1,
     "gatherSpeed": 5,
-    "experienceGained": "Woodcutting:10",
+    "experienceGained": "Woodcutting:20",
     "icon": "Log",
     "requirements": [
       {
@@ -95,8 +95,8 @@
     "description": "A light colored wood with white bark.",
     "gatherString": "You chop some birch logs.",
     "gatherSpeed": 20,
-    "value": 35,
-    "experienceGained": "Woodcutting:45",
+    "value": 45,
+    "experienceGained": "Woodcutting:35",
     "icon": "Log",
     "requirements": [
       {
@@ -112,9 +112,9 @@
     "name": "Mesquite Logs",
     "description": "A set of sturdy mesquite logs.",
     "gatherString": "You chop some mesquite logs.",
-    "gatherSpeed": 25,
-    "value": 50,
-    "experienceGained": "Woodcutting:75",
+    "gatherSpeed": 31,
+    "value": 40,
+    "experienceGained": "Woodcutting:100",
     "icon": "Log",
     "requirements": [
       {
@@ -131,8 +131,8 @@
     "description": "A beautiful wood often used for furniture. These will probably just end up as arrows.",
     "gatherString": "You chop some mahogany logs.",
     "gatherSpeed": 35,
-    "value": 150,
-    "experienceGained": "Woodcutting:90",
+    "value": 190,
+    "experienceGained": "Woodcutting:80",
     "icon": "Log",
     "requirements": [
       {
@@ -150,7 +150,7 @@
     "gatherString": "You chop some ironwood logs.",
     "gatherSpeed": 45,
     "value": 90,
-    "experienceGained": "Woodcutting:140",
+    "experienceGained": "Woodcutting:165",
     "icon": "Log",
     "requirements": [
       {
@@ -166,9 +166,9 @@
     "name": "Snakewood Logs",
     "description": "A dense, twisty wood named after the tree's snakelike appearance.",
     "gatherString": "You chop some snakewood logs.",
-    "gatherSpeed": 53,
+    "gatherSpeed": 55,
     "value": 130,
-    "experienceGained": "Woodcutting:170",
+    "experienceGained": "Woodcutting:240",
     "icon": "Log",
     "requirements": [
       {
@@ -186,7 +186,7 @@
     "gatherString": "You chop some lignum vitae logs.",
     "gatherSpeed": 65,
     "value": 300,
-    "experienceGained": "Woodcutting:250",
+    "experienceGained": "Woodcutting:350",
     "icon": "Log",
     "requirements": [
       {

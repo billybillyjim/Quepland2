@@ -1,27 +1,31 @@
 ﻿@page "/Rates/"
 @inject GameState GameState
 @implements IDisposable
+@inject NavigationManager UriHelper
 
-    <div style="overflow-y:scroll">
-        @foreach (string category in ItemManager.FileNames)
+<button @onclick="@(() => Rates())">Charts</button>
+<button @onclick="@(() => Max())">Max</button>
+
+<div style="overflow-y:scroll">
+    @foreach (string category in ItemManager.FileNames)
+    {
+        if (Category == category)
         {
-            if (Category == category)
-            {
-                <div style="font-weight:bold">
-                    @category
-                </div>
-            }
-            else
-            {
-                <div @onclick="@(() => SetCategory(category))">
-                    @category
-                </div>
-            }
-
+            <div style="font-weight:bold">
+                @category
+            </div>
+        }
+        else
+        {
+            <div @onclick="@(() => SetCategory(category))">
+                @category
+            </div>
         }
 
-    </div>
-<br/>
+    }
+
+</div>
+<br />
 <div>
     @foreach (GameItem item in ItemManager.Instance.Items.Where(x => x.Category == Category).ToList())
     {
@@ -40,17 +44,17 @@
 
     }
 </div>
-<br/>
+<br />
 @if (SelectedItem != null)
 {
-<div>
-    <div>@SelectedItem.Name</div>
-    <div>XP:@SelectedItem.ExperienceGained</div>
-    <div>Gather Speed:@SelectedItem.GatherSpeed</div>
-    <div>XP/HR:@((expGain / (double)SelectedItem.GatherSpeed) * 5 * 60 * 60) </div>
-    <div>GP:@SelectedItem.Value</div>
-    <div>GP/HR:@((SelectedItem.Value / (double)SelectedItem.GatherSpeed) * 5 * 60 * 60)</div>
-</div>
+    <div>
+        <div>@SelectedItem.Name</div>
+        <div>XP:@SelectedItem.ExperienceGained</div>
+        <div>Gather Speed:@SelectedItem.GatherSpeed</div>
+        <div>XP/HR:@((expGain / (double)SelectedItem.GatherSpeed) * 5 * 60 * 60) </div>
+        <div>GP:@SelectedItem.Value</div>
+        <div>GP/HR:@((SelectedItem.Value / (double)SelectedItem.GatherSpeed) * 5 * 60 * 60)</div>
+    </div>
 
 
 }
@@ -82,6 +86,14 @@
             expGain = 0;
         }
         GameState.UpdateState();
+    }
+    private void Rates()
+    {
+        UriHelper.NavigateTo("/Rates/Charts/");
+    }
+    private void Max()
+    {
+        UriHelper.NavigateTo("/Rates/Max/");
     }
     protected override void OnInitialized()
     {
