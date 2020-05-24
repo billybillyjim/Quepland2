@@ -35,5 +35,221 @@
         "action": "Woodcutting"
       }
     ]
+  },
+  {
+    "name": "Balsa Logs",
+    "description": "The softest wood in the world.",
+    "gatherString": "You chop some balsa logs.",
+    "value": 1,
+    "gatherSpeed": 5,
+    "experienceGained": "Woodcutting:10",
+    "icon": "Log",
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 1
+      },
+      {
+        "action": "Woodcutting"
+      }
+    ]
+  },
+  {
+    "name": "Oak Logs",
+    "description": "One of the most common types of wood.",
+    "gatherString": "You chop some oak logs.",
+    "value": 15,
+    "gatherSpeed": 15,
+    "experienceGained": "Woodcutting:35",
+    "icon": "Log",
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 15
+      },
+      {
+        "action": "Woodcutting"
+      }
+    ]
+  },
+  {
+    "name": "Supar Maple Logs",
+    "description": "The sugar is in the sap, not the wood.",
+    "gatherString": "You chop some maple logs.",
+    "gatherSpeed": 20,
+    "value": 25,
+    "experienceGained": "Woodcutting:60",
+    "icon": "Log",
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 25
+      },
+      {
+        "action": "Woodcutting"
+      }
+    ]
+  },
+  {
+    "name": "Birch Logs",
+    "description": "A light colored wood with white bark.",
+    "gatherString": "You chop some birch logs.",
+    "gatherSpeed": 20,
+    "value": 35,
+    "experienceGained": "Woodcutting:45",
+    "icon": "Log",
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 25
+      },
+      {
+        "action": "Woodcutting"
+      }
+    ]
+  },
+  {
+    "name": "Mesquite Logs",
+    "description": "A set of sturdy mesquite logs.",
+    "gatherString": "You chop some mesquite logs.",
+    "gatherSpeed": 25,
+    "value": 50,
+    "experienceGained": "Woodcutting:75",
+    "icon": "Log",
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 40
+      },
+      {
+        "action": "Woodcutting"
+      }
+    ]
+  },
+  {
+    "name": "Mahogany Logs",
+    "description": "A beautiful wood often used for furniture. These will probably just end up as arrows.",
+    "gatherString": "You chop some mahogany logs.",
+    "gatherSpeed": 35,
+    "value": 150,
+    "experienceGained": "Woodcutting:90",
+    "icon": "Log",
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 52
+      },
+      {
+        "action": "Woodcutting"
+      }
+    ]
+  },
+  {
+    "name": "Ironwood Logs",
+    "description": "Is it iron? Is it wood?",
+    "gatherString": "You chop some ironwood logs.",
+    "gatherSpeed": 45,
+    "value": 90,
+    "experienceGained": "Woodcutting:140",
+    "icon": "Log",
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 65
+      },
+      {
+        "action": "Woodcutting"
+      }
+    ]
+  },
+  {
+    "name": "Snakewood Logs",
+    "description": "A dense, twisty wood named after the tree's snakelike appearance.",
+    "gatherString": "You chop some snakewood logs.",
+    "gatherSpeed": 53,
+    "value": 130,
+    "experienceGained": "Woodcutting:170",
+    "icon": "Log",
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 72
+      },
+      {
+        "action": "Woodcutting"
+      }
+    ]
+  },
+  {
+    "name": "Lignum Vitae Logs",
+    "description": "The latin name accounts for half the weight of these dense logs.",
+    "gatherString": "You chop some lignum vitae logs.",
+    "gatherSpeed": 65,
+    "value": 300,
+    "experienceGained": "Woodcutting:250",
+    "icon": "Log",
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 85
+      },
+      {
+        "action": "Woodcutting"
+      }
+    ]
+  },
+  {
+    "name": "Buloke Logs",
+    "description": "The hardest normal wood known to man. A single pound can weigh as much as 15 pounds!",
+    "gatherString": "You chop some buloke logs.",
+    "gatherSpeed": 85,
+    "value": 500,
+    "experienceGained": "Woodcutting:600",
+    "icon": "Log",
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 92
+      },
+      {
+        "action": "Woodcutting"
+      }
+    ]
+  },
+  {
+    "name": "Ice Logs",
+    "description": "Frozen logs from a tree made of ice.",
+    "gatherString": "You chop some ice logs.",
+    "gatherSpeed": 100,
+    "value": 850,
+    "experienceGained": "Woodcutting:850",
+    "icon": "Log",
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 98
+      },
+      {
+        "action": "Woodcutting"
+      }
+    ]
+  },
+  {
+    "name": "Great Tree Logs",
+    "description": "Magical logs harvested from the Great Tree. They're tougher than any normal log you'll find.",
+    "gatherString": "You chop some logs off the Great Tree.",
+    "gatherSpeed": 85,
+    "value": 1500,
+    "experienceGained": "Woodcutting:600",
+    "icon": "Log",
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 105
+      },
+      {
+        "action": "Woodcutting"
+      }
+    ]
   }
 ]

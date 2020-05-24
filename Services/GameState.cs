@@ -51,6 +51,7 @@ using System.Threading.Tasks;
     public int SmithingStage;
 
     private QuestTester QuestTester = new QuestTester();
+    private RecipeTester RecipeTester = new RecipeTester();
 
     public void Start()
     {
@@ -59,6 +60,7 @@ using System.Threading.Tasks;
             return;
         }
         QuestTester.TestQuests();
+        RecipeTester.TestRecipes();
         GameTimer = new Timer(new TimerCallback(_ =>
         {
             if (stopActions)

@@ -9,6 +9,7 @@
 {
     <StartMenuComponent></StartMenuComponent>
     <button @onclick="@(() => Test())">Smith</button>
+    <button @onclick="@(() => Rates())">Rates</button>
     <a href="https://docs.google.com/document/u/0/" target="_blank">Open Google Docs</a>
 }
 else
@@ -49,6 +50,10 @@ else
         Bank.Instance.Inventory.AddItem("Stone Axe");
 
         GameState.StateChanged += OnGameStateChanged;
+    }
+    private void Rates()
+    {
+        UriHelper.NavigateTo("/Rates/");
     }
     private void Test()
     {

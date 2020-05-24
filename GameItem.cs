@@ -8,6 +8,7 @@ public class GameItem
 	public string GatherString { get; set; } = "You get an item";
 	public string ExperienceGained { get; set; } = "None";
 	public string EnabledActions { get; set; } = "None";
+	public string Category { get; set; } = "Unset";
 
 	public string Icon { get; set; } = "Unset";
 	public string EquipSlot { get; set; }

@@ -33,6 +33,7 @@ public class ItemManager
             {
                 i.ID = iterator;
                 iterator++;
+                i.Category = file;
             }
             Items.AddRange(addedItems);
             baseID += MaxItemsPerFile;

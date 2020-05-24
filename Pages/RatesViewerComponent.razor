@@ -1,0 +1,96 @@
+﻿@page "/Rates/"
+@inject GameState GameState
+@implements IDisposable
+
+    <div style="overflow-y:scroll">
+        @foreach (string category in ItemManager.FileNames)
+        {
+            if (Category == category)
+            {
+                <div style="font-weight:bold">
+                    @category
+                </div>
+            }
+            else
+            {
+                <div @onclick="@(() => SetCategory(category))">
+                    @category
+                </div>
+            }
+
+        }
+
+    </div>
+<br/>
+<div>
+    @foreach (GameItem item in ItemManager.Instance.Items.Where(x => x.Category == Category).ToList())
+    {
+        if (SelectedItem == item)
+        {
+            <div style="font-weight:bold">
+                @item.Name
+            </div>
+        }
+        else
+        {
+            <div @onclick="@(() => SetItem(item))">
+                @item.Name
+            </div>
+        }
+
+    }
+</div>
+<br/>
+@if (SelectedItem != null)
+{
+<div>
+    <div>@SelectedItem.Name</div>
+    <div>XP:@SelectedItem.ExperienceGained</div>
+    <div>Gather Speed:@SelectedItem.GatherSpeed</div>
+    <div>XP/HR:@((expGain / (double)SelectedItem.GatherSpeed) * 5 * 60 * 60) </div>
+    <div>GP:@SelectedItem.Value</div>
+    <div>GP/HR:@((SelectedItem.Value / (double)SelectedItem.GatherSpeed) * 5 * 60 * 60)</div>
+</div>
+
+
+}
+
+
+
+@code {
+
+    private string Category = "Unset";
+    private GameItem SelectedItem;
+    private int expGain;
+    private string expCat;
+    private void SetCategory(string cat)
+    {
+        Category = cat;
+        GameState.UpdateState();
+    }
+    private void SetItem(GameItem item)
+    {
+        SelectedItem = item;
+        if (SelectedItem.ExperienceGained.Contains(':'))
+        {
+            expCat = SelectedItem.ExperienceGained.Split(':')[0];
+            expGain = int.Parse(SelectedItem.ExperienceGained.Split(':')[1]);
+        }
+        else
+        {
+            expCat = "No Exp";
+            expGain = 0;
+        }
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.HideTooltip();
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}
