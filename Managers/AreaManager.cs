@@ -40,7 +40,7 @@ public class AreaManager
     }
     public Area GetAreaByURL(string url)
     {
-        Console.WriteLine(url);
+        //Console.WriteLine(url);
         return Areas.FirstOrDefault(x => x.AreaURL == url);
     }
     public Region GetRegionByName(string name)

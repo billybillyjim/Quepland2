@@ -59,8 +59,8 @@ using System.Threading.Tasks;
         {
             return;
         }
-        QuestTester.TestQuests();
-        RecipeTester.TestRecipes();
+        //QuestTester.TestQuests();
+        //RecipeTester.TestRecipes();
         GameTimer = new Timer(new TimerCallback(_ =>
         {
             if (stopActions)

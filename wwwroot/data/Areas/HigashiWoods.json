@@ -39,10 +39,48 @@
     "id": 42,
     "image": "Woods",
     "isUnlocked": false,
-    "description": "You begin to smell a horrid stench as you reach the top of the next hill. Below you see piles of cheese which appear to have been rolled into heads from somewhere on the hill above. An excited man is lying on one of the largest piles, smiling and eating.",
+    "description": "",
     "areaURL": "DeepHigashiWoods",
     "actions": [
       "Get Some Cheese:Cheese"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "HigashiBridge",
+        "buttonText": "Continue up the Hill"
+      }
+
+    ]
+  },
+  {
+    "name": "Higashi Bridge",
+    "id": 43,
+    "image": "Woods",
+    "isUnlocked": false,
+    "description": "",
+    "areaURL": "HigashiBridge",
+    "actions": [
+      "Gather Stones:Large Stone",
+      "Gather Sticks:Sticks"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "EastHigashiWoods",
+        "buttonText": "Cross The Bridge"
+      }
+
+    ]
+  },
+  {
+    "name": "East Higashi Woods",
+    "id": 44,
+    "image": "Woods",
+    "isUnlocked": false,
+    "description": "",
+    "areaURL": "EastHigashiWoods",
+    "actions": [
+      "Gather Stones:Large Stone",
+      "Gather Sticks:Sticks"
     ]
   }
 ]

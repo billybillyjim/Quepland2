@@ -47,5 +47,18 @@
       "West Uragota Docks",
       "East Uragota Docks"
     ]
+  },
+  {
+    "name": "Sabbach Waste",
+    "areaNames": [
+      "Southern Trail",
+      "Route 7",
+      "Desert's Mouth",
+      "Bunkten's Crossing",
+      "Abandoned Shack",
+      "Oasis",
+      "Leupp",
+      "North Leupp"
+    ]
   }
 ]

@@ -1,0 +1,22 @@
+﻿@page "/World/Swampwood"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+<div>This is Swampwood.</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    protected override void OnParametersSet()
+    {
+        GameState.UpdateState();
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

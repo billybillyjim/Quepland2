@@ -31,7 +31,7 @@
     ],
     "unlockableAreas": [
       {
-        "areaURL": "UragotaWestDocks",
+        "areaURL": "WestUragotaDocks",
         "buttonText": "Head to the Docks"
       },
       {
@@ -46,17 +46,17 @@
     ]
   },
   {
-    "name": "Uragota West Docks",
+    "name": "West Uragota Docks",
     "id": 52,
     "image": "Docks",
     "description": "The western side of the docks is mostly used for smaller boats. A number of fishermen sit at the edge with lines in the water. There's also a kiosk with a sign saying, \"Boats Fore Sail\" in poorly written letters on the front.",
-    "areaURL": "UragotaWestDocks",
+    "areaURL": "WestUragotaDocks",
     "actions": [
       "Chop Oak Trees:Oak Logs"
     ],
     "unlockableAreas": [
       {
-        "areaURL": "UragotaEastDocks",
+        "areaURL": "EastUragotaDocks",
         "buttonText": "Visit the Eastern Docks"
       }
 
@@ -74,18 +74,11 @@
     ]
   },
   {
-    "name": "Uragota East Docks",
+    "name": "East Uragota Docks",
     "id": 53,
     "image": "Docks",
     "description": "The eastern side of the docks contains the larger fishing vessels, as well as a ferry service to the northern isles.",
-    "areaURL": "UragotaEastDocks",
-    "unlockableAreas": [
-      {
-        "areaURL": "NorthernIsles",
-        "buttonText": "Take the Ferry"
-      }
-
-    ]
+    "areaURL": "EastUragotaDocks"
   },
   {
     "name": "Darkbourne Bridge",

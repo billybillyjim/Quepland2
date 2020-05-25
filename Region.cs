@@ -12,7 +12,12 @@ public class Region
 				_areas = new List<Area>();
 				foreach(string area in AreaNames)
                 {
-					_areas.Add(AreaManager.Instance.GetAreaByName(area));
+					Area a = AreaManager.Instance.GetAreaByName(area);
+					if(a == null)
+                    {
+						Console.WriteLine("Failed to load Area:" + area + " for Region:" + Name);
+                    }
+					_areas.Add(a);
                 }
 				return _areas;
             }
