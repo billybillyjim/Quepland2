@@ -1,0 +1,10 @@
+{
+  "name": "Jumbo",
+  "id": 5,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi, welcome to my store! Feel free to browse, I'll buy practically anything off you for the right price."
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+[
+  {
+    "name": "Kogoe Docks",
+    "id": 70,
+    "image": "Dock",
+    "description": "",
+    "areaURL": "KogoeDocks",
+    "unlockableAreas": [
+      {
+        "areaURL": "KogoeTown",
+        "buttonText": "Enter Town"
+      }
+    ]
+  },
+  {
+    "name": "Kogoe Town",
+    "id": 71,
+    "image": "Village",
+    "description": "",
+    "areaURL": "KogoeTown",
+    "unlockableAreas": [
+      {
+        "areaURL": "FjelloverPass",
+        "buttonText": "Head to the Mountain"
+      }
+    ]
+  },
+  {
+    "name": "Fjellover Pass",
+    "id": 72,
+    "image": "Trail",
+    "description": "",
+    "areaURL": "FjelloverPass",
+    "unlockableAreas": [
+      {
+        "areaURL": "MtYamaFoot",
+        "buttonText": "Continue up the Path"
+      }
+    ]
+  },
+  {
+    "name": "Foot of Mt Yama",
+    "id": 73,
+    "image": "MountainFoot",
+    "description": "",
+    "areaURL": "MtYamaFoot",
+    "unlockableAreas": [
+      {
+        "areaURL": "MtYama",
+        "buttonText": "Climb the Mountain"
+      }
+    ]
+  },
+  {
+    "name": "Mt Yama",
+    "id": 74,
+    "image": "Mountain",
+    "description": "",
+    "areaURL": "MtYama",
+    "unlockableAreas": [
+      {
+        "areaURL": "MtYamaCave",
+        "buttonText": "Enter the Cave"
+      }
+    ]
+  },
+  {
+    "name": "Mt Yama Cave",
+    "id": 75,
+    "image": "Cave",
+    "description": "",
+    "areaURL": "MtYamaCave"
+  },
+  {
+    "name": "Mt Yama Mine",
+    "id": 76,
+    "image": "Mine",
+    "description": "",
+    "areaURL": "MtYamaMine"
+  }
+]

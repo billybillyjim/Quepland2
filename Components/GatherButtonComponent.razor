@@ -1,8 +1,9 @@
 ﻿@inject GameState GameState
 @implements IDisposable
-@if (item != null)
+
+@if (items != null && items.Count > 0)
 {
-    @if (GameState.CurrentGatherItem == item)
+    @if (items.Contains(GameState.CurrentGatherItem))
     {
         <div style="position:relative">
             <button class="btn btn-primary" onclick="@(new Action(() => GatherItem(null)))">Stop Gathering</button>
@@ -10,15 +11,15 @@
     }
     else
     {
-        if (item.HasRequirements())
+        if (CanGatherAny())
         {
             <div style="position:relative">
-                <button class="btn btn-primary" onclick="@(new Action(() => GatherItem(item)))">@gatherText</button>
+                <button class="btn btn-primary" onclick="@(new Action(() => GatherItem(GetRandomItem())))">@gatherText</button>
             </div>
         }
         else
         {
-            <div style="position:relative" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, item.GetRequirementTooltip())))"
+            <div style="position:relative" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, items[0].GetRequirementTooltip())))"
                  onmouseout="@(new Action(() => GameState.HideTooltip()))">
                 <button  class="btn btn-primary" disabled>
                     @gatherText
@@ -34,32 +35,61 @@
 @code {
     [Parameter]
     public string ActionText { get; set; }
-    private GameItem item;
+    private List<GameItem> items = new List<GameItem>();
     private string gatherText = "";
     private string tooltip = "";
+    private Random rand = new Random();
 
     public void GatherItem(GameItem i)
     {
         if (i == null)
         {
+            Console.WriteLine("Item was null");
             GameState.CurrentGatherItem = null;
             GameState.UpdateState();
             return;
         }
-
         GameState.CurrentGatherItem = i;
         GameState.TicksToNextAction = GameState.CurrentGatherItem.GatherSpeed.ToGaussianRandom();
+        Console.WriteLine("Ticks to Next Action:" + GameState.TicksToNextAction);
         GameState.UpdateState();
     }
-
+    private GameItem GetRandomItem()
+    {
+        List<GameItem> possibleItems = new List<GameItem>();
+        foreach(GameItem i in items)
+        {
+            if (i.HasRequirements())
+            {
+                possibleItems.Add(i);
+            }
+        }
+        if(possibleItems.Count == 0)
+        {
+            Console.WriteLine("No items could be gathered.");
+            return items[0];
+        }
+        return possibleItems[rand.Next(0, possibleItems.Count - 1)];
+    }
+    private bool CanGatherAny()
+    {
+        foreach(GameItem item in items)
+        {
+            if (item.HasRequirements())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     protected override void OnInitialized()
     {
-
         GameState.StateChanged += OnGameStateChanged;
     }
     protected override void OnParametersSet()
     {
-        if(ActionText == null || ActionText.Contains(':') == false)
+        items.Clear();
+        if (ActionText == null || ActionText.Contains(':') == false)
         {
             Console.WriteLine("Action Text was null or contained no colon.");
             if(ActionText == null)
@@ -74,7 +104,18 @@
         }
         else
         {
-            item = ItemManager.Instance.GetItemByName(ActionText.Split(':')[1]);
+            foreach(string i in ActionText.Split(':')[1].Split(','))
+            {
+                GameItem item = ItemManager.Instance.GetItemByName(i);
+                if(item != null)
+                {
+                    items.Add(item);
+                }
+                else
+                {
+                    Console.WriteLine("Item not found:" + i);
+                }
+            }
             gatherText = ActionText.Split(':')[0];
         }
 

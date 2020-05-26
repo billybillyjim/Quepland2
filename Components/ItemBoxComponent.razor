@@ -5,7 +5,10 @@
 {
     
     <div style="@(GetBackground())margin:2px;height:50px;width:50px;position:relative;box-sizing: border-box;border-radius:0.25rem;">
-        <div style="position:absolute;margin-left:2px;margin-top:-2px;color:white">@GetAmount()</div>
+        @if (ShowAmount)
+        {
+            <div style="position:absolute;margin-left:2px;margin-top:-2px;color:white">@GetAmount()</div>
+        }
         <img style="height: 46px;width: 46px;@GetMargin()" src="/data/Images/@(Item.Icon).png"
              onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GetTooltipTitle(), Item.Description)))"
              onmouseout="@(new Action(() => GameState.HideTooltip()))" />

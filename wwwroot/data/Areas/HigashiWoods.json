@@ -68,7 +68,6 @@
         "areaURL": "EastHigashiWoods",
         "buttonText": "Cross The Bridge"
       }
-
     ]
   },
   {
@@ -81,6 +80,12 @@
     "actions": [
       "Gather Stones:Large Stone",
       "Gather Sticks:Sticks"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "SouthernTrail",
+        "buttonText": "Exit the Woods"
+      }
     ]
   }
 ]

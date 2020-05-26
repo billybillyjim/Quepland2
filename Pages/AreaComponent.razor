@@ -6,7 +6,7 @@
 
 @if (thisArea != null)
 {
-    <div>Welcome to @thisArea.Name</div>
+    <h1>@thisArea.Name</h1>
     <p>@thisArea.Description</p>
 
     @foreach (string a in thisArea.Actions ?? Enumerable.Empty<string>())

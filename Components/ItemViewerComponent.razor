@@ -23,10 +23,11 @@
                     <div style="float:right;position:relative;bottom:35px;"><button @onclick="@(() => Player.Instance.Equip(Item))">Equip</button></div>
 
                 }
-                if (Bank.Instance.IsBanking)
-                {
-                    <div>Deposit</div>
-                }
+
+            }
+            if (ItemManager.Instance.CurrentShop != null)
+            {
+                <div><button @onclick="@(() => SellItem())">Sell</button> Value:@(Item.Value / 2) </div>
             }
         }
     </div>
@@ -36,7 +37,27 @@
     [Parameter]
     public GameItem Item { get; set; }
 
-
+    private void SellItem()
+    {
+        if(ItemManager.Instance.CurrentShop != null)
+        {
+            int sellAmt = Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item));
+            if(Player.Instance.Inventory.GetAvailableSpaces() > 0 || Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.CurrentShop.Currency) > 0)
+            {
+                Player.Instance.Inventory.RemoveItems(Item, sellAmt);
+                Player.Instance.Inventory.AddMultipleOfItem(ItemManager.Instance.CurrentShop.Currency, (sellAmt * Item.Value / 2));
+                MessageManager.AddMessage("You sold " + sellAmt + " " + Item.Name + " for " + (sellAmt * Item.Value) + " " + ItemManager.Instance.CurrentShop.Currency.Name + ".");
+            }
+            else
+            {
+                Console.WriteLine("No inventory space.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Shop was null");
+        }
+    }
     protected override void OnInitialized()
     {
         GameState.StateChanged += OnGameStateChanged;

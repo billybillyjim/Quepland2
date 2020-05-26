@@ -19,9 +19,12 @@ public class ItemManager
     }
     public List<GameItem> Items = new List<GameItem>();
     public List<Recipe> Recipes = new List<Recipe>();
-    public static List<string> FileNames = new List<string> { "General", "Armors", "Weapons", "Ores", "WoodworkingItems", "Logs" };
+    public static List<string> FileNames = new List<string> { "Weapons", "Armors", "General", "Fishing", "Ores", "WoodworkingItems", "Logs" };
     public static int baseID;
     public static readonly int MaxItemsPerFile = 100;
+    public bool IsSelling = false;
+    public int SellAmount = 1;
+    public Shop CurrentShop;
     public async Task LoadItems(HttpClient Http)
     {
         foreach(string file in FileNames)

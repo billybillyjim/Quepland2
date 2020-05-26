@@ -11,7 +11,7 @@
     "Description": "Disgusting tasting berries that will stain your mouth red.",
     "gatherString": "You gather some berries.",
     "value": 2,
-    "gatherSpeed": 8,
+    "gatherSpeed": 15,
     "icon": "Berries"
   },
   {

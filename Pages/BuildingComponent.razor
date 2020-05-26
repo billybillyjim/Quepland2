@@ -10,7 +10,11 @@
     {
         <Quepland_2.Components.NPCDialogComponent npc="@npc"></Quepland_2.Components.NPCDialogComponent>
     }
-}
+    @foreach (Shop Shop in thisBuilding.Shops)
+        {
+        <Quepland_2.Components.ShopComponent Shop="@Shop"></Quepland_2.Components.ShopComponent>
+        }
+    }
 
 
 @code {

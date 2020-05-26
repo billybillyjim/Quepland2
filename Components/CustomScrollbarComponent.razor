@@ -1,0 +1,31 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+<div style="background-color:lightgray;height:100%;width:15px;position:absolute;right:0px;top:0px;bottom:0px;">
+    <div class="custom-scrollbar" draggable="true" style="background-color:dimgray;height:30px;width:15px;position:relative;top:@(pos)px;" 
+         @ondrag="@(new Action<DragEventArgs>(e => Drag(e)))">
+
+    </div>
+</div>
+
+@code {
+    public double pos;
+    private bool isDragged = false;
+
+    public void Drag(DragEventArgs args)
+    {
+       
+        pos = args.ClientY;
+
+    }
+
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

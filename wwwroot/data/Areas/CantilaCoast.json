@@ -6,7 +6,7 @@
     "description": "You reach the water's edge. The stones almost sing as they roll back and forth in the waves. The path continues eastward into a small fishing town.",
     "areaURL": "CantilaBeach",
     "actions": [
-      "Chop Oak Trees:Oak Logs"
+      "Go Fishing:Crab,Angry Crab"
     ],
     "unlockableAreas": [
       {
@@ -77,8 +77,15 @@
     "name": "East Uragota Docks",
     "id": 53,
     "image": "Docks",
-    "description": "The eastern side of the docks contains the larger fishing vessels, as well as a ferry service to the northern isles.",
-    "areaURL": "EastUragotaDocks"
+    "description": "The eastern side of the docks contains the larger fishing vessels, as well as a ferry service to the Hojkma Isles.",
+    "areaURL": "EastUragotaDocks",
+    "unlockableAreas": [
+      {
+        "areaURL": "KogoeDocks",
+        "buttonText": "Take the Ferry North"
+      }
+
+    ]
   },
   {
     "name": "Darkbourne Bridge",

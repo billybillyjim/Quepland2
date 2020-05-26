@@ -45,7 +45,7 @@ public class Area
             return _dungeon;
         }
     }
-
+    public List<Shop> Shops { get; set; } = new List<Shop>();
 
     public Building GetBuildingByURL(string url)
     {

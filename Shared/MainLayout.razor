@@ -10,8 +10,11 @@
             </div>
         }
         <div class="main" style="min-width:600px!important;">
-            <div class="top-row px-4">
-                <Quepland_2.Components.ExperienceTrackerComponent></Quepland_2.Components.ExperienceTrackerComponent>
+            <div class="top-row px-4" style="z-index:10">
+                @if (GameState.ShowStartMenu == false)
+                {
+                    <Quepland_2.Components.ExperienceTrackerComponent></Quepland_2.Components.ExperienceTrackerComponent>
+                }
             </div>
 
             <div>

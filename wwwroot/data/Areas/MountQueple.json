@@ -33,21 +33,18 @@
     "name": "Quepland Woods",
     "id": 1,
     "isUnlocked": false,
-    "description": "You enter a thick woods consisting of mostly poplar trees. The path meanders up the mountain along a brook full of sunfish. In the distance you can see the smokestacks of a small village.",
+    "description": "You enter a thick woods consisting of mostly poplar trees. The path meanders up the mountain along a brook full of minnows and sunfish. In the distance you can see the smokestacks of a small village.",
     "areaURL": "QueplandWoods",
     "image": "Forest",
     "actions": [
-      "Gather Red Berries:Shuniku Berries"
+      "Gather Red Berries:Shuniku Berries",
+      "Go Fishing:Minnows,Sunfish"
     ],
     "unlockableAreas": [
       {
         "AreaURL": "Teppas",
         "ButtonText": "Continue into the village"
       }
-    ],
-    "monsters": [
-      "Chicken",
-      "Rooster"
     ],
     "npcs": [
       "Tuto"
@@ -69,6 +66,25 @@
         "npcs": [
           "The Mayor"
         ]
+      },
+      {
+        "name": "Teppas General Store",
+        "buttonText": "General Store",
+        "url": "GeneralStore",
+        "description": "You find a clean, orderly shop stocked with a number of useful supplies for an adventurer. The man behind the counter welcomes you as you enter.",
+        "npcs": [
+          "Jumbo"
+        ],
+        "shops": [
+          {
+            "name": "Jumbo's Supply Store",
+            "itemNames": [
+              "Minnow Net",
+              "Stone Axe"
+            ]
+
+          }
+        ]
       }
     ],
     "unlockableAreas": [
@@ -77,6 +93,10 @@
         "ButtonText": "Continue Through Town"
       }
 
+    ],
+    "monsters": [
+      "Chicken",
+      "Rooster"
     ]
   },
   {

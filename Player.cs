@@ -26,6 +26,7 @@ public class Player
     public int CurrentHP;
     public int TicksToNextAttack;
 
+
     public Skill LastGainedExp { get; set; }
     public Skill ExpTrackerSkill { get; set; }
     

@@ -85,7 +85,7 @@ public class BattleManager
 
     public void Attack()
     {
-        int total = Player.Instance.GetTotalDamage().ToRandomDamage();
+        int total = Math.Min(Player.Instance.GetTotalDamage().ToRandomDamage(), CurrentOpponent.CurrentHP);
         CurrentOpponent.CurrentHP -= total;
         if(Player.Instance.GetWeapon() == null)
         {
@@ -103,6 +103,7 @@ public class BattleManager
     {
         int total = CurrentOpponent.Damage.ToRandomDamage();
         Player.Instance.CurrentHP -= total;
+        Player.Instance.GainExperience("HP", total);
         MessageManager.AddMessage("The " + CurrentOpponent.Name + " hit you for " + total + " damage!");
     }
     public void EndBattle()

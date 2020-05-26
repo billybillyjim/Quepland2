@@ -134,5 +134,77 @@
         "action": "Fishing"
       }
     ]
+  },
+  {
+    "name": "Manta Ray",
+    "description": "A wide flat fish.",
+    "gatherString": "You catch a manta ray.",
+    "value": 200,
+    "gatherSpeed": 40,
+    "experienceGained": "Fishing:130",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 75
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Angry Crab",
+    "description": "An angry, powerless crab. You wonder what it's complaining about.",
+    "gatherString": "You catch an angry crab.",
+    "value": 11,
+    "gatherSpeed": 11,
+    "experienceGained": "Fishing:11",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 11
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Crab",
+    "description": "A crab. It's got big, meaty claws.",
+    "gatherString": "You catch a crab.",
+    "value": 11,
+    "gatherSpeed": 8,
+    "experienceGained": "Fishing:8",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 8
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Puffer Fish",
+    "description": "A small fish that converts into a big fish when you poke it.",
+    "gatherString": "You catch a puffer fish.",
+    "value": 28,
+    "gatherSpeed": 10,
+    "experienceGained": "Fishing:16",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 5
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
   }
 ]
