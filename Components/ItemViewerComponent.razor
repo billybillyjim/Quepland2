@@ -1,5 +1,7 @@
 ﻿@inject GameState GameState
 @implements IDisposable
+@inject NavigationManager UriHelper
+
     <div style="        height: 130px;
         width: 290px;
         border: solid black 1px;
@@ -7,7 +9,7 @@
         margin: 5px;
         position:relative;
 ">
-        @if (Item != null)
+        @if (Item != null && !HideValue)
         {
             <div>@Item.Name</div>
             <div>@Item.Description</div>
@@ -25,6 +27,14 @@
                 }
 
             }
+            @if (Item.FoodInfo != null)
+            {
+                <div style="float:right;position:relative;bottom:35px;"><button @onclick="@(() => GameState.Eat(Item))">Eat</button></div>
+            }
+            @if (ItemManager.Instance.GetUnpackingRecipe(Item) != null)
+            {
+                <div style="float:right;position:relative;bottom:35px;"><button @onclick="@(() => GameState.SetCraftingItem(ItemManager.Instance.GetUnpackingRecipe(Item)))">Unpack</button></div>
+            }
             if (ItemManager.Instance.CurrentShop != null)
             {
                 <div><button @onclick="@(() => SellItem())">Sell</button> Value:@(Item.Value / 2) </div>
@@ -36,6 +46,7 @@
 @code {
     [Parameter]
     public GameItem Item { get; set; }
+    private bool HideValue;
 
     private void SellItem()
     {
@@ -58,8 +69,21 @@
             Console.WriteLine("Shop was null");
         }
     }
+    public void ClearItem()
+    {
+        Item = null;
+        HideValue = true;
+        StateHasChanged();
+    }
+    public void ShowItem()
+    {
+        HideValue = false;
+        StateHasChanged();
+    }
     protected override void OnInitialized()
     {
+        GameState.itemViewer = this;
+        HideValue = false;
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()

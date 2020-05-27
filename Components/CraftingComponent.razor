@@ -14,7 +14,7 @@ else
     {
         if (recipe.CanCreate())
         {
-            <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, recipe.OutputAmount + " " + recipe.Output.Name, recipe.GetIngredientsString())))" @onclick="@(() => Craft(recipe))"><ItemBoxComponent Item="@recipe.Output"></ItemBoxComponent></div>
+            <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, recipe.OutputAmount + " " + recipe.Output.Name, recipe.GetIngredientsString())))" @onclick="@(() => GameState.SetCraftingItem(recipe))"><ItemBoxComponent Item="@recipe.Output"></ItemBoxComponent></div>
         }
         else if (recipe.HasSomeIngredients())
         {
@@ -26,11 +26,7 @@ else
 
 
 @code {
-    private void Craft(Recipe r)
-    {
-        GameState.CurrentRecipe = r;
-        GameState.UpdateState();
-    }
+
     private void Stop()
     {
         GameState.StopActions();

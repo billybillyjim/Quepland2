@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Rice",
+    "description": "Raw, crunchy rice. You could make sushi with it.",
+    "gatherString": "You harvest some rice.",
+    "value": 5,
+    "gatherSpeed": 8,
+    "icon": "Rice",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    }
+  },
+  {
+    "name": "Minnow Roll",
+    "description": "A tiny sushi roll with a tiny fish on top.",
+    "gatherString": "You make a minnow roll.",
+    "value": 10,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:15",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 1
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 15,
+      "healAmount": 1,
+      "healSpeed": 10
+    }
+  }
+]

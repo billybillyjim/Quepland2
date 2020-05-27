@@ -75,9 +75,7 @@ public class BattleManager
             }
             if (Player.Instance.CurrentHP <= 0)
             {
-                Player.Instance.CurrentHP = Player.Instance.MaxHP;
-                MessageManager.AddMessage("Whoops! Looks like you died. Don't worry, you don't lose anything but pride when you die in Quepland.");
-                EndBattle();
+                Player.Instance.Die();
             }
         }
 
@@ -108,7 +106,6 @@ public class BattleManager
     }
     public void EndBattle()
     {
-        Console.WriteLine("Ending Battle");
         BattleHasEnded = true;
     }
 

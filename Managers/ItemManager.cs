@@ -19,7 +19,7 @@ public class ItemManager
     }
     public List<GameItem> Items = new List<GameItem>();
     public List<Recipe> Recipes = new List<Recipe>();
-    public static List<string> FileNames = new List<string> { "Weapons", "Armors", "General", "Fishing", "Ores", "WoodworkingItems", "Logs" };
+    public static List<string> FileNames = new List<string> { "Weapons", "Armors", "Sushi","General", "Fishing", "Ores", "WoodworkingItems", "Logs" };
     public static int baseID;
     public static readonly int MaxItemsPerFile = 100;
     public bool IsSelling = false;
@@ -45,12 +45,25 @@ public class ItemManager
 
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/WoodworkingRecipes.json"));
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/UnpackingRecipes.json"));
+        Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/SushiRecipes.json"));
     }
 
 
     public GameItem GetItemByName(string name)
     {
         return Items.FirstOrDefault(x => x.Name == name);
+    }
+
+    public Recipe GetUnpackingRecipe(GameItem item)
+    {
+        foreach(Recipe r in Recipes)
+        {
+            if(r.Ingredients.Count == 1 && r.Ingredients[0].Item == item.Name)
+            {
+                return r;
+            }
+        }
+        return null;
     }
 
 }

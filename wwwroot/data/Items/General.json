@@ -52,7 +52,7 @@
     "name": "Rooster Plumage",
     "description": "A bunch of feathers from a male chicken.",
     "value": 15,
-    "icon": "Feather",
+    "icon": "Feathers",
     "isStackable": true
   },
   {

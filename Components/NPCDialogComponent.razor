@@ -7,16 +7,20 @@
         margin: 5px;
         background: bisque;
         border-radius: 0.5rem;">
-        @if (npc != null)
+        @if (NPC != null)
         {
             @npc
-            @foreach (Dialog d in NPCManager.Instance.GetNPCByName(npc).Dialogs)
+            @foreach (Dialog d in NPC.Dialogs)
             {
                 @if (d.HasRequirements())
                 {
                     <button class="btn btn-light" @onclick="@(() => Talk(d))">@d.ButtonText</button>
                 }
 
+            }
+            @if(NPC.Shop != null)
+            {
+                <ShopComponent Shop="@NPC.Shop"></ShopComponent>
             }
         }
 
@@ -26,6 +30,7 @@
 @code {
     [Parameter]
     public string npc { get; set; }
+    private NPC NPC;
 
     private void Talk(Dialog d)
     {
@@ -38,6 +43,7 @@
     }
     protected override void OnParametersSet()
     {
+        NPC = NPCManager.Instance.GetNPCByName(npc);
         GameState.UpdateState();
     }
     public void Dispose()

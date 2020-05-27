@@ -44,10 +44,6 @@ else
     {
         string style = "";
         string border = "border:solid black 1px;";
-        if(Item != null && Item.IsEquipped)
-        {
-            style = "background-color:green;";
-        }
         if (IsSelected)
         {
             border = "border:solid white 2px;";
@@ -55,7 +51,37 @@ else
         }
         else
         {
-            style = "background-color:darkgray;";
+            if (Item != null)
+            {
+                if (Item.Category == "Fishing")
+                {
+                    style = "background-color:skyblue;";
+                }
+                else if (Item.Category == "Logs")
+                {
+                    style = "background-color:sandybrown;";
+                }
+                else if (Item.Category == "Ores")
+                {
+                    style = "background-color:brown;";
+                }
+                else if (Item.Category == "Sushi")
+                {
+                    style = "background-color:lightgray;";
+                }
+                else if (Item.Category == "WoodworkingItems")
+                {
+                    style = "background-color:burlywood;";
+                }
+            }
+            else
+            {
+                style = "background-color:darkgray;";
+            }
+        }
+        if (Item != null && Item.IsEquipped)
+        {
+            style = "background-color:green;";
         }
         return style + border;
     }

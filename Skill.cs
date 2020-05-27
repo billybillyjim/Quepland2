@@ -62,4 +62,8 @@ public class Skill
     {
         Level = level;
     }
+    public override string ToString()
+    {
+        return Name;
+    }
 }

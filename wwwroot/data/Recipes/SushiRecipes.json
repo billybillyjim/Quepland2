@@ -1,0 +1,14 @@
+[
+  {
+    "outputItemName": "Minnow Roll",
+    "ingredients": [
+      {
+        "item": "Minnow"
+      },
+      {
+        "item": "Rice"
+      }
+    ],
+    "maxOutputsPerAction": 1
+  }
+]

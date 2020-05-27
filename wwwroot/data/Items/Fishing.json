@@ -160,7 +160,7 @@
     "value": 11,
     "gatherSpeed": 11,
     "experienceGained": "Fishing:11",
-    "icon": "Fish",
+    "icon": "Crab",
     "requirements": [
       {
         "skill": "Fishing",
@@ -178,7 +178,7 @@
     "value": 11,
     "gatherSpeed": 8,
     "experienceGained": "Fishing:8",
-    "icon": "Fish",
+    "icon": "Crab",
     "requirements": [
       {
         "skill": "Fishing",

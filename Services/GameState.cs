@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
+using Quepland_2.Components;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -44,9 +45,15 @@ using System.Threading.Tasks;
     public GameItem CurrentGatherItem;
     public GameItem CurrentSmeltingItem;
     public GameItem CurrentSmithingItem;
+    public GameItem CurrentFood;
     public Recipe CurrentRecipe;
     public Land CurrentLand;
+    public ItemViewerComponent itemViewer;
     public static int TicksToNextAction;
+    public int TicksToNextHeal;
+    public int HealingTicks;
+    private int CurrentTick;
+
     public static int GameWindowWidth;
     public int SmithingStage;
 
@@ -95,8 +102,26 @@ using System.Threading.Tasks;
                     Player.Instance.CurrentFollower.BankItems();
                 }
             }
+            if(CurrentFood != null && CurrentTick % CurrentFood.FoodInfo.HealSpeed == 0)
+            {
+                Player.Instance.CurrentHP += CurrentFood.FoodInfo.HealAmount;
+                if(Player.Instance.CurrentHP <= 0)
+                {
+                    Player.Instance.Die();
+                }
+                HealingTicks--;
+                if(HealingTicks <= 0)
+                {
+                    if(CurrentFood.FoodInfo.BuffedSkill != null)
+                    {
+                        Player.Instance.Skills.Find(x => x.Name == CurrentFood.FoodInfo.BuffedSkill).Boost = 0;
+                    }
+                    CurrentFood = null;
+                }
+            }
             GetDimensions();
             TicksToNextAction--;
+            CurrentTick++;
             StateHasChanged();
         }), null, 200, 200);
         StateHasChanged();
@@ -204,11 +229,41 @@ using System.Threading.Tasks;
         }
         else
         {
+            if(CurrentRecipe.Ingredients.Count == 1 && CurrentRecipe.Ingredients[0].Item == itemViewer.Item.Name)
+            {
+                itemViewer.ClearItem();
+            }
             MessageManager.AddMessage("You have run out of materials.");
             CurrentRecipe = null;
         }
 
         
+    }
+    public void Eat(GameItem item)
+    {
+        if (item.FoodInfo != null)
+        {
+            CurrentFood = item;
+            HealingTicks = CurrentFood.FoodInfo.HealDuration;
+            Player.Instance.Inventory.RemoveItems(item, 1);
+            if (CurrentFood.FoodInfo.BuffedSkill != null)
+            {
+                Player.Instance.Skills.Find(x => x.Name == item.FoodInfo.BuffedSkill).Boost = CurrentFood.FoodInfo.BuffAmount;
+                MessageManager.AddMessage("You eat a " + CurrentFood + "." + " It somehow makes you feel better at " + CurrentFood.FoodInfo.BuffedSkill + ".");
+
+            }
+            else
+            {
+                MessageManager.AddMessage("You eat a " + CurrentFood + ".");
+
+            }
+        }
+        else
+        {
+            Console.WriteLine("Item has no food info:" + item.Name);
+        }
+
+
     }
     private void SmithItem()
     {
@@ -254,6 +309,11 @@ using System.Threading.Tasks;
             }
         }
 
+    }
+    public void SetCraftingItem(Recipe recipe)
+    {
+        CurrentRecipe = recipe;
+        UpdateState();
     }
     private int GetTicksToNextGather()
     {

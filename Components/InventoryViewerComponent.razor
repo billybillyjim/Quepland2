@@ -116,6 +116,7 @@
     }
     private void SelectItem(MouseEventArgs args, GameItem item, int pos)
     {
+        GameState.itemViewer.ShowItem();
         if (Bank.Instance.IsBanking && !args.ShiftKey)
         {
             BankItem(item, pos);
