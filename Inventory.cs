@@ -205,6 +205,10 @@ public class Inventory
     }
     public bool AddDrop(Drop drop)
     {
+        if(drop == null || drop.ItemName == "Unset")
+        {
+            return false;
+        }
         return AddMultipleOfItem(ItemManager.Instance.GetItemByName(drop.ItemName), drop.Amount);
     }
     /// <summary>
@@ -309,6 +313,15 @@ public class Inventory
         }
         return false;
 
+    }
+    public double GetTotalValue()
+    {
+        double total = 0;
+        foreach (KeyValuePair<GameItem, int> i in items)
+        {
+            total += i.Key.Value * i.Value;
+        }
+        return total;
     }
 }
 

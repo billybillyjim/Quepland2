@@ -160,6 +160,45 @@ public class Player
             LevelUp(skill);
         }
     }
+    public void GainExperienceFromWeapon(GameItem weapon, int damageDealt)
+    {
+        if (weapon.EnabledActions == null)
+        {
+            return;
+        }
+        if (weapon.EnabledActions.Contains("Knife"))
+        {
+            GainExperience("Deftness", (int)(damageDealt * 1.5));
+            GainExperience("Knifesmanship", (int)(damageDealt));
+        }
+        else if (weapon.EnabledActions.Contains("Sword"))
+        {
+            GainExperience("Deftness", (int)(damageDealt * 0.5));
+            GainExperience("Strength", damageDealt);
+            GainExperience("Swordsmanship", (int)(damageDealt));
+        }
+        else if (weapon.EnabledActions.Contains("Axe"))
+        {
+            GainExperience("Deftness", (int)(damageDealt * 0.5));
+            GainExperience("Strength", damageDealt);
+            GainExperience("Axemanship", (int)(damageDealt));
+        }
+        else if (weapon.EnabledActions.Contains("Hammer"))
+        {
+            GainExperience("Strength", (int)(damageDealt * 1.5));
+            GainExperience("Hammermanship", (int)(damageDealt));
+        }
+        else if (weapon.EnabledActions.Contains("Archery"))
+        {
+
+                GainExperience("Archery", (int)(damageDealt * 1.5));
+
+        }
+        else if (weapon.EnabledActions.Contains("Fishing"))
+        {
+            GainExperience("Fishing", (int)(damageDealt * 0.1));
+        }
+    }
     public void LevelUp(Skill skill)
     {
         skill.SetSkillLevel(skill.GetSkillLevelUnboosted() + 1);

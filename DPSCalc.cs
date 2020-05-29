@@ -8,9 +8,14 @@ public class DPSCalc
 	public List<Monster> Opponents = new List<Monster>();
     public int TotalTicksTaken = 0;
     public double AverageKillTime = 0;
+    public int TotalKills;
+    public int TotalDeaths;
 	public void CalculateDPS()
     {
         TotalTicksTaken = 0;
+        TotalKills = 0;
+        TotalDeaths = 0;
+        LootTracker.Instance.TrackLoot = true;
 		for(int i = 0; i < NumOfBattles; i++)
         {
             foreach(Monster o in Opponents)
@@ -23,7 +28,14 @@ public class DPSCalc
                 BattleManager.Instance.DoBattle();
                 TotalTicksTaken++;
             }
-
+            if (BattleManager.Instance.AllOpponentsDefeated())
+            {
+                TotalKills++;
+            }
+            else
+            {
+                TotalDeaths++;
+            }
         }
         AverageKillTime = (double)TotalTicksTaken / NumOfBattles;
     }

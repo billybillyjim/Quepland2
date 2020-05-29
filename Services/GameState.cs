@@ -51,6 +51,7 @@ using System.Threading.Tasks;
     public Land CurrentLand;
     public ItemViewerComponent itemViewer;
     public static int TicksToNextAction;
+    public static readonly int GameSpeed = 200;
     public int TicksToNextHeal;
     public int HealingTicks;
     public int CurrentTick;
@@ -124,7 +125,7 @@ using System.Threading.Tasks;
             TicksToNextAction--;
             CurrentTick++;
             StateHasChanged();
-        }), null, 200, 200);
+        }), null, GameSpeed, GameSpeed);
         StateHasChanged();
     }
     /// <summary>

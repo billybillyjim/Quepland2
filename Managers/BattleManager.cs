@@ -96,11 +96,22 @@ public class BattleManager
             {
                 if (opponent.CurrentHP <= 0 && opponent.IsDefeated == false)
                 {
-                    opponent.CurrentHP = 0;
-                    MessageManager.AddMessage("You defeated the " + opponent.Name + ".");
-                    Player.Instance.Inventory.AddItems(opponent.DropTable.GetAlwaysDrops());
+                    opponent.CurrentHP = 0;                   
+                    List<GameItem> alwaysDrops = opponent.DropTable.GetAlwaysDrops();
+                    Drop drop = opponent.DropTable.GetDrop();
 
-                    Player.Instance.Inventory.AddDrop(opponent.DropTable.GetDrop());
+                    if (LootTracker.Instance.TrackLoot)
+                    {
+                        LootTracker.Instance.Inventory.AddItems(alwaysDrops);
+                        LootTracker.Instance.Inventory.AddDrop(drop);
+                    }
+                    else
+                    {
+                        MessageManager.AddMessage("You defeated the " + opponent.Name + ".");
+                        Player.Instance.Inventory.AddItems(alwaysDrops);
+                        Player.Instance.Inventory.AddDrop(drop);
+                    }
+                    
                     opponent.IsDefeated = true;
                     if(CurrentBoss != null)
                     {
@@ -154,11 +165,12 @@ public class BattleManager
         Target.CurrentHP -= total;
         if(Player.Instance.GetWeapon() == null)
         {
-            Player.Instance.GainExperience("Strength", total * 2);
+            Player.Instance.GainExperience("Strength", total);
         }
         else
         {
-            Player.Instance.GainExperience(Player.Instance.GetWeapon().GetSkillForWeaponExp(), total * 2);
+            
+            Player.Instance.GainExperienceFromWeapon(Player.Instance.GetWeapon(), total);
         }
         
         MessageManager.AddMessage("You hit the " + Target.Name + " for " + total + " damage!");
