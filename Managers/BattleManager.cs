@@ -61,6 +61,12 @@ public class BattleManager
         StartBattle();
         
     }
+    public void StartBattle(List<Monster> opponents)
+    {
+        CurrentOpponents.Clear();
+        CurrentOpponents.AddRange(opponents);
+        StartBattle();
+    }
     public void DoBattle()
     {
         if(BattleHasEnded == false)
