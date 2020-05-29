@@ -91,5 +91,32 @@ public static class Extensions
     {
         return string.Join("", str.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
     }
+    public static double CalculateArmorDamageReduction()
+    {
+        double armorTotal = 0;
+        foreach (KeyValuePair<GameItem, int> item in Player.Instance.Inventory.GetItems())
+        {
+            if (item.Key.IsEquipped)
+            {
+                if(item.Key.ArmorInfo != null)
+                {
+                    armorTotal += item.Key.ArmorInfo.ArmorBonus;
+                }
+                if(item.Key.WeaponInfo != null)
+                {
+                    armorTotal += item.Key.WeaponInfo.ArmorBonus;
+                }
+                
+            }
+
+        }
+        double reduction = ((armorTotal * 0.04d) / (1 + (armorTotal * 0.04d)));
+        return 1 - reduction;
+    }
+    public static double CalculateArmorDamageReduction(Monster monster)
+    {
+        return ((monster.Armor * 0.07d) / (1 + (monster.Armor * 0.07d))) / 2;
+
+    }
 }
 

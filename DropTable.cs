@@ -26,7 +26,8 @@ public class DropTable
         {
             if(roll <= drop.Weight)
             {
-                MessageManager.AddMessage("You received a " + drop.ItemName);
+               MessageManager.AddMessage("You received " + drop.Amount + " " + drop.ItemName + ".");
+              
                 return drop;
             }
             roll -= drop.Weight;
@@ -38,6 +39,7 @@ public class DropTable
         List<GameItem> items = new List<GameItem>();
         foreach(string drop in AlwaysDrops)
         {
+            MessageManager.AddMessage("You received a " + drop + ".");
             items.Add(ItemManager.Instance.GetItemByName(drop));
         }
         return items;

@@ -56,5 +56,19 @@ public class Area
         IsUnlocked = true;
         AreaManager.Instance.GetRegionForArea(this).IsUnlocked = true;
     }
+    public bool HasUnlockableAreas()
+    {
+        if(UnlockableAreas != null && UnlockableAreas.Count > 0)
+        {
+            foreach(AreaUnlock unlock in UnlockableAreas)
+            {
+                if(unlock.HasRequirements() && AreaManager.Instance.GetAreaByURL(unlock.AreaURL).IsUnlocked == false)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
 

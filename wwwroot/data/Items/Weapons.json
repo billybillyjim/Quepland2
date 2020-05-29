@@ -110,5 +110,41 @@
         "skillLevel": 5
       }
     ]
+  },
+  {
+    "name": "Ultimate Test Weapon",
+    "description": "A weapon for testing.",
+    "value": 0,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 1,
+      "damage": 500
+    },
+    "requirements": [
+      {
+        "skill": "Swordsmanship",
+        "skillLevel": 1
+      }
+    ]
+  },
+  {
+    "name": "Bone Blade",
+    "description": "A lightweight knife crafted from the remains of a gashadokuro.",
+    "value": 1500,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 8,
+      "damage": 25
+    },
+    "requirements": [
+      {
+        "skill": "Swordsmanship",
+        "skillLevel": 15
+      }
+    ]
   }
 ]

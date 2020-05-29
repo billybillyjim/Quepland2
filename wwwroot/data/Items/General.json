@@ -4,7 +4,7 @@
     "Description": "Cash Money.",
     "value": 1,
     "isStackable": true,
-    "icon": "Gold"
+    "icon": "Coins"
   },
   {
     "Name": "Shuniku Berries",
@@ -60,5 +60,11 @@
     "description": "Some stinky cheese.",
     "value": 5,
     "icon": "Cheese"
+  },
+  {
+    "name": "Bone Shard",
+    "description": "A shard of bone dropped by a gashadokuro. You could form this into some kind of weapon.",
+    "value": 150,
+    "icon": "Bone Shard"
   }
 ]

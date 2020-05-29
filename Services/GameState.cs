@@ -20,6 +20,7 @@ using System.Threading.Tasks;
     public static bool ShowStartMenu { get; set; } = true;
     private bool stopActions = false;
     private bool stopNoncombatActions = false;
+    public bool IsStoppingNextTick;
     private Timer GameTimer { get; set; }
     public int testInt = 0;
     private static Guid _guid;
@@ -52,7 +53,7 @@ using System.Threading.Tasks;
     public static int TicksToNextAction;
     public int TicksToNextHeal;
     public int HealingTicks;
-    private int CurrentTick;
+    public int CurrentTick;
 
     public static int GameWindowWidth;
     public int SmithingStage;
@@ -90,7 +91,7 @@ using System.Threading.Tasks;
             {
                 SmithItem();
             }
-            else if(BattleManager.Instance.CurrentOpponent != null)
+            else if(BattleManager.Instance.CurrentOpponents != null && BattleManager.Instance.CurrentOpponents.Count > 0)
             {
                 BattleManager.Instance.DoBattle();
             }
@@ -132,19 +133,22 @@ using System.Threading.Tasks;
     public void StopActions()
     {
         stopActions = true;
+        IsStoppingNextTick = true;
     }
     public void StopNonCombatActions()
     {
         stopNoncombatActions = true;
+        IsStoppingNextTick = true;
     }
     private void ClearActions()
     {
         CurrentGatherItem = null;
         CurrentRecipe = null;
-        BattleManager.Instance.CurrentOpponent = null;
+        BattleManager.Instance.CurrentOpponents.Clear();
         CurrentSmithingItem = null;
         CurrentSmeltingItem = null;
         stopActions = false;
+        IsStoppingNextTick = false;
     }
     private void ClearNonCombatActions()
     {
@@ -153,6 +157,7 @@ using System.Threading.Tasks;
         CurrentSmithingItem = null;
         CurrentSmeltingItem = null;
         stopNoncombatActions = false;
+        IsStoppingNextTick = false;
     }
     public void Pause()
     {
@@ -217,9 +222,9 @@ using System.Threading.Tasks;
         {
             return;
         }
-        else if(BattleManager.Instance.CurrentOpponent != null)
+        else if(BattleManager.Instance.CurrentOpponents.Count > 0)
         {
-            MessageManager.AddMessage("You can't make that while fighting a " + BattleManager.Instance.CurrentOpponent.Name + "!");
+            MessageManager.AddMessage("You can't make that while fighting!");
             return;
         }
         if (CurrentRecipe.Create(out int created))

@@ -24,7 +24,7 @@
     @if (IsFighting)
     {
         <CombatComponent></CombatComponent>
-        @if (BattleManager.Instance.CurrentOpponent != null && BattleManager.Instance.CurrentOpponent.CurrentHP <= 0)
+        @if (BattleManager.Instance.CurrentOpponents.Count == 0 && BattleManager.Instance.BattleHasEnded)
         {
             <button @onclick="@(() => Spelunk())">Continue Spelunking</button>
             <br />
@@ -72,7 +72,7 @@
             Monster monsterToFight = Dungeon.GetRandomMonster();
             if (monsterToFight != null)
             {
-                BattleManager.Instance.CurrentOpponent = monsterToFight;
+                BattleManager.Instance.CurrentOpponents.Add(monsterToFight);
                 BattleManager.Instance.StartBattle();
                 IsFighting = true;
             }

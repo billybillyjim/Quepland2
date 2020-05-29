@@ -29,8 +29,10 @@
                     {
                         if (a.IsUnlocked && a.IsHidden == false)
                         {
-                            <li class="nav-item px-3">
-                                <span style="color:black;cursor:pointer;font-size:large;" onclick="@(new Action(() => GoToArea(a.AreaURL)))"><img style="height:45px;width:45px;padding:5px;margin-right:10px;margin-top:3px;border-radius:0.25rem;background-color:white;" src="@("data/Images/" + a.Image + ".png")" />@a.Name</span>
+                            <li class="nav-item px-3" style="position:relative"
+                                onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, a.Name, GetAreaInfo(a))))"
+                                onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                                <span style="color:black;cursor:pointer;font-size:large;" onclick="@(new Action(() => GoToArea(a.AreaURL)))"><img style="height:45px;width:45px;padding:5px;margin-right:10px;margin-top:3px;border-radius:0.25rem;background-color:white;" src="@("data/Images/" + a.Image + ".png")" />@a.Name @if(a.HasUnlockableAreas()){<div style="margin:5px;background-color:sandybrown;border-radius:0.5rem;height:12px;width:12px;position:absolute;top:15px;right:10px;"></div>}</span>
                             </li>
                         }
                     }
@@ -66,6 +68,42 @@
         GameState.Location = name;
         UriHelper.NavigateTo("World/" + name + "/");
         GameState.UpdateState();
+    }
+
+    private string GetAreaInfo(Area area)
+    {
+        string info = "";
+        foreach(string NPC in area.NPCs)
+        {
+            info += NPC + "\n";
+        }
+        if(area.NPCs.Count > 0)
+        {
+            info += "\n";
+        }
+
+        foreach(Building building in area.Buildings)
+        {
+            info += building.Name + "\n";
+        }
+        if(area.Buildings.Count > 0)
+        {
+            info += "\n";
+        }
+
+        foreach(string action in area.Actions)
+        {
+            if (action.Contains(':'))
+            {
+                info += action.Split(':')[1] + "\n";
+            }
+            else
+            {
+                info += action + "\n";
+            }
+
+        }
+        return info;
     }
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 

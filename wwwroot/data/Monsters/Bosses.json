@@ -1,0 +1,71 @@
+[
+  {
+    "name": "Gashadokuro Head",
+    "hp": 500,
+    "weakness": "Swordsmanship",
+    "strength": "Hammermanship",
+    "damage": 29,
+    "armor": 14,
+    "attackSpeed": 25
+  },
+  {
+    "name": "Gashadokuro Right Hand",
+    "hp": 500,
+    "weakness": "Knifesmanship",
+    "strength": "Axemanship",
+    "damage": 19,
+    "armor": 24,
+    "attackSpeed": 20
+  },
+  {
+    "name": "Gashadokuro Left Hand",
+    "hp": 500,
+    "weakness": "Hammermanship",
+    "strength": "Swordsmanship",
+    "damage": 29,
+    "armor": 14,
+    "attackSpeed": 18
+    
+  },
+  {
+    "name": "Gashadokuro Spine",
+    "hp": 1500,
+    "weakness": "Axemanship",
+    "strength": "Knifesmanship",
+    "damage": 29,
+    "armor": 140,
+    "attackSpeed": 1000,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 500
+        },
+        {
+          "itemName": "Bone Shard",
+          "weight": 3
+        },
+        {
+          "itemName": "Bandit's Boots",
+          "weight": 3
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 10
+        },
+        {
+          "itemName": "Coins",
+          "weight": 2,
+          "amount": 30
+        },
+        {
+          "itemName": "Coins",
+          "weight": 1,
+          "amount": 100
+        }
+      ]
+    }
+  }
+]
