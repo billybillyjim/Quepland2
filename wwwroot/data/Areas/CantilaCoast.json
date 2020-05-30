@@ -40,6 +40,17 @@
       }
 
     ],
+    "buildings": [
+      {
+        "name": "Kazkagrin's Fortunes",
+        "buttonText": "Visit Kazkagrin's Fortunes",
+        "url": "KazkagrinsFortunes",
+        "description": "A poorly lit room is surrounded on all sides by maps, clocks, and tapestries. A strange man sits hunched over a table, awaiting your arrival.",
+        "npcs": [
+          "Kazkagrin"
+        ]
+      }
+    ],
     "monsters": [
       "Bandit",
       "Big Bandit"
@@ -71,6 +82,9 @@
           "Gordo"
         ]
       }
+    ],
+    "npcs": [
+      "Ittru"
     ]
   },
   {
@@ -99,6 +113,20 @@
         "buttonText": "Cross the Bridge"
       }
 
+    ],
+    "npcs": [
+      "Traveller"
+    ],
+    "buildings": [
+      {
+        "name": "Mound's House",
+        "buttonText": "Go To Mound's House",
+        "url": "MoundsHouse",
+        "description": "The house sits on a small hill aside the river. The front door is locked. You'll have to find some other way inside.",
+        "npcs": [
+          "Mound's House"
+        ]
+      }
     ]
   }
 ]

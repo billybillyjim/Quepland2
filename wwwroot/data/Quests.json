@@ -34,10 +34,10 @@
     ]
   },
   {
-    "name": "Mound is Missing",
+    "name": "Mound Is Missing",
     "id": 2,
     "completionText": "Congratulations! You solved the mystery!",
-    "progressToComplete": 10,
+    "progressToComplete": 20,
     "rewards": [
       {
         "skill": "Fishing",

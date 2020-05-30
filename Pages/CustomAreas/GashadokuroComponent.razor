@@ -5,10 +5,26 @@
 
 @if (startedBattle == false)
 {
-    <h1>Higashi Bridge</h1>
-    <div>Halfway across the bridge you are thrown to your feet as the whole structure begins shaking violently. Massive skeletal hands have grasped either side of the bridge as a towering skull and ribcage rise above your head.</div>
-    <button class="btn btn-danger" @onclick="@(() => StartBattle())">Fight</button>
-    
+    if ((QuestManager.Instance.GetQuestByName("Mound Is Missing").Progress == 15 || QuestManager.Instance.GetQuestByName("Mound Is Missing").IsComplete))
+    {
+        <h1>Higashi Bridge</h1>
+        <div>Halfway across the bridge you are thrown to your feet as the whole structure begins shaking violently. Massive skeletal hands have grasped either side of the bridge as a towering skull and ribcage rise above your head.</div>
+        <button class="btn btn-danger" @onclick="@(() => StartBattle())">Fight</button>
+        <br/>
+        @foreach (AreaUnlock a in AreaManager.Instance.GetAreaByURL("HigashiBridge").UnlockableAreas)
+        {
+            if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false)
+            {
+                <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@a"></Quepland_2.Components.AreaUnlockComponent>
+                <br />
+            }
+        }
+    }
+    else
+    {
+        <AreaComponent areaURL="HigashiBridge"></AreaComponent>
+    }
+
 }
 else
 {
@@ -146,7 +162,7 @@ else
             BattleManager.Instance.CurrentOpponents.Add(GashaLeftHand);
             BattleManager.Instance.CurrentOpponents.Add(GashaSpine);
             BattleManager.Instance.SetBoss(new Quepland_2.Bosses.Gashadokuro());
-            
+
             BattleManager.Instance.StartBattle();
             startedBattle = true;
             Console.WriteLine("Initialized Battle");
@@ -155,7 +171,7 @@ else
     }
     public string GetStyle(Monster monster)
     {
-        if(monster == BattleManager.Instance.Target)
+        if (monster == BattleManager.Instance.Target)
         {
             return "background-color:darksalmon;";
         }

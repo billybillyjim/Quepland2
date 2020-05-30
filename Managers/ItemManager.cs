@@ -19,7 +19,7 @@ public class ItemManager
     }
     public List<GameItem> Items = new List<GameItem>();
     public List<Recipe> Recipes = new List<Recipe>();
-    public static List<string> FileNames = new List<string> { "Weapons", "Armors", "Sushi","General", "Fishing", "Ores", "WoodworkingItems", "Logs" };
+    public static List<string> FileNames = new List<string> { "Weapons", "Armors", "Sushi", "QuestItems", "General", "Fishing", "Ores", "WoodworkingItems", "Logs" };
     public static int baseID;
     public static readonly int MaxItemsPerFile = 100;
     public bool IsSelling = false;

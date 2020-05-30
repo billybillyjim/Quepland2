@@ -85,6 +85,11 @@
           "itemName": "Coins",
           "weight": 1,
           "amount": 100
+        },
+        {
+          "itemName": "Mound's House Key",
+          "weight": 1,
+          "amount": 30
         }
       ]
     }

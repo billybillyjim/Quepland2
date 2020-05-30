@@ -38,6 +38,7 @@ public class Requirement
         }
 		if(Quest != "None")
         {
+			Console.WriteLine(Quest);
 			int progress = QuestManager.Instance.GetQuestByName(Quest).Progress;
 			if(progress < MinimumQuestProgress || progress > MaximumQuestProgress)
             {

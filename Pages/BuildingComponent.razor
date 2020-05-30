@@ -32,6 +32,7 @@
     protected override void OnParametersSet()
     {
         thisBuilding = AreaManager.Instance.GetAreaByURL(areaURL).GetBuildingByURL(buildingURL);
+
         GameState.UpdateState();
     }
     public void Dispose()

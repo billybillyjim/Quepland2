@@ -27,7 +27,10 @@ public class NPCManager
         {
             NPCs.Add(await Http.GetJsonAsync<NPC>("data/NPCs/" + s + ".json"));
         }
-        
+        foreach(NPC npc in NPCs)
+        {
+            Console.WriteLine(npc.Name);
+        }
     }
 
     public NPC GetNPCByName(string name)

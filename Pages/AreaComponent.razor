@@ -1,4 +1,4 @@
-﻿@page "/World/{areaName}"
+﻿@page "/World/{areaURL}"
 @inject GameState GameState
 @inject NavigationManager UriHelper
 @implements IDisposable
@@ -52,7 +52,7 @@
 @code {
 
     [Parameter]
-    public string areaName { get; set; }
+    public string areaURL { get; set; }
     public Area thisArea { get; set; }
 
     private void FindBattles()
@@ -66,8 +66,8 @@
     private void EnterBuilding(string buildingURL)
     {
         GameState.StopActions();
-        GameState.Location = areaName + "/" + buildingURL;
-        UriHelper.NavigateTo("World/" + areaName + "/" + buildingURL);
+        GameState.Location = areaURL + "/" + buildingURL;
+        UriHelper.NavigateTo("World/" + areaURL + "/" + buildingURL);
     }
     private void EnterDungeon(string dungeonURL)
     {
@@ -81,7 +81,7 @@
     }
     protected override void OnParametersSet()
     {
-        thisArea = AreaManager.Instance.GetAreaByURL(areaName);
+        thisArea = AreaManager.Instance.GetAreaByURL(areaURL);
 
         GameState.UpdateState();
     }

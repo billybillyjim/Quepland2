@@ -13,8 +13,9 @@
             @foreach (Dialog d in NPC.Dialogs)
             {
                 @if (d.HasRequirements())
-                {
-                    <button class="btn btn-light" @onclick="@(() => Talk(d))">@d.ButtonText</button>
+                {   
+                    <br />
+                    <button class="btn btn-light" @onclick="@(() => Talk(d))">@d.ButtonText</button>                   
                 }
 
             }

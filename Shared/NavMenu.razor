@@ -11,7 +11,8 @@
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <ul class="nav flex-column">
         <li class="nav-item px-3">
-            <span style="color:black;cursor:pointer;font-size:large;" onclick="@(new Action(() => GoToArea("Bank")))"><img style="height: 45px; width: 45px; padding: 5px; margin-right: 10px; border-radius: 0.25rem; background-color: white;" src="@("data/Images/Bank.png")" />Bank</span>
+            <div style="@GetStyle("Bank")" onclick="@(new Action(() => GoToArea("Bank")))">
+            <img style="height: 45px; width: 45px; padding: 5px; margin-right: 10px; border-radius: 0.25rem; background-color: white;" src="@("data/Images/Bank.png")" />Bank</div>
 
         </li>
         @foreach (Region region in AreaManager.Instance.GetLandByName(GameState.CurrentLand.Name).Regions)
@@ -29,10 +30,19 @@
                     {
                         if (a.IsUnlocked && a.IsHidden == false)
                         {
-                            <li class="nav-item px-3" style="position:relative"
-                                onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, a.Name, GetAreaInfo(a))))"
-                                onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                                <span style="color:black;cursor:pointer;font-size:large;" onclick="@(new Action(() => GoToArea(a.AreaURL)))"><img style="height:45px;width:45px;padding:5px;margin-right:10px;margin-top:3px;border-radius:0.25rem;background-color:white;" src="@("data/Images/" + a.Image + ".png")" />@a.Name @if(a.HasUnlockableAreas()){<div style="margin:5px;background-color:sandybrown;border-radius:0.5rem;height:12px;width:12px;position:absolute;top:15px;right:10px;"></div>}</span>
+                            <li class="nav-item px-3" style="position:relative">
+                                
+                                <div style="@GetStyle(a.AreaURL)" @onclick="@(() => GoToArea(a.AreaURL))">
+                                     <img style="height:45px;width:45px;padding:5px;margin-right:10px;border-radius:0.25rem;background-color:white;" 
+                                          src="@("data/Images/" + a.Image + ".png")" 
+                                          onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, a.Name, GetAreaInfo(a))))"
+                                          onmouseout="@(new Action(() => GameState.HideTooltip()))"/>
+                                    @a.Name 
+                                @if(a.HasUnlockableAreas())
+                                {
+                                    <div style="margin:5px;background-color:sandybrown;border-radius:0.5rem;height:12px;width:12px;position:absolute;top:15px;right:10px;"></div>
+                                }
+                                </div>
                             </li>
                         }
                     }
@@ -104,6 +114,14 @@
 
         }
         return info;
+    }
+    private string GetStyle(string loc)
+    {
+        if(loc == GameState.Location)
+        {
+            return "color:black;cursor:pointer;font-size:large;background-color:rgba(0.1,0.1,0.1,0.3);border-radius:0.5rem;margin-right:-8px;margin-left:-5px;padding:5px;";
+        }
+        return "color:black;cursor:pointer;font-size:large;padding:5px;margin-left:-5px;";
     }
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 

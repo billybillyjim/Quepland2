@@ -57,12 +57,8 @@
     "id": 43,
     "image": "Woods",
     "isUnlocked": false,
-    "description": "",
+    "description": "A small bridge provides the only way across a deep canyon. As you step across the flimsy bridge you can hear the sound of bones rattling beneath your feet. It would be wise to not stay on the bridge any longer than necessary.",
     "areaURL": "HigashiBridge",
-    "actions": [
-      "Gather Stones:Large Stone",
-      "Gather Sticks:Sticks"
-    ],
     "unlockableAreas": [
       {
         "areaURL": "EastHigashiWoods",
@@ -86,6 +82,17 @@
         "areaURL": "SouthernTrail",
         "buttonText": "Exit the Woods"
       }
+    ]
+  },
+  {
+    "name": "Higashi Canyon Floor",
+    "id": 45,
+    "image": "Canyon",
+    "isUnlocked": false,
+    "description": "The path slopes steeply downward until arriving at the floor of the canyon. It's quite dark, but you can see the light of a nearby fire. A short, heavily bearded man sits beside it warming his hands.",
+    "areaURL": "HigashiCanyonFloor",
+    "npcs": [
+      "Mound"
     ]
   }
 ]

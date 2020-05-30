@@ -1,0 +1,75 @@
+{
+  "name": "Mound's House",
+  "id": 8,
+  "dialogs": [
+    {
+      "buttonText": "Knock",
+      "responseText": "There's no answer."
+    },
+    {
+      "buttonText": "Knock Down the Door",
+      "responseText": "You kick the door in with your super strong legs and walk inside.",
+      "newQuestprogressValue": 16,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 15,
+          "maximumQuestProgress": 15
+        },
+        {
+          "skill": "Strength",
+          "skillLevel": 40
+        }
+      ]
+    },
+    {
+      "buttonText": "Climb Through the Chimney",
+      "responseText": "You nimbly scramble up to the roof and slide your way down the chimney.",
+      "newQuestprogressValue": 16,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 15,
+          "maximumQuestProgress": 15
+        },
+        {
+          "skill": "Deftness",
+          "skillLevel": 40
+        }
+      ]
+    },
+    {
+      "buttonText": "Use The Key",
+      "responseText": "You unlock the door with the key.",
+      "newQuestprogressValue": 16,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 15,
+          "maximumQuestProgress": 15
+        },
+        {
+          "item": "Mound's House Key",
+          "itemAmount": 1
+        }
+      ]
+    },
+    {
+      "buttonText": "Search the House",
+      "responseText": "You look around and spot a hat hanging from the corner of the bed. It looks like Mound used to sleep with it on. You take it.",
+      "newQuestprogressValue": 17,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 16,
+          "maximumQuestProgress": 16
+        }
+      ],
+      "itemOnTalk": "Mound's Hat"
+    }
+  ]
+}

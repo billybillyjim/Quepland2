@@ -209,6 +209,14 @@ public class Inventory
         {
             return false;
         }
+        GameItem i = ItemManager.Instance.GetItemByName(drop.ItemName);
+        if (i.Category == "QuestItems")
+        {
+            if(Player.Instance.Inventory.HasItem(i) || Bank.Instance.Inventory.HasItem(i))
+            {
+                return false;
+            }
+        }
         return AddMultipleOfItem(ItemManager.Instance.GetItemByName(drop.ItemName), drop.Amount);
     }
     /// <summary>
