@@ -59,6 +59,7 @@
     "name": "Cheese",
     "description": "Some stinky cheese.",
     "value": 5,
+    "gatherSpeed": 20,
     "icon": "Cheese"
   },
   {
@@ -72,5 +73,14 @@
     "description": "A map leading to an island north of Quepland. Mound gave it to you.",
     "value": 0,
     "icon": "Map"
+  },
+  {
+    "name": "Hemp",
+    "description": "A fast-growing weed useful for turning into fiber.",
+    "value": 10,
+    "isStackable": true,
+    "gatherSpeed": 20,
+    "gatherString": "You gather some hemp.",
+    "icon": "Plant"
   }
 ]

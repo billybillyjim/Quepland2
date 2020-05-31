@@ -19,7 +19,7 @@
         <div>
             <button class="btn btn-success" @onclick="@(() => EnterBuilding(b.URL))">@b.ButtonText</button>
         </div>
-        
+
         <br />
     }
     @foreach (AreaUnlock a in thisArea.UnlockableAreas)
@@ -30,9 +30,14 @@
             <br />
         }
     }
-    @if(thisArea.NPCs.Count > 0)
+    @if (thisArea.NPCs.Count > 0)
     {
-        <Quepland_2.Components.NPCDialogBoxComponent NPCs="@thisArea.NPCs"></Quepland_2.Components.NPCDialogBoxComponent>
+        @foreach (string npc in thisArea.NPCs)
+        {
+            <Quepland_2.Components.NPCDialogComponent npc="@npc"></Quepland_2.Components.NPCDialogComponent>
+
+        }
+
     }
     @if (thisArea.DungeonName != null)
     {

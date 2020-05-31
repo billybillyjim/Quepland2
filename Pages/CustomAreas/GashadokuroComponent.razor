@@ -22,6 +22,7 @@
                     <br />
                 }
             }
+            <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@CanyonFloor"></Quepland_2.Components.AreaUnlockComponent>
         }
 
     }
@@ -115,17 +116,26 @@ else
         </div>
     </div>
 
-    @if (BattleManager.Instance.BattleHasEnded)
+    @if (BossDefeated())
     {
         <button class="btn btn-danger" style="position:relative;top:380px;" @onclick="@(() => StartBattle())">Fight Again</button>
-        @foreach (AreaUnlock a in AreaManager.Instance.GetAreaByURL("HigashiBridge").UnlockableAreas)
-        {
-            if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false)
+
+        <div style="position:relative;top:440px;">
+            @foreach (AreaUnlock a in AreaManager.Instance.GetAreaByURL("HigashiBridge").UnlockableAreas)
             {
-                <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@a"></Quepland_2.Components.AreaUnlockComponent>
-                <br />
+                if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false)
+                {
+                    <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@a"></Quepland_2.Components.AreaUnlockComponent>
+                    <br />
+                }
             }
-        }
+            <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@CanyonFloor"></Quepland_2.Components.AreaUnlockComponent>
+        </div>
+
+    }
+    else if (BattleManager.Instance.BattleHasEnded)
+    {
+        <button class="btn btn-danger" style="position:relative;top:380px;" @onclick="@(() => StartBattle())">Fight Again</button>
     }
 }
 
@@ -137,6 +147,7 @@ else
     public Monster GashaRightHand;
     public Monster GashaLeftHand;
     public Monster GashaSpine;
+    private AreaUnlock CanyonFloor;
 
     public void Target(Monster monster)
     {
@@ -157,7 +168,9 @@ else
     protected override void OnInitialized()
     {
 
-
+        CanyonFloor = new AreaUnlock();
+        CanyonFloor.AreaURL = "HigashiCanyon";
+        CanyonFloor.ButtonText = "Climb Down the Skeletal Remains";
         GameState.StateChanged += OnGameStateChanged;
     }
     public void StartBattle()
@@ -181,6 +194,10 @@ else
             Console.WriteLine("Initialized Battle");
         }
 
+    }
+    public bool BossDefeated()
+    {
+        return GashaHead.CurrentHP <= 0 && GashaRightHand.CurrentHP <= 0 && GashaLeftHand.CurrentHP <= 0 && GashaSpine.CurrentHP <= 0;
     }
     public string GetStyle(Monster monster)
     {

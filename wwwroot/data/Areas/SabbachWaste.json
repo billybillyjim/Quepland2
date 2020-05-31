@@ -2,7 +2,7 @@
   {
     "name": "Southern Trail",
     "id": 60,
-    "image": "Trail",
+    "image": "MountainPath",
     "description": "The path leads out of the woods into an open plain. The road continues uphill, winding up out of sight. A solitary knight guards the way forward.",
     "areaURL": "SouthernTrail",
     "unlockableAreas": [
@@ -16,7 +16,7 @@
   {
     "name": "Route 7",
     "id": 61,
-    "image": "Road",
+    "image": "WindingPath",
     "description": "The route leads up into the hills. At the peak you take in the view. The hills quickly descend into a shrubby plain, beyond which is an endless desert. ",
     "areaURL": "Route7",
     "unlockableAreas": [
@@ -30,7 +30,7 @@
   {
     "name": "Desert's Mouth",
     "id": 62,
-    "image": "Road",
+    "image": "Camel",
     "description": "A small building sits at the side of the road. You can both hear and smell the camels living in the pen behind the building. The desert lies just ahead of the single sign of civilization.",
     "areaURL": "DesertsMouth",
     "unlockableAreas": [

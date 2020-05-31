@@ -10,6 +10,7 @@
     <StartMenuComponent></StartMenuComponent>
     <button @onclick="@(() => Test())">Smith</button>
     <button @onclick="@(() => Rates())">Rates</button>
+    <button @onclick="@(() => Quests())">Quest Manager</button>
     <a href="https://docs.google.com/document/u/0/" target="_blank">Open Google Docs</a>
 }
 else
@@ -38,15 +39,15 @@ else
             GameState.InitCompleted = true;
 
         }
-        //Player.Instance.GainExperience("Strength:100000");
-        //Player.Instance.GainExperience("Woodcutting:1000");
+        Player.Instance.GainExperience("Strength:100000");
+        Player.Instance.GainExperience("Woodcutting:1000");
         //Player.Instance.Inventory.AddItem("Shuniku Berries");
         //Player.Instance.Inventory.AddItem("Wood Carving Knife");
         //Player.Instance.Inventory.AddMultipleOfItem("White Pine Logs", 3);
         //Player.Instance.Inventory.AddItem("Copper Ore");
         //Player.Instance.Inventory.AddItem("Rooster Plumage");
         //Player.Instance.Inventory.AddItem("Rice");
-        //Player.Instance.Inventory.AddItem("Ultimate Test Weapon");
+        Player.Instance.Inventory.AddItem("Ultimate Test Weapon");
         //Player.Instance.CurrentFollower = FollowerManager.Instance.Followers[0];
 
         Player.Instance.CurrentHP = 50;
@@ -57,6 +58,10 @@ else
     private void Rates()
     {
         UriHelper.NavigateTo("/Rates/");
+    }
+    private void Quests()
+    {
+        UriHelper.NavigateTo("/QuestManagement/");
     }
     private void Test()
     {

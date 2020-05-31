@@ -3,6 +3,19 @@
   "id": 8,
   "dialogs": [
     {
+      "buttonText": "Can you help me?",
+      "responseText": "That depends. What do you need?",
+      "newQuestprogressValue": 4,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 1
+        }
+      ]
+    },
+    {
       "buttonText": "Can you help me find a man named Mound?",
       "responseText": "I can! That's what I do, find things. Now what would you like to know about this Mound?",
       "newQuestprogressValue": 5,

@@ -58,5 +58,12 @@
       }
     ],
     "isStackable": true
+  },
+  {
+    "name": "Bow String",
+    "description": "A string you can attach to a bow.",
+    "value": 14,
+    "isStackable": true,
+    "image": "String"
   }
 ]

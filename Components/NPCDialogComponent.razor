@@ -8,7 +8,8 @@
         background: bisque;
         border-radius: 0.5rem;">
         @if (NPC != null)
-        {          
+        {      
+            @npc
             @foreach (Dialog d in NPC.Dialogs)
             {
                 @if (d.HasRequirements())

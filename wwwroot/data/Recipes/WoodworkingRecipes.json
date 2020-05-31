@@ -50,5 +50,15 @@
       }
     ],
     "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Bow String",
+    "ingredients": [
+      {
+        "item": "Hemp"
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
   }
 ]

@@ -40,8 +40,12 @@ public class AreaManager
     }
     public Area GetAreaByURL(string url)
     {
-        //Console.WriteLine(url);
-        return Areas.FirstOrDefault(x => x.AreaURL == url);
+        Area a = Areas.FirstOrDefault(x => x.AreaURL == url);
+        if(a == null)
+        {
+            Console.WriteLine("No area " + url + " found. Have you addded it to Regions.json? Otherwise the URL is incorrect.");
+        }
+        return a;
     }
     public Region GetRegionByName(string name)
     {

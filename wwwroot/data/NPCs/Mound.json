@@ -14,7 +14,8 @@
       "requirements": [
         {
           "quest": "Mound Is Missing",
-          "minimumQuestProgress": 1
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 18
         }
       ]
     },

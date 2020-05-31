@@ -1,4 +1,5 @@
 ﻿@inject GameState GameState
+@inject NavigationManager UriHelper
 
     <div style="position:relative">
         <h1>Welcome to Quepland</h1>
@@ -14,6 +15,8 @@
     public void StartGame()
     {
         GameState.ShowStartMenu = false;
+        GameState.Location = "QueplandFields";
+        UriHelper.NavigateTo("/World/QueplandFields");
     }
     protected override void OnInitialized()
     {

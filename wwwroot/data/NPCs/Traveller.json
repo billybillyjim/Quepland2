@@ -11,7 +11,7 @@
         {
           "quest": "Mound Is Missing",
           "minimumQuestProgress": 1,
-          "maximumQuestProgress": 1
+          "maximumQuestProgress": 2
         }
       ]
     },

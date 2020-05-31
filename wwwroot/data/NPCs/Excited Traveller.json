@@ -1,0 +1,19 @@
+{
+  "name": "Excited Traveller",
+  "id": 10,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi! Can you believe all this cheese?!"
+    },
+    {
+      "buttonText": "Why's there so much cheese here?",
+      "responseText": "You wouldn't believe it! It falls right out of the sky! Every few days there's a new mound to eat from!"
+    },
+    {
+      "buttonText": "Are you eating ground cheese?",
+      "responseText": "Don't judge me. It's delicious, why don't you try some?"
+      
+    }
+  ]
+}

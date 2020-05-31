@@ -70,7 +70,7 @@ public class Player
     {
         if(item.Requirements == null || item.Requirements.Count == 0)
         {
-            return 0;
+            return 1;
         }
         string skill = item.Requirements.FirstOrDefault(x => x.Skill != "None").Skill;
         double multi = 1;
@@ -239,7 +239,7 @@ public class Player
     }
     public void Die()
     {
-        Player.Instance.CurrentHP = Player.Instance.MaxHP;
+        CurrentHP = MaxHP;
         MessageManager.AddMessage("Whoops! Looks like you died. Don't worry, you don't lose anything but pride when you die in Quepland.");
         BattleManager.Instance.EndBattle();
     }

@@ -47,6 +47,7 @@ public class Requirement
 
 		return true;
     }
+
     public override string ToString()
     {
 		string req = "";
@@ -56,11 +57,11 @@ public class Requirement
 		}
 		if (Skill != "None" && Player.Instance.HasSkillRequirement(Skill, SkillLevel) == false)
 		{
-			req += "You need " + SkillLevel + " Skill.";
+			req += "You need " + SkillLevel + " " + Skill;
 		}
 		if (Action != "None" && Player.Instance.HasToolRequirement(Action) == false)
 		{
-			req += "You don't have any tool for " + Action + ".";
+			req += "You don't have any tools for " + Action + ".";
 		}
 		if (Item != "None" && Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(Item)) < ItemAmount)
 		{

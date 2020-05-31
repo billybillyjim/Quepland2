@@ -39,7 +39,7 @@
     "id": 42,
     "image": "DeepForest",
     "isUnlocked": false,
-    "description": "",
+    "description": "As you continue along the path the forest grows dark and musty. There are piles of cheese lying along the path, some have transformed into mossy mounds, while others seem quite fresh. The road continues up a steep hill ahead.",
     "areaURL": "DeepHigashiWoods",
     "actions": [
       "Get Some Cheese:Cheese"
@@ -50,6 +50,9 @@
         "buttonText": "Continue up the Hill"
       }
 
+    ],
+    "npcs": [
+      "Excited Traveller"
     ]
   },
   {
@@ -63,16 +66,6 @@
       {
         "areaURL": "EastHigashiWoods",
         "buttonText": "Cross The Bridge"
-      },
-      {
-        "areaURL": "HigashiCanyon",
-        "buttonText": "Follow the path to the canyon below",
-        "requirements": [
-          {
-            "quest": "Mound Is Missing",
-            "minimumQuestProgress": 15
-          }
-        ]
       }
     ]
   },
@@ -81,11 +74,10 @@
     "id": 44,
     "image": "Forest",
     "isUnlocked": false,
-    "description": "",
+    "description": "The woods begin to thin as you reach the other side of the bridge. Hemp grows wild here, enough to harvest however much you'd like. The trail continues southward up the mountains.",
     "areaURL": "EastHigashiWoods",
     "actions": [
-      "Gather Stones:Large Stone",
-      "Gather Sticks:Sticks"
+      "Harvest Hemp:Hemp"
     ],
     "unlockableAreas": [
       {
@@ -100,7 +92,7 @@
     "image": "Canyon",
     "isUnlocked": false,
     "description": "The path slopes steeply downward until arriving at the floor of the canyon. It's quite dark, but you can see the light of a nearby fire. A short, heavily bearded man sits beside it warming his hands.",
-    "areaURL": "HigashiCanyonFloor",
+    "areaURL": "HigashiCanyon",
     "npcs": [
       "Mound"
     ]
