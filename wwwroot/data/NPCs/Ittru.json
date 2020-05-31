@@ -8,7 +8,7 @@
     },
     {
       "buttonText": "Do you know what happened to Mound?",
-      "responseText": "Mound? He disappeared last June, haven't seen him since. There's a guy in town who's pretty good at finding things, maybe ask him. His house is the furthest down the main street of town.",
+      "responseText": "Mound? He disappeared last June, haven't seen him since. There's a fortune teller in town who's pretty good at finding things, maybe ask him. His shop is the furthest down the main street of town.",
       "newQuestprogressValue": 2,
       "quest": "Mound Is Missing",
       "requirements": [

@@ -37,7 +37,7 @@
     "name": "Mound Is Missing",
     "id": 2,
     "completionText": "Congratulations! You solved the mystery!",
-    "progressToComplete": 20,
+    "progressToComplete": 29,
     "rewards": [
       {
         "skill": "Fishing",

@@ -41,6 +41,7 @@
 </div>
 }
 @code {
+
     string shopName { get; set; }
     [Parameter]
     public Shop Shop { get; set; }
@@ -51,6 +52,14 @@
     }
     private void Buy(GameItem item)
     {
+        if(item == null || item.Category == "QuestItems")
+        {
+            if(item != null && item.Category == "QuestItems")
+            {
+                MessageManager.AddMessage("It doesn't seem like you can sell this.");
+            }
+            return;
+        }
         int maxBuy = Math.Max(0, ItemManager.Instance.SellAmount);
         maxBuy = Math.Min(Player.Instance.Inventory.GetNumberOfItem(Shop.Currency) / (int)(item.Value * Shop.CostMultiplier), maxBuy);
         //If the item is stackable and the player has a stack in their inventory already, or the player has space for another item

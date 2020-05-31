@@ -18,7 +18,7 @@
   {
     "name": "Higashi Woods",
     "id": 41,
-    "image": "Woods",
+    "image": "Forest",
     "isUnlocked": false,
     "description": "Trees blanket the hilly terrain, as you make your way further into the woods you find ample supplies for building traps. Large stones and sturdy sticks lie along the path.",
     "areaURL": "HigashiWoods",
@@ -37,7 +37,7 @@
   {
     "name": "Deep Higashi Woods",
     "id": 42,
-    "image": "Woods",
+    "image": "DeepForest",
     "isUnlocked": false,
     "description": "",
     "areaURL": "DeepHigashiWoods",
@@ -55,7 +55,7 @@
   {
     "name": "Higashi Bridge",
     "id": 43,
-    "image": "Woods",
+    "image": "CanyonBridge",
     "isUnlocked": false,
     "description": "A small bridge provides the only way across a deep canyon. As you step across the flimsy bridge you can hear the sound of bones rattling beneath your feet. It would be wise to not stay on the bridge any longer than necessary.",
     "areaURL": "HigashiBridge",
@@ -63,13 +63,23 @@
       {
         "areaURL": "EastHigashiWoods",
         "buttonText": "Cross The Bridge"
+      },
+      {
+        "areaURL": "HigashiCanyon",
+        "buttonText": "Follow the path to the canyon below",
+        "requirements": [
+          {
+            "quest": "Mound Is Missing",
+            "minimumQuestProgress": 15
+          }
+        ]
       }
     ]
   },
   {
     "name": "East Higashi Woods",
     "id": 44,
-    "image": "Woods",
+    "image": "Forest",
     "isUnlocked": false,
     "description": "",
     "areaURL": "EastHigashiWoods",

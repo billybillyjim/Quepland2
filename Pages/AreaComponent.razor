@@ -30,12 +30,9 @@
             <br />
         }
     }
-    @foreach (string npc in thisArea.NPCs)
+    @if(thisArea.NPCs.Count > 0)
     {
-        if (NPCManager.Instance.GetNPCByName(npc).AvailableDialogCount() > 0)
-        {
-            <Quepland_2.Components.NPCDialogComponent npc="@npc"></Quepland_2.Components.NPCDialogComponent>
-        }
+        <Quepland_2.Components.NPCDialogBoxComponent NPCs="@thisArea.NPCs"></Quepland_2.Components.NPCDialogBoxComponent>
     }
     @if (thisArea.DungeonName != null)
     {

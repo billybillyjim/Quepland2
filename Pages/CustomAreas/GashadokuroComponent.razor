@@ -5,20 +5,25 @@
 
 @if (startedBattle == false)
 {
-    if ((QuestManager.Instance.GetQuestByName("Mound Is Missing").Progress == 15 || QuestManager.Instance.GetQuestByName("Mound Is Missing").IsComplete))
+    if ((QuestManager.Instance.GetQuestByName("Mound Is Missing").Progress >= 15 || QuestManager.Instance.GetQuestByName("Mound Is Missing").IsComplete))
     {
         <h1>Higashi Bridge</h1>
         <div>Halfway across the bridge you are thrown to your feet as the whole structure begins shaking violently. Massive skeletal hands have grasped either side of the bridge as a towering skull and ribcage rise above your head.</div>
         <button class="btn btn-danger" @onclick="@(() => StartBattle())">Fight</button>
-        <br/>
-        @foreach (AreaUnlock a in AreaManager.Instance.GetAreaByURL("HigashiBridge").UnlockableAreas)
+
+        <br />
+        if (QuestManager.Instance.GetQuestByName("Mound Is Missing").IsComplete)
         {
-            if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false)
+            @foreach (AreaUnlock a in AreaManager.Instance.GetAreaByURL("HigashiBridge").UnlockableAreas)
             {
-                <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@a"></Quepland_2.Components.AreaUnlockComponent>
-                <br />
+                if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false)
+                {
+                    <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@a"></Quepland_2.Components.AreaUnlockComponent>
+                    <br />
+                }
             }
         }
+
     }
     else
     {
@@ -113,6 +118,14 @@ else
     @if (BattleManager.Instance.BattleHasEnded)
     {
         <button class="btn btn-danger" style="position:relative;top:380px;" @onclick="@(() => StartBattle())">Fight Again</button>
+        @foreach (AreaUnlock a in AreaManager.Instance.GetAreaByURL("HigashiBridge").UnlockableAreas)
+        {
+            if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false)
+            {
+                <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@a"></Quepland_2.Components.AreaUnlockComponent>
+                <br />
+            }
+        }
     }
 }
 

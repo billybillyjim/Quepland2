@@ -30,7 +30,7 @@
     },
     {
       "buttonText": "Just tell me where I can find him!",
-      "responseText": "Okay, okay, no need to yell. If you want an accurate result I'll need something of his to base my gues-- I mean prediction on. Do you have something of his?",
+      "responseText": "Okay, okay, no need to yell. If you want an accurate result I'll need something of his to base my gue-- I mean prediction on. Do you have something of his?",
       "newQuestprogressValue": 15,
       "quest": "Mound Is Missing",
       "requirements": [
@@ -147,7 +147,7 @@
     },
     {
       "buttonText": "Okay, but where can I find him now?",
-      "responseText": "Hmm, I might be able to assist you with that. If you want an accurate result I'll need something of his to base my gues-- I mean prediction on. Do you have something of his?",
+      "responseText": "Hmm, I might be able to assist you with that. If you want an accurate result I'll need something of his to base my gue-- I mean prediction on. Do you have something of his?",
       "newQuestprogressValue": 15,
       "quest": "Mound Is Missing",
       "requirements": [

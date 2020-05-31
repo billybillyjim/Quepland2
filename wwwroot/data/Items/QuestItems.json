@@ -4,5 +4,14 @@
     "description": "A key to a house near Darkbourne Bridge",
     "value": 0,
     "icon": "Key"
+  },
+  {
+    "name": "Mound's Hat",
+    "description": "A large, leather pirate's hat. No idea how someone would sleep in this.",
+    "value": 0,
+    "icon": "Mound's Hat",
+    "armorInfo": {
+      "armorBonus": 1
+    }
   }
 ]

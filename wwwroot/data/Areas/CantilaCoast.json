@@ -2,8 +2,8 @@
   {
     "name": "Cantila Beach",
     "id": 50,
-    "image": "Beach",
-    "description": "You reach the water's edge. The stones almost sing as they roll back and forth in the waves. The path continues eastward into a small fishing town.",
+    "image": "Lighthouse",
+    "description": "You reach the water's edge. The stones almost sing as they roll back and forth in the waves. A large lighthouse towers in the west, while the path continues eastward into a small fishing town.",
     "areaURL": "CantilaBeach",
     "actions": [
       "Go Fishing:Crab,Angry Crab"
@@ -14,6 +14,14 @@
         "buttonText": "Follow the Trail to Town"
       }
 
+    ],
+    "buildings": [
+      {
+        "name": "Cantila Lighthouse",
+        "buttonText": "Go to the Lighthouse",
+        "url": "CantilaLighthouse",
+        "description": "It's a lighthouse."
+      }
     ],
     "monsters": [
       "Bandit",

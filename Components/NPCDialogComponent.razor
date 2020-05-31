@@ -8,13 +8,11 @@
         background: bisque;
         border-radius: 0.5rem;">
         @if (NPC != null)
-        {
-            @npc
+        {          
             @foreach (Dialog d in NPC.Dialogs)
             {
                 @if (d.HasRequirements())
                 {   
-                    <br />
                     <button class="btn btn-light" @onclick="@(() => Talk(d))">@d.ButtonText</button>                   
                 }
 
