@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -43,9 +44,15 @@ using System.Threading.Tasks;
             _guid = value;
         }
     }
+
+    public GameItem NewGatherItem;
+    public GameItem NewSmeltingItem;
+    public GameItem NewSmithingItem;
+
     public GameItem CurrentGatherItem;
     public GameItem CurrentSmeltingItem;
     public GameItem CurrentSmithingItem;
+    
     public GameItem CurrentFood;
     public Recipe CurrentRecipe;
     public Land CurrentLand;
@@ -150,6 +157,26 @@ using System.Threading.Tasks;
         CurrentSmeltingItem = null;
         stopActions = false;
         IsStoppingNextTick = false;
+        if(NewGatherItem != null)
+        {
+            CurrentGatherItem = NewGatherItem;
+            NewGatherItem = null;
+            Console.WriteLine("Current Gather Item is null:" + (CurrentGatherItem == null));
+        }
+        if(NewSmithingItem != null)
+        {
+            CurrentSmithingItem = NewSmithingItem;
+            NewSmithingItem = null; 
+            Console.WriteLine("Current Smithing Item is null:" + (CurrentSmithingItem == null));
+
+        }
+        if (NewSmeltingItem != null)
+        {
+            CurrentSmeltingItem = NewSmeltingItem;
+            NewSmeltingItem = null;
+            Console.WriteLine("Current smelting Item is null:" + (CurrentSmeltingItem == null));
+
+        }
     }
     private void ClearNonCombatActions()
     {
@@ -160,6 +187,7 @@ using System.Threading.Tasks;
         stopNoncombatActions = false;
         IsStoppingNextTick = false;
     }
+
     public void Pause()
     {
         GameTimer.Change(Timeout.Infinite, Timeout.Infinite);
@@ -271,6 +299,7 @@ using System.Threading.Tasks;
 
 
     }
+
     private void SmithItem()
     {
         if(CurrentSmeltingItem == null || CurrentSmithingItem == null)
@@ -303,6 +332,10 @@ using System.Threading.Tasks;
                 Player.Instance.GainExperience("Smithing", CurrentSmeltingItem.SmithingInfo.SmeltingExperience);
                 TicksToNextAction = CurrentSmeltingItem.SmithingInfo.SmithingSpeed;
                 SmithingStage = 2;
+            }
+            else
+            {
+                MessageManager.AddMessage("Didnt remove the item");
             }
         }
         else if(SmithingStage == 2)

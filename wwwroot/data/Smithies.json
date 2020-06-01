@@ -1,0 +1,17 @@
+[
+  {
+    "Location": "QuepleCaveSmithy",
+    "smithableMetalNames": [
+      "Copper Ore",
+      "Tin Ore",
+      "Copper Bar",
+      "Tin Bar",
+      "Zinc Bar",
+      "Brass Bar",
+      "Bronze Bar",
+      "Nickel Bar",
+      "Iron Bar",
+      "Lead Bar"
+    ]
+  }
+]

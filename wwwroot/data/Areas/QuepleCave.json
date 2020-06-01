@@ -17,8 +17,7 @@
     "image": "Mine",
     "actions": [
       "Mine Copper:Copper Ore"
-    ],
-    "dungeonName": "Queple Cave"
+    ]
   },
   {
     "name": "Tin Mine",
@@ -39,7 +38,7 @@
     "areaURL": "QuepleCaveSmithy",
     "image": "Smithy",
     "actions": [
-      "Smith"
+      "Smithy"
     ]
   },
   {
@@ -59,9 +58,6 @@
     "isUnlocked": false,
     "description": "The sound of flowing water fills the chamber as you step into a large cavern. A river flows gently by, teeming with fish.",
     "areaURL": "QuepleCaveRiver",
-    "image": "River",
-    "actions": [
-      "Smith"
-    ]
+    "image": "River"
   }
 ]

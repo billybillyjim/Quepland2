@@ -2,7 +2,7 @@
 @implements IDisposable 
 
 
-        <div class="custom-dropdown" onmouseleave="@(new Action(() => Close()))" @onclick="@(() => Select())">
+        <div class="custom-dropdown" style="cursor:pointer;" onmouseleave="@(new Action(() => Close()))" @onclick="@(() => Select())">
             @if(DropdownItems == null || DropdownItems.Count == 0)
             {
                 @EmptyText
@@ -15,7 +15,7 @@
             {
                 @BoxText
             }
-            <table style="@GetStyle() left:0px; background-color: white;z-index:10; position: absolute; @width">
+            <table style="@GetStyle() left:0px; background-color: white;z-index:10;min-width:100%; position: absolute; @width">
                 @if (selected)
                 {
                     @foreach (string item in DropdownItems)
@@ -44,7 +44,7 @@
     [Parameter]
     public EventCallback<string> ValueChanged { get; set; }
     private bool selected;
-    private string width = "width:300px;";
+    private string width = "width:fit-content;";
     [Parameter]
     public string EmptyText { get; set; } = "You don't have any.";
 
@@ -58,8 +58,12 @@
     }
     public void Select()
     {
-        selected = !selected;
-        GameState.UpdateState();
+        if(DropdownItems.Count > 0)
+        {
+            selected = !selected;
+            GameState.UpdateState();
+        }
+
     }
     public void Close()
     {

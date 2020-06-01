@@ -1,49 +1,62 @@
 ﻿@page "/Underworld/{DungeonURL}"
 @inject GameState GameState
+@inject NavigationManager UriHelper
 @implements IDisposable
+
 
 @if (Dungeon != null)
 {
-    @if (Dungeon.Progress < 100)
-    {
-        if (IsFighting == false)
+    <div style="margin-top:20px;">
+
+
+        @if (Dungeon.Progress < 100)
         {
-            <button @onclick="@(() => Spelunk())">Spelunk</button>
+            <div style="margin-bottom:5px;">
+                Progress
+                <div class="progress" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Progress", "You've explored " + Dungeon.GetPercentProgress() + "% of this dungeon.")))"
+                                      onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                    <div class="progress-bar" style="width:@(Dungeon.GetPercentProgress())%"></div>
+                </div>
+            </div>
+
+            if (IsFighting == false)
+            {
+                <button class="btn btn-success" @onclick="@(() => Spelunk())">Spelunk</button>
+            }
+            else
+            {
+                <div style="height:38px;"></div>
+            }
+
+        }
+        @if (IsFighting)
+        {
+            <CombatComponent></CombatComponent>
+            @if (BattleManager.Instance.AllOpponentsDefeated() && BattleManager.Instance.BattleHasEnded)
+            {
+                <div style="position:fixed;bottom:280px;">
+                    <button class="btn btn-success" @onclick="@(() => Spelunk())">Continue Spelunking</button>
+                    <br />
+                    <br/>
+                    <button class="btn btn-secondary" @onclick="@(() => EndFight())">Return</button>
+                </div>
+
+            }
         }
         else
         {
-            <button disabled>Spelunk</button>
-        }
-        <div>
-            Progress
-            <div class="progress">
-                <div class="progress-bar" style="width:@(Dungeon.GetPercentProgress())%"></div>
-            </div>
-        </div>
-    }
-    @if (IsFighting)
-    {
-        <CombatComponent></CombatComponent>
-        @if (BattleManager.Instance.CurrentOpponents.Count == 0 && BattleManager.Instance.BattleHasEnded)
-        {
-            <button @onclick="@(() => Spelunk())">Continue Spelunking</button>
-            <br />
-            <button @onclick="@(() => EndFight())">Return</button>
-        }
-    }
-    else
-    {
 
-        <div>
-            Go to:
-            @foreach (Area area in Dungeon.GetUnlockedAreas() ?? Enumerable.Empty<Area>())
-            {
-                <button>@area.Name</button>
+            <div style="margin-top:10px;">
+                Enter:
                 <br/>
-            }
-        </div>
-    }
-
+                @foreach (Area area in Dungeon.GetUnlockedAreas() ?? Enumerable.Empty<Area>())
+                {
+                    <button class="btn btn-primary" @onclick="@(() => GoToArea(area.AreaURL))">@area.Name</button>
+                    <br />
+                }
+            </div>
+        }
+    </div>
 }
 
 
@@ -72,6 +85,7 @@
             Monster monsterToFight = Dungeon.GetRandomMonster();
             if (monsterToFight != null)
             {
+                BattleManager.Instance.CurrentOpponents.Clear();
                 BattleManager.Instance.CurrentOpponents.Add(monsterToFight);
                 BattleManager.Instance.StartBattle();
                 IsFighting = true;
@@ -84,6 +98,13 @@
     {
         IsFighting = false;
         GameState.UpdateState();
+    }
+    private void GoToArea(string areaURL)
+    {
+        GameState.StopActions();
+        GameState.Location = areaURL;
+
+        UriHelper.NavigateTo("World/" + areaURL);
     }
     protected override void OnParametersSet()
     {

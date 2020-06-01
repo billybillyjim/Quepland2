@@ -95,5 +95,119 @@
         "skillLevel": 4
       }
     ]
+  },
+  {
+    "Name": "Zinc Bar",
+    "Description": "This would be more useful combined with another metal.",
+    "gatherString": "You smelt a zinc bar.",
+    "value": 70,
+    "gatherSpeed": 20,
+    "experienceGained": "Smithing:30",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smeltsIntoString": "Zinc Bar",
+      "smithingExperience": 30
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 15
+      }
+    ]
+  },
+  {
+    "Name": "Brass Bar",
+    "Description": "A sturdy metal made from copper and zinc.",
+    "gatherString": "You smelt a brass bar.",
+    "value": 90,
+    "gatherSpeed": 25,
+    "experienceGained": "Smithing:50",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smeltsIntoString": "Brass Bar",
+      "smithingExperience": 50
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 25
+      }
+    ]
+  },
+  {
+    "Name": "Bronze Bar",
+    "Description": "A strong metal made from copper and tin.",
+    "gatherString": "You smelt a bronze bar.",
+    "value": 110,
+    "gatherSpeed": 30,
+    "experienceGained": "Smithing:80",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smeltsIntoString": "Bronze Bar",
+      "smithingExperience": 80
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 30
+      }
+    ]
+  },
+  {
+    "Name": "Nickel Bar",
+    "Description": "A metal made from nickel ore.",
+    "gatherString": "You smelt a nickel bar.",
+    "value": 150,
+    "gatherSpeed": 35,
+    "experienceGained": "Smithing:130",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smeltsIntoString": "Nickel Bar",
+      "smithingExperience": 130
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 35
+      }
+    ]
+  },
+  {
+    "Name": "Iron Bar",
+    "Description": "A very strong metal bar.",
+    "gatherString": "You smelt an iron bar.",
+    "value": 190,
+    "gatherSpeed": 45,
+    "experienceGained": "Smithing:180",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smeltsIntoString": "Iron Bar",
+      "smithingExperience": 180
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 45
+      }
+    ]
+  },
+  {
+    "Name": "Lead Bar",
+    "Description": "A heavy metal bar.",
+    "gatherString": "You smelt a lead bar.",
+    "value": 190,
+    "gatherSpeed": 55,
+    "experienceGained": "Smithing:220",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smeltsIntoString": "Iron Bar",
+      "smithingExperience": 220
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 55
+      }
+    ]
   }
 ]

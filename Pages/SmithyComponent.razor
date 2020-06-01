@@ -1,33 +1,59 @@
-﻿@page "/World/Smithy"
+﻿@page "/World/Smithy/{Location}"
 @inject GameState GameState
 @using Quepland_2.Components
 @implements IDisposable
-<h3>Smithy</h3>
 
-<CustomDropdownComponent BoxText="Select an Ore" EmptyText="You don't have any ores or bars." @bind-Value="Source" DropdownItems="@Player.Instance.Inventory.GetSmeltableItems().Select(x => x.Name).ToList()"></CustomDropdownComponent>
-
-<CustomDropdownComponent BoxText="Select a Product" EmptyText="Please select a source first." @bind-Value="Product" DropdownItems="@Player.Instance.Inventory.GetSmithableItems().Select(x => x.Name).ToList()"></CustomDropdownComponent>
-
-
-<br/>
-
-@if (Product != "" && Source != "" && Player.Instance.Inventory.HasItem(ItemManager.Instance.GetItemByName(Source)))
+@if (Location != null)
 {
-    <button @onclick="@(() => Smith())">Smith a @Product @amount Times</button>
-}
-<br/>
-<div>
-    <div class="progress" style="width:300px;">
-        <div class="progress-bar" style="@GetProgress()"></div>
+    <h3>Smithy</h3>
+
+    <CustomDropdownComponent BoxText="Select an Ore" EmptyText="You don't have any ores or bars." @bind-Value="Source" DropdownItems="@GetSmeltables()"></CustomDropdownComponent>
+
+    <CustomDropdownComponent BoxText="Select a Product" EmptyText="Please select a source." @bind-Value="Product" DropdownItems="@GetSmithables()"></CustomDropdownComponent>
+
+
+    <br />
+
+    @if (Product != "" && Source != "" && Player.Instance.Inventory.HasItem(ItemManager.Instance.GetItemByName(Source)))
+    {
+        <button class="btn btn-primary" @onclick="@(() => Smith())">Smith a @Product @amount Times</button>
+    }
+    <br />
+    <br/>
+    <div>
+        <div class="progress" style="width:300px;">
+            <div class="progress-bar" style="@GetProgress()"></div>
+        </div>
     </div>
-</div>
+}
+
 @code {
 
+    [Parameter]
+    public string Location { get; set; }
     string Source = "";
     string Product = "";
     int amount = 1;
     GameItem ItemToCreate { get; set; }
+    private List<GameItem> smeltables = new List<GameItem>();
+    private List<GameItem> smithables = new List<GameItem>();
 
+    public List<string> GetSmithables()
+    {
+        if(smithables.Count > 0)
+        {
+            return smithables.Select(x => x.Name).ToList();
+        }
+        return new List<string>();
+    }
+    public List<string> GetSmeltables()
+    {
+        if (smeltables.Count > 0)
+        {
+            return smeltables.Select(x => x.Name).ToList();
+        }
+        return new List<string>();
+    }
     public void Smith()
     {
         GameItem source = ItemManager.Instance.GetItemByName(Source);
@@ -37,17 +63,18 @@
         {
             GameState.StopActions();
             GameState.SmithingStage = 0;
-            GameState.CurrentSmeltingItem = source;
-            GameState.CurrentSmithingItem = product;
+            GameState.NewSmeltingItem = source;
+            GameState.NewSmithingItem = product;
+            Console.WriteLine("Source:"+(source != null) + ", Product:" + (product != null));
             MessageManager.AddMessage("You begin smithing your " + Source + " into a " + Product);
-            GameState.TicksToNextAction = GameState.CurrentSmeltingItem.SmithingInfo.SmeltingSpeed;
+            GameState.TicksToNextAction = source.SmithingInfo.SmeltingSpeed;
         }
     }
     private string GetProgress()
     {
-        if(GameState.CurrentSmeltingItem != null)
+        if (GameState.CurrentSmeltingItem != null)
         {
-            if(GameState.SmithingStage == 0)
+            if (GameState.SmithingStage == 0)
             {
                 return "width:" + (100 - ((double)GameState.TicksToNextAction / GameState.CurrentSmeltingItem.SmithingInfo.SmeltingSpeed) * 100d) + "%";
             }
@@ -61,6 +88,32 @@
 
     protected override void OnInitialized()
     {
+        Smithy s = AreaManager.Instance.Smithies.FirstOrDefault(x => x.Location == Location);
+
+
+        foreach(GameItem i in s.SmithableMetals)
+        {
+            if (Player.Instance.Inventory.HasItem(i))
+            {
+                smeltables.Add(i);
+                foreach (GameItem output in i.SmithingInfo.SmithsInto)
+                {
+                    if (output != null)
+                    {
+                        if (Player.Instance.Inventory.HasItem(i))
+                        {
+                            smithables.Add(output);
+                        }
+
+                    }
+
+                }
+            }
+        }
+        if(smithables.Count == 0)
+        {
+
+        }
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()

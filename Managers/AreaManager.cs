@@ -22,6 +22,7 @@ public class AreaManager
     public List<Region> Regions = new List<Region>();
     public List<Land> Lands = new List<Land>();
     public List<Dungeon> Dungeons = new List<Dungeon>();
+    public List<Smithy> Smithies = new List<Smithy>();
     public async Task LoadAreas(HttpClient Http)
     {
         Regions.AddRange(await Http.GetJsonAsync<Region[]>("data/Regions.json"));
@@ -32,6 +33,7 @@ public class AreaManager
         
         Lands.AddRange(await Http.GetJsonAsync<Land[]>("data/Lands.json"));
         Dungeons.AddRange(await Http.GetJsonAsync<Dungeon[]>("data/Dungeons/QueplandDungeons.json"));
+        Smithies.AddRange(await Http.GetJsonAsync<Smithy[]>("data/Smithies.json"));
     }
 
     public Area GetAreaByName(string name)

@@ -80,6 +80,11 @@ public class Inventory
     }
     public bool HasItem(GameItem item)
     {
+        if(item == null)
+        {
+            Console.WriteLine("HasItem was called on null item.");
+            return false;
+        }
         return (items.ContainsKey(item));
     }
     public int GetCoins()
@@ -237,7 +242,7 @@ public class Inventory
                     items.Remove(item);
                 }
                 UpdateItemCount();
-                return Math.Max(Math.Abs(currentAmount - amount), 0);
+                return Math.Max(Math.Min(amount, currentAmount), 0);
         }
         UpdateItemCount();
         return 0;

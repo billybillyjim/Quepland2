@@ -11,8 +11,17 @@
 
     @foreach (string a in thisArea.Actions ?? Enumerable.Empty<string>())
     {
-        <Quepland_2.Components.GatherButtonComponent ActionText="@a"></Quepland_2.Components.GatherButtonComponent>
-        <br />
+        if (a == "Smithy")
+        {
+            <button class="btn btn-outline-dark" @onclick="(() => EnterSmithy())">Smith</button>
+            <br />
+        }
+        else
+        {
+            <Quepland_2.Components.GatherButtonComponent ActionText="@a"></Quepland_2.Components.GatherButtonComponent>
+            <br />
+        }
+
     }
     @foreach (Building b in thisArea.Buildings)
     {
@@ -76,6 +85,12 @@
         GameState.StopActions();
         GameState.Location = dungeonURL;
         UriHelper.NavigateTo("Underworld/" + dungeonURL);
+    }
+    private void EnterSmithy()
+    {
+        GameState.StopActions();
+        GameState.Location = "Smithy/" + areaURL;
+        UriHelper.NavigateTo("World/Smithy/" + areaURL);
     }
     protected override void OnInitialized()
     {

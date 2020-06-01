@@ -84,12 +84,21 @@ public class Player
     {
         UnequipItem(equippedItems.Find(x => x.EquipSlot == item.EquipSlot));
         equippedItems.Add(item);
+        if(item.WeaponInfo != null)
+        {
+            TicksToNextAttack = GetWeaponAttackSpeed();
+        }
+
         item.IsEquipped = true;
     }
     public void UnequipItem(GameItem item)
     {
         if (item != null)
         {
+            if (item.WeaponInfo != null)
+            {
+                TicksToNextAttack = GetWeaponAttackSpeed();
+            }
             item.IsEquipped = false;
             equippedItems.Remove(item);
         }
