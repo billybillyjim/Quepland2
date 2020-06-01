@@ -69,6 +69,28 @@ public class Recipe
         }
         return ing;
     }
+    public string GetShortIngredientsString()
+    {
+        if(Ingredients.Count == 1)
+        {
+            return Ingredients[0].Amount + " " + Ingredients[0].Item;
+        }
+        else if(Ingredients.Count == 2)
+        {
+            return Ingredients[0].Amount + " " + Ingredients[0].Item + " and " + Ingredients[1].Amount + " " + Ingredients[1].Item;
+        }
+        else
+        {
+            string ing = "";
+            foreach (Ingredient i in Ingredients)
+            {
+                ing += i.Amount + " " + i.Item + ", ";
+            }
+            ing = ing.Substring(0, ing.Length - 2);
+            return ing;
+        }
+
+    }
     public int GetMaxOutput()
     {
         int max = MaxOutputsPerAction;

@@ -1,7 +1,7 @@
 [
   {
     "Location": "QuepleCaveSmithy",
-    "smithableMetalNames": [
+    "smeltableMetalNames": [
       "Copper Ore",
       "Tin Ore",
       "Copper Bar",

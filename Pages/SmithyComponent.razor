@@ -14,7 +14,7 @@
 
     <br />
 
-    @if (Product != "" && Source != "" && Player.Instance.Inventory.HasItem(ItemManager.Instance.GetItemByName(Source)))
+    @if (Product != "" && Source != "")
     {
         <button class="btn btn-primary" @onclick="@(() => Smith())">Smith a @Product @amount Times</button>
     }
@@ -31,18 +31,24 @@
 
     [Parameter]
     public string Location { get; set; }
-    string Source = "";
+    private string s = "";
+    string Source { get { return s; }
+        set
+        {
+            s = value;
+            UpdateSmithables();
+        }
+    }
     string Product = "";
     int amount = 1;
-    GameItem ItemToCreate { get; set; }
-    private List<GameItem> smeltables = new List<GameItem>();
-    private List<GameItem> smithables = new List<GameItem>();
+    private List<Recipe> smeltables = new List<Recipe>();
+    private List<Recipe> smithables = new List<Recipe>();
 
     public List<string> GetSmithables()
     {
         if(smithables.Count > 0)
         {
-            return smithables.Select(x => x.Name).ToList();
+            return smithables.Select(x => x.OutputItemName).ToList();
         }
         return new List<string>();
     }
@@ -50,74 +56,77 @@
     {
         if (smeltables.Count > 0)
         {
-            return smeltables.Select(x => x.Name).ToList();
+            return smeltables.Select(x => x.GetShortIngredientsString()).ToList();
         }
         return new List<string>();
     }
     public void Smith()
     {
-        GameItem source = ItemManager.Instance.GetItemByName(Source);
-        GameItem product = ItemManager.Instance.GetItemByName(Product);
+        Recipe source = ItemManager.Instance.GetSmithingRecipeByIngredients(Source);
+        Recipe product = ItemManager.Instance.GetSmithingRecipeByOutput(Product);
 
-        if (Player.Instance.Inventory.HasItem(source))
+        if (source.CanCreate())
         {
             GameState.StopActions();
             GameState.SmithingStage = 0;
-            GameState.NewSmeltingItem = source;
-            GameState.NewSmithingItem = product;
-            Console.WriteLine("Source:"+(source != null) + ", Product:" + (product != null));
+            GameState.NewSmeltingRecipe = source;
+            GameState.NewSmithingRecipe = product;
+            Console.WriteLine("Source is null:"+ (source != null) + ", Product is null:" + (product != null));
             MessageManager.AddMessage("You begin smithing your " + Source + " into a " + Product);
-            GameState.TicksToNextAction = source.SmithingInfo.SmeltingSpeed;
+            GameState.TicksToNextAction = source.CraftingSpeed;
         }
     }
     private string GetProgress()
     {
-        if (GameState.CurrentSmeltingItem != null)
+        if (GameState.CurrentSmeltingRecipe != null)
         {
             if (GameState.SmithingStage == 0)
             {
-                return "width:" + (100 - ((double)GameState.TicksToNextAction / GameState.CurrentSmeltingItem.SmithingInfo.SmeltingSpeed) * 100d) + "%";
+                return "width:" + (100 - ((double)GameState.TicksToNextAction / GameState.CurrentSmeltingRecipe.CraftingSpeed) * 100d) + "%";
             }
             else
             {
-                return "width:" + (100 - ((double)GameState.TicksToNextAction / GameState.CurrentSmeltingItem.SmithingInfo.SmithingSpeed) * 100d) + "%";
+                return "width:" + (100 - ((double)GameState.TicksToNextAction / GameState.CurrentSmeltingRecipe.CraftingSpeed) * 100d) + "%";
             }
         }
         return "width:0%";
     }
-
-    protected override void OnInitialized()
+    public void UpdateSmithables()
     {
-        Smithy s = AreaManager.Instance.Smithies.FirstOrDefault(x => x.Location == Location);
-
-
-        foreach(GameItem i in s.SmithableMetals)
+        smithables.Clear();
+        foreach (Recipe recipe in ItemManager.Instance.SmithingRecipes)
         {
-            if (Player.Instance.Inventory.HasItem(i))
+            if(recipe.Ingredients.Count == 1 && ItemManager.Instance.GetSmithingRecipeByIngredients(Source).OutputItemName == recipe.Ingredients[0].Item)
             {
-                smeltables.Add(i);
-                foreach (GameItem output in i.SmithingInfo.SmithsInto)
-                {
-                    if (output != null)
-                    {
-                        if (Player.Instance.Inventory.HasItem(i))
-                        {
-                            smithables.Add(output);
-                        }
-
-                    }
-
-                }
+                smithables.Add(recipe);
             }
         }
-        if(smithables.Count == 0)
+    }
+    public void UpdateSmeltables()
+    {
+        Smithy s = AreaManager.Instance.Smithies.FirstOrDefault(x => x.Location == Location);
+        smeltables.Clear();
+        foreach (Recipe recipe in ItemManager.Instance.SmithingRecipes)
         {
+            if (recipe != null && recipe.Output != null)
+            {
+                if (s.SmeltableMetals.Contains(recipe.Output) && recipe.CanCreate())
+                {
+                    smeltables.Add(recipe);
+                }
+            }
 
         }
+    }
+    protected override void OnInitialized()
+    {
+        GameState.SmithingComponent = this;
+        UpdateSmeltables();
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()
     {
+        GameState.SmithingComponent = null;
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();

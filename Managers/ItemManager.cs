@@ -19,6 +19,7 @@ public class ItemManager
     }
     public List<GameItem> Items = new List<GameItem>();
     public List<Recipe> Recipes = new List<Recipe>();
+    public List<Recipe> SmithingRecipes = new List<Recipe>();
     public static List<string> FileNames = new List<string> { "Weapons", "Armors", "Sushi", "QuestItems", "General", "Fishing", "Ores", "WoodworkingItems", "Logs" };
     public static int baseID;
     public static readonly int MaxItemsPerFile = 100;
@@ -27,12 +28,12 @@ public class ItemManager
     public Shop CurrentShop;
     public async Task LoadItems(HttpClient Http)
     {
-        foreach(string file in FileNames)
+        foreach (string file in FileNames)
         {
             List<GameItem> addedItems = new List<GameItem>();
             addedItems.AddRange(await Http.GetJsonAsync<GameItem[]>("data/Items/" + file + ".json"));
             int iterator = baseID;
-            foreach(GameItem i in addedItems)
+            foreach (GameItem i in addedItems)
             {
                 i.ID = iterator;
                 iterator++;
@@ -40,12 +41,13 @@ public class ItemManager
             }
             Items.AddRange(addedItems);
             baseID += MaxItemsPerFile;
-            
+
         }
 
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/WoodworkingRecipes.json"));
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/UnpackingRecipes.json"));
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/SushiRecipes.json"));
+        SmithingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/SmithingRecipes.json"));
     }
 
 
@@ -56,15 +58,38 @@ public class ItemManager
 
     public Recipe GetUnpackingRecipe(GameItem item)
     {
-        foreach(Recipe r in Recipes)
+        foreach (Recipe r in Recipes)
         {
-            if(r.Ingredients.Count == 1 && r.Ingredients[0].Item == item.Name)
+            if (r.Ingredients.Count == 1 && r.Ingredients[0].Item == item.Name)
             {
                 return r;
             }
         }
         return null;
     }
-
+    public Recipe GetSmithingRecipeByIngredients(string ingredients)
+    {
+        foreach(Recipe recipe in SmithingRecipes)
+        {
+            if(recipe.GetShortIngredientsString() == ingredients)
+            {
+                return recipe;
+            }
+        }
+        Console.WriteLine("Failed to find recipe with ingredients:" + ingredients);
+        return null;
+    }
+    public Recipe GetSmithingRecipeByOutput(string output)
+    {
+        foreach (Recipe recipe in SmithingRecipes)
+        {
+            if (recipe.OutputItemName == output)
+            {
+                return recipe;
+            }
+        }
+        Console.WriteLine("Failed to find recipe with output:" + output);
+        return null;
+    }
 }
 

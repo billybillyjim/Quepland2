@@ -247,6 +247,31 @@ public class Inventory
         UpdateItemCount();
         return 0;
     }
+    public bool RemoveRecipeItems(Recipe recipe)
+    {
+        if(recipe.CanCreate() == false)
+        {
+            return false;
+        }
+        foreach(Ingredient ingredient in recipe.Ingredients)
+        {
+            GameItem i = ItemManager.Instance.GetItemByName(ingredient.Item);
+            if (items.TryGetValue(i, out int currentAmount))
+            {
+                int remainder = Math.Max(currentAmount - ingredient.Amount, 0);
+
+                items[i] = remainder;
+                if (items[i] <= 0)
+                {
+                    items.Remove(i);
+                }
+                UpdateItemCount();
+            }
+        }
+
+        UpdateItemCount();
+        return true;
+    }
     public void Clear()
     {
         items.Clear();
@@ -272,23 +297,6 @@ public class Inventory
         }
     }
 
-    public List<GameItem> GetSmeltableItems()
-    {
-        return items.Keys.Where(x => x.SmithingInfo != null && x.SmithingInfo.SmeltsInto != null).ToList();
-    }
-    public List<GameItem> GetSmithableItems()
-    {
-        List<GameItem> smithables = new List<GameItem>();
-        foreach(GameItem i in items.Keys)
-        {
-            if(i.SmithingInfo != null && i.SmithingInfo.SmithsInto != null)
-            {
-                smithables.AddRange(i.SmithingInfo.SmithsInto);
-            }
-            
-        }
-        return smithables;
-    }
     public bool HasToolRequirement(GameItem item)
     {
         foreach(Requirement r in item.Requirements)

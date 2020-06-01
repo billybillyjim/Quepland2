@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
 using Quepland_2.Components;
+using Quepland_2.Pages;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -46,17 +47,18 @@ using System.Threading.Tasks;
     }
 
     public GameItem NewGatherItem;
-    public GameItem NewSmeltingItem;
-    public GameItem NewSmithingItem;
+    public Recipe NewSmeltingRecipe;
+    public Recipe NewSmithingRecipe;
 
     public GameItem CurrentGatherItem;
-    public GameItem CurrentSmeltingItem;
-    public GameItem CurrentSmithingItem;
+    public Recipe CurrentSmeltingRecipe;
+    public Recipe CurrentSmithingRecipe;
     
     public GameItem CurrentFood;
     public Recipe CurrentRecipe;
     public Land CurrentLand;
     public ItemViewerComponent itemViewer;
+    public SmithyComponent SmithingComponent;
     public static int TicksToNextAction;
     public static readonly int GameSpeed = 200;
     public int TicksToNextHeal;
@@ -95,7 +97,7 @@ using System.Threading.Tasks;
             {
                 CraftItem();
             }
-            else if(TicksToNextAction <= 0 && CurrentSmithingItem != null && CurrentSmeltingItem != null)
+            else if(TicksToNextAction <= 0 && CurrentSmithingRecipe != null && CurrentSmeltingRecipe != null)
             {
                 SmithItem();
             }
@@ -153,8 +155,8 @@ using System.Threading.Tasks;
         CurrentGatherItem = null;
         CurrentRecipe = null;
         BattleManager.Instance.CurrentOpponents.Clear();
-        CurrentSmithingItem = null;
-        CurrentSmeltingItem = null;
+        CurrentSmithingRecipe = null;
+        CurrentSmeltingRecipe = null;
         stopActions = false;
         IsStoppingNextTick = false;
         if(NewGatherItem != null)
@@ -163,18 +165,18 @@ using System.Threading.Tasks;
             NewGatherItem = null;
             Console.WriteLine("Current Gather Item is null:" + (CurrentGatherItem == null));
         }
-        if(NewSmithingItem != null)
+        if(NewSmithingRecipe != null)
         {
-            CurrentSmithingItem = NewSmithingItem;
-            NewSmithingItem = null; 
-            Console.WriteLine("Current Smithing Item is null:" + (CurrentSmithingItem == null));
+            CurrentSmithingRecipe = NewSmithingRecipe;
+            NewSmithingRecipe = null; 
+            Console.WriteLine("Current Smithing Item is null:" + (CurrentSmithingRecipe == null));
 
         }
-        if (NewSmeltingItem != null)
+        if (NewSmeltingRecipe != null)
         {
-            CurrentSmeltingItem = NewSmeltingItem;
-            NewSmeltingItem = null;
-            Console.WriteLine("Current smelting Item is null:" + (CurrentSmeltingItem == null));
+            CurrentSmeltingRecipe = NewSmeltingRecipe;
+            NewSmeltingRecipe = null;
+            Console.WriteLine("Current smelting Item is null:" + (CurrentSmeltingRecipe == null));
 
         }
     }
@@ -182,8 +184,8 @@ using System.Threading.Tasks;
     {
         CurrentGatherItem = null;
         CurrentRecipe = null;
-        CurrentSmithingItem = null;
-        CurrentSmeltingItem = null;
+        CurrentSmithingRecipe = null;
+        CurrentSmeltingRecipe = null;
         stopNoncombatActions = false;
         IsStoppingNextTick = false;
     }
@@ -302,48 +304,55 @@ using System.Threading.Tasks;
 
     private void SmithItem()
     {
-        if(CurrentSmeltingItem == null || CurrentSmithingItem == null)
+        if(CurrentSmeltingRecipe == null || CurrentSmithingRecipe == null)
         {
-            Console.WriteLine("Failed to start smithing, Smelting Item is null:" + (CurrentSmeltingItem == null) + " and Smithing Item is null:" + (CurrentSmithingItem == null));
+            Console.WriteLine("Failed to start smithing, Smelting Item is null:" + (CurrentSmeltingRecipe == null) + " and Smithing Item is null:" + (CurrentSmithingRecipe == null));
             return;
         }
         if(SmithingStage == 0)
         {
-            if (Player.Instance.Inventory.RemoveItems(CurrentSmeltingItem, 1) > 0)
+            if (Player.Instance.Inventory.RemoveRecipeItems(CurrentSmeltingRecipe))
             {
-                MessageManager.AddMessage("You smelt the " + CurrentSmeltingItem.Name + " into a " + CurrentSmeltingItem.SmithingInfo.SmeltsIntoString);
-                Player.Instance.Inventory.AddItem(CurrentSmeltingItem.SmithingInfo.SmeltsInto);
-                Player.Instance.GainExperience("Smithing", CurrentSmeltingItem.SmithingInfo.SmeltingExperience);
-                TicksToNextAction = CurrentSmeltingItem.SmithingInfo.SmithingSpeed;
+                MessageManager.AddMessage("You smelt the " + CurrentSmeltingRecipe.GetShortIngredientsString() + " into a " + CurrentSmithingRecipe.OutputItemName);
+                Player.Instance.Inventory.AddItem(CurrentSmeltingRecipe.Output);
+                //Player.Instance.GainExperience("Smithing", CurrentSmeltingItem.SmithingInfo.SmeltingExperience);
+                TicksToNextAction = CurrentSmeltingRecipe.CraftingSpeed;
                 SmithingStage = 1;
             }
             else
             {
+                if(SmithingComponent != null)
+                {
+                    SmithingComponent.UpdateSmeltables();
+                }
                 MessageManager.AddMessage("You have run out of ores.");
-                CurrentSmithingItem = null;
-                CurrentSmeltingItem = null;
+                StopActions();
             }
         }
         else if(SmithingStage == 1)
         {
-            if (Player.Instance.Inventory.RemoveItems(CurrentSmeltingItem.SmithingInfo.SmeltsInto, 1) > 0)
+            if (Player.Instance.Inventory.RemoveRecipeItems(CurrentSmithingRecipe))
             {
-                MessageManager.AddMessage("You hammer the " + CurrentSmeltingItem.SmithingInfo.SmeltsInto.Name + " into a " + CurrentSmithingItem.Name + " and place it in water to cool.");              
-                Player.Instance.GainExperience("Smithing", CurrentSmeltingItem.SmithingInfo.SmeltingExperience);
-                TicksToNextAction = CurrentSmeltingItem.SmithingInfo.SmithingSpeed;
+                MessageManager.AddMessage("You hammer the " + CurrentSmeltingRecipe.OutputItemName + " into a " + CurrentSmithingRecipe.OutputItemName + " and place it in water to cool.");              
+                //Player.Instance.GainExperience("Smithing", CurrentSmeltingItem.SmithingInfo.SmeltingExperience);
+                TicksToNextAction = CurrentSmithingRecipe.CraftingSpeed;
                 SmithingStage = 2;
             }
             else
             {
-                MessageManager.AddMessage("Didnt remove the item");
+                if (SmithingComponent != null)
+                {
+                    SmithingComponent.UpdateSmeltables();
+                }
+                StopActions();
             }
         }
         else if(SmithingStage == 2)
         {
-            if (Player.Instance.Inventory.AddItem(CurrentSmithingItem))
+            if (Player.Instance.Inventory.AddItem(CurrentSmithingRecipe.Output))
             {
-                MessageManager.AddMessage("You withdraw the " + CurrentSmithingItem.Name);
-                TicksToNextAction = CurrentSmeltingItem.SmithingInfo.SmeltingSpeed;
+                MessageManager.AddMessage("You withdraw the " + CurrentSmithingRecipe.Output.Name);
+                TicksToNextAction = 12;
                 SmithingStage = 0;
             }
         }

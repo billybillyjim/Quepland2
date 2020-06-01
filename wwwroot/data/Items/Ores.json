@@ -53,13 +53,6 @@
     "experienceGained": "Smithing:15",
     "icon": "Bar",
     "smithingInfo": {
-      "smeltsIntoString": "Copper Bar",
-      "smithsIntoString": [
-        "Copper Knife",
-        "Copper Sword",
-        "Copper Hammer",
-        "Copper Axe"
-      ],
       "smithingExperience": 15
     },
     "requirements": [
@@ -80,13 +73,6 @@
     "requiredAction": "Smithing",
     "icon": "Bar",
     "smithingInfo": {
-      "smeltsIntoString": "Tin Bar",
-      "smithsIntoString": [
-        "Tin Knife",
-        "Tin Sword",
-        "Tin Hammer",
-        "Tin Axe"
-      ],
       "smithingExperience": 20
     },
     "requirements": [
@@ -105,7 +91,6 @@
     "experienceGained": "Smithing:30",
     "icon": "Bar",
     "smithingInfo": {
-      "smeltsIntoString": "Zinc Bar",
       "smithingExperience": 30
     },
     "requirements": [
@@ -124,7 +109,6 @@
     "experienceGained": "Smithing:50",
     "icon": "Bar",
     "smithingInfo": {
-      "smeltsIntoString": "Brass Bar",
       "smithingExperience": 50
     },
     "requirements": [
@@ -143,7 +127,6 @@
     "experienceGained": "Smithing:80",
     "icon": "Bar",
     "smithingInfo": {
-      "smeltsIntoString": "Bronze Bar",
       "smithingExperience": 80
     },
     "requirements": [
@@ -162,7 +145,6 @@
     "experienceGained": "Smithing:130",
     "icon": "Bar",
     "smithingInfo": {
-      "smeltsIntoString": "Nickel Bar",
       "smithingExperience": 130
     },
     "requirements": [
@@ -181,7 +163,6 @@
     "experienceGained": "Smithing:180",
     "icon": "Bar",
     "smithingInfo": {
-      "smeltsIntoString": "Iron Bar",
       "smithingExperience": 180
     },
     "requirements": [
@@ -200,7 +181,6 @@
     "experienceGained": "Smithing:220",
     "icon": "Bar",
     "smithingInfo": {
-      "smeltsIntoString": "Iron Bar",
       "smithingExperience": 220
     },
     "requirements": [

@@ -3,20 +3,20 @@ using System.Collections.Generic;
 
 public class Smithy
 {
-	public List<GameItem> SmithableMetals { 
+	public List<GameItem> SmeltableMetals { 
 		get { 
-			if (smithable == null) 
+			if (smeltable == null) 
 			{
-				smithable = new List<GameItem>();
-				foreach(string s in SmithableMetalNames)
+				smeltable = new List<GameItem>();
+				foreach(string s in SmeltableMetalNames)
                 {
-					smithable.Add(ItemManager.Instance.GetItemByName(s));
+					smeltable.Add(ItemManager.Instance.GetItemByName(s));
                 }
 			}
-			return smithable;
+			return smeltable;
 		} 
 	}
-	private List<GameItem> smithable;
-	public List<string> SmithableMetalNames { get; set; }
+	private List<GameItem> smeltable;
+	public List<string> SmeltableMetalNames { get; set; }
 	public string Location { get; set; }
 }

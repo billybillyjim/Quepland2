@@ -1,0 +1,123 @@
+[
+  {
+    "outputItemName": "Brass Bar",
+    "ingredients": [
+      {
+        "item": "Copper Bar"
+      },
+      {
+        "item": "Zinc Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Brass Bar",
+    "ingredients": [
+      {
+        "item": "Copper Ore"
+      },
+      {
+        "item": "Zinc Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Brass Bar",
+    "ingredients": [
+      {
+        "item": "Copper Bar"
+      },
+      {
+        "item": "Calamine"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Brass Bar",
+    "ingredients": [
+      {
+        "item": "Brass Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Copper Bar",
+    "ingredients": [
+      {
+        "item": "Copper Ore"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Copper Bar",
+    "ingredients": [
+      {
+        "item": "Copper Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Copper Knife",
+    "ingredients": [
+      {
+        "item": "Copper Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Copper Sword",
+    "ingredients": [
+      {
+        "item": "Copper Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Copper Axe",
+    "ingredients": [
+      {
+        "item": "Copper Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Copper Hammer",
+    "ingredients": [
+      {
+        "item": "Copper Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Copper Knife",
+    "ingredients": [
+      {
+        "item": "Copper Ore"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Copper Sword",
+    "ingredients": [
+      {
+        "item": "Copper Ore"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Copper Axe",
+    "ingredients": [
+      {
+        "item": "Copper Ore"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Copper Hammer",
+    "ingredients": [
+      {
+        "item": "Copper Ore"
+      }
+    ]
+  }
+]
