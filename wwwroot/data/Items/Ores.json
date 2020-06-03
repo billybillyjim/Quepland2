@@ -213,6 +213,108 @@
     ]
   },
   {
+    "Name": "Coal",
+    "Description": "A black rock that tastes bad but burns good.",
+    "value": 55,
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 30
+      },
+      {
+        "action": "Mining"
+      }
+    ],
+    "gatherSpeed": 3000,
+    "experienceGained": "Mining:80",
+    "gatherString": "You mine some coal.",
+    "icon": "Coal"
+  },
+  {
+    "Name": "Strongtium Ore",
+    "Description": "A powerful ore named after its main characteristic.",
+    "gatherString": "You mine some strongtium ore.",
+    "value": 400,
+    "gatherSpeed": 90,
+    "experienceGained": "Mining:550",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 500
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 98
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Sahotite Ore",
+    "Description": "An ore found deep in the underworld. It feels cold to the touch.",
+    "gatherString": "You mine some sahotite ore.",
+    "value": 630,
+    "gatherSpeed": 100,
+    "experienceGained": "Mining:850",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 600
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 112
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Plastinium Ore",
+    "Description": "It's technically a metal, but it's very bendy.",
+    "gatherString": "You mine some plastinium ore.",
+    "value": 890,
+    "gatherSpeed": 140,
+    "experienceGained": "Mining:990",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 800
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 125
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Queplinium Ore",
+    "Description": "An ore containing Queplinium. It emits a soft glow.",
+    "gatherString": "You mine some queplinium ore.",
+    "value": 1300,
+    "gatherSpeed": 190,
+    "experienceGained": "Mining:2000",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 1200
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 140
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
     "Name": "Copper Bar",
     "Description": "The squishiest metal bar.",
     "gatherString": "You smelt a copper bar.",
@@ -413,6 +515,24 @@
     ]
   },
   {
+    "Name": "Steel Bar",
+    "Description": "An extremely hard metal bar.",
+    "gatherString": "You smelt a steel bar.",
+    "value": 400,
+    "gatherSpeed": 50,
+    "experienceGained": "Smithing:100",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 100
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
     "Name": "Platinum Bar",
     "Description": "A solid platinum bar.",
     "gatherString": "You smelt a platinum bar.",
@@ -427,6 +547,78 @@
       {
         "skill": "Smithing",
         "skillLevel": 93
+      }
+    ]
+  },
+  {
+    "Name": "Strongtium Bar",
+    "Description": "A solid strongtium bar. Unsurprisingly, It looks very strong.",
+    "gatherString": "You smelt a strongtium bar.",
+    "value": 2500,
+    "gatherSpeed": 50,
+    "experienceGained": "Smithing:1000",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 1000
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 99
+      }
+    ]
+  },
+  {
+    "Name": "Sahotite Bar",
+    "Description": "A solid bar of Sahotite. It saps the heat from your hand when you touch it.",
+    "gatherString": "You smelt a sahotite bar.",
+    "value": 3000,
+    "gatherSpeed": 70,
+    "experienceGained": "Smithing:1200",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 1200
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 110
+      }
+    ]
+  },
+  {
+    "Name": "Plastinium Bar",
+    "Description": "A solid bar of Plastinium. You can bend it with your bare hands, but you can't break it.",
+    "gatherString": "You smelt a plastinium bar.",
+    "value": 5000,
+    "gatherSpeed": 90,
+    "experienceGained": "Smithing:1600",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 1600
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 122
+      }
+    ]
+  },
+  {
+    "Name": "Queplinium Bar",
+    "Description": "A solid bar of Queplinium. It glows brightly.",
+    "gatherString": "You smelt a queplinium bar.",
+    "value": 8000,
+    "gatherSpeed": 110,
+    "experienceGained": "Smithing:2400",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 2400
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 130
       }
     ]
   },
@@ -631,6 +823,24 @@
     ]
   },
   {
+    "Name": "Molten Steel Bar",
+    "Description": "An extremely hard metal bar. Or, it will be when it hardens.",
+    "gatherString": "You smelt a steel bar.",
+    "value": 400,
+    "gatherSpeed": 50,
+    "experienceGained": "Smithing:100",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 100
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
     "Name": "Molten Platinum Bar",
     "Description": "A liquid platinum bar.",
     "gatherString": "You smelt a platinum bar.",
@@ -645,6 +855,78 @@
       {
         "skill": "Smithing",
         "skillLevel": 93
+      }
+    ]
+  },
+  {
+    "Name": "Molten Strongtium Bar",
+    "Description": "A melted strongtium bar. Unsurprisingly, It looks very strong, even as a liquid.",
+    "gatherString": "You smelt a strongtium bar.",
+    "value": 2500,
+    "gatherSpeed": 50,
+    "experienceGained": "Smithing:1000",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 1000
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 99
+      }
+    ]
+  },
+  {
+    "Name": "Molten Sahotite Bar",
+    "Description": "A molten bar of Sahotite. Somehow, it saps the heat from your hand when you touch it, even when molten.",
+    "gatherString": "You smelt a sahotite bar.",
+    "value": 3000,
+    "gatherSpeed": 70,
+    "experienceGained": "Smithing:1200",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 1200
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 110
+      }
+    ]
+  },
+  {
+    "Name": "Molten Plastinium Bar",
+    "Description": "A molten bar of Plastinium. It looks like a glowing soup.",
+    "gatherString": "You smelt a plastinium bar.",
+    "value": 5000,
+    "gatherSpeed": 90,
+    "experienceGained": "Smithing:1600",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 1600
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 122
+      }
+    ]
+  },
+  {
+    "Name": "Molten Queplinium Bar",
+    "Description": "A molten bar of Queplinium. The glow from the metal is almost blinding in its liquid state.",
+    "gatherString": "You smelt a queplinium bar.",
+    "value": 8000,
+    "gatherSpeed": 110,
+    "experienceGained": "Smithing:2400",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 2400
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 130
       }
     ]
   }
