@@ -1,0 +1,86 @@
+[
+  {
+    "outputItemName": "Molten Brass Bar",
+    "ingredients": [
+      {
+        "item": "Copper Bar"
+      },
+      {
+        "item": "Zinc Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Brass Bar",
+    "ingredients": [
+      {
+        "item": "Copper Ore"
+      },
+      {
+        "item": "Zinc Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Brass Bar",
+    "ingredients": [
+      {
+        "item": "Copper Bar"
+      },
+      {
+        "item": "Calamine"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Brass Bar",
+    "ingredients": [
+      {
+        "item": "Copper Ore"
+      },
+      {
+        "item": "Calamine"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Brass Bar",
+    "ingredients": [
+      {
+        "item": "Brass Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Brass Knife",
+    "ingredients": [
+      {
+        "item": "Molten Brass Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Brass Sword",
+    "ingredients": [
+      {
+        "item": "Molten Brass Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Brass Axe",
+    "ingredients": [
+      {
+        "item": "Molten Brass Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Brass Hammer",
+    "ingredients": [
+      {
+        "item": "Molten Brass Bar"
+      }
+    ]
+  }
+]

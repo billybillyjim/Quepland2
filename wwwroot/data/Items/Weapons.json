@@ -131,7 +131,7 @@
   },
   {
     "name": "Bone Blade",
-    "description": "A lightweight knife crafted from the remains of a gashadokuro.",
+    "description": "A lightweight blade crafted from the remains of a gashadokuro.",
     "value": 1500,
     "enabledActions": "Swordsmanship",
     "equipSlot": "Right Hand",
@@ -144,6 +144,80 @@
       {
         "skill": "Swordsmanship",
         "skillLevel": 15
+      }
+    ]
+  },
+  {
+    "Name": "Brass Knife",
+    "Description": "A soft but sturdy knife.",
+    "value": 240,
+    "enabledActions": "Knifesmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Dagger",
+    "weaponInfo": {
+      "attackSpeed": 5,
+      "damage": 8
+    },
+    "requirements": [
+      {
+        "skill": "Knifesmanship",
+        "skillLevel": 10
+      }
+    ]
+  },
+  {
+    "Name": "Brass Sword",
+    "Description": "A shiny metal sword for swinging.",
+    "value": 240,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "Right Hand",
+    "requiredAction": "Swordsmanship",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 11,
+      "damage": 15
+    },
+    "requirements": [
+      {
+        "skill": "Swordsmanship",
+        "skillLevel": 10
+      }
+    ]
+  },
+  {
+    "Name": "Brass Axe",
+    "Description": "It's an axe made of brass. Shiny.",
+    "value": 240,
+    "enabledActions": "Axemanship Woodcutting",
+    "equipSlot": "Right Hand",
+    "gatherSpeedBonus": 0.2,
+    "icon": "Axe",
+    "weaponInfo": {
+      "attackSpeed": 15,
+      "damage": 23
+    },
+    "requirements": [
+      {
+        "skill": "Axemanship",
+        "skillLevel": 10
+      }
+    ]
+  },
+  {
+    "Name": "Brass Hammer",
+    "Description": "It's a hammer made of brass. It shimmers when you smash things.",
+    "value": 240,
+    "enabledActions": "Hammermanship",
+    "equipSlot": "Right Hand",
+    "icon": "Hammer",
+    "weaponInfo": {
+      "attackSpeed": 21,
+      "damage": 40
+    },
+    "requirements": [
+      {
+        "skill": "Hammermanship",
+        "skillLevel": 10
       }
     ]
   }

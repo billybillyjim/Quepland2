@@ -45,6 +45,174 @@
     ]
   },
   {
+    "Name": "Calamine",
+    "Description": "An ore with zinc in it.",
+    "gatherString": "You mine some calamine.",
+    "value": 8,
+    "gatherSpeed": 15,
+    "experienceGained": "Mining:50",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 45
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 15
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Iron Ore",
+    "Description": "A rusty rock with goodies inside.",
+    "gatherString": "You mine some iron ore.",
+    "value": 30,
+    "gatherSpeed": 25,
+    "experienceGained": "Mining:90",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 80
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 25
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Pentlandite",
+    "Description": "There's nickel in there.",
+    "gatherString": "You mine some pentlandite.",
+    "value": 20,
+    "gatherSpeed": 20,
+    "experienceGained": "Mining:80",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 60
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 22
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Galena",
+    "Description": "A heavy lead ore. Don't lick it!",
+    "gatherString": "You mine some galena.",
+    "value": 80,
+    "gatherSpeed": 40,
+    "experienceGained": "Mining:150",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 160
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 55
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Cinnabar",
+    "Description": "An ore with mercury and sulfur in it.",
+    "gatherString": "You mine some cinnabar.",
+    "value": 110,
+    "gatherSpeed": 30,
+    "experienceGained": "Mining:200",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 90
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 65
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Bauxite",
+    "Description": "An aluminum ore with little pisolites in it.",
+    "gatherString": "You mine some bauxite.",
+    "value": 110,
+    "gatherSpeed": 40,
+    "experienceGained": "Mining:100",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 110
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 75
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Gold Ore",
+    "Description": "It's got gold in it! Neat!",
+    "gatherString": "You mine some gold ore.",
+    "value": 350,
+    "gatherSpeed": 50,
+    "experienceGained": "Mining:250",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 180
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 85
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Platinum Ore",
+    "Description": "A very valuable ore with platinum in it.",
+    "gatherString": "You mine some platnium ore.",
+    "value": 530,
+    "gatherSpeed": 70,
+    "experienceGained": "Mining:350",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 280
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 93
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
     "Name": "Copper Bar",
     "Description": "The squishiest metal bar.",
     "gatherString": "You smelt a copper bar.",
@@ -187,6 +355,296 @@
       {
         "skill": "Smithing",
         "skillLevel": 55
+      }
+    ]
+  },
+  {
+    "Name": "Bucket of Mercury",
+    "Description": "A heavy metal bar.",
+    "gatherString": "You smelt a lead bar.",
+    "value": 240,
+    "gatherSpeed": 55,
+    "experienceGained": "Smithing:100",
+    "icon": "Bucket",
+    "smithingInfo": {
+      "smithingExperience": 100
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 60
+      }
+    ]
+  },
+  {
+    "Name": "Aluminum Bar",
+    "Description": "A lightweight metal bar.",
+    "gatherString": "You smelt an aluminum bar.",
+    "value": 270,
+    "gatherSpeed": 40,
+    "experienceGained": "Smithing:180",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 180
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "Name": "Gold Bar",
+    "Description": "A bar of solid gold.",
+    "gatherString": "You smelt a gold bar.",
+    "value": 1000,
+    "gatherSpeed": 45,
+    "experienceGained": "Smithing:700",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 700
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 85
+      }
+    ]
+  },
+  {
+    "Name": "Platinum Bar",
+    "Description": "A solid platinum bar.",
+    "gatherString": "You smelt a platinum bar.",
+    "value": 1800,
+    "gatherSpeed": 50,
+    "experienceGained": "Smithing:950",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 950
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 93
+      }
+    ]
+  },
+  {
+    "Name": "Molten Copper Bar",
+    "Description": "The squishiest molten metal bar.",
+    "gatherString": "You smelt a copper bar.",
+    "value": 50,
+    "gatherSpeed": 15,
+    "experienceGained": "Smithing:15",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 15
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 1
+      }
+    ]
+  },
+  {
+    "Name": "Molten Tin Bar",
+    "Description": "A beautiful, soft, liquid metal bar.",
+    "gatherString": "You smelt a tin bar.",
+    "value": 50,
+    "gatherSpeed": 15,
+    "requiredLevel": 4,
+    "experienceGained": "Smithing:18",
+    "requiredAction": "Smithing",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 20
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 4
+      }
+    ]
+  },
+  {
+    "Name": "Molten Zinc Bar",
+    "Description": "This would be more useful combined with another metal.",
+    "gatherString": "You smelt a zinc bar.",
+    "value": 70,
+    "gatherSpeed": 20,
+    "experienceGained": "Smithing:30",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 30
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 15
+      }
+    ]
+  },
+  {
+    "Name": "Molten Brass Bar",
+    "Description": "A sturdy melted metal made from copper and zinc.",
+    "gatherString": "You smelt a brass bar.",
+    "value": 90,
+    "gatherSpeed": 25,
+    "experienceGained": "Smithing:50",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 50
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 25
+      }
+    ]
+  },
+  {
+    "Name": "Molten Bronze Bar",
+    "Description": "A strong melted metal made from copper and tin.",
+    "gatherString": "You smelt a bronze bar.",
+    "value": 110,
+    "gatherSpeed": 30,
+    "experienceGained": "Smithing:80",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 80
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 30
+      }
+    ]
+  },
+  {
+    "Name": "Molten Nickel Bar",
+    "Description": "A molten metal made from nickel ore.",
+    "gatherString": "You smelt a nickel bar.",
+    "value": 150,
+    "gatherSpeed": 35,
+    "experienceGained": "Smithing:130",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 130
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 35
+      }
+    ]
+  },
+  {
+    "Name": "Molten Iron Bar",
+    "Description": "A very strong metal liquid.",
+    "gatherString": "You smelt an iron bar.",
+    "value": 190,
+    "gatherSpeed": 45,
+    "experienceGained": "Smithing:180",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 180
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 45
+      }
+    ]
+  },
+  {
+    "Name": "Molten Lead Bar",
+    "Description": "A heavy metal liquid.",
+    "gatherString": "You smelt a lead bar.",
+    "value": 190,
+    "gatherSpeed": 55,
+    "experienceGained": "Smithing:220",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 220
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 55
+      }
+    ]
+  },
+  {
+    "Name": "Molten Bucket of Mercury",
+    "Description": "A heavy metal bucket.",
+    "gatherString": "You smelt a lead bar.",
+    "value": 240,
+    "gatherSpeed": 55,
+    "experienceGained": "Smithing:100",
+    "icon": "Bucket",
+    "smithingInfo": {
+      "smithingExperience": 100
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 60
+      }
+    ]
+  },
+  {
+    "Name": "Molten Aluminum Bar",
+    "Description": "A lightweight metal bar soup.",
+    "gatherString": "You smelt an aluminum bar.",
+    "value": 270,
+    "gatherSpeed": 40,
+    "experienceGained": "Smithing:180",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 180
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "Name": "Molten Gold Bar",
+    "Description": "A bar of soon to be gold.",
+    "gatherString": "You smelt a gold bar.",
+    "value": 1000,
+    "gatherSpeed": 45,
+    "experienceGained": "Smithing:700",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 700
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 85
+      }
+    ]
+  },
+  {
+    "Name": "Molten Platinum Bar",
+    "Description": "A liquid platinum bar.",
+    "gatherString": "You smelt a platinum bar.",
+    "value": 1800,
+    "gatherSpeed": 50,
+    "experienceGained": "Smithing:950",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 950
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 93
       }
     ]
   }

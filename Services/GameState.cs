@@ -313,7 +313,7 @@ using System.Threading.Tasks;
         {
             if (Player.Instance.Inventory.RemoveRecipeItems(CurrentSmeltingRecipe))
             {
-                MessageManager.AddMessage("You smelt the " + CurrentSmeltingRecipe.GetShortIngredientsString() + " into a " + CurrentSmithingRecipe.OutputItemName);
+                MessageManager.AddMessage("You smelt the " + CurrentSmeltingRecipe.GetShortIngredientsString() + " into a " + CurrentSmeltingRecipe.OutputItemName);
                 Player.Instance.Inventory.AddItem(CurrentSmeltingRecipe.Output);
                 //Player.Instance.GainExperience("Smithing", CurrentSmeltingItem.SmithingInfo.SmeltingExperience);
                 TicksToNextAction = CurrentSmeltingRecipe.CraftingSpeed;

@@ -1,0 +1,50 @@
+[
+  {
+    "outputItemName": "Molten Copper Bar",
+    "ingredients": [
+      {
+        "item": "Copper Ore"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Copper Bar",
+    "ingredients": [
+      {
+        "item": "Copper Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Copper Knife",
+    "ingredients": [
+      {
+        "item": "Molten Copper Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Copper Sword",
+    "ingredients": [
+      {
+        "item": "Molten Copper Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Copper Axe",
+    "ingredients": [
+      {
+        "item": "Molten Copper Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Copper Hammer",
+    "ingredients": [
+      {
+        "item": "Molten Copper Bar"
+      }
+    ]
+  }
+]

@@ -2,16 +2,14 @@
   {
     "Location": "QuepleCaveSmithy",
     "smeltableMetalNames": [
-      "Copper Ore",
-      "Tin Ore",
-      "Copper Bar",
-      "Tin Bar",
-      "Zinc Bar",
-      "Brass Bar",
-      "Bronze Bar",
-      "Nickel Bar",
-      "Iron Bar",
-      "Lead Bar"
+      "Molten Copper Bar",
+      "Molten Tin Bar",
+      "Molten Zinc Bar",
+      "Molten Brass Bar",
+      "Molten Bronze Bar",
+      "Molten Nickel Bar",
+      "Molten Iron Bar",
+      "Molten Lead Bar"
     ]
   }
 ]
