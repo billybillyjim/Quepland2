@@ -107,6 +107,22 @@
         "buttonText": "Take the Ferry North"
       }
 
+    ],
+    "buildings": [
+      {
+        "name": "Pirate's Ship",
+        "buttonText": "Board the Pirate Ship",
+        "url": "PirateShip",
+        "description": "You're standing on the deck of a large, wooden ship.",
+        "npcs": [
+          "Captain Nobeard",
+          "First Mate Fremp",
+          "Quartermaster Argon",
+          "Doctor Squid",
+          "Pirate Crewman",
+          "Two Legs Jack"
+        ]
+      }
     ]
   },
   {

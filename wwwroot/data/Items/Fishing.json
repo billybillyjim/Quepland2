@@ -206,5 +206,311 @@
         "action": "Fishing"
       }
     ]
+  },
+  {
+    "name": "Carp",
+    "description": "A slow, dumb fish. Paint it orange and you'll have a koi.",
+    "gatherString": "You catch a carp.",
+    "value": 20,
+    "gatherSpeed": 40,
+    "experienceGained": "Fishing:160",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 50
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Icefish",
+    "description": "Small, white fish that thrive in icy cold water.",
+    "gatherString": "You catch an icefish.",
+    "value": 10,
+    "gatherSpeed": 4,
+    "experienceGained": "Fishing:10",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 23
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Shrimp",
+    "description": "An eldritch horror that turns pink if you cook it.",
+    "gatherString": "You catch a shrimp.",
+    "value": 15,
+    "gatherSpeed": 9,
+    "experienceGained": "Fishing:20",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 3
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Scallop",
+    "description": "A clam by any other name...",
+    "gatherString": "You catch a scallop.",
+    "value": 25,
+    "gatherSpeed": 18,
+    "experienceGained": "Fishing:50",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 20
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Sardine",
+    "description": "A small fish.",
+    "gatherString": "You catch a sardine.",
+    "value": 30,
+    "gatherSpeed": 14,
+    "experienceGained": "Fishing:40",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 25
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Abalone",
+    "description": "Ugly on the outside, pretty on the inside.",
+    "gatherString": "You catch an abalone.",
+    "value": 90,
+    "gatherSpeed": 23,
+    "experienceGained": "Fishing:60",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 40
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Saury",
+    "description": "Saury, I had to catch you.",
+    "gatherString": "You catch a saury.",
+    "value": 70,
+    "gatherSpeed": 20,
+    "experienceGained": "Fishing:85",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 45
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Butterfish",
+    "description": "Needs more butter.",
+    "gatherString": "You catch a butterfish.",
+    "value": 100,
+    "gatherSpeed": 28,
+    "experienceGained": "Fishing:90",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 50
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Shad",
+    "description": "It's a fish.",
+    "gatherString": "You catch a shad.",
+    "value": 40,
+    "gatherSpeed": 35,
+    "experienceGained": "Fishing:185",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 55
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Squid",
+    "description": "It's got a lot of arms.",
+    "gatherString": "You catch a squid.",
+    "value": 140,
+    "gatherSpeed": 35,
+    "experienceGained": "Fishing:140",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 56
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Salmon",
+    "description": "A fish that can swim upstream.",
+    "gatherString": "You catch a salmon.",
+    "value": 150,
+    "gatherSpeed": 45,
+    "experienceGained": "Fishing:210",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 60
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Tuna",
+    "description": "A large ocean fish.",
+    "gatherString": "You catch a tuna.",
+    "value": 450,
+    "gatherSpeed": 90,
+    "experienceGained": "Fishing:450",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 70
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Yellowtail",
+    "description": "It's got a yellow tail.",
+    "gatherString": "You catch a yellowtail.",
+    "value": 230,
+    "gatherSpeed": 70,
+    "experienceGained": "Fishing:380",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 70
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Giant Clam",
+    "description": "It's like a big mouth that's older than you are.",
+    "gatherString": "You catch a giant clam.",
+    "value": 750,
+    "gatherSpeed": 95,
+    "experienceGained": "Fishing:700",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 80
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Big Tuna",
+    "description": "It's like a tuna, but bigger.",
+    "gatherString": "You catch a big tuna.",
+    "value": 1500,
+    "gatherSpeed": 100,
+    "experienceGained": "Fishing:1300",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 83
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Swordfish",
+    "description": "A fish with a sword for a nose.",
+    "gatherString": "You catch a swordfish.",
+    "value": 1200,
+    "gatherSpeed": 100,
+    "experienceGained": "Fishing:1500",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 81
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Flounder",
+    "description": "A silly-looking fish that seems to have grown sideways.",
+    "gatherString": "You catch a flounder.",
+    "value": 200,
+    "gatherSpeed": 80,
+    "experienceGained": "Fishing:1600",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 85
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
   }
 ]

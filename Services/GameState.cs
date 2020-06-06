@@ -2,6 +2,7 @@
 using Microsoft.JSInterop;
 using Quepland_2.Components;
 using Quepland_2.Pages;
+using Quepland_2.Shared;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -59,6 +60,7 @@ using System.Threading.Tasks;
     public Land CurrentLand;
     public ItemViewerComponent itemViewer;
     public SmithyComponent SmithingComponent;
+    public NavMenu NavMenu;
     public static int TicksToNextAction;
     public static readonly int GameSpeed = 200;
     public int TicksToNextHeal;

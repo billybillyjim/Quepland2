@@ -50,6 +50,25 @@
     ]
   },
   {
+    "name": "Cantila Coast",
+    "areaNames": [
+      "Cantila Beach",
+      "Uragota Town",
+      "Darkbourne Bridge",
+      "West Uragota Docks",
+      "East Uragota Docks"
+    ]
+  },
+  {
+    "name": "Tackure Islet",
+    "areaNames": [
+      "Koya Hasa",
+      "Manayo Village",
+      "Wana Tona Lake",
+      "Sotu Nran"
+    ]
+  },
+  {
     "name": "Sabbach Waste",
     "areaNames": [
       "Southern Trail",

@@ -71,6 +71,19 @@
 
         GameState.UpdateState();
     }
+    public void ChangeOpenRegion(Region newRegion, bool toggleClosed)
+    {
+        if (openRegionMenu == newRegion && toggleClosed)
+        {
+            openRegionMenu = null;
+        }
+        else
+        {
+            openRegionMenu = newRegion;
+        }
+
+        GameState.UpdateState();
+    }
 
     public void GoToArea(string name)
     {
@@ -131,6 +144,7 @@
     }
     protected override void OnInitialized()
     {
+        GameState.NavMenu = this;
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()

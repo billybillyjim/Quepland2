@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Koya Hasa",
+    "id": 80,
+    "image": "Docks",
+    "description": "There are a few small boats along the docks. You can see schools of fish swimming in the water below.",
+    "areaURL": "KoyaHasa",
+    "actions": [
+      "Go Fishing:Butterfish,Saury,Abalone"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "ManayoVillage",
+        "buttonText": "Enter the Village"
+      }
+
+    ]
+  },
+  {
+    "name": "Manayo Village",
+    "id": 81,
+    "image": "Village",
+    "description": "The village is small but vibrant. Colorful flowers adorn the doorways and paths that weave between buildings. There is a small boat service providing tours into the small adjacent lake.",
+    "areaURL": "ManayoVillage",
+    "unlockableAreas": [
+      {
+        "areaURL": "WanaTonaLake",
+        "buttonText": "Take a Tour Ride"
+      }
+
+    ],
+    "buildings": [
+      {
+        "name": "Kazkagrin's Fortunes",
+        "buttonText": "Visit Kazkagrin's Fortunes",
+        "url": "KazkagrinsFortunes",
+        "description": "A poorly lit room is surrounded on all sides by maps, clocks, and tapestries. A strange man sits hunched over a table, awaiting your arrival.",
+        "npcs": [
+          "Kazkagrin"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Wana Tona Lake",
+    "id": 82,
+    "image": "Lake",
+    "description": "The lake is dark and deep. Here and there bubbles emerge from the waters. Something lives under here. A wall of reeds blocks off the northern part of the lake.",
+    "areaURL": "WanaTonaLake",
+    "actions": [
+      "Go Fishing"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "SotuNran",
+        "buttonText": "Cut Through the Reeds",
+        "requirements": [
+          {
+            "skill": "Swordsmanship",
+            "skillLevel": 55
+          },
+          {
+            "enabledAction": "Swordsmanship"
+          }
+        ]
+      }
+
+    ]
+  },
+  {
+    "name": "Sotu Nran",
+    "id": 83,
+    "image": "Waterfall",
+    "description": "A small waterfall emerges from the side of the hill behind it.",
+    "areaURL": "SotuNran",
+    "actions": [
+      "Go Fishing:Shad"
+    ]
+  }
+]

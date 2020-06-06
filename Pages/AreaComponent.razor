@@ -99,8 +99,9 @@
     protected override void OnParametersSet()
     {
         thisArea = AreaManager.Instance.GetAreaByURL(areaURL);
-
+        GameState.NavMenu.ChangeOpenRegion(AreaManager.Instance.GetRegionForArea(thisArea), false);
         GameState.UpdateState();
+        
     }
     public void Dispose()
     {

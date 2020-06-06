@@ -1,7 +1,7 @@
 [
   {
     "name": "Mound's House Key",
-    "description": "A key to a house near Darkbourne Bridge",
+    "description": "A key to a house near Darkbourne Bridge.",
     "value": 0,
     "icon": "Key"
   },
@@ -13,5 +13,17 @@
     "armorInfo": {
       "armorBonus": 1
     }
+  },
+  {
+    "name": "Mound's Map",
+    "description": "A map that shows the location of a secret island to the west. You'll have to find someone to sail you there.",
+    "value": 0,
+    "icon": "Map"
+  },
+  {
+    "name": "Bloody Knife",
+    "description": "A knife covered in blood. It was found in First Mate Fremp's bed.",
+    "value": 0,
+    "icon": "BloodyKnife"
   }
 ]

@@ -6,8 +6,10 @@
         @foreach (Message message in MessageManager.GetReversedMessages())
         {
             <tr>
-                <td style="color:@(message.Color);@(message.Style)">
-                    @message.Text
+                <td>
+                    <pre style="display: grid;margin: 0;width: 520px;font: message-box;white-space:pre-wrap;margin-bottom:-18px;color:@(message.Color);@(message.Style)">
+                        @message.Text
+                    </pre>
                 </td>
             </tr>
         }

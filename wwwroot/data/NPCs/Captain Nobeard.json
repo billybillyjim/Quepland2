@@ -1,0 +1,51 @@
+{
+  "name": "Captain Nobeard",
+  "id": 11,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Yarr, what do ye need with me? Begone lest you have some sort of business."
+    },
+    {
+      "buttonText": "Can you take me to the island on this map?",
+      "responseText": "Yarr, for a fee, I can take ye wherever ye please.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 1,
+      "requirements": [
+        {
+          "item": "Mound's Map",
+          "itemAmount": 1
+        }
+      ]
+    },
+    {
+      "buttonText": "How much do you want?",
+      "responseText": "Yarr, 100 gold pieces would suffice for a voyage such as this. Let me know if ye be interested.",
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 1
+        }
+      ]
+    },
+    {
+      "buttonText": "I have the money",
+      "responseText": "Yarr, hand them over and we can be on our way. Hop aboard!",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 2,
+      "consumeRequiredItems": true,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 1
+        },
+        {
+          "item": "Coins",
+          "itemAmount": 100
+        }
+      ]
+    }
+  ]
+}

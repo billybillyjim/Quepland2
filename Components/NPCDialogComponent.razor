@@ -2,31 +2,33 @@
 @inject NavigationManager UriHelper
 @implements IDisposable
 
-    <div style="        border: solid 1px black;
+@if (NPC != null && NPC.AvailableDialogCount() > 0)
+{
+
+    <div style="        
+        border: solid 1px black;
         padding: 5px;
         margin: 5px;
         background: bisque;
         border-radius: 0.5rem;">
-        @if (NPC != null)
-        {      
-            @npc
-            @foreach (Dialog d in NPC.Dialogs)
+        @npc
+        @foreach (Dialog d in NPC.Dialogs)
+        {
+            @if (d.HasRequirements())
             {
-                @if (d.HasRequirements())
-                {   
-                    <button class="btn btn-light" @onclick="@(() => Talk(d))">@d.ButtonText</button>                   
-                }
+                <button class="btn btn-light" @onclick="@(() => Talk(d))">@d.ButtonText</button>
+            }
 
-            }
-            @if(NPC.Shop != null)
-            {
-                <ShopComponent Shop="@NPC.Shop"></ShopComponent>
-            }
+        }
+        @if (NPC.Shop != null)
+        {
+            <ShopComponent Shop="@NPC.Shop"></ShopComponent>
         }
 
-    </div>
-<br />
 
+    </div>
+    <br />
+}
 @code {
     [Parameter]
     public string npc { get; set; }

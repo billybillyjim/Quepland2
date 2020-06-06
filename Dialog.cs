@@ -10,6 +10,7 @@ public class Dialog
 	public bool ConsumeRequiredItems { get; set; }
 	public int NewQuestProgressValue { get; set; } = -1;
 	public List<Requirement> Requirements { get; set; } = new List<Requirement>();
+	private bool HasStartedQuest;
 
 	public bool HasRequirements()
 	{
@@ -34,22 +35,46 @@ public class Dialog
 			}
 
 		}
-		if (Quest != "None" && NewQuestProgressValue != -1)
-        {
-			QuestManager.Instance.GetQuestByName(Quest).Progress = NewQuestProgressValue;
-
-		}
-
         if (ConsumeRequiredItems)
         {
 			foreach(Requirement r in Requirements)
             {
 				if(r.Item != "None")
                 {
-					Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName(r.Item), r.ItemAmount);
+					if(Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(r.Item)) < r.ItemAmount)
+					{
+						if(r.ItemAmount == 1)
+                        {
+							MessageManager.AddMessage("You need a " + r.Item + ".", "red");
+						}
+                        else
+                        {
+							MessageManager.AddMessage("You don't have enough " + r.Item + ".(" + r.ItemAmount + ")", "red");
+						}
+						
+						return;
+                    }
                 }
             }
-        }
+			foreach (Requirement r in Requirements)
+			{
+				if (r.Item != "None")
+				{
+					Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName(r.Item), r.ItemAmount);
+
+				}
+			}
+		}
 		MessageManager.AddMessage(ResponseText);
+		if (Quest != "None" && NewQuestProgressValue != -1)
+		{
+			if (NewQuestProgressValue == 1 && QuestManager.Instance.GetQuestByName(Quest).Progress == 0 && HasStartedQuest == false)
+			{
+				HasStartedQuest = true;
+				MessageManager.AddMessage("You've started the quest " + Quest + ".", "green");
+			}
+			QuestManager.Instance.GetQuestByName(Quest).Progress = NewQuestProgressValue;
+
+		}
 	}
 }
