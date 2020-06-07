@@ -27,7 +27,7 @@
 </div>
 <br />
 <div style="height:500px;width:1000px;position:relative;background-color:lightgray;">
-    @foreach (GameItem item in ItemManager.Instance.Items.Where(x => x.Category == Category).ToList())
+    @foreach (GameItem item in ItemManager.Instance.Items.Where(x => x.Category == Category && x.EnabledActions == "None").ToList())
     {
         <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GetItemInfo(item))))"
              onmouseout="@(new Action(() => GameState.HideTooltip()))"
@@ -61,7 +61,7 @@
     {
         maxHeight = 0;
         maxWidth = 0;
-        foreach (GameItem item in ItemManager.Instance.Items.Where(x => x.Category == Category).ToList())
+        foreach (GameItem item in ItemManager.Instance.Items.Where(x => x.Category == Category && x.EnabledActions == "None").ToList())
         {
             double height = ((double)item.Value / (item.GatherSpeed * 5));
             if (height > maxHeight)

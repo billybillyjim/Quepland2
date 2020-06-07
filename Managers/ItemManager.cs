@@ -33,11 +33,19 @@ public class ItemManager
             List<GameItem> addedItems = new List<GameItem>();
             addedItems.AddRange(await Http.GetJsonAsync<GameItem[]>("data/Items/" + file + ".json"));
             int iterator = baseID;
+            int count = 0;
             foreach (GameItem i in addedItems)
             {
                 i.ID = iterator;
                 iterator++;
+                count++;
                 i.Category = file;
+            }
+            if(count >= MaxItemsPerFile)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Warning:" + file + " has " + count + " items, which is over the expected " + MaxItemsPerFile + " items in its file.");
+                Console.ForegroundColor = ConsoleColor.Black;
             }
             Items.AddRange(addedItems);
             baseID += MaxItemsPerFile;
@@ -47,6 +55,7 @@ public class ItemManager
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/WoodworkingRecipes.json"));
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/UnpackingRecipes.json"));
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/SushiRecipes.json"));
+
         SmithingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/Smithing/BrassSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/Smithing/CopperSmithingRecipes.json"));
 

@@ -42,7 +42,7 @@
       "buttonText": "Can I search your bunk?",
       "responseText": "No. I'd rather no outsiders butt their nose into our business, thank you. It's obvious that Two Legs Jack did it, stop wasting your time.",
       "quest": "Case of the Dead Pirate",
-      "newQuestProgress": 6,
+      "newQuestProgressValue": 6,
       "requirements": [
         {
           "quest": "Case of the Dead Pirate",
@@ -55,7 +55,7 @@
       "buttonText": "Can you teach me how to juggle?",
       "responseText": "That's a strange request to make in the middle of your little investigation. But, I can't resist teaching the art of juggling to an interested learner. To start with... \nThe pirate shows you the basics of juggling while Two Legs Jack searches his bunk.",
       "quest": "Case of the Dead Pirate",
-      "newQuestProgress": 8,
+      "newQuestProgressValue": 8,
       "requirements": [
         {
           "quest": "Case of the Dead Pirate",
@@ -68,7 +68,7 @@
       "buttonText": "Jack says he found this knife in your bunk.",
       "responseText": "The liar! He must have set me up! How can you trust such a man who can't even keep hold of his crew?! You know we voted him out of his captainship, right? He's obviously framing me to escape punishment for his vengeful act!",
       "quest": "Case of the Dead Pirate",
-      "newQuestProgress": 10,
+      "newQuestProgressValue": 10,
       "requirements": [
         {
           "quest": "Case of the Dead Pirate",

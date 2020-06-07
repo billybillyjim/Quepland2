@@ -186,7 +186,7 @@
       "buttonText": "Both Fremp and Jack claim the other did it",
       "responseText": "Hmmm. I'll call up some of the crew and see if they saw anything.",
       "quest": "Case of the Dead Pirate",
-      "newQuestProgress": 11,
+      "newQuestProgressValue": 11,
       "requirements": [
         {
           "quest": "Case of the Dead Pirate",

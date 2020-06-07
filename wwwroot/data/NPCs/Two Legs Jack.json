@@ -42,7 +42,7 @@
       "buttonText": "Can I search your bunk?",
       "responseText": "Sure, but there's not much to see. \nYou search Jack's bunk and find nothing of interest.",
       "quest": "Case of the Dead Pirate",
-      "newQuestProgress": 6,
+      "newQuestProgressValue": 6,
       "requirements": [
         {
           "quest": "Case of the Dead Pirate",
@@ -55,7 +55,7 @@
       "buttonText": "Can you help me search Fremp's bunk?",
       "responseText": "Fremp? Sure, if you distract him I can see what I can do.",
       "quest": "Case of the Dead Pirate",
-      "newQuestProgress": 7,
+      "newQuestProgressValue": 7,
       "requirements": [
         {
           "quest": "Case of the Dead Pirate",
@@ -68,7 +68,7 @@
       "buttonText": "Did you find anything?",
       "responseText": "A bloody knife! He was the murderer! You should confront him at once!",
       "quest": "Case of the Dead Pirate",
-      "newQuestProgress": 9,
+      "newQuestProgressValue": 9,
       "itemOnTalk": "Bloody Knife",
       "requirements": [
         {

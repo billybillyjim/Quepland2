@@ -512,5 +512,131 @@
         "action": "Fishing"
       }
     ]
+  },
+  {
+    "name": "Sleeper Shark",
+    "description": "It's sleeping with the fishes now.",
+    "gatherString": "You catch a sleeper shark.",
+    "value": 1500,
+    "gatherSpeed": 120,
+    "experienceGained": "Fishing:2500",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 87
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Halibut",
+    "description": "It's like a bigger, uglier flounder.",
+    "gatherString": "You catch a halibut.",
+    "value": 800,
+    "gatherSpeed": 100,
+    "experienceGained": "Fishing:2700",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 91
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Giant Octopus",
+    "description": "A big octopus.",
+    "gatherString": "You catch a giant octopus.",
+    "value": 1800,
+    "gatherSpeed": 125,
+    "experienceGained": "Fishing:2900",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 93
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Eqalussuaq",
+    "description": "While its prey tries to pronounce its name, it eats them.",
+    "gatherString": "You catch an eqalussuaq.",
+    "value": 3000,
+    "gatherSpeed": 150,
+    "experienceGained": "Fishing:3500",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 98
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Lion's Mane Jellyfish",
+    "description": "Neither a lion, nor a jelly, nor a fish.",
+    "gatherString": "You catch a jellyfish.",
+    "value": 3500,
+    "gatherSpeed": 170,
+    "experienceGained": "Fishing:4000",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 99
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Oar Fish",
+    "description": "Is it a monster, oar a fish?",
+    "gatherString": "You catch an oar fish.",
+    "value": 4000,
+    "gatherSpeed": 180,
+    "experienceGained": "Fishing:4200",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 105
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Colossal Squid",
+    "description": "It's a giant squid. Well, technically it's not a \"giant squid\", but it is very big.",
+    "gatherString": "You catch a colossal squid.",
+    "value": 5000,
+    "gatherSpeed": 220,
+    "experienceGained": "Fishing:4800",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 110
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
   }
 ]
