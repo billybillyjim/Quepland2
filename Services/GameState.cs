@@ -23,7 +23,8 @@ using System.Threading.Tasks;
     public static bool ShowStartMenu { get; set; } = true;
     private bool stopActions = false;
     private bool stopNoncombatActions = false;
-    public bool IsStoppingNextTick;
+    public bool IsStoppingNextTick { get; set; }
+    public bool IsOnHuntingTrip { get; set; } 
     private Timer GameTimer { get; set; }
     public int testInt = 0;
     private static Guid _guid;
@@ -83,6 +84,12 @@ using System.Threading.Tasks;
         //RecipeTester.TestRecipes();
         GameTimer = new Timer(new TimerCallback(_ =>
         {
+            if (IsOnHuntingTrip)
+            {
+                CurrentTick++;
+                StateHasChanged();
+                return;
+            }
             if (stopActions)
             {
                 ClearActions();

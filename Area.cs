@@ -32,7 +32,8 @@ public class Area
     public List<string> NPCs { get; set; } = new List<string>();
     public List<AreaUnlock> UnlockableAreas { get; set; } = new List<AreaUnlock>();
     public List<Building> Buildings { get; set; } = new List<Building>();
-    public HunterTrapSlot TrapSlot {get;set;}
+    public HunterTrapSlot TrapSlot { get; set; }
+    public HuntingTripInfo HuntingTripInfo { get; set; }
     public string DungeonName { get; set; }
     private Dungeon _dungeon;
     public Dungeon Dungeon

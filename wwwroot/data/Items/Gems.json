@@ -1,0 +1,44 @@
+[
+  {
+    "Name": "Rough Emerald",
+    "value": 500,
+    "Description": "A green, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough emerald!"
+  },
+  {
+    "Name": "Rough Topaz",
+    "value": 600,
+    "Description": "A brown, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough topaz!"
+  },
+  {
+    "Name": "Rough Chrysoberyl",
+    "value": 700,
+    "Description": "A golden, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough chrysoberyl!"
+  },
+  {
+    "Name": "Rough Sapphire",
+    "value": 900,
+    "Description": "A blue, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough sapphire!"
+  },
+  {
+    "Name": "Rough Ruby",
+    "value": 1100,
+    "Description": "A red, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough ruby!"
+  },
+  {
+    "Name": "Rough Diamond",
+    "value": 1500,
+    "Description": "A white, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough diamond!"
+  }
+]

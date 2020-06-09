@@ -40,7 +40,22 @@
         "buttonText": "Continue into the Heart of the Forest"
       }
 
-    ]
+    ],
+    "huntingTripInfo": {
+      "minimumHuntingLevel": 1,
+      "dropTable": {
+        "drops": [
+          {
+            "itemName": "Rabbit",
+            "weight": 10
+          },
+          {
+            "itemName": "Deer",
+            "weight": 5
+          }
+        ]
+      }
+    }
   },
   {
     "name": "Deep Higashi Woods",

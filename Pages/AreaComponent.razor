@@ -61,6 +61,10 @@
     {
         <Quepland_2.Components.HuntingTrapComponent Slot="@thisArea.TrapSlot"></Quepland_2.Components.HuntingTrapComponent>
     }
+    @if(thisArea.HuntingTripInfo != null)
+    {
+        <Quepland_2.Components.HuntingTripComponent TripInfo="@thisArea.HuntingTripInfo" area="@thisArea"></Quepland_2.Components.HuntingTripComponent>
+    }
 
 }
 
