@@ -9,7 +9,7 @@ else
 {
     <div style="height:60px"></div>
 }
-<div style="display:flex;flex-wrap:wrap;width:280px;border:solid black 1px;border-radius:0.25rem;background-color:dimgray">
+<div style="display:flex;flex-wrap:wrap;width:280px;border:solid black 1px;border-radius:0.25rem;background-color:dimgray;min-height:50px;">
     @foreach (Recipe recipe in ItemManager.Instance.Recipes)
     {
         if (recipe.CanCreate())

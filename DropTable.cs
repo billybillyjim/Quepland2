@@ -26,7 +26,7 @@ public class DropTable
         {
             if(roll <= drop.Weight)
             {
-               MessageManager.AddMessage("You received " + drop.Amount + " " + drop.ItemName + ".");
+               //MessageManager.AddMessage("You received " + drop.Amount + " " + drop.ItemName + ".");
               
                 return drop;
             }

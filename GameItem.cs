@@ -27,6 +27,7 @@ public class GameItem
 	public WeaponInfo WeaponInfo { get; set; }
 	public SmithingInfo SmithingInfo { get; set; }
 	public FoodInfo FoodInfo { get; set; }
+	public TrapInfo TrapInfo { get; set; }
 	public List<Requirement> Requirements { get; set; } = new List<Requirement>();
 
 	public bool HasRequirements()

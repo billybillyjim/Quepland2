@@ -363,6 +363,7 @@ using System.Threading.Tasks;
     public void SetCraftingItem(Recipe recipe)
     {
         CurrentRecipe = recipe;
+        TicksToNextAction = recipe.CraftingSpeed;
         UpdateState();
     }
     private int GetTicksToNextGather()

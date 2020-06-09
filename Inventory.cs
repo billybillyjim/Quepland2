@@ -87,6 +87,16 @@ public class Inventory
         }
         return (items.ContainsKey(item));
     }
+    public bool HasItem(string itemName)
+    {
+        GameItem item = ItemManager.Instance.GetItemByName(itemName);
+        if (item == null)
+        {
+            Console.WriteLine("HasItem was called on null item.");
+            return false;
+        }
+        return (items.ContainsKey(item));
+    }
     public int GetCoins()
     {
         if(items.TryGetValue(ItemManager.Instance.GetItemByName("Coins"), out int val))

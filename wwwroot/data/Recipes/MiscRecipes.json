@@ -1,0 +1,43 @@
+[
+  {
+    "outputItemName": "Small Trap",
+    "ingredients": [
+      {
+        "item": "Sticks",
+        "amount": 3
+      },
+      {
+        "item": "Large Stone"
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Medium Trap",
+    "ingredients": [
+      {
+        "item": "Sticks",
+        "amount": 10
+      },
+      {
+        "item": "Large Stone",
+        "amount": 3
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Large Trap",
+    "ingredients": [
+      {
+        "item": "Sticks",
+        "amount": 30
+      },
+      {
+        "item": "Large Stone",
+        "amount": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  }
+]

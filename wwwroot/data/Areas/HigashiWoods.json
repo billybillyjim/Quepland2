@@ -12,8 +12,16 @@
         "areaURL": "HigashiWoods",
         "buttonText": "Enter the Forest"
       }
-
-    ]
+    ],
+    "trapSlot": {
+      "dropTable": {
+        "drops": [
+          {
+            "itemName": "Rabbit"
+          }
+        ]
+      }
+    }
   },
   {
     "name": "Higashi Woods",

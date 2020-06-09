@@ -1,0 +1,94 @@
+﻿@inject GameState GameState
+@implements IDisposable
+@inject NavigationManager UriHelper
+
+@if (Slot != null)
+{
+    @if (Slot.State == "Unset")
+    {
+        <button class="btn btn-primary" @onclick="@(() => ChangeState("Setting"))">Set Hunting Trap</button>
+    }
+    else if (Slot.State == "Setting")
+    {
+        @if (Player.Instance.Inventory.HasItem("Small Trap"))
+        {
+            <button class="btn btn-primary" @onclick="@(() => SetTrap("Small"))">Small Trap</button>
+        }
+        else
+        {
+            <button class="btn btn-primary" disabled>Small Trap</button>
+        }
+        @if (Player.Instance.Inventory.HasItem("Medium Trap"))
+        {
+            <button class="btn btn-primary" @onclick="@(() => SetTrap("Medium"))">Medium Trap</button>
+        }
+        else
+        {
+            <button class="btn btn-primary" disabled>Medium Trap</button>
+        }
+        @if (Player.Instance.Inventory.HasItem("Large Trap"))
+        {
+            <button class="btn btn-primary" @onclick="@(() => SetTrap("Large"))">Large Trap</button>
+        }
+        else
+        {
+            <button class="btn btn-primary" disabled>Large Trap</button>
+        }
+        @if (Player.Instance.Inventory.HasItem("Small Trap") == false && Player.Instance.Inventory.HasItem("Medium Trap") == false && Player.Instance.Inventory.HasItem("Large Trap") == false)
+        {
+            <div>You don't have any traps with you.</div>
+        }
+    }
+    else if (Slot.State == "Set" && Slot.HarvestTime.CompareTo(DateTime.UtcNow) <= 0)
+    {
+        <button class="btn btn-primary" @onclick="@(() => Collect())">Collect</button>
+    }
+    else if (Slot.State == "Set")
+    {
+        <button class="btn btn-primary" style="opacity:0.8" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GetTime())))"
+                onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            Trap is set...
+        </button>
+    }
+
+}
+
+
+@code {
+
+    [Parameter]
+    public HunterTrapSlot Slot { get; set; }
+
+    private void ChangeState(string newState)
+    {
+        Slot.State = newState;
+    }
+    private void SetTrap(string size)
+    {
+        GameItem i = ItemManager.Instance.GetItemByName(size + " Trap");
+        Player.Instance.Inventory.RemoveItems(i, 1);
+        Slot.SetTrap(i);
+        Slot.State = "Set";
+        GameState.UpdateState();
+    }
+    private void Collect()
+    {
+        Slot.Collect();
+        Slot.State = "Unset";
+        GameState.UpdateState();
+
+    }
+    private string GetTime()
+    {
+        return "This trap will be ready to harvest in " + (Slot.HarvestTime.Subtract(DateTime.UtcNow).ToString(@"hh\:mm\:ss"));
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

@@ -1,0 +1,245 @@
+[
+  {
+    "Name": "Sticks",
+    "Description": "Some small, thin tree branches.",
+    "value": 2,
+    "gatherString": "You find some sticks.",
+    "icon": "Sticks",
+    "isStackable": true
+  },
+  {
+    "Name": "Large Stone",
+    "Description": "Like a regular stone, but larger.",
+    "value": 8,
+    "gatherString": "You find a large stone.",
+    "icon": "Stone"
+  },
+  {
+    "Name": "Small Trap",
+    "Description": "A small trap for catching wild animals.",
+    "value": 50,
+    "gatherString": "You put a small trap together.",
+    "icon": "Trap",
+    "trapInfo": {
+      "size": 1,
+      "timeToReady": 90
+    }
+  },
+  {
+    "Name": "Medium Trap",
+    "Description": "A trap for catching wild animals.",
+    "value": 90,
+    "icon": "Trap",
+    "gatherString": "You put a trap together.",
+    "trapInfo": {
+      "size": 2,
+      "timeToReady": 120
+    }
+  },
+  {
+    "Name": "Large Trap",
+    "Description": "A large trap for catching wild animals.",
+    "gatherString": "You put a large trap together.",
+    "value": 150,
+    "icon": "Trap",
+    "trapInfo": {
+      "size": 4,
+      "timeToReady": 180
+    }
+  },
+  {
+    "Name": "Rabbit",
+    "Description": "The carcass of a rabbit.",
+    "value": 30,
+    "icon": "Carcass",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 1
+      }
+    ],
+    "experienceGained": "Hunting:120"
+  },
+  {
+    "Name": "Deer",
+    "Description": "The carcass of a deer.",
+    "value": 30,
+    "icon": "Carcass",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 5
+      }
+    ],
+    "experienceGained": "Hunting:200"
+  },
+  {
+    "Name": "Buck",
+    "Description": "The carcass of a male deer.",
+    "value": 30,
+    "icon": "Carcass",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 18
+      }
+    ],
+    "experienceGained": "Hunting:350"
+  },
+  {
+    "Name": "Black Bear",
+    "Description": "The carcass of a bear.",
+    "value": 30,
+    "icon": "Carcass",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 50
+      }
+    ],
+    "experienceGained": "Hunting:800"
+  },
+  {
+    "Name": "Moose",
+    "Description": "The carcass of a moose.",
+    "value": 30,
+    "icon": "Carcass",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 65
+      }
+    ],
+    "experienceGained": "Hunting:1000"
+  },
+  {
+    "Name": "Grizzly Bear",
+    "Description": "The carcass of a big bear.",
+    "value": 30,
+    "icon": "Carcass",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 83
+      }
+    ],
+    "experienceGained": "Hunting:1600"
+  },
+  {
+    "Name": "Pigeon",
+    "Description": "The carcass of a pigeon.",
+    "value": 30,
+    "icon": "Carcass",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 1
+      }
+    ],
+    "experienceGained": "Hunting:70"
+  },
+  {
+    "Name": "Wild Boar",
+    "Description": "The carcass of an angry pig.",
+    "value": 30,
+    "icon": "Carcass",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 43
+      }
+    ],
+    "experienceGained": "Hunting:650"
+  },
+  {
+    "Name": "Turkey",
+    "Description": "The carcass of an ugly bird.",
+    "value": 30,
+    "icon": "Carcass",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 27
+      }
+    ],
+    "experienceGained": "Hunting:300"
+  },
+  {
+    "Name": "Pheasant",
+    "Description": "The carcass of a beautiful bird.",
+    "value": 30,
+    "icon": "Carcass",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 8
+      }
+    ],
+    "experienceGained": "Hunting:160"
+  },
+  {
+    "Name": "Bison",
+    "Description": "The carcass of a bison.",
+    "value": 30,
+    "icon": "Carcass",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 91
+      }
+    ],
+    "experienceGained": "Hunting:3800"
+  },
+  {
+    "Name": "Big Moose",
+    "Description": "The carcass of a giant moose.",
+    "value": 30,
+    "icon": "Carcass",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 86
+      }
+    ],
+    "experienceGained": "Hunting:2200"
+  },
+  {
+    "Name": "Polar Bear",
+    "Description": "The carcass of a white bear.",
+    "value": 30,
+    "icon": "Carcass",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 94
+      }
+    ],
+    "experienceGained": "Hunting:5000"
+  },
+  {
+    "Name": "Giant Polar Bear",
+    "Description": "The carcass of a massive white bear.",
+    "value": 30,
+    "icon": "Carcass",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 99
+      }
+    ],
+    "experienceGained": "Hunting:6500"
+  },
+  {
+    "Name": "Woolly Mammoth",
+    "Description": "The carcass of a woolly mammoth.",
+    "value": 30,
+    "icon": "Carcass",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 103
+      }
+    ],
+    "experienceGained": "Hunting:9500"
+  }
+]

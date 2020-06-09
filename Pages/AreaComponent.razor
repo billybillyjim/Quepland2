@@ -57,6 +57,10 @@
     {
         <button class="btn btn-outline-dark" @onclick="@(e => FindBattles())">Battle</button>
     }
+    @if(thisArea.TrapSlot != null)
+    {
+        <Quepland_2.Components.HuntingTrapComponent Slot="@thisArea.TrapSlot"></Quepland_2.Components.HuntingTrapComponent>
+    }
 
 }
 
