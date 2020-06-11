@@ -8,4 +8,5 @@ public class WeaponInfo
     public string StatusEffect { get; set; }
     public int EffectDuration { get; set; }
 
+    public bool IsArrow { get; set; }
 }

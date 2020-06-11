@@ -112,11 +112,26 @@ public class Player
             if(item.WeaponInfo != null)
             {
                 total += item.WeaponInfo.Damage;
-                total += Skills.Find(x => x.Name == item.GetSkillForWeaponExp()).GetSkillLevel() * 3;
+                if (GetWeapon().EnabledActions == "Archery" && Inventory.HasArrows() == false)
+                {
+                    total += GetLevel("Strength");
+                }
+                else
+                {
+                    total += Skills.Find(x => x.Name == item.GetSkillForWeaponExp()).GetSkillLevel() * 3;
+                }
+
             }
             if(item.ArmorInfo != null)
             {
                 total += item.ArmorInfo.Damage;
+            }
+        }
+        if(GetWeapon().EnabledActions == "Archery")
+        {
+            if (Inventory.HasArrows())
+            {
+                total += Inventory.GetStrongestArrow().WeaponInfo.Damage;
             }
         }
         return total;

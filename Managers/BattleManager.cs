@@ -166,15 +166,28 @@ public class BattleManager
         if(Player.Instance.GetWeapon() == null)
         {
             Player.Instance.GainExperience("Strength", total);
+            MessageManager.AddMessage("You punch the " + Target.Name + " for " + total + " damage!");
         }
         else
         {
+            if(Player.Instance.GetWeapon().EnabledActions == "Archery" && Player.Instance.Inventory.HasArrows() == false)
+            {
+                Player.Instance.GainExperience("Strength", total);
+                MessageManager.AddMessage("You whack the " + Target.Name + " with your bow for " + total + " damage!");
+            }
+            else
+            {
+                Player.Instance.GainExperienceFromWeapon(Player.Instance.GetWeapon(), total);
+                MessageManager.AddMessage("You hit the " + Target.Name + " for " + total + " damage!");
+            }
             
-            Player.Instance.GainExperienceFromWeapon(Player.Instance.GetWeapon(), total);
         }
         
-        MessageManager.AddMessage("You hit the " + Target.Name + " for " + total + " damage!");
-
+        
+        if (Target.IsDefeated)
+        {
+            Target = GetNextTarget();
+        }
     }
     public void BeAttacked(Monster opponent)
     {

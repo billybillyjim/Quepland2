@@ -97,6 +97,38 @@ public class Inventory
         }
         return (items.ContainsKey(item));
     }
+    public bool HasArrows()
+    {
+        foreach (KeyValuePair<GameItem, int> item in items)
+        {
+            if(item.Key.WeaponInfo != null)
+            {
+                if (item.Key.WeaponInfo.IsArrow)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public GameItem GetStrongestArrow()
+    {
+        GameItem strongest = null;
+        foreach (KeyValuePair<GameItem, int> item in items)
+        {
+            if (item.Key.WeaponInfo != null)
+            {
+                if (item.Key.WeaponInfo.IsArrow)
+                {
+                    if(strongest == null || strongest.WeaponInfo.Damage < item.Key.WeaponInfo.Damage)
+                    {
+                        strongest = item.Key;
+                    }
+                }
+            }
+        }
+        return strongest;
+    }
     public int GetCoins()
     {
         if(items.TryGetValue(ItemManager.Instance.GetItemByName("Coins"), out int val))

@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "White Pine Arrow",
+    "Description": "A flimsy stick you can shoot things with.",
+    "value": 2,
+    "icon": "Arrow",
+    "weaponInfo": {
+      "damage": 4
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 1
+      }
+    ]
+  }
+]
