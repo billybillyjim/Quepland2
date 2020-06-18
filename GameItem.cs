@@ -26,6 +26,7 @@ public class GameItem
 	public ArmorInfo ArmorInfo { get; set; }
 	public WeaponInfo WeaponInfo { get; set; }
 	public SmithingInfo SmithingInfo { get; set; }
+	public AlchemyInfo AlchemyInfo { get; set; }
 	public FoodInfo FoodInfo { get; set; }
 	public TrapInfo TrapInfo { get; set; }
 	public List<Requirement> Requirements { get; set; } = new List<Requirement>();

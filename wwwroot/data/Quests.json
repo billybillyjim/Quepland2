@@ -49,7 +49,7 @@
     "name": "Case of the Dead Pirate",
     "id": 3,
     "completionText": "Congratulations! You discovered the murderer! Probably. You can talk to the crew on the island to see if you were right. You spent the remaining time at sea learning from the pirate crew.",
-    "progressToComplete": 1000,
+    "progressToComplete": 100,
     "rewards": [
       {
         "skill": "Swordsmanship",
@@ -68,5 +68,21 @@
         "experienceGain": 5000
       }
     ]
+  },
+  {
+    "name": "Chrysopoeian Crisis",
+    "id": 4,
+    "completionText": "Congratulations! You solved the crisis!",
+    "progressToComplete": 1000,
+    "rewards": [
+      {
+        "skill": "Alchemy",
+        "experienceGain": 3000
+      },
+      {
+        "skill": "Knifesmanship",
+        "experienceGain": 2000
+      }
+      ]
   }
 ]

@@ -146,8 +146,27 @@
     ]
   },
   {
-    "name": "Eastern Trail",
+    "name": "Mt Queple Peak",
     "id": 5,
+    "image": "MountainPeak",
+    "isUnlocked": false,
+    "description": "A lone, dilapidated building stands near the mountain's peak. Harsh winds eminate out its shattered windows and broken doors.",
+    "areaURL": "MtQueplePeak",
+    "buildings": [
+      {
+        "name": "Wind Hall",
+        "buttonText": "Enter the Building",
+        "url": "WindHall",
+        "description": "The roaring wind grows stronger as you approach the innermost room of the building. Inside you find a pool, swirling with air.",
+        "npcs": [
+          "Oikaaz"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Eastern Trail",
+    "id": 6,
     "image": "Trail",
     "description": "There is a split in the trail ahead. One path winds down into the woods below. The smell of the swamp ahead greets you before you can even see it. The other path rounds the mountain to the north.",
     "areaURL": "EasternTrail",
@@ -172,7 +191,7 @@
   },
   {
     "name": "Northern Trail",
-    "id": 6,
+    "id": 7,
     "image": "Trail",
     "description": "As you come around the side of the mountain you spy the ocean beyond a large field. The path will lead you straight down to the water.",
     "areaURL": "NorthernTrail",

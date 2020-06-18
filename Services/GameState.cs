@@ -55,6 +55,8 @@ using System.Threading.Tasks;
     public GameItem CurrentGatherItem;
     public Recipe CurrentSmeltingRecipe;
     public Recipe CurrentSmithingRecipe;
+
+    public AlchemicalFormula CurrentAlchemyFormula;
     
     public GameItem CurrentFood;
     public Recipe CurrentRecipe;
@@ -70,6 +72,7 @@ using System.Threading.Tasks;
 
     public static int GameWindowWidth;
     public int SmithingStage;
+    public int AlchemyStage;
 
     private QuestTester QuestTester = new QuestTester();
     private RecipeTester RecipeTester = new RecipeTester();
@@ -110,6 +113,10 @@ using System.Threading.Tasks;
             {
                 SmithItem();
             }
+            else if(TicksToNextAction <= 0 && CurrentAlchemyFormula != null)
+            {
+                AlchItem();
+            }
             else if(BattleManager.Instance.CurrentOpponents != null && BattleManager.Instance.CurrentOpponents.Count > 0)
             {
                 BattleManager.Instance.DoBattle();
@@ -124,20 +131,7 @@ using System.Threading.Tasks;
             }
             if(CurrentFood != null && CurrentTick % CurrentFood.FoodInfo.HealSpeed == 0)
             {
-                Player.Instance.CurrentHP += CurrentFood.FoodInfo.HealAmount;
-                if(Player.Instance.CurrentHP <= 0)
-                {
-                    Player.Instance.Die();
-                }
-                HealingTicks--;
-                if(HealingTicks <= 0)
-                {
-                    if(CurrentFood.FoodInfo.BuffedSkill != null)
-                    {
-                        Player.Instance.Skills.Find(x => x.Name == CurrentFood.FoodInfo.BuffedSkill).Boost = 0;
-                    }
-                    CurrentFood = null;
-                }
+                HealPlayer();
             }
             GetDimensions();
             TicksToNextAction--;
@@ -310,6 +304,23 @@ using System.Threading.Tasks;
 
 
     }
+    private void HealPlayer()
+    {
+        Player.Instance.CurrentHP += CurrentFood.FoodInfo.HealAmount;
+        if (Player.Instance.CurrentHP <= 0)
+        {
+            Player.Instance.Die();
+        }
+        HealingTicks--;
+        if (HealingTicks <= 0)
+        {
+            if (CurrentFood.FoodInfo.BuffedSkill != null)
+            {
+                Player.Instance.Skills.Find(x => x.Name == CurrentFood.FoodInfo.BuffedSkill).Boost = 0;
+            }
+            CurrentFood = null;
+        }
+    }
 
     private void SmithItem()
     {
@@ -366,6 +377,57 @@ using System.Threading.Tasks;
             }
         }
 
+    }
+    private void AlchItem()
+    {
+        if(AlchemyStage == 0)
+        {
+            if (Player.Instance.Inventory.HasItem(CurrentAlchemyFormula.InputMetal))
+            {
+                Player.Instance.Inventory.RemoveItems(CurrentAlchemyFormula.InputMetal, 1);
+                AlchemyStage = 1;
+                TicksToNextAction = 10;
+                MessageManager.AddMessage("You place the " + CurrentAlchemyFormula.InputMetal.Name + " into the pool.");
+            }
+            else
+            {
+
+                MessageManager.AddMessage("You don't have any " + CurrentAlchemyFormula.InputMetal.Name + ".");
+                CurrentAlchemyFormula = null;
+                AlchemyStage = 0;
+            }
+        }
+        else if(AlchemyStage == 1)
+        {
+            if (Player.Instance.Inventory.HasItem(CurrentAlchemyFormula.Element))
+            {
+                Player.Instance.Inventory.RemoveItems(CurrentAlchemyFormula.Element, 1);
+                AlchemyStage = 2;
+                TicksToNextAction = 10;
+                MessageManager.AddMessage("You apply the " + CurrentAlchemyFormula.Element.Name + " to the metal mixture in the pool.");
+            }
+            else
+            {
+
+                MessageManager.AddMessage("You don't have any " + CurrentAlchemyFormula.Element.Name + ".");
+                CurrentAlchemyFormula = null;
+                AlchemyStage = 0;
+            }
+        }
+        else if(AlchemyStage == 2)
+        {
+            MessageManager.AddMessage("You " + CurrentAlchemyFormula.ActionString + " the combined element and metal.");
+            AlchemyStage = 3;
+            TicksToNextAction = 10;
+        }
+        else if(AlchemyStage == 3)
+        {
+            GameItem reward = ItemManager.Instance.GetItemFromFormula(CurrentAlchemyFormula);
+            MessageManager.AddMessage("You withdraw the " + reward.Name + " from the release valve.");
+            Player.Instance.Inventory.AddItem(reward);
+            AlchemyStage = 0;
+            TicksToNextAction = 10;
+        }
     }
     public void SetCraftingItem(Recipe recipe)
     {

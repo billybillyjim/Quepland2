@@ -325,6 +325,9 @@
     "smithingInfo": {
       "smithingExperience": 15
     },
+    "alchemyInfo": {
+      "queplarValue": 5
+    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -345,6 +348,9 @@
     "smithingInfo": {
       "smithingExperience": 20
     },
+    "alchemyInfo": {
+      "queplarValue": 15
+    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -362,6 +368,9 @@
     "icon": "Bar",
     "smithingInfo": {
       "smithingExperience": 30
+    },
+    "alchemyInfo": {
+      "queplarValue": 25
     },
     "requirements": [
       {
@@ -381,6 +390,9 @@
     "smithingInfo": {
       "smithingExperience": 50
     },
+    "alchemyInfo": {
+      "queplarValue": 35
+    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -398,6 +410,9 @@
     "icon": "Bar",
     "smithingInfo": {
       "smithingExperience": 80
+    },
+    "alchemyInfo": {
+      "queplarValue": 45
     },
     "requirements": [
       {
@@ -417,6 +432,9 @@
     "smithingInfo": {
       "smithingExperience": 130
     },
+    "alchemyInfo": {
+      "queplarValue": 65
+    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -434,6 +452,9 @@
     "icon": "Bar",
     "smithingInfo": {
       "smithingExperience": 180
+    },
+    "alchemyInfo": {
+      "queplarValue": 55
     },
     "requirements": [
       {
@@ -453,6 +474,9 @@
     "smithingInfo": {
       "smithingExperience": 220
     },
+    "alchemyInfo": {
+      "queplarValue": 75
+    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -470,6 +494,9 @@
     "icon": "Bucket",
     "smithingInfo": {
       "smithingExperience": 100
+    },
+    "alchemyInfo": {
+      "queplarValue": 85
     },
     "requirements": [
       {
@@ -489,6 +516,9 @@
     "smithingInfo": {
       "smithingExperience": 180
     },
+    "alchemyInfo": {
+      "queplarValue": 105
+    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -506,6 +536,9 @@
     "icon": "Bar",
     "smithingInfo": {
       "smithingExperience": 700
+    },
+    "alchemyInfo": {
+      "queplarValue": 125
     },
     "requirements": [
       {
@@ -525,6 +558,9 @@
     "smithingInfo": {
       "smithingExperience": 100
     },
+    "alchemyInfo": {
+      "queplarValue": 115
+    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -542,6 +578,9 @@
     "icon": "Bar",
     "smithingInfo": {
       "smithingExperience": 950
+    },
+    "alchemyInfo": {
+      "queplarValue": 135
     },
     "requirements": [
       {
@@ -561,6 +600,9 @@
     "smithingInfo": {
       "smithingExperience": 1000
     },
+    "alchemyInfo": {
+      "queplarValue": 155
+    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -578,6 +620,9 @@
     "icon": "Bar",
     "smithingInfo": {
       "smithingExperience": 1200
+    },
+    "alchemyInfo": {
+      "queplarValue": 175
     },
     "requirements": [
       {
@@ -597,6 +642,9 @@
     "smithingInfo": {
       "smithingExperience": 1600
     },
+    "alchemyInfo": {
+      "queplarValue": 195
+    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -614,6 +662,9 @@
     "icon": "Bar",
     "smithingInfo": {
       "smithingExperience": 2400
+    },
+    "alchemyInfo": {
+      "queplarValue": 205
     },
     "requirements": [
       {

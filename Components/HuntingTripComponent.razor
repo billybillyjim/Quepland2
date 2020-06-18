@@ -9,7 +9,7 @@
         @if (TripInfo.ReturnTime.CompareTo(DateTime.UtcNow) <= 0)
         {
             <div>You completed your hunt.</div>
-            <button class="btn btn-primary" @onclick="@(() => EndHunt(TripInfo.ReturnTime.Subtract(TripInfo.StartTime).TotalSeconds))">Complete Hunt</button>
+            <button class="btn btn-primary" @onclick="@(() => EndHunt(TripInfo.ReturnTime.Subtract(TripInfo.StartTime).TotalSeconds, true))">Complete Hunt</button>
         }
         else
         {
@@ -53,7 +53,7 @@
     public void CancelHuntingTrip()
     {
         double amountCompleted = DateTime.UtcNow.Subtract(TripInfo.StartTime).TotalHours / TripInfo.ReturnTime.Subtract(TripInfo.StartTime).TotalHours;
-        EndHunt(amountCompleted * TripInfo.ReturnTime.Subtract(TripInfo.StartTime).TotalSeconds);
+        EndHunt(amountCompleted * TripInfo.ReturnTime.Subtract(TripInfo.StartTime).TotalSeconds, false);
     }
 
     public void EndHunt(double totalTimeHunting, bool useFloor)

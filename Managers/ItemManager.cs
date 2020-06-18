@@ -20,7 +20,7 @@ public class ItemManager
     public List<GameItem> Items = new List<GameItem>();
     public List<Recipe> Recipes = new List<Recipe>();
     public List<Recipe> SmithingRecipes = new List<Recipe>();
-    public static List<string> FileNames = new List<string> { "Weapons", "Armors", "Sushi", "QuestItems", "General", "Hunting", "Fishing", "Ores", "WoodworkingItems", "Logs" };
+    public static List<string> FileNames = new List<string> { "Weapons", "Armors", "Sushi", "QuestItems", "General", "Elements", "Hunting", "Fishing", "Ores", "WoodworkingItems", "Logs" };
     public static int baseID;
     public static readonly int MaxItemsPerFile = 100;
     public bool IsSelling = false;
@@ -102,6 +102,27 @@ public class ItemManager
         }
         Console.WriteLine("Failed to find recipe with output:" + output);
         return null;
+    }
+    public GameItem GetItemFromFormula(AlchemicalFormula formula)
+    {
+        double baseValue = formula.InputMetal.AlchemyInfo.QueplarValue * formula.LocationMultiplier;
+        double elementalValue = formula.Element.AlchemyInfo.QueplarValue * formula.ActionMultiplier;
+        double totalValue = baseValue + elementalValue;
+        Console.WriteLine("Base Value:" + formula.InputMetal.AlchemyInfo.QueplarValue + " x " + formula.LocationMultiplier);
+        Console.WriteLine("Elemental Value:" + formula.Element.AlchemyInfo.QueplarValue + " x " + formula.LocationMultiplier);
+        Console.WriteLine("Total Value:" + baseValue + " + " + elementalValue);
+        Console.WriteLine("Sum:" + totalValue);
+        foreach (GameItem i in Items)
+        {
+            if (i.AlchemyInfo != null && i.SmithingInfo != null)
+            {
+                if(i.AlchemyInfo.QueplarValue == totalValue)
+                {
+                    return i;
+                }
+            }
+        }
+        return Items.Find(x => x.Name == "Alchemical Dust");
     }
 }
 

@@ -8,6 +8,7 @@
         @if (GameState.InitCompleted)
         {
             <button onclick="@(new Action(() => StartGame()))">Begin New Game</button>
+            <button onclick="@(new Action(() => TestAlch()))">Test Alchemy</button>
         }
         else
         {
@@ -25,6 +26,12 @@
         GameState.ShowStartMenu = false;
         GameState.Location = "QueplandFields";
         UriHelper.NavigateTo("/World/QueplandFields");
+    }
+    public void TestAlch()
+    {
+        GameState.ShowStartMenu = false;
+        GameState.Location = "MountQuepleAlchemicalHall";
+        UriHelper.NavigateTo("/World/AlchemicalHall/WindHall/");
     }
     protected override void OnInitialized()
     {
