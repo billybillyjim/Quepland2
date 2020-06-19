@@ -129,6 +129,12 @@
         }
 
     }
+    public void DeselectItem()
+    {
+        selectedItemID = -1;
+        SelectedItem = null;
+        GameState.UpdateState();
+    }
     protected override void OnInitialized()
     {
         GameState.StateChanged += OnGameStateChanged;

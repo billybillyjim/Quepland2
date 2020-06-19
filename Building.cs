@@ -10,4 +10,5 @@ public class Building
 	public string URL { get; set; }
 	public List<string> NPCs { get; set; } = new List<string>();
 	public List<Shop> Shops { get; set; } = new List<Shop>();
+	public List<TanningSlot> TanningSlots { get; set; } = new List<TanningSlot>();
 }

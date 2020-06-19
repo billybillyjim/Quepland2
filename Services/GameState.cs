@@ -264,15 +264,30 @@ using System.Threading.Tasks;
         if (CurrentRecipe.Create(out int created))
         {
             TicksToNextAction = CurrentRecipe.CraftingSpeed;
-            MessageManager.AddMessage(CurrentRecipe.Output.GatherString.Replace("$", created.ToString()));
+            MessageManager.AddMessage(CurrentRecipe.GetOutputsString().Replace("$", created.ToString()));
+            if(CurrentRecipe.CanCreate() == false)
+            {
+                
+                if (CurrentRecipe.HasSpace())
+                {
+                    MessageManager.AddMessage("You have run out of materials.");
+                }
+                else
+                {
+                    MessageManager.AddMessage("You don't have enough inventory space to do it again.");
+                }
+                CurrentRecipe = null;
+                itemViewer.ClearItem();
+            }
         }
         else
         {
-            if(CurrentRecipe.Ingredients.Count == 1 && CurrentRecipe.Ingredients[0].Item == itemViewer.Item.Name)
+            if(CurrentRecipe.Ingredients.Count == 1 && CurrentRecipe.Ingredients[0].Item == itemViewer.Item.Name && CurrentRecipe.HasSpace())
             {
                 itemViewer.ClearItem();
+                MessageManager.AddMessage("You have run out of materials.");
             }
-            MessageManager.AddMessage("You have run out of materials.");
+           
             CurrentRecipe = null;
         }
 
@@ -432,7 +447,8 @@ using System.Threading.Tasks;
     public void SetCraftingItem(Recipe recipe)
     {
         CurrentRecipe = recipe;
-        TicksToNextAction = recipe.CraftingSpeed;
+        TicksToNextAction = 3;
+        MessageManager.AddMessage(recipe.RecipeActionString);
         UpdateState();
     }
     private int GetTicksToNextGather()

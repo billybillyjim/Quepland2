@@ -33,7 +33,21 @@
             }
             @if (ItemManager.Instance.GetUnpackingRecipe(Item) != null)
             {
-                <div style="float:right;position:relative;bottom:35px;"><button @onclick="@(() => GameState.SetCraftingItem(ItemManager.Instance.GetUnpackingRecipe(Item)))">Unpack</button></div>
+                if (ItemManager.Instance.GetUnpackingRecipe(Item).HasSpace())
+                {
+                    <div style="float:right;position:relative;bottom:35px;"><button @onclick="@(() => GameState.SetCraftingItem(ItemManager.Instance.GetUnpackingRecipe(Item)))">@ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString</button></div>
+
+                }
+                else
+                {
+                    <div style="float:right;position:relative;bottom:35px;">
+                        <button style="opacity:0.7" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have enough inventory space.")))"
+                        onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                        @ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString
+                            </button>
+                    </div>
+
+                }
             }
             if (ItemManager.Instance.CurrentShop != null)
             {

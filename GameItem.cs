@@ -29,6 +29,7 @@ public class GameItem
 	public AlchemyInfo AlchemyInfo { get; set; }
 	public FoodInfo FoodInfo { get; set; }
 	public TrapInfo TrapInfo { get; set; }
+	public TanningInfo TanningInfo { get; set; }
 	public List<Requirement> Requirements { get; set; } = new List<Requirement>();
 
 	public bool HasRequirements()

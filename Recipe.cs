@@ -7,15 +7,49 @@ public class Recipe
     /// For json loading only, use Output to get the recipe output.
     /// </summary>
 	public string OutputItemName { get; set; }
-    public GameItem Output { get
+    private GameItem output;
+    public GameItem Output { 
+        get
         {
-            return ItemManager.Instance.GetItemByName(OutputItemName);
+            if(output == null)
+            {
+                output = ItemManager.Instance.GetItemByName(OutputItemName);
+            }
+            return output;
+        }
+    }
+    public string SecondaryOutputItemName { get; set; }
+    private GameItem secondaryOutput;
+    public GameItem SecondaryOutput
+    {
+        get
+        {
+            if (secondaryOutput == null)
+            {
+                secondaryOutput = ItemManager.Instance.GetItemByName(SecondaryOutputItemName);
+            }
+            return secondaryOutput;
+        }
+    }
+    public string TertiaryOutputItemName { get; set; }
+    private GameItem tertiaryOutput;
+    public GameItem TertiaryOutput
+    {
+        get
+        {
+            if (tertiaryOutput == null)
+            {
+                tertiaryOutput = ItemManager.Instance.GetItemByName(TertiaryOutputItemName);
+            }
+            return tertiaryOutput;
         }
     }
     public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
     public int CraftingSpeed { get; set; } = 12;
     public int OutputAmount { get; set; } = 1;
     public int MaxOutputsPerAction { get; set; } = 1;
+    public string RecipeActionString { get; set; } = "You set to work...";
+    public string RecipeButtonString { get; set; } = "Unpack";
 
     /// <summary>
     /// Checks to see if the player has enough of each ingredient.
@@ -23,8 +57,7 @@ public class Recipe
     /// <returns></returns>
 	public bool CanCreate()
     {
-        if((Output.IsStackable && (Player.Instance.Inventory.GetAvailableSpaces() == 0 && Player.Instance.Inventory.HasItem(Output) == false)) ||
-            Player.Instance.Inventory.GetAvailableSpaces() < OutputAmount)
+        if(HasSpace() == false)
         {
             return false;
         }
@@ -34,6 +67,15 @@ public class Recipe
             {
                 return false;
             }
+        }
+        return true;
+    }
+    public bool HasSpace()
+    {
+        if ((Output.IsStackable && (Player.Instance.Inventory.GetAvailableSpaces() == 0 && Player.Instance.Inventory.HasItem(Output) == false)) ||
+    Player.Instance.Inventory.GetAvailableSpaces() < OutputAmount * GetRequiredSpaces())
+        {
+            return false;
         }
         return true;
     }
@@ -118,24 +160,57 @@ public class Recipe
                 if (ingredient.DestroyOnUse)
                 {
                     Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName(ingredient.Item), ingredient.Amount * maxOutput);
-                    Console.WriteLine("Removing " + (ingredient.Amount * maxOutput) + " " + ingredient.Item);
+                    //Console.WriteLine("Removing " + (ingredient.Amount * maxOutput) + " " + ingredient.Item);
                 }
             }
             Player.Instance.GainExperienceMultipleTimes(Output.ExperienceGained, maxOutput);
             Player.Instance.Inventory.AddMultipleOfItem(Output, OutputAmount * maxOutput);
-
+            if(SecondaryOutputItemName != null)
+            {
+                Player.Instance.GainExperienceMultipleTimes(SecondaryOutput.ExperienceGained, maxOutput);
+                Player.Instance.Inventory.AddMultipleOfItem(SecondaryOutput, OutputAmount * maxOutput);
+            }
+            if(TertiaryOutputItemName != null)
+            {
+                Player.Instance.GainExperienceMultipleTimes(TertiaryOutput.ExperienceGained, maxOutput);
+                Player.Instance.Inventory.AddMultipleOfItem(TertiaryOutput, OutputAmount * maxOutput);
+            }
             created = maxOutput;
             return true;
         }
         else if ((Output.IsStackable && (Player.Instance.Inventory.GetAvailableSpaces() == 0 && Player.Instance.Inventory.HasItem(Output) == false)) ||
-            Player.Instance.Inventory.GetAvailableSpaces() < OutputAmount)
+            Player.Instance.Inventory.GetAvailableSpaces() < OutputAmount * GetRequiredSpaces())
         {
-            MessageManager.AddMessage("You don't have enough inventory space to create this.");
+            MessageManager.AddMessage("You don't have enough inventory space to do this.");
             return false;
         }
         else
         {
             return false;
         }
+    }
+    public string GetOutputsString()
+    {
+        if (TertiaryOutputItemName != null)
+        {
+            return "You get $ " + OutputItemName + ", " + SecondaryOutputItemName + ", and " + TertiaryOutputItemName + ".";
+        }
+        else if (SecondaryOutputItemName != null)
+        {
+            return "You get $ " + OutputItemName + " and " + SecondaryOutputItemName + ".";
+        }
+        return "You get $ " + OutputItemName + ".";
+    }
+    private int GetRequiredSpaces()
+    {
+        if(TertiaryOutputItemName != null)
+        {
+            return 3;
+        }
+        else if(SecondaryOutputItemName != null)
+        {
+            return 2;
+        }
+        return 1;
     }
 }

@@ -6,8 +6,177 @@
         "item": "Rooster Plumage"
       }
     ],
-    "outputAmount": 15
-
-
+    "outputAmount": 15,
+    "recipeActionString": "You begin plucking the feathers apart...",
+    "recipeButtonString": "Pluck"
+  },
+  {
+    "outputItemName": "Rabbit Hide",
+    "secondaryOutputItemName": "Rabbit Meat",
+    "ingredients": [
+      {
+        "item": "Rabbit"
+      }
+    ],
+    "recipeActionString": "You begin skinning the rabbit...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Deer Hide",
+    "secondaryOutputItemName": "Deer Meat",
+    "ingredients": [
+      {
+        "item": "Deer"
+      }
+    ],
+    "recipeActionString": "You begin skinning the deer...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Deer Hide",
+    "secondaryOutputItemName": "Deer Meat",
+    "tertiaryOutputItemName": "Deer Antlers",
+    "ingredients": [
+      {
+        "item": "Buck"
+      }
+    ],
+    "recipeActionString": "You begin skinning the buck...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Black Bear Hide",
+    "secondaryOutputItemName": "Bear Meat",
+    "ingredients": [
+      {
+        "item": "Black Bear"
+      }
+    ],
+    "recipeActionString": "You begin skinning the bear...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Moose Hide",
+    "secondaryOutputItemName": "Moose Meat",
+    "ingredients": [
+      {
+        "item": "Moose"
+      }
+    ],
+    "recipeActionString": "You begin skinning the moose...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Grizzly Bear Hide",
+    "secondaryOutputItemName": "Bear Meat",
+    "ingredients": [
+      {
+        "item": "Grizzly Bear"
+      }
+    ],
+    "recipeActionString": "You begin skinning the bear...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Pigeon Meat",
+    "secondaryOutputItemName": "Feather",
+    "ingredients": [
+      {
+        "item": "Pigeon"
+      }
+    ],
+    "recipeActionString": "You begin skinning the pigeon...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Wild Boar Hide",
+    "secondaryOutputItemName": "Wild Boar Meat",
+    "ingredients": [
+      {
+        "item": "Wild Boar"
+      }
+    ],
+    "recipeActionString": "You begin skinning the boar...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Turkey Meat",
+    "secondaryOutputItemName": "Feather",
+    "ingredients": [
+      {
+        "item": "Turkey"
+      }
+    ],
+    "recipeActionString": "You begin skinning the turkey...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Pheasant Meat",
+    "secondaryOutputItemName": "Feather",
+    "ingredients": [
+      {
+        "item": "Pheasant"
+      }
+    ],
+    "recipeActionString": "You begin skinning the pheasant...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Bison Hide",
+    "secondaryOutputItemName": "Bison Meat",
+    "ingredients": [
+      {
+        "item": "Bison"
+      }
+    ],
+    "recipeActionString": "You begin skinning the bison...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Moose Hide",
+    "secondaryOutputItemName": "Moose Meat",
+    "tertiaryOutputItemName": "Moose Antlers",
+    "ingredients": [
+      {
+        "item": "Big Moose"
+      }
+    ],
+    "recipeActionString": "You begin skinning the moose...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Polar Bear Hide",
+    "secondaryOutputItemName": "Bear Meat",
+    "ingredients": [
+      {
+        "item": "Polar Bear"
+      }
+    ],
+    "recipeActionString": "You begin skinning the polar bear...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Polar Bear Hide",
+    "secondaryOutputItemName": "Bear Meat",
+    "tertiaryOutputItemName": "Bear Claws",
+    "ingredients": [
+      {
+        "item": "Giant Polar Bear"
+      }
+    ],
+    "recipeActionString": "You begin skinning the polar bear...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Woolly Mammoth Hide",
+    "secondaryOutputItemName": "Mammoth Meat",
+    "tertiaryOutputItemName": "Mammoth Tusk",
+    "ingredients": [
+      {
+        "item": "Woolly Mammoth"
+      }
+    ],
+    "recipeActionString": "You begin skinning the mammoth...",
+    "recipeButtonString": "Skin"
   }
 ]

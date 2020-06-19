@@ -51,7 +51,7 @@
     "Name": "Rabbit",
     "Description": "The carcass of a rabbit.",
     "value": 30,
-    "icon": "Carcass",
+    "icon": "Rabbit",
     "requirements": [
       {
         "skill": "Hunting",
@@ -64,7 +64,7 @@
     "Name": "Deer",
     "Description": "The carcass of a deer.",
     "value": 30,
-    "icon": "Carcass",
+    "icon": "Deer",
     "requirements": [
       {
         "skill": "Hunting",
@@ -77,7 +77,7 @@
     "Name": "Buck",
     "Description": "The carcass of a male deer.",
     "value": 30,
-    "icon": "Carcass",
+    "icon": "Deer",
     "requirements": [
       {
         "skill": "Hunting",
@@ -90,7 +90,7 @@
     "Name": "Black Bear",
     "Description": "The carcass of a bear.",
     "value": 30,
-    "icon": "Carcass",
+    "icon": "Bear",
     "requirements": [
       {
         "skill": "Hunting",
@@ -116,7 +116,7 @@
     "Name": "Grizzly Bear",
     "Description": "The carcass of a big bear.",
     "value": 30,
-    "icon": "Carcass",
+    "icon": "Bear",
     "requirements": [
       {
         "skill": "Hunting",
@@ -129,7 +129,7 @@
     "Name": "Pigeon",
     "Description": "The carcass of a pigeon.",
     "value": 30,
-    "icon": "Carcass",
+    "icon": "Bird",
     "requirements": [
       {
         "skill": "Hunting",
@@ -142,7 +142,7 @@
     "Name": "Wild Boar",
     "Description": "The carcass of an angry pig.",
     "value": 30,
-    "icon": "Carcass",
+    "icon": "Boar",
     "requirements": [
       {
         "skill": "Hunting",
@@ -155,7 +155,7 @@
     "Name": "Turkey",
     "Description": "The carcass of an ugly bird.",
     "value": 30,
-    "icon": "Carcass",
+    "icon": "Bird",
     "requirements": [
       {
         "skill": "Hunting",
@@ -168,7 +168,7 @@
     "Name": "Pheasant",
     "Description": "The carcass of a beautiful bird.",
     "value": 30,
-    "icon": "Carcass",
+    "icon": "Bird",
     "requirements": [
       {
         "skill": "Hunting",
@@ -181,7 +181,7 @@
     "Name": "Bison",
     "Description": "The carcass of a bison.",
     "value": 30,
-    "icon": "Carcass",
+    "icon": "Bison",
     "requirements": [
       {
         "skill": "Hunting",
@@ -207,7 +207,7 @@
     "Name": "Polar Bear",
     "Description": "The carcass of a white bear.",
     "value": 30,
-    "icon": "Carcass",
+    "icon": "Bear",
     "requirements": [
       {
         "skill": "Hunting",
@@ -220,7 +220,7 @@
     "Name": "Giant Polar Bear",
     "Description": "The carcass of a massive white bear.",
     "value": 30,
-    "icon": "Carcass",
+    "icon": "Bear",
     "requirements": [
       {
         "skill": "Hunting",
@@ -233,7 +233,7 @@
     "Name": "Woolly Mammoth",
     "Description": "The carcass of a woolly mammoth.",
     "value": 30,
-    "icon": "Carcass",
+    "icon": "Mammoth",
     "requirements": [
       {
         "skill": "Hunting",
@@ -241,5 +241,363 @@
       }
     ],
     "experienceGained": "Hunting:9500"
+  },
+  {
+    "Name": "Rabbit Leather",
+    "Description": "A weak leather from tanned rabbit hide.",
+    "value": 180,
+    "icon": "Leather",
+    "experienceGained": "Leatherworking:10"
+  },
+  {
+    "Name": "Rabbit Meat",
+    "Description": "Raw meat from a rabbit. You'll need to turn this into jerky to eat it.",
+    "value": 5,
+    "icon": "Meat"
+  },
+  {
+    "Name": "Rabbit Jerky",
+    "Description": "Salted and dried rabbit meat.",
+    "value": 18,
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:30",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 1
+      }
+    ]
+  },
+  {
+    "Name": "Deer Leather",
+    "Description": "A basic leather from tanned deer hide.",
+    "value": 250,
+    "icon": "Leather",
+    "experienceGained": "Leatherworking:20"
+  },
+  {
+    "Name": "Deer Meat",
+    "Description": "You'll want to make this into jerky before eating it.",
+    "value": 15,
+    "icon": "Meat"
+  },
+  {
+    "Name": "Deer Jerky",
+    "Description": "Salted and dried deer meat.",
+    "value": 25,
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 5
+      }
+    ]
+  },
+  {
+    "Name": "Deer Antlers",
+    "Description": "Valuable antlers from the head of a male deer.",
+    "value": 150,
+    "icon": "Antlers"
+  },
+  {
+    "Name": "Black Bear Leather",
+    "Description": "The tanned hide of a black bear. It looks really cool, making it even stronger.",
+    "value": 500,
+    "icon": "Leather",
+    "experienceGained": "Leatherworking:45"
+  },
+  {
+    "Name": "Bear Meat",
+    "Description": "Meat from a bear.",
+    "value": 40,
+    "icon": "Meat"
+  },
+  {
+    "Name": "Bear Jerky",
+    "Description": "Salted and dried bear meat.",
+    "value": 70,
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 30
+      }
+    ]
+  },
+  {
+    "Name": "Moose Leather",
+    "Description": "Moose leather is one of the strongest leathers in Quepland.",
+    "value": 800,
+    "icon": "Leather",
+    "experienceGained": "Leatherworking:70"
+  },
+  {
+    "Name": "Moose Antlers",
+    "Description": "Very valuable antlers from a giant moose.",
+    "value": 2800,
+    "icon": "Antlers"
+  },
+  {
+    "Name": "Moose Meat",
+    "Description": "Like beef, but bigger.",
+    "value": 60,
+    "icon": "Meat"
+  },
+  {
+    "Name": "Moose Jerky",
+    "Description": "Salted and dried moose meat.",
+    "value": 90,
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:70",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 45
+      }
+    ]
+  },
+  {
+    "Name": "Grizzly Bear Leather",
+    "Description": "Tanned grizzly bear hide. It's a powerful material to make powerful armor with.",
+    "value": 1200,
+    "icon": "Leather",
+    "experienceGained": "Leatherworking:100"
+  },
+  {
+    "Name": "Wild Boar Leather",
+    "Description": "This leather can be made into armor that makes you stronger, but won't defend you very well.",
+    "value": 500,
+    "icon": "Leather",
+    "experienceGained": "Leatherworking:30"
+  },
+  {
+    "Name": "Wild Boar Meat",
+    "Description": "A tough meat from a tough animal.",
+    "value": 35,
+    "icon": "Meat"
+  },
+  {
+    "Name": "Boar Jerky",
+    "Description": "Salted and dried boar meat. It's very tough.",
+    "value": 50,
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:60",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 35
+      }
+    ]
+  },
+  {
+    "Name": "Pigeon Meat",
+    "Description": "There's almost not meat here, but it technically counts.",
+    "value": 6,
+    "icon": "Raw Bird"
+  },
+  {
+    "Name": "Pigeon Jerky",
+    "Description": "It's not much, but it's also not very good.",
+    "value": 15,
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:10",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 1
+      }
+    ]
+  },
+  {
+    "Name": "Turkey Meat",
+    "Description": "The meat off a turkey.",
+    "value": 15,
+    "icon": "Raw Bird"
+  },
+  {
+    "Name": "Turkey Jerky",
+    "Description": "It took a lot of work-y to get this turkey jerky.",
+    "value": 30,
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:30",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 10
+      }
+    ]
+  },
+  {
+    "Name": "Pheasant Meat",
+    "Description": "The meat of a once beautiful bird.",
+    "value": 20,
+    "icon": "Raw Bird"
+  },
+  {
+    "Name": "Pheasant Jerky",
+    "Description": "The jerky of a once beautiful bird.",
+    "value": 50,
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 14
+      }
+    ]
+  },
+  {
+    "Name": "Bison Leather",
+    "Description": "A thick leather that would keep you warm in the cold, if that mattered.",
+    "value": 1500,
+    "icon": "Leather",
+    "experienceGained": "Leatherworking:80"
+  },
+  {
+    "Name": "Bison Meat",
+    "Description": "A big bite of raw bison meat. You might want to prepare it somehow.",
+    "value": 50,
+    "icon": "Meat"
+  },
+  {
+    "Name": "Bison Jerky",
+    "Description": "A big bite of bison meat.",
+    "value": 150,
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:150",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 68
+      }
+    ]
+  },
+  {
+    "Name": "Polar Bear Leather",
+    "Description": "Beautiful white leather. It can be crafted into powerful armor.",
+    "value": 1700,
+    "icon": "Leather",
+    "experienceGained": "Leatherworking:120"
+  },
+  {
+    "Name": "Bear Claws",
+    "Description": "Terrifying claws from a giant polar bear.",
+    "value": 65000,
+    "icon": "Claws"
+  },
+  {
+    "Name": "Mammoth Leather",
+    "Description": "Leather from a woolly mammoth. It's extremely thick.",
+    "value": 2200,
+    "icon": "Leather",
+    "experienceGained": "Leatherworking:180"
+  },
+  {
+    "Name": "Mammoth Meat",
+    "Description": "Big meat from a big beast.",
+    "value": 110,
+    "icon": "Meat"
+  },
+  {
+    "Name": "Mammoth Tusk",
+    "Description": "An extremely valuable tusk from a woolly mammoth.",
+    "value": 95000,
+    "icon": "Tusks"
+  },
+  {
+    "Name": "Mammoth Jerky",
+    "Description": "A massive jerky from a massive mammoth.",
+    "value": 220,
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:250",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 89
+      }
+    ]
+  },
+  {
+    "Name": "Rabbit Hide",
+    "Description": "The hide of a rabbit.",
+    "value": 30,
+    "icon": "Hide",
+    "tanningInfo": {
+      "tansIntoString": "Rabbit Leather"
+    }
+  },
+  {
+    "Name": "Deer Hide",
+    "Description": "The hide of a deer.",
+    "value": 30,
+    "icon": "Hide",
+    "tanningInfo": {
+      "tansIntoString": "Deer Leather"
+    }
+  },
+  {
+    "Name": "Black Bear Hide",
+    "Description": "The hide of a black bear.",
+    "value": 30,
+    "icon": "Hide",
+    "tanningInfo": {
+      "tansIntoString": "Black Bear Leather"
+    }
+  },
+  {
+    "Name": "Moose Hide",
+    "Description": "The hide of a moose.",
+    "value": 30,
+    "icon": "Hide",
+    "tanningInfo": {
+      "tansIntoString": "Moose Leather"
+    }
+  },
+  {
+    "Name": "Grizzly Bear Hide",
+    "Description": "The carcass of a big bear.",
+    "value": 30,
+    "icon": "Hide",
+    "tanningInfo": {
+      "tansIntoString": "Grizzly Bear Leather"
+    }
+  },
+  {
+    "Name": "Wild Boar Hide",
+    "Description": "The hide of an angry pig.",
+    "value": 30,
+    "icon": "Hide",
+    "tanningInfo": {
+      "tansIntoString": "Boar Leather"
+    }
+  },
+  {
+    "Name": "Bison Hide",
+    "Description": "The hide of a bison.",
+    "value": 30,
+    "icon": "Hide",
+    "tanningInfo": {
+      "tansIntoString": "Bison Leather"
+    }
+  },
+  {
+    "Name": "Polar Bear Hide",
+    "Description": "The hide of a white bear.",
+    "value": 30,
+    "icon": "Hide",
+    "tanningInfo": {
+      "tansIntoString": "Polar Bear Leather"
+    }
+  },
+  {
+    "Name": "Woolly Mammoth Hide",
+    "Description": "The hide of a woolly mammoth.",
+    "value": 30,
+    "icon": "Hide",
+    "tanningInfo": {
+      "tansIntoString": "Mammoth Leather"
+    }
   }
 ]

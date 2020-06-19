@@ -1,0 +1,70 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (Slot.TannedItem == null)
+{
+    <div>
+        <CustomDropdownComponent EmptyText="You have no tannable items" DropdownItems="@Tannables.Select(x => x.Name).ToList()" @bind-Value="@tanningItem" BoxText="@tanningItem"></CustomDropdownComponent>
+
+        @if (tanningItem != null)
+        {
+            <button class="btn btn-primary" @onclick="@(() => StartTanning())">Confirm</button>
+
+        }
+        else
+        {
+            <button class="btn btn-primary" disabled>Confirm</button>
+
+        }
+    </div>
+}
+else
+{
+    <div>
+        @if (Slot.FinishTime.CompareTo(DateTime.UtcNow) > 0)
+        {
+            <button class="btn btn-primary" @onclick="@(() => StartTanning())">Collect @Slot.TannedItem.Name</button>
+
+        }
+        else
+        {
+            <button class="btn btn-primary" disabled>Collect in @Slot.FinishTime.Subtract(DateTime.UtcNow).ToString(@"hh\:mm\:ss")</button>
+
+        }
+    </div>
+}
+
+
+@code
+{
+    [Parameter]
+    public TanningSlot Slot { get; set; }
+    private string tanningItem;
+    private List<GameItem> Tannables = new List<GameItem>();
+
+    public void StartTanning()
+    {
+        Slot.FinishTime = DateTime.UtcNow.AddHours(6);
+    }
+    public void LoadTannables()
+    {
+        Tannables.Clear();
+        foreach (KeyValuePair<GameItem, int> pair in Player.Instance.Inventory.GetItems())
+        {
+            if (pair.Key.TanningInfo != null)
+            {
+                Tannables.Add(pair.Key);
+            }
+        }
+    }
+    protected override void OnInitialized()
+    {
+        LoadTannables();
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}
