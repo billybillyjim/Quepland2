@@ -20,7 +20,7 @@
   {
     "name": "Swampwood",
     "id": 21,
-    "image": "forest",
+    "image": "Forest",
     "description": "The swamp grows dark under the tree canopy. The sound of bugs and swamp creatures is disorienting, it'll be hard to continue without a light source.",
     "monsters": [
       "Chicken",

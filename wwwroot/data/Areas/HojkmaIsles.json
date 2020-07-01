@@ -2,7 +2,7 @@
   {
     "name": "Kogoe Docks",
     "id": 70,
-    "image": "Dock",
+    "image": "Docks",
     "description": "",
     "areaURL": "KogoeDocks",
     "unlockableAreas": [
@@ -41,7 +41,7 @@
   {
     "name": "Foot of Mt Yama",
     "id": 73,
-    "image": "MountainFoot",
+    "image": "MountainPath",
     "description": "",
     "areaURL": "MtYamaFoot",
     "unlockableAreas": [

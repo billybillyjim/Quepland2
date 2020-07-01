@@ -98,7 +98,7 @@
   {
     "name": "East Uragota Docks",
     "id": 53,
-    "image": "Docks",
+    "image": "BigDocks",
     "description": "The eastern side of the docks contains the larger fishing vessels, as well as a ferry service to the Hojkma Isles.",
     "areaURL": "EastUragotaDocks",
     "unlockableAreas": [
