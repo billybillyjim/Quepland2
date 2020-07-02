@@ -56,7 +56,11 @@ public class BattleManager
         }
         else
         {
-            CurrentOpponents[0].IsDefeated = false;
+            foreach(Monster m in CurrentOpponents)
+            {
+                m.IsDefeated = false;
+            }
+           
         }
         StartBattle();
         
