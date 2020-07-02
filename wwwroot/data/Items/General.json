@@ -58,6 +58,7 @@
   {
     "name": "Cheese",
     "description": "Some stinky cheese.",
+    "gatherString": "You pick up some old cheese.",
     "value": 5,
     "gatherSpeed": 20,
     "icon": "Cheese"
