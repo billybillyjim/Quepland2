@@ -3,7 +3,7 @@
 @implements IDisposable
 
 <h3>Bank</h3>
-<div>
+<div style="margin-bottom:5px;">
     Quantity:
     <div>
         <button class="btn btn-primary" style="@GetButtonStyle(1)" @onclick="@(() => UpdateBankAmount(1))">1</button>
@@ -13,7 +13,7 @@
         <button class="btn btn-primary" style="@GetButtonStyle(int.MaxValue)" @onclick="@(() => UpdateBankAmount(int.MaxValue))">All</button>
     </div>
     <div>
-       <button class="btn btn-primary" @onclick="@(() => DepositAll())">Deposit All</button>
+       <button style="float: right; margin-top: -38px;" class="btn btn-primary" @onclick="@(() => DepositAll())">Deposit All</button>
     </div>
 </div>
 
@@ -70,7 +70,7 @@
     }
     public void DepositAll()
     {
-        Bank.Instance.DepositAll();
+        Bank.Instance.DepositAll(Player.Instance.Inventory);
         GameState.UpdateState();
     }
     private string GetButtonStyle(int amount)

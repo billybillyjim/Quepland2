@@ -21,5 +21,6 @@ public class Bank
         {
 			Inventory.AddMultipleOfItem(pair.Key, pair.Value);
         }
+		inv.Clear();
     }
 }

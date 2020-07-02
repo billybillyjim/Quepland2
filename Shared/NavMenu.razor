@@ -98,7 +98,11 @@
         string info = "";
         foreach(string NPC in area.NPCs)
         {
-            info += NPC + "\n";
+            if(NPCManager.Instance.GetNPCByName(NPC).AvailableDialogCount() > 0)
+            {
+                info += NPC + "\n";
+            }
+
         }
         if(area.NPCs.Count > 0)
         {

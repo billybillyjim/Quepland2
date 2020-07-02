@@ -127,7 +127,7 @@ public class Player
                 total += item.ArmorInfo.Damage;
             }
         }
-        if(GetWeapon().EnabledActions == "Archery")
+        if(GetWeapon() != null && GetWeapon().EnabledActions == "Archery")
         {
             if (Inventory.HasArrows())
             {
