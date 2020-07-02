@@ -14,7 +14,7 @@
             <div style="margin-bottom:5px;">
                 Progress
                 <div class="progress" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Progress", "You've explored " + Dungeon.GetPercentProgress() + "% of this dungeon.")))"
-                                      onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                     onmouseout="@(new Action(() => GameState.HideTooltip()))">
                     <div class="progress-bar" style="width:@(Dungeon.GetPercentProgress())%"></div>
                 </div>
             </div>
@@ -31,16 +31,20 @@
         }
         @if (IsFighting)
         {
-            <CombatComponent></CombatComponent>
+
             @if (BattleManager.Instance.AllOpponentsDefeated() && BattleManager.Instance.BattleHasEnded)
             {
                 <div style="position:fixed;bottom:280px;">
                     <button class="btn btn-success" @onclick="@(() => Spelunk())">Continue Spelunking</button>
                     <br />
-                    <br/>
+                    <br />
                     <button class="btn btn-secondary" @onclick="@(() => EndFight())">Return</button>
                 </div>
 
+            }
+            else
+            {
+                <CombatComponent></CombatComponent>
             }
         }
         else
@@ -48,7 +52,7 @@
 
             <div style="margin-top:10px;">
                 Enter:
-                <br/>
+                <br />
                 @foreach (Area area in Dungeon.GetUnlockedAreas() ?? Enumerable.Empty<Area>())
                 {
                     <button class="btn btn-primary" @onclick="@(() => GoToArea(area.AreaURL))">@area.Name</button>

@@ -34,88 +34,6 @@
 }
 else
 {
-    <div style="position:relative">
-        <div style="position:absolute;border-radius:0.5rem;padding:5px;top:0px;left:35%;@GetStyle(GashaHead)">
-            Gashadokuro Head
-            <button @onclick="@(() => Target(GashaHead))">Target</button>
-            <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
-                <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
-                <div class="progress-bar" style="width:@(GetOpponentAttackProgress(GashaHead));background-color:mediumpurple">
-
-                </div>
-            </div>
-            <div class="progress" style="width:100px;margin-top:10px;">
-                <div class="progress-bar" style="width:@(GashaHead.GetRemainingHPPercent())%;background-color:forestgreen">
-
-                </div>
-            </div>
-        </div>
-        <div style="position:absolute;border-radius:0.5rem;padding:5px;right:10px;top:150px;@GetStyle(GashaRightHand)">
-            Right Hand
-            <button @onclick="@(() => Target(GashaRightHand))">Target</button>
-            <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
-                <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
-                <div class="progress-bar" style="width:@(GetOpponentAttackProgress(GashaRightHand));background-color:mediumpurple">
-
-                </div>
-            </div>
-            <div class="progress" style="width:100px;margin-top:10px;">
-                <div class="progress-bar" style="width:@(GashaRightHand.GetRemainingHPPercent())%;background-color:forestgreen">
-
-                </div>
-            </div>
-        </div>
-        <div style="position:absolute;border-radius:0.5rem;padding:5px;left:10px;top:150px;@GetStyle(GashaLeftHand)">
-            Left Hand
-            <button @onclick="@(() => Target(GashaLeftHand))">Target</button>
-            <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
-                <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
-                <div class="progress-bar" style="width:@(GetOpponentAttackProgress(GashaLeftHand));background-color:mediumpurple">
-
-                </div>
-            </div>
-            <div class="progress" style="width:100px;margin-top:10px;">
-                <div class="progress-bar" style="width:@(GashaLeftHand.GetRemainingHPPercent())%;background-color:forestgreen">
-
-                </div>
-            </div>
-        </div>
-        <div style="position:absolute;border-radius:0.5rem;padding:5px;top:250px;left:35%;@GetStyle(GashaSpine)">
-            Spine
-            <button @onclick="@(() => Target(GashaSpine))">Target</button>
-            <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
-                <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
-                <div class="progress-bar" style="width:@(GetOpponentAttackProgress(GashaSpine));background-color:mediumpurple">
-
-                </div>
-            </div>
-            <div class="progress" style="width:100px;margin-top:10px;">
-                <div class="progress-bar" style="width:@(GashaSpine.GetRemainingHPPercent())%;background-color:forestgreen">
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div style="position:relative;top:350px;">
-        You
-        <div>
-            @Player.Instance.CurrentHP / @Player.Instance.MaxHP
-        </div>
-        <div class="progress" style="width:550px;margin-top:10px;">
-            <div class="progress-bar" style="width:@(GetPlayerHPPercent());background-color:forestgreen;">
-
-            </div>
-        </div>
-        <div class="progress" style="width:120px;height:40px;font-size:large;position:relative;margin-top:10px;">
-
-            <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
-
-
-            <div class="progress-bar" style="width:@(GetPlayerAttackProgress());background-color:mediumpurple">
-            </div>
-        </div>
-    </div>
-
     @if (BossDefeated())
     {
         <button class="btn btn-danger" style="position:relative;top:380px;" @onclick="@(() => StartBattle())">Fight Again</button>
@@ -136,6 +54,90 @@ else
     else if (BattleManager.Instance.BattleHasEnded)
     {
         <button class="btn btn-danger" style="position:relative;top:380px;" @onclick="@(() => StartBattle())">Fight Again</button>
+    }
+    else
+    {
+        <div style="position:relative">
+            <div style="position:absolute;border-radius:0.5rem;padding:5px;top:0px;left:35%;@GetStyle(GashaHead)">
+                Gashadokuro Head
+                <button @onclick="@(() => Target(GashaHead))">Target</button>
+                <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
+                    <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+                    <div class="progress-bar" style="width:@(GetOpponentAttackProgress(GashaHead));background-color:mediumpurple">
+
+                    </div>
+                </div>
+                <div class="progress" style="width:100px;margin-top:10px;">
+                    <div class="progress-bar" style="width:@(GashaHead.GetRemainingHPPercent())%;background-color:forestgreen">
+
+                    </div>
+                </div>
+            </div>
+            <div style="position:absolute;border-radius:0.5rem;padding:5px;right:10px;top:150px;@GetStyle(GashaRightHand)">
+                Right Hand
+                <button @onclick="@(() => Target(GashaRightHand))">Target</button>
+                <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
+                    <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+                    <div class="progress-bar" style="width:@(GetOpponentAttackProgress(GashaRightHand));background-color:mediumpurple">
+
+                    </div>
+                </div>
+                <div class="progress" style="width:100px;margin-top:10px;">
+                    <div class="progress-bar" style="width:@(GashaRightHand.GetRemainingHPPercent())%;background-color:forestgreen">
+
+                    </div>
+                </div>
+            </div>
+            <div style="position:absolute;border-radius:0.5rem;padding:5px;left:10px;top:150px;@GetStyle(GashaLeftHand)">
+                Left Hand
+                <button @onclick="@(() => Target(GashaLeftHand))">Target</button>
+                <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
+                    <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+                    <div class="progress-bar" style="width:@(GetOpponentAttackProgress(GashaLeftHand));background-color:mediumpurple">
+
+                    </div>
+                </div>
+                <div class="progress" style="width:100px;margin-top:10px;">
+                    <div class="progress-bar" style="width:@(GashaLeftHand.GetRemainingHPPercent())%;background-color:forestgreen">
+
+                    </div>
+                </div>
+            </div>
+            <div style="position:absolute;border-radius:0.5rem;padding:5px;top:250px;left:35%;@GetStyle(GashaSpine)">
+                Spine
+                <button @onclick="@(() => Target(GashaSpine))">Target</button>
+                <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
+                    <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+                    <div class="progress-bar" style="width:@(GetOpponentAttackProgress(GashaSpine));background-color:mediumpurple">
+
+                    </div>
+                </div>
+                <div class="progress" style="width:100px;margin-top:10px;">
+                    <div class="progress-bar" style="width:@(GashaSpine.GetRemainingHPPercent())%;background-color:forestgreen">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="position:relative;top:350px;">
+            You
+            <div>
+                @Player.Instance.CurrentHP / @Player.Instance.MaxHP
+            </div>
+            <div class="progress" style="width:550px;margin-top:10px;">
+                <div class="progress-bar" style="width:@(GetPlayerHPPercent());background-color:forestgreen;">
+
+                </div>
+            </div>
+            <div class="progress" style="width:120px;height:40px;font-size:large;position:relative;margin-top:10px;">
+
+                <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+
+
+                <div class="progress-bar" style="width:@(GetPlayerAttackProgress());background-color:mediumpurple">
+                </div>
+            </div>
+        </div>
     }
 }
 

@@ -15,7 +15,7 @@ public class BattleManager
     public static BattleManager Instance { get { return instance; } }
     public List<Monster> Monsters = new List<Monster>();
     public List<Monster> CurrentOpponents { get; set; } = new List<Monster>();
-    public IBoss CurrentBoss;
+    public IBoss CurrentBoss { get; set; }
     public Monster Target { get; set; }
     public Area CurrentArea;
     public bool BattleHasEnded;
@@ -219,6 +219,7 @@ public class BattleManager
     public void EndBattle()
     {
         BattleHasEnded = true;
+        CurrentBoss = null;
     }
     private Monster GetNextTarget()
     {
