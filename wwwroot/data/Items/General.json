@@ -4,7 +4,8 @@
     "Description": "Cash Money.",
     "value": 1,
     "isStackable": true,
-    "icon": "Coins"
+    "icon": "Coins",
+    "isSellable": false
   },
   {
     "Name": "Shuniku Berries",
@@ -73,7 +74,8 @@
     "name": "Treasure Map",
     "description": "A map leading to an island north of Quepland. Mound gave it to you.",
     "value": 0,
-    "icon": "Map"
+    "icon": "Map",
+    "isSellable": false
   },
   {
     "name": "Hemp",

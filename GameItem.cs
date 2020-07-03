@@ -11,10 +11,11 @@ public class GameItem
 	public string Category { get; set; } = "Unset";
 
 	public string Icon { get; set; } = "Unset";
-	public string EquipSlot { get; set; }
+	public string EquipSlot { get; set; } = "None";
 
 	public bool IsStackable { get; set; }
 	public bool IsEquipped { get; set; }
+	public bool IsSellable { get; set; } = true;
 
 	public int Value { get; set; } = 1;
 	/// <summary>

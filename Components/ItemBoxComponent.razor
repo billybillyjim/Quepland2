@@ -4,7 +4,8 @@
 @if (Item != null)
 {
     
-    <div style="@(GetBackground())margin:2px;height:50px;width:50px;position:relative;box-sizing: border-box;border-radius:0.25rem;">
+    <div style="@(GetBackground())margin:2px;height:50px;width:50px;position:relative;box-sizing: border-box;border-radius:0.25rem;"
+         >
         @if (ShowAmount)
         {
             <div style="position:absolute;margin-left:2px;margin-top:-2px;color:white">@GetAmount()</div>

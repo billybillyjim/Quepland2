@@ -17,7 +17,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "0.0.1";
+    public static string Version { get; set; } = "0.0.2";
     public static string Location { get; set; } = "";
     public static bool InitCompleted { get; set; } = false;
     public static bool ShowStartMenu { get; set; } = true;
@@ -53,6 +53,7 @@ using System.Threading.Tasks;
     public Recipe NewSmithingRecipe;
 
     public GameItem CurrentGatherItem;
+    public List<GameItem> PossibleGatherItems = new List<GameItem>();
     public Recipe CurrentSmeltingRecipe;
     public Recipe CurrentSmithingRecipe;
 
@@ -64,6 +65,7 @@ using System.Threading.Tasks;
     public ItemViewerComponent itemViewer;
     public SmithyComponent SmithingComponent;
     public NavMenu NavMenu;
+    public ContextMenu CurrentContextMenu;
     public static int TicksToNextAction;
     public static readonly int GameSpeed = 200;
     public int TicksToNextHeal;
@@ -76,6 +78,8 @@ using System.Threading.Tasks;
 
     private QuestTester QuestTester = new QuestTester();
     private RecipeTester RecipeTester = new RecipeTester();
+    private static Random Random = new Random();
+
 
     public void Start()
     {
@@ -200,6 +204,10 @@ using System.Threading.Tasks;
 
     private void GatherItem()
     {
+        if(PossibleGatherItems.Count > 1)
+        {
+            CurrentGatherItem = PossibleGatherItems[Random.Next(0, PossibleGatherItems.Count - 1)];
+        }
         if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking == false)
         {
             if (Player.Instance.CurrentFollower.Inventory.GetAvailableSpaces() <= 0)
@@ -489,6 +497,12 @@ using System.Threading.Tasks;
     {
         TooltipManager.ShowTip(args, tip);
         UpdateState();
+    }
+    public void ShowContextMenu(MouseEventArgs args)
+    {
+        TooltipManager.xPos = args.ClientX;
+        TooltipManager.yPos = args.ClientY;
+        TooltipManager.ShowContextMenu(args);
     }
     public async Task GetDimensions()
     {

@@ -1,0 +1,44 @@
+﻿@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+@foreach(string slot in ItemManager.Instance.EquipmentSlots)
+{
+    <div>
+        @slot
+    </div>
+    <div @onclick="@(() => Unequip(GetItemAtSlot(slot)))">
+        <Quepland_2.Components.ItemBoxComponent Item="@GetItemAtSlot(slot)"></Quepland_2.Components.ItemBoxComponent>
+    </div>
+}
+
+<Quepland_2.Components.InventoryViewerComponent></Quepland_2.Components.InventoryViewerComponent>
+
+@code {
+
+    private void Unequip(GameItem item)
+    {
+        Player.Instance.UnequipItem(item);
+        GameState.UpdateState();
+    }
+    private GameItem GetItemAtSlot(string slot)
+    {
+        foreach(GameItem i in Player.Instance.GetEquippedItems())
+        {
+            if(i.EquipSlot == slot)
+            {
+                return i;
+            }
+        }
+        return null;
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

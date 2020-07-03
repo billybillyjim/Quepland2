@@ -56,20 +56,20 @@
     }
     private GameItem GetRandomItem()
     {
-        List<GameItem> possibleItems = new List<GameItem>();
+        GameState.PossibleGatherItems.Clear();
         foreach(GameItem i in items)
         {
             if (i.HasRequirements())
             {
-                possibleItems.Add(i);
+                GameState.PossibleGatherItems.Add(i);
             }
         }
-        if(possibleItems.Count == 0)
+        if(GameState.PossibleGatherItems.Count == 0)
         {
             Console.WriteLine("No items could be gathered.");
             return items[0];
         }
-        return possibleItems[rand.Next(0, possibleItems.Count - 1)];
+        return GameState.PossibleGatherItems[rand.Next(0, GameState.PossibleGatherItems.Count - 1)];
     }
     private bool CanGatherAny()
     {
@@ -78,6 +78,10 @@
             if (item.HasRequirements())
             {
                 return true;
+            }
+            else
+            {
+                Console.WriteLine(item + " is missing req:" + item.GetRequirementTooltip());
             }
         }
         return false;

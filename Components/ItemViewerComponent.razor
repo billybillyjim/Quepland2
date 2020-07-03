@@ -42,16 +42,20 @@
                 {
                     <div style="float:right;position:relative;bottom:35px;">
                         <button style="opacity:0.7" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have enough inventory space.")))"
-                        onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                        @ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString
-                            </button>
+                                onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                            @ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString
+                        </button>
                     </div>
 
                 }
             }
             if (ItemManager.Instance.CurrentShop != null)
             {
-                <div><button @onclick="@(() => SellItem())">Sell</button> Value:@(Item.Value / 2) </div>
+                @if (Item.IsSellable)
+                {
+                    <div><button @onclick="@(() => SellItem())">Sell @(Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item)))</button> @((Item.Value / 2 * Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item))) + " " + ItemManager.Instance.CurrentShop.CurrencyName)</div>
+
+                }
             }
         }
     </div>
@@ -64,6 +68,10 @@
 
     private void SellItem()
     {
+        if(Item.IsSellable == false)
+        {
+            MessageManager.AddMessage("You can't seem to sell this...");
+        }
         if(ItemManager.Instance.CurrentShop != null)
         {
             int sellAmt = Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item));
@@ -71,7 +79,7 @@
             {
                 Player.Instance.Inventory.RemoveItems(Item, sellAmt);
                 Player.Instance.Inventory.AddMultipleOfItem(ItemManager.Instance.CurrentShop.Currency, (sellAmt * Item.Value / 2));
-                MessageManager.AddMessage("You sold " + sellAmt + " " + Item.Name + " for " + (sellAmt * Item.Value) + " " + ItemManager.Instance.CurrentShop.Currency.Name + ".");
+                MessageManager.AddMessage("You sold " + sellAmt + " " + Item.Name + " for " + (sellAmt * Item.Value / 2) + " " + ItemManager.Instance.CurrentShop.Currency.Name + ".");
             }
             else
             {

@@ -10,6 +10,7 @@ public static class TooltipManager
 {
     public static List<Tooltip> Tooltips = new List<Tooltip>();
     public static bool Show;
+    public static bool ShowContext { get; set; }
     public static Tooltip CurrentTip;
     public static double xPos;
     public static double yPos;
@@ -48,10 +49,22 @@ public static class TooltipManager
     }
     public static void ShowTip(MouseEventArgs args, Tooltip tip)
     {
-        Show = true;
+        if (!ShowContext)
+        {
+            Show = true;
+            xPos = args.ClientX;
+            yPos = args.ClientY;
+            CurrentTip = tip;
+            ShowContext = false;
+        }
+
+    }
+    public static void ShowContextMenu(MouseEventArgs args)
+    {
+        Show = false;
+        ShowContext = true;
         xPos = args.ClientX;
         yPos = args.ClientY;
-        CurrentTip = tip;
     }
     public static void HideTip()
     {

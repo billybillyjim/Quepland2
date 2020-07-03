@@ -267,6 +267,10 @@ public class Player
         MessageManager.AddMessage("Whoops! Looks like you died. Don't worry, you don't lose anything but pride when you die in Quepland.");
         BattleManager.Instance.EndBattle();
     }
+    public List<GameItem> GetEquippedItems()
+    {
+        return equippedItems;
+    }
 
     public bool HasSkillRequirement(string skill, int lvl)
     {

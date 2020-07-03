@@ -19,8 +19,27 @@ public class Bank
     {
 		foreach(KeyValuePair<GameItem, int> pair in inv.GetItems())
         {
+            pair.Key.IsEquipped = false;
 			Inventory.AddMultipleOfItem(pair.Key, pair.Value);
         }
+        Player.Instance.GetEquippedItems().Clear();
+
 		inv.Clear();
     }
+	public void Deposit(GameItem item)
+    {
+        if (item == null)
+        {
+            return;
+        }
+        if (item.IsEquipped)
+        {
+            MessageManager.AddMessage("You'll need to unequip this item before banking it.");
+            return;
+        }
+        int amountToBank = Math.Min(Player.Instance.Inventory.GetNumberOfItem(item), Bank.Instance.Amount);
+        Bank.Instance.Inventory.AddMultipleOfItem(item, amountToBank);
+        Player.Instance.Inventory.RemoveItems(item, amountToBank);
+    }
+
 }

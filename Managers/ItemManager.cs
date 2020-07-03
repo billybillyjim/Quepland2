@@ -20,6 +20,7 @@ public class ItemManager
     public List<GameItem> Items = new List<GameItem>();
     public List<Recipe> Recipes = new List<Recipe>();
     public List<Recipe> SmithingRecipes = new List<Recipe>();
+    public List<string> EquipmentSlots = new List<string>();
     public static List<string> FileNames = new List<string> { "Weapons", "Armors", "Sushi", "QuestItems", "General", "Elements", "Hunting", "Fishing", "Ores", "WoodworkingItems", "Logs" };
     public static int baseID;
     public static readonly int MaxItemsPerFile = 100;
@@ -40,6 +41,14 @@ public class ItemManager
                 iterator++;
                 count++;
                 i.Category = file;
+                if(i.EquipSlot != "None")
+                {
+                    if(EquipmentSlots.Contains(i.EquipSlot) == false)
+                    {
+                        EquipmentSlots.Add(i.EquipSlot);
+                    }
+                }
+                
             }
             if(count >= MaxItemsPerFile)
             {

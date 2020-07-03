@@ -1,8 +1,8 @@
 ﻿@page "/World/Bank/"
 @inject GameState GameState
+@inject NavigationManager UriHelper
 @implements IDisposable
 
-<h3>Bank</h3>
 <div style="margin-bottom:5px;">
     Quantity:
     <div>
@@ -84,7 +84,19 @@
             return "cursor:pointer;";
         }
     }
+    public void TestRightClick(MouseEventArgs args)
+    {
+        if(args.Button == 2)
+        {
+            GameState.CurrentContextMenu = new ContextMenu();
+            GameState.CurrentContextMenu.Buttons.Add(new ContextButton("WWWWW WWWWW WWWWW WWWWW", new Action(() => MessageManager.AddMessage("Test 1"))));
+            GameState.CurrentContextMenu.Buttons.Add(new ContextButton("lllll lllll lllll lllll", new Action(() => MessageManager.AddMessage("Test 2"))));
+            TooltipManager.xPos = args.ClientX;
+            TooltipManager.yPos = args.ClientY;
+            TooltipManager.ShowContext = true;
+        }
 
+    }
     private void UpdateBankAmount(int newAmount)
     {
         Bank.Instance.Amount = newAmount;

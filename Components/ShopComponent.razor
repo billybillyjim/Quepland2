@@ -23,7 +23,7 @@
     @foreach (GameItem item in Shop.Items)
     {
         <div @onclick="@(() => Buy(item))"
-             onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, item.Name, "Cost:" + (item.Value * Shop.CostMultiplier))))"
+             onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, item.Name, GetTooltip(item))))"
              onmouseout="@(new Action(() => GameState.HideTooltip()))">
             <Quepland_2.Components.ItemBoxComponent Item="@item" ShowAmount="@false"></Quepland_2.Components.ItemBoxComponent>
 
@@ -52,16 +52,11 @@
     }
     private void Buy(GameItem item)
     {
-        if(item == null || item.Category == "QuestItems")
+        if(item == null)
         {
-            if(item != null && item.Category == "QuestItems")
-            {
-                MessageManager.AddMessage("It doesn't seem like you can sell this.");
-            }
             return;
         }
-        int maxBuy = Math.Max(0, ItemManager.Instance.SellAmount);
-        maxBuy = Math.Min(Player.Instance.Inventory.GetNumberOfItem(Shop.Currency) / (int)(item.Value * Shop.CostMultiplier), maxBuy);
+        int maxBuy = GetMaxBuy(item);
         //If the item is stackable and the player has a stack in their inventory already, or the player has space for another item
         if ((item.IsStackable && Player.Instance.Inventory.HasItem(item) && Player.Instance.Inventory.GetAvailableSpaces() == 0) ||
          (item.IsStackable && Player.Instance.Inventory.GetAvailableSpaces() > 0))
@@ -91,6 +86,21 @@
             return "cursor:normal;background-color:darkgray;";
         }
     }
+    private string GetTooltip(GameItem item)
+    {
+        string tip = "Buy ";
+        int maxBuy = GetMaxBuy(item);
+        if(maxBuy == 0)
+        {
+            maxBuy = ItemManager.Instance.SellAmount;
+            if(maxBuy == int.MaxValue)
+            {
+                maxBuy = 1;
+            }
+        }
+        tip += maxBuy + " for " + (maxBuy * item.Value * Shop.CostMultiplier) + " " + Shop.CurrencyName;
+        return tip;
+    }
     private bool CanAfford(GameItem item)
     {
         return item.Value * Shop.CostMultiplier < Player.Instance.Inventory.GetNumberOfItem(Shop.Currency);
@@ -103,6 +113,12 @@
     {
         ItemManager.Instance.CurrentShop = Shop;
         Console.WriteLine("Is Selling...");
+    }
+    private int GetMaxBuy(GameItem item)
+    {
+        int maxBuy = Math.Max(0, ItemManager.Instance.SellAmount);
+        maxBuy = Math.Min(Player.Instance.Inventory.GetNumberOfItem(Shop.Currency) / (int)(item.Value * Shop.CostMultiplier), maxBuy);
+        return maxBuy;
     }
     protected override void OnInitialized()
     {

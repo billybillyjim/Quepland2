@@ -32,7 +32,6 @@ else
             await QuestManager.Instance.LoadQuests(Http);
             await BattleManager.Instance.LoadMonsters(Http);
             await FollowerManager.Instance.LoadFollowers(Http);
-            await PlayFabManager.Connect();
             GameState.JSRuntime = JSRuntime;
             await GameState.GetDimensions();
             GameState.Start();

@@ -20,7 +20,7 @@
             <div>
                 @Body
             </div>
-            <div style="position:fixed;width:570px;overflow-y:scroll;max-height:200px;bottom:0px;"><Quepland_2.Components.MessagesMenuComponent></Quepland_2.Components.MessagesMenuComponent></div>
+            <div style="position:fixed;width:570px;overflow-y:scroll;max-height:200px;height:200px;bottom:0px;"><Quepland_2.Components.MessagesMenuComponent></Quepland_2.Components.MessagesMenuComponent></div>
         </div>
 
         @if (GameState.ShowStartMenu == false)
@@ -32,6 +32,10 @@
         @if (TooltipManager.Show)
         {
             <Quepland_2.Components.TooltipComponent Tip="@TooltipManager.CurrentTip" xPos="@TooltipManager.xPos" yPos="@TooltipManager.yPos"></Quepland_2.Components.TooltipComponent>
+        }
+        @if (TooltipManager.ShowContext)
+        {
+            <Quepland_2.Components.ContextMenuComponent Menu="@GameState.CurrentContextMenu" xPos="@TooltipManager.xPos" yPos="@TooltipManager.yPos"></Quepland_2.Components.ContextMenuComponent>
         }
     </div>
 
