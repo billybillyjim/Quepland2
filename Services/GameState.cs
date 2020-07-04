@@ -204,10 +204,6 @@ using System.Threading.Tasks;
 
     private void GatherItem()
     {
-        if(PossibleGatherItems.Count > 1)
-        {
-            CurrentGatherItem = PossibleGatherItems[Random.Next(0, PossibleGatherItems.Count - 1)];
-        }
         if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking == false)
         {
             if (Player.Instance.CurrentFollower.Inventory.GetAvailableSpaces() <= 0)
@@ -219,8 +215,7 @@ using System.Threading.Tasks;
             }
             else
             {
-                Player.Instance.CurrentFollower.Inventory.AddItem(CurrentGatherItem);
-                TicksToNextAction = GetTicksToNextGather();
+                Player.Instance.CurrentFollower.Inventory.AddItem(CurrentGatherItem);             
                 Player.Instance.GainExperience(CurrentGatherItem.ExperienceGained);
                 MessageManager.AddMessage(CurrentGatherItem.GatherString + " and hand it over to " + Player.Instance.CurrentFollower.Name + ".");
             }
@@ -229,10 +224,15 @@ using System.Threading.Tasks;
         else {
             PlayerGatherItem();
         }
-        
-        
-
-
+        if(CurrentGatherItem != null)
+        {
+            if (PossibleGatherItems.Count > 1)
+            {
+                int roll = Random.Next(0, PossibleGatherItems.Count);
+                CurrentGatherItem = PossibleGatherItems[roll];
+            }
+            TicksToNextAction = GetTicksToNextGather();
+        }
 
     }
     private bool PlayerGatherItem()
@@ -253,7 +253,6 @@ using System.Threading.Tasks;
         else
         {
             Player.Instance.GainExperience(CurrentGatherItem.ExperienceGained);
-            TicksToNextAction = GetTicksToNextGather();
             MessageManager.AddMessage(CurrentGatherItem.GatherString);
         }
         return true;

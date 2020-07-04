@@ -100,11 +100,11 @@
     ]
   },
   {
-    "name": "Minnow",
+    "name": "Minnows",
     "description": "The tiniest fish you can catch.",
     "gatherString": "You catch some minnows.",
     "value": 2,
-    "gatherSpeed": 6,
+    "gatherSpeed": 9,
     "experienceGained": "Fishing:8",
     "icon": "Fish",
     "requirements": [

@@ -2,11 +2,6 @@
 @implements IDisposable
 
 <ItemViewerComponent Item="@SelectedItem"></ItemViewerComponent>
-@if (Bank.Instance.IsBanking)
-{
-    <div onclick="@(new Action<MouseEventArgs>((args) => BankItem(SelectedItem, -1)))">Deposit</div>
-
-}
 <div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:8px;margin:5px;border-radius:0.25rem">
     @foreach (GameItem item in Player.Instance.Inventory.GetItems().Keys.OrderBy(x => x.ID))
     {

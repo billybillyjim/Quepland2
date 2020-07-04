@@ -13,7 +13,13 @@ public class Bank
 	}
 	public Inventory Inventory = new Inventory(int.MaxValue);
 	public bool IsBanking { get; set; }
-	public int Amount { get; set; } = 1;
+    private int amount = 1;
+	public int Amount { 
+        get { return amount;  } 
+        set { 
+            if (value < 0) { amount = 0; }
+            else { amount = value; }
+        } }
 
 	public void DepositAll(Inventory inv)
     {
@@ -41,5 +47,12 @@ public class Bank
         Bank.Instance.Inventory.AddMultipleOfItem(item, amountToBank);
         Player.Instance.Inventory.RemoveItems(item, amountToBank);
     }
-
+    public string GetAmountString()
+    {
+        if(Amount == int.MaxValue)
+        {
+            return "All";
+        }
+        return "" + Amount;
+    }
 }

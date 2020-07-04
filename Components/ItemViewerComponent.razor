@@ -57,6 +57,11 @@
 
                 }
             }
+            @if (Bank.Instance.IsBanking)
+            {
+                <button style="position:absolute;right:5px;bottom:5px;" onclick="@(new Action<MouseEventArgs>((args) => BankItem(Item, -1)))">Deposit @Bank.Instance.GetAmountString()</button>
+
+            }
         }
     </div>
 
@@ -90,6 +95,15 @@
         {
             Console.WriteLine("Shop was null");
         }
+    }
+    private void BankItem(GameItem item, int pos)
+    {
+        Bank.Instance.Deposit(item);
+        if(Player.Instance.Inventory.GetNumberOfItem(item) == 0)
+        {
+            ClearItem();
+        }
+        GameState.UpdateState();
     }
     public void ClearItem()
     {

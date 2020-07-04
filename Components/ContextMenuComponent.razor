@@ -1,7 +1,7 @@
 ﻿@inject GameState GameState
 @implements IDisposable
 
-@if (Menu != null)
+@if (Menu != null && Menu.Buttons.Count > 0)
 {
     <div style="
         position: absolute;
@@ -34,7 +34,7 @@
             }
 
         </div>
-        <div style="position:absolute;top:-55px;right:-50px;width:50px;height:250%;background-color:#00000000;" 
+        <div style="position:absolute;top:-55px;right:-90px;width:50px;height:250%;background-color:#00000000;" 
              @onmouseover="@(new Action<MouseEventArgs>((args) => HideMenu(args)))">
         </div>
         <div style="position: absolute;top: -55px;left: -80px;width: 50px;height: 250%;background-color: #00000000;" 
@@ -63,7 +63,7 @@
     [Parameter]
     public double yPos { get; set; }
 
-    private int distanceFromMouse = 15;
+    private int distanceFromMouse = 2;
 
     private bool faceRight;
 

@@ -9,8 +9,18 @@
         <button class="btn btn-primary" style="@GetButtonStyle(1)" @onclick="@(() => UpdateBankAmount(1))">1</button>
         <button class="btn btn-primary" style="@GetButtonStyle(5)" @onclick="@(() => UpdateBankAmount(5))">5</button>
         <button class="btn btn-primary" style="@GetButtonStyle(10)" @onclick="@(() => UpdateBankAmount(10))">10</button>
-        <button class="btn btn-primary" style="@GetButtonStyle(20)" @onclick="@(() => UpdateBankAmount(20))">x</button>
+        <button class="btn btn-primary" style="@GetButtonStyle(-1)" @onclick="@(() => showInput = !showInput)">x</button>
         <button class="btn btn-primary" style="@GetButtonStyle(int.MaxValue)" @onclick="@(() => UpdateBankAmount(int.MaxValue))">All</button>
+    </div>
+    <div>
+        @if (showInput)
+        {
+            <input type="number" @bind-value="Bank.Instance.Amount" />
+        }
+        else
+        {
+            <div style="height:35px;"></div>
+        }
     </div>
     <div>
        <button style="float: right; margin-top: -38px;" class="btn btn-primary" @onclick="@(() => DepositAll())">Deposit All</button>
@@ -41,6 +51,7 @@
     }
 </div>
 @code {
+    private bool showInput;
     int itemsPerRow = 10;
     private int GetEmptyItemsToFillRow()
     {
@@ -79,6 +90,10 @@
         {
             return "cursor:normal;background-color:darkgray;";
         }
+        else if(amount == -1 && Bank.Instance.Amount != 1 && Bank.Instance.Amount != 5 && Bank.Instance.Amount != 10 && Bank.Instance.Amount != int.MaxValue)
+        {
+            return "cursor:normal;background-color:darkgray;";
+        }
         else
         {
             return "cursor:pointer;";
@@ -100,6 +115,7 @@
     private void UpdateBankAmount(int newAmount)
     {
         Bank.Instance.Amount = newAmount;
+        showInput = false;
         GameState.UpdateState();
     }
     protected override void OnInitialized()
