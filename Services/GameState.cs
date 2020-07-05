@@ -228,7 +228,7 @@ using System.Threading.Tasks;
             }
             else
             {
-                Player.Instance.CurrentFollower.Inventory.AddItem(CurrentGatherItem);             
+                Player.Instance.CurrentFollower.Inventory.AddItem(CurrentGatherItem.Copy());             
                 Player.Instance.GainExperience(CurrentGatherItem.ExperienceGained);
                 MessageManager.AddMessage(CurrentGatherItem.GatherString + " and hand it over to " + Player.Instance.CurrentFollower.Name + ".");
             }
@@ -250,7 +250,7 @@ using System.Threading.Tasks;
     }
     private bool PlayerGatherItem()
     {
-        if (Player.Instance.Inventory.AddItem(CurrentGatherItem) == false)
+        if (Player.Instance.Inventory.AddItem(CurrentGatherItem.Copy()) == false)
         {
             if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking)
             {
@@ -276,9 +276,10 @@ using System.Threading.Tasks;
         {
             return;
         }
-        else if(BattleManager.Instance.CurrentOpponents.Count > 0)
+        else if(BattleManager.Instance.BattleHasEnded == false)
         {
             MessageManager.AddMessage("You can't make that while fighting!");
+            CurrentRecipe = null;
             return;
         }
         if (CurrentRecipe.Create(out int created))

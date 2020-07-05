@@ -81,6 +81,33 @@ public class GameItem
 	}
 	public GameItem Copy()
     {
-		return (GameItem)this.MemberwiseClone();
+		GameItem copy = new GameItem();
+		copy.Name = Name;
+		copy.Description  = Description;
+		copy.GatherString = GatherString;
+		copy.ExperienceGained = ExperienceGained;
+		copy.EnabledActions = EnabledActions;
+		copy.Category = Category;
+
+		copy.Icon = Icon;
+		copy.EquipSlot = EquipSlot;
+
+		copy.IsStackable = IsStackable;
+		copy.IsSellable = IsSellable;
+
+		copy.Value = Value;
+
+		copy.GatherSpeed = GatherSpeed;
+		copy.ID = ID;
+		copy.GatherSpeedBonus = GatherSpeedBonus;
+		copy.ArmorInfo = ArmorInfo;
+		copy.WeaponInfo = WeaponInfo;
+		copy.SmithingInfo = SmithingInfo;
+		copy.AlchemyInfo = AlchemyInfo;
+		copy.FoodInfo = FoodInfo;
+		copy.TrapInfo = TrapInfo;
+		copy.TanningInfo = TanningInfo;
+		copy.Requirements = Requirements;
+		return copy;
     }
 }

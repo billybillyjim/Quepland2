@@ -3,26 +3,23 @@
 
 <ItemViewerComponent Item="@SelectedItem"></ItemViewerComponent>
 <div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:8px;margin:5px;border-radius:0.25rem">
-    @foreach (GameItem item in Player.Instance.Inventory.GetItems().Keys.OrderBy(x => x.ID))
+    @foreach (KeyValuePair<GameItem, int> item in Player.Instance.Inventory.GetItems().OrderBy(x => x.Key.ID))
     {
-        if (item != null)
+        if (item.Key != null)
         {
-            if (item.IsStackable)
+            
+            if (item.Key.IsStackable)
             {
-                <div oncontextmenu="return false;" 
-                     onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item)))" 
-                     onclick="@(new Action<MouseEventArgs>((args) => SelectItem(args, item, 0)))"><ItemBoxComponent Item="@item" ShowAmount="@true" IsSelected="@(SelectedItem == item)"></ItemBoxComponent></div>
-
+                <div oncontextmenu="return false;"
+                     onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item.Key)))"
+                     onclick="@(new Action<MouseEventArgs>((args) => SelectItem(args, item.Key)))"><ItemBoxComponent Item="@item.Key" ShowAmount="@true" IsSelected="@(SelectedItem == item.Key)"></ItemBoxComponent></div>
             }
             else
             {
-                for (int i = 0; i < Player.Instance.Inventory.GetNumberOfItem(item); i++)
-                {
-                    int temp = i;
-                    <div  oncontextmenu="return false;" 
-                         onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item)))"
-                         onclick="@(new Action<MouseEventArgs>((args) => SelectItem(args, item, temp)))"><ItemBoxComponent Item="@item" ShowAmount="@false" IsSelected="@(selectedItemID == temp && SelectedItem == item)"></ItemBoxComponent></div>
-                }
+                <div oncontextmenu="return false;"
+                     onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item.Key)))"
+                     onclick="@(new Action<MouseEventArgs>((args) => SelectItem(args, item.Key)))"><ItemBoxComponent Item="@item.Key" ShowAmount="@false" IsSelected="@(SelectedItem == item.Key)"></ItemBoxComponent></div>
+
             }
 
         }
@@ -66,14 +63,14 @@
     <div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:8px;margin:5px;border-radius:0.25rem">
         @if (Player.Instance.CurrentFollower != null)
         {
-            @foreach (GameItem item in Player.Instance.CurrentFollower.Inventory.GetItems().Keys.OrderBy(x => x.ID))
+            @foreach (KeyValuePair<GameItem, int> item in Player.Instance.CurrentFollower.Inventory.GetItems().OrderBy(x => x.Key.ID))
             {
-                if (item != null)
+                if (item.Key != null)
                 {
-                    <ItemBoxComponent Item="@item" ShowAmount="@true" Inventory="@Player.Instance.CurrentFollower.Inventory"></ItemBoxComponent>
+                    <ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Player.Instance.CurrentFollower.Inventory"></ItemBoxComponent>
                 }
             }
-            @for (int i = 0; i < Player.Instance.CurrentFollower.Inventory.GetSize() - Player.Instance.CurrentFollower.Inventory.GetItems().Keys.Count; i++)
+            @for (int i = 0; i < Player.Instance.CurrentFollower.Inventory.GetSize() - Player.Instance.CurrentFollower.Inventory.GetItems().Count; i++)
             {
                 <ItemBoxComponent Item="@null"></ItemBoxComponent>
             }
@@ -89,16 +86,11 @@
     [Parameter]
     public string CustomAction { get; set; }
 
-    private void BankItem(GameItem item, int pos)
+    private void BankItem(GameItem item)
     {
         Bank.Instance.Deposit(item);
         if (item == SelectedItem)
         {
-            if (pos < selectedItemID)
-            {
-                selectedItemID--;
-            }
-
             if (Player.Instance.Inventory.GetNumberOfItem(item) == 0)
             {
                 SelectedItem = null;
@@ -106,12 +98,12 @@
         }
         GameState.UpdateState();
     }
-    private void SelectItem(MouseEventArgs args, GameItem item, int pos)
+    private void SelectItem(MouseEventArgs args, GameItem item)
     {
         GameState.itemViewer.ShowItem();
         if (CustomAction == "Bank" && !args.ShiftKey)
         {
-            BankItem(item, pos);
+            BankItem(item);
         }
         else if(CustomAction == "Equip" && !args.ShiftKey)
         {
@@ -119,7 +111,6 @@
         }
         else
         {
-            selectedItemID = pos;
             SelectedItem = item;
         }
         GameState.UpdateState();

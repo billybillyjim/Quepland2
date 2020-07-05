@@ -3,19 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 
 public class Inventory
 {
-    private Dictionary<GameItem, int> items;
+    private List<KeyValuePair<GameItem, int>> items;
     private int maxSize = 30;
     private readonly int maxValue = int.MaxValue - 1000000;
-    private int totalItems;
+    private int totalItems { get; set; }
+    public bool AllItemsStack;
     public Inventory(int max)
     {
-        items = new Dictionary<GameItem, int>();
+        items = new List<KeyValuePair<GameItem, int>>();
         maxSize = max;
+    }
+    public Inventory(int max, bool itemsStack)
+    {
+        items = new List<KeyValuePair<GameItem, int>>();
+        maxSize = max;
+        AllItemsStack = itemsStack;
     }
     public void IncreaseMaxSizeBy(int increase)
     {
@@ -38,13 +46,21 @@ public class Inventory
     {
         if(item == null)
         {
+            Console.WriteLine("Item was null");
             return 0;
         }
-        if(items.ContainsKey(item) == false)
+        if(!HasItem(item))
         {
+            Console.WriteLine("Does not have item");
             return 0;
         }
-        return items[item];
+        if (item.IsStackable || AllItemsStack)
+        {
+            return items.FirstOrDefault(x => x.Key.Name == item.Name).Value;
+        }
+        int amt = items.Count(x => x.Key.Name == item.Name);
+        Console.WriteLine("Inventory has " + amt + " " + item);
+        return items.Count(x => x.Key.Name == item.Name);
     }
     /// <summary>
     /// Returns the total amount of item slots used in the inventory.
@@ -55,14 +71,7 @@ public class Inventory
         int slotsUsed = 0;
         foreach(KeyValuePair<GameItem, int> pair in items)
         {
-            if (pair.Key.IsStackable)
-            {
                 slotsUsed++;
-            }
-            else
-            {
-                slotsUsed += pair.Value;
-            }
         }
         return slotsUsed;
     }
@@ -74,28 +83,22 @@ public class Inventory
         }
         return maxSize - GetUsedSpaces();
     }
-    public Dictionary<GameItem, int> GetItems()
+    public List<KeyValuePair<GameItem, int>> GetItems()
     {
         return items;
     }
     public bool HasItem(GameItem item)
     {
-        if(item == null)
-        {
-            Console.WriteLine("HasItem was called on null item.");
-            return false;
-        }
-        return (items.ContainsKey(item));
+        return HasItem(item.Name);
     }
     public bool HasItem(string itemName)
     {
-        GameItem item = ItemManager.Instance.GetItemByName(itemName);
-        if (item == null)
+        if (itemName == null)
         {
             Console.WriteLine("HasItem was called on null item.");
             return false;
         }
-        return (items.ContainsKey(item));
+        return (items.FirstOrDefault(x => x.Key.Name == itemName).Equals(default(KeyValuePair<GameItem, int>)) == false);
     }
     public bool HasArrows()
     {
@@ -129,6 +132,7 @@ public class Inventory
         }
         return strongest;
     }
+    /*
     public int GetCoins()
     {
         if(items.TryGetValue(ItemManager.Instance.GetItemByName("Coins"), out int val))
@@ -136,7 +140,7 @@ public class Inventory
             return val;
         }
         return 0;
-    }
+    }*/
     public bool AddItem(GameItem item)
     {
         //If the added item is null, the inventory is full and the item is not stackable, 
@@ -145,23 +149,36 @@ public class Inventory
           (totalItems >= maxSize && item.IsStackable == false) ||
           (totalItems >= maxSize && item.IsStackable == true && HasItem(item) == false))
         {
+            Console.WriteLine("Item was null or inventory was full");
+            Console.WriteLine("item is null:" + (item == null));
+
             UpdateItemCount();
             return false;
         }
-        if (items.TryGetValue(item, out int amount))
+        if (item.IsStackable || AllItemsStack)
         {
-            items[item] = Math.Min(amount + 1, maxValue);
+            if (HasItem(item))
+            {
+                KeyValuePair<GameItem, int> pair = items.FirstOrDefault(x => x.Key.Name == item.Name);
+                int oldAmt = pair.Value;
+                items.Remove(pair);
+                items.Add(new KeyValuePair<GameItem, int>(pair.Key, oldAmt + 1));
+            }
+            else
+            {
+                items.Add(new KeyValuePair<GameItem, int>(item, 1));
+            }
         }
         else
         {
-            items[item] = 1;
+            items.Add(new KeyValuePair<GameItem, int>(item, 1));
         }
         UpdateItemCount();
         return true;
     }
     public bool AddItem(string itemName)
     {
-        return AddItem(ItemManager.Instance.GetItemByName(itemName));
+        return AddItem(ItemManager.Instance.GetCopyOfItem(itemName));
     }
     public bool AddItems(List<GameItem> items)
     {
@@ -176,27 +193,38 @@ public class Inventory
     }
     public bool AddMultipleOfItem(GameItem item, int amount)
     {
+        Console.WriteLine("Begin Adding item...");
         if (totalItems >= maxSize && (item.IsStackable == false || HasItem(item) == false))
         {
+            Console.WriteLine("Total items > Max Size:" + (totalItems >= maxSize) + "(" + totalItems + " vs " + maxSize + ")");
+            Console.WriteLine("stackable:" + item.IsStackable);
+            Console.WriteLine("has item:" + HasItem(item));
+            Console.WriteLine("Inventory Full");
             return false;
         }
         if (amount < 0)
         {
+            Console.WriteLine("Amount less than 0.");
             amount = 0;
         }
-        if (item.IsStackable)
+        if (item.IsStackable || AllItemsStack)
         {
+            Console.WriteLine("Adding stackable...");
             return AddItemStackable(item, amount);
         }
         else
         {
             for (int i = 0; i < amount; i++)
             {
-                if (AddItem(item) == false)
+                Console.WriteLine("Adding item...");
+                if (AddItem(item.Copy()) == false)
                 {
+                    Console.WriteLine("Add failed");
+                    UpdateItemCount();
                     return false;
                 }
             }
+            Console.WriteLine(amount);
         }
         UpdateItemCount();
         return true;
@@ -205,6 +233,7 @@ public class Inventory
     {
         return AddMultipleOfItem(ItemManager.Instance.GetItemByName(itemName), amount);
     }
+    
     public bool AddItemStackable(GameItem item, int amount)
     {
         if (totalItems >= maxSize && (item.IsStackable == false || HasItem(item) == false))
@@ -216,47 +245,46 @@ public class Inventory
             amount = 0;
         }
 
-        if (items.TryGetValue(item, out int current))
+        if (HasItem(item))
         {
-            if (item.IsStackable)
+            if (item.IsStackable || AllItemsStack)
             {
-                if (amount > 0 && current + amount < current)
-                {
-                    return false;
-                }
-                else
-                {
-                    items[item] = current + amount;
-                }
+                KeyValuePair<GameItem, int> pair = items.FirstOrDefault(x => x.Key.Name == item.Name);
+                int oldAmt = pair.Value;
+                items.Remove(pair);
+                items.Add(new KeyValuePair<GameItem, int>(pair.Key, oldAmt + amount));
 
             }
             else
             {
+                UpdateItemCount();
                 return false;
             }
         }
         else
         {
-            if (item.IsStackable)
+            if (item.IsStackable || AllItemsStack)
             {
                 //item.itemPos = inventorySlotPos;
-                items[item] = amount;
+                items.Add(new KeyValuePair<GameItem, int>(item, amount));
             }
             else
             {
+                UpdateItemCount();
                 return false;
             }
         }
         UpdateItemCount();
         return true;
     }
+    
     public bool AddDrop(Drop drop)
     {
         if(drop == null || drop.ItemName == "Unset")
         {
             return false;
         }
-        GameItem i = ItemManager.Instance.GetItemByName(drop.ItemName);
+        GameItem i = ItemManager.Instance.GetCopyOfItem(drop.ItemName);
         if (i.Category == "QuestItems")
         {
             if(Player.Instance.Inventory.HasItem(i) || Bank.Instance.Inventory.HasItem(i))
@@ -264,7 +292,7 @@ public class Inventory
                 return false;
             }
         }
-        return AddMultipleOfItem(ItemManager.Instance.GetItemByName(drop.ItemName), drop.Amount);
+        return AddMultipleOfItem(ItemManager.Instance.GetCopyOfItem(drop.ItemName), drop.Amount);
     }
     /// <summary>
     /// Returns the number of items removed, 0 if none were removed.
@@ -274,20 +302,45 @@ public class Inventory
     /// <returns></returns>
     public int RemoveItems(GameItem item, int amount)
     {
-        if (items.TryGetValue(item, out int currentAmount))
+        int removed = 0;
+        var removedItems = new HashSet<KeyValuePair<GameItem,int>>();
+        for(int i = 0; i < items.Count; i++)
         {
-            int remainder = Math.Max(currentAmount - amount, 0);
-
-                items[item] = remainder;
-                if (items[item] <= 0)
-                {
-                    items.Remove(item);
+            if(items[i].Key.Name == item.Name)
+            {
+                KeyValuePair<GameItem, int> pair = items[i];
+                
+                if (items[i].Value > amount)
+                {                   
+                    int oldAmt = pair.Value;
+                    Console.WriteLine("Removing " + oldAmt + " " + item);
+                    items.Remove(pair);
+                    items.Add(new KeyValuePair<GameItem, int>(pair.Key, oldAmt - amount));
+                    UpdateItemCount();
+                    return amount;
                 }
-                UpdateItemCount();
-                return Math.Max(Math.Min(amount, currentAmount), 0);
+                else if(items[i].Value <= amount)
+                {
+                    int val = items[i].Value;
+                    Console.WriteLine("removing " + val + " " + item);
+                    removedItems.Add(items[i]);
+                    removed += val;
+                    if(removed >= amount)
+                    {
+                        items.RemoveAll(x => removedItems.Contains(x));
+                        UpdateItemCount();
+                        return removed;
+                    }
+                }
+            }
         }
+        items.RemoveAll(x => removedItems.Contains(x));
         UpdateItemCount();
-        return 0;
+        return removed;
+    }
+    public int RemoveItems(string item, int amount)
+    {
+        return RemoveItems(items.FirstOrDefault(x => x.Key.Name == item).Key, amount);
     }
     public bool RemoveRecipeItems(Recipe recipe)
     {
@@ -297,18 +350,7 @@ public class Inventory
         }
         foreach(Ingredient ingredient in recipe.Ingredients)
         {
-            GameItem i = ItemManager.Instance.GetItemByName(ingredient.Item);
-            if (items.TryGetValue(i, out int currentAmount))
-            {
-                int remainder = Math.Max(currentAmount - ingredient.Amount, 0);
-
-                items[i] = remainder;
-                if (items[i] <= 0)
-                {
-                    items.Remove(i);
-                }
-                UpdateItemCount();
-            }
+            RemoveItems(ingredient.Item, ingredient.Amount);
         }
 
         UpdateItemCount();
@@ -327,7 +369,7 @@ public class Inventory
         foreach (KeyValuePair<GameItem, int> item in items)
         {
             //item.Key.itemPos = inventorySlotPos;
-            if (item.Key.IsStackable)
+            if (item.Key != null && item.Key.IsStackable)
             {
                 totalItems += 1;
             }
@@ -337,6 +379,7 @@ public class Inventory
             }
             //inventorySlotPos++;
         }
+        Console.WriteLine("New item count:" + totalItems);
     }
 
     public bool HasToolRequirement(GameItem item)
@@ -369,7 +412,7 @@ public class Inventory
         foreach (KeyValuePair<GameItem, int> i in items)
         {
             //item.Key.itemPos = inventorySlotPos;
-            if (i.Key.EnabledActions.Contains(action))
+            if (i.Key != null && i.Key.EnabledActions.Contains(action))
             {
                 return true;
             }

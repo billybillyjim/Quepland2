@@ -59,7 +59,7 @@
             }
             @if (Bank.Instance.IsBanking)
             {
-                <button style="position:absolute;right:5px;bottom:5px;" onclick="@(new Action<MouseEventArgs>((args) => BankItem(Item, -1)))">Deposit @Bank.Instance.GetAmountString()</button>
+                <button style="position:absolute;right:5px;bottom:5px;" onclick="@(new Action<MouseEventArgs>((args) => BankItem(Item)))">Deposit @Bank.Instance.GetAmountString()</button>
 
             }
         }
@@ -76,6 +76,12 @@
         if(Item.IsSellable == false)
         {
             MessageManager.AddMessage("You can't seem to sell this...");
+            return;
+        }
+        if (Item.IsEquipped)
+        {
+            MessageManager.AddMessage("You need to unequip this item before selling it.");
+            return;
         }
         if(ItemManager.Instance.CurrentShop != null)
         {
@@ -85,6 +91,8 @@
                 Player.Instance.Inventory.RemoveItems(Item, sellAmt);
                 Player.Instance.Inventory.AddMultipleOfItem(ItemManager.Instance.CurrentShop.Currency, (sellAmt * Item.Value / 2));
                 MessageManager.AddMessage("You sold " + sellAmt + " " + Item.Name + " for " + (sellAmt * Item.Value / 2) + " " + ItemManager.Instance.CurrentShop.Currency.Name + ".");
+
+                ClearItem();
             }
             else
             {
@@ -96,7 +104,7 @@
             Console.WriteLine("Shop was null");
         }
     }
-    private void BankItem(GameItem item, int pos)
+    private void BankItem(GameItem item)
     {
         Bank.Instance.Deposit(item);
         if(Player.Instance.Inventory.GetNumberOfItem(item) == 0)

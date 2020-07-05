@@ -11,7 +11,7 @@ public class Bank
 			return instance;
         } 
 	}
-	public Inventory Inventory = new Inventory(int.MaxValue);
+	public Inventory Inventory = new Inventory(int.MaxValue, true);
 	public bool IsBanking { get; set; }
     private int amount = 1;
 	public int Amount { 
@@ -43,9 +43,9 @@ public class Bank
             MessageManager.AddMessage("You'll need to unequip this item before banking it.");
             return;
         }
-        int amountToBank = Math.Min(Player.Instance.Inventory.GetNumberOfItem(item), Bank.Instance.Amount);
-        Bank.Instance.Inventory.AddMultipleOfItem(item, amountToBank);
-        Player.Instance.Inventory.RemoveItems(item, amountToBank);
+        int amountToBank = Math.Min(Player.Instance.Inventory.GetNumberOfItem(item), Amount);
+        Inventory.AddMultipleOfItem(item, Player.Instance.Inventory.RemoveItems(item, amountToBank));
+        
     }
     public string GetAmountString()
     {

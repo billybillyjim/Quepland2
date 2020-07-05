@@ -6,9 +6,9 @@
     <div style="width:250px;height:50px;line-height:16px;left:5px;top:5px;position:absolute;">
         @if (SetSkill == "Most Recent")
         {
-            @if (IsBeingTracked(Player.Instance.LastGainedExp.Name))
+            @if (Player.Instance.LastGainedExp != null && IsBeingTracked(Player.Instance.LastGainedExp.Name))
             {
-                <div>Exp/Hr:@GetRate(Player.Instance.LastGainedExp)</div>
+                <div>@Player.Instance.LastGainedExp.Name Exp/Hr:@GetRate(Player.Instance.LastGainedExp)</div>
                 <div>Total Gained:@(Player.Instance.LastGainedExp.Experience - GetTracker(Player.Instance.LastGainedExp.Name).StartExperience)</div>
                 <div>Time:@GetTracker(Player.Instance.LastGainedExp.Name).TimeSinceTrackerStarted.ToString()</div>
             }
@@ -17,7 +17,7 @@
         {
             if (IsBeingTracked(SetSkill))
             {
-                <div>Exp/Hr:@GetRate(Player.Instance.Skills.Find(x => x.Name == SetSkill))</div>
+                <div>@SetSkill Exp/Hr:@GetRate(Player.Instance.Skills.Find(x => x.Name == SetSkill))</div>
                 <div>Total Gained:@(Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience - GetTracker(Player.Instance.Skills.Find(x => x.Name == SetSkill).Name).StartExperience)</div>
                 <div>Time:@GetTracker(Player.Instance.Skills.Find(x => x.Name == SetSkill).Name).TimeSinceTrackerStarted.ToString(@"dd\:hh\:mm\:ss")</div>
             }
@@ -69,11 +69,15 @@
     <div style="position:absolute;top:55px;right:0px;width:100%;height:300px;z-index:50;background-color:antiquewhite;">
         <CustomDropdownComponent DropdownItems="@skills" @bind-Value="@SetSkill" BoxText="@SetSkill"></CustomDropdownComponent>
         <div>
-            @if (IsBeingTracked(SetSkill))
+            @if (IsBeingTracked(SetSkill) == false)
             {
                 <button @onclick="@(() => SetTracker(SetSkill))">
                     Track @SetSkill Exp Rate
                 </button>
+                @if(SetSkill == "Most Recent" && Player.Instance.LastGainedExp != null)
+                {
+                    <div>(@Player.Instance.LastGainedExp.Name)</div>
+                }
             }
             else
             {
@@ -105,7 +109,13 @@
 
     public void SetTracker(string skill)
     {
+        if(skill == "Most Recent" && Player.Instance.LastGainedExp != null)
+        {
+            skill = Player.Instance.LastGainedExp.Name;
+        }
+
         ExperienceTracker tracker = TrackedExperinceRates.FirstOrDefault(x => x.Skill.Name == skill);
+
         Skill s = Player.Instance.Skills.FirstOrDefault(x => x.Name == skill);
         if (s == null)
         {
