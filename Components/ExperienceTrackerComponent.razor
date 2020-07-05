@@ -1,37 +1,42 @@
 ﻿@inject GameState GameState
 @implements IDisposable
 
-    <div style="width:250px;height:50px;line-height:16px;text-align:right;position:relative;">
+@if (ShowRate)
+{
+    <div style="width:250px;height:50px;line-height:16px;left:5px;top:5px;position:absolute;">
         @if (SetSkill == "Most Recent")
         {
-            @if (Player.Instance.LastGainedExp != null)
+            @if (IsBeingTracked(Player.Instance.LastGainedExp.Name))
             {
-                <div>
-                    @Player.Instance.LastGainedExp.Name
-                </div>
-                <div>
-                    @Player.Instance.LastGainedExp.Experience
-                </div>
-                <div class="progress">
-                    <div class="progress-bar" style="width:@(Player.Instance.LastGainedExp.Progress)%">
-
-                    </div>
-                </div>
-                <div @onclick="@(() => ToggleSettings())" style="position:absolute;top:0;right:-25px;">
-                    <img style="height:20px;width:20px;cursor:pointer;opacity:0.8" src="data/Images/Settings.png" />
-                </div>
+                <div>Exp/Hr:@GetRate(Player.Instance.LastGainedExp)</div>
+                <div>Total Gained:@(Player.Instance.LastGainedExp.Experience - GetTracker(Player.Instance.LastGainedExp.Name).StartExperience)</div>
+                <div>Time:@GetTracker(Player.Instance.LastGainedExp.Name).TimeSinceTrackerStarted.ToString()</div>
             }
         }
         else
         {
+            if (IsBeingTracked(SetSkill))
+            {
+                <div>Exp/Hr:@GetRate(Player.Instance.Skills.Find(x => x.Name == SetSkill))</div>
+                <div>Total Gained:@(Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience - GetTracker(Player.Instance.Skills.Find(x => x.Name == SetSkill).Name).StartExperience)</div>
+                <div>Time:@GetTracker(Player.Instance.Skills.Find(x => x.Name == SetSkill).Name).TimeSinceTrackerStarted.ToString(@"dd\:hh\:mm\:ss")</div>
+            }
+        }
+    </div>
+}
+<div style="width:250px;height:50px;line-height:16px;text-align:right;position:relative;">
+    @if (SetSkill == "Most Recent")
+    {
+        @if (Player.Instance.LastGainedExp != null)
+        {
             <div>
-                @Player.Instance.Skills.Find(x => x.Name == SetSkill).Name
+                @Player.Instance.LastGainedExp.Name
             </div>
             <div>
-                @Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience
+                @Player.Instance.LastGainedExp.Experience
             </div>
             <div class="progress">
-                <div class="progress-bar" style="width:@(Player.Instance.Skills.Find(x => x.Name == SetSkill).Progress)%">
+                <div class="progress-bar" style="width:@(Player.Instance.LastGainedExp.Progress)%">
 
                 </div>
             </div>
@@ -39,20 +44,124 @@
                 <img style="height:20px;width:20px;cursor:pointer;opacity:0.8" src="data/Images/Settings.png" />
             </div>
         }
+    }
+    else
+    {
+        <div>
+            @Player.Instance.Skills.Find(x => x.Name == SetSkill).Name
+        </div>
+        <div>
+            @Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience
+        </div>
+        <div class="progress">
+            <div class="progress-bar" style="width:@(Player.Instance.Skills.Find(x => x.Name == SetSkill).Progress)%">
 
-    </div>
+            </div>
+        </div>
+        <div @onclick="@(() => ToggleSettings())" style="position:absolute;top:0;right:-25px;">
+            <img style="height:20px;width:20px;cursor:pointer;opacity:0.8" src="data/Images/Settings.png" />
+        </div>
+    }
+
+</div>
 @if (ShowSettings)
 {
     <div style="position:absolute;top:55px;right:0px;width:100%;height:300px;z-index:50;background-color:antiquewhite;">
         <CustomDropdownComponent DropdownItems="@skills" @bind-Value="@SetSkill" BoxText="@SetSkill"></CustomDropdownComponent>
+        <div>
+            @if (IsBeingTracked(SetSkill))
+            {
+                <button @onclick="@(() => SetTracker(SetSkill))">
+                    Track @SetSkill Exp Rate
+                </button>
+            }
+            else
+            {
+                <button @onclick="@(() => SetTracker(SetSkill))">
+                    Reset @SetSkill  Exp Rate
+                </button>
+                <button @onclick="@(() => PauseTracker(SetSkill))">
+                    Pause Tracking
+                </button>
+            }
+        </div>
+        <div>
+            <button @onclick="@(() => ShowRate = !ShowRate)">
+                Toggle Rate Tracker
+            </button>
+        </div>
     </div>
+
 }
+
 
 @code {
 
     private bool ShowSettings = false;
+    private bool ShowRate = false;
     private List<string> skills = new List<string>();
     private string SetSkill = "Most Recent";
+    public List<ExperienceTracker> TrackedExperinceRates = new List<ExperienceTracker>();
+
+    public void SetTracker(string skill)
+    {
+        ExperienceTracker tracker = TrackedExperinceRates.FirstOrDefault(x => x.Skill.Name == skill);
+        Skill s = Player.Instance.Skills.FirstOrDefault(x => x.Name == skill);
+        if (s == null)
+        {
+            return;
+        }
+        if (tracker == null)
+        {
+            ExperienceTracker t = new ExperienceTracker();
+
+            t.StartExperience = s.Experience;
+            t.Skill = s;
+            t.TimeSinceTrackerStarted = TimeSpan.Zero;
+            TrackedExperinceRates.Add(t);
+        }
+        else
+        {
+            tracker.StartExperience = s.Experience;
+            tracker.TimeSinceTrackerStarted = TimeSpan.Zero;
+            tracker.IsPaused = false;
+        }
+
+
+    }
+    public void PauseTracker(string skill)
+    {
+        ExperienceTracker tracker = TrackedExperinceRates.FirstOrDefault(x => x.Skill.Name == skill);
+        if (tracker != null)
+        {
+            tracker.IsPaused = true;
+        }
+    }
+    public ExperienceTracker GetTracker(string skill)
+    {
+        ExperienceTracker tracker = TrackedExperinceRates.FirstOrDefault(x => x.Skill.Name == skill);
+        return tracker;
+    }
+    public bool IsBeingTracked(string skill)
+    {
+        if (skill == null)
+        {
+            return false;
+        }
+        ExperienceTracker t = TrackedExperinceRates.FirstOrDefault(x => x.Skill.Name == skill);
+        return (t != null && t.IsPaused == false);
+    }
+
+    public double GetRate(Skill skill)
+    {
+        ExperienceTracker t = TrackedExperinceRates.FirstOrDefault(x => x.Skill == skill);
+        if (t != null)
+        {
+            double growth = skill.Experience - t.StartExperience;
+            return (Math.Round(growth / t.TimeSinceTrackerStarted.TotalHours, 2));
+        }
+        return 0;
+    }
     public void ToggleSettings()
     {
         ShowSettings = !ShowSettings;
@@ -62,7 +171,10 @@
     {
         skills.Add("Most Recent");
         skills.AddRange(Player.Instance.Skills.Select(x => x.Name));
-        
+        if (GameState.EXPTrackerComponent == null)
+        {
+            GameState.EXPTrackerComponent = this;
+        }
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()

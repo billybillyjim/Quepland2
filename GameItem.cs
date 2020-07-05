@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+[Serializable]
 public class GameItem
 {
 	public string Name { get; set; } = "Unset Name";
@@ -78,5 +79,8 @@ public class GameItem
 	{
 		return Name;
 	}
-
+	public GameItem Copy()
+    {
+		return (GameItem)this.MemberwiseClone();
+    }
 }

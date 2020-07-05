@@ -80,6 +80,10 @@ public class ItemManager
     {
         return Items.FirstOrDefault(x => x.Name == name);
     }
+    public GameItem GetCopyOfItem(string name)
+    {
+        return Items.FirstOrDefault(x => x.Name == name).Copy();
+    }
 
     public Recipe GetUnpackingRecipe(GameItem item)
     {

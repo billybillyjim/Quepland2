@@ -66,6 +66,7 @@ using System.Threading.Tasks;
     public SmithyComponent SmithingComponent;
     public NavMenu NavMenu;
     public ContextMenu CurrentContextMenu;
+    public ExperienceTrackerComponent EXPTrackerComponent;
     public static int TicksToNextAction;
     public static readonly int GameSpeed = 200;
     public int TicksToNextHeal;
@@ -137,6 +138,18 @@ using System.Threading.Tasks;
             {
                 HealPlayer();
             }
+            if(EXPTrackerComponent != null)
+            {
+                if(CurrentTick % 5 == 0)
+                {
+                    foreach (ExperienceTracker t in EXPTrackerComponent.TrackedExperinceRates)
+                    {
+                        t.TimeSinceTrackerStarted += TimeSpan.FromMilliseconds(GameSpeed * 5);
+                    }
+                }
+
+            }
+
             GetDimensions();
             TicksToNextAction--;
             CurrentTick++;
