@@ -25,7 +25,7 @@ public class Player
     public int MaxHP = 50;
     public int CurrentHP;
     public int TicksToNextAttack;
-
+    public int Deaths { get; set; }
 
     public Skill LastGainedExp { get; set; }
     public Skill ExpTrackerSkill { get; set; }
@@ -264,7 +264,16 @@ public class Player
     public void Die()
     {
         CurrentHP = MaxHP;
-        MessageManager.AddMessage("Whoops! Looks like you died. Don't worry, you don't lose anything but pride when you die in Quepland.");
+        
+        Deaths++;
+        if(Deaths == 1)
+        {
+            MessageManager.AddMessage("Whoops! Looks like you died. Don't worry, you don't lose anything but pride when you die in Quepland.");
+        }
+        else
+        {
+            MessageManager.AddMessage("Whoops! Looks like you died.");
+        }
         BattleManager.Instance.EndBattle();
     }
     public List<GameItem> GetEquippedItems()

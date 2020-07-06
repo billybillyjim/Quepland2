@@ -64,6 +64,7 @@ app {
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
 }
+
 .main {
     flex: 1;
 }

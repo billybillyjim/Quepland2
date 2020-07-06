@@ -143,5 +143,103 @@ public static class Extensions
             return (T)formatter.Deserialize(stream);
         }
     }
+    public static string CustomFormat(this int num)
+    {
+        int digits = (int)Math.Floor(Math.Log10(num) + 1);
+        string letter = "K";
+        if (digits < 4)
+        {
+            return num.ToString();
+        }
+        else if (digits < 7)
+        {
+            letter = "K";
+        }
+        else if (digits < 10)
+        {
+            letter = "M";
+        }
+        else if (digits < 13)
+        {
+            letter = "B";
+        }
+        else if (digits < 16)
+        {
+            letter = "T";
+        }
+        else
+        {
+            return num.ToString("0.00E+0");
+        }
+
+        if (digits % 3 == 0)
+        {
+            return num.ToString("000.00000E+0").Substring(0, 3) + letter;
+        }
+        else if (digits % 3 == 1)
+        {
+            return num.ToString("0.0000000E+0").Substring(0, 4) + letter;
+        }
+        else
+        {
+            return num.ToString("00.000000E+0").Substring(0, 4) + letter;
+        }
+
+    }
+    public static string CustomFormat(this long num)
+    {
+        int digits = (int)Math.Floor(Math.Log10(num) + 1);
+        string letter = "K";
+        if (digits < 4)
+        {
+            return num.ToString();
+        }
+        else if (digits < 7)
+        {
+            letter = "K";
+        }
+        else if (digits < 10)
+        {
+            letter = "M";
+        }
+        else if (digits < 13)
+        {
+            letter = "B";
+        }
+        else if (digits < 16)
+        {
+            letter = "T";
+        }
+        else if (digits < 19)
+        {
+            letter = "Qa";
+        }
+        else if (digits < 22)
+        {
+            letter = "Qi";
+        }
+        else if (digits < 25)
+        {
+            letter = "s";
+        }      
+        else
+        {
+            return num.ToString("0.00E+0");
+        }
+
+        if (digits % 3 == 0)
+        {
+            return num.ToString("000.00000E+0").Substring(0, 3) + letter;
+        }
+        else if (digits % 3 == 1)
+        {
+            return num.ToString("0.0000000E+0").Substring(0, 4) + letter;
+        }
+        else
+        {
+            return num.ToString("00.000000E+0").Substring(0, 4) + letter;
+        }
+
+    }
 }
 
