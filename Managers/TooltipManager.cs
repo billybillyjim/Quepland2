@@ -49,7 +49,7 @@ public static class TooltipManager
     }
     public static void ShowTip(MouseEventArgs args, Tooltip tip)
     {
-        if (!ShowContext)
+        if (!ShowContext && CurrentTip != tip)
         {
             Show = true;
             xPos = args.ClientX;
@@ -58,6 +58,25 @@ public static class TooltipManager
             ShowContext = false;
         }
 
+    }
+    public static void ShowItemTip(MouseEventArgs args, string name, string desc)
+    {
+        if (!ShowContext)
+        {
+            Show = true;
+            xPos = args.ClientX;
+            yPos = args.ClientY;
+            if(CurrentTip != null)
+            {
+                CurrentTip.Title = name;
+                CurrentTip.Text = desc;
+            }
+            else
+            {
+                CurrentTip = new Tooltip(name, name,desc);
+            }
+            ShowContext = false;
+        }
     }
     public static void ShowContextMenu(MouseEventArgs args)
     {

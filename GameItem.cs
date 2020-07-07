@@ -17,6 +17,7 @@ public class GameItem
 	public bool IsStackable { get; set; }
 	public bool IsEquipped { get; set; }
 	public bool IsSellable { get; set; } = true;
+	public bool Rerender { get; set; } = false;
 
 	public int Value { get; set; } = 1;
 	/// <summary>

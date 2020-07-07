@@ -46,12 +46,10 @@ public class Inventory
     {
         if(item == null)
         {
-            Console.WriteLine("Item was null");
             return 0;
         }
         if(!HasItem(item))
         {
-            Console.WriteLine("Does not have item");
             return 0;
         }
         if (item.IsStackable || AllItemsStack)
@@ -59,7 +57,6 @@ public class Inventory
             return items.FirstOrDefault(x => x.Key.Name == item.Name).Value;
         }
         int amt = items.Count(x => x.Key.Name == item.Name);
-        Console.WriteLine("Inventory has " + amt + " " + item);
         return items.Count(x => x.Key.Name == item.Name);
     }
     /// <summary>
@@ -95,7 +92,6 @@ public class Inventory
     {
         if (itemName == null)
         {
-            Console.WriteLine("HasItem was called on null item.");
             return false;
         }
         return (items.FirstOrDefault(x => x.Key.Name == itemName).Equals(default(KeyValuePair<GameItem, int>)) == false);
@@ -149,9 +145,6 @@ public class Inventory
           (totalItems >= maxSize && item.IsStackable == false) ||
           (totalItems >= maxSize && item.IsStackable == true && HasItem(item) == false))
         {
-            Console.WriteLine("Item was null or inventory was full");
-            Console.WriteLine("item is null:" + (item == null));
-
             UpdateItemCount();
             return false;
         }
@@ -193,38 +186,28 @@ public class Inventory
     }
     public bool AddMultipleOfItem(GameItem item, int amount)
     {
-        Console.WriteLine("Begin Adding item...");
         if (totalItems >= maxSize && (item.IsStackable == false || HasItem(item) == false))
         {
-            Console.WriteLine("Total items > Max Size:" + (totalItems >= maxSize) + "(" + totalItems + " vs " + maxSize + ")");
-            Console.WriteLine("stackable:" + item.IsStackable);
-            Console.WriteLine("has item:" + HasItem(item));
-            Console.WriteLine("Inventory Full");
             return false;
         }
         if (amount < 0)
         {
-            Console.WriteLine("Amount less than 0.");
             amount = 0;
         }
         if (item.IsStackable || AllItemsStack)
         {
-            Console.WriteLine("Adding stackable...");
             return AddItemStackable(item, amount);
         }
         else
         {
             for (int i = 0; i < amount; i++)
             {
-                Console.WriteLine("Adding item...");
                 if (AddItem(item.Copy()) == false)
                 {
-                    Console.WriteLine("Add failed");
                     UpdateItemCount();
                     return false;
                 }
             }
-            Console.WriteLine(amount);
         }
         UpdateItemCount();
         return true;
@@ -368,6 +351,7 @@ public class Inventory
 
         foreach (KeyValuePair<GameItem, int> item in items)
         {
+            item.Key.Rerender = true;
             //item.Key.itemPos = inventorySlotPos;
             if (item.Key != null && item.Key.IsStackable)
             {
@@ -379,7 +363,6 @@ public class Inventory
             }
             //inventorySlotPos++;
         }
-        Console.WriteLine("New item count:" + totalItems);
     }
 
     public bool HasToolRequirement(GameItem item)

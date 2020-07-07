@@ -84,6 +84,6 @@
     "isStackable": true,
     "gatherSpeed": 20,
     "gatherString": "You gather some hemp.",
-    "icon": "Plant"
+    "icon": "Hemp"
   }
 ]

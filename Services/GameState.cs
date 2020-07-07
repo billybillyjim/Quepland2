@@ -511,6 +511,11 @@ using System.Threading.Tasks;
         TooltipManager.ShowTip(args, tip);
         UpdateState();
     }
+    public void ShowItemTooltip(MouseEventArgs args, string itemName, string itemDesc)
+    {
+        TooltipManager.ShowItemTip(args, itemName, itemDesc);
+        UpdateState();
+    }
     public void ShowContextMenu(MouseEventArgs args)
     {
         TooltipManager.xPos = args.ClientX;
@@ -524,7 +529,6 @@ using System.Threading.Tasks;
     public void HideTooltip()
     {
         TooltipManager.HideTip();
-        UpdateState();
     }
     private void StateHasChanged()
     {

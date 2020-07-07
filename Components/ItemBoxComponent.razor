@@ -18,7 +18,7 @@
 
         }
         <img style="height: 46px;width: 46px;@GetMargin()" src="/data/Images/@(Item.Icon).png"
-             onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GetTooltipTitle(), Item.Description)))"
+             onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowItemTooltip(e, GetTooltipTitle(), Item.Description)))"
              onmouseout="@(new Action(() => GameState.HideTooltip()))" />
     </div>
 }
@@ -35,6 +35,21 @@ else
     public Inventory Inventory { get; set; }
     [Parameter]
     public bool IsSelected { get; set; }
+    [Parameter]
+    public bool shouldRender { get; set; }
+
+    protected override bool ShouldRender() => shouldRender;
+
+    protected override void OnAfterRender(bool first)
+    {
+        if(Item != null)
+        {
+            Item.Rerender = false;
+        }
+
+        shouldRender = false;
+
+    }
 
     private string GetAmount()
     {
@@ -59,6 +74,7 @@ else
         }
         else
         {
+
             if (Item != null)
             {
                 if (Item.Category == "Fishing")
@@ -86,6 +102,7 @@ else
             {
                 style = "background-color:darkgray;";
             }
+
         }
         if (Item != null && Item.IsEquipped)
         {
@@ -117,19 +134,6 @@ else
                     tip = "Withdraw " + Bank.Instance.Amount + " " + Item.Name;
                 }
             }
-            else
-            {
-                if (Bank.Instance.Amount == int.MaxValue)
-                {
-                    tip = "Deposit All " + Item.Name;
-                }
-                else
-                {
-                    tip = "Deposit " + Bank.Instance.Amount + " " + Item.Name;
-                }
-            }
-
-
         }
         else
         {

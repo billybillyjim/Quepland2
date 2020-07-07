@@ -55,6 +55,10 @@ else
         //Player.Instance.Inventory.AddItem("Ultimate Test Weapon");
         //AreaManager.Instance.GetAreaByName("Queple Cave Smithy").Unlock();
         //Player.Instance.CurrentFollower = FollowerManager.Instance.Followers[0];
+        foreach(GameItem item in ItemManager.Instance.Items)
+        {
+            Bank.Instance.Inventory.AddItem(item);
+        }
 
         Player.Instance.CurrentHP = 50;
         Bank.Instance.Inventory.AddItem("Stone Axe");

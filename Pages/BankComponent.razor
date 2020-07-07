@@ -50,14 +50,14 @@
             <Quepland_2.Components.NPCDialogComponent npc="Tuto"></Quepland_2.Components.NPCDialogComponent>
         }
 
-<div style="display:flex;flex-wrap:wrap;">
+<div style="display:flex;flex-wrap:wrap;margin-bottom:200px;height:500px;overflow-y:scroll;">
     @if (searchString == "")
     {
         @foreach (KeyValuePair<GameItem, int> item in Bank.Instance.Inventory.GetItems().OrderBy(x => x.Key.ID))
         {
             <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;">
                 <div @onclick="@(() => Withdraw(item.Key))" style="margin-top:19px;margin-left:-3px;">
-                    <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory"></Quepland_2.Components.ItemBoxComponent>
+                    <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
 
                 </div>
             </div>
@@ -70,7 +70,12 @@
             {
                 <br />
             }
-            <Quepland_2.Components.ItemBoxComponent Item="@null"></Quepland_2.Components.ItemBoxComponent>
+            <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;">
+                <div style="margin-top:19px;margin-left:-3px;">
+                    <Quepland_2.Components.ItemBoxComponent></Quepland_2.Components.ItemBoxComponent>
+
+                </div>
+            </div>
         }
     }
     else
@@ -79,7 +84,7 @@
         {
             <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;">
                 <div @onclick="@(() => Withdraw(item.Key))" style="margin-top:19px;margin-left:-3px;">
-                    <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory"></Quepland_2.Components.ItemBoxComponent>
+                    <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
 
                 </div>
             </div>
@@ -92,11 +97,12 @@
     private bool showSearch;
     int itemsPerRow = 10;
     private string searchString = "";
+    private bool rerender = true;
     private void ToggleSearch()
     {
         showSearch = !showSearch;
     }
-    
+
     public void ClearSearch()
     {
         searchString = "";
@@ -131,11 +137,13 @@
             Bank.Instance.Inventory.RemoveItems(item, maxWithdraw);
         }
         GameState.UpdateState();
+
     }
     public void DepositAll()
     {
         Bank.Instance.DepositAll(Player.Instance.Inventory);
         GameState.UpdateState();
+
     }
     private string GetButtonStyle(int amount)
     {
@@ -151,19 +159,6 @@
         {
             return "cursor:pointer;";
         }
-    }
-    public void TestRightClick(MouseEventArgs args)
-    {
-        if(args.Button == 2)
-        {
-            GameState.CurrentContextMenu = new ContextMenu();
-            GameState.CurrentContextMenu.Buttons.Add(new ContextButton("WWWWW WWWWW WWWWW WWWWW", new Action(() => MessageManager.AddMessage("Test 1"))));
-            GameState.CurrentContextMenu.Buttons.Add(new ContextButton("lllll lllll lllll lllll", new Action(() => MessageManager.AddMessage("Test 2"))));
-            TooltipManager.xPos = args.ClientX;
-            TooltipManager.yPos = args.ClientY;
-            TooltipManager.ShowContext = true;
-        }
-
     }
     private void UpdateBankAmount(int newAmount)
     {
