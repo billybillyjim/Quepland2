@@ -1,0 +1,50 @@
+﻿@page "/WorldCheck/"
+@inject GameState GameState
+@implements IDisposable
+@inject NavigationManager UriHelper
+
+
+@if(World != null)
+{
+<div style="display:flex;">
+    <div>
+        Included Items:@World.IncludedItems.Count
+        <div style="width:300px;height:600px;overflow-y:scroll;">
+            @foreach (GameItem i in World.IncludedItems)
+            {
+                if (i != null)
+                {
+                    <div>@i.Name</div>
+                }
+
+            }
+        </div>
+    </div>
+    <div>
+        Missing Items:@World.MissingItems.Count
+        <div style="width:300px;height:600px;overflow-y:scroll;">
+            @foreach (GameItem i in World.MissingItems)
+            {
+                <div>@i.Name</div>
+            }
+        </div>
+    </div>
+</div>
+}
+
+
+@code {
+    private WorldTester World = new WorldTester();
+
+    protected override void OnInitialized()
+    {
+        World.TestWorld();
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.HideTooltip();
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

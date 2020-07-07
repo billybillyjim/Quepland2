@@ -6,6 +6,7 @@
 <button @onclick="@(() => Rates())">Charts</button>
 <button @onclick="@(() => Max())">Max</button>
 <button @onclick="@(() => DPS())">DPS Calc</button>
+<button @onclick="@(() => UriHelper.NavigateTo("/WorldCheck/"))">World</button>
 
 <div style="overflow-y:scroll">
     @foreach (string category in ItemManager.FileNames)

@@ -25,7 +25,8 @@
     "name": "Sawabe Swamp",
     "areaNames": [
       "Swampedge",
-      "Swampwood"
+      "Swampwood",
+      "Sawoka"
     ]
   },
   {
@@ -91,6 +92,17 @@
       "Mt Yama",
       "Mt Yama Cave",
       "Mt Yama Mine"
+    ]
+  },
+  {
+    "name": "Hoin River Valley",
+    "areaNames": [
+      "Hoin Riverbank",
+      "Hoin River",
+      "Plantrain Plains",
+      "Sun's Harbor",
+      "Guttermouth",
+      "Ricechild"
     ]
   }
 ]

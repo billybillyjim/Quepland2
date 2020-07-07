@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Hoin Riverbank",
+    "id": 80,
+    "image": "Riverbank",
+    "description": "",
+    "areaURL": "HoinRiverbank",
+    "unlockableAreas": [
+      {
+        "areaURL": "HoinRiver",
+        "buttonText": "Ride Down the River"
+      }
+    ]
+  },
+  {
+    "name": "Hoin River",
+    "id": 81,
+    "image": "River",
+    "description": "",
+    "areaURL": "HoinRiver",
+    "unlockableAreas": [
+      {
+        "areaURL": "PlantrainPlains",
+        "buttonText": "Continue Down the River"
+      }
+    ]
+  },
+  {
+    "name": "Plantrain Plains",
+    "id": 82,
+    "image": "Plains",
+    "description": "",
+    "areaURL": "PlantrainPlains",
+    "unlockableAreas": [
+      {
+        "areaURL": "SunsHarbor",
+        "buttonText": "Continue Down the River"
+      }
+    ]
+  },
+  {
+    "name": "Sun's Harbor",
+    "id": 83,
+    "image": "Docks",
+    "description": "",
+    "areaURL": "SunsHarbor",
+    "unlockableAreas": [
+      {
+        "areaURL": "Guttermouth",
+        "buttonText": "Continue Down the River"
+      }
+    ]
+  },
+  {
+    "name": "Guttermouth",
+    "id": 84,
+    "image": "Village",
+    "description": "",
+    "areaURL": "Guttermouth",
+    "unlockableAreas": [
+      {
+        "areaURL": "Ricechild",
+        "buttonText": "Continue Down the River"
+      }
+    ]
+  },
+  {
+    "name": "Ricechild",
+    "id": 85,
+    "image": "City",
+    "description": "",
+    "areaURL": "Ricechild"
+  }
+]

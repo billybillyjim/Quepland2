@@ -1,3 +1,58 @@
-{
-
-}
+[
+  {
+    "outputItemName": "Molten Iron Bar",
+    "ingredients": [
+      {
+        "item": "Iron Ore"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Iron Bar",
+    "ingredients": [
+      {
+        "item": "Iron Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Iron Knife",
+    "ingredients": [
+      {
+        "item": "Molten Iron Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Iron Sword",
+    "ingredients": [
+      {
+        "item": "Molten Iron Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Iron Axe",
+    "ingredients": [
+      {
+        "item": "Molten Iron Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Iron Hammer",
+    "ingredients": [
+      {
+        "item": "Molten Iron Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Iron Bar",
+    "ingredients": [
+      {
+        "item": "Molten Iron Bar"
+      }
+    ]
+  }
+]

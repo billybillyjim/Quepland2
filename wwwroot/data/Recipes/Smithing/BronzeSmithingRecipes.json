@@ -1,3 +1,86 @@
-{
-
-}
+[
+  {
+    "outputItemName": "Molten Bronze Bar",
+    "ingredients": [
+      {
+        "item": "Copper Bar"
+      },
+      {
+        "item": "Tin Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Bronze Bar",
+    "ingredients": [
+      {
+        "item": "Copper Ore"
+      },
+      {
+        "item": "Tin Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Bronze Bar",
+    "ingredients": [
+      {
+        "item": "Copper Bar"
+      },
+      {
+        "item": "Tin Ore"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Bronze Bar",
+    "ingredients": [
+      {
+        "item": "Copper Ore"
+      },
+      {
+        "item": "Tin Ore"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Bronze Bar",
+    "ingredients": [
+      {
+        "item": "Brass Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Bronze Knife",
+    "ingredients": [
+      {
+        "item": "Molten Bronze Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Bronze Sword",
+    "ingredients": [
+      {
+        "item": "Molten Bronze Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Bronze Axe",
+    "ingredients": [
+      {
+        "item": "Molten Bronze Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Bronze Hammer",
+    "ingredients": [
+      {
+        "item": "Molten Bronze Bar"
+      }
+    ]
+  }
+]

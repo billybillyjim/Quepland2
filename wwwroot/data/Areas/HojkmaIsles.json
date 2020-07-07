@@ -29,13 +29,16 @@
     "name": "Fjellover Pass",
     "id": 72,
     "image": "Trail",
-    "description": "",
+    "description": "The trail leads through a deep valley. Mt. Yama towers in the distance, glowing in the sun. There are deposits of iron ore lying along the sides of the path.",
     "areaURL": "FjelloverPass",
     "unlockableAreas": [
       {
         "areaURL": "MtYamaFoot",
         "buttonText": "Continue up the Path"
       }
+    ],
+    "actions": [
+      "Mine Iron:Iron Ore"
     ]
   },
   {
@@ -49,6 +52,9 @@
         "areaURL": "MtYama",
         "buttonText": "Climb the Mountain"
       }
+    ],
+    "actions": [
+      "Mine Calamine:Calamine"
     ]
   },
   {
@@ -76,6 +82,9 @@
     "id": 76,
     "image": "Mine",
     "description": "",
-    "areaURL": "MtYamaMine"
+    "areaURL": "MtYamaMine",
+    "actions": [
+      "Mine Gold:Gold Ore"
+    ]
   }
 ]

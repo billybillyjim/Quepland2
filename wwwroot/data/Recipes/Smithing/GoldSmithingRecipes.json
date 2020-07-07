@@ -1,3 +1,58 @@
-{
-
-}
+[
+  {
+    "outputItemName": "Molten Gold Bar",
+    "ingredients": [
+      {
+        "item": "Gold Ore"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Gold Bar",
+    "ingredients": [
+      {
+        "item": "Gold Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Gold Knife",
+    "ingredients": [
+      {
+        "item": "Molten Gold Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Gold Sword",
+    "ingredients": [
+      {
+        "item": "Molten Gold Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Gold Axe",
+    "ingredients": [
+      {
+        "item": "Molten Gold Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Gold Hammer",
+    "ingredients": [
+      {
+        "item": "Molten Gold Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Gold Bar",
+    "ingredients": [
+      {
+        "item": "Molten Gold Bar"
+      }
+    ]
+  }
+]

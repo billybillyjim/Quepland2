@@ -21,10 +21,28 @@
     "name": "Swampwood",
     "id": 21,
     "image": "Forest",
-    "description": "The swamp grows dark under the tree canopy. The sound of bugs and swamp creatures is disorienting, it'll be hard to continue without a light source.",
+    "areaURL": "Swampwood",
+    "description": "The swamp grows dark under the tree canopy. The sound of bugs and swamp creatures is disorienting.",
     "monsters": [
       "Chicken",
       "Rooster"
+    ],
+    "unlockableAreas": [
+      {
+        "AreaURL": "Sawoka",
+        "ButtonText": "Travel Further"
+      }
+
+    ]
+  },
+  {
+    "name": "Sawoka",
+    "id": 22,
+    "image": "Village",
+    "areaURL": "Sawoka",
+    "description": "A small abandoned village sits hidden among the vines. Trees sprout from the doorways of the buildings that circle a central mound, which seems to be full of coal.",
+    "actions": [
+      "Mine Coal:Coal"
     ]
   }
 ]

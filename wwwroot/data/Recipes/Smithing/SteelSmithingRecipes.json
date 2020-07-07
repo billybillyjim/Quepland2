@@ -1,3 +1,64 @@
-{
-
-}
+[
+  {
+    "outputItemName": "Molten Steel Bar",
+    "ingredients": [
+      {
+        "item": "Iron Bar"
+      },
+      {
+        "item": "Coal"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Steel Bar",
+    "ingredients": [
+      {
+        "item": "Iron Ore"
+      },
+      {
+        "item": "Coal"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Steel Bar",
+    "ingredients": [
+      {
+        "item": "Steel Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Steel Knife",
+    "ingredients": [
+      {
+        "item": "Molten Steel Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Steel Sword",
+    "ingredients": [
+      {
+        "item": "Molten Steel Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Steel Axe",
+    "ingredients": [
+      {
+        "item": "Molten Steel Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Steel Hammer",
+    "ingredients": [
+      {
+        "item": "Molten Steel Bar"
+      }
+    ]
+  }
+]

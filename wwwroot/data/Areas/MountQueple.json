@@ -106,6 +106,9 @@
     "description": "Beyond the village you find a rocky terrain, sparse with trees or wildlife.  You spot a rocky overhang that appears to cover a cave entrance. There is a small shack with a sign on the top that reads, \"Signs\"",
     "areaURL": "LowerMtQuepleTrail",
     "image": "Mountain",
+    "actions": [
+      "Mine Pentlandite:Pentlandite"
+    ],
     "buildings": [
       {
         "name": "Sign Man's Signs",

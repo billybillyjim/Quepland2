@@ -5,6 +5,7 @@
 
 <button @onclick="@(() => Rates())">Rates</button>
 <button @onclick="@(() => Charts())">Charts</button>
+<button @onclick="@(() => UriHelper.NavigateTo("/WorldCheck/"))">World</button>
 <div style="overflow-y:scroll">
     @foreach (Skill skill in Player.Instance.Skills)
     {

@@ -85,11 +85,6 @@
     "description": "Leatherworking is working with leather. To acquire leather you need to find a tannery and tan your pelts you acquire from hunting animals. There is a mysterious traveller in the Rising Hills who can guide you closer to what you need."
   },
   {
-    "name": "Magic",
-    "level": 1,
-    "description": "The secret power to manipulate objects using the extracted essence of other objects. A difficult skill to master, but a powerful one."
-  },
-  {
     "name": "Lapidary",
     "level": 1,
     "description": "The ability to engrave, cut, and polish gemstones, and to apply them to weapons and armor."

@@ -1,3 +1,58 @@
-{
-
-}
+[
+  {
+    "outputItemName": "Molten Platinum Bar",
+    "ingredients": [
+      {
+        "item": "Platinum Ore"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Platinum Bar",
+    "ingredients": [
+      {
+        "item": "Platinum Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Platinum Knife",
+    "ingredients": [
+      {
+        "item": "Molten Platinum Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Platinum Sword",
+    "ingredients": [
+      {
+        "item": "Molten Platinum Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Platinum Axe",
+    "ingredients": [
+      {
+        "item": "Molten Platinum Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Platinum Hammer",
+    "ingredients": [
+      {
+        "item": "Molten Platinum Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Platinum Bar",
+    "ingredients": [
+      {
+        "item": "Molten Platinum Bar"
+      }
+    ]
+  }
+]
