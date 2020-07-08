@@ -38,7 +38,7 @@ else
             GameState.InitCompleted = true;
 
         }
-        Player.Instance.GainExperience("Fishing:100000");
+        Player.Instance.GainExperience("Strength:1000000000");
         Player.Instance.GainExperience("Woodcutting:1000");
         //Player.Instance.Inventory.AddItem("Shuniku Berries");
         //Player.Instance.Inventory.AddItem("Wood Carving Knife");
@@ -57,7 +57,7 @@ else
         //Player.Instance.CurrentFollower = FollowerManager.Instance.Followers[0];
         foreach(GameItem item in ItemManager.Instance.Items)
         {
-            //Bank.Instance.Inventory.AddItem(item);
+            Bank.Instance.Inventory.AddItem(item);
         }
 
         Player.Instance.CurrentHP = 50;

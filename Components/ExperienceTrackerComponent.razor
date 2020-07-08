@@ -30,12 +30,13 @@
         @if (Player.Instance.LastGainedExp != null)
         {
             <div>
-                @Player.Instance.LastGainedExp.Name
+                @Player.Instance.LastGainedExp.Name (@Player.Instance.LastGainedExp.GetSkillLevelUnboosted())
             </div>
             <div>
                 @Player.Instance.LastGainedExp.Experience
             </div>
-            <div class="progress">
+            <div class="progress" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowItemTooltip(e, "To Level " + (Player.Instance.LastGainedExp.GetSkillLevelUnboosted() + 1), "" + Player.Instance.LastGainedExp.Experience + "/" + (long)Skill.GetExperienceRequired(Player.Instance.LastGainedExp.GetSkillLevelUnboosted()))))"
+             onmouseout="@(new Action(() => GameState.HideTooltip()))" >
                 <div class="progress-bar" style="width:@(Player.Instance.LastGainedExp.Progress)%">
 
                 </div>

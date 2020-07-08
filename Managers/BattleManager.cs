@@ -18,7 +18,7 @@ public class BattleManager
     public IBoss CurrentBoss { get; set; }
     public Monster Target { get; set; }
     public Area CurrentArea;
-    public bool BattleHasEnded;
+    public bool BattleHasEnded = true;
     private static readonly Random random = new Random();
     public async Task LoadMonsters(HttpClient Http)
     {

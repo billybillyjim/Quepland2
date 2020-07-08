@@ -2,7 +2,7 @@
 @implements IDisposable
 
 <ItemViewerComponent Item="@SelectedItem"></ItemViewerComponent>
-<div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:8px;margin:5px;border-radius:0.25rem">
+<div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:3px;margin:2px;border-radius:0.25rem;max-height:600px;overflow-y:auto" class="custom-scroll">
     @foreach (KeyValuePair<GameItem, int> item in Player.Instance.Inventory.GetItems().OrderBy(x => x.Key.ID))
     {
         if (item.Key != null)
@@ -82,20 +82,20 @@
 @code {
 
     private int selectedItemID = -1;
-    private GameItem SelectedItem;
+    public GameItem SelectedItem;
     [Parameter]
     public string CustomAction { get; set; }
 
-    private void BankItem(GameItem item)
+    private void BankItem(GameItem item, int amount)
     {
-        Bank.Instance.Deposit(item);
-        if (item == SelectedItem)
+        Bank.Instance.Deposit(item, amount);
+
+        if (Player.Instance.Inventory.GetNumberOfItem(item) == 0)
         {
-            if (Player.Instance.Inventory.GetNumberOfItem(item) == 0)
-            {
-                SelectedItem = null;
-            }
+            Console.WriteLine(SelectedItem);
+            SelectedItem = null;
         }
+
         GameState.UpdateState();
     }
     private void SelectItem(MouseEventArgs args, GameItem item)
@@ -103,7 +103,7 @@
         GameState.itemViewer.ShowItem();
         if (CustomAction == "Bank" && !args.ShiftKey)
         {
-            BankItem(item);
+            BankItem(item, Bank.Instance.Amount);
         }
         else if(CustomAction == "Equip" && !args.ShiftKey)
         {
@@ -111,7 +111,12 @@
         }
         else
         {
+            if(SelectedItem != null)
+            {
+                SelectedItem.Rerender = true;
+            }
             SelectedItem = item;
+            item.Rerender = true;
         }
         GameState.UpdateState();
     }
@@ -128,8 +133,27 @@
             GameState.CurrentContextMenu = new ContextMenu();
             if (Bank.Instance.IsBanking)
             {
-                GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit " + Bank.Instance.Amount + " " + item, new Action(() => Bank.Instance.Deposit(item))));
+                GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit " + Bank.Instance.Amount + " " + item, new Action(() => BankItem(item, Bank.Instance.Amount))));
+                if(Bank.Instance.Amount != 1)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit 1 " + item, new Action(() => BankItem(item, 1))));
 
+                }
+                if (Bank.Instance.Amount != 5)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit 5 " + item, new Action(() => BankItem(item, 5))));
+
+                }
+                if (Bank.Instance.Amount != 10)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit 10 " + item, new Action(() => BankItem(item, 10))));
+
+                }
+                if (Bank.Instance.Amount != int.MaxValue)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit All " + item, new Action(() => BankItem(item, int.MaxValue))));
+
+                }
             }
             if(item.EquipSlot != "None")
             {
@@ -147,6 +171,7 @@
     }
     protected override void OnInitialized()
     {
+        GameState.inventoryViewer = this;
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()

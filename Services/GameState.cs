@@ -63,6 +63,7 @@ using System.Threading.Tasks;
     public Recipe CurrentRecipe;
     public Land CurrentLand;
     public ItemViewerComponent itemViewer;
+    public InventoryViewerComponent inventoryViewer;
     public SmithyComponent SmithingComponent;
     public NavMenu NavMenu;
     public ContextMenu CurrentContextMenu;
@@ -468,7 +469,7 @@ using System.Threading.Tasks;
     public void SetCraftingItem(Recipe recipe)
     {
         CurrentRecipe = recipe;
-        TicksToNextAction = 3;
+        TicksToNextAction = recipe.CraftingSpeed;
         MessageManager.AddMessage(recipe.RecipeActionString);
         UpdateState();
     }
@@ -518,9 +519,13 @@ using System.Threading.Tasks;
     }
     public void ShowContextMenu(MouseEventArgs args)
     {
-        TooltipManager.xPos = args.ClientX;
-        TooltipManager.yPos = args.ClientY;
-        TooltipManager.ShowContextMenu(args);
+        if(CurrentContextMenu != null && CurrentContextMenu.Buttons.Count > 0)
+        {
+            TooltipManager.xPos = args.ClientX;
+            TooltipManager.yPos = args.ClientY;
+            TooltipManager.ShowContextMenu(args);
+        }
+
     }
     public async Task GetDimensions()
     {

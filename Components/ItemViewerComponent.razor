@@ -109,12 +109,14 @@
         Bank.Instance.Deposit(item);
         if(Player.Instance.Inventory.GetNumberOfItem(item) == 0)
         {
+            GameState.inventoryViewer.SelectedItem = null;
             ClearItem();
         }
         GameState.UpdateState();
     }
     public void ClearItem()
     {
+        
         Item = null;
         HideValue = true;
         StateHasChanged();

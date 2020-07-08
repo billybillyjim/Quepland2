@@ -84,12 +84,14 @@ app {
     width: 18px;
     background: darkgray;
     scrollbar-face-color: lightgray;
+    border-radius: 0.25rem;
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
     background-color: lightgray;
     border-right: none;
     border-left: none;
+    border-radius:0.25rem;
 }
 .main {
     flex: 1;

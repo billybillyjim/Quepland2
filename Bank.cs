@@ -34,6 +34,10 @@ public class Bank
     }
 	public void Deposit(GameItem item)
     {
+        Deposit(item, Amount);
+    }
+    public void Deposit(GameItem item, int amount)
+    {
         if (item == null)
         {
             return;
@@ -43,10 +47,39 @@ public class Bank
             MessageManager.AddMessage("You'll need to unequip this item before banking it.");
             return;
         }
-        int amountToBank = Math.Min(Player.Instance.Inventory.GetNumberOfItem(item), Amount);
+        int amountToBank = Math.Min(Player.Instance.Inventory.GetNumberOfItem(item), amount);
         Inventory.AddMultipleOfItem(item, Player.Instance.Inventory.RemoveItems(item, amountToBank));
-        
     }
+    public void Withdraw(GameItem item)
+    {
+        Withdraw(item, Amount);
+    }
+    public void Withdraw(GameItem item, int amount)
+    {
+
+        if (item == null)
+        {
+            return;
+        }
+        int maxWithdraw = Math.Max(0, amount);
+        //If the item is stackable and the player has a stack in their inventory already, or the player has space for another item
+        if ((item.IsStackable && Player.Instance.Inventory.HasItem(item) && Player.Instance.Inventory.GetAvailableSpaces() == 0) ||
+         (item.IsStackable && Player.Instance.Inventory.GetAvailableSpaces() > 0))
+        {
+            maxWithdraw = Math.Min(amount, Inventory.GetNumberOfItem(item));
+        }
+        else
+        {
+            //Gets the smallest of the amount, inventory space, and number in the bank.
+            maxWithdraw = Math.Min(Math.Min(amount, Player.Instance.Inventory.GetAvailableSpaces()), Inventory.GetNumberOfItem(item));
+        }
+        if (Player.Instance.Inventory.AddMultipleOfItem(item, maxWithdraw))
+        {
+            Inventory.RemoveItems(item, maxWithdraw);
+        }
+
+    }
+
     public string GetAmountString()
     {
         if(Amount == int.MaxValue)

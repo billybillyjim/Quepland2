@@ -9,12 +9,13 @@ else
 {
     <div style="height:60px"></div>
 }
-<div style="display:flex;flex-wrap:wrap;width:280px;border:solid black 1px;border-radius:0.25rem;background-color:dimgray;min-height:50px;">
+<div style="display:flex;flex-wrap:wrap;width:280px;border:solid black 1px;border-radius:0.25rem;background-color:dimgray;min-height:50px;margin-left:10px;">
     @foreach (Recipe recipe in ItemManager.Instance.Recipes)
     {
         if (recipe.CanCreate())
         {
-            <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, recipe.OutputAmount + " " + recipe.Output.Name, recipe.GetIngredientsString())))" @onclick="@(() => GameState.SetCraftingItem(recipe))"><ItemBoxComponent Item="@recipe.Output"></ItemBoxComponent></div>
+            <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, recipe.OutputAmount + " " + recipe.Output.Name, recipe.GetIngredientsString())))" 
+                 @onclick="@(() => GameState.SetCraftingItem(recipe))"><ItemBoxComponent Item="@recipe.Output"></ItemBoxComponent></div>
         }
         else if (recipe.HasSomeIngredients())
         {
