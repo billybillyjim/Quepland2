@@ -64,7 +64,33 @@ app {
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
 }
+.bank-scroll {
+    height: calc(100vh - 420px);
+}
+.bank-scroll::-webkit-scrollbar{
+    height:calc(100% - 220px);
+    width:18px;
+    background:darkgray;
+    scrollbar-face-color:lightgray;
+}
 
+.bank-scroll::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+    border-right: none;
+    border-left: none;
+}
+
+.custom-scroll::-webkit-scrollbar {
+    width: 18px;
+    background: darkgray;
+    scrollbar-face-color: lightgray;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+    border-right: none;
+    border-left: none;
+}
 .main {
     flex: 1;
 }

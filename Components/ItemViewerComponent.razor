@@ -86,7 +86,7 @@
         if(ItemManager.Instance.CurrentShop != null)
         {
             int sellAmt = Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item));
-            if(Player.Instance.Inventory.GetAvailableSpaces() > 0 || Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.CurrentShop.Currency) > 0)
+            if(Player.Instance.Inventory.GetAvailableSpaces() > 0 || Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.CurrentShop.Currency) > 0 || (Item.IsStackable == false))
             {
                 Player.Instance.Inventory.RemoveItems(Item, sellAmt);
                 Player.Instance.Inventory.AddMultipleOfItem(ItemManager.Instance.CurrentShop.Currency, (sellAmt * Item.Value / 2));

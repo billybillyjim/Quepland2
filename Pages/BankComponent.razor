@@ -3,35 +3,22 @@
 @inject NavigationManager UriHelper
 @implements IDisposable
 
-    <div style="margin-bottom:35px;">
-        Quantity:
-        <div>
-            <button class="btn btn-primary" style="@GetButtonStyle(1)" @onclick="@(() => UpdateBankAmount(1))">1</button>
-            <button class="btn btn-primary" style="@GetButtonStyle(5)" @onclick="@(() => UpdateBankAmount(5))">5</button>
-            <button class="btn btn-primary" style="@GetButtonStyle(10)" @onclick="@(() => UpdateBankAmount(10))">10</button>
-            <button class="btn btn-primary" style="@GetButtonStyle(-1)" @onclick="@(() => showInput = !showInput)">x</button>
-            <button class="btn btn-primary" style="@GetButtonStyle(int.MaxValue)" @onclick="@(() => UpdateBankAmount(int.MaxValue))">All</button>
-        </div>
-        <div style="margin-top:5px;">
-            @if (showInput)
-            {
-                <input type="number" @bind-value="Bank.Instance.Amount" />
-            }
-            else
-            {
-                <div style="height:30px;"></div>
-            }
-        </div>
+    <div style="overflow-y:hidden;height:100%;" >
 
-        <div style="float: right; margin-top: -75px;position:relative;">
-            <button style="float: right;"  class="btn btn-primary" @onclick="@(() => ToggleSearch())">Search</button>
-            <div style=" margin-right: 85px; margin-top: 4px;">
-                @if (showSearch)
+
+        <div style="margin-bottom:35px;">
+            Quantity:
+            <div>
+                <button class="btn btn-primary" style="@GetButtonStyle(1)" @onclick="@(() => UpdateBankAmount(1))">1</button>
+                <button class="btn btn-primary" style="@GetButtonStyle(5)" @onclick="@(() => UpdateBankAmount(5))">5</button>
+                <button class="btn btn-primary" style="@GetButtonStyle(10)" @onclick="@(() => UpdateBankAmount(10))">10</button>
+                <button class="btn btn-primary" style="@GetButtonStyle(-1)" @onclick="@(() => showInput = !showInput)">x</button>
+                <button class="btn btn-primary" style="@GetButtonStyle(int.MaxValue)" @onclick="@(() => UpdateBankAmount(int.MaxValue))">All</button>
+            </div>
+            <div style="margin-top:5px;">
+                @if (showInput)
                 {
-                    <input style="width:150px;margin-left:40px;" type="text" @bind="searchString" @bind:event="oninput" />
-                    <div style="margin-top:-30px;">
-                        <button class="btn btn-primary" style="width:30px;height:30px;padding:0px;" @onclick="@(() => ClearSearch())">X</button>
-                    </div>
+                    <input type="number" @bind-value="Bank.Instance.Amount" />
                 }
                 else
                 {
@@ -39,142 +26,168 @@
                 }
             </div>
 
+            <div style="float: right; margin-top: -75px;position:relative;">
+                <button style="float: right;" class="btn btn-primary" @onclick="@(() => ToggleSearch())">Search</button>
+                <div style=" margin-right: 85px; margin-top: 4px;">
+                    @if (showSearch)
+                    {
+                        <input style="width:150px;margin-left:40px;" type="text" @bind="searchString" @bind:event="oninput" />
+                        <div style="margin-top:-30px;">
+                            <button class="btn btn-primary" style="width:30px;height:30px;padding:0px;" @onclick="@(() => ClearSearch())">X</button>
+                        </div>
+                    }
+                    else
+                    {
+                        <div style="height:30px;"></div>
+                    }
+                </div>
+
+            </div>
+            <div>
+                <button style="float: right; margin-top: -28px;" class="btn btn-primary" @onclick="@(() => DepositAll())">Deposit All</button>
+            </div>
         </div>
-        <div>
-            <button style="float: right; margin-top: -28px;" class="btn btn-primary" @onclick="@(() => DepositAll())">Deposit All</button>
-        </div>
-    </div>
 
         @if (NPCManager.Instance.GetNPCByName("Tuto").AvailableDialogCount() > 0)
         {
             <Quepland_2.Components.NPCDialogComponent npc="Tuto"></Quepland_2.Components.NPCDialogComponent>
         }
 
-<div style="display:flex;flex-wrap:wrap;margin-bottom:200px;height:500px;overflow-y:scroll;">
-    @if (searchString == "")
-    {
-        @foreach (KeyValuePair<GameItem, int> item in Bank.Instance.Inventory.GetItems().OrderBy(x => x.Key.ID))
+    <div style="display:flex;flex-wrap:wrap;height:500px;overflow-y:auto;align-content: flex-start;" class="bank-scroll">
+        @if (searchString == "")
         {
-            <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;">
-                <div @onclick="@(() => Withdraw(item.Key))" style="margin-top:19px;margin-left:-3px;">
-                    <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
-
-                </div>
-            </div>
-
-        }
-        @for (int i = 0; i < GetEmptyItemsToFillRow(); i++)
-        {
-            int temp = i;
-            if (temp % itemsPerRow == 0)
+            @foreach (KeyValuePair<GameItem, int> item in Bank.Instance.Inventory.GetItems().OrderBy(x => x.Key.ID))
             {
-                <br />
+                <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;margin:1px;">
+                    <div @onclick="@(() => Withdraw(item.Key))" style="margin-top:19px;margin-left:-3px;">
+                        <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
+
+                    </div>
+                </div>
+
             }
-            <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;">
-                <div style="margin-top:19px;margin-left:-3px;">
-                    <Quepland_2.Components.ItemBoxComponent></Quepland_2.Components.ItemBoxComponent>
+            @for (int i = 0; i < GetEmptyItemsToFillRow(); i++)
+            {
+                int temp = i;
+                if (temp % itemsPerRow == 0)
+                {
+                    <br />
+                }
+                <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;margin:1px;">
+                    <div style="margin-top:19px;margin-left:-3px;">
+                        <Quepland_2.Components.ItemBoxComponent></Quepland_2.Components.ItemBoxComponent>
 
+                    </div>
                 </div>
-            </div>
-        }
-    }
-    else
-    {
-        @foreach (KeyValuePair<GameItem, int> item in Bank.Instance.Inventory.GetItems().Where(y => y.Key.Name.ToLower().Contains(searchString.ToLower())).OrderBy(x => x.Key.ID))
-        {
-            <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;">
-                <div @onclick="@(() => Withdraw(item.Key))" style="margin-top:19px;margin-left:-3px;">
-                    <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
-
-                </div>
-            </div>
-
-        }
-    }
-</div>
-@code {
-    private bool showInput;
-    private bool showSearch;
-    int itemsPerRow = 10;
-    private string searchString = "";
-    private bool rerender = true;
-    private void ToggleSearch()
-    {
-        showSearch = !showSearch;
-    }
-
-    public void ClearSearch()
-    {
-        searchString = "";
-        GameState.UpdateState();
-    }
-    private int GetEmptyItemsToFillRow()
-    {
-        return itemsPerRow - (Bank.Instance.Inventory.GetItems().Count % itemsPerRow);
-    }
-    private void Withdraw(GameItem item)
-    {
-
-        if(item == null)
-        {
-            return;
-        }
-        int maxWithdraw = Math.Max(0, Bank.Instance.Amount);
-        //If the item is stackable and the player has a stack in their inventory already, or the player has space for another item
-        if ((item.IsStackable && Player.Instance.Inventory.HasItem(item) && Player.Instance.Inventory.GetAvailableSpaces() == 0) ||
-         (item.IsStackable && Player.Instance.Inventory.GetAvailableSpaces() > 0))
-        {
-            maxWithdraw = Math.Min(Bank.Instance.Amount, Bank.Instance.Inventory.GetNumberOfItem(item));
+            }
         }
         else
         {
-            //Gets the smallest of the amount, inventory space, and number in the bank.
-            maxWithdraw = Math.Min(Math.Min(Bank.Instance.Amount, Player.Instance.Inventory.GetAvailableSpaces()), Bank.Instance.Inventory.GetNumberOfItem(item));
-            Console.WriteLine("Amounts:" + Bank.Instance.Amount + ", Spaces:" + Player.Instance.Inventory.GetAvailableSpaces() + ", bank:" + Bank.Instance.Inventory.GetNumberOfItem(item));
-        }
-        if (Player.Instance.Inventory.AddMultipleOfItem(item, maxWithdraw))
-        {
-            Bank.Instance.Inventory.RemoveItems(item, maxWithdraw);
-        }
-        GameState.UpdateState();
+            @foreach (KeyValuePair<GameItem, int> item in GetSearchItems())
+            {
+                <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;margin:1px;">
+                    <div @onclick="@(() => Withdraw(item.Key))" style="margin-top:19px;margin-left:-3px;">
+                        <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
 
-    }
-    public void DepositAll()
-    {
-        Bank.Instance.DepositAll(Player.Instance.Inventory);
-        GameState.UpdateState();
+                    </div>
+                </div>
 
-    }
-    private string GetButtonStyle(int amount)
-    {
-        if (Bank.Instance.Amount == amount)
-        {
-            return "cursor:normal;background-color:darkgray;";
+            }
         }
-        else if(amount == -1 && Bank.Instance.Amount != 1 && Bank.Instance.Amount != 5 && Bank.Instance.Amount != 10 && Bank.Instance.Amount != int.MaxValue)
+    </div>
+    </div>
+    @code {
+        private bool showInput;
+        private bool showSearch;
+        int itemsPerRow = 10;
+        private string searchString = "";
+        private bool rerender = true;
+        public IOrderedEnumerable<KeyValuePair<GameItem, int>> GetSearchItems()
         {
-            return "cursor:normal;background-color:darkgray;";
+            IOrderedEnumerable<KeyValuePair<GameItem, int>> items = Bank.Instance.Inventory.GetItems().Where(y => y.Key.Name.ToLower().Contains(searchString.ToLower())).OrderBy(x => x.Key.ID);
+            foreach (KeyValuePair<GameItem, int> item in items)
+            {
+                item.Key.Rerender = true;
+            }
+            return items;
         }
-        else
+        private void ToggleSearch()
         {
-            return "cursor:pointer;";
+            showSearch = !showSearch;
         }
+
+        public void ClearSearch()
+        {
+            searchString = "";
+            GameState.UpdateState();
+        }
+        private int GetEmptyItemsToFillRow()
+        {
+            return itemsPerRow - (Bank.Instance.Inventory.GetItems().Count % itemsPerRow);
+        }
+        private void Withdraw(GameItem item)
+        {
+
+            if (item == null)
+            {
+                return;
+            }
+            int maxWithdraw = Math.Max(0, Bank.Instance.Amount);
+            //If the item is stackable and the player has a stack in their inventory already, or the player has space for another item
+            if ((item.IsStackable && Player.Instance.Inventory.HasItem(item) && Player.Instance.Inventory.GetAvailableSpaces() == 0) ||
+             (item.IsStackable && Player.Instance.Inventory.GetAvailableSpaces() > 0))
+            {
+                maxWithdraw = Math.Min(Bank.Instance.Amount, Bank.Instance.Inventory.GetNumberOfItem(item));
+            }
+            else
+            {
+                //Gets the smallest of the amount, inventory space, and number in the bank.
+                maxWithdraw = Math.Min(Math.Min(Bank.Instance.Amount, Player.Instance.Inventory.GetAvailableSpaces()), Bank.Instance.Inventory.GetNumberOfItem(item));
+                Console.WriteLine("Amounts:" + Bank.Instance.Amount + ", Spaces:" + Player.Instance.Inventory.GetAvailableSpaces() + ", bank:" + Bank.Instance.Inventory.GetNumberOfItem(item));
+            }
+            if (Player.Instance.Inventory.AddMultipleOfItem(item, maxWithdraw))
+            {
+                Bank.Instance.Inventory.RemoveItems(item, maxWithdraw);
+            }
+            GameState.UpdateState();
+
+        }
+        public void DepositAll()
+        {
+            Bank.Instance.DepositAll(Player.Instance.Inventory);
+            GameState.UpdateState();
+
+        }
+        private string GetButtonStyle(int amount)
+        {
+            if (Bank.Instance.Amount == amount)
+            {
+                return "cursor:normal;background-color:darkgray;";
+            }
+            else if (amount == -1 && Bank.Instance.Amount != 1 && Bank.Instance.Amount != 5 && Bank.Instance.Amount != 10 && Bank.Instance.Amount != int.MaxValue)
+            {
+                return "cursor:normal;background-color:darkgray;";
+            }
+            else
+            {
+                return "cursor:pointer;";
+            }
+        }
+        private void UpdateBankAmount(int newAmount)
+        {
+            Bank.Instance.Amount = newAmount;
+            showInput = false;
+            GameState.UpdateState();
+        }
+        protected override void OnInitialized()
+        {
+            Bank.Instance.IsBanking = true;
+            GameState.StateChanged += OnGameStateChanged;
+        }
+        public void Dispose()
+        {
+            Bank.Instance.IsBanking = false;
+            GameState.StateChanged -= OnGameStateChanged;
+        }
+        void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
     }
-    private void UpdateBankAmount(int newAmount)
-    {
-        Bank.Instance.Amount = newAmount;
-        showInput = false;
-        GameState.UpdateState();
-    }
-    protected override void OnInitialized()
-    {
-        Bank.Instance.IsBanking = true;
-        GameState.StateChanged += OnGameStateChanged;
-    }
-    public void Dispose()
-    {
-        Bank.Instance.IsBanking = false;
-        GameState.StateChanged -= OnGameStateChanged;
-    }
-    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
-}
