@@ -25,7 +25,161 @@
       }
     ],
     "maxOutputsPerAction": 1,
+    "outputAmount": 10
+  },
+  {
+    "outputItemName": "Oak Arrow Shafts",
+    "ingredients": [
+      {
+        "item": "Oak Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "outputAmount": 10
+  },
+  {
+    "outputItemName": "Maple Arrow Shafts",
+    "ingredients": [
+      {
+        "item": "Maple Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "maxOutputsPerAction": 1,
     "outputAmount": 8
+  },
+  {
+    "outputItemName": "Birch Arrow Shafts",
+    "ingredients": [
+      {
+        "item": "Birch Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "outputAmount": 8
+  },
+  {
+    "outputItemName": "Mesquite Arrow Shafts",
+    "ingredients": [
+      {
+        "item": "Mesquite Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "outputAmount": 8
+  },
+  {
+    "outputItemName": "Mahogany Arrow Shafts",
+    "ingredients": [
+      {
+        "item": "Mahogany Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "outputAmount": 6
+  },
+  {
+    "outputItemName": "Ironwood Arrow Shafts",
+    "ingredients": [
+      {
+        "item": "Ironwood Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "outputAmount": 6
+  },
+  {
+    "outputItemName": "Snakewood Arrow Shafts",
+    "ingredients": [
+      {
+        "item": "Snakewood Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "outputAmount": 5
+  },
+  {
+    "outputItemName": "Lignum Vitae Arrow Shafts",
+    "ingredients": [
+      {
+        "item": "Lignum Vitae Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "outputAmount": 5
+  },
+  {
+    "outputItemName": "Buloke Arrow Shafts",
+    "ingredients": [
+      {
+        "item": "Buloke Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "outputAmount": 4
+  },
+  {
+    "outputItemName": "Ice Arrow Shafts",
+    "ingredients": [
+      {
+        "item": "Ice Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "outputAmount": 4
+  },
+  {
+    "outputItemName": "Great Arrow Shafts",
+    "ingredients": [
+      {
+        "item": "Great Tree Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "outputAmount": 4
   },
   {
     "outputItemName": "Headless White Pine Arrows",
@@ -44,6 +198,138 @@
     "ingredients": [
       {
         "item": "Poplar Arrow Shafts"
+      },
+      {
+        "item": "Feather"
+      }
+    ],
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Oak Arrows",
+    "ingredients": [
+      {
+        "item": "Oak Arrow Shafts"
+      },
+      {
+        "item": "Feather"
+      }
+    ],
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Maple Arrows",
+    "ingredients": [
+      {
+        "item": "Maple Arrow Shafts"
+      },
+      {
+        "item": "Feather"
+      }
+    ],
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Birch Arrows",
+    "ingredients": [
+      {
+        "item": "Birch Arrow Shafts"
+      },
+      {
+        "item": "Feather"
+      }
+    ],
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Mesquite Arrows",
+    "ingredients": [
+      {
+        "item": "Mesquite Arrow Shafts"
+      },
+      {
+        "item": "Feather"
+      }
+    ],
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Mahogany Arrows",
+    "ingredients": [
+      {
+        "item": "Mahogany Arrow Shafts"
+      },
+      {
+        "item": "Feather"
+      }
+    ],
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Ironwood Arrows",
+    "ingredients": [
+      {
+        "item": "Ironwood Arrow Shafts"
+      },
+      {
+        "item": "Feather"
+      }
+    ],
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Snakewood Arrows",
+    "ingredients": [
+      {
+        "item": "Snakewood Arrow Shafts"
+      },
+      {
+        "item": "Feather"
+      }
+    ],
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Lignum Vitae Arrows",
+    "ingredients": [
+      {
+        "item": "Lignum Vitae Arrow Shafts"
+      },
+      {
+        "item": "Feather"
+      }
+    ],
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Buloke Arrows",
+    "ingredients": [
+      {
+        "item": "Buloke Arrow Shafts"
+      },
+      {
+        "item": "Feather"
+      }
+    ],
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Ice Arrows",
+    "ingredients": [
+      {
+        "item": "Ice Arrow Shafts"
+      },
+      {
+        "item": "Feather"
+      }
+    ],
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Great Arrows",
+    "ingredients": [
+      {
+        "item": "Great Arrow Shafts"
       },
       {
         "item": "Feather"

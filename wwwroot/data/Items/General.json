@@ -47,7 +47,7 @@
     "name": "Chicken Meat",
     "description": "The meat of a chicken.",
     "value": 10,
-    "icon": "Bird"
+    "icon": "PreppedBird"
   },
   {
     "name": "Rooster Plumage",

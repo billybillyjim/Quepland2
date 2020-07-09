@@ -468,6 +468,7 @@ using System.Threading.Tasks;
     }
     public void SetCraftingItem(Recipe recipe)
     {
+        StopActions();
         CurrentRecipe = recipe;
         TicksToNextAction = recipe.CraftingSpeed;
         MessageManager.AddMessage(recipe.RecipeActionString);

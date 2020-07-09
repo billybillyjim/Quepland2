@@ -2,15 +2,195 @@
   {
     "Name": "White Pine Arrow",
     "Description": "A flimsy stick you can shoot things with.",
-    "value": 2,
+    "value": 3,
     "icon": "Arrow",
     "weaponInfo": {
-      "damage": 4
+      "damage": 9
     },
     "requirements": [
       {
         "skill": "Archery",
         "skillLevel": 1
+      }
+    ]
+  },
+  {
+    "Name": "Poplar Arrow",
+    "Description": "A cheap and flimsy arrow.",
+    "value": 8,
+    "icon": "Arrow",
+    "weaponInfo": {
+      "damage": 15
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 4
+      }
+    ]
+  }
+  {
+    "Name": "Oak Arrow",
+    "Description": "A commonly used weapon for shooting things with.",
+    "value": 12,
+    "icon": "Arrow",
+    "weaponInfo": {
+      "damage": 22
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 12
+      }
+    ]
+  }
+  {
+    "Name": "Maple Arrow",
+    "Description": "An average, cheap arrow.",
+    "value": 18,
+    "icon": "Arrow",
+    "weaponInfo": {
+      "damage": 28
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 19
+      }
+    ]
+  }
+  {
+    "Name": "Birch Arrow",
+    "Description": "Bright, thin arrows, usable but flimsy.",
+    "value": 22,
+    "icon": "Arrow",
+    "weaponInfo": {
+      "damage": 32
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 25
+      }
+    ]
+  }
+  {
+    "Name": "Mesquite Arrow",
+    "Description": "Run of the mill arrows for the average adventurer's bow.",
+    "value": 29,
+    "icon": "Arrow",
+    "weaponInfo": {
+      "damage": 42
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 35
+      }
+    ]
+  }
+  {
+    "Name": "Mahogany Arrow",
+    "Description": "Essentially weaponized furniture, extremely expensive arrows.",
+    "value": 65,
+    "icon": "Arrow",
+    "weaponInfo": {
+      "damage": 30
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 52
+      }
+    ]
+  }
+  {
+    "Name": "Ironwood Arrow",
+    "Description": "Sturdy arrows, good for shooting things with.",
+    "value": 38,
+    "icon": "Arrow",
+    "weaponInfo": {
+      "damage": 48
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 65
+      }
+    ]
+  }
+  {
+    "Name": "Snakewood Arrow",
+    "Description": "Wibbly wobbly arrows that somehow still fly straight.",
+    "value": 48,
+    "icon": "Arrow",
+    "weaponInfo": {
+      "damage": 55
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 75
+      }
+    ]
+  }
+  {
+    "Name": "Lignum Vitae Arrow",
+    "Description": "A very heavy arrow that packs a punch.",
+    "value": 55,
+    "icon": "Arrow",
+    "weaponInfo": {
+      "damage": 62
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 83
+      }
+    ]
+  }
+  {
+    "Name": "Buloke Arrow",
+    "Description": "An arrow made from the strongest wood in Quepland.",
+    "value": 73,
+    "icon": "Arrow",
+    "weaponInfo": {
+      "damage": 70
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 92
+      }
+    ]
+  }
+  {
+    "Name": "Ice Arrow",
+    "Description": "An icy arrow made from ice wood. It may freeze an opponent for a short while.",
+    "value": 59,
+    "icon": "Arrow",
+    "weaponInfo": {
+      "damage": 55
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 96
+      }
+    ]
+  }
+  {
+    "Name": "Great Arrow",
+    "Description": "A magically imbued arrow made from wood from the Great Tree.",
+    "value": 135,
+    "icon": "Arrow",
+    "weaponInfo": {
+      "damage": 100
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 105
       }
     ]
   }

@@ -93,6 +93,11 @@ app {
     border-left: none;
     border-radius:0.25rem;
 }
+.item-view-button {
+    float: right;
+    position: relative;
+    bottom: -57px;
+}
 .main {
     flex: 1;
 }

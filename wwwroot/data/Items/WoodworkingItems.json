@@ -3,7 +3,7 @@
     "Name": "White Pine Arrow Shafts",
     "Description": "They're like skinny, baby logs. Feathers can be attached to the end.",
     "gatherString": "You make $ arrow shafts from the white pine wood.",
-    "value": 3,
+    "value": 1,
     "experienceGained": "Woodworking:2",
     "icon": "ArrowShafts",
     "requirements": [
@@ -18,7 +18,7 @@
     "Name": "Headless White Pine Arrows",
     "Description": "Skinny, wobbly sticks with feathers on the end. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless arrows.",
-    "value": 1,
+    "value": 2,
     "experienceGained": "Woodworking:3",
     "icon": "HeadlessArrows",
     "requirements": [
@@ -185,7 +185,7 @@
     "gatherString": "You make $ arrow shafts out of the mahogany wood.",
     "value": 30,
     "experienceGained": "Woodworking:70",
-    "icon": "HeadlessArrows",
+    "icon": "ArrowShafts",
     "requirements": [
       {
         "skill": "Woodworking",
@@ -215,7 +215,7 @@
     "gatherString": "You make $ arrow shafts out of the ironwood.",
     "value": 21,
     "experienceGained": "Woodworking:100",
-    "icon": "HeadlessArrows",
+    "icon": "ArrowShafts",
     "requirements": [
       {
         "skill": "Woodworking",
@@ -245,7 +245,7 @@
     "gatherString": "You struggle with the snakewood to produce $ somewhat straight arrow shafts.",
     "value": 28,
     "experienceGained": "Woodworking:180",
-    "icon": "HeadlessArrows",
+    "icon": "ArrowShafts",
     "requirements": [
       {
         "skill": "Woodworking",
@@ -275,7 +275,7 @@
     "gatherString": "You make $ arrow shafts out of the lignum vitae.",
     "value": 35,
     "experienceGained": "Woodworking:240",
-    "icon": "HeadlessArrows",
+    "icon": "ArrowShafts",
     "requirements": [
       {
         "skill": "Woodworking",
@@ -305,7 +305,7 @@
     "gatherString": "You make $ arrow shafts out of the buloke wood.",
     "value": 50,
     "experienceGained": "Woodworking:380",
-    "icon": "HeadlessArrows",
+    "icon": "ArrowShafts",
     "requirements": [
       {
         "skill": "Woodworking",
@@ -335,7 +335,7 @@
     "gatherString": "You quickly make $ arrow shafts out of the ice logs before your fingers freeze.",
     "value": 45,
     "experienceGained": "Woodworking:410",
-    "icon": "HeadlessArrows",
+    "icon": "ArrowShafts",
     "requirements": [
       {
         "skill": "Woodworking",
@@ -365,7 +365,7 @@
     "gatherString": "You make $ arrow shafts out of the Great Tree wood.",
     "value": 90,
     "experienceGained": "Woodworking:580",
-    "icon": "HeadlessArrows",
+    "icon": "ArrowShafts",
     "requirements": [
       {
         "skill": "Woodworking",
@@ -394,6 +394,6 @@
     "description": "A string you can attach to a bow.",
     "value": 14,
     "isStackable": true,
-    "image": "Bowstring"
+    "icon": "Bowstring"
   }
 ]

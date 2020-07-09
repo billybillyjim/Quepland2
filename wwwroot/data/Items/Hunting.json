@@ -395,7 +395,7 @@
     "Name": "Pigeon Meat",
     "Description": "There's almost not meat here, but it technically counts.",
     "value": 6,
-    "icon": "Raw Bird"
+    "icon": "PreppedBird"
   },
   {
     "Name": "Pigeon Jerky",
@@ -414,7 +414,7 @@
     "Name": "Turkey Meat",
     "Description": "The meat off a turkey.",
     "value": 15,
-    "icon": "Raw Bird"
+    "icon": "PreppedBird"
   },
   {
     "Name": "Turkey Jerky",
@@ -433,7 +433,7 @@
     "Name": "Pheasant Meat",
     "Description": "The meat of a once beautiful bird.",
     "value": 20,
-    "icon": "Raw Bird"
+    "icon": "PreppedBird"
   },
   {
     "Name": "Pheasant Jerky",

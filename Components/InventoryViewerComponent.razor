@@ -26,7 +26,7 @@
     }
     @for (int i = 0; i < Player.Instance.Inventory.GetSize() - Player.Instance.Inventory.GetUsedSpaces(); i++)
     {
-        <ItemBoxComponent Item="@null"></ItemBoxComponent>
+        <div onclick="@(new Action<MouseEventArgs>((args) => DeselectItem()))"><ItemBoxComponent Item="@null"></ItemBoxComponent></div>
     }
 </div>
 @if (Player.Instance.CurrentFollower != null)
@@ -122,6 +122,10 @@
     }
     public void DeselectItem()
     {
+        if(SelectedItem != null)
+        {
+            SelectedItem.Rerender = true;
+        }
         selectedItemID = -1;
         SelectedItem = null;
         GameState.UpdateState();

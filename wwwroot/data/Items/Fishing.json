@@ -106,7 +106,7 @@
     "value": 2,
     "gatherSpeed": 9,
     "experienceGained": "Fishing:8",
-    "icon": "Fish",
+    "icon": "SmallFish",
     "requirements": [
       {
         "skill": "Fishing",
@@ -124,7 +124,7 @@
     "value": 6,
     "gatherSpeed": 12,
     "experienceGained": "Fishing:22",
-    "icon": "Fish",
+    "icon": "TwoFish",
     "requirements": [
       {
         "skill": "Fishing",
@@ -142,7 +142,7 @@
     "value": 200,
     "gatherSpeed": 40,
     "experienceGained": "Fishing:130",
-    "icon": "Fish",
+    "icon": "MantaRay",
     "requirements": [
       {
         "skill": "Fishing",
@@ -232,7 +232,7 @@
     "value": 10,
     "gatherSpeed": 4,
     "experienceGained": "Fishing:10",
-    "icon": "Fish",
+    "icon": "SmallFish",
     "requirements": [
       {
         "skill": "Fishing",
@@ -250,7 +250,7 @@
     "value": 15,
     "gatherSpeed": 9,
     "experienceGained": "Fishing:20",
-    "icon": "Fish",
+    "icon": "Shrimp",
     "requirements": [
       {
         "skill": "Fishing",
@@ -268,7 +268,7 @@
     "value": 25,
     "gatherSpeed": 18,
     "experienceGained": "Fishing:50",
-    "icon": "Fish",
+    "icon": "Scallop",
     "requirements": [
       {
         "skill": "Fishing",
@@ -286,7 +286,7 @@
     "value": 30,
     "gatherSpeed": 14,
     "experienceGained": "Fishing:40",
-    "icon": "Fish",
+    "icon": "SmallFish",
     "requirements": [
       {
         "skill": "Fishing",
@@ -304,7 +304,7 @@
     "value": 90,
     "gatherSpeed": 23,
     "experienceGained": "Fishing:60",
-    "icon": "Fish",
+    "icon": "TwoFish",
     "requirements": [
       {
         "skill": "Fishing",
@@ -322,7 +322,7 @@
     "value": 70,
     "gatherSpeed": 20,
     "experienceGained": "Fishing:85",
-    "icon": "Fish",
+    "icon": "TwoFish",
     "requirements": [
       {
         "skill": "Fishing",
@@ -376,7 +376,7 @@
     "value": 140,
     "gatherSpeed": 35,
     "experienceGained": "Fishing:140",
-    "icon": "Fish",
+    "icon": "Squid",
     "requirements": [
       {
         "skill": "Fishing",
@@ -448,7 +448,7 @@
     "value": 750,
     "gatherSpeed": 95,
     "experienceGained": "Fishing:700",
-    "icon": "Fish",
+    "icon": "Scallop",
     "requirements": [
       {
         "skill": "Fishing",
@@ -592,7 +592,7 @@
     "value": 3500,
     "gatherSpeed": 170,
     "experienceGained": "Fishing:4000",
-    "icon": "Fish",
+    "icon": "Jellyfish",
     "requirements": [
       {
         "skill": "Fishing",
@@ -628,7 +628,7 @@
     "value": 5000,
     "gatherSpeed": 220,
     "experienceGained": "Fishing:4800",
-    "icon": "Fish",
+    "icon": "Squid",
     "requirements": [
       {
         "skill": "Fishing",
