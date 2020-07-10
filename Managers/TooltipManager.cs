@@ -14,6 +14,8 @@ public static class TooltipManager
     public static Tooltip CurrentTip;
     public static double xPos;
     public static double yPos;
+    public static readonly int delay = 2;
+    public static int currentDelay = 0;
 
 
     public static async Task LoadTooltips(HttpClient Http)
@@ -56,8 +58,9 @@ public static class TooltipManager
             yPos = args.ClientY;
             CurrentTip = tip;
             ShowContext = false;
+            
         }
-
+        currentDelay = 0;
     }
     public static void ShowItemTip(MouseEventArgs args, string name, string desc)
     {
@@ -77,6 +80,7 @@ public static class TooltipManager
             }
             ShowContext = false;
         }
+        currentDelay = 0;
     }
     public static void ShowContextMenu(MouseEventArgs args)
     {
@@ -85,6 +89,14 @@ public static class TooltipManager
         xPos = args.ClientX;
         yPos = args.ClientY;
     }
+    public static bool ShouldShow()
+    {
+        if(currentDelay >= delay && Show)
+        {
+            return true;
+        }
+        return false;
+    } 
     public static void HideTip()
     {
         Show = false;

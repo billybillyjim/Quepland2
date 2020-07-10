@@ -51,7 +51,6 @@
         }
         GameState.CurrentGatherItem = i;
         GameState.TicksToNextAction = GameState.CurrentGatherItem.GatherSpeed.ToGaussianRandom();
-        Console.WriteLine("Ticks to Next Action:" + GameState.TicksToNextAction);
         GameState.UpdateState();
     }
     private GameItem GetRandomItem()
@@ -66,7 +65,6 @@
         }
         if(GameState.PossibleGatherItems.Count == 0)
         {
-            Console.WriteLine("No items could be gathered.");
             return items[0];
         }
         return GameState.PossibleGatherItems[rand.Next(0, GameState.PossibleGatherItems.Count - 1)];
@@ -78,10 +76,6 @@
             if (item.HasRequirements())
             {
                 return true;
-            }
-            else
-            {
-                Console.WriteLine(item + " is missing req:" + item.GetRequirementTooltip());
             }
         }
         return false;

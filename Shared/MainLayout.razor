@@ -37,7 +37,7 @@
                 <Quepland_2.Components.RightSidebarComponent></Quepland_2.Components.RightSidebarComponent>
             </div>
         }
-        @if (TooltipManager.Show)
+        @if (TooltipManager.ShouldShow())
         {
             <Quepland_2.Components.TooltipComponent Tip="@TooltipManager.CurrentTip" xPos="@TooltipManager.xPos" yPos="@TooltipManager.yPos"></Quepland_2.Components.TooltipComponent>
         }

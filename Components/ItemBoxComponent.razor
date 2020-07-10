@@ -4,7 +4,7 @@
 @if (Item != null)
 {
     
-    <div style="@(GetBackground())margin:2px;height:50px;width:50px;position:relative;box-sizing: border-box;border-radius:0.25rem;">
+    <div style="@(GetBackground())margin:2px;height:50px;width:50px;position:relative;box-sizing: border-box;border-radius:0.25rem;" draggable="false">
         @if (ShowAmount)
         {
             if (Inventory == Bank.Instance.Inventory)
@@ -17,7 +17,7 @@
             }
 
         }
-        <img style="height: 46px;width: 46px;@GetMargin()" src="/data/Images/@(Item.Icon).png"
+        <img style="height: 46px;width: 46px;@GetMargin()" src="/data/Images/@(Item.Icon).png" draggable="false"
              onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowItemTooltip(e, GetTooltipTitle(), Item.Description)))"
              onmouseout="@(new Action(() => GameState.HideTooltip()))" />
     </div>

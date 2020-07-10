@@ -49,6 +49,7 @@ using System.Threading.Tasks;
     }
 
     public GameItem NewGatherItem;
+    public Recipe NewCraftingRecipe;
     public Recipe NewSmeltingRecipe;
     public Recipe NewSmithingRecipe;
 
@@ -154,6 +155,7 @@ using System.Threading.Tasks;
             GetDimensions();
             TicksToNextAction--;
             CurrentTick++;
+            TooltipManager.currentDelay++;
             StateHasChanged();
         }), null, GameSpeed, GameSpeed);
         StateHasChanged();
@@ -184,21 +186,22 @@ using System.Threading.Tasks;
         {
             CurrentGatherItem = NewGatherItem;
             NewGatherItem = null;
-            Console.WriteLine("Current Gather Item is null:" + (CurrentGatherItem == null));
         }
         if(NewSmithingRecipe != null)
         {
             CurrentSmithingRecipe = NewSmithingRecipe;
             NewSmithingRecipe = null; 
-            Console.WriteLine("Current Smithing Item is null:" + (CurrentSmithingRecipe == null));
 
         }
         if (NewSmeltingRecipe != null)
         {
             CurrentSmeltingRecipe = NewSmeltingRecipe;
             NewSmeltingRecipe = null;
-            Console.WriteLine("Current smelting Item is null:" + (CurrentSmeltingRecipe == null));
-
+        }
+        if(NewCraftingRecipe != null)
+        {
+            CurrentRecipe = NewCraftingRecipe;
+            NewCraftingRecipe = null;
         }
     }
     private void ClearNonCombatActions()
@@ -469,7 +472,7 @@ using System.Threading.Tasks;
     public void SetCraftingItem(Recipe recipe)
     {
         StopActions();
-        CurrentRecipe = recipe;
+        NewCraftingRecipe = recipe;
         TicksToNextAction = recipe.CraftingSpeed;
         MessageManager.AddMessage(recipe.RecipeActionString);
         UpdateState();

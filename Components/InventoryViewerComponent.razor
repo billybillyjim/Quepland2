@@ -10,13 +10,13 @@
             
             if (item.Key.IsStackable)
             {
-                <div oncontextmenu="return false;"
+                <div oncontextmenu="return false;" draggable="false"
                      onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item.Key)))"
                      onclick="@(new Action<MouseEventArgs>((args) => SelectItem(args, item.Key)))"><ItemBoxComponent Item="@item.Key" ShowAmount="@true" IsSelected="@(SelectedItem == item.Key)" shouldRender="@item.Key.Rerender"></ItemBoxComponent></div>
             }
             else
             {
-                <div oncontextmenu="return false;"
+                <div oncontextmenu="return false;" draggable="false"
                      onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item.Key)))"
                      onclick="@(new Action<MouseEventArgs>((args) => SelectItem(args, item.Key)))"><ItemBoxComponent Item="@item.Key" ShowAmount="@false" IsSelected="@(SelectedItem == item.Key)" shouldRender="@item.Key.Rerender"></ItemBoxComponent></div>
 
