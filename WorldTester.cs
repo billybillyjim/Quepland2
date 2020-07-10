@@ -8,31 +8,58 @@ public class WorldTester
     public void TestWorld()
     {
 
-            foreach(Area area in AreaManager.Instance.Areas)
+        foreach (Area area in AreaManager.Instance.Areas)
+        {
+            foreach (string a in area.Actions)
             {
-                foreach(string a in area.Actions)
+                if (a == null || a.Contains(':') == false)
                 {
-                    if (a == null || a.Contains(':') == false)
-                    {
 
-                    }
-                    else
+                }
+                else
+                {
+                    foreach (string i in a.Split(':')[1].Split(','))
                     {
-                        foreach (string i in a.Split(':')[1].Split(','))
+                        GameItem it = ItemManager.Instance.GetItemByName(i);
+                        if (it != null && IncludedItems.Contains(it) == false)
                         {
-                            GameItem it = ItemManager.Instance.GetItemByName(i);
-                            if (it != null && IncludedItems.Contains(it) == false)
-                            {
-                                IncludedItems.Add(it);
-                            }
-                            else
-                            {
-                                Console.WriteLine("Item not found:" + i);
-                            }
+                            IncludedItems.Add(it);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Item not found:" + i);
                         }
                     }
                 }
             }
+            if (area.HuntingTripInfo != null)
+            {
+                foreach (Drop d in area.HuntingTripInfo.DropTable.Drops)
+                {
+                    GameItem it = ItemManager.Instance.GetItemByName(d.ItemName);
+                    if (it != null && IncludedItems.Contains(it) == false)
+                    {
+                        IncludedItems.Add(it);
+                    }
+                }
+            }
+            foreach (Building b in area.Buildings)
+            {
+                foreach(Shop s in b.Shops)
+                {
+                    foreach(GameItem i in s.Items)
+                    {
+                        if(i != null && IncludedItems.Contains(i) == false)
+                        {
+                            IncludedItems.Add(i);
+                        }
+                    }
+                }
+
+            }
+
+        }
+    
         
         foreach(Recipe r in ItemManager.Instance.Recipes)
         {
@@ -48,6 +75,14 @@ public class WorldTester
             if (IngredientsIncluded && IncludedItems.Contains(r.Output) == false)
             {
                 IncludedItems.Add(r.Output);
+                if(r.SecondaryOutput != null)
+                {
+                    IncludedItems.Add(r.SecondaryOutput);
+                }
+                if(r.TertiaryOutput != null)
+                {
+                    IncludedItems.Add(r.TertiaryOutput);
+                }
             }
         }
         foreach (Recipe r in ItemManager.Instance.SmithingRecipes)
@@ -79,6 +114,7 @@ public class WorldTester
                 GameItem item = ItemManager.Instance.GetItemByName(i.Item);
                 if (IncludedItems.Contains(item) == false)
                 {
+                    Console.WriteLine("Didn't add " + item + ". It lacked ingredient:" + i.Item);
                     IngredientsIncluded = false;
                 }
             }

@@ -40,8 +40,19 @@
     ]
   },
   {
-    "outputItemName": "Lead Hammer",
+    "outputItemName": "Lesser Lead Hammer",
     "ingredients": [
+      {
+        "item": "Molten Lead Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Greater Lead Hammer",
+    "ingredients": [
+      {
+        "item": "Molten Lead Bar"
+      },
       {
         "item": "Molten Lead Bar"
       }

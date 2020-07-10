@@ -38,7 +38,8 @@
     "image": "Forest",
     "actions": [
       "Gather Red Berries:Shuniku Berries",
-      "Go Fishing:Minnows,Sunfish"
+      "Go Fishing:Minnows,Sunfish",
+      "Chop Poplar Trees:Poplar Logs"
     ],
     "unlockableAreas": [
       {
@@ -153,7 +154,7 @@
     "id": 5,
     "image": "MountainPeak",
     "isUnlocked": false,
-    "description": "A lone, dilapidated building stands near the mountain's peak. Harsh winds eminate out its shattered windows and broken doors.",
+    "description": "A lone, dilapidated building stands near the mountain's peak. Harsh winds eminate outward from its shattered windows and broken doors.",
     "areaURL": "MtQueplePeak",
     "buildings": [
       {

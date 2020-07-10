@@ -440,6 +440,608 @@
     ]
   },
   {
+    "Name": "Nickel Knife",
+    "Description": "A sharp knife.",
+    "value": 210,
+    "enabledActions": "Knifesmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Dagger",
+    "weaponInfo": {
+      "attackSpeed": 5,
+      "damage": 19
+    },
+    "requirements": [
+      {
+        "skill": "Knifesmanship",
+        "skillLevel": 35
+      }
+    ]
+  },
+  {
+    "Name": "Nickel Sword",
+    "Description": "A nickel sword.",
+    "value": 210,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 11,
+      "damage": 41
+    },
+    "requirements": [
+      {
+        "skill": "Swordsmanship",
+        "skillLevel": 35
+      }
+    ]
+  },
+  {
+    "Name": "Nickel Axe",
+    "Description": "An axe made out of nickel.",
+    "value": 210,
+    "enabledActions": "Axemanship Woodcutting",
+    "equipSlot": "Right Hand",
+    "gatherSpeedBonus": 0.28,
+    "icon": "Axe",
+    "weaponInfo": {
+      "attackSpeed": 15,
+      "damage": 65
+    },
+    "requirements": [
+      {
+        "skill": "Axemanship",
+        "skillLevel": 35
+      }
+    ]
+  },
+  {
+    "Name": "Nickel Hammer",
+    "Description": "A big hammer made of solid nickel.",
+    "value": 210,
+    "enabledActions": "Hammermanship",
+    "equipSlot": "Right Hand",
+    "icon": "Hammer",
+    "weaponInfo": {
+      "attackSpeed": 21,
+      "damage": 104
+    },
+    "requirements": [
+      {
+        "skill": "Hammermanship",
+        "skillLevel": 35
+      }
+    ]
+  },
+  {
+    "Name": "Iron Knife",
+    "Description": "A strong metal knife.",
+    "value": 280,
+    "enabledActions": "Knifesmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Dagger",
+    "weaponInfo": {
+      "attackSpeed": 5,
+      "damage": 45
+    },
+    "requirements": [
+      {
+        "skill": "Knifesmanship",
+        "skillLevel": 45
+      }
+    ]
+  },
+  {
+    "Name": "Iron Sword",
+    "Description": "A sharp metal sword.",
+    "value": 280,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 11,
+      "damage": 78
+    },
+    "requirements": [
+      {
+        "skill": "Swordsmanship",
+        "skillLevel": 45
+      }
+    ]
+  },
+  {
+    "Name": "Iron Axe",
+    "Description": "A sturdy axe to chop things with.",
+    "value": 280,
+    "enabledActions": "Axemanship Woodcutting",
+    "equipSlot": "Right Hand",
+    "gatherSpeedBonus": 0.35,
+    "icon": "Axe",
+    "weaponInfo": {
+      "attackSpeed": 15,
+      "damage": 103
+    },
+    "requirements": [
+      {
+        "skill": "Axemanship",
+        "skillLevel": 45
+      }
+    ]
+  },
+  {
+    "Name": "Iron Hammer",
+    "Description": "A heavy hammer.",
+    "value": 280,
+    "enabledActions": "Hammermanship",
+    "equipSlot": "Right Hand",
+    "icon": "Hammer",
+    "weaponInfo": {
+      "attackSpeed": 21,
+      "damage": 162
+    },
+    "requirements": [
+      {
+        "skill": "Hammermanship",
+        "skillLevel": 45
+      }
+    ]
+  },
+  {
+    "Name": "Lead Knife",
+    "Description": "A heavy knife. Don't lick it!",
+    "value": 260,
+    "enabledActions": "Knifesmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Dagger",
+    "weaponInfo": {
+      "attackSpeed": 7,
+      "damage": 60
+    },
+    "requirements": [
+      {
+        "skill": "Knifesmanship",
+        "skillLevel": 55
+      }
+    ]
+  },
+  {
+    "Name": "Lead Sword",
+    "Description": "A very heavy sword.",
+    "value": 260,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 14,
+      "damage": 135
+    },
+    "requirements": [
+      {
+        "skill": "Swordsmanship",
+        "skillLevel": 55
+      }
+    ]
+  },
+  {
+    "Name": "Lead Axe",
+    "Description": "A solid lead axe. Maybe not the best for chopping trees with.",
+    "value": 260,
+    "enabledActions": "Axemanship Woodcutting",
+    "equipSlot": "Right Hand",
+    "gatherSpeedBonus": 0.2,
+    "icon": "Axe",
+    "weaponInfo": {
+      "attackSpeed": 22,
+      "damage": 220
+    },
+    "requirements": [
+      {
+        "skill": "Axemanship",
+        "skillLevel": 55
+      }
+    ]
+  },
+  {
+    "Name": "Lesser Lead Hammer",
+    "Description": "A smaller lead hammer. It still weighs a ton.",
+    "value": 260,
+    "enabledActions": "Hammermanship",
+    "equipSlot": "Right Hand",
+    "icon": "Hammer",
+    "weaponInfo": {
+      "attackSpeed": 28,
+      "damage": 303
+    },
+    "requirements": [
+      {
+        "skill": "Hammermanship",
+        "skillLevel": 55
+      }
+    ]
+  },
+  {
+    "Name": "Greater Lead Hammer",
+    "Description": "A giant lead hammer. Quite good for smashing things.",
+    "value": 520,
+    "enabledActions": "Hammermanship",
+    "equipSlot": "Right Hand",
+    "icon": "Hammer",
+    "weaponInfo": {
+      "attackSpeed": 42,
+      "damage": 508
+    },
+    "requirements": [
+      {
+        "skill": "Hammermanship",
+        "skillLevel": 62
+      }
+    ]
+  },
+  {
+    "Name": "Aluminum Knife",
+    "Description": "A lightweight knife. It almost feels like air in your hand.",
+    "value": 350,
+    "enabledActions": "Knifesmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Dagger",
+    "weaponInfo": {
+      "attackSpeed": 4,
+      "damage": 39
+    },
+    "requirements": [
+      {
+        "skill": "Knifesmanship",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "Name": "Aluminum Sword",
+    "Description": "A lightweight sword. You can swing it really fast! Be careful, though.",
+    "value": 350,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 9,
+      "damage": 72
+    },
+    "requirements": [
+      {
+        "skill": "Swordsmanship",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "Name": "Aluminum Axe",
+    "Description": "A lightweight axe. You can really chop some trees with this baby.",
+    "value": 350,
+    "enabledActions": "Axemanship Woodcutting",
+    "equipSlot": "Right Hand",
+    "gatherSpeedBonus": 0.45,
+    "icon": "Axe",
+    "weaponInfo": {
+      "attackSpeed": 13,
+      "damage": 91
+    },
+    "requirements": [
+      {
+        "skill": "Axemanship",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "Name": "Aluminum Hammer",
+    "Description": "A lightweight hammer. Good for smashing things quickly.",
+    "value": 350,
+    "enabledActions": "Hammermanship",
+    "equipSlot": "Right Hand",
+    "icon": "Hammer",
+    "weaponInfo": {
+      "attackSpeed": 17,
+      "damage": 145
+    },
+    "requirements": [
+      {
+        "skill": "Hammermanship",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "Name": "Golden Knife",
+    "Description": "A heavy knife. It's quite soft, and probably best used for decoration.",
+    "value": 1450,
+    "enabledActions": "Knifesmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Dagger",
+    "weaponInfo": {
+      "attackSpeed": 7,
+      "damage": 52
+    },
+    "requirements": [
+      {
+        "skill": "Knifesmanship",
+        "skillLevel": 65
+      }
+    ]
+  },
+  {
+    "Name": "Golden Sword",
+    "Description": "A very heavy sword. Probably too soft to be good in combat. It's quite shiny, though.",
+    "value": 1450,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 14,
+      "damage": 110
+    },
+    "requirements": [
+      {
+        "skill": "Swordsmanship",
+        "skillLevel": 65
+      }
+    ]
+  },
+  {
+    "Name": "Golden Axe",
+    "Description": "A solid gold axe. It's a good thing it can't degrade from use...",
+    "value": 1450,
+    "enabledActions": "Axemanship Woodcutting",
+    "equipSlot": "Right Hand",
+    "gatherSpeedBonus": 0.3,
+    "icon": "Axe",
+    "weaponInfo": {
+      "attackSpeed": 22,
+      "damage": 192
+    },
+    "requirements": [
+      {
+        "skill": "Axemanship",
+        "skillLevel": 65
+      }
+    ]
+  },
+  {
+    "Name": "Golden Hammer",
+    "Description": "A solid gold hammer. It flattens a bit every time you smash something with it.",
+    "value": 1450,
+    "enabledActions": "Hammermanship",
+    "equipSlot": "Right Hand",
+    "icon": "Hammer",
+    "weaponInfo": {
+      "attackSpeed": 28,
+      "damage": 273
+    },
+    "requirements": [
+      {
+        "skill": "Hammermanship",
+        "skillLevel": 65
+      }
+    ]
+  },
+  {
+    "Name": "Platinum Knife",
+    "Description": "A heavy, sharp knife. It's very valuable.",
+    "value": 2250,
+    "enabledActions": "Knifesmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Dagger",
+    "weaponInfo": {
+      "attackSpeed": 7,
+      "damage": 70
+    },
+    "requirements": [
+      {
+        "skill": "Knifesmanship",
+        "skillLevel": 93
+      }
+    ]
+  },
+  {
+    "Name": "Platinum Sword",
+    "Description": "A very heavy sword. It shines brightly in the sunlight.",
+    "value": 2250,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 14,
+      "damage": 140
+    },
+    "requirements": [
+      {
+        "skill": "Swordsmanship",
+        "skillLevel": 93
+      }
+    ]
+  },
+  {
+    "Name": "Platinum Axe",
+    "Description": "A shiny, metal axe. It's quite heavy.",
+    "value": 2250,
+    "enabledActions": "Axemanship Woodcutting",
+    "equipSlot": "Right Hand",
+    "gatherSpeedBonus": 0.45,
+    "icon": "Axe",
+    "weaponInfo": {
+      "attackSpeed": 22,
+      "damage": 240
+    },
+    "requirements": [
+      {
+        "skill": "Axemanship",
+        "skillLevel": 93
+      }
+    ]
+  },
+  {
+    "Name": "Platinum Hammer",
+    "Description": "A platinum hammer. It shimmers in the light as you smash things with it.",
+    "value": 2250,
+    "enabledActions": "Hammermanship",
+    "equipSlot": "Right Hand",
+    "icon": "Hammer",
+    "weaponInfo": {
+      "attackSpeed": 28,
+      "damage": 383
+    },
+    "requirements": [
+      {
+        "skill": "Hammermanship",
+        "skillLevel": 93
+      }
+    ]
+  },
+  {
+    "Name": "Steel Knife",
+    "Description": "A powerful and lightweight metal knife.",
+    "value": 680,
+    "enabledActions": "Knifesmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Dagger",
+    "weaponInfo": {
+      "attackSpeed": 5,
+      "damage": 95
+    },
+    "requirements": [
+      {
+        "skill": "Knifesmanship",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "Name": "Steel Sword",
+    "Description": "A sharp and lightweight metal sword.",
+    "value": 680,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 10,
+      "damage": 204
+    },
+    "requirements": [
+      {
+        "skill": "Swordsmanship",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "Name": "Steel Axe",
+    "Description": "A sturdy and lightweight axe to chop things with.",
+    "value": 680,
+    "enabledActions": "Axemanship Woodcutting",
+    "equipSlot": "Right Hand",
+    "gatherSpeedBonus": 0.55,
+    "icon": "Axe",
+    "weaponInfo": {
+      "attackSpeed": 15,
+      "damage": 330
+    },
+    "requirements": [
+      {
+        "skill": "Axemanship",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "Name": "Steel Hammer",
+    "Description": "A solid and strong hammer.",
+    "value": 680,
+    "enabledActions": "Hammermanship",
+    "equipSlot": "Right Hand",
+    "icon": "Hammer",
+    "weaponInfo": {
+      "attackSpeed": 20,
+      "damage": 458
+    },
+    "requirements": [
+      {
+        "skill": "Hammermanship",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "Name": "Strongtium Knife",
+    "Description": "A knife made from the rare metal strongtium",
+    "value": 2880,
+    "enabledActions": "Knifesmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Dagger",
+    "weaponInfo": {
+      "attackSpeed": 6,
+      "damage": 192
+    },
+    "requirements": [
+      {
+        "skill": "Knifesmanship",
+        "skillLevel": 99
+      }
+    ]
+  },
+  {
+    "Name": "Strongtium Sword",
+    "Description": "An extremely sharp sword.",
+    "value": 2880,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "Right Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 11,
+      "damage": 425
+    },
+    "requirements": [
+      {
+        "skill": "Swordsmanship",
+        "skillLevel": 99
+      }
+    ]
+  },
+  {
+    "Name": "Strongtium Axe",
+    "Description": "An extremely sharp axe.",
+    "value": 2880,
+    "enabledActions": "Axemanship Woodcutting",
+    "equipSlot": "Right Hand",
+    "gatherSpeedBonus": 0.75,
+    "icon": "Axe",
+    "weaponInfo": {
+      "attackSpeed": 16,
+      "damage": 659
+    },
+    "requirements": [
+      {
+        "skill": "Axemanship",
+        "skillLevel": 99
+      }
+    ]
+  },
+  {
+    "Name": "Strongtium Hammer",
+    "Description": "An extremely dense hammer.",
+    "value": 2880,
+    "enabledActions": "Hammermanship",
+    "equipSlot": "Right Hand",
+    "icon": "Hammer",
+    "weaponInfo": {
+      "attackSpeed": 21,
+      "damage": 945
+    },
+    "requirements": [
+      {
+        "skill": "Hammermanship",
+        "skillLevel": 99
+      }
+    ]
+  },
+  {
     "Name": "White Pine Bow",
     "Description": "A flimsy bow.",
     "value": 20,

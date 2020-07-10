@@ -16,7 +16,7 @@
     ]
   },
   {
-    "outputItemName": "Gold Knife",
+    "outputItemName": "Golden Knife",
     "ingredients": [
       {
         "item": "Molten Gold Bar"
@@ -24,7 +24,7 @@
     ]
   },
   {
-    "outputItemName": "Gold Sword",
+    "outputItemName": "Golden Sword",
     "ingredients": [
       {
         "item": "Molten Gold Bar"
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "outputItemName": "Gold Axe",
+    "outputItemName": "Golden Axe",
     "ingredients": [
       {
         "item": "Molten Gold Bar"
@@ -40,7 +40,7 @@
     ]
   },
   {
-    "outputItemName": "Gold Hammer",
+    "outputItemName": "Golden Hammer",
     "ingredients": [
       {
         "item": "Molten Gold Bar"
