@@ -3,7 +3,7 @@
 @inject NavigationManager UriHelper
 
     <div style="        height: 130px;
-        width: 290px;
+        width: 350px;
         border: solid black 1px;
         padding: 5px;
         margin: 5px;
@@ -12,7 +12,7 @@
         @if (Item != null && !HideValue)
         {
             <div>@Item.Name</div>
-            <div style="width:180px;position:absolute;top:30px;">@Item.Description</div>
+            <div style="position:absolute;top:30px;line-height:18px;">@Item.Description</div>
             @if (Item.WeaponInfo != null || Item.ArmorInfo != null)
             {
                 if (Item.IsEquipped)
@@ -20,9 +20,20 @@
                     <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Player.Instance.UnequipItem(Item))">Unequip</button></div>
 
                 }
-                else
+                else if (Item.HasRequirements())
                 {
                     <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Player.Instance.Equip(Item))">Equip</button></div>
+
+                }
+                else
+                {
+                    <div class="item-view-button">
+                        <button class="btn btn-light" style="opacity:0.5"
+                                onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.GetRequirementTooltip())))"
+                                onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                        Equip
+                        </button>
+                    </div>
 
                 }
 
@@ -53,7 +64,7 @@
             {
                 @if (Item.IsSellable)
                 {
-                    <button style="position:absolute;left:5px;bottom:5px;"  class="btn btn-light" @onclick="@(() => SellItem())">Sell @(Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item)))</button> @((Item.Value / 2 * Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item))) + " " + ItemManager.Instance.CurrentShop.CurrencyName)
+                    <button style="position:absolute;left:5px;bottom:5px;" class="btn btn-light" @onclick="@(() => SellItem())">Sell @(Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item)))</button> @((Item.Value / 2 * Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item))) + " " + ItemManager.Instance.CurrentShop.CurrencyName)
 
                 }
             }

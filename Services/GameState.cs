@@ -482,7 +482,11 @@ using System.Threading.Tasks;
         if(CurrentGatherItem != null)
         {
             int baseValue = CurrentGatherItem.GatherSpeed.ToGaussianRandom();
+            Console.WriteLine("Ticks to next gather:" + baseValue);
             baseValue = (int)Math.Max(1, (double)baseValue * Player.Instance.GetGearMultiplier(CurrentGatherItem));
+            Console.WriteLine("Ticks to next gather with gear:" + baseValue);
+            baseValue = (int)Math.Max(1, (double)baseValue * Player.Instance.GetLevelMultiplier(CurrentGatherItem));
+            Console.WriteLine("Ticks to next gather with gear and level:" + baseValue);
             return baseValue;
         }
         Console.WriteLine("Current Gather Item Was null.");

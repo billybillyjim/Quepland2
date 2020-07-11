@@ -13,6 +13,8 @@ public class GameItem
 
 	public string Icon { get; set; } = "Unset";
 	public string EquipSlot { get; set; } = "None";
+	public string PrimaryColor { get; set; } = "white";
+	public string SecondaryColor { get; set; } = "lightgray";
 
 	public bool IsStackable { get; set; }
 	public bool IsEquipped { get; set; }
@@ -97,6 +99,9 @@ public class GameItem
 		copy.IsSellable = IsSellable;
 
 		copy.Value = Value;
+
+		copy.PrimaryColor = PrimaryColor;
+		copy.SecondaryColor = SecondaryColor;
 
 		copy.GatherSpeed = GatherSpeed;
 		copy.ID = ID;

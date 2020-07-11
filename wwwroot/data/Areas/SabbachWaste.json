@@ -74,7 +74,14 @@
     "id": 65,
     "image": "Oasis",
     "description": "A large pool of water supports a number of very rare trees here. To the south you see another mountain range.",
-    "areaURL": "Oasis"
+    "areaURL": "Oasis",
+    "unlockableAreas": [
+      {
+        "areaURL": "GreatShoeLake",
+        "buttonText": "Continue southward"
+      }
+
+    ]
   },
   {
     "name": "Leupp",

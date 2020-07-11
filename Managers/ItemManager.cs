@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -21,7 +22,8 @@ public class ItemManager
     public List<Recipe> Recipes = new List<Recipe>();
     public List<Recipe> SmithingRecipes = new List<Recipe>();
     public List<string> EquipmentSlots = new List<string>();
-    public static List<string> FileNames = new List<string> { "Weapons", "Armors", "Sushi", "QuestItems", "General", "Elements", "Hunting", "Fishing", "Ores", "WoodworkingItems", "Logs" };
+    public static List<string> FileNames = new List<string> { "Weapons", "Armors", "Sushi", "QuestItems", "General", "Elements", "Hunting", "Fishing", "Bars", "Ores", "WoodworkingItems", "Logs" };
+    public static List<string> Colors = new List<string> { "#DC5958", "#3367d6", "#ffa7f4", "gray", "#ffd066", "#eadf92", "brown", "lightblue", "silver", "dimgray", "sienna", "tan" };
     public static int baseID;
     public static readonly int MaxItemsPerFile = 100;
     public bool IsSelling = false;
@@ -29,18 +31,21 @@ public class ItemManager
     public Shop CurrentShop;
     public async Task LoadItems(HttpClient Http)
     {
+        int colorIter = 0;
         foreach (string file in FileNames)
         {
             List<GameItem> addedItems = new List<GameItem>();
             addedItems.AddRange(await Http.GetJsonAsync<GameItem[]>("data/Items/" + file + ".json"));
             int iterator = baseID;
             int count = 0;
+            
             foreach (GameItem i in addedItems)
             {
                 i.ID = iterator;
                 iterator++;
                 count++;
                 i.Category = file;
+                i.PrimaryColor = Colors[colorIter];
                 if(i.EquipSlot != "None")
                 {
                     if(EquipmentSlots.Contains(i.EquipSlot) == false)
@@ -50,21 +55,17 @@ public class ItemManager
                 }
                 
             }
+            
             if(count >= MaxItemsPerFile)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Warning:" + file + " has " + count + " items, which is over the expected " + MaxItemsPerFile + " items in its file.");
                 Console.ForegroundColor = ConsoleColor.Black;
             }
-            else
-            {
-                Console.WriteLine(file + " has " + count + " items.");
-            }
             Items.AddRange(addedItems);
             baseID += MaxItemsPerFile;
-
+            colorIter++;
         }
-
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/WoodworkingRecipes.json"));
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/UnpackingRecipes.json"));
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/SushiRecipes.json"));

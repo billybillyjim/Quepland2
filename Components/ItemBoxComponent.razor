@@ -77,26 +77,8 @@ else
 
             if (Item != null)
             {
-                if (Item.Category == "Fishing")
-                {
-                    style = "background-color:skyblue;";
-                }
-                else if (Item.Category == "Logs")
-                {
-                    style = "background-color:sandybrown;";
-                }
-                else if (Item.Category == "Ores")
-                {
-                    style = "background-color:brown;";
-                }
-                else if (Item.Category == "Sushi")
-                {
-                    style = "background-color:lightgray;";
-                }
-                else if (Item.Category == "WoodworkingItems")
-                {
-                    style = "background-color:burlywood;";
-                }
+                style = "background: linear-gradient(155deg, " + Item.SecondaryColor + " 60%, " + Item.PrimaryColor + " 50%);";
+
             }
             else
             {

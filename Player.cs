@@ -80,6 +80,37 @@ public class Player
         }
         return Math.Max(multi, 0.01);
     }
+    public double GetLevelMultiplier(GameItem item)
+    {
+        if (item.Requirements == null || item.Requirements.Count == 0)
+        {
+            return 1;
+        }
+        string skillName = item.Requirements.FirstOrDefault(x => x.Skill != "None").Skill;
+        Skill s = Skills.FirstOrDefault(x => x.Name == skillName);
+        if(s == null)
+        {
+            return 1;
+        }
+        double multi = 1;
+        if(s.Level < 100)
+        {
+            multi = 1 - (s.Level * 0.005);
+        }
+        else if(s.Level < 200)
+        {
+            multi = 1 - (0.5 + ((s.Level - 100) * 0.002));
+        }
+        else if(s.Level < 300)
+        {
+            multi = 1 - (0.7 + ((s.Level - 200) * 0.001));
+        }
+        else
+        {
+            multi = 1 - (0.8 + ((s.Level - 300) * 0.0005));
+        }
+        return Math.Max(multi, 0.01);
+    }
     public void Equip(GameItem item)
     {
         UnequipItem(equippedItems.Find(x => x.EquipSlot == item.EquipSlot));

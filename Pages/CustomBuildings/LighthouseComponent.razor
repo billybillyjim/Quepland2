@@ -1,0 +1,28 @@
+﻿@page "/World/CantilaBeach/CantilaLighthouse"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+
+
+<br />
+<button class="btn btn-primary" @onclick="@(() => Exit())">Exit</button>
+<br />
+<h1>The Lighthouse</h1>
+<div>The main floor of the lighthouse appears to be empty. There's a staircase leading to a locked door on the second floor, and another locked door leading to what must be a basement. You can faintly hear the singing stones rolling in the waves outside.</div>
+
+@code {
+
+    private void Exit()
+    {
+        UriHelper.NavigateTo("/World/CantilaBeach");
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

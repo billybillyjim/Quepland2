@@ -1,0 +1,24 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@foreach(Skill s in Player.Instance.Skills)
+{
+    <button @onclick="@(() => LevelSkill(s))">@s.Name</button>
+}
+
+@code {
+
+    public void LevelSkill(Skill s)
+    {
+        Player.Instance.GainExperience(s, (long)Skill.GetExperienceRequired(s.Level) - s.Experience);
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}
