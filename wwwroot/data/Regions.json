@@ -117,5 +117,11 @@
       "North Tsu City",
       "Tsu Castle"
     ]
+  },
+  {
+    "name": "Sahota Tir",
+    "areaNames": [
+      "Sahota Ice Fields"
+    ]
   }
 ]

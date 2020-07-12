@@ -8,8 +8,17 @@
       "Cantila Coast",
       "Higashi Woods",
       "Sabbach Waste",
-      "Hojkma Isles"
+      "Hojkma Isles",
+      "Togaru Hills"
 
     ]
+  },
+  {
+    "name": "Caligin Commonwealth",
+    "regionNames": [
+      "Sahota Tir"
+    ],
+    "topColor": "#BCE4FF",
+    "bottomColor": "#56788F"
   }
 ]

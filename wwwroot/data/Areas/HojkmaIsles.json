@@ -75,7 +75,14 @@
     "id": 75,
     "image": "Cave",
     "description": "",
-    "areaURL": "MtYamaCave"
+    "areaURL": "MtYamaCave",
+    "unlockableAreas": [
+      {
+        "areaURL": "SahotaIceFields",
+        "buttonText": "Go To Sahota",
+        "connectsLands": true
+      }
+    ]
   },
   {
     "name": "Mt Yama Mine",

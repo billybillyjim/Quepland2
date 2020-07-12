@@ -24,4 +24,6 @@ public class Land
 	}
 	private List<Region> _regions { get; set; }
 	public List<string> RegionNames { get; set; }
+	public string TopColor { get; set; } = "#6DD5FA";
+	public string BottomColor { get; set; } = "#2980B9";
 }

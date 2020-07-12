@@ -33,7 +33,7 @@
     }
     @foreach (AreaUnlock a in thisArea.UnlockableAreas)
     {
-        if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false)
+        if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false || a.ConnectsLands)
         {
             <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@a"></Quepland_2.Components.AreaUnlockComponent>
             <br />

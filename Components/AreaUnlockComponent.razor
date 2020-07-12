@@ -32,9 +32,16 @@
     private void GoToArea()
     {
         GameState.StopActions();
-        GameState.Location = areaToUnlock.AreaURL;
         Area a = AreaManager.Instance.GetAreaByURL(areaToUnlock.AreaURL);
+        Land l = AreaManager.Instance.GetLandForArea(a);
+        if (l != null && l != GameState.CurrentLand)
+        {
+            GameState.CurrentLand = l;
+        }
+        GameState.Location = areaToUnlock.AreaURL;
+
         a.Unlock();
+
         UriHelper.NavigateTo("World/" + areaToUnlock.AreaURL);
     }
     protected override void OnInitialized()

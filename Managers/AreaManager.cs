@@ -70,5 +70,15 @@ public class AreaManager
         }
         return r;
     }
+    public Land GetLandForArea(Area area)
+    {
+        Region r = GetRegionForArea(area);
+        Land l = Lands.FirstOrDefault(x => x.Regions.Contains(r));
+        if(l == null)
+        {
+            Console.WriteLine("No land with region:" + r.Name + " was found.");
+        }
+        return l;
+    }
 }
 
