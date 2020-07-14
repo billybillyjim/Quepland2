@@ -59,9 +59,22 @@ public class WorldTester
             }
 
         }
-    
-        
-        foreach(Recipe r in ItemManager.Instance.Recipes)
+        List<GameItem> newItems = new List<GameItem>();
+        foreach (GameItem i in IncludedItems)
+        {
+            if (i.TanningInfo != null)
+            {
+                Console.WriteLine("1st Checking " + i);
+                if (IncludedItems.Contains(i) == true && IncludedItems.Contains(i.TanningInfo.TansInto) == false)
+                {
+                    Console.WriteLine("1st Adding " + i.TanningInfo.TansInto);
+                    newItems.Add(i.TanningInfo.TansInto);
+                }
+
+            }
+        }
+        IncludedItems.AddRange(newItems);
+        foreach (Recipe r in ItemManager.Instance.Recipes)
         {
             bool IngredientsIncluded = true;
             foreach(Ingredient i in r.Ingredients)
@@ -80,6 +93,45 @@ public class WorldTester
                     IncludedItems.Add(r.SecondaryOutput);
                 }
                 if(r.TertiaryOutput != null)
+                {
+                    IncludedItems.Add(r.TertiaryOutput);
+                }
+            }
+        }
+        newItems = new List<GameItem>();
+        foreach (GameItem i in IncludedItems)
+        {
+            if (i.TanningInfo != null)
+            {
+                Console.WriteLine("2nd Checking " + i);
+                if (IncludedItems.Contains(i) == true && IncludedItems.Contains(i.TanningInfo.TansInto) == false)
+                {
+                    Console.WriteLine("2nd Adding " + i.TanningInfo.TansInto);
+                    newItems.Add(i.TanningInfo.TansInto);
+                }
+
+            }
+        }
+        IncludedItems.AddRange(newItems);
+        foreach (Recipe r in ItemManager.Instance.Recipes)
+        {
+            bool IngredientsIncluded = true;
+            foreach (Ingredient i in r.Ingredients)
+            {
+                GameItem item = ItemManager.Instance.GetItemByName(i.Item);
+                if (IncludedItems.Contains(item) == false)
+                {
+                    IngredientsIncluded = false;
+                }
+            }
+            if (IngredientsIncluded && IncludedItems.Contains(r.Output) == false)
+            {
+                IncludedItems.Add(r.Output);
+                if (r.SecondaryOutput != null)
+                {
+                    IncludedItems.Add(r.SecondaryOutput);
+                }
+                if (r.TertiaryOutput != null)
                 {
                     IncludedItems.Add(r.TertiaryOutput);
                 }
@@ -148,9 +200,10 @@ public class WorldTester
                 if (IncludedItems.Contains(item) == false)
                 {
                     IncludedItems.Add(item);
-                }
+                }         
             }
         }
+
         MissingItems = ItemManager.Instance.Items;
         MissingItems.RemoveAll(x => IncludedItems.Contains(x));
         foreach(GameItem i in IncludedItems)

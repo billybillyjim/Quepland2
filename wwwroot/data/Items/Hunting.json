@@ -253,7 +253,10 @@
     "Name": "Rabbit Meat",
     "Description": "Raw meat from a rabbit. You'll need to turn this into jerky to eat it.",
     "value": 5,
-    "icon": "Meat"
+    "icon": "Meat",
+    "tanningInfo": {
+      "tansIntoString": "Rabbit Jerky"
+    }
   },
   {
     "Name": "Rabbit Jerky",
@@ -279,7 +282,10 @@
     "Name": "Deer Meat",
     "Description": "You'll want to make this into jerky before eating it.",
     "value": 15,
-    "icon": "Meat"
+    "icon": "Meat",
+    "tanningInfo": {
+      "tansIntoString": "Deer Jerky"
+    }
   },
   {
     "Name": "Deer Jerky",
@@ -311,7 +317,10 @@
     "Name": "Bear Meat",
     "Description": "Meat from a bear.",
     "value": 40,
-    "icon": "Meat"
+    "icon": "Meat",
+    "tanningInfo": {
+      "tansIntoString": "Bear Jerky"
+    }
   },
   {
     "Name": "Bear Jerky",
@@ -343,7 +352,10 @@
     "Name": "Moose Meat",
     "Description": "Like beef, but bigger.",
     "value": 60,
-    "icon": "Meat"
+    "icon": "Meat",
+    "tanningInfo": {
+      "tansIntoString": "Moose Jerky"
+    }
   },
   {
     "Name": "Moose Jerky",
@@ -376,7 +388,10 @@
     "Name": "Wild Boar Meat",
     "Description": "A tough meat from a tough animal.",
     "value": 35,
-    "icon": "Meat"
+    "icon": "Meat",
+    "tanningInfo": {
+      "tansIntoString": "Boar Jerky"
+    }
   },
   {
     "Name": "Boar Jerky",
@@ -395,7 +410,10 @@
     "Name": "Pigeon Meat",
     "Description": "There's almost not meat here, but it technically counts.",
     "value": 6,
-    "icon": "PreppedBird"
+    "icon": "PreppedBird",
+    "tanningInfo": {
+      "tansIntoString": "Pigeon Jerky"
+    }
   },
   {
     "Name": "Pigeon Jerky",
@@ -414,7 +432,10 @@
     "Name": "Turkey Meat",
     "Description": "The meat off a turkey.",
     "value": 15,
-    "icon": "PreppedBird"
+    "icon": "PreppedBird",
+    "tanningInfo": {
+      "tansIntoString": "Turkey Jerky"
+    }
   },
   {
     "Name": "Turkey Jerky",
@@ -433,7 +454,10 @@
     "Name": "Pheasant Meat",
     "Description": "The meat of a once beautiful bird.",
     "value": 20,
-    "icon": "PreppedBird"
+    "icon": "PreppedBird",
+    "tanningInfo": {
+      "tansIntoString": "Pheasant Jerky"
+    }
   },
   {
     "Name": "Pheasant Jerky",
@@ -459,7 +483,10 @@
     "Name": "Bison Meat",
     "Description": "A big bite of raw bison meat. You might want to prepare it somehow.",
     "value": 50,
-    "icon": "Meat"
+    "icon": "Meat",
+    "tanningInfo": {
+      "tansIntoString": "Bison Jerky"
+    }
   },
   {
     "Name": "Bison Jerky",
@@ -498,7 +525,10 @@
     "Name": "Mammoth Meat",
     "Description": "Big meat from a big beast.",
     "value": 110,
-    "icon": "Meat"
+    "icon": "Meat",
+    "tanningInfo": {
+      "tansIntoString": "Mammoth Jerky"
+    }
   },
   {
     "Name": "Mammoth Tusk",

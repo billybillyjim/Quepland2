@@ -33,7 +33,37 @@
         "ButtonText": "Travel Further"
       }
 
-    ]
+    ],
+    "huntingTripInfo": {
+      "dropTable": {
+        "drops": [
+          {
+            "itemName": "Rabbit",
+            "weight": 15
+          },
+          {
+            "itemName": "Buck",
+            "weight": 10
+          },
+          {
+            "itemName": "Deer",
+            "weight": 15
+          },
+          {
+            "itemName": "Wild Boar",
+            "weight": 8
+          },
+          {
+            "itemName": "Black Bear",
+            "weight": 2
+          },
+          {
+            "itemName": "Grizzly Bear",
+            "weight": 1
+          }
+        ]
+      }
+    }
   },
   {
     "name": "Sawoka",

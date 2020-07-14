@@ -10,9 +10,10 @@ public class TanningInfo
             if(tansinto == null)
             {
                 tansinto = ItemManager.Instance.GetItemByName(TansIntoString);
+                
             }
             return tansinto;
         }
     }
-    public string TansIntoString;
+    public string TansIntoString { get; set; }
 }

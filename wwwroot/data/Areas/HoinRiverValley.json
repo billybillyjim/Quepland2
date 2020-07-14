@@ -49,6 +49,24 @@
         "areaURL": "Guttermouth",
         "buttonText": "Continue Down the River"
       }
+    ],
+    "buildings": [
+      {
+        "name": "Sun's Harbor Supplies",
+        "buttonText": "Supply Store",
+        "url": "SunsHarborSupplies",
+        "description": "The small supply store has a number of useful items for an adventurer.",
+        "shops": [
+          {
+            "name": "Sun's Harbor Supplies",
+            "itemNames": [
+              "Leatherworking Toolkit",
+              "Iron Axe"
+            ]
+
+          }
+        ]
+      }
     ]
   },
   {

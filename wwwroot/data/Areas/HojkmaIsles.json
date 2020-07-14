@@ -55,7 +55,37 @@
     ],
     "actions": [
       "Mine Calamine:Calamine"
-    ]
+    ],
+    "huntingTripInfo": {
+      "dropTable": {
+        "drops": [
+          {
+            "itemName": "Buck",
+            "weight": 10
+          },
+          {
+            "itemName": "Deer",
+            "weight": 8
+          },
+          {
+            "itemName": "Moose",
+            "weight": 6
+          },
+          {
+            "itemName": "Black Bear",
+            "weight": 4
+          },
+          {
+            "itemName": "Grizzly Bear",
+            "weight": 4
+          },
+          {
+            "itemName": "Polar Bear",
+            "weight": 1
+          }
+        ]
+      }
+    }
   },
   {
     "name": "Mt Yama",

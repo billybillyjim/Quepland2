@@ -40,6 +40,24 @@
       }
 
     ],
+    "huntingTripInfo": {
+      "dropTable": {
+        "drops": [
+          {
+            "itemName": "Rabbit",
+            "weight": 10
+          },
+          {
+            "itemName": "Wild Boar",
+            "weight": 5
+          },
+          {
+            "itemName": "Bison",
+            "weight": 3
+          }
+        ]
+      }
+    },
     "buildings": [
       {
         "name": "Tsu Farms",

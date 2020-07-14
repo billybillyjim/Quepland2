@@ -21,7 +21,6 @@ public class ItemManager
     public List<GameItem> Items = new List<GameItem>();
     public List<Recipe> Recipes = new List<Recipe>();
     public List<Recipe> SmithingRecipes = new List<Recipe>();
-    public List<Recipe> TanningRecipes = new List<Recipe>();
     public List<string> EquipmentSlots = new List<string>();
     public static List<string> FileNames = new List<string> { "Weapons", "Armors", "Sushi", "QuestItems", "General", "Elements", "Hunting", "Fishing", "Bars", "Ores", "WoodworkingItems", "Logs" };
     public static List<string> Colors = new List<string> { "#DC5958", "#3367d6", "#ffa7f4", "gray", "#ffd066", "#eadf92", "brown", "lightblue", "silver", "dimgray", "sienna", "tan" };
@@ -71,8 +70,7 @@ public class ItemManager
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/UnpackingRecipes.json"));
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/SushiRecipes.json"));
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/MiscRecipes.json"));
-
-        TanningRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/Tanning/TanningRecipes.json"));
+        Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/LeatherworkingRecipes.json"));
 
         SmithingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/Smithing/AluminumSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/Smithing/BrassSmithingRecipes.json"));
@@ -85,6 +83,8 @@ public class ItemManager
         SmithingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/Smithing/NickelSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/Smithing/PlatinumSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/Smithing/SteelSmithingRecipes.json"));
+        SmithingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/Smithing/TinSmithingRecipes.json"));
+        SmithingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/Smithing/ZincSmithingRecipes.json"));
     }
 
 

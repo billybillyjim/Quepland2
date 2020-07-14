@@ -1,0 +1,58 @@
+[
+  {
+    "outputItemName": "Molten Zinc Bar",
+    "ingredients": [
+      {
+        "item": "Zinc Ore"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Zinc Bar",
+    "ingredients": [
+      {
+        "item": "Zinc Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Zinc Knife",
+    "ingredients": [
+      {
+        "item": "Molten Zinc Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Zinc Sword",
+    "ingredients": [
+      {
+        "item": "Molten Zinc Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Zinc Axe",
+    "ingredients": [
+      {
+        "item": "Molten Zinc Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Zinc Hammer",
+    "ingredients": [
+      {
+        "item": "Molten Zinc Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Zinc Bar",
+    "ingredients": [
+      {
+        "item": "Molten Zinc Bar"
+      }
+    ]
+  }
+]

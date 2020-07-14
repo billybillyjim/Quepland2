@@ -42,7 +42,6 @@
 
     ],
     "huntingTripInfo": {
-      "minimumHuntingLevel": 1,
       "dropTable": {
         "drops": [
           {
@@ -107,7 +106,25 @@
         "areaURL": "SouthernTrail",
         "buttonText": "Exit the Woods"
       }
-    ]
+    ],
+    "huntingTripInfo": {
+      "dropTable": {
+        "drops": [
+          {
+            "itemName": "Rabbit",
+            "weight": 10
+          },
+          {
+            "itemName": "Deer",
+            "weight": 5
+          },
+          {
+            "itemName": "Buck",
+            "weight": 5
+          }
+        ]
+      }
+    }
   },
   {
     "name": "Higashi Canyon Floor",
