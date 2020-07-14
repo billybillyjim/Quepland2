@@ -8,7 +8,7 @@
     </button>
 </div>
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu" style="width:300px!important">
     <ul class="nav flex-column">
         <li class="nav-item px-3">
             <div style="@GetStyle("Bank")" onclick="@(new Action(() => GoToArea("Bank")))">

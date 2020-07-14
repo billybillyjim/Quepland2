@@ -176,11 +176,11 @@ public class Player
         GameItem weapon = GetWeapon();
         if (weapon != null && weapon.WeaponInfo != null)
         {
-            return Math.Max(4, GetWeapon().WeaponInfo.AttackSpeed - (GetLevel("Deftness") / 15));
+            return Math.Max(4, GetWeapon().WeaponInfo.AttackSpeed - (GetLevel("Deftness") / 25));
         }
         else
         {
-            return Math.Max(8, 12 - (GetLevel("Deftness") / 15));
+            return Math.Max(8, 12 - (GetLevel("Deftness") / 25));
         }
     }
     public int GetLevel(string skillName)

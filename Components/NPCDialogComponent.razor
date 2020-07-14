@@ -12,7 +12,7 @@
         background: bisque;
         border-radius: 0.5rem;">
         @npc
-        @foreach (Dialog d in NPC.Dialogs)
+        @foreach (Dialog d in NPC.GetDialogsAtDepth(NPC.ConversationDepth))
         {
             @if (d.HasRequirements())
             {
@@ -37,6 +37,7 @@
     private void Talk(Dialog d)
     {
         d.Talk();
+        NPC.ConversationDepth = d.NewDepthOnTalk;
         GameState.UpdateState();
     }
     protected override void OnInitialized()

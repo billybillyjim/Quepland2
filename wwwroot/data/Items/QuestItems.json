@@ -28,5 +28,13 @@
     "value": 0,
     "icon": "BloodyKnife",
     "isSellable": false
+  },
+  {
+    "Name": "No Solicitin Sign",
+    "Description": "A poorly written sign.",
+    "gatherString": "You get an ugly sign.",
+    "value": 0,
+    "gatherSpeed": 8,
+    "icon": "Sign"
   }
 ]

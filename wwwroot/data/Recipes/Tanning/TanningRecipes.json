@@ -1,0 +1,11 @@
+[
+  {
+    "outputItemName": "Rabbit Leather",
+    "ingredients": [
+      {
+        "item": "Rabbit Hide"
+      }
+    ],
+    "maxOutputsPerAction": 1
+  }
+]

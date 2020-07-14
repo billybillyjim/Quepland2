@@ -16,14 +16,6 @@
     "icon": "Berries"
   },
   {
-    "Name": "No Soliciting Sign",
-    "Description": "A poorly written sign.",
-    "gatherString": "You get an ugly sign.",
-    "value": 0,
-    "gatherSpeed": 8,
-    "icon": "Sign"
-  },
-  {
     "Name": "Wood Carving Knife",
     "Description": "A specially designed knife for carving wood.",
     "value": 60,
@@ -85,5 +77,11 @@
     "gatherSpeed": 20,
     "gatherString": "You gather some hemp.",
     "icon": "Hemp"
+  },
+  {
+    "name": "Leatherworking Toolkit",
+    "description": "A set of tools to work leather into form.",
+    "value": 100,
+    "icon": "Tools"
   }
 ]

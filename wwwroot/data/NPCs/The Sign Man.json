@@ -4,11 +4,17 @@
   "dialogs": [
     {
       "buttonText": "Hello",
-      "responseText": "Hi. The name's Churbbles, but most folks call me the Sign Man on account of the weird name. Do you want me to make you a sign? 'Cuz I can, yessir, just bring me the materials."
+      "responseText": "Hi. The name's Churbbles, but most folks call me the Sign Man on account of the weird name. Do you want me to make you a sign? 'Cuz I can, yessir, just bring me the materials.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Can you teach me to make a sign?",
+      "responseText": "Ooh, sorry 'bout this mister but I can't go throwin' away my livelihood by tellin' everybody who walks in that I can make sign ink with shuniku berries.",
+      "depth": 1
     },
     {
       "buttonText": "Can you help me make a sign?",
-      "responseText": "I sure can! I love making signs, just bring me the materials and I'll be happy to help you.",
+      "responseText": "I sure can! I love makin' signs, just bring me the materials and I'd be happy to help you.",
       "quest": "Mayor's Assistant",
       "newQuestProgressValue": 4,
       "requirements": [
@@ -21,7 +27,7 @@
     },
     {
       "buttonText": "What do you need to make a sign?",
-      "responseText": "I'll need a few things. First; It'll take three logs, white pine is best for seeing what's written on it. And I'll need some berries to make an ink for writing the words for the sign. I usually source my berries from the woods below the village.",
+      "responseText": "I'll need a few things. First; It'll take three logs, white pine is best for seein' what's written on it. And I'll need some berries to make my special ink for writin' the words for the sign. I usually grab my berries from the woods down before the village.",
       "requirements": [
         {
           "quest": "Mayor's Assistant",
@@ -32,11 +38,11 @@
     },
     {
       "buttonText": "I've got the things to make a sign.",
-      "responseText": "Great! Here you are, one \"No Suliciters\" sign. Sorry 'bout the spelling, never learned how.",
+      "responseText": "Great! Here ya are, one \"No Suliciters\" sign. Sorry 'bout the spellin', never learned how.",
       "quest": "Mayor's Assistant",
       "newQuestProgressValue": 5,
       "consumeRequiredItems": true,
-      "itemOnTalk": "No Soliciting Sign",
+      "itemOnTalk": "No Solicitin Sign",
       "requirements": [
         {
           "quest": "Mayor's Assistant",

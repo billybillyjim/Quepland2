@@ -67,7 +67,7 @@
     },
     {
       "buttonText": "I've finished your sign.",
-      "responseText": "Great work. I'll take care of having it set up out front, you're free to go now.",
+      "responseText": "Do you really expect me to accept this?? It's not even spelled right! How could you possible bring a sign of this quality to me and expect anything in return?? You know what? Just get out. Take the axe hanging outside the door and go. Never return, please.",
       "quest": "Mayor's Assistant",
       "newQuestProgressValue": 6,
       "consumeRequiredItems": true,
@@ -78,8 +78,19 @@
           "maximumQuestProgress": 5
         },
         {
-          "item": "No Soliciting Sign",
+          "item": "No Solicitin Sign",
           "itemAmount": 1
+        }
+      ]
+    },
+    {
+      "buttonText": "Hello",
+      "responseText": "Get out of my house.",
+      "requirements": [
+        {
+          "quest": "Mayor's Assistant",
+          "minimumQuestProgress": 6,
+          "maximumQuestProgress": 6
         }
       ]
     }

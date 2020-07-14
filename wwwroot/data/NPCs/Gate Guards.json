@@ -1,0 +1,10 @@
+{
+  "name": "Gate Guards",
+  "id": 21,
+  "dialogs": [
+    {
+      "buttonText": "Can I go through this gate?",
+      "responseText": "Sure, we'll need to see your passport and you'll be good to go."
+    }
+  ]
+}

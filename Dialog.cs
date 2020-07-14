@@ -11,6 +11,8 @@ public class Dialog
 	public int NewQuestProgressValue { get; set; } = -1;
 	public List<Requirement> Requirements { get; set; } = new List<Requirement>();
 	private bool HasStartedQuest;
+	public int Depth { get; set; }
+	public int NewDepthOnTalk { get; set; }
 
 	public bool HasRequirements()
 	{
