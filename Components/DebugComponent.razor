@@ -5,9 +5,25 @@
 {
     <button @onclick="@(() => LevelSkill(s))">@s.Name</button>
 }
+<button @onclick="@(() => UnlockWorld())">
+    Unlock World
+</button>
+
 
 @code {
 
+    public void UnlockWorld()
+    {
+        foreach(Region r in AreaManager.Instance.Regions)
+        {
+            r.IsUnlocked = true;
+        }
+        foreach(Area a in AreaManager.Instance.Areas)
+        {
+            a.IsUnlocked = true;
+            a.IsHidden = false;
+        }
+    }
     public void LevelSkill(Skill s)
     {
         Player.Instance.GainExperience(s, (long)Skill.GetExperienceRequired(s.Level) - s.Experience);

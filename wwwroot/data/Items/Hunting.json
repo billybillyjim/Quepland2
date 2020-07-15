@@ -385,6 +385,12 @@
     "experienceGained": "Leatherworking:30"
   },
   {
+    "Name": "Wild Boar Tusk",
+    "Description": "A valuable tusk from a wild boar.",
+    "value": 300,
+    "icon": "Tusks"
+  },
+  {
     "Name": "Wild Boar Meat",
     "Description": "A tough meat from a tough animal.",
     "value": 35,

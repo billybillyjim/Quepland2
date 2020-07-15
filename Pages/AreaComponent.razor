@@ -50,7 +50,7 @@
     }
     @if (thisArea.DungeonName != null)
     {
-        <button class="btn btn-dark" @onclick="@(() => EnterDungeon(thisArea.Dungeon.URL))">Enter @thisArea.Dungeon.Name</button>
+        <button class="btn btn-dark" @onclick="@(() => EnterDungeon(thisArea.Dungeon.URL))">@thisArea.Dungeon.GetButtonText()</button>
         <br />
     }
     @if (thisArea.Monsters != null && thisArea.Monsters.Count > 0)

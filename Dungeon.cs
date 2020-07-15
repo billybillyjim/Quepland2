@@ -10,6 +10,7 @@ public class Dungeon
 	public double Size { get; set; }
 	public string Name { get; set; }
 	public string URL { get; set; }
+	public string ButtonText { get; set; } = "Unset"; 
 	public List<string> AreaURLs { get; set; }
 	private List<Area> _areas;
 	public List<Area> Areas { 
@@ -22,7 +23,7 @@ public class Dungeon
 					_areas.Add(AreaManager.Instance.GetAreaByURL(a));
 					if(AreaManager.Instance.GetAreaByURL(a) == null)
                     {
-						Console.WriteLine(Name + " has json typo:" + a);
+						Console.WriteLine("Dungeon " + Name + " has json typo:" + a);
                     }
 				}
 				return _areas;
@@ -95,5 +96,13 @@ public class Dungeon
 	public double GetPercentProgress()
     {
 		return (Progress / Size) * 100d;
+    }
+	public string GetButtonText()
+    {
+		if(ButtonText == "Unset")
+        {
+			return "Enter " + Name;
+        }
+		return ButtonText;
     }
 }

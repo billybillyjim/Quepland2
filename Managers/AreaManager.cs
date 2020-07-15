@@ -34,6 +34,7 @@ public class AreaManager
         Lands.AddRange(await Http.GetJsonAsync<Land[]>("data/Lands.json"));
         Dungeons.AddRange(await Http.GetJsonAsync<Dungeon[]>("data/Dungeons/QueplandDungeons.json"));
         Smithies.AddRange(await Http.GetJsonAsync<Smithy[]>("data/Smithies.json"));
+        Console.WriteLine("Quepland consists of " + Areas.Count + " areas, " + Regions.Count + " regions, " + Lands.Count + " lands, with " + Dungeons.Count + " dungeons.");
     }
 
     public Area GetAreaByName(string name)

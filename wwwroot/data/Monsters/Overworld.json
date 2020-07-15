@@ -24,7 +24,7 @@
         "Feather"
       ]
     }
-    
+
   },
   {
     "name": "Rooster",
@@ -131,6 +131,699 @@
           "itemName": "Coins",
           "weight": 4,
           "amount": 300
+        }
+      ]
+    }
+  },
+  {
+    "name": "Bandit Lord",
+    "hp": 520,
+    "attackSpeed": 15,
+    "armor": 25,
+    "damage": 35,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Wild Boar",
+    "hp": 150,
+    "attackSpeed": 10,
+    "armor": 5,
+    "damage": 10,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Wild Boar",
+          "weight": 50
+        },
+        {
+          "itemName": "Wild Boar Hide",
+          "weight": 10
+        },
+        {
+          "itemName": "Wild Boar Meat",
+          "weight": 10
+        },
+        {
+          "itemName": "Wild Boar Tusk",
+          "weight": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "Ground Grupper",
+    "hp": 90,
+    "attackSpeed": 14,
+    "armor": 1,
+    "damage": 8,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 50,
+          "amount": 50
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 100
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 150
+        },
+        {
+          "itemName": "Coins",
+          "weight": 1,
+          "amount": 500
+        }
+      ]
+    }
+  },
+  {
+    "name": "Sawabe Swiper",
+    "hp": 180,
+    "attackSpeed": 9,
+    "armor": 2,
+    "damage": 12,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 50,
+          "amount": 50
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 100
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 150
+        },
+        {
+          "itemName": "Coins",
+          "weight": 1,
+          "amount": 500
+        }
+      ]
+    }
+  },
+  {
+    "name": "Mercurial Malformation",
+    "hp": 230,
+    "attackSpeed": 18,
+    "armor": 25,
+    "damage": 22,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Cinnabar",
+          "weight": 50
+        },
+        {
+          "itemName": "Bucket of Mercury",
+          "weight": 10
+        },
+        {
+          "itemName": "Oxyquen",
+          "weight": 10,
+          "amount": 5
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 15
+        }
+      ]
+    }
+  },
+  {
+    "name": "Mercurial Man",
+    "hp": 430,
+    "attackSpeed": 15,
+    "armor": 30,
+    "damage": 25,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Cinnabar",
+          "weight": 50
+        },
+        {
+          "itemName": "Bucket of Mercury",
+          "weight": 30
+        },
+        {
+          "itemName": "Oxyquen",
+          "weight": 10,
+          "amount": 5
+        },
+        {
+          "itemName": "Nitroquen",
+          "weight": 10,
+          "amount": 5
+        },
+        {
+          "itemName": "Quencium",
+          "weight": 10,
+          "amount": 5
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 22
+        },
+        {
+          "itemName": "Coins",
+          "weight": 3,
+          "amount": 2
+        },
+        {
+          "itemName": "Coins",
+          "weight": 3,
+          "amount": 38
+        },
+        {
+          "itemName": "Coins",
+          "weight": 3,
+          "amount": 47
+        }
+      ]
+    }
+  },
+  {
+    "name": "Mercurial Warrior",
+    "hp": 510,
+    "attackSpeed": 10,
+    "armor": 33,
+    "damage": 28,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Cinnabar",
+          "weight": 40
+        },
+        {
+          "itemName": "Bucket of Mercury",
+          "weight": 50
+        },
+        {
+          "itemName": "Oxyquen",
+          "weight": 10,
+          "amount": 15
+        },
+        {
+          "itemName": "Nitroquen",
+          "weight": 10,
+          "amount": 15
+        },
+        {
+          "itemName": "Quencium",
+          "weight": 10,
+          "amount": 15
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 35
+        },
+        {
+          "itemName": "Coins",
+          "weight": 3,
+          "amount": 70
+        }
+      ]
+    }
+  },
+  {
+    "name": "Mercurial Knight",
+    "hp": 620,
+    "attackSpeed": 20,
+    "armor": 38,
+    "damage": 45,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Cinnabar",
+          "weight": 20
+        },
+        {
+          "itemName": "Bucket of Mercury",
+          "weight": 60,
+          "amount": 2
+        },
+        {
+          "itemName": "Oxyquen",
+          "weight": 10,
+          "amount": 15
+        },
+        {
+          "itemName": "Nitroquen",
+          "weight": 10,
+          "amount": 15
+        },
+        {
+          "itemName": "Quencium",
+          "weight": 10,
+          "amount": 15
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 35
+        },
+        {
+          "itemName": "Mercurial Hilt",
+          "weight": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "Mercurial Beast",
+    "hp": 820,
+    "attackSpeed": 25,
+    "armor": 48,
+    "damage": 70,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Cinnabar",
+          "weight": 20
+        },
+        {
+          "itemName": "Bucket of Mercury",
+          "weight": 60,
+          "amount": 2
+        },
+        {
+          "itemName": "Oxyquen",
+          "weight": 10,
+          "amount": 15
+        },
+        {
+          "itemName": "Nitroquen",
+          "weight": 10,
+          "amount": 15
+        },
+        {
+          "itemName": "Quencium",
+          "weight": 10,
+          "amount": 15
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 35
+        },
+        {
+          "itemName": "Mercurial Pommel",
+          "weight": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "Mercurial Giant",
+    "hp": 1520,
+    "attackSpeed": 30,
+    "armor": 70,
+    "damage": 90,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Cinnabar",
+          "weight": 20
+        },
+        {
+          "itemName": "Bucket of Mercury",
+          "weight": 60,
+          "amount": 2
+        },
+        {
+          "itemName": "Oxyquen",
+          "weight": 10,
+          "amount": 15
+        },
+        {
+          "itemName": "Nitroquen",
+          "weight": 10,
+          "amount": 15
+        },
+        {
+          "itemName": "Quencium",
+          "weight": 10,
+          "amount": 15
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 35
+        },
+        {
+          "itemName": "Mercurial Blade",
+          "weight": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "Mapinguari",
+    "hp": 920,
+    "attackSpeed": 35,
+    "armor": 8,
+    "damage": 55,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Tokeloshe",
+    "hp": 380,
+    "attackSpeed": 35,
+    "armor": 3,
+    "damage": 20,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Small Kappa",
+    "hp": 330,
+    "attackSpeed": 8,
+    "armor": 10,
+    "damage": 15,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Kappa",
+    "hp": 590,
+    "attackSpeed": 12,
+    "armor": 18,
+    "damage": 30,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Manananggal",
+    "hp": 850,
+    "attackSpeed": 20,
+    "armor": 15,
+    "damage": 35,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Bat",
+    "hp": 120,
+    "attackSpeed": 8,
+    "armor": 3,
+    "damage": 8,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Giant Bat",
+    "hp": 280,
+    "attackSpeed": 12,
+    "armor": 5,
+    "damage": 17,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Living Cactus",
+    "hp": 650,
+    "attackSpeed": 4,
+    "armor": 70,
+    "damage": 1,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Sandcrawler",
+    "hp": 870,
+    "attackSpeed": 23,
+    "armor": 12,
+    "damage": 30,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Sandthrasher",
+    "hp": 1450,
+    "attackSpeed": 50,
+    "armor": 20,
+    "damage": 150,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Fishman",
+    "hp": 330,
+    "attackSpeed": 25,
+    "armor": 9,
+    "damage": 15,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Manfish",
+    "hp": 350,
+    "attackSpeed": 25,
+    "armor": 15,
+    "damage": 9,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Shifnam",
+    "hp": 380,
+    "attackSpeed": 20,
+    "armor": 18,
+    "damage": 28,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Salty Zombie",
+    "hp": 2500,
+    "attackSpeed": 20,
+    "armor": 9,
+    "damage": 150,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Sweet Zombie",
+    "hp": 4500,
+    "attackSpeed": 20,
+    "armor": 1,
+    "damage": 100,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Sour Zombie",
+    "hp": 2000,
+    "attackSpeed": 15,
+    "armor": 15,
+    "damage": 120,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Bitter Zombie",
+    "hp": 2700,
+    "attackSpeed": 20,
+    "armor": 45,
+    "damage": 110,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Umami Zombie",
+    "hp": 5000,
+    "attackSpeed": 20,
+    "armor": 35,
+    "damage": 120,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Spicy Zombie",
+    "hp": 3300,
+    "attackSpeed": 8,
+    "armor": 5,
+    "damage": 75,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Dancing Skeleton",
+    "hp": 2000,
+    "attackSpeed": 15,
+    "armor": 6,
+    "damage": 110,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Writhing Skeleton",
+    "hp": 3600,
+    "attackSpeed": 9,
+    "armor": 22,
+    "damage": 90,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Giant Jelly Zombie",
+    "hp": 8000,
+    "attackSpeed": 30,
+    "armor": 55,
+    "damage": 210,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
         }
       ]
     }

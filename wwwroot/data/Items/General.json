@@ -83,5 +83,30 @@
     "description": "A set of tools to work leather into form.",
     "value": 100,
     "icon": "Tools"
+  },
+  {
+    "name": "Mercurial Shard",
+    "description": "A smooth shard from the corpse of a mercurial being. With enough of them you could fashion some kind of weapon...",
+    "value": 30,
+    "isStackable": true,
+    "icon": "Shard"
+  },
+  {
+    "name": "Mercurial Hilt",
+    "description": "The hilt of a mercurial weapon. It'll need the blade and pommel to be made into a sword.",
+    "value": 700,
+    "icon": "Hilt"
+  },
+  {
+    "name": "Mercurial Pommel",
+    "description": "The pommel of a mercurial weapon. It'll need the blade and hilt to be made into a sword.",
+    "value": 700,
+    "icon": "Pommel"
+  },
+  {
+    "name": "Mercurial Blade",
+    "description": "The blade of a mercurial weapon. It'll need the hilt and pommel to be made into a sword.",
+    "value": 700,
+    "icon": "Blade"
   }
 ]

@@ -57,5 +57,15 @@
     "npcs": [
       "Gate Guards"
     ]
+  },
+  {
+    "name": "Koncave City Square",
+    "id": 113,
+    "image": "Fountain",
+    "description": "",
+    "areaURL": "KoncaveCitySquare",
+    "npcs": [
+      "Gate Guards"
+    ]
   }
 ]

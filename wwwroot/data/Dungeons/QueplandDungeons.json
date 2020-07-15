@@ -12,5 +12,19 @@
       "Chicken",
       "Rooster"
     ]
+  },
+  {
+    "name": "Sahota Dungeon",
+    "url": "SahotaDungeon",
+    "size": 500,
+    "areaURLs": [
+      "CopperMine",
+      "TinMine",
+      "QuepleCaveSmithy"
+    ],
+    "monsterNames": [
+      "Chicken",
+      "Rooster"
+    ]
   }
 ]
