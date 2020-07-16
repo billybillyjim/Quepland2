@@ -30,6 +30,21 @@ public class NPCManager
             NPCs.Add(await Http.GetJsonAsync<NPC>("data/NPCs/" + s + ".json"));
         }
         CustomDialogFunctions.Add("GetPlaytime", new Action(() => GetPlaytime()));
+        foreach(NPC npc in NPCs)
+        {
+            foreach(Dialog d in npc.Dialogs)
+            {
+                if(d.ResponseText == "UnlockArea")
+                {
+                    CustomDialogFunctions.Add("UnlockArea", new Action(() => UnlockArea(d.Parameter)));
+                }
+                else if(d.ResponseText == "UnlockAndGotoArea")
+                {
+                    CustomDialogFunctions.Add("UnlockAndGotoArea", new Action(() => UnlockAndGotoArea(d.Parameter)));
+                }
+            }
+        }
+        
     }
     public void GetPlaytime()
     {
@@ -51,7 +66,17 @@ public class NPCManager
             MessageManager.AddMessage("You've only been in this world for " + time.TotalMilliseconds + " milliseconds!");
         }
     }
-
+    public void UnlockArea(string name)
+    {
+        AreaManager.Instance.GetAreaByName(name).IsUnlocked = true;
+    }
+    public void UnlockAndGotoArea(string name)
+    {
+        Area a = AreaManager.Instance.GetAreaByName(name);
+        a.Unlock();
+        GameState.GoTo("World/" + a.AreaURL);
+        
+    }
     public NPC GetNPCByName(string name)
     {
         NPC npc = NPCs.FirstOrDefault(x => x.Name == name);

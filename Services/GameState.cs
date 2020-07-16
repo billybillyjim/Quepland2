@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components.Web;
+﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
 using Quepland_2.Components;
 using Quepland_2.Pages;
@@ -7,7 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -69,6 +69,7 @@ using System.Threading.Tasks;
     public NavMenu NavMenu;
     public ContextMenu CurrentContextMenu;
     public ExperienceTrackerComponent EXPTrackerComponent;
+    public static NavigationManager UriHelper;
     public static int TicksToNextAction;
     public static readonly int GameSpeed = 200;
     public int TicksToNextHeal;
@@ -535,7 +536,11 @@ using System.Threading.Tasks;
         }
 
     }
-
+    public static void GoTo(string url)
+    {
+        Location = url;
+        UriHelper.NavigateTo(url);
+    }
     public async Task GetDimensions()
     {
         GameWindowWidth = await JSRuntime.InvokeAsync<int>("getWidth");

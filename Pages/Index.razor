@@ -29,6 +29,7 @@ else
         {
             await AreaManager.Instance.LoadAreas(Http);
             GameState.CurrentLand = AreaManager.Instance.GetLandByName("Quepland");
+            GameState.UriHelper = UriHelper;
             await ItemManager.Instance.LoadItems(Http);
             await Player.Instance.LoadSkills(Http);
             await NPCManager.Instance.LoadNPCs(Http);

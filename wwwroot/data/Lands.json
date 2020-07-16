@@ -8,15 +8,18 @@
       "Cantila Coast",
       "Higashi Woods",
       "Sabbach Waste",
+      "Tackure Islet",
       "Hojkma Isles",
-      "Togaru Hills"
+      "Togaru Hills",
+      "Hoin River Valley"
 
     ]
   },
   {
     "name": "Caligin Commonwealth",
     "regionNames": [
-      "Sahota Tir"
+      "Sahota Tir",
+      "Koncave Caverns"
     ],
     "topColor": "#BCE4FF",
     "bottomColor": "#56788F"

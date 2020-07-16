@@ -66,6 +66,17 @@
 
           }
         ]
+      },
+      {
+        "name": "Tammy's Tannery",
+        "buttonText": "Tammy's Tannery",
+        "url": "TammysTannery",
+        "description": "You enter the tannery and are greeted by Tammy. There are a few places to tan hides. You can also buy a few different meat products here.",
+        "tanningSlots": [
+          {},
+          {},
+          {}
+        ]
       }
     ]
   },
