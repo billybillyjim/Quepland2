@@ -21,7 +21,10 @@
         }
       ],
       "alwaysDrops": [
-        "Feather"
+        {
+          "itemName": "Feather",
+          "amount": 5
+        }
       ]
     }
 
@@ -44,7 +47,10 @@
         }
       ],
       "alwaysDrops": [
-        "Feather"
+        {
+          "itemName": "Feather",
+          "amount": 5
+        }
       ]
     }
   },
@@ -141,6 +147,21 @@
     "attackSpeed": 15,
     "armor": 25,
     "damage": 35,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Bandit King",
+    "hp": 5300,
+    "attackSpeed": 15,
+    "armor": 50,
+    "damage": 45,
     "dropTable": {
       "drops": [
         {
@@ -819,6 +840,171 @@
     "attackSpeed": 30,
     "armor": 55,
     "damage": 210,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Frost Fighter",
+    "hp": 2800,
+    "attackSpeed": 20,
+    "armor": 80,
+    "damage": 35,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Chenoo",
+    "hp": 3300,
+    "attackSpeed": 25,
+    "armor": 90,
+    "damage": 75,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Akhlut",
+    "hp": 3500,
+    "attackSpeed": 25,
+    "armor": 110,
+    "damage": 155,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Italian Christmas Tree",
+    "hp": 1500,
+    "attackSpeed": 20,
+    "armor": 20,
+    "damage": 35,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Baobhan Sith",
+    "hp": 2000,
+    "attackSpeed": 10,
+    "armor": 20,
+    "damage": 125,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Root Dweller",
+    "hp": 5000,
+    "attackSpeed": 10,
+    "armor": 65,
+    "damage": 155,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Stealthy Root Dweller",
+    "hp": 4000,
+    "attackSpeed": 10,
+    "armor": 80,
+    "damage": 155,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Strong Root Dweller",
+    "hp": 7000,
+    "attackSpeed": 12,
+    "armor": 70,
+    "damage": 195,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Ravenous Root Dweller",
+    "hp": 3000,
+    "attackSpeed": 5,
+    "armor": 50,
+    "damage": 95,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Amphisbaena",
+    "hp": 2000,
+    "attackSpeed": 8,
+    "armor": 50,
+    "damage": 35,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Serpopard",
+    "hp": 2200,
+    "attackSpeed": 7,
+    "armor": 30,
+    "damage": 25,
     "dropTable": {
       "drops": [
         {

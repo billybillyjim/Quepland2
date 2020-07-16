@@ -1,0 +1,144 @@
+﻿@page "/Rates/Drops"
+@inject GameState GameState
+@implements IDisposable
+@inject NavigationManager UriHelper
+
+<button @onclick="@(() => UriHelper.NavigateTo("/Rates/Charts/"))">Rates</button>
+<button @onclick="@(() => UriHelper.NavigateTo("/Rates/Max/"))">Max</button>
+<button @onclick="@(() => UriHelper.NavigateTo("/WorldCheck/"))">World</button>
+
+<div style="overflow-y:scroll">
+    @foreach (Monster m in BattleManager.Instance.Monsters)
+    {
+        if (m == Monster)
+        {
+            <div style="font-weight:bold">
+                @m.Name
+            </div>
+        }
+        else
+        {
+            <div @onclick="@(() => SetMonster(m))">
+                @m.Name
+            </div>
+        }
+
+    }
+
+</div>
+
+@if (Monster != null)
+{
+    <div>
+        Average Drop Value:@AverageDropValue
+    </div>
+    <br />
+    <div style="position:relative;background-color:lightgray;">
+        <table>
+            @for (int i = 0; i < Monster.DropTable.Drops.Count; i++)
+            {
+                <tr style="@GetBGColor(i)">
+                    <td>
+                        @Monster.DropTable.Drops[i].ItemName
+                    </td>
+                    <td>
+                        Drop Chance:@(Math.Round(((Monster.DropTable.Drops[i].Weight / TotalWeights) * 100), 2))%
+                    </td>
+                    <td>
+                        Value:@ItemManager.Instance.GetItemByName(Monster.DropTable.Drops[i].ItemName).Value
+                    </td>
+                    <td>
+                        Weighted Value:@(Math.Round(ItemManager.Instance.GetItemByName(Monster.DropTable.Drops[i].ItemName).Value * (Monster.DropTable.Drops[i].Weight / TotalWeights) * Monster.DropTable.Drops[i].Amount, 2))
+                    </td>
+                    <td>
+                        Weight:@Monster.DropTable.Drops[i].Weight
+                    </td>
+                    <td>
+                        Amount:@Monster.DropTable.Drops[i].Amount
+                    </td>
+                </tr>
+            }
+            @for (int i = 0; i < Monster.DropTable.AlwaysDrops.Count; i++)
+            {
+                <tr style="@GetBGColor(i)">
+                    <td>
+                        @Monster.DropTable.AlwaysDrops[i].ItemName
+                    </td>
+                    <td>
+                        Drop Chance:100%
+                    </td>
+                    <td>
+                        Value:@ItemManager.Instance.GetItemByName(Monster.DropTable.AlwaysDrops[i].ItemName).Value
+                    </td>
+                    <td>
+                        Weighted Value:@((Math.Round((double)ItemManager.Instance.GetItemByName(Monster.DropTable.AlwaysDrops[i].ItemName).Value * Monster.DropTable.AlwaysDrops[i].Amount, 2)))
+                    </td>
+                    <td>
+                        Weight:@Monster.DropTable.AlwaysDrops[i].Weight
+                    </td>
+                    <td>
+                        Amount:@Monster.DropTable.AlwaysDrops[i].Amount
+                    </td>
+                </tr>
+            }
+        </table>
+        </div>
+}
+
+<div style="height:300px;width:1000px">
+
+</div>
+
+
+
+@code {
+
+    private Monster Monster;
+    private double TotalWeights;
+    private double AverageDropValue;
+    private double maxHeight;
+    private double maxWidth;
+    private int iterator = 0;
+    private string GetBGColor(int i)
+    {
+        if(i % 2 == 0)
+        {
+            return "background-color:darkgray";
+        }
+        return "background-color:gray";
+    }
+    private void SetMonster(Monster m)
+    {
+        Monster = m;
+        CalculateTotalWeight();
+        GameState.UpdateState();
+    }
+    private void CalculateTotalWeight()
+    {
+        TotalWeights = 0;
+        AverageDropValue = 0;
+        double totalValue = 0;
+        foreach (Drop d in Monster.DropTable.Drops)
+        {
+            totalValue += ItemManager.Instance.GetItemByName(d.ItemName).Value * d.Amount * d.Weight;
+            TotalWeights += d.Weight;
+        }
+        totalValue /= TotalWeights;
+        AverageDropValue = (totalValue);
+        foreach(Drop d in Monster.DropTable.AlwaysDrops)
+        {
+            AverageDropValue += (ItemManager.Instance.GetItemByName(d.ItemName).Value * d.Amount);
+        }
+
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.HideTooltip();
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

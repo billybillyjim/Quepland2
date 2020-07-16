@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 
@@ -19,6 +20,7 @@ public class NPCManager
         }
     }
     public List<NPC> NPCs = new List<NPC>();
+    public Dictionary<string, Action> CustomDialogFunctions = new Dictionary<string, Action>();
     public async Task LoadNPCs(HttpClient Http)
     {
         List<string> npcs = new List<string>();
@@ -27,7 +29,27 @@ public class NPCManager
         {
             NPCs.Add(await Http.GetJsonAsync<NPC>("data/NPCs/" + s + ".json"));
         }
-
+        CustomDialogFunctions.Add("GetPlaytime", new Action(() => GetPlaytime()));
+    }
+    public void GetPlaytime()
+    {
+        TimeSpan time = TimeSpan.FromMilliseconds(GameState.CurrentTick * GameState.GameSpeed);
+        if(time.TotalHours > 1)
+        {
+            MessageManager.AddMessage("You've been in this world for " + time.TotalHours + " hours.");
+        }
+        else if(time.TotalMinutes > 1)
+        {
+            MessageManager.AddMessage("You've been in this world for " + time.TotalMinutes + " minutes.");
+        }
+        else if(time.TotalSeconds > 1)
+        {
+            MessageManager.AddMessage("You've been in this world for " + time.TotalSeconds + " seconds.");
+        }
+        else
+        {
+            MessageManager.AddMessage("You've only been in this world for " + time.TotalMilliseconds + " milliseconds!");
+        }
     }
 
     public NPC GetNPCByName(string name)

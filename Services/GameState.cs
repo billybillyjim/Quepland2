@@ -73,7 +73,7 @@ using System.Threading.Tasks;
     public static readonly int GameSpeed = 200;
     public int TicksToNextHeal;
     public int HealingTicks;
-    public int CurrentTick;
+    public static int CurrentTick;
 
     public static int GameWindowWidth;
     public int SmithingStage;
@@ -535,6 +535,7 @@ using System.Threading.Tasks;
         }
 
     }
+
     public async Task GetDimensions()
     {
         GameWindowWidth = await JSRuntime.InvokeAsync<int>("getWidth");

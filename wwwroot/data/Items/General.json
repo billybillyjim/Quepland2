@@ -108,5 +108,11 @@
     "description": "The blade of a mercurial weapon. It'll need the hilt and pommel to be made into a sword.",
     "value": 700,
     "icon": "Blade"
+  },
+  {
+    "name": "Koncave City Passport",
+    "description": "A passport into the underground city of Koncave.",
+    "value": 35000,
+    "icon": "Passport"
   }
 ]

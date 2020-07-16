@@ -7,11 +7,14 @@
 
 @if (GameState.ShowStartMenu)
 {
+    @if (GameState.InitCompleted == false)
+    {
+        <div>Loading Data...</div>
+    }
     <StartMenuComponent></StartMenuComponent>
     <button @onclick="@(() => Test())">Smith</button>
     <button @onclick="@(() => Rates())">Rates</button>
     <button @onclick="@(() => Quests())">Quest Manager</button>
-    <a href="https://docs.google.com/document/u/0/" target="_blank">Open Google Docs</a>
 }
 else
 {

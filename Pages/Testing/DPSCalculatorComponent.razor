@@ -143,6 +143,7 @@
     }
     protected override void OnInitialized()
     {
+        LootTracker.Instance.Inventory.AllItemsStack = true;
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()

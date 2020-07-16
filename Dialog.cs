@@ -28,7 +28,12 @@ public class Dialog
 	}
 	public void Talk()
     {
-		if (ItemOnTalk != "None")
+		if (NPCManager.Instance.CustomDialogFunctions.TryGetValue(ResponseText, out Action a))
+		{
+			a.Invoke();
+			return;
+		}
+			if (ItemOnTalk != "None")
 		{
 			if (Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItemByName(ItemOnTalk)) == false)
 			{

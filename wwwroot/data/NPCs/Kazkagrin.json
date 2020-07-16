@@ -16,6 +16,17 @@
       ]
     },
     {
+      "buttonText": "Hello",
+      "responseText": "Greetings, I am Kazkagrin, the fortune teller. I can help you find anything you are looking for. Also I can tell you how long you've been in this realm.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "How long have I been here?",
+      "responseText": "GetPlaytime",
+      "newDepthOnTalk": 0,
+      "depth": 1
+    },
+    {
       "buttonText": "Can you help me find a man named Mound?",
       "responseText": "I can! That's what I do, find things. Now what would you like to know about this Mound?",
       "newQuestprogressValue": 5,

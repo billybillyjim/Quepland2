@@ -101,18 +101,23 @@ public class BattleManager
                 if (opponent.CurrentHP <= 0 && opponent.IsDefeated == false)
                 {
                     opponent.CurrentHP = 0;                   
-                    List<GameItem> alwaysDrops = opponent.DropTable.GetAlwaysDrops();
                     Drop drop = opponent.DropTable.GetDrop();
 
                     if (LootTracker.Instance.TrackLoot)
                     {
-                        LootTracker.Instance.Inventory.AddItems(alwaysDrops);
+                        foreach(Drop d in opponent.DropTable.AlwaysDrops)
+                        {
+                            LootTracker.Instance.Inventory.AddDrop(d);
+                        }
                         LootTracker.Instance.Inventory.AddDrop(drop);
                     }
                     else
                     {
                         MessageManager.AddMessage("You defeated the " + opponent.Name + ".");
-                        Player.Instance.Inventory.AddItems(alwaysDrops);
+                        foreach (Drop d in opponent.DropTable.AlwaysDrops)
+                        {
+                            Player.Instance.Inventory.AddDrop(d);
+                        }
                         Player.Instance.Inventory.AddDrop(drop);
                     }
                     

@@ -5,7 +5,7 @@ using System.Linq;
 public class DropTable
 {
     public List<Drop> Drops { get; set; } = new List<Drop>();
-    public List<string> AlwaysDrops { get; set; } = new List<string>();
+    public List<Drop> AlwaysDrops { get; set; } = new List<Drop>();
     private static Random rand = new Random();
 
     public DropTable()
@@ -33,16 +33,6 @@ public class DropTable
             roll -= drop.Weight;
         }
         return null;
-    }
-    public List<GameItem> GetAlwaysDrops()
-    {
-        List<GameItem> items = new List<GameItem>();
-        foreach(string drop in AlwaysDrops)
-        {
-            MessageManager.AddMessage("You received a " + drop + ".");
-            items.Add(ItemManager.Instance.GetItemByName(drop));
-        }
-        return items;
     }
 
 }

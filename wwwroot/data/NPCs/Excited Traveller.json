@@ -4,16 +4,21 @@
   "dialogs": [
     {
       "buttonText": "Hello",
-      "responseText": "Hi! Can you believe all this cheese?!"
+      "responseText": "Hi! Can you believe all this cheese?!",
+      "newDepthOnTalk": 1
     },
     {
       "buttonText": "Why's there so much cheese here?",
-      "responseText": "You wouldn't believe it! It falls right out of the sky! Every few days there's a new mound to eat from!"
+      "responseText": "You wouldn't believe it! It falls right out of the sky! Every few days there's a new mound to eat from!",
+      "depth": 1,
+      "newDepthOnTalk": 1
     },
     {
       "buttonText": "Are you eating ground cheese?",
-      "responseText": "Don't judge me. It's delicious, why don't you try some?"
-      
+      "responseText": "Don't judge me. It's delicious, why don't you try some?",
+      "newDepthOnTalk": 1,
+      "depth": 1
+
     }
   ]
 }
