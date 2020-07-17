@@ -3,6 +3,7 @@
 @inject NavigationManager UriHelper
 
     <div style="        height: 130px;
+        min-height:130px;
         width: 350px;
         border: solid black 1px;
         padding: 5px;
@@ -25,13 +26,21 @@
                     <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Player.Instance.Equip(Item))">Equip</button></div>
 
                 }
+                else if (Item.ArmorInfo != null && Item.HasArmorRequirements())
+                {
+                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Player.Instance.Equip(Item))">Equip</button></div>
+                }
+                else if (Item.WeaponInfo != null && Item.HasWeaponRequirements())
+                {
+                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Player.Instance.Equip(Item))">Equip</button></div>
+                }
                 else
                 {
                     <div class="item-view-button">
                         <button class="btn btn-light" style="opacity:0.5"
                                 onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.GetRequirementTooltip())))"
                                 onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                        Equip
+                            Equip
                         </button>
                     </div>
 

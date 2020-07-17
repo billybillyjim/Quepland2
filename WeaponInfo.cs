@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class WeaponInfo
 {
@@ -9,4 +10,5 @@ public class WeaponInfo
     public int EffectDuration { get; set; }
 
     public bool IsArrow { get; set; }
+    public List<Requirement> WearRequirements { get; set; }
 }

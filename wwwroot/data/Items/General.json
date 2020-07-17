@@ -95,7 +95,7 @@
     "name": "Mercurial Hilt",
     "description": "The hilt of a mercurial weapon. It'll need the blade and pommel to be made into a sword.",
     "value": 700,
-    "icon": "Hilt"
+    "icon": "Handle"
   },
   {
     "name": "Mercurial Pommel",

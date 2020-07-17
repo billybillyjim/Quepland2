@@ -2,17 +2,23 @@
 @inject NavigationManager UriHelper
 @implements IDisposable
 
-@foreach(string slot in ItemManager.Instance.EquipmentSlots)
-{
-    <div>
-        @slot
-    </div>
-    <div @onclick="@(() => Unequip(GetItemAtSlot(slot)))">
-        <Quepland_2.Components.ItemBoxComponent Item="@GetItemAtSlot(slot)"></Quepland_2.Components.ItemBoxComponent>
-    </div>
-}
+    <div style="display:flex;flex-direction:column;flex-flow:wrap;">
+        @foreach (string slot in ItemManager.Instance.EquipmentSlots)
+        {
+        <div style="width:70px;">
+            @slot
 
-<Quepland_2.Components.InventoryViewerComponent></Quepland_2.Components.InventoryViewerComponent>
+            <div @onclick="@(() => Unequip(GetItemAtSlot(slot)))">
+                <Quepland_2.Components.ItemBoxComponent Item="@GetItemAtSlot(slot)"></Quepland_2.Components.ItemBoxComponent>
+            </div>
+        </div>
+        }
+    <div style="height:60vh;display:flex;flex-direction:column;">
+        <Quepland_2.Components.InventoryViewerComponent></Quepland_2.Components.InventoryViewerComponent>
+
+    </div>
+    </div>
+
 
 @code {
 

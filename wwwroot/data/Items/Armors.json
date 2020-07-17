@@ -106,12 +106,16 @@
     "gatherSpeed": 6,
     "experienceGained": "Leatherworking:15",
     "icon": "Glove",
+    "equipSlot": "Hands",
     "requirements": [
       {
         "skill": "Leatherworking",
         "skillLevel": 1
       }
-    ]
+    ],
+    "armorInfo": {
+      "armorBonus": 1
+    }
   },
   {
     "name": "Rabbit Hat",
@@ -121,6 +125,7 @@
     "gatherSpeed": 7,
     "experienceGained": "Leatherworking:25",
     "icon": "Hat",
+    "equipSlot": "Head",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -139,6 +144,7 @@
     "gatherSpeed": 8,
     "experienceGained": "Leatherworking:35",
     "icon": "Boots",
+    "equipSlot": "Feet",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -155,6 +161,7 @@
     "description": "A cheap and flimsy pair of leather pants. It took a lot of rabbits to make these.",
     "gatherString": "You make a pair of leather pants.",
     "gatherSpeed": 9,
+    "equipSlot": "Legs",
     "experienceGained": "Leatherworking:45",
     "icon": "Pants",
     "requirements": [
@@ -173,6 +180,7 @@
     "description": "A cheap and flimsy shirt made of rabbit leather.",
     "gatherString": "You make a leather shirt.",
     "gatherSpeed": 10,
+    "equipSlot": "Chest",
     "experienceGained": "Leatherworking:55",
     "icon": "Shirt",
     "requirements": [
@@ -193,6 +201,7 @@
     "gatherSpeed": 7,
     "experienceGained": "Leatherworking:55",
     "icon": "Glove",
+    "equipSlot": "Hands",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -211,6 +220,7 @@
     "gatherSpeed": 8,
     "experienceGained": "Leatherworking:70",
     "icon": "Hat",
+    "equipSlot": "Head",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -227,6 +237,7 @@
     "description": "A decent pair of leather boots.",
     "gatherString": "You make a pair of leather boots.",
     "gatherSpeed": 9,
+    "equipSlot": "Feet",
     "experienceGained": "Leatherworking:85",
     "icon": "Boots",
     "requirements": [
@@ -245,6 +256,7 @@
     "description": "A decent pair of leather pants.",
     "gatherString": "You make a pair of leather pants.",
     "gatherSpeed": 10,
+    "equipSlot": "Legs",
     "experienceGained": "Leatherworking:100",
     "icon": "Pants",
     "requirements": [
@@ -265,6 +277,7 @@
     "gatherSpeed": 11,
     "experienceGained": "Leatherworking:115",
     "icon": "Shirt",
+    "equipSlot": "Chest",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -283,6 +296,7 @@
     "gatherSpeed": 8,
     "experienceGained": "Leatherworking:95",
     "icon": "Glove",
+    "equipSlot": "Hands",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -291,7 +305,13 @@
     ],
     "armorInfo": {
       "armorBonus": 1,
-      "damage": 2
+      "damage": 2,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 45
+        }
+      ]
     }
   },
   {
@@ -302,6 +322,7 @@
     "gatherSpeed": 9,
     "experienceGained": "Leatherworking:110",
     "icon": "Hat",
+    "equipSlot": "Head",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -310,7 +331,13 @@
     ],
     "armorInfo": {
       "armorBonus": 1,
-      "damage": 3
+      "damage": 3,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 45
+        }
+      ]
     }
   },
   {
@@ -321,6 +348,7 @@
     "gatherSpeed": 10,
     "experienceGained": "Leatherworking:135",
     "icon": "Boots",
+    "equipSlot": "Feet",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -329,7 +357,13 @@
     ],
     "armorInfo": {
       "armorBonus": 1,
-      "damage": 4
+      "damage": 4,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 45
+        }
+      ]
     }
   },
   {
@@ -340,6 +374,7 @@
     "gatherSpeed": 11,
     "experienceGained": "Leatherworking:150",
     "icon": "Pants",
+    "equipSlot": "Legs",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -348,7 +383,13 @@
     ],
     "armorInfo": {
       "armorBonus": 3,
-      "damage": 5
+      "damage": 5,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 45
+        }
+      ]
     }
   },
   {
@@ -359,6 +400,7 @@
     "gatherSpeed": 12,
     "experienceGained": "Leatherworking:175",
     "icon": "Shirt",
+    "equipSlot": "Chest",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -367,7 +409,14 @@
     ],
     "armorInfo": {
       "armorBonus": 5,
-      "damage": 8
+      "damage": 8,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 45
+        }
+      ]
+      
     }
   },
   {
@@ -376,6 +425,7 @@
     "description": "A pair of gloves made from black bear leather.",
     "gatherString": "You make a pair of leather gloves.",
     "gatherSpeed": 10,
+    "equipSlot": "Hands",
     "experienceGained": "Leatherworking:130",
     "icon": "Glove",
     "requirements": [
@@ -386,7 +436,13 @@
     ],
     "armorInfo": {
       "armorBonus": 5,
-      "damage": 3
+      "damage": 3,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 55
+        }
+      ]
     }
   },
   {
@@ -397,6 +453,7 @@
     "gatherSpeed": 11,
     "experienceGained": "Leatherworking:150",
     "icon": "Hat",
+    "equipSlot": "Head",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -405,7 +462,13 @@
     ],
     "armorInfo": {
       "armorBonus": 6,
-      "damage": 1
+      "damage": 1,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 55
+        }
+      ]
     }
   },
   {
@@ -416,6 +479,7 @@
     "gatherSpeed": 12,
     "experienceGained": "Leatherworking:175",
     "icon": "Boots",
+    "equipSlot": "Feet",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -424,7 +488,13 @@
     ],
     "armorInfo": {
       "armorBonus": 8,
-      "damage": 2
+      "damage": 2,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 55
+        }
+      ]
     }
   },
   {
@@ -435,6 +505,7 @@
     "gatherSpeed": 13,
     "experienceGained": "Leatherworking:200",
     "icon": "Pants",
+    "equipSlot": "Legs",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -443,7 +514,13 @@
     ],
     "armorInfo": {
       "armorBonus": 8,
-      "damage": 1
+      "damage": 1,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 55
+        }
+      ]
     }
   },
   {
@@ -452,6 +529,7 @@
     "description": "A sturdy shirt made of black bear leather.",
     "gatherString": "You make a leather shirt.",
     "gatherSpeed": 14,
+    "equipSlot": "Chest",
     "experienceGained": "Leatherworking:225",
     "icon": "Shirt",
     "requirements": [
@@ -462,7 +540,13 @@
     ],
     "armorInfo": {
       "armorBonus": 12,
-      "damage": 2
+      "damage": 2,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 55
+        }
+      ]
     }
   },
   {
@@ -471,6 +555,7 @@
     "description": "A pair of gloves made from moose leather.",
     "gatherString": "You make a pair of leather gloves.",
     "gatherSpeed": 11,
+    "equipSlot": "Hands",
     "experienceGained": "Leatherworking:150",
     "icon": "Glove",
     "requirements": [
@@ -480,7 +565,13 @@
       }
     ],
     "armorInfo": {
-      "armorBonus": 17
+      "armorBonus": 17,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 65
+        }
+      ]
     }
   },
   {
@@ -490,7 +581,8 @@
     "gatherString": "You make a hat from the moose leather.",
     "gatherSpeed": 12,
     "experienceGained": "Leatherworking:170",
-    "icon": "Hat",
+    "icon": "NoAntlerHat",
+    "equipSlot": "Head",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -498,7 +590,13 @@
       }
     ],
     "armorInfo": {
-      "armorBonus": 18
+      "armorBonus": 18,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 65
+        }
+      ]
     }
   },
   {
@@ -509,10 +607,17 @@
     "gatherSpeed": 8,
     "experienceGained": "Leatherworking:170",
     "icon": "AntlerHat",
+    "equipSlot": "Head",
     "requirements": [
       {
         "skill": "Leatherworking",
-        "skillLevel": 70
+        "skillLevel": 70,
+        "wearRequirements": [
+          {
+            "skill": "Strength",
+            "skillLevel": 68
+          }
+        ]
       }
     ],
     "armorInfo": {
@@ -528,6 +633,7 @@
     "gatherSpeed": 13,
     "experienceGained": "Leatherworking:200",
     "icon": "Boots",
+    "equipSlot": "Feet",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -536,7 +642,13 @@
     ],
     "armorInfo": {
       "armorBonus": 19,
-      "damage": 2
+      "damage": 2,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 65
+        }
+      ]
     }
   },
   {
@@ -547,6 +659,7 @@
     "gatherSpeed": 14,
     "experienceGained": "Leatherworking:220",
     "icon": "Pants",
+    "equipSlot": "Legs",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -555,12 +668,19 @@
     ],
     "armorInfo": {
       "armorBonus": 22,
-      "damage": 1
+      "damage": 1,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 65
+        }
+      ]
     }
   },
   {
     "name": "Moose Shirt",
     "value": 2800,
+    "equipSlot": "Chest",
     "description": "A sturdy shirt made of moose leather.",
     "gatherString": "You make a leather shirt.",
     "gatherSpeed": 15,
@@ -574,7 +694,13 @@
     ],
     "armorInfo": {
       "armorBonus": 28,
-      "damage": 2
+      "damage": 2,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 65
+        }
+      ]
     }
   },
   {
@@ -583,6 +709,7 @@
     "description": "A pair of gloves made from grizzly bear leather.",
     "gatherString": "You make a pair of leather gloves.",
     "gatherSpeed": 12,
+    "equipSlot": "Hands",
     "experienceGained": "Leatherworking:210",
     "icon": "Glove",
     "requirements": [
@@ -593,7 +720,13 @@
     ],
     "armorInfo": {
       "armorBonus": 10,
-      "damage": 10
+      "damage": 10,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 72
+        }
+      ]
     }
   },
   {
@@ -604,6 +737,7 @@
     "gatherSpeed": 13,
     "experienceGained": "Leatherworking:230",
     "icon": "Hat",
+    "equipSlot": "Head",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -612,7 +746,13 @@
     ],
     "armorInfo": {
       "armorBonus": 10,
-      "damage": 10
+      "damage": 10,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 72
+        }
+      ]
     }
   },
   {
@@ -623,6 +763,7 @@
     "gatherSpeed": 14,
     "experienceGained": "Leatherworking:270",
     "icon": "Boots",
+    "equipSlot": "Feet",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -631,7 +772,13 @@
     ],
     "armorInfo": {
       "armorBonus": 14,
-      "damage": 6
+      "damage": 6,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 72
+        }
+      ]
     }
   },
   {
@@ -640,6 +787,7 @@
     "description": "A sturdy pair of leather pants made from bear leather.",
     "gatherString": "You make a pair of bear leather pants.",
     "gatherSpeed": 15,
+    "equipSlot": "Legs",
     "experienceGained": "Leatherworking:330",
     "icon": "Pants",
     "requirements": [
@@ -650,7 +798,13 @@
     ],
     "armorInfo": {
       "armorBonus": 16,
-      "damage": 10
+      "damage": 10,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 72
+        }
+      ]
     }
   },
   {
@@ -659,6 +813,7 @@
     "description": "A sturdy shirt made of grizzly bear leather.",
     "gatherString": "You make a leather shirt.",
     "gatherSpeed": 16,
+    "equipSlot": "Chest",
     "experienceGained": "Leatherworking:370",
     "icon": "Shirt",
     "requirements": [
@@ -669,7 +824,13 @@
     ],
     "armorInfo": {
       "armorBonus": 20,
-      "damage": 12
+      "damage": 12,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 72
+        }
+      ]
     }
   },
   {
@@ -678,6 +839,7 @@
     "description": "A pair of gloves made from bison leather.",
     "gatherString": "You make a pair of leather gloves.",
     "gatherSpeed": 13,
+    "equipSlot": "Hands",
     "experienceGained": "Leatherworking:250",
     "icon": "Glove",
     "requirements": [
@@ -688,7 +850,13 @@
     ],
     "armorInfo": {
       "armorBonus": 18,
-      "damage": 3
+      "damage": 3,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 80
+        }
+      ]
     }
   },
   {
@@ -697,6 +865,7 @@
     "description": "A sturdy hat made from bison leather.",
     "gatherString": "You make a hat from the bison leather.",
     "gatherSpeed": 14,
+    "equipSlot": "Head",
     "experienceGained": "Leatherworking:280",
     "icon": "Hat",
     "requirements": [
@@ -707,7 +876,13 @@
     ],
     "armorInfo": {
       "armorBonus": 20,
-      "damage": 6
+      "damage": 6,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 80
+        }
+      ]
     }
   },
   {
@@ -718,6 +893,7 @@
     "gatherSpeed": 15,
     "experienceGained": "Leatherworking:370",
     "icon": "Boots",
+    "equipSlot": "Feet",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -726,7 +902,13 @@
     ],
     "armorInfo": {
       "armorBonus": 24,
-      "damage": 4
+      "damage": 4,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 80
+        }
+      ]
     }
   },
   {
@@ -737,6 +919,7 @@
     "gatherSpeed": 16,
     "experienceGained": "Leatherworking:430",
     "icon": "Pants",
+    "equipSlot": "Legs",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -745,7 +928,13 @@
     ],
     "armorInfo": {
       "armorBonus": 26,
-      "damage": 7
+      "damage": 7,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 80
+        }
+      ]
     }
   },
   {
@@ -754,6 +943,7 @@
     "description": "A strong shirt made of bison leather.",
     "gatherString": "You make a leather shirt.",
     "gatherSpeed": 17,
+    "equipSlot": "Chest",
     "experienceGained": "Leatherworking:570",
     "icon": "Shirt",
     "requirements": [
@@ -764,7 +954,13 @@
     ],
     "armorInfo": {
       "armorBonus": 29,
-      "damage": 8
+      "damage": 8,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 80
+        }
+      ]
     }
   },
   {
@@ -772,8 +968,15 @@
     "value": 30,
     "description": "A pair of boots taken from a bandit who probably won't be using them anymore.",
     "icon": "Boots",
+    "equipSlot": "Feet",
     "armorInfo": {
-      "armorBonus": 1
+      "armorBonus": 1,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 15
+        }
+      ]
     }
 
   }

@@ -48,6 +48,34 @@ public class GameItem
         }
 		return true;
     }
+	public bool HasArmorRequirements()
+    {
+		if(ArmorInfo != null)
+        {
+			foreach(Requirement r in ArmorInfo.WearRequirements)
+            {
+				if(r.IsMet() == false)
+                {
+					return false;
+                }
+            }
+        }
+		return true;
+    }
+	public bool HasWeaponRequirements()
+    {
+		if (WeaponInfo != null)
+		{
+			foreach (Requirement r in WeaponInfo.WearRequirements)
+			{
+				if (r.IsMet() == false)
+				{
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 	public string GetRequirementTooltip()
     {
         if (HasRequirements())
@@ -55,11 +83,38 @@ public class GameItem
 			return "";
         }
 		string req = "";
-		foreach (Requirement r in Requirements)
+
+		bool hasEquipInfo = false;
+		if(ArmorInfo != null)
+        {
+			hasEquipInfo = true;
+			foreach (Requirement r in ArmorInfo.WearRequirements)
+            {
+				if(r.IsMet() == false)
+                {
+					req += r.ToString() + "\n";
+                }
+            }
+		}
+		if (WeaponInfo != null)
 		{
-			if (r.IsMet() == false)
+			hasEquipInfo = true;
+			foreach (Requirement r in WeaponInfo.WearRequirements)
 			{
-				req += r.ToString() + "\n";
+				if (r.IsMet() == false)
+				{
+					req += r.ToString() + "\n";
+				}
+			}
+		}
+		if(hasEquipInfo == false)
+        {
+			foreach (Requirement r in Requirements)
+			{
+				if (r.IsMet() == false)
+				{
+					req += r.ToString() + "\n";
+				}
 			}
 		}
 		req = req.Substring(0, req.Length - 1);
