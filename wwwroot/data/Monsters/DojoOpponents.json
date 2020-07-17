@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Smashy",
+    "hp": 5200,
+    "attackSpeed": 20,
+    "armor": 30,
+    "damage": 95
+  },
+  {
+    "name": "Scoph",
+    "hp": 6200,
+    "attackSpeed": 18,
+    "armor": 35,
+    "damage": 120
+  },
+  {
+    "name": "Fuzzy",
+    "hp": 7500,
+    "attackSpeed": 16,
+    "armor": 40,
+    "damage": 140
+  },
+  {
+    "name": "Munny",
+    "hp": 8500,
+    "attackSpeed": 15,
+    "armor": 45,
+    "damage": 160
+  },
+  {
+    "name": "Ezai",
+    "hp": 9000,
+    "attackSpeed": 25,
+    "armor": 65,
+    "damage": 220
+  },
+  {
+    "name": "Wizz",
+    "hp": 9000,
+    "attackSpeed": 15,
+    "armor": 125,
+    "damage": 270
+  },
+  {
+    "name": "Smwojo",
+    "hp": 10000,
+    "attackSpeed": 12,
+    "armor": 0,
+    "damage": 320
+  }
+]

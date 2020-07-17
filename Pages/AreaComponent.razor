@@ -31,20 +31,28 @@
 
         <br />
     }
+    @if (thisArea.DojoURL != null)
+    {
+        <div>
+            <button class="btn btn-dark" @onclick="@(() => EnterDojo(thisArea.DojoURL))">Enter @thisArea.Dojo.Name</button>
+
+        </div>
+        <br />
+    }
     @if (thisArea.DungeonName != null)
     {
-<div>
-    <button class="btn btn-dark" @onclick="@(() => EnterDungeon(thisArea.Dungeon.URL))">@thisArea.Dungeon.GetButtonText()</button>
+        <div>
+            <button class="btn btn-dark" @onclick="@(() => EnterDungeon(thisArea.Dungeon.URL))">@thisArea.Dungeon.GetButtonText()</button>
 
-</div>
+        </div>
         <br />
     }
     @if (thisArea.Monsters != null && thisArea.Monsters.Count > 0)
     {
-<div>
-    <button class="btn btn-outline-dark" @onclick="@(e => FindBattles())">Battle</button>
+        <div>
+            <button class="btn btn-outline-dark" @onclick="@(e => FindBattles())">Battle</button>
 
-</div>
+        </div>
         <br />
     }
     @foreach (AreaUnlock a in thisArea.UnlockableAreas)
@@ -98,6 +106,12 @@
         GameState.StopActions();
         GameState.Location = areaURL + "/" + buildingURL;
         UriHelper.NavigateTo("World/" + areaURL + "/" + buildingURL);
+    }
+    private void EnterDojo(string dojoURL)
+    {
+        GameState.StopActions();
+        GameState.Location = "Dojo/" + dojoURL;
+        UriHelper.NavigateTo("World/Dojo/" + dojoURL);
     }
     private void EnterDungeon(string dungeonURL)
     {

@@ -210,7 +210,7 @@ public class Player
         skill.Experience += (long)(amount);
         
 
-        if (skill.Experience >= Skill.GetExperienceRequired(skill.GetSkillLevelUnboosted()))
+        if (skill.Experience >= (long)Skill.GetExperienceRequired(skill.GetSkillLevelUnboosted()))
         {
             LevelUp(skill);
         }
@@ -304,6 +304,12 @@ public class Player
         else
         {
             MessageManager.AddMessage("Whoops! Looks like you died.");
+        }
+        if (BattleManager.Instance.CurrentDojo != null)
+        {
+            BattleManager.Instance.CurrentDojo.CurrentOpponent = 0;
+            BattleManager.Instance.CurrentDojo.HasBegunChallenge = false;
+            BattleManager.Instance.CurrentDojo = null;
         }
         BattleManager.Instance.EndBattle();
     }

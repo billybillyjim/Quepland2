@@ -18,12 +18,14 @@ public class BattleManager
     public IBoss CurrentBoss { get; set; }
     public Monster Target { get; set; }
     public Area CurrentArea;
+    public Dojo CurrentDojo { get; set; }
     public bool BattleHasEnded = true;
     private static readonly Random random = new Random();
     public async Task LoadMonsters(HttpClient Http)
     {
         Monsters.AddRange(await Http.GetJsonAsync<Monster[]>("data/Monsters/Overworld.json"));
         Monsters.AddRange(await Http.GetJsonAsync<Monster[]>("data/Monsters/Bosses.json"));
+        Monsters.AddRange(await Http.GetJsonAsync<Monster[]>("data/Monsters/DojoOpponents.json"));
     }
     public void StartBattle()
     {
@@ -42,7 +44,7 @@ public class BattleManager
             }
             BattleHasEnded = false;
         }
-
+        Target = GetNextTarget();
     }
     public void StartBattle(Area area)
     {
@@ -64,6 +66,12 @@ public class BattleManager
         }
         StartBattle();
         
+    }
+    public void StartBattle(Monster opponent)
+    {
+        CurrentOpponents.Clear();
+        CurrentOpponents.Add(opponent);
+        StartBattle();
     }
     public void StartBattle(List<Monster> opponents)
     {
@@ -139,6 +147,10 @@ public class BattleManager
             }
             if (AllOpponentsDefeated())
             {
+                if(CurrentDojo != null)
+                {
+                    CurrentDojo.CurrentOpponent++;
+                }
                 EndBattle();
             }
             if (CurrentBoss != null)

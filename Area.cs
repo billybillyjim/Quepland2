@@ -26,6 +26,18 @@ public class Area
     public string Description { get; set; } = "This place is indescribable... Or maybe the dev just forgot to describe it.";
     public bool IsUnlocked { get; set; }
     public bool IsHidden { get; set; }
+
+    public string DojoURL { get; set; }
+    private Dojo dojo;
+    public Dojo Dojo { get
+        {
+            if(dojo == null)
+            {
+                dojo = AreaManager.Instance.GetDojoByURL(DojoURL);
+            }
+            return dojo;
+        } 
+    }
     public List<string> Actions { get; set; } = new List<string>();
     public List<string> Monsters { get; set; } = new List<string>();
     public List<string> NPCs { get; set; } = new List<string>();
@@ -63,6 +75,10 @@ public class Area
         {
             foreach(AreaUnlock unlock in UnlockableAreas)
             {
+                if(unlock == null)
+                {
+                    Console.WriteLine("Area " + Name + " has a null value.");
+                }
                 if(unlock.HasRequirements() && AreaManager.Instance.GetAreaByURL(unlock.AreaURL).IsUnlocked == false)
                 {
                     return true;

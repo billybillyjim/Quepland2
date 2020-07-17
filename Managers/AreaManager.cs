@@ -23,6 +23,7 @@ public class AreaManager
     public List<Land> Lands = new List<Land>();
     public List<Dungeon> Dungeons = new List<Dungeon>();
     public List<Smithy> Smithies = new List<Smithy>();
+    public List<Dojo> Dojos = new List<Dojo>();
     public async Task LoadAreas(HttpClient Http)
     {
         Regions.AddRange(await Http.GetJsonAsync<Region[]>("data/Regions.json"));
@@ -34,6 +35,7 @@ public class AreaManager
         Lands.AddRange(await Http.GetJsonAsync<Land[]>("data/Lands.json"));
         Dungeons.AddRange(await Http.GetJsonAsync<Dungeon[]>("data/Dungeons/QueplandDungeons.json"));
         Smithies.AddRange(await Http.GetJsonAsync<Smithy[]>("data/Smithies.json"));
+        Dojos.AddRange(await Http.GetJsonAsync<Dojo[]>("data/Dojos.json"));
         Console.WriteLine("Quepland consists of " + Areas.Count + " areas, " + Regions.Count + " regions, " + Lands.Count + " lands, with " + Dungeons.Count + " dungeons.");
     }
 
@@ -80,6 +82,16 @@ public class AreaManager
             Console.WriteLine("No land with region:" + r.Name + " was found.");
         }
         return l;
+    }
+    public Dojo GetDojoByURL(string url)
+    {
+        Dojo d = Dojos.FirstOrDefault(x => x.URL == url);
+        if(d != null)
+        {
+            return d;
+        }
+        Console.WriteLine("Failed to find dojo with URL:" + url);
+        return null;
     }
 }
 

@@ -97,14 +97,7 @@
         "buttonText": "Continue to the city center"
       }
     ],
-    "buildings": [
-      {
-        "name": "Zuchi Dojo",
-        "buttonText": "Enter the dojo",
-        "url": "ZuchiDojo",
-        "description": "The floor of the main hall is covered in hammers. A large scroll with the character for hammer hangs from the far wall."
-      }
-    ]
+    "dojoURL": "ZuchiDojo"
   },
   {
     "name": "Central Tsu City",
@@ -185,5 +178,12 @@
         "description": "This is the archery shop."
       }
     ]
+  },
+  {
+    "name": "Tangei Gardens",
+    "id": 98,
+    "image": "Garden",
+    "description": "A garden",
+    "areaURL": "TangeiGardens"
   }
 ]

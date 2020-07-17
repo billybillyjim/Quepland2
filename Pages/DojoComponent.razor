@@ -1,0 +1,71 @@
+﻿@page "/World/Dojo/{dojoURL}"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+
+@if (thisDojo != null)
+{
+    <br />
+    <div>@thisDojo.Name</div>
+    <div>@thisDojo.Description</div>
+    @foreach (string npc in thisDojo.NPCs)
+    {
+        <Quepland_2.Components.NPCDialogComponent npc="@npc"></Quepland_2.Components.NPCDialogComponent>
+    }
+    <br />
+    @if (thisDojo.CurrentOpponent == 0 && thisDojo.HasBegunChallenge == false)
+    {
+        <button class="btn btn-primary" @onclick="@(() => BeginChallenge())">
+            Begin Challenge
+        </button>
+    }
+    else if (thisDojo.HasBegunChallenge)
+    {
+        <CombatComponent></CombatComponent>
+    }
+    if(BattleManager.Instance.BattleHasEnded && thisDojo.CurrentOpponent > 0)
+    {
+        <button class="btn btn-primary" @onclick="@(() => ContinueChallenge())">Continue</button>
+    }
+}
+
+
+
+@code {
+    [Parameter]
+    public string dojoURL { get; set; }
+
+    public Dojo thisDojo { get; set; }
+
+    private void BeginChallenge()
+    {
+        thisDojo.HasBegunChallenge = true;
+        BattleManager.Instance.CurrentDojo = thisDojo;
+        BattleManager.Instance.StartBattle(thisDojo.Opponents[thisDojo.CurrentOpponent]);
+        GameState.UpdateState();
+    }
+    private void ContinueChallenge()
+    {
+        BattleManager.Instance.StartBattle(thisDojo.Opponents[thisDojo.CurrentOpponent]);
+        GameState.UpdateState();
+    }
+    private void Talk(Dialog d)
+    {
+        d.Talk();
+        GameState.UpdateState();
+    }
+    protected override void OnParametersSet()
+    {
+        thisDojo = AreaManager.Instance.GetDojoByURL(dojoURL);
+
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}
