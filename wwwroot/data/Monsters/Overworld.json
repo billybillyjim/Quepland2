@@ -528,14 +528,40 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
-          "weight": 20
+          "itemName": "Snakewood Arrows",
+          "weight": 200,
+          "amount": 5
+        },
+        {
+          "itemName": "Lignum Vitae Arrows",
+          "weight": 150,
+          "amount": 3
+        },
+        {
+          "itemName": "Snakewood Arrows",
+          "weight": 20,
+          "amount": 15
+        },
+        {
+          "itemName": "Snakewood Arrows",
+          "weight": 2,
+          "amount": 50
+        },
+        {
+          "itemName": "Lignum Vitae Arrows",
+          "weight": 15,
+          "amount": 10
+        },
+        {
+          "itemName": "Lignum Vitae Arrows",
+          "weight": 1,
+          "amount": 30
         }
       ]
     }
   },
   {
-    "name": "Tokeloshe",
+    "name": "Tokoloshe",
     "hp": 380,
     "attackSpeed": 35,
     "armor": 3,
@@ -543,8 +569,44 @@
     "dropTable": {
       "drops": [
         {
+          "itemName": "Pentlandite",
+          "weight": 5
+        },
+        {
+          "itemName": "Galena",
+          "weight": 5
+        },
+        {
+          "itemName": "Cinnabar",
+          "weight": 5
+        },
+        {
+          "itemName": "Bauxite",
+          "weight": 3
+        },
+        {
+          "itemName": "Gold Ore",
+          "weight": 1
+        },
+        {
           "itemName": "Coins",
-          "weight": 20
+          "weight": 50,
+          "amount": 20
+        },
+        {
+          "itemName": "Coins",
+          "weight": 50,
+          "amount": 50
+        },
+        {
+          "itemName": "Coins",
+          "weight": 50,
+          "amount": 100
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 200
         }
       ]
     }
@@ -558,7 +620,31 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Sardine",
+          "weight": 20
+        },
+        {
+          "itemName": "Minnows",
+          "weight": 20
+        },
+        {
+          "itemName": "Sunfish",
+          "weight": 20
+        },
+        {
+          "itemName": "Carp",
+          "weight": 20
+        },
+        {
+          "itemName": "Abalone",
+          "weight": 20
+        },
+        {
+          "itemName": "Saury",
+          "weight": 20
+        },
+        {
+          "itemName": "Butterfish",
           "weight": 20
         }
       ]
@@ -573,8 +659,40 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Shad",
+          "weight": 40
+        },
+        {
+          "itemName": "Squid",
+          "weight": 40
+        },
+        {
+          "itemName": "Salmon",
           "weight": 20
+        },
+        {
+          "itemName": "Carp",
+          "weight": 40
+        },
+        {
+          "itemName": "Abalone",
+          "weight": 40
+        },
+        {
+          "itemName": "Saury",
+          "weight": 20
+        },
+        {
+          "itemName": "Butterfish",
+          "weight": 30
+        },
+        {
+          "itemName": "Medium Net",
+          "weight": 5
+        },
+        {
+          "itemName": "Large Net",
+          "weight": 1
         }
       ]
     }
@@ -588,8 +706,44 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
-          "weight": 20
+          "itemName": "Carquen",
+          "weight": 50,
+          "amount": 3
+        },
+        {
+          "itemName": "Quencium",
+          "weight": 50,
+          "amount": 3
+        },
+        {
+          "itemName": "Oxyquen",
+          "weight": 50,
+          "amount": 3
+        },
+        {
+          "itemName": "Nitroquen",
+          "weight": 50,
+          "amount": 3
+        },
+        {
+          "itemName": "Siliquen",
+          "weight": 20,
+          "amount": 1
+        },
+        {
+          "itemName": "Quephorus",
+          "weight": 20,
+          "amount": 1
+        },
+        {
+          "itemName": "Quelfur",
+          "weight": 10,
+          "amount": 1
+        },
+        {
+          "itemName": "Bariquem",
+          "weight": 10,
+          "amount": 1
         }
       ]
     }
@@ -603,8 +757,26 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
-          "weight": 20
+          "itemName": "Hemp",
+          "weight": 200
+        },
+        {
+          "itemName": "Hemp",
+          "weight": 70,
+          "amount": 2
+        },
+        {
+          "itemName": "Hemp",
+          "weight": 30,
+          "amount": 3
+        },
+        {
+          "itemName": "Oak Bow",
+          "weight": 10
+        },
+        {
+          "itemName": "Maple Bow",
+          "weight": 5
         }
       ]
     }
@@ -618,8 +790,26 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
-          "weight": 20
+          "itemName": "Hemp",
+          "weight": 200
+        },
+        {
+          "itemName": "Hemp",
+          "weight": 70,
+          "amount": 3
+        },
+        {
+          "itemName": "Hemp",
+          "weight": 30,
+          "amount": 5
+        },
+        {
+          "itemName": "Oak Bow",
+          "weight": 10
+        },
+        {
+          "itemName": "Iron Pickaxe",
+          "weight": 1
         }
       ]
     }

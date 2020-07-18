@@ -14,29 +14,39 @@ else
     {
         if (recipe.CanCreate())
         {
-            <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, recipe.OutputAmount + " " + recipe.Output.Name, recipe.GetIngredientsString())))" 
+            <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, recipe.OutputAmount + " " + recipe.Output.Name, recipe.GetIngredientsString())))"
                  @onclick="@(() => GameState.SetCraftingItem(recipe))"><ItemBoxComponent Item="@recipe.Output"></ItemBoxComponent></div>
         }
-        else if (recipe.HasSomeIngredients())
+        else if(recipe.HasSomeIngredients())
         {
-            if (recipe.HasSpace())
-            {
-                <div style="opacity:0.5" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, recipe.Output.Name, recipe.GetMissingIngredients())))"
-                     onmouseout="@(new Action(() => GameState.HideTooltip()))"><ItemBoxComponent Item="@recipe.Output"></ItemBoxComponent></div>
-            }
-            else
-            {
-                <div style="opacity:0.5" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, recipe.Output.Name, "You don't have the inventory space to make this.")))"
-                     onmouseout="@(new Action(() => GameState.HideTooltip()))"><ItemBoxComponent Item="@recipe.Output"></ItemBoxComponent></div>
-            }
-
+            <div style="opacity:0.5" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, recipe.Output.Name, GetTooltip(recipe))))"
+                 onmouseout="@(new Action(() => GameState.HideTooltip()))"><ItemBoxComponent Item="@recipe.Output"></ItemBoxComponent></div>
         }
+
+
     }
 </div>
 
 
 @code {
 
+    private string GetTooltip(Recipe r)
+    {
+        string tip = "";
+        if(r.HasRequirements() == false)
+        {
+            tip += r.GetRequirementTooltip() + "\n";
+        }
+        if(r.HasSpace() == false)
+        {
+            tip += "You don't have the inventory space to make this." + "\n";
+        }
+        if (r.GetMissingIngredients() != "Missing:\n")
+        {
+            tip += r.GetMissingIngredients() + "\n";
+        }
+        return tip;
+    }
     private void Stop()
     {
         GameState.StopActions();

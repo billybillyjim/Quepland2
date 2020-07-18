@@ -1,0 +1,242 @@
+[
+  {
+    "Name": "White Pine Bow(Unstrung)",
+    "Description": "A flimsy bow with no string.",
+    "value": 10,
+    "icon": "UnstrungBow",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ]
+  },
+  {
+    "Name": "White Pine Bow",
+    "Description": "A flimsy bow.",
+    "value": 20,
+    "enabledActions": "Archery",
+    "equipSlot": "Right Hand",
+    "icon": "Bow",
+    "weaponInfo": {
+      "attackSpeed": 12,
+      "damage": 8
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 1
+      }
+    ]
+  },
+  {
+    "Name": "Poplar Bow(Unstrung)",
+    "Description": "A less flimsy bow with no string.",
+    "value": 20,
+    "icon": "UnstrungBow",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ]
+  },
+  {
+    "Name": "Poplar Bow",
+    "Description": "A less flimsy bow.",
+    "value": 40,
+    "enabledActions": "Archery",
+    "equipSlot": "Right Hand",
+    "icon": "Bow",
+    "weaponInfo": {
+      "attackSpeed": 12,
+      "damage": 12
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 5
+      }
+    ]
+  },
+  {
+    "Name": "Oak Bow",
+    "Description": "A bow for shooting arrows with.",
+    "value": 70,
+    "enabledActions": "Archery",
+    "equipSlot": "Right Hand",
+    "icon": "Bow",
+    "weaponInfo": {
+      "attackSpeed": 12,
+      "damage": 15
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 15
+      }
+    ]
+  },
+  {
+    "Name": "Sugar Maple Bow",
+    "Description": "A sweet bow to shoot things with.",
+    "value": 90,
+    "enabledActions": "Archery",
+    "equipSlot": "Right Hand",
+    "icon": "Bow",
+    "weaponInfo": {
+      "attackSpeed": 14,
+      "damage": 30
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 25
+      }
+    ]
+  },
+  {
+    "Name": "Birch Bow",
+    "Description": "A light colored bow.",
+    "value": 110,
+    "enabledActions": "Archery",
+    "equipSlot": "Right Hand",
+    "icon": "Bow",
+    "weaponInfo": {
+      "attackSpeed": 10,
+      "damage": 17
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 25
+      }
+    ]
+  },
+  {
+    "Name": "Mesquite Bow",
+    "Description": "A sturdy bow.",
+    "value": 150,
+    "enabledActions": "Archery",
+    "equipSlot": "Right Hand",
+    "icon": "Bow",
+    "weaponInfo": {
+      "attackSpeed": 10,
+      "damage": 50
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 40
+      }
+    ]
+  },
+  {
+    "Name": "Mahogany Bow",
+    "Description": "An extravagant bow.",
+    "value": 350,
+    "enabledActions": "Archery",
+    "equipSlot": "Right Hand",
+    "icon": "Bow",
+    "weaponInfo": {
+      "attackSpeed": 12,
+      "damage": 50
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 50
+      }
+    ]
+  },
+  {
+    "Name": "Ironwood Bow",
+    "Description": "A strong bow made from a very strong wood.",
+    "value": 250,
+    "enabledActions": "Archery",
+    "equipSlot": "Right Hand",
+    "icon": "Bow",
+    "weaponInfo": {
+      "attackSpeed": 12,
+      "damage": 70
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 65
+      }
+    ]
+  },
+  {
+    "Name": "Snakewood Bow",
+    "Description": "A twisted bow, it's surprisingly effective.",
+    "value": 320,
+    "enabledActions": "Archery",
+    "equipSlot": "Right Hand",
+    "icon": "Bow",
+    "weaponInfo": {
+      "attackSpeed": 12,
+      "damage": 90
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 72
+      }
+    ]
+  },
+  {
+    "Name": "Lignum Vitae Bow",
+    "Description": "A very heavy bow.",
+    "value": 450,
+    "enabledActions": "Archery",
+    "equipSlot": "Right Hand",
+    "icon": "Bow",
+    "weaponInfo": {
+      "attackSpeed": 12,
+      "damage": 130
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 85
+      }
+    ]
+  },
+  {
+    "Name": "Buloke Bow",
+    "Description": "A bow made of the strongest wood known to man.",
+    "value": 650,
+    "enabledActions": "Archery",
+    "equipSlot": "Right Hand",
+    "icon": "Bow",
+    "weaponInfo": {
+      "attackSpeed": 12,
+      "damage": 170
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 92
+      }
+    ]
+  },
+  {
+    "Name": "Great Tree Bow",
+    "Description": "A bow fashioned from the wood of the Great Tree. It feels magical.",
+    "value": 1650,
+    "enabledActions": "Archery",
+    "equipSlot": "Right Hand",
+    "icon": "Bow",
+    "weaponInfo": {
+      "attackSpeed": 10,
+      "damage": 250
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 99
+      }
+    ]
+  }
+]

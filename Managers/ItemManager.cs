@@ -22,8 +22,8 @@ public class ItemManager
     public List<Recipe> Recipes = new List<Recipe>();
     public List<Recipe> SmithingRecipes = new List<Recipe>();
     public List<string> EquipmentSlots = new List<string>();
-    public static List<string> FileNames = new List<string> { "Weapons", "Armors", "Sushi", "QuestItems", "General", "Elements", "Hunting", "Fishing", "Bars", "Ores", "WoodworkingItems", "Logs" };
-    public static List<string> Colors = new List<string> { "#DC5958", "#3367d6", "#ffa7f4", "gray", "#ffd066", "#eadf92", "brown", "lightblue", "silver", "dimgray", "sienna", "tan" };
+    public static List<string> FileNames = new List<string> { "Weapons", "Bows", "Armors", "Sushi", "QuestItems", "General", "Elements", "Hunting", "Fishing", "Bars", "Ores", "WoodworkingItems", "Logs" };
+    public static List<string> Colors = new List<string> { "#DC5958", "#33FF88", "#3367d6", "#ffa7f4", "gray", "#ffd066", "#eadf92", "brown", "lightblue", "silver", "dimgray", "sienna", "tan" };
     public static int baseID;
     public static readonly int MaxItemsPerFile = 100;
     public bool IsSelling = false;

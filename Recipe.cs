@@ -50,6 +50,8 @@ public class Recipe
     public int MaxOutputsPerAction { get; set; } = 1;
     public string RecipeActionString { get; set; } = "You set to work...";
     public string RecipeButtonString { get; set; } = "Unpack";
+    public List<Requirement> Requirements { get; set; } = new List<Requirement>();
+    public string ExperienceGained { get; set; } = "None";
 
     /// <summary>
     /// Checks to see if the player has enough of each ingredient.
@@ -61,9 +63,24 @@ public class Recipe
         {
             return false;
         }
+        else if(HasRequirements() == false)
+        {
+            return false;
+        }
 		foreach(Ingredient ingredient in Ingredients)
         {
             if(Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(ingredient.Item)) < ingredient.Amount)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    public bool HasRequirements()
+    {
+        foreach (Requirement r in Requirements)
+        {
+            if (r.IsMet() == false)
             {
                 return false;
             }
@@ -101,6 +118,25 @@ public class Recipe
             }
         }
         return ing;
+    }
+    public string GetRequirementTooltip()
+    {
+        if (HasRequirements())
+        {
+            return "";
+        }
+        string req = "";
+
+            foreach (Requirement r in Requirements)
+            {
+                if (r.IsMet() == false)
+                {
+                    req += r.ToString() + "\n";
+                }
+            }
+        
+        req = req.Substring(0, req.Length - 1);
+        return req;
     }
     public string GetIngredientsString()
     {
@@ -160,16 +196,14 @@ public class Recipe
                     //Console.WriteLine("Removing " + (ingredient.Amount * maxOutput) + " " + ingredient.Item);
                 }
             }
-            Player.Instance.GainExperienceMultipleTimes(Output.ExperienceGained, maxOutput);
+            Player.Instance.GainExperienceMultipleTimes(ExperienceGained, OutputAmount *  maxOutput);
             Player.Instance.Inventory.AddMultipleOfItem(Output, OutputAmount * maxOutput);
             if(SecondaryOutputItemName != null)
-            {
-                Player.Instance.GainExperienceMultipleTimes(SecondaryOutput.ExperienceGained, maxOutput);
+            {                
                 Player.Instance.Inventory.AddMultipleOfItem(SecondaryOutput, OutputAmount * maxOutput);
             }
             if(TertiaryOutputItemName != null)
-            {
-                Player.Instance.GainExperienceMultipleTimes(TertiaryOutput.ExperienceGained, maxOutput);
+            {              
                 Player.Instance.Inventory.AddMultipleOfItem(TertiaryOutput, OutputAmount * maxOutput);
             }
             created = maxOutput;

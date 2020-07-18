@@ -1093,23 +1093,5 @@
         "skillLevel": 99
       }
     ]
-  },
-  {
-    "Name": "White Pine Bow",
-    "Description": "A flimsy bow.",
-    "value": 20,
-    "enabledActions": "Archery",
-    "equipSlot": "Right Hand",
-    "icon": "Bow",
-    "weaponInfo": {
-      "attackSpeed": 12,
-      "damage": 8
-    },
-    "requirements": [
-      {
-        "skill": "Archery",
-        "skillLevel": 1
-      }
-    ]
   }
 ]

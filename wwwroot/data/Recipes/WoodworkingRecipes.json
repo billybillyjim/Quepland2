@@ -10,6 +10,13 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Woodworking:1",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
     "maxOutputsPerAction": 1,
     "outputAmount": 10
   },
@@ -22,6 +29,13 @@
       {
         "item": "Wood Carving Knife",
         "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
       }
     ],
     "maxOutputsPerAction": 1,
@@ -38,6 +52,13 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
     "maxOutputsPerAction": 1,
     "outputAmount": 10
   },
@@ -50,6 +71,13 @@
       {
         "item": "Wood Carving Knife",
         "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:4",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
       }
     ],
     "maxOutputsPerAction": 1,
@@ -66,6 +94,13 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
     "maxOutputsPerAction": 1,
     "outputAmount": 8
   },
@@ -78,6 +113,13 @@
       {
         "item": "Wood Carving Knife",
         "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:6",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
       }
     ],
     "maxOutputsPerAction": 1,
@@ -94,6 +136,13 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Woodworking:10",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 40
+      }
+    ],
     "maxOutputsPerAction": 1,
     "outputAmount": 6
   },
@@ -106,6 +155,13 @@
       {
         "item": "Wood Carving Knife",
         "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:8",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
       }
     ],
     "maxOutputsPerAction": 1,
@@ -122,6 +178,13 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Woodworking:9",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
+      }
+    ],
     "maxOutputsPerAction": 1,
     "outputAmount": 5
   },
@@ -134,6 +197,13 @@
       {
         "item": "Wood Carving Knife",
         "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:10",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
       }
     ],
     "maxOutputsPerAction": 1,
@@ -150,6 +220,13 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Woodworking:12",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 80
+      }
+    ],
     "maxOutputsPerAction": 1,
     "outputAmount": 4
   },
@@ -162,6 +239,13 @@
       {
         "item": "Wood Carving Knife",
         "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:15",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 87
       }
     ],
     "maxOutputsPerAction": 1,
@@ -178,6 +262,13 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Woodworking:30",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 95
+      }
+    ],
     "maxOutputsPerAction": 1,
     "outputAmount": 4
   },
@@ -189,6 +280,13 @@
       },
       {
         "item": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:1",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
       }
     ],
     "maxOutputsPerAction": 10
@@ -203,6 +301,13 @@
         "item": "Feather"
       }
     ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
     "maxOutputsPerAction": 10
   },
   {
@@ -213,6 +318,13 @@
       },
       {
         "item": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
       }
     ],
     "maxOutputsPerAction": 10
@@ -227,6 +339,13 @@
         "item": "Feather"
       }
     ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
     "maxOutputsPerAction": 10
   },
   {
@@ -237,6 +356,13 @@
       },
       {
         "item": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
       }
     ],
     "maxOutputsPerAction": 10
@@ -251,6 +377,13 @@
         "item": "Feather"
       }
     ],
+    "experienceGained": "Woodworking:6",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 40
+      }
+    ],
     "maxOutputsPerAction": 10
   },
   {
@@ -261,6 +394,13 @@
       },
       {
         "item": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:7",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 40
       }
     ],
     "maxOutputsPerAction": 10
@@ -275,6 +415,13 @@
         "item": "Feather"
       }
     ],
+    "experienceGained": "Woodworking:8",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
+      }
+    ],
     "maxOutputsPerAction": 10
   },
   {
@@ -285,6 +432,13 @@
       },
       {
         "item": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:9",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
       }
     ],
     "maxOutputsPerAction": 10
@@ -299,6 +453,13 @@
         "item": "Feather"
       }
     ],
+    "experienceGained": "Woodworking:10",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
+      }
+    ],
     "maxOutputsPerAction": 10
   },
   {
@@ -309,6 +470,13 @@
       },
       {
         "item": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:12",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 80
       }
     ],
     "maxOutputsPerAction": 10
@@ -323,6 +491,13 @@
         "item": "Feather"
       }
     ],
+    "experienceGained": "Woodworking:15",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 87
+      }
+    ],
     "maxOutputsPerAction": 10
   },
   {
@@ -335,6 +510,13 @@
         "item": "Feather"
       }
     ],
+    "experienceGained": "Woodworking:30",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 95
+      }
+    ],
     "maxOutputsPerAction": 10
   },
   {
@@ -342,6 +524,88 @@
     "ingredients": [
       {
         "item": "Hemp"
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "White Pine Bow(Unstrung)",
+    "ingredients": [
+      {
+        "item": "White Pine Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:15",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "White Pine Bow",
+    "ingredients": [
+      {
+        "item": "White Pine Bow(Unstrung)"
+      },
+      {
+        "item": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Poplar Bow(Unstrung)",
+    "ingredients": [
+      {
+        "item": "Poplar Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:20",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Poplar Bow",
+    "ingredients": [
+      {
+        "item": "Poplar Bow(Unstrung)"
+      },
+      {
+        "item": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:7",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
       }
     ],
     "maxOutputsPerAction": 1,
