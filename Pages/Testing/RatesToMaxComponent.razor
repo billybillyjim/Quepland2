@@ -33,7 +33,11 @@
         <div>@action.Key.Name</div>
         <div>@action.Value</div>
     }
-
+    @foreach (KeyValuePair<Recipe, double> action in BestRecipeRatesAtLevel)
+    {
+        <div>@action.Key.Output.Name</div>
+        <div>@action.Value</div>
+    }
 </div>
 <div style="height:300px;width:1000px">
 
@@ -47,6 +51,8 @@
     private Skill Skill;
     public double TimeToMax;
     public List<KeyValuePair<GameItem, double>> BestRatesAtLevel = new List<KeyValuePair<GameItem, double>>();
+    public List<KeyValuePair<Recipe, double>> BestRecipeRatesAtLevel = new List<KeyValuePair<Recipe, double>>();
+
     public List<GameItem> RelevantGear = new List<GameItem>();
     private void SetSkill(string skill)
     {
@@ -88,11 +94,38 @@
             }
 
         }
+
+        foreach (Recipe r in ItemManager.Instance.Recipes)
+        {
+            bool sameSkill = false;
+            int lvl = 1;
+            foreach (Requirement req in r.Requirements)
+            {
+                if (req.Skill == SkillString)
+                {
+                    sameSkill = true;
+                    if (req.SkillLevel != 0)
+                    {
+                        lvl = req.SkillLevel;
+                    }
+                }
+            }
+            if (sameSkill)
+            {
+                if (r.ExperienceGained.Contains(':'))
+                {
+                    int xp = int.Parse(r.ExperienceGained.Split(':')[1]);
+                    double xpHr = ((double)xp / (r.CraftingSpeed)) * 5 * 60 * 60;
+                    BestRecipeRatesAtLevel.Add(new KeyValuePair<Recipe, double>(r, xpHr));
+                    Console.WriteLine("Adding recipe:" + r.Output.Name);
+                }
+            }
+        }
         BestRatesAtLevel = BestRatesAtLevel.OrderBy(x => x.Value).Reverse().ToList();
+        BestRecipeRatesAtLevel = BestRecipeRatesAtLevel.OrderBy(x => x.Value).Reverse().ToList();
         TimeToMax = 0;
         Player.Instance.Skills.Find(x => x.Name == SkillString).Experience = 0;
         Player.Instance.Skills.Find(x => x.Name == SkillString).SetSkillLevel(1);
-
         for (int i = 1; i < 99; i++)
         {
             bool metReq = false;
@@ -117,6 +150,27 @@
                     {
                         TimeToMax += (Skill.GetExperienceRequired(i + 1) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience) / (pair.Value);
                         Console.WriteLine("Adding Time:" + (Skill.GetExperienceRequired(i + 1) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience) + " / " + pair.Value + "(" + ((Skill.GetExperienceRequired(i + 1) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience) / pair.Value) + " hours) for item:" + pair.Key.Name + " at level:" + i);
+                        metReq = true;
+                        continue;
+                    }
+                }
+            }
+            foreach (KeyValuePair<Recipe, double> pair in BestRecipeRatesAtLevel)
+            {
+                if (metReq)
+                {
+                    continue;
+                }
+                foreach (Requirement req in pair.Key.Requirements)
+                {
+                    if (metReq)
+                    {
+                        continue;
+                    }
+                    if (req.SkillLevel <= Player.Instance.Skills.Find(x => x.Name == SkillString).GetSkillLevel() && req.SkillLevel > 0)
+                    {
+                        TimeToMax += (Skill.GetExperienceRequired(i + 1) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience) / (pair.Value);
+                        Console.WriteLine("Adding Time:" + (Skill.GetExperienceRequired(i + 1) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience) + " / " + pair.Value + "(" + ((Skill.GetExperienceRequired(i + 1) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience) / pair.Value) + " hours) for item:" + pair.Key.Output.Name + " at level:" + i);
                         metReq = true;
                         continue;
                     }

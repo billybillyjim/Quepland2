@@ -3,13 +3,7 @@
     "Name": "White Pine Bow(Unstrung)",
     "Description": "A flimsy bow with no string.",
     "value": 10,
-    "icon": "UnstrungBow",
-    "requirements": [
-      {
-        "skill": "Woodworking",
-        "skillLevel": 1
-      }
-    ]
+    "icon": "UnstrungBow"
   },
   {
     "Name": "White Pine Bow",
@@ -33,13 +27,7 @@
     "Name": "Poplar Bow(Unstrung)",
     "Description": "A less flimsy bow with no string.",
     "value": 20,
-    "icon": "UnstrungBow",
-    "requirements": [
-      {
-        "skill": "Woodworking",
-        "skillLevel": 5
-      }
-    ]
+    "icon": "UnstrungBow"
   },
   {
     "Name": "Poplar Bow",
@@ -60,6 +48,12 @@
     ]
   },
   {
+    "Name": "Oak Bow(Unstrung)",
+    "Description": "A bow for shooting arrows with, if it had a string.",
+    "value": 35,
+    "icon": "UnstrungBow"
+  },
+  {
     "Name": "Oak Bow",
     "Description": "A bow for shooting arrows with.",
     "value": 70,
@@ -76,6 +70,12 @@
         "skillLevel": 15
       }
     ]
+  },
+  {
+    "Name": "Sugar Maple Bow(Unstrung)",
+    "Description": "A sweet bow with no string.",
+    "value": 55,
+    "icon": "UnstrungBow"
   },
   {
     "Name": "Sugar Maple Bow",
@@ -96,6 +96,12 @@
     ]
   },
   {
+    "Name": "Birch Bow(Unstrung)",
+    "Description": "A lightcolored bow with no string.",
+    "value": 85,
+    "icon": "UnstrungBow"
+  },
+  {
     "Name": "Birch Bow",
     "Description": "A light colored bow.",
     "value": 110,
@@ -112,6 +118,12 @@
         "skillLevel": 25
       }
     ]
+  },
+  {
+    "Name": "Mesquite Bow(Unstrung)",
+    "Description": "This would make a sturdy bow if it had a string.",
+    "value": 105,
+    "icon": "UnstrungBow"
   },
   {
     "Name": "Mesquite Bow",
@@ -132,6 +144,12 @@
     ]
   },
   {
+    "Name": "Mahogany Bow(Unstrung)",
+    "Description": "An elegant but unfinished weapon.",
+    "value": 280,
+    "icon": "UnstrungBow"
+  },
+  {
     "Name": "Mahogany Bow",
     "Description": "An extravagant bow.",
     "value": 350,
@@ -148,6 +166,12 @@
         "skillLevel": 50
       }
     ]
+  },
+  {
+    "Name": "Ironwood Bow(Unstrung)",
+    "Description": "A strong bow. If it had a string you could shoot with it.",
+    "value": 205,
+    "icon": "UnstrungBow"
   },
   {
     "Name": "Ironwood Bow",
@@ -168,6 +192,12 @@
     ]
   },
   {
+    "Name": "Snakewood Bow(Unstrung)",
+    "Description": "A twisted bow without a string.",
+    "value": 280,
+    "icon": "UnstrungBow"
+  },
+  {
     "Name": "Snakewood Bow",
     "Description": "A twisted bow, it's surprisingly effective.",
     "value": 320,
@@ -184,6 +214,12 @@
         "skillLevel": 72
       }
     ]
+  },
+  {
+    "Name": "Lignum Vitae Bow(Unstrung)",
+    "Description": "Essentially a heavy stick. You could add a string to make it into a weapon.",
+    "value": 390,
+    "icon": "UnstrungBow"
   },
   {
     "Name": "Lignum Vitae Bow",
@@ -204,6 +240,12 @@
     ]
   },
   {
+    "Name": "Buloke Bow(Unstrung)",
+    "Description": "A very strong piece of wood carved into a bow. It needs a string to complete it.",
+    "value": 580,
+    "icon": "UnstrungBow"
+  },
+  {
     "Name": "Buloke Bow",
     "Description": "A bow made of the strongest wood known to man.",
     "value": 650,
@@ -220,6 +262,12 @@
         "skillLevel": 92
       }
     ]
+  },
+  {
+    "Name": "Great Tree Bow(Unstrung)",
+    "Description": "A bow fashioned from wood from the Great Tree. All it needs now is a string.",
+    "value": 1350,
+    "icon": "UnstrungBow"
   },
   {
     "Name": "Great Tree Bow",

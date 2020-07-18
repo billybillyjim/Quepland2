@@ -362,7 +362,7 @@
     "requirements": [
       {
         "skill": "Woodworking",
-        "skillLevel": 35
+        "skillLevel": 25
       }
     ],
     "maxOutputsPerAction": 10
@@ -381,7 +381,7 @@
     "requirements": [
       {
         "skill": "Woodworking",
-        "skillLevel": 40
+        "skillLevel": 35
       }
     ],
     "maxOutputsPerAction": 10
@@ -610,5 +610,415 @@
     ],
     "maxOutputsPerAction": 1,
     "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Oak Bow(Unstrung)",
+    "ingredients": [
+      {
+        "item": "Oak Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:40",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Oak Bow",
+    "ingredients": [
+      {
+        "item": "Oak Bow(Unstrung)"
+      },
+      {
+        "item": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:15",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Sugar Maple Bow(Unstrung)",
+    "ingredients": [
+      {
+        "item": "Sugar Maple Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:60",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Sugar Maple Bow",
+    "ingredients": [
+      {
+        "item": "Sugar Maple Bow(Unstrung)"
+      },
+      {
+        "item": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:25",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Birch Bow(Unstrung)",
+    "ingredients": [
+      {
+        "item": "Birch Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:50",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Birch Bow",
+    "ingredients": [
+      {
+        "item": "Birch Bow(Unstrung)"
+      },
+      {
+        "item": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:20",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Mesquite Bow(Unstrung)",
+    "ingredients": [
+      {
+        "item": "Mesquite Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:70",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Mesquite Bow",
+    "ingredients": [
+      {
+        "item": "Mesquite Bow(Unstrung)"
+      },
+      {
+        "item": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:35",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Mahogany Bow(Unstrung)",
+    "ingredients": [
+      {
+        "item": "Mahogany Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:120",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 40
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 9
+  },
+  {
+    "outputItemName": "Mahogany Bow",
+    "ingredients": [
+      {
+        "item": "Mahogany Bow(Unstrung)"
+      },
+      {
+        "item": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:40",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 40
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 9
+  },
+  {
+    "outputItemName": "Ironwood Bow(Unstrung)",
+    "ingredients": [
+      {
+        "item": "Ironwood Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:140",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 10
+  },
+  {
+    "outputItemName": "Ironwood Bow",
+    "ingredients": [
+      {
+        "item": "Ironwood Bow(Unstrung)"
+      },
+      {
+        "item": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:60",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 10
+  },
+  {
+    "outputItemName": "Snakewood Bow(Unstrung)",
+    "ingredients": [
+      {
+        "item": "Snakewood Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:180",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 13
+  },
+  {
+    "outputItemName": "Snakewood Bow",
+    "ingredients": [
+      {
+        "item": "Snakewood Bow(Unstrung)"
+      },
+      {
+        "item": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:80",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 13
+  },
+  {
+    "outputItemName": "Lignum Vitae Bow(Unstrung)",
+    "ingredients": [
+      {
+        "item": "Lignum Vitae Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:230",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 15
+  },
+  {
+    "outputItemName": "Lignum Vitae Bow",
+    "ingredients": [
+      {
+        "item": "Lignum Vitae Bow(Unstrung)"
+      },
+      {
+        "item": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:100",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 15
+  },
+  {
+    "outputItemName": "Buloke Bow(Unstrung)",
+    "ingredients": [
+      {
+        "item": "Buloke Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:320",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 80
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 16
+  },
+  {
+    "outputItemName": "Buloke Bow",
+    "ingredients": [
+      {
+        "item": "Buloke Bow(Unstrung)"
+      },
+      {
+        "item": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:150",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 80
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 16
+  },
+  {
+    "outputItemName": "Great Tree Bow(Unstrung)",
+    "ingredients": [
+      {
+        "item": "Great Tree Logs"
+      },
+      {
+        "item": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:480",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 95
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 18
+  },
+  {
+    "outputItemName": "Great Tree Bow",
+    "ingredients": [
+      {
+        "item": "Great Tree Bow(Unstrung)"
+      },
+      {
+        "item": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:220",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 95
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 18
   }
 ]
