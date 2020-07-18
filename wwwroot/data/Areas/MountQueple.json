@@ -197,7 +197,7 @@
     "name": "Northern Trail",
     "id": 7,
     "image": "Trail",
-    "description": "As you come around the side of the mountain you spy the ocean beyond a large field. The path will lead you straight down to the water.",
+    "description": "As you come around the side of the mountain you spy the ocean beyond a large field. The path will lead you straight down to the water. Or, it would, if the bridge weren't out. You'll have to find some way across.",
     "areaURL": "NorthernTrail",
     "actions": [
       "Chop Oak Trees:Oak Logs"
@@ -205,7 +205,27 @@
     "unlockableAreas": [
       {
         "areaURL": "CantilaBeach",
-        "buttonText": "Continue Down the Mountain"
+        "buttonText": "Jump the Gap",
+        "requirements": [
+          {
+            "skill": "Deftness",
+            "skillLevel": 25
+          }
+        ]
+      },
+      {
+        "areaURL": "CantilaBeach",
+        "buttonText": "Fix the Bridge",
+        "requirements": [
+          {
+            "skill": "Woodworking",
+            "skillLevel": 20
+          },
+          {
+            "item": "White Pine Logs",
+            "itemAmount": 10
+          }
+        ]
       }
 
     ],

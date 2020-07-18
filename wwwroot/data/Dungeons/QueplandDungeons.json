@@ -17,14 +17,11 @@
     "name": "Sahota Dungeon",
     "url": "SahotaDungeon",
     "size": 500,
-    "areaURLs": [
-      "CopperMine",
-      "TinMine",
-      "QuepleCaveSmithy"
-    ],
     "monsterNames": [
-      "Chicken",
-      "Rooster"
+      "Frost Fighter",
+      "Chenoo",
+      "Akhlut",
+      "Italian Christmas Tree"
     ]
   }
 ]

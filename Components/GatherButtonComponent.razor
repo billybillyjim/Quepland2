@@ -19,12 +19,14 @@
         }
         else
         {
-            <div style="position:relative" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, items[0].GetRequirementTooltip())))"
-                 onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                <button  class="btn btn-primary" disabled>
+            <div style="position:relative" >
+                <button class="btn btn-primary" style="position:relative"disabled>
                     @gatherText
+                    <div style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;" 
+                         onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, items[0].GetRequirementTooltip())))"
+                 onmouseout="@(new Action(() => GameState.HideTooltip()))"></div>
                 </button>
-                <div style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;"></div>
+                
             </div>
 
         }

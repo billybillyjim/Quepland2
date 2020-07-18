@@ -29,12 +29,31 @@
     "name": "Fjellover Pass",
     "id": 72,
     "image": "Trail",
-    "description": "The trail leads through a deep valley. Mt. Yama towers in the distance, glowing in the sun. There are deposits of iron ore lying along the sides of the path.",
+    "description": "The trail leads through a deep valley. Mt. Yama towers in the distance, glowing in the sun. There are deposits of iron ore lying along the sides of the path. The trail upward is blocked by a rockslide.",
     "areaURL": "FjelloverPass",
     "unlockableAreas": [
       {
         "areaURL": "MtYamaFoot",
-        "buttonText": "Continue up the Path"
+        "buttonText": "Mine the rocks away",
+        "requirements": [
+          {
+            "skill": "Mining",
+            "skillLevel": 40
+          },
+          {
+            "action": "Mining"
+          }
+        ]
+      },
+      {
+        "areaURL": "MtYamaFoot",
+        "buttonText": "Lift the rocks away",
+        "requirements": [
+          {
+            "skill": "Strength",
+            "skillLevel": 60
+          }
+        ]
       }
     ],
     "actions": [

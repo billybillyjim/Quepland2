@@ -18,4 +18,6 @@
     <Folder Include="Pages\CustomBuildings\" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4data_4areas_4mountqueple_1json__JsonSchema="..\AreaSchema.json" /></VisualStudio></ProjectExtensions>
+
 </Project>

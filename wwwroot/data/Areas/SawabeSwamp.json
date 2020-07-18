@@ -22,7 +22,7 @@
     "id": 21,
     "image": "Forest",
     "areaURL": "Swampwood",
-    "description": "The swamp grows dark under the tree canopy. The sound of bugs and swamp creatures is disorienting.",
+    "description": "The swamp grows dark under the tree canopy. The sound of bugs and swamp creatures is disorienting. You'd need to be a skilled pathfinder to make it any deeper.",
     "monsters": [
       "Chicken",
       "Rooster"
@@ -30,7 +30,13 @@
     "unlockableAreas": [
       {
         "AreaURL": "Sawoka",
-        "ButtonText": "Travel Further"
+        "ButtonText": "Travel further into the swamp",
+        "requirements": [
+          {
+            "skill": "Hunting",
+            "skillLevel": 35
+          }
+        ]
       }
 
     ],

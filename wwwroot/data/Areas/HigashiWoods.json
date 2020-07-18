@@ -4,13 +4,22 @@
     "id": 40,
     "image": "Tree",
     "isUnlocked": false,
-    "description": "The forest beyond Uragota is different, somehow. An eerie stillness eminates from within, only perturbed by the sound of leaves in the breeze.",
+    "description": "The forest beyond Uragota is different, somehow. An eerie stillness eminates from within, only perturbed by the sound of leaves in the breeze. A large tree has fallen in the path, you'll need to cut it away to continue.",
     "areaURL": "CocheeClearing",
     "trappingLocation": true,
     "unlockableAreas": [
       {
         "areaURL": "HigashiWoods",
-        "buttonText": "Enter the Forest"
+        "buttonText": "Enter the Forest",
+        "requirements": [
+          {
+            "skill": "Woodcutting",
+            "skillLevel": 30
+          },
+          {
+            "action": "Woodcutting"
+          }
+        ]
       }
     ],
     "trapSlot": {
