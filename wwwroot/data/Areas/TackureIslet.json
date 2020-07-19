@@ -26,6 +26,16 @@
       {
         "areaURL": "WanaTonaLake",
         "buttonText": "Take a Tour Ride"
+      },
+      {
+        "areaURL": "LaauKaila",
+        "buttonText": "Head into the forest",
+        "requirements": [
+          {
+            "skill": "Hunting",
+            "skillLevel": 55
+          }
+        ]
       }
 
     ],
@@ -42,8 +52,29 @@
     ]
   },
   {
-    "name": "Wana Tona Lake",
+    "name": "Laau Kaila",
     "id": 82,
+    "image": "Forest",
+    "description": "It's hard to see ahead or behind as you step between the sturdy, thin trees that make up the majority of the forest. At last you find a small clearing with a small hut.",
+    "areaURL": "LaauKaila",
+    "actions": [
+      "Chop Ironwood Trees:Ironwood Logs"
+    ],
+    "buildings": [
+      {
+        "name": "Kazkagrin's Fortunes",
+        "buttonText": "Visit Kazkagrin's Fortunes",
+        "url": "KazkagrinsFortunes",
+        "description": "A poorly lit room is surrounded on all sides by maps, clocks, and tapestries. A strange man sits hunched over a table, awaiting your arrival.",
+        "npcs": [
+          "Kazkagrin"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Wana Tona Lake",
+    "id": 83,
     "image": "Lake",
     "description": "The lake is dark and deep. Here and there bubbles emerge from the waters. Something lives under here. A wall of reeds blocks off the northern part of the lake.",
     "areaURL": "WanaTonaLake",
@@ -69,7 +100,7 @@
   },
   {
     "name": "Sotu Nran",
-    "id": 83,
+    "id": 84,
     "image": "Waterfall",
     "description": "A small waterfall emerges from the side of the hill behind it.",
     "areaURL": "SotuNran",

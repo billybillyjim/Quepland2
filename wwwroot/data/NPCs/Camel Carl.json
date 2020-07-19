@@ -1,0 +1,110 @@
+{
+  "name": "Camel Carl",
+  "id": 22,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi, welcome to camelpalooza... Is what I would say, if I had any camels anymore!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 1,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 0,
+          "maximumQuestProgress": 0
+        }
+      ]
+    },
+    {
+      "buttonText": "I could help you",
+      "responseText": "What? Why would you help a stranger like me?",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 2,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 1
+        }
+      ]
+    },
+    {
+      "buttonText": "I need a camel",
+      "responseText": "Oh, this is a fortunate encounter! You can get my camels back!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 3,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 2,
+          "maximumQuestProgress": 2
+        }
+      ]
+    },
+    {
+      "buttonText": "I am a good person",
+      "responseText": "Oh, this is a fortunate encounter! You can get my camels back!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 3,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 2,
+          "maximumQuestProgress": 2
+        }
+      ]
+    },
+    {
+      "buttonText": "I am an adventurer!",
+      "responseText": "Oh, this is a fortunate encounter! You can get my camels back!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 3,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 2,
+          "maximumQuestProgress": 2
+        }
+      ]
+    },
+    {
+      "buttonText": "What happened?",
+      "responseText": "They came in the night, some thieves of some sort. Maybe pirates, I'm not sure. But they came and stole all my camels!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 4,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 1
+        }
+      ]
+    },
+    {
+      "buttonText": "What happened?",
+      "responseText": "They came in the night, some thieves of some sort. Maybe pirates, I'm not sure. But they came and stole all my camels!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 4,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 3,
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "Where did they go?",
+      "responseText": "",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 5,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 4,
+          "maximumQuestProgress": 4
+        }
+      ]
+    }
+  ]
+}

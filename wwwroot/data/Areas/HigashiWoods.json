@@ -7,6 +7,9 @@
     "description": "The forest beyond Uragota is different, somehow. An eerie stillness eminates from within, only perturbed by the sound of leaves in the breeze. A large tree has fallen in the path, you'll need to cut it away to continue.",
     "areaURL": "CocheeClearing",
     "trappingLocation": true,
+    "actions": [
+      "Chop Birch Trees:Birch Logs"
+    ],
     "unlockableAreas": [
       {
         "areaURL": "HigashiWoods",
@@ -108,7 +111,8 @@
     "description": "The woods begin to thin as you reach the other side of the bridge. Hemp grows wild here, enough to harvest however much you'd like. The trail continues southward up the mountains.",
     "areaURL": "EastHigashiWoods",
     "actions": [
-      "Harvest Hemp:Hemp"
+      "Harvest Hemp:Hemp",
+      "Chop Mesquite Trees:Mesquite Logs"
     ],
     "unlockableAreas": [
       {

@@ -12,7 +12,8 @@
     <ul class="nav flex-column">
         <li class="nav-item px-3">
             <div style="@GetStyle("Bank")" onclick="@(new Action(() => GoToArea("Bank")))">
-            <img style="height: 45px; width: 45px; padding: 5px; margin-right: 10px; border-radius: 0.25rem; background-color: white;" src="@("data/Images/Bank.png")" />Bank</div>
+                <img style="height: 45px; width: 45px; padding: 5px; margin-right: 10px; border-radius: 0.25rem; background-color: white;" src="@("data/Images/Bank.png")" />Bank
+            </div>
 
         </li>
         @foreach (Region region in AreaManager.Instance.GetLandByName(GameState.CurrentLand.Name).Regions)
@@ -20,30 +21,44 @@
             if (region.IsUnlocked)
             {
 
-                    <li class="nav-item px-3" style="background-color:rgba(255, 255, 255, 0.2);cursor:pointer;" @onclick="@(() => ChangeOpenRegion(region))">
-                        <span style="color:black;font-size:large;display:inline-block;padding-top:10px;" >@region.Name  </span><img style="height:25px;width:25px;float:right;margin-top:11px;" src="data/Images/Hamburger.png" />
-                    </li>
-                
+                <li class="nav-item px-3" style="background-color:rgba(255, 255, 255, 0.2);cursor:pointer;" @onclick="@(() => ChangeOpenRegion(region))">
+                    <span style="color:black;font-size:large;display:inline-block;padding-top:10px;">@region.Name  </span><img style="height:25px;width:25px;float:right;margin-top:11px;" src="data/Images/Hamburger.png" />
+                </li>
+
                 @if (region == openRegionMenu)
                 {
                     foreach (Area a in region.Areas)
                     {
-                        if (a.IsUnlocked && a.IsHidden == false)
+                        if (a.IsUnlocked && a.IsHidden == false && a.HasRequirements())
                         {
                             <li class="nav-item px-3" style="position:relative;padding-bottom:0px;">
-                                
+
                                 <div style="@GetStyle(a.AreaURL)" @onclick="@(() => GoToArea(a.AreaURL))">
-                                     <img style="height:45px;width:45px;padding:5px;margin-right:10px;border-radius:0.25rem;background-color:white;" 
-                                          src="@("data/Images/" + a.Image + ".png")" 
-                                          onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, a.Name, GetAreaInfo(a))))"
-                                          onmouseout="@(new Action(() => GameState.HideTooltip()))"/>
-                                    @a.Name 
-                                @if(a.HasUnlockableAreas())
-                                {
-                                    <div style="margin:5px;background-color:sandybrown;border-radius:0.5rem;height:12px;width:12px;position:absolute;top:15px;right:10px;"></div>
-                                }
+                                    <img style="height:45px;width:45px;padding:5px;margin-right:10px;border-radius:0.25rem;background-color:white;"
+                                         src="@("data/Images/" + a.Image + ".png")"
+                                         onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, a.Name, GetAreaInfo(a))))"
+                                         onmouseout="@(new Action(() => GameState.HideTooltip()))" />
+                                    @a.Name
+                                    @if (a.HasUnlockableAreas())
+                                    {
+                                        <div style="margin:5px;background-color:sandybrown;border-radius:0.5rem;height:12px;width:12px;position:absolute;top:15px;right:10px;"></div>
+                                    }
                                 </div>
                             </li>
+                        }
+                        else if (a.IsUnlocked && a.IsHidden == false)
+                        {
+                            <li class="nav-item px-3" style="position:relative;padding-bottom:0px;">
+
+                                <div style="@GetStyle(a.AreaURL);background-color:#FF000055">
+                                    <img style="height:45px;width:45px;padding:5px;margin-right:10px;border-radius:0.25rem;background-color:white;"
+                                         src="@("data/Images/" + a.Image + ".png")"
+                                         onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, a.Name, a.GetRequirementTooltip())))"
+                                         onmouseout="@(new Action(() => GameState.HideTooltip()))" />
+                                    @a.Name
+                                </div>
+                            </li>
+
                         }
                     }
                 }

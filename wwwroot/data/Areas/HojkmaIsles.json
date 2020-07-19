@@ -57,7 +57,8 @@
       }
     ],
     "actions": [
-      "Mine Iron:Iron Ore"
+      "Mine Iron:Iron Ore",
+      "Chop Maple Trees:Sugar Maple Logs"
     ]
   },
   {

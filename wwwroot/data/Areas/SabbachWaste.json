@@ -39,6 +39,17 @@
         "buttonText": "Enter the Desert"
       }
 
+    ],
+    "buildings": [
+      {
+        "name": "Camelpalooza",
+        "buttonText": "Enter the Camel Shop",
+        "url": "Camelpalooza",
+        "description": "You enter the dimly lit shack to find a thin, gray-bearded man sitting behind a desk with the words \"Sign Man\" drawn in large red letters across it. ",
+        "npcs": [
+          "Camel Carl"
+        ]
+      }
     ]
   },
   {
@@ -60,6 +71,11 @@
         "areaURL": "Leupp",
         "buttonText": "Go West"
       }
+    ],
+    "requirements": [
+      {
+        "action": "Desert Travel"
+      }
     ]
   },
   {
@@ -67,20 +83,33 @@
     "id": 64,
     "image": "House",
     "description": "The road fades into the desert landscape as you arrive at a small shack. The door swings open in the dusty wind.",
-    "areaURL": "AbandonedShack"
+    "areaURL": "AbandonedShack",
+    "requirements": [
+      {
+        "action": "Desert Travel"
+      }
+    ]
   },
   {
     "name": "Oasis",
     "id": 65,
     "image": "Oasis",
-    "description": "A large pool of water supports a number of very rare trees here. To the south you see another mountain range.",
+    "description": "A large pool of water supports a number of trees here. To the south you see another mountain range.",
     "areaURL": "Oasis",
+    "actions": [
+      "Chop Trees:Lignum Vitae Logs,Mesquite Logs,Birch Logs"
+    ],
     "unlockableAreas": [
       {
         "areaURL": "GreatShoeLake",
         "buttonText": "Continue southward"
       }
 
+    ],
+    "requirements": [
+      {
+        "action": "Desert Travel"
+      }
     ]
   },
   {
@@ -95,6 +124,11 @@
         "buttonText": "Continue to the North Gate"
       }
 
+    ],
+    "requirements": [
+      {
+        "action": "Desert Travel"
+      }
     ]
   },
   {
@@ -102,6 +136,15 @@
     "id": 67,
     "image": "Village",
     "description": "A sturdy fence surrounds the northern half of the city. A lumberjack supply store has been built into part of the wall. A guard stands watch at the gate.",
-    "areaURL": "NorthLeupp"
+    "areaURL": "NorthLeupp",
+    "actions": [
+      "Chop Basla Trees:Balsa Logs",
+      "Chop Mahogany Trees:Mahogany Logs"
+    ],
+    "requirements": [
+      {
+        "action": "Desert Travel"
+      }
+    ]
   }
 ]

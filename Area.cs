@@ -59,7 +59,42 @@ public class Area
         }
     }
     public List<Shop> Shops { get; set; } = new List<Shop>();
+    public List<Requirement> Requirements { get; set; } = new List<Requirement>();
 
+    public bool HasRequirements()
+    {
+        foreach (Requirement r in Requirements)
+        {
+            if (r.IsMet() == false)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    public string GetRequirementTooltip()
+    {
+        if (HasRequirements())
+        {
+            return "";
+        }
+        string req = "";
+
+        bool hasEquipInfo = false;
+
+        if (hasEquipInfo == false)
+        {
+            foreach (Requirement r in Requirements)
+            {
+                if (r.IsMet() == false)
+                {
+                    req += r.ToString().Replace("tools", "means") + "\n";
+                }
+            }
+        }
+        req = req.Substring(0, req.Length - 1);
+        return req;
+    }
     public Building GetBuildingByURL(string url)
     {
         return Buildings.FirstOrDefault(x => x.URL == url);

@@ -83,6 +83,18 @@
         "skill": "Knifesmanship",
         "experienceGain": 2000
       }
-      ]
+    ]
+  },
+  {
+    "name": "Grand Theft Camel",
+    "id": 5,
+    "completionText": "Congratulations!",
+    "progressToComplete": 1000,
+    "rewards": [
+      {
+        "skill": "Woodcutting",
+        "experienceGain": 500
+      }
+    ]
   }
 ]
