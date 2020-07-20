@@ -59,6 +59,9 @@
         ]
       }
     ],
+    "npcs": [
+      "Camel Carl"
+    ],
     "monsters": [
       "Bandit",
       "Big Bandit"
@@ -123,6 +126,9 @@
           "Two Legs Jack"
         ]
       }
+    ],
+    "npcs": [
+      "Kai"
     ]
   },
   {

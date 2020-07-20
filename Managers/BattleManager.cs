@@ -20,6 +20,7 @@ public class BattleManager
     public Area CurrentArea;
     public Dojo CurrentDojo { get; set; }
     public bool BattleHasEnded = true;
+    public bool WonLastBattle = false;
     private static readonly Random random = new Random();
     public async Task LoadMonsters(HttpClient Http)
     {
@@ -151,6 +152,7 @@ public class BattleManager
                 {
                     CurrentDojo.CurrentOpponent++;
                 }
+                WonLastBattle = true;
                 EndBattle();
             }
             if (CurrentBoss != null)
@@ -166,6 +168,7 @@ public class BattleManager
             if (Player.Instance.CurrentHP <= 0)
             {
                 Player.Instance.Die();
+                WonLastBattle = false;
             }
 
         }
@@ -182,7 +185,7 @@ public class BattleManager
             }
             Target = GetNextTarget();
         }
-        int total = (int)Math.Min(Player.Instance.GetTotalDamage().ToRandomDamage() * Extensions.CalculateArmorDamageReduction(Target), Target.CurrentHP);
+        int total = (int)Math.Max(1, Math.Min(Player.Instance.GetTotalDamage().ToRandomDamage() * Extensions.CalculateArmorDamageReduction(Target), Target.CurrentHP));
         Target.CurrentHP -= total;
         if(Player.Instance.GetWeapon() == null)
         {
@@ -212,7 +215,7 @@ public class BattleManager
     }
     public void BeAttacked(Monster opponent)
     {
-        int total = (int)(opponent.Damage.ToRandomDamage() * Extensions.CalculateArmorDamageReduction());
+        int total = (int)Math.Max(1, (opponent.Damage.ToRandomDamage() * Extensions.CalculateArmorDamageReduction()));
         Player.Instance.CurrentHP -= total;
         Player.Instance.GainExperience("HP", total);
         MessageManager.AddMessage("The " + opponent.Name + " hit you for " + total + " damage!");

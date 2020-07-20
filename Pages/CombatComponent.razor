@@ -8,23 +8,40 @@
     <div style="width:550px;height:300px;">
         @foreach (Monster opponent in BattleManager.Instance.CurrentOpponents)
         {
+        <div>
+            @opponent.Name
             <div>
-                @opponent.Name
-                <div>
-                    @opponent.CurrentHP / @opponent.HP
-                </div>
+                @opponent.CurrentHP / @opponent.HP
+            </div>
+            <div style="display:flex">
                 <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
                     <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
                     <div class="progress-bar" style="width:@(GetOpponentAttackProgress(opponent));background-color:mediumpurple">
 
                     </div>
                 </div>
-                <div class="progress" style="width:550px;margin-top:10px;">
-                    <div class="progress-bar" style="width:@(opponent.GetRemainingHPPercent())%;background-color:forestgreen">
+                @if (opponent == BattleManager.Instance.Target || opponent.IsDefeated)
+                {
+                    <div class="btn btn primary" style="width:120px;height:40px;font-size:large;position:relative;opacity:0.5;margin-left:10px;background-color:black">
+                        <div style="color:white">Target</div>
 
                     </div>
+                }
+                else
+                {
+                    <div class="btn btn primary" style="width:120px;height:40px;font-size:large;position:relative;margin-left:10px;background-color:black"  @onclick="@(() => SwitchTargets(opponent))">
+                        <div style="color:white">Target</div>
+
+                    </div>
+                }
+            </div>
+
+            <div class="progress" style="width:550px;margin-top:10px;">
+                <div class="progress-bar" style="width:@(opponent.GetRemainingHPPercent())%;background-color:forestgreen">
+
                 </div>
             </div>
+        </div>
         }
 
         <div>
@@ -64,7 +81,15 @@
 
 @code {
 
+    public void SwitchTargets(Monster m)
+    {
+        if(BattleManager.Instance.CurrentOpponents.Contains(m) && m.IsDefeated == false)
+        {
+            BattleManager.Instance.Target = m;
+        }
 
+        GameState.UpdateState();
+    }
     private void ContinueBattles()
     {
         GameState.StopNonCombatActions();

@@ -113,7 +113,7 @@ public class Player
     }
     public void Equip(GameItem item)
     {
-        UnequipItem(equippedItems.Find(x => x.EquipSlot == item.EquipSlot));
+        Unequip(equippedItems.Find(x => x.EquipSlot == item.EquipSlot));
         equippedItems.Add(item);
         if(item.WeaponInfo != null)
         {
@@ -122,7 +122,7 @@ public class Player
 
         item.IsEquipped = true;
     }
-    public void UnequipItem(GameItem item)
+    public void Unequip(GameItem item)
     {
         if (item != null)
         {

@@ -101,6 +101,47 @@
     }
   },
   {
+    "name": "Two Bandits",
+    "hp": 100,
+    "weakness": "Swordsmanship",
+    "strength": "Hammermanship",
+    "damage": 36,
+    "armor": 8,
+    "attackSpeed": 7,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 30
+        },
+        {
+          "itemName": "Bandit's Knife",
+          "weight": 7
+        },
+        {
+          "itemName": "Bandit's Boots",
+          "weight": 7
+        },
+        {
+          "itemName": "Coins",
+          "weight": 20,
+          "amount": 40
+        },
+        {
+          "itemName": "Coins",
+          "weight": 8,
+          "amount": 120
+        },
+        {
+          "itemName": "Coins",
+          "weight": 4,
+          "amount": 600
+        }
+      ]
+    }
+  },
+  {
     "name": "Big Bandit",
     "hp": 90,
     "weakness": "Swordsmanship",

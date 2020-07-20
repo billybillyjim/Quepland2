@@ -19,15 +19,30 @@ else
 {
     @if (allWavesDefeated)
     {
-        <button class="btn btn-primary" style="position:relative;top:380px;" @onclick="@(() => Return())">Return to Uragoto</button>
+        <button class="btn btn-primary" style="position:relative;top:30px;" @onclick="@(() => Return())">Return to Uragota</button>
 
     }
     else if (BattleManager.Instance.BattleHasEnded)
     {
-        <button class="btn btn-danger" style="position:relative;top:380px;" @onclick="@(() => StartBattle())">Fight Another</button>
+        <div>Remaining Bandits:@(GetRemainingBandits())</div>
+
+        @if (BattleManager.Instance.WonLastBattle)
+        {
+            <div>Another wave of bandits approaches!</div>
+            <button class="btn btn-danger" style="position:relative;top:30px;" @onclick="@(() => StartBattle())">Fight More</button>
+
+        }
+        else
+        {
+            <div>The bandits defeated you. But don't worry! You can try again now or choose to come back later.</div>
+            <button class="btn btn-danger" style="position:relative;top:30px;" @onclick="@(() => StartBattle())">Retry</button>
+            <button class="btn btn-primary" style="position:relative;top:30px;" @onclick="@(() => Return())">Return to Uragota</button>
+
+        }
     }
     else
     {
+        <div>Remaining Bandits:@(GetRemainingBandits())</div>
         <CombatComponent></CombatComponent>
     }
 }
@@ -36,22 +51,80 @@ else
 
 @code {
     private bool startedBattle;
-    private List<string> Opponents = new List<string>() { "Bandit", "Bandit" }
-    private int currentWave;
+    private List<string> Opponents = new List<string>() { "Bandit", "Bandit", "Big Bandit", "Two Bandits", "Bandit,Big Bandit", "Two Bandits,Big Bandit", "Bandit Lord" };
+    private int currentWave = -1;
     private bool allWavesDefeated;
 
     public void Return()
     {
-        GameState.GoTo("CantilaCoast/UragotaTown");
+        GameState.GoTo("World/UragotaTown");
     }
     protected override void OnInitialized()
     {
+        currentWave = -1;
         GameState.StateChanged += OnGameStateChanged;
+    }
+    public int GetRemainingBandits()
+    {
+        int count = 0;
+        if (BattleManager.Instance.WonLastBattle == false)
+        {
+            for (int i = 0; i < Opponents.Count; i++)
+            {
+                if (Opponents[i] == "Two Bandits")
+                {
+                    count += 2;
+                }
+                else if (Opponents[i].Contains(','))
+                {
+                    count += 2;
+                }
+                else
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+        else
+        {
+            for (int i = currentWave; i < Opponents.Count; i++)
+            {
+                if (Opponents[i] == "Two Bandits")
+                {
+                    count += 2;
+                }
+                else if (Opponents[i].Contains(','))
+                {
+                    count += 2;
+                }
+                else
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
     }
     public void StartBattle()
     {
         if (GameState.IsStoppingNextTick == false)
         {
+            if (BattleManager.Instance.WonLastBattle)
+            {
+                currentWave++;
+            }
+            else
+            {
+                currentWave = 0;
+            }
+            if (currentWave >= Opponents.Count)
+            {
+                MessageManager.AddMessage("You've defeated all the bandits! You can take the camels back with you to return them Carl now.");
+                QuestManager.Instance.GetQuestByName("Grand Theft Camel").Progress = 21;
+                allWavesDefeated = true;
+                return;
+            }
             string[] wave = Opponents[currentWave].Split(',');
             BattleManager.Instance.CurrentOpponents.Clear();
             foreach (string s in wave)

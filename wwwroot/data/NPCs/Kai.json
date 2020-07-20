@@ -3,8 +3,8 @@
   "id": 23,
   "dialogs": [
     {
-      "buttonText": "I could defeat them for you",
-      "responseText": "Would you do that for me? I would be eternally grateful if you could save my camels! A pirate named Kai is waiting at the docks, he said he can ferry people to the secret hideout. Its location is not so secret, apparently.",
+      "buttonText": "Did you see any camels pass by here?",
+      "responseText": "I did! A group of traders took them out to sea a few days ago. I heard they plan to sell them again soon.",
       "quest": "Grand Theft Camel",
       "newQuestProgressValue": 17,
       "requirements": [
@@ -12,11 +12,49 @@
           "quest": "Grand Theft Camel",
           "minimumQuestProgress": 16,
           "maximumQuestProgress": 16
-        },
-        {
-          "location": "UragotaTown"
         }
       ]
+    },
+    {
+      "buttonText": "Do you know where they went?",
+      "responseText": "I do, actually. I could take you there, if you like. Let me know when you're ready to go.",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 20,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 17,
+          "maximumQuestProgress": 17
+        }
+      ]
+    },
+    {
+      "buttonText": "Can you take me to the thieves' hideout?",
+      "responseText": "Sure, let me know when you're ready to go.",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 20,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 19,
+          "maximumQuestProgress": 19
+        }
+      ]
+    },
+    {
+      "buttonText": "I'm ready now",
+      "responseText": "GotoCustomArea",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 21,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 20,
+          "maximumQuestProgress": 20
+        }
+      ],
+      "parameter": "ThievesHideout"
+
     }
   ]
 }

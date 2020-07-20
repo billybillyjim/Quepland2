@@ -163,7 +163,7 @@
             {
                 if (item.IsEquipped)
                 {
-                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Unequip " + item, new Action(() => Player.Instance.UnequipItem(item))));
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Unequip " + item, new Action(() => Player.Instance.Unequip(item))));
                 }
                 else
                 {

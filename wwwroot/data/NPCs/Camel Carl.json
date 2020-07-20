@@ -163,9 +163,9 @@
     },
     {
       "buttonText": "I could defeat them for you",
-      "responseText": "Would you do that for me? I would be eternally grateful if you could save my camels! A pirate named Kai is waiting at the docks, he said he can ferry people to the secret hideout. Its location is not so secret, apparently.",
+      "responseText": "Would you do that for me? I would be eternally grateful if you could save my camels! A pirate named Kai is waiting at the eastern docks, he said he can ferry people to the secret hideout. Its location is not so secret, apparently.",
       "quest": "Grand Theft Camel",
-      "newQuestProgressValue": 16,
+      "newQuestProgressValue": 19,
       "requirements": [
         {
           "quest": "Grand Theft Camel",

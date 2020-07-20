@@ -9,7 +9,7 @@
             @slot
 
             <div @onclick="@(() => Unequip(GetItemAtSlot(slot)))">
-                <Quepland_2.Components.ItemBoxComponent Item="@GetItemAtSlot(slot)"></Quepland_2.Components.ItemBoxComponent>
+                <Quepland_2.Components.ItemBoxComponent Item="@GetItemAtSlot(slot)" shouldRender="@ShouldRerender(slot)"></Quepland_2.Components.ItemBoxComponent>
             </div>
         </div>
         }
@@ -24,7 +24,8 @@
 
     private void Unequip(GameItem item)
     {
-        Player.Instance.UnequipItem(item);
+        Player.Instance.Unequip(item);
+        TooltipManager.HideTip();
         GameState.UpdateState();
     }
     private GameItem GetItemAtSlot(string slot)
@@ -37,6 +38,17 @@
             }
         }
         return null;
+    }
+    private bool ShouldRerender(string slot)
+    {       
+        foreach (GameItem i in Player.Instance.GetEquippedItems())
+        {
+            if (i.EquipSlot == slot)
+            {
+                return i.Rerender;
+            }
+        }
+        return true;
     }
     protected override void OnInitialized()
     {

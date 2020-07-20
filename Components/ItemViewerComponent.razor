@@ -18,21 +18,21 @@
             {
                 if (Item.IsEquipped)
                 {
-                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Player.Instance.UnequipItem(Item))">Unequip</button></div>
+                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Unequip())">Unequip</button></div>
 
                 }
                 else if (Item.HasRequirements())
                 {
-                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Player.Instance.Equip(Item))">Equip</button></div>
+                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Equip())">Equip</button></div>
 
                 }
                 else if (Item.ArmorInfo != null && Item.HasArmorRequirements())
                 {
-                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Player.Instance.Equip(Item))">Equip</button></div>
+                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Equip())">Equip</button></div>
                 }
                 else if (Item.WeaponInfo != null && Item.HasWeaponRequirements())
                 {
-                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Player.Instance.Equip(Item))">Equip</button></div>
+                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Equip())">Equip</button></div>
                 }
                 else
                 {
@@ -79,7 +79,7 @@
             }
             @if (Bank.Instance.IsBanking)
             {
-                <button class="btn btn-light" style="position:absolute;left:5px;bottom:5px;" onclick="@(new Action<MouseEventArgs>((args) => BankItem(Item)))">Deposit @Bank.Instance.GetAmountString()</button>
+                <button class="btn btn-light" style="position:absolute;left:5px;bottom:5px;" onclick="@(new Action<MouseEventArgs>((args) => BankItem()))">Deposit @Bank.Instance.GetAmountString()</button>
 
             }
         }
@@ -124,19 +124,32 @@
             Console.WriteLine("Shop was null");
         }
     }
-    private void BankItem(GameItem item)
+    private void BankItem()
     {
-        Bank.Instance.Deposit(item);
-        if(Player.Instance.Inventory.GetNumberOfItem(item) == 0)
+        Bank.Instance.Deposit(Item);
+        if(Player.Instance.Inventory.GetNumberOfItem(Item) == 0)
         {
             GameState.inventoryViewer.SelectedItem = null;
             ClearItem();
         }
         GameState.UpdateState();
     }
+    private void Equip()
+    {
+        Item.Rerender = true;
+        Player.Instance.Equip(Item);
+        GameState.UpdateState();
+    }
+    private void Unequip()
+    {
+        Item.Rerender = true;
+        Player.Instance.Unequip(Item);
+
+        GameState.UpdateState();
+    }
     public void ClearItem()
     {
-        
+
         Item = null;
         HideValue = true;
         StateHasChanged();

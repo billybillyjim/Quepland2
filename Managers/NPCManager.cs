@@ -42,6 +42,10 @@ public class NPCManager
                 {
                     CustomDialogFunctions.Add("UnlockAndGotoArea", new Action(() => UnlockAndGotoArea(d.Parameter)));
                 }
+                else if (d.ResponseText == "GotoCustomArea")
+                {
+                    CustomDialogFunctions.Add("GotoCustomArea", new Action(() => GotoCustomArea(d.Parameter)));
+                }
             }
         }
         
@@ -75,6 +79,11 @@ public class NPCManager
         Area a = AreaManager.Instance.GetAreaByName(name);
         a.Unlock();
         GameState.GoTo("World/" + a.AreaURL);
+        
+    }
+    public void GotoCustomArea(string url)
+    {
+        GameState.GoTo("World/" + url);
         
     }
     public NPC GetNPCByName(string name)
