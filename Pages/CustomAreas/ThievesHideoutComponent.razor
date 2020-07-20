@@ -1,0 +1,73 @@
+﻿@page "/World/ThievesHideout/"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+@if (startedBattle == false)
+{
+    if ((QuestManager.Instance.GetQuestByName("Grand Theft Camel").Progress >= 15 || QuestManager.Instance.GetQuestByName("Grand Theft Camel").IsComplete == false))
+    {
+        <h1>Thieves Secret Hideout</h1>
+        <div>The hideout is a small rocky island, large enough to support a few buildings and a few camels. There are quite a few of both, making for very little room to move. Waves of bandits are coming to attack you, but they can only come in small groups.</div>
+        <button class="btn btn-danger" @onclick="@(() => StartBattle())">Fight</button>
+
+        <br />
+
+    }
+}
+else
+{
+    @if (allWavesDefeated)
+    {
+        <button class="btn btn-primary" style="position:relative;top:380px;" @onclick="@(() => Return())">Return to Uragoto</button>
+
+    }
+    else if (BattleManager.Instance.BattleHasEnded)
+    {
+        <button class="btn btn-danger" style="position:relative;top:380px;" @onclick="@(() => StartBattle())">Fight Another</button>
+    }
+    else
+    {
+        <CombatComponent></CombatComponent>
+    }
+}
+
+
+
+@code {
+    private bool startedBattle;
+    private List<string> Opponents = new List<string>() { "Bandit", "Bandit" }
+    private int currentWave;
+    private bool allWavesDefeated;
+
+    public void Return()
+    {
+        GameState.GoTo("CantilaCoast/UragotaTown");
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void StartBattle()
+    {
+        if (GameState.IsStoppingNextTick == false)
+        {
+            string[] wave = Opponents[currentWave].Split(',');
+            BattleManager.Instance.CurrentOpponents.Clear();
+            foreach (string s in wave)
+            {
+                BattleManager.Instance.CurrentOpponents.Add(BattleManager.Instance.GetMonsterByName(s));
+            }
+
+            BattleManager.Instance.StartBattle();
+            startedBattle = true;
+        }
+
+    }
+    public void Dispose()
+    {
+        startedBattle = false;
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

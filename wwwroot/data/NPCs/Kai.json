@@ -1,0 +1,22 @@
+{
+  "name": "Kai",
+  "id": 23,
+  "dialogs": [
+    {
+      "buttonText": "I could defeat them for you",
+      "responseText": "Would you do that for me? I would be eternally grateful if you could save my camels! A pirate named Kai is waiting at the docks, he said he can ferry people to the secret hideout. Its location is not so secret, apparently.",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 17,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 16,
+          "maximumQuestProgress": 16
+        },
+        {
+          "location": "UragotaTown"
+        }
+      ]
+    }
+  ]
+}
