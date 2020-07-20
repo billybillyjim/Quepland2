@@ -11,7 +11,8 @@
         "skillLevel": 1
       }
     ],
-    "isStackable": true
+    "isStackable": true,
+    "secondaryColor": "#FFE5C4"
   },
   {
     "Name": "Headless White Pine Arrows",
@@ -25,7 +26,8 @@
         "skillLevel": 1
       }
     ],
-    "isStackable": true
+    "isStackable": true,
+    "secondaryColor": "#FFE5C4"
   },
   {
     "Name": "Poplar Arrow Shafts",
@@ -39,6 +41,7 @@
         "skillLevel": 4
       }
     ],
+    "secondaryColor": "#FFDA8A",
     "isStackable": true
   },
   {
@@ -53,6 +56,7 @@
         "skillLevel": 4
       }
     ],
+    "secondaryColor": "#FFDA8A",
     "isStackable": true
   },
   {
@@ -67,6 +71,7 @@
         "skillLevel": 12
       }
     ],
+    "secondaryColor": "#FFD5B0",
     "isStackable": true
   },
   {
@@ -81,6 +86,7 @@
         "skillLevel": 12
       }
     ],
+    "secondaryColor": "#FFD5B0",
     "isStackable": true
   },
   {
@@ -95,6 +101,7 @@
         "skillLevel": 19
       }
     ],
+    "secondaryColor": "#FFBD96",
     "isStackable": true
   },
   {
@@ -109,6 +116,7 @@
         "skillLevel": 19
       }
     ],
+    "secondaryColor": "#FFBD96",
     "isStackable": true
   },
   {
@@ -116,6 +124,7 @@
     "Description": "Thin bits of wood from birch logs. Feathers can be attached to the end.",
     "gatherString": "You make $ arrow shafts from the birch wood.",
     "value": 7,
+    "secondaryColor": "#FFF6E0",
     "icon": "ArrowShafts",
     "requirements": [
       {
@@ -130,6 +139,7 @@
     "Description": "Skinny sticks with feathers on the end. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless birch arrows.",
     "value": 10,
+    "secondaryColor": "#FFF6E0",
     "icon": "HeadlessArrows",
     "requirements": [
       {
@@ -144,6 +154,7 @@
     "Description": "Sturdy arrow shafts. Feathers can be attached to the end.",
     "gatherString": "You make $ arrow shafts from the mesquite wood.",
     "value": 15,
+    "secondaryColor": "#BD8F57",
     "icon": "ArrowShafts",
     "requirements": [
       {
@@ -158,6 +169,7 @@
     "Description": "Sturdy sticks with feathers on the end. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless mesquite arrows.",
     "value": 18,
+    "secondaryColor": "#BD8F57",
     "icon": "HeadlessArrows",
     "requirements": [
       {
@@ -179,6 +191,7 @@
         "skillLevel": 52
       }
     ],
+    "secondaryColor": "#AB5F29",
     "isStackable": true
   },
   {
@@ -193,6 +206,7 @@
         "skillLevel": 52
       }
     ],
+    "secondaryColor": "#AB5F29",
     "isStackable": true
   },
   {
@@ -200,6 +214,7 @@
     "Description": "Arrow shafts as hard as iron, supposedly. Add some arrow heads to make arrows.",
     "gatherString": "You make $ arrow shafts out of the ironwood.",
     "value": 21,
+    "secondaryColor": "#9C491F",
     "icon": "ArrowShafts",
     "requirements": [
       {
@@ -214,6 +229,7 @@
     "Description": "Hard, sturdy arrow shafts with feathers attached. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless ironwood arrows.",
     "value": 23,
+    "secondaryColor": "#9C491F",
     "icon": "HeadlessArrows",
     "requirements": [
       {
@@ -235,6 +251,7 @@
         "skillLevel": 75
       }
     ],
+    "secondaryColor": "#824121",
     "isStackable": true
   },
   {
@@ -249,6 +266,7 @@
         "skillLevel": 75
       }
     ],
+    "secondaryColor": "#824121",
     "isStackable": true
   },
   {
@@ -263,6 +281,7 @@
         "skillLevel": 83
       }
     ],
+    "secondaryColor": "#612901",
     "isStackable": true
   },
   {
@@ -277,6 +296,7 @@
         "skillLevel": 83
       }
     ],
+    "secondaryColor": "#612901",
     "isStackable": true
   },
   {
@@ -291,6 +311,7 @@
         "skillLevel": 92
       }
     ],
+    "secondaryColor": "#875B24",
     "isStackable": true
   },
   {
@@ -305,6 +326,7 @@
         "skillLevel": 92
       }
     ],
+    "secondaryColor": "#875B24",
     "isStackable": true
   },
   {
@@ -319,6 +341,7 @@
         "skillLevel": 98
       }
     ],
+    "secondaryColor": "#D2FFF5",
     "isStackable": true
   },
   {
@@ -333,6 +356,7 @@
         "skillLevel": 98
       }
     ],
+    "secondaryColor": "#D2FFF5",
     "isStackable": true
   },
   {
@@ -340,6 +364,7 @@
     "Description": "These are magical arrow shafts crafted from wood from the Great Tree. Add some arrow heads to make arrows.",
     "gatherString": "You make $ arrow shafts out of the Great Tree wood.",
     "value": 90,
+    "secondaryColor": "#9F6F4F",
     "icon": "ArrowShafts",
     "requirements": [
       {
@@ -354,6 +379,7 @@
     "Description": "Magical arrow shafts from the Great Tree with feathers attached. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless Great arrows.",
     "value": 93,
+    "secondaryColor": "#9F6F4F",
     "icon": "HeadlessArrows",
     "requirements": [
       {

@@ -3,12 +3,14 @@
     "Name": "White Pine Bow(Unstrung)",
     "Description": "A flimsy bow with no string.",
     "value": 10,
+    "secondaryColor": "#FFE5C4",
     "icon": "UnstrungBow"
   },
   {
     "Name": "White Pine Bow",
     "Description": "A flimsy bow.",
     "value": 20,
+    "secondaryColor": "#FFE5C4",
     "enabledActions": "Archery",
     "equipSlot": "Right Hand",
     "icon": "Bow",
@@ -27,12 +29,14 @@
     "Name": "Poplar Bow(Unstrung)",
     "Description": "A less flimsy bow with no string.",
     "value": 20,
+    "secondaryColor": "#FFDA8A",
     "icon": "UnstrungBow"
   },
   {
     "Name": "Poplar Bow",
     "Description": "A less flimsy bow.",
     "value": 40,
+    "secondaryColor": "#FFDA8A",
     "enabledActions": "Archery",
     "equipSlot": "Right Hand",
     "icon": "Bow",
@@ -51,6 +55,7 @@
     "Name": "Oak Bow(Unstrung)",
     "Description": "A bow for shooting arrows with, if it had a string.",
     "value": 35,
+    "secondaryColor": "#FFD5B0",
     "icon": "UnstrungBow"
   },
   {
@@ -60,6 +65,7 @@
     "enabledActions": "Archery",
     "equipSlot": "Right Hand",
     "icon": "Bow",
+    "secondaryColor": "#FFD5B0",
     "weaponInfo": {
       "attackSpeed": 12,
       "damage": 15
@@ -75,12 +81,14 @@
     "Name": "Sugar Maple Bow(Unstrung)",
     "Description": "A sweet bow with no string.",
     "value": 55,
+    "secondaryColor": "#FFBD96",
     "icon": "UnstrungBow"
   },
   {
     "Name": "Sugar Maple Bow",
     "Description": "A sweet bow to shoot things with.",
     "value": 90,
+    "secondaryColor": "#FFBD96",
     "enabledActions": "Archery",
     "equipSlot": "Right Hand",
     "icon": "Bow",
@@ -99,12 +107,14 @@
     "Name": "Birch Bow(Unstrung)",
     "Description": "A lightcolored bow with no string.",
     "value": 85,
+    "secondaryColor": "#FFF6E0",
     "icon": "UnstrungBow"
   },
   {
     "Name": "Birch Bow",
     "Description": "A light colored bow.",
     "value": 110,
+    "secondaryColor": "#FFF6E0",
     "enabledActions": "Archery",
     "equipSlot": "Right Hand",
     "icon": "Bow",
@@ -123,12 +133,14 @@
     "Name": "Mesquite Bow(Unstrung)",
     "Description": "This would make a sturdy bow if it had a string.",
     "value": 105,
+    "secondaryColor": "#BD8F57",
     "icon": "UnstrungBow"
   },
   {
     "Name": "Mesquite Bow",
     "Description": "A sturdy bow.",
     "value": 150,
+    "secondaryColor": "#BD8F57",
     "enabledActions": "Archery",
     "equipSlot": "Right Hand",
     "icon": "Bow",
@@ -147,6 +159,7 @@
     "Name": "Mahogany Bow(Unstrung)",
     "Description": "An elegant but unfinished weapon.",
     "value": 280,
+    "secondaryColor": "#AB5F29",
     "icon": "UnstrungBow"
   },
   {
@@ -156,6 +169,7 @@
     "enabledActions": "Archery",
     "equipSlot": "Right Hand",
     "icon": "Bow",
+    "secondaryColor": "#AB5F29",
     "weaponInfo": {
       "attackSpeed": 12,
       "damage": 50
@@ -171,12 +185,14 @@
     "Name": "Ironwood Bow(Unstrung)",
     "Description": "A strong bow. If it had a string you could shoot with it.",
     "value": 205,
+    "secondaryColor": "#9C491F",
     "icon": "UnstrungBow"
   },
   {
     "Name": "Ironwood Bow",
     "Description": "A strong bow made from a very strong wood.",
     "value": 250,
+    "secondaryColor": "#9C491F",
     "enabledActions": "Archery",
     "equipSlot": "Right Hand",
     "icon": "Bow",
@@ -195,12 +211,14 @@
     "Name": "Snakewood Bow(Unstrung)",
     "Description": "A twisted bow without a string.",
     "value": 280,
+    "secondaryColor": "#824121",
     "icon": "UnstrungBow"
   },
   {
     "Name": "Snakewood Bow",
     "Description": "A twisted bow, it's surprisingly effective.",
     "value": 320,
+    "secondaryColor": "#824121",
     "enabledActions": "Archery",
     "equipSlot": "Right Hand",
     "icon": "Bow",
@@ -219,12 +237,14 @@
     "Name": "Lignum Vitae Bow(Unstrung)",
     "Description": "Essentially a heavy stick. You could add a string to make it into a weapon.",
     "value": 390,
+    "secondaryColor": "#612901",
     "icon": "UnstrungBow"
   },
   {
     "Name": "Lignum Vitae Bow",
     "Description": "A very heavy bow.",
     "value": 450,
+    "secondaryColor": "#612901",
     "enabledActions": "Archery",
     "equipSlot": "Right Hand",
     "icon": "Bow",
@@ -243,6 +263,7 @@
     "Name": "Buloke Bow(Unstrung)",
     "Description": "A very strong piece of wood carved into a bow. It needs a string to complete it.",
     "value": 580,
+    "secondaryColor": "#875B24",
     "icon": "UnstrungBow"
   },
   {
@@ -252,6 +273,7 @@
     "enabledActions": "Archery",
     "equipSlot": "Right Hand",
     "icon": "Bow",
+    "secondaryColor": "#875B24",
     "weaponInfo": {
       "attackSpeed": 12,
       "damage": 170
@@ -267,6 +289,7 @@
     "Name": "Great Tree Bow(Unstrung)",
     "Description": "A bow fashioned from wood from the Great Tree. All it needs now is a string.",
     "value": 1350,
+    "secondaryColor": "#9F6F4F",
     "icon": "UnstrungBow"
   },
   {
@@ -276,6 +299,7 @@
     "enabledActions": "Archery",
     "equipSlot": "Right Hand",
     "icon": "Bow",
+    "secondaryColor": "#9F6F4F",
     "weaponInfo": {
       "attackSpeed": 10,
       "damage": 250

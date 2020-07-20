@@ -8,6 +8,7 @@
     "gatherSpeed": 15,
     "experienceGained": "Woodcutting:8",
     "icon": "Log",
+    "secondaryColor": "#FFE5C4",
     "requirements": [
       {
         "skill": "Woodcutting",
@@ -24,6 +25,7 @@
     "gatherString": "You chop some poplar logs.",
     "value": 9,
     "gatherSpeed": 30,
+    "secondaryColor": "#FFDA8A",
     "experienceGained": "Woodcutting:25",
     "icon": "Log",
     "requirements": [
@@ -40,6 +42,7 @@
     "name": "Balsa Logs",
     "description": "The softest wood in the world.",
     "gatherString": "You chop some balsa logs.",
+    "secondaryColor": "#fffbce",
     "value": 1,
     "gatherSpeed": 7,
     "experienceGained": "Woodcutting:18",
@@ -60,6 +63,7 @@
     "gatherString": "You chop some oak logs.",
     "value": 15,
     "gatherSpeed": 19,
+    "secondaryColor": "#FFD5B0",
     "experienceGained": "Woodcutting:35",
     "icon": "Log",
     "requirements": [
@@ -78,6 +82,7 @@
     "gatherString": "You chop some maple logs.",
     "gatherSpeed": 25,
     "value": 25,
+    "secondaryColor": "#FFBD96",
     "experienceGained": "Woodcutting:60",
     "icon": "Log",
     "requirements": [
@@ -94,6 +99,7 @@
     "name": "Birch Logs",
     "description": "A light colored wood with white bark.",
     "gatherString": "You chop some birch logs.",
+    "secondaryColor": "#FFF6E0",
     "gatherSpeed": 25,
     "value": 45,
     "experienceGained": "Woodcutting:35",
@@ -114,6 +120,7 @@
     "gatherString": "You chop some mesquite logs.",
     "gatherSpeed": 38,
     "value": 40,
+    "secondaryColor": "#BD8F57",
     "experienceGained": "Woodcutting:100",
     "icon": "Log",
     "requirements": [
@@ -134,6 +141,7 @@
     "value": 190,
     "experienceGained": "Woodcutting:80",
     "icon": "Log",
+    "secondaryColor": "#AB5F29",
     "requirements": [
       {
         "skill": "Woodcutting",
@@ -150,6 +158,7 @@
     "gatherString": "You chop some ironwood logs.",
     "gatherSpeed": 55,
     "value": 90,
+    "secondaryColor": "#9C491F",
     "experienceGained": "Woodcutting:165",
     "icon": "Log",
     "requirements": [
@@ -168,6 +177,7 @@
     "gatherString": "You chop some snakewood logs.",
     "gatherSpeed": 75,
     "value": 130,
+    "secondaryColor": "#824121",
     "experienceGained": "Woodcutting:240",
     "icon": "Log",
     "requirements": [
@@ -186,6 +196,7 @@
     "gatherString": "You chop some lignum vitae logs.",
     "gatherSpeed": 85,
     "value": 300,
+    "secondaryColor": "#612901",
     "experienceGained": "Woodcutting:350",
     "icon": "Log",
     "requirements": [
@@ -204,6 +215,7 @@
     "gatherString": "You chop some buloke logs.",
     "gatherSpeed": 105,
     "value": 500,
+    "secondaryColor": "#875B24",
     "experienceGained": "Woodcutting:600",
     "icon": "Log",
     "requirements": [
@@ -222,6 +234,7 @@
     "gatherString": "You chop some ice logs.",
     "gatherSpeed": 120,
     "value": 850,
+    "secondaryColor": "#D2FFF5",
     "experienceGained": "Woodcutting:820",
     "icon": "Log",
     "requirements": [
@@ -242,6 +255,7 @@
     "value": 1500,
     "experienceGained": "Woodcutting:600",
     "icon": "Log",
+    "secondaryColor": "#9F6F4F",
     "requirements": [
       {
         "skill": "Woodcutting",

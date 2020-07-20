@@ -12,7 +12,8 @@
         "skill": "Archery",
         "skillLevel": 1
       }
-    ]
+    ],
+    "secondaryColor": "#FFE5C4"
   },
   {
     "Name": "Poplar Arrow",
@@ -27,8 +28,9 @@
         "skill": "Archery",
         "skillLevel": 4
       }
-    ]
-  }
+    ],
+    "secondaryColor": "#FFDA8A"
+  },
   {
     "Name": "Oak Arrow",
     "Description": "A commonly used weapon for shooting things with.",
@@ -42,8 +44,9 @@
         "skill": "Archery",
         "skillLevel": 12
       }
-    ]
-  }
+    ],
+    "secondaryColor": "#FFD5B0"
+  },
   {
     "Name": "Maple Arrow",
     "Description": "An average, cheap arrow.",
@@ -57,8 +60,9 @@
         "skill": "Archery",
         "skillLevel": 19
       }
-    ]
-  }
+    ],
+    "secondaryColor": "#FFBD96"
+  },
   {
     "Name": "Birch Arrow",
     "Description": "Bright, thin arrows, usable but flimsy.",
@@ -72,13 +76,15 @@
         "skill": "Archery",
         "skillLevel": 25
       }
-    ]
-  }
+    ],
+    "secondaryColor": "#FFF6E0"
+  },
   {
     "Name": "Mesquite Arrow",
     "Description": "Run of the mill arrows for the average adventurer's bow.",
     "value": 29,
     "icon": "Arrow",
+    "secondaryColor": "#BD8F57",
     "weaponInfo": {
       "damage": 42
     },
@@ -88,7 +94,7 @@
         "skillLevel": 35
       }
     ]
-  }
+  },
   {
     "Name": "Mahogany Arrow",
     "Description": "Essentially weaponized furniture, extremely expensive arrows.",
@@ -102,8 +108,9 @@
         "skill": "Archery",
         "skillLevel": 52
       }
-    ]
-  }
+    ],
+    "secondaryColor": "#AB5F29"
+  },
   {
     "Name": "Ironwood Arrow",
     "Description": "Sturdy arrows, good for shooting things with.",
@@ -112,13 +119,14 @@
     "weaponInfo": {
       "damage": 48
     },
+    "secondaryColor": "#9C491F",
     "requirements": [
       {
         "skill": "Archery",
         "skillLevel": 65
       }
     ]
-  }
+  },
   {
     "Name": "Snakewood Arrow",
     "Description": "Wibbly wobbly arrows that somehow still fly straight.",
@@ -132,8 +140,9 @@
         "skill": "Archery",
         "skillLevel": 75
       }
-    ]
-  }
+    ],
+    "secondaryColor": "#824121"
+  },
   {
     "Name": "Lignum Vitae Arrow",
     "Description": "A very heavy arrow that packs a punch.",
@@ -147,8 +156,9 @@
         "skill": "Archery",
         "skillLevel": 83
       }
-    ]
-  }
+    ],
+    "secondaryColor": "#612901"
+  },
   {
     "Name": "Buloke Arrow",
     "Description": "An arrow made from the strongest wood in Quepland.",
@@ -157,13 +167,14 @@
     "weaponInfo": {
       "damage": 70
     },
+    "secondaryColor": "#875B24",
     "requirements": [
       {
         "skill": "Archery",
         "skillLevel": 92
       }
     ]
-  }
+  },
   {
     "Name": "Ice Arrow",
     "Description": "An icy arrow made from ice wood. It may freeze an opponent for a short while.",
@@ -177,12 +188,14 @@
         "skill": "Archery",
         "skillLevel": 96
       }
-    ]
-  }
+    ],
+    "secondaryColor": "#D2FFF5"
+  },
   {
     "Name": "Great Arrow",
     "Description": "A magically imbued arrow made from wood from the Great Tree.",
     "value": 135,
+    "secondaryColor": "#9F6F4F",
     "icon": "Arrow",
     "weaponInfo": {
       "damage": 100

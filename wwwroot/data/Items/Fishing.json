@@ -5,6 +5,7 @@
     "value": 10,
     "enabledActions": "Fishing",
     "damage": 1,
+    "secondaryColor": "#dedfa4",
     "equipSlot": "Right Hand",
     "weaponInfo": {
       "attackSpeed": 35,
@@ -26,6 +27,7 @@
     "enabledActions": "Fishing",
     "isEquipable": true,
     "equipSlot": "Right Hand",
+    "secondaryColor": "#F5C242",
     "weaponInfo": {
       "attackSpeed": 35,
       "damage": 2
@@ -45,6 +47,7 @@
     "value": 80,
     "enabledActions": "Fishing",
     "isEquipable": true,
+    "secondaryColor": "#66B4DE",
     "equipSlot": "Right Hand",
     "weaponInfo": {
       "attackSpeed": 35,
@@ -55,7 +58,7 @@
     "requirements": [
       {
         "skill": "Fishing",
-        "skillLevel": 30
+        "skillLevel": 40
       }
     ]
   },
@@ -70,6 +73,7 @@
       "attackSpeed": 35,
       "damage": 5
     },
+    "secondaryColor": "#FFBABA",
     "gatherSpeedBonus": 0.45,
     "icon": "Net",
     "requirements": [
@@ -90,6 +94,7 @@
       "attackSpeed": 35,
       "damage": 8
     },
+    "secondaryColor": "#459CED",
     "gatherSpeedBonus": 0.6,
     "icon": "Net",
     "requirements": [
@@ -107,6 +112,7 @@
     "gatherSpeed": 9,
     "experienceGained": "Fishing:8",
     "icon": "SmallFish",
+    "secondaryColor": "#dedfa4",
     "requirements": [
       {
         "skill": "Fishing",
@@ -123,6 +129,7 @@
     "gatherString": "You catch a sunfish.",
     "value": 6,
     "gatherSpeed": 12,
+    "secondaryColor": "#95a282",
     "experienceGained": "Fishing:22",
     "icon": "TwoFish",
     "requirements": [
@@ -142,6 +149,7 @@
     "value": 200,
     "gatherSpeed": 40,
     "experienceGained": "Fishing:130",
+    "secondaryColor": "#a5e6ef",
     "icon": "MantaRay",
     "requirements": [
       {
@@ -159,6 +167,7 @@
     "gatherString": "You catch an angry crab.",
     "value": 11,
     "gatherSpeed": 11,
+    "secondaryColor": "#e22f2f",
     "experienceGained": "Fishing:11",
     "icon": "Crab",
     "requirements": [
@@ -177,6 +186,7 @@
     "gatherString": "You catch a crab.",
     "value": 11,
     "gatherSpeed": 8,
+    "secondaryColor": "#eb6337",
     "experienceGained": "Fishing:8",
     "icon": "Crab",
     "requirements": [
@@ -195,12 +205,13 @@
     "gatherString": "You catch a puffer fish.",
     "value": 28,
     "gatherSpeed": 10,
+    "secondaryColor": "#F5C242",
     "experienceGained": "Fishing:16",
     "icon": "Fish",
     "requirements": [
       {
         "skill": "Fishing",
-        "skillLevel": 5
+        "skillLevel": 15
       },
       {
         "action": "Fishing"
@@ -212,6 +223,7 @@
     "description": "A slow, dumb fish. Paint it orange and you'll have a koi.",
     "gatherString": "You catch a carp.",
     "value": 20,
+    "secondaryColor": "#E0D7AB",
     "gatherSpeed": 40,
     "experienceGained": "Fishing:160",
     "icon": "Fish",
@@ -231,7 +243,8 @@
     "gatherString": "You catch an icefish.",
     "value": 10,
     "gatherSpeed": 4,
-    "experienceGained": "Fishing:10",
+    "secondaryColor": "#BFF9FF",
+    "experienceGained": "Fishing:12",
     "icon": "SmallFish",
     "requirements": [
       {
@@ -249,6 +262,7 @@
     "gatherString": "You catch a shrimp.",
     "value": 15,
     "gatherSpeed": 9,
+    "secondaryColor": "#FFC1BF",
     "experienceGained": "Fishing:20",
     "icon": "Shrimp",
     "requirements": [
@@ -267,6 +281,7 @@
     "gatherString": "You catch a scallop.",
     "value": 25,
     "gatherSpeed": 18,
+    "secondaryColor": "#EB9875",
     "experienceGained": "Fishing:50",
     "icon": "Scallop",
     "requirements": [
@@ -285,6 +300,7 @@
     "gatherString": "You catch a sardine.",
     "value": 30,
     "gatherSpeed": 14,
+    "secondaryColor": "#C9C8C5",
     "experienceGained": "Fishing:40",
     "icon": "SmallFish",
     "requirements": [
@@ -303,6 +319,7 @@
     "gatherString": "You catch an abalone.",
     "value": 90,
     "gatherSpeed": 23,
+    "secondaryColor": "#66B4DE",
     "experienceGained": "Fishing:60",
     "icon": "TwoFish",
     "requirements": [
@@ -321,6 +338,7 @@
     "gatherString": "You catch a saury.",
     "value": 70,
     "gatherSpeed": 20,
+    "secondaryColor": "#A6A6A6",
     "experienceGained": "Fishing:85",
     "icon": "TwoFish",
     "requirements": [
@@ -339,6 +357,7 @@
     "gatherString": "You catch a butterfish.",
     "value": 100,
     "gatherSpeed": 28,
+    "secondaryColor": "#D6FFDC",
     "experienceGained": "Fishing:90",
     "icon": "Fish",
     "requirements": [
@@ -357,6 +376,7 @@
     "gatherString": "You catch a shad.",
     "value": 40,
     "gatherSpeed": 35,
+    "secondaryColor": "#FDF0FF",
     "experienceGained": "Fishing:185",
     "icon": "Fish",
     "requirements": [
@@ -375,6 +395,7 @@
     "gatherString": "You catch a squid.",
     "value": 140,
     "gatherSpeed": 35,
+    "secondaryColor": "#D9D9D9",
     "experienceGained": "Fishing:140",
     "icon": "Squid",
     "requirements": [
@@ -393,6 +414,7 @@
     "gatherString": "You catch a salmon.",
     "value": 150,
     "gatherSpeed": 45,
+    "secondaryColor": "#FFBABA",
     "experienceGained": "Fishing:210",
     "icon": "Fish",
     "requirements": [
@@ -411,6 +433,7 @@
     "gatherString": "You catch a tuna.",
     "value": 450,
     "gatherSpeed": 90,
+    "secondaryColor": "#3A63A6",
     "experienceGained": "Fishing:450",
     "icon": "Fish",
     "requirements": [
@@ -429,12 +452,13 @@
     "gatherString": "You catch a yellowtail.",
     "value": 230,
     "gatherSpeed": 70,
+    "secondaryColor": "#FFC95E",
     "experienceGained": "Fishing:380",
     "icon": "Fish",
     "requirements": [
       {
         "skill": "Fishing",
-        "skillLevel": 70
+        "skillLevel": 73
       },
       {
         "action": "Fishing"
@@ -447,12 +471,13 @@
     "gatherString": "You catch a giant clam.",
     "value": 750,
     "gatherSpeed": 95,
+    "secondaryColor": "#459CED",
     "experienceGained": "Fishing:700",
     "icon": "Scallop",
     "requirements": [
       {
         "skill": "Fishing",
-        "skillLevel": 80
+        "skillLevel": 75
       },
       {
         "action": "Fishing"
@@ -465,6 +490,7 @@
     "gatherString": "You catch a big tuna.",
     "value": 1500,
     "gatherSpeed": 100,
+    "secondaryColor": "#3A63A6",
     "experienceGained": "Fishing:1300",
     "icon": "Fish",
     "requirements": [
@@ -483,6 +509,7 @@
     "gatherString": "You catch a swordfish.",
     "value": 1200,
     "gatherSpeed": 100,
+    "secondaryColor": "#9C6DED",
     "experienceGained": "Fishing:1500",
     "icon": "Fish",
     "requirements": [
@@ -501,6 +528,7 @@
     "gatherString": "You catch a flounder.",
     "value": 200,
     "gatherSpeed": 80,
+    "secondaryColor": "#D48A4E",
     "experienceGained": "Fishing:1600",
     "icon": "Fish",
     "requirements": [
@@ -519,6 +547,7 @@
     "gatherString": "You catch a sleeper shark.",
     "value": 1500,
     "gatherSpeed": 120,
+    "secondaryColor": "#C7AE97",
     "experienceGained": "Fishing:2500",
     "icon": "Fish",
     "requirements": [
@@ -537,6 +566,7 @@
     "gatherString": "You catch a halibut.",
     "value": 800,
     "gatherSpeed": 100,
+    "secondaryColor": "#B97D42",
     "experienceGained": "Fishing:2700",
     "icon": "Fish",
     "requirements": [
@@ -555,8 +585,9 @@
     "gatherString": "You catch a giant octopus.",
     "value": 1800,
     "gatherSpeed": 125,
+    "secondaryColor": "#ed8e00",
     "experienceGained": "Fishing:2900",
-    "icon": "Fish",
+    "icon": "Octopus",
     "requirements": [
       {
         "skill": "Fishing",
@@ -573,6 +604,7 @@
     "gatherString": "You catch an eqalussuaq.",
     "value": 3000,
     "gatherSpeed": 150,
+    "secondaryColor": "#B5B7BA",
     "experienceGained": "Fishing:3500",
     "icon": "Fish",
     "requirements": [
@@ -591,6 +623,7 @@
     "gatherString": "You catch a jellyfish.",
     "value": 3500,
     "gatherSpeed": 170,
+    "secondaryColor": "#F25C5C",
     "experienceGained": "Fishing:4000",
     "icon": "Jellyfish",
     "requirements": [
@@ -609,6 +642,7 @@
     "gatherString": "You catch an oar fish.",
     "value": 4000,
     "gatherSpeed": 180,
+    "secondaryColor": "#FF9E42",
     "experienceGained": "Fishing:4200",
     "icon": "Fish",
     "requirements": [
@@ -627,6 +661,7 @@
     "gatherString": "You catch a colossal squid.",
     "value": 5000,
     "gatherSpeed": 220,
+    "secondaryColor": "#E36039",
     "experienceGained": "Fishing:4800",
     "icon": "Squid",
     "requirements": [
