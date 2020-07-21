@@ -14,7 +14,7 @@
         {
             <div>@Item.Name</div>
             <div style="position:absolute;top:30px;line-height:18px;">@Item.Description</div>
-            @if (Item.WeaponInfo != null || Item.ArmorInfo != null)
+            @if ((Item.WeaponInfo != null || Item.ArmorInfo != null) && Item.EquipSlot != "None")
             {
                 if (Item.IsEquipped)
                 {

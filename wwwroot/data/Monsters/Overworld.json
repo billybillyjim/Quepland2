@@ -590,32 +590,32 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Snakewood Arrows",
+          "itemName": "Snakewood Arrow",
           "weight": 200,
           "amount": 5
         },
         {
-          "itemName": "Lignum Vitae Arrows",
+          "itemName": "Lignum Vitae Arrow",
           "weight": 150,
           "amount": 3
         },
         {
-          "itemName": "Snakewood Arrows",
+          "itemName": "Snakewood Arrow",
           "weight": 20,
           "amount": 15
         },
         {
-          "itemName": "Snakewood Arrows",
+          "itemName": "Snakewood Arrow",
           "weight": 2,
           "amount": 50
         },
         {
-          "itemName": "Lignum Vitae Arrows",
+          "itemName": "Lignum Vitae Arrow",
           "weight": 15,
           "amount": 10
         },
         {
-          "itemName": "Lignum Vitae Arrows",
+          "itemName": "Lignum Vitae Arrow",
           "weight": 1,
           "amount": 30
         }
@@ -837,7 +837,7 @@
           "weight": 10
         },
         {
-          "itemName": "Maple Bow",
+          "itemName": "Sugar Maple Bow",
           "weight": 5
         }
       ]

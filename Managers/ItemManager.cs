@@ -62,6 +62,11 @@ public class ItemManager
                 Console.WriteLine("Warning:" + file + " has " + count + " items, which is over the expected " + MaxItemsPerFile + " items in its file.");
                 Console.ForegroundColor = ConsoleColor.Black;
             }
+            else
+            {
+                Console.WriteLine(file + " has " + count + " items.");
+
+            }
             Items.AddRange(addedItems);
             baseID += MaxItemsPerFile;
             colorIter++;

@@ -7,7 +7,21 @@ public class WorldTester
     public List<GameItem> MissingItems = new List<GameItem>();
     public void TestWorld()
     {
-
+        foreach (Monster m in BattleManager.Instance.Monsters)
+        {
+            foreach (Drop d in m.DropTable.Drops)
+            {
+                GameItem item = ItemManager.Instance.GetItemByName(d.ItemName);
+                if (IncludedItems.Contains(item) == false && item != null)
+                {
+                    IncludedItems.Add(item);
+                }
+                if(item == null)
+                {
+                    Console.WriteLine("Monster:" + m.Name + " drops unfound item:" + d.ItemName + " in database.");
+                }
+            }
+        }
         foreach (Area area in AreaManager.Instance.Areas)
         {
             foreach (string a in area.Actions)
@@ -25,7 +39,7 @@ public class WorldTester
                         {
                             IncludedItems.Add(it);
                         }
-                        else
+                        else if(it == null)
                         {
                             Console.WriteLine("Item not found:" + i);
                         }
@@ -82,6 +96,15 @@ public class WorldTester
                 GameItem item = ItemManager.Instance.GetItemByName(i.Item);
                 if (IncludedItems.Contains(item) == false)
                 {
+                    if(item == null)
+                    {
+                        Console.WriteLine("Item was null (not in database):" + i.Item);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Included items does not contain " + i.Item);
+                    }
+                    
                     IngredientsIncluded = false;
                 }
             }
@@ -97,16 +120,18 @@ public class WorldTester
                     IncludedItems.Add(r.TertiaryOutput);
                 }
             }
+            else
+            {
+                Console.WriteLine("Didn't add " + r.Output.Name + ". Ingredients Included:" + IngredientsIncluded + ". Included items contains output:" + IncludedItems.Contains(r.Output));
+            }
         }
         newItems = new List<GameItem>();
         foreach (GameItem i in IncludedItems)
         {
-            if (i.TanningInfo != null)
+            if (i != null && i.TanningInfo != null)
             {
-                Console.WriteLine("2nd Checking " + i);
                 if (IncludedItems.Contains(i) == true && IncludedItems.Contains(i.TanningInfo.TansInto) == false)
                 {
-                    Console.WriteLine("2nd Adding " + i.TanningInfo.TansInto);
                     newItems.Add(i.TanningInfo.TansInto);
                 }
 
@@ -192,17 +217,7 @@ public class WorldTester
                 IncludedItems.Add(r.Output);
             }
         }
-        foreach (Monster m in BattleManager.Instance.Monsters)
-        {
-            foreach(Drop d in m.DropTable.Drops)
-            {
-                GameItem item = ItemManager.Instance.GetItemByName(d.ItemName);
-                if (IncludedItems.Contains(item) == false)
-                {
-                    IncludedItems.Add(item);
-                }         
-            }
-        }
+
 
         MissingItems = ItemManager.Instance.Items;
         MissingItems.RemoveAll(x => IncludedItems.Contains(x));
