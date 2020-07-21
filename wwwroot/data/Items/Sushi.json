@@ -31,5 +31,577 @@
       "healAmount": 1,
       "healSpeed": 10
     }
+  },
+  {
+    "name": "Sunfish Roll",
+    "description": "A small sushi roll with a small sunfish on top.",
+    "gatherString": "You make a sunfish roll.",
+    "value": 35,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:25",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 3
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Deftness",
+      "buffAmount": 2
+    }
+  },
+  {
+    "name": "Manta Ray Roll",
+    "description": "A ray roll.",
+    "gatherString": "You make a manta roll.",
+    "value": 250,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:240",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 64
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Fishing",
+      "buffAmount": 5
+    }
+  },
+  {
+    "name": "Crab Roll",
+    "description": "A roll made with delicious crab.",
+    "gatherString": "You make a crab roll.",
+    "value": 146,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:73",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 11
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Knifesmanship",
+      "buffAmount": 3
+    }
+  },
+  {
+    "name": "Angry Crab Roll",
+    "description": "A roll made with angry crab.",
+    "gatherString": "You make an angry crab roll.",
+    "value": 146,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:73",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 11
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Knifesmanship",
+      "buffAmount": 6
+    }
+  },
+  {
+    "name": "Puffer Fish Roll",
+    "description": "A sushi roll made from a very poisonous fish. Hopefully this was prepared properly!",
+    "gatherString": "You make a puffer fish roll.",
+    "value": 70,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:50",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 8
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "HP",
+      "buffAmount": 8
+    }
+  },
+  {
+    "name": "Carp Roll",
+    "description": "A roll made with delicious carp. Tastes terrible.",
+    "gatherString": "You make a carp roll.",
+    "value": 90,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:130",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 45
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Swordsmanship",
+      "buffAmount": 4
+    }
+  },
+  {
+    "name": "Icefish Roll",
+    "description": "A tiny sushi roll with a tiny icefish on top.",
+    "gatherString": "You make an icefish roll.",
+    "value": 25,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:20",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 1
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Knifesmanship",
+      "buffAmount": 2
+    }
+  },
+  {
+    "name": "Shrimp Roll",
+    "description": "An eldritch horror on rice.",
+    "gatherString": "You make a shrimp roll.",
+    "value": 35,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:40",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 6
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Swordsmanship",
+      "buffAmount": 2
+    }
+  },
+  {
+    "name": "Scallop Roll",
+    "description": "A spicy sushi roll.",
+    "gatherString": "You make a scallop roll.",
+    "value": 45,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:50",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 3,
+      "healSpeed": 10,
+      "buffedSkill": "Deftness",
+      "buffAmount": 2
+    }
+  },
+  {
+    "name": "Sardine Roll",
+    "description": "A small fish on a small roll.",
+    "gatherString": "You make a sardine roll.",
+    "value": 60,
+    "gatherSpeed": 12,
+    "experienceGained": "Culinary Arts:40",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 25
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Hammermanship",
+      "buffAmount": 2
+    }
+  },
+  {
+    "name": "Abalone Roll",
+    "description": "Tastes better without the shell.",
+    "gatherString": "You make an abalone roll.",
+    "value": 120,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:60",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 40
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Axemanship",
+      "buffAmount": 3
+    }
+  },
+  {
+    "name": "Saury Roll",
+    "description": "A long silver fish on a roll.",
+    "gatherString": "You make a saury roll.",
+    "value": 100,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:90",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 43
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Archery",
+      "buffAmount": 3
+    }
+  },
+  {
+    "name": "Butterfish Roll",
+    "description": "The name is two-thirds accurate.",
+    "gatherString": "You make a butterfish roll.",
+    "value": 150,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:90",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 47
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Culinary Arts",
+      "buffAmount": 3
+    }
+  },
+  {
+    "name": "Shad Roll",
+    "description": "A sushi roll with a fish on it.",
+    "gatherString": "You make a shad roll.",
+    "value": 180,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:110",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 50
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Alchemy",
+      "buffAmount": 3
+    }
+  },
+  {
+    "name": "Squid Roll",
+    "description": "A very white and chewy sushi roll.",
+    "gatherString": "You make a squid roll.",
+    "value": 180,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:140",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 55
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Strength",
+      "buffAmount": 3
+    }
+  },
+  {
+    "name": "Salmon Roll",
+    "description": "A standard sushi roll. Delicious.",
+    "gatherString": "You make a salmon roll.",
+    "value": 210,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:200",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 60
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Mining",
+      "buffAmount": 3
+    }
+  },
+  {
+    "name": "Tuna Roll",
+    "description": "The iconic sushi roll.",
+    "gatherString": "You make a tuna roll.",
+    "value": 400,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:350",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 67
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Smithing",
+      "buffAmount": 4
+    }
+  },
+  {
+    "name": "Yellowtail Roll",
+    "description": "Tail not included",
+    "gatherString": "You make a yellowtail roll.",
+    "value": 350,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:400",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 70
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Woodcutting",
+      "buffAmount": 4
+    }
+  },
+  {
+    "name": "Giant Clam Roll",
+    "description": "A giant clam stuffed into a sushi roll.",
+    "gatherString": "You make a giant clam roll.",
+    "value": 600,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:700",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 76
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Woodworking",
+      "buffAmount": 4
+    }
+  },
+  {
+    "name": "Big Tuna Roll",
+    "description": "The fattiest of all the rolls.",
+    "gatherString": "You make a big tuna roll.",
+    "value": 900,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:900",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 80
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Axemanship",
+      "buffAmount": 5
+    }
+  },
+  {
+    "name": "Swordfish Roll",
+    "description": "Just eating it will make you a better swordsman.",
+    "gatherString": "You make a swordfish roll.",
+    "value": 1300,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:1200",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 81
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Swordsmanship",
+      "buffAmount": 7
+    }
+  },
+  {
+    "name": "Flounder Roll",
+    "description": "A dumb looking fish converted into a tasty snack.",
+    "gatherString": "You make a flounder roll.",
+    "value": 400,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:1400",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 85
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Hammermanship",
+      "buffAmount": 7
+    }
+  },
+  {
+    "name": "Sleeper Shark Roll",
+    "description": "A roll full of nutritious teeth.",
+    "gatherString": "You make a shark roll.",
+    "value": 1600,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:1600",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 88
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Hunting",
+      "buffAmount": 7
+    }
+  },
+  {
+    "name": "Halibut Roll",
+    "description": "A sushi roll made with halibut.",
+    "gatherString": "You make a halibut roll.",
+    "value": 1800,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:1800",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 91
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Leatherworking",
+      "buffAmount": 7
+    }
+  },
+  {
+    "name": "Giant Octopus Roll",
+    "description": "A roll with eight limbs.",
+    "gatherString": "You make a giant octopus roll.",
+    "value": 2200,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:2000",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 93
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Mining",
+      "buffAmount": 8
+    }
+  },
+  {
+    "name": "Eqalussuaq Roll",
+    "description": "This should probably be poisonous...",
+    "gatherString": "You make an eqalussaq roll.",
+    "value": 2600,
+    "gatherSpeed": 15,
+    "experienceGained": "Culinary Arts:2200",
+    "icon": "Sushi",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 95
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": -10,
+      "healSpeed": 10,
+      "buffedSkill": "Hunting",
+      "buffAmount": 10
+    }
   }
 ]

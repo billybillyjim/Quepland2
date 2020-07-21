@@ -52,7 +52,11 @@ public class GameItem
     {
 		if(ArmorInfo != null)
         {
-			foreach(Requirement r in ArmorInfo.WearRequirements)
+			if (WeaponInfo.WearRequirements == null)
+			{
+				return true;
+			}
+			foreach (Requirement r in ArmorInfo.WearRequirements)
             {
 				if(r.IsMet() == false)
                 {
@@ -66,6 +70,10 @@ public class GameItem
     {
 		if (WeaponInfo != null)
 		{
+			if(WeaponInfo.WearRequirements == null)
+            {
+				return true;
+            }
 			foreach (Requirement r in WeaponInfo.WearRequirements)
 			{
 				if (r.IsMet() == false)

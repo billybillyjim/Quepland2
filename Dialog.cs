@@ -9,6 +9,7 @@ public class Dialog
 	public string Quest { get; set; } = "None";
 	public string Parameter { get; set; } = "";
 	public bool ConsumeRequiredItems { get; set; }
+	public bool CompleteQuest { get; set; } = false;
 	public int NewQuestProgressValue { get; set; } = -1;
 	public List<Requirement> Requirements { get; set; } = new List<Requirement>();
 	private bool HasStartedQuest;
@@ -82,6 +83,11 @@ public class Dialog
 				MessageManager.AddMessage("You've started the quest " + Quest + ".", "green");
 			}
 			QuestManager.Instance.GetQuestByName(Quest).Progress = NewQuestProgressValue;
+            if (CompleteQuest)
+            {
+				QuestManager.Instance.GetQuestByName(Quest).Complete();
+
+			}
 
 		}
 	}

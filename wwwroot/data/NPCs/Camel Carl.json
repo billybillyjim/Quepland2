@@ -367,12 +367,15 @@
       "buttonText": "How'd it go?",
       "responseText": "I did it! I really did it! I slaughtered them all! I took the camels back! Hahahahaha! I've never felt so alive!",
       "quest": "Grand Theft Camel",
-      "newQuestProgressValue": 15,
+      "newQuestProgressValue": 24,
       "requirements": [
         {
           "quest": "Grand Theft Camel",
           "minimumQuestProgress": 14,
           "maximumQuestProgress": 14
+        },
+        {
+          "location": "UragotaTown"
         }
       ]
     },
@@ -386,6 +389,48 @@
           "quest": "Grand Theft Camel",
           "minimumQuestProgress": 5,
           "maximumQuestProgress": 5
+        }
+      ]
+    },
+    {
+      "buttonText": "Here are your camels",
+      "responseText": "Oh, thank you so much! I can finally reopen the store!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 25,
+      "requirements": [
+        {
+          "item": "A lot of Camels",
+          "itemAmount": 1
+        }
+      ],
+      "consumeRequiredItems": true,
+      "completeQuest": true
+    },
+    {
+      "buttonText": "Can I get a free camel for helping you?",
+      "responseText": "I'm sorry, I can't afford to simply give away my camels to every adventurer who does me a favor. I'm already selling them to you for a discounted price, so you should be grateful! Besides, you need to get through the desert, don't you?",
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 25,
+          "maximumQuestProgress": 25
+        },
+        {
+          "location": "Camelpalooza"
+        }
+      ]
+    },
+    {
+      "buttonText": "Can I get a free camel for helping you?",
+      "responseText": "Helping me? You didn't really do anything! I defeated the bandits myself. Tell you what, I'll take the cost of the stuff you gave me out of the camel price. Deal?",
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 24,
+          "maximumQuestProgress": 24
+        },
+        {
+          "location": "Camelpalooza"
         }
       ]
     }

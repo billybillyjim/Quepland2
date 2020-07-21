@@ -114,5 +114,12 @@
     "description": "A passport into the underground city of Koncave.",
     "value": 35000,
     "icon": "Passport"
+  },
+  {
+    "Name": "Camel",
+    "Description": "A dromedary exceptionally capable of desert travel.",
+    "value": 60000,
+    "icon": "Camel",
+    "enabledActions": "Desert Travel"
   }
 ]

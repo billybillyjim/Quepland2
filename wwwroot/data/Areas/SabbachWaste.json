@@ -45,11 +45,29 @@
         "name": "Camelpalooza",
         "buttonText": "Enter the Camel Shop",
         "url": "Camelpalooza",
-        "description": "You enter the dimly lit shack to find a thin, gray-bearded man sitting behind a desk with the words \"Sign Man\" drawn in large red letters across it. ",
+        "description": "You enter building to find a number of camels for sale. You can buy one and ride it to cross the desert.",
         "npcs": [
           "Camel Carl"
+        ],
+        "requirements": [
+          {
+            "quest": "Grand Theft Camel",
+            "minimumQuestProgress": 24
+          }
+        ],
+        "shops": [
+          {
+            "name": "Camelpalooza",
+            "itemNames": [
+              "Camel"
+            ]
+
+          }
         ]
       }
+    ],
+    "npcs": [
+      "Camel Carl"
     ]
   },
   {

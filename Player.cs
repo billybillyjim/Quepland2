@@ -26,6 +26,7 @@ public class Player
     public int CurrentHP;
     public int TicksToNextAttack;
     public int Deaths { get; set; }
+    public bool JustDied { get; set; }
 
     public Skill LastGainedExp { get; set; }
     public Skill ExpTrackerSkill { get; set; }
@@ -295,7 +296,7 @@ public class Player
     public void Die()
     {
         CurrentHP = MaxHP;
-        
+        JustDied = true;
         Deaths++;
         if(Deaths == 1)
         {

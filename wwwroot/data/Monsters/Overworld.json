@@ -198,6 +198,27 @@
     }
   },
   {
+    "name": "Ion the Island Bandit King",
+    "hp": 720,
+    "attackSpeed": 18,
+    "armor": 35,
+    "damage": 45,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 20
+        }
+      ],
+      "alwaysDrops": [
+        {
+          "itemName": "A lot of Camels",
+          "amount": 1
+        }
+      ]
+    }
+  },
+  {
     "name": "Bandit King",
     "hp": 5300,
     "attackSpeed": 15,

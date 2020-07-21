@@ -36,5 +36,11 @@
     "value": 0,
     "gatherSpeed": 8,
     "icon": "Sign"
+  },
+  {
+    "Name": "A lot of Camels",
+    "Description": "A huge number of dromedaries owned by Carl, the camel salesman at Desert's Mouth.",
+    "value": 0,
+    "icon": "Camels"
   }
 ]

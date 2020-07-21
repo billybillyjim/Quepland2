@@ -49,7 +49,7 @@
             }
             @if (Item.FoodInfo != null)
             {
-                <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => GameState.Eat(Item))">Eat</button></div>
+                <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => EatItem())">Eat</button></div>
             }
             @if (ItemManager.Instance.GetUnpackingRecipe(Item) != null)
             {
@@ -123,6 +123,16 @@
         {
             Console.WriteLine("Shop was null");
         }
+    }
+    private void EatItem()
+    {
+        GameState.Eat(Item);
+        if (Player.Instance.Inventory.GetNumberOfItem(Item) == 0)
+        {
+            GameState.inventoryViewer.SelectedItem = null;
+            ClearItem();
+        }
+        GameState.UpdateState();
     }
     private void BankItem()
     {

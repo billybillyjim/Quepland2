@@ -22,12 +22,19 @@ public class Quest
 
 	public void Complete()
     {
-		IsComplete = true;
-		foreach(Reward reward in Rewards)
+		if(IsComplete == false)
         {
-			reward.Award();		
-			MessageManager.AddMessage("You earned " + reward.ToString());
+			IsComplete = true;
+			foreach (Reward reward in Rewards)
+			{
+				reward.Award();
+				MessageManager.AddMessage("You earned " + reward.ToString());
+			}
+			MessageManager.AddMessage(CompletionText);
+		}
+        else
+        {
+			Console.WriteLine("Game attempted to complete Quest:" + Name + " more than once. Progress:" + Progress);
         }
-		MessageManager.AddMessage(CompletionText);
     }
 }

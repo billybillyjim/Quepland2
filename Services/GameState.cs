@@ -347,6 +347,13 @@ using System.Threading.Tasks;
     }
     private void HealPlayer()
     {
+        if (Player.Instance.JustDied)
+        {
+            CurrentFood = null;
+            HealingTicks = 0;
+            Player.Instance.JustDied = false;
+            return;
+        }
         Player.Instance.CurrentHP += CurrentFood.FoodInfo.HealAmount;
         if (Player.Instance.CurrentHP <= 0)
         {

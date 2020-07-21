@@ -25,9 +25,21 @@
     }
     @foreach (Building b in thisArea.Buildings)
     {
-        <div>
-            <button class="btn btn-success" @onclick="@(() => EnterBuilding(b.URL))">@b.ButtonText</button>
-        </div>
+        if (b.HasRequirements())
+        {
+            <div>
+                <button class="btn btn-success" @onclick="@(() => EnterBuilding(b.URL))">@b.ButtonText</button>
+            </div>
+        }
+        else
+        {
+            <div>
+                <button class="btn btn-success" style="opacity:0.5" 
+                        onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, b.Name, b.GetRequirementTooltip())))"
+                        onmouseout="@(new Action(() => GameState.HideTooltip()))">@b.ButtonText</button>
+            </div>
+        }
+
 
         <br />
     }

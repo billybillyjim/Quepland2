@@ -9,5 +9,8 @@ public class FoodInfo
 	public int HealDuration { get; set; }
 	public string BuffedSkill { get; set; }
 	public int BuffAmount { get; set; }
+	/// <summary>
+	/// The speed the item heals atin game ticks. Default is every 5 ticks.
+	/// </summary>
 	public int HealSpeed { get; set; } = 5;
 }

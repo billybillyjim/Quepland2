@@ -88,13 +88,7 @@
   {
     "name": "Grand Theft Camel",
     "id": 5,
-    "completionText": "Congratulations!",
-    "progressToComplete": 1000,
-    "rewards": [
-      {
-        "skill": "Woodcutting",
-        "experienceGain": 500
-      }
-    ]
+    "completionText": "Congratulations! You can now purchase camels from Camelpalooza!",
+    "progressToComplete": 24
   }
 ]
