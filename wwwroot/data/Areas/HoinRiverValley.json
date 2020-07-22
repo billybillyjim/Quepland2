@@ -5,6 +5,9 @@
     "image": "Riverbank",
     "description": "",
     "areaURL": "HoinRiverbank",
+    "actions": [
+      "Catch Fish:Salmon,Carp,Shad"
+    ],
     "unlockableAreas": [
       {
         "areaURL": "HoinRiver",

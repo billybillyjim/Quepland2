@@ -34,5 +34,29 @@ public class DropTable
         }
         return null;
     }
+    public Drop GetDropWithRequirements()
+    {
+        if (Drops.Count == 0)
+        {
+            Console.WriteLine("DropTable unset for monster.");
+            return null;
+        }
+        int size = Drops.Select(x => x.Weight).Sum();
+        int roll = rand.Next(0, size);
+        foreach (Drop drop in Drops)
+        {
+            if (roll <= drop.Weight)
+            {
+                //MessageManager.AddMessage("You received " + drop.Amount + " " + drop.ItemName + ".");
+                if (drop.Item.HasRequirements())
+                {
+                    return drop;
+                }
+                
+            }
+            roll -= drop.Weight;
+        }
+        return null;
+    }
 
 }

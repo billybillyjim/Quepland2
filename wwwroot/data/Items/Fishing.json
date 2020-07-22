@@ -105,6 +105,27 @@
     ]
   },
   {
+    "name": "Small Fishing Rod",
+    "description": "A small fishing rod.",
+    "value": 30,
+    "enabledActions": "Bait Fishing",
+    "isEquipable": true,
+    "equipSlot": "Right Hand",
+    "secondaryColor": "#F5C242",
+    "weaponInfo": {
+      "attackSpeed": 25,
+      "damage": 8
+    },
+    "gatherSpeedBonus": 0.2,
+    "icon": "Rod",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 15
+      }
+    ]
+  },
+  {
     "name": "Minnows",
     "description": "The tiniest fish you can catch.",
     "gatherString": "You catch some minnows.",
@@ -231,6 +252,63 @@
       {
         "skill": "Fishing",
         "skillLevel": 50
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Small Caiman",
+    "description": "A small reptile, for now...",
+    "gatherString": "You catch a small caiman.",
+    "value": 80,
+    "secondaryColor": "#E0D7AB",
+    "gatherSpeed": 40,
+    "experienceGained": "Fishing:180",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 30
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Caiman",
+    "description": "A normal-sized reptile, for now...",
+    "gatherString": "You catch a caiman.",
+    "value": 280,
+    "secondaryColor": "#E0D7AB",
+    "gatherSpeed": 40,
+    "experienceGained": "Fishing:230",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 50
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Large Caiman",
+    "description": "It used to be smaller, probably.",
+    "gatherString": "You catch a large caiman.",
+    "value": 800,
+    "secondaryColor": "#E0D7AB",
+    "gatherSpeed": 40,
+    "experienceGained": "Fishing:280",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 70
       },
       {
         "action": "Fishing"
@@ -440,6 +518,25 @@
       {
         "skill": "Fishing",
         "skillLevel": 70
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Giant Carp",
+    "description": "It's like a regular carp, but giant.",
+    "gatherString": "You catch a giant carp.",
+    "value": 480,
+    "gatherSpeed": 70,
+    "secondaryColor": "#E0D7AB",
+    "experienceGained": "Fishing:420",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 65
       },
       {
         "action": "Fishing"
@@ -673,5 +770,13 @@
         "action": "Fishing"
       }
     ]
+  },
+  {
+    "name": "Fishing Bait",
+    "description": "Tiny little worms for fishing with.",
+    "gatherString": "You get some fishing bait.",
+    "value": 1,
+    "icon": "Bait",
+    "isStackable": true
   }
 ]

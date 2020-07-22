@@ -6,7 +6,7 @@
     "description": "The waterfall is surrounded on all sides by a giant root system. Strange, humanlike creatures dart into the darkness as you approach. There are a number of sparkling rocks jutting out from the roots that cling to the roof of the cavern.",
     "areaURL": "KoncaveFalls",
     "actions": [
-      "Fish Something:Icefish",
+      "Fish Something:Icefish,Salmon,Shad,Crab,Giant Clam",
       "Chop Roots:Great Tree Logs"
     ],
     "unlockableAreas": [

@@ -1,0 +1,42 @@
+[
+  {
+    "areaName": "Hoin River",
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "River Clam"
+        },
+        {
+          "itemName": "Small Caiman"
+        },
+        {
+          "itemName": "Caiman"
+        },
+        {
+          "itemName": "Large Caiman"
+        },
+        {
+          "itemName": "Moose"
+        },
+        {
+          "itemName": "Salmon"
+        },
+        {
+          "itemName": "Giant Clam"
+        },
+        {
+          "itemName": "Shad"
+        },
+        {
+          "itemName": "Sunfish"
+        },
+        {
+          "itemName": "Carp"
+        },
+        {
+
+        }
+      ]
+    }
+  }
+]

@@ -77,6 +77,17 @@ public class GameItem
         }
 		return true;
     }
+	public bool HasSkillRequirements()
+	{
+		foreach (Requirement r in Requirements)
+		{
+			if (r.Skill != "None" && r.IsMet() == false)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
 	public bool HasArmorRequirements()
     {
 		if(ArmorInfo != null)

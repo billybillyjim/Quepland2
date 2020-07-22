@@ -144,8 +144,24 @@
       "healDuration": 30,
       "healAmount": 2,
       "healSpeed": 10,
-      "buffedSkill": "Swordsmanship",
+      "buffedSkill": "Lapidary",
       "buffAmount": 4
+    }
+  },
+  {
+    "name": "Giant Carp Roll",
+    "description": "A roll made with delicious carp. It's huge but it also tastes terrible.",
+    "gatherString": "You make a giant carp roll.",
+    "value": 490,
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "secondaryColor": "#E0D7AB",
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Lapidary",
+      "buffAmount": 8
     }
   },
   {

@@ -6,7 +6,7 @@
     "description": "You reach the foot of a pointed mountain range. A trail continues up into the hills. It curves along a large oblong lake. Here and there the water bubbles violently before returning to silence.",
     "areaURL": "GreatShoeLake",
     "actions": [
-      "Go Fishing:Crab,Angry Crab"
+      "Go Fishing:Crab,Angry Crab,Giant Carp"
     ],
     "unlockableAreas": [
       {

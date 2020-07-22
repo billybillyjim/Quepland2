@@ -178,5 +178,38 @@
     ],
     "recipeActionString": "You begin skinning the mammoth...",
     "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Caiman Skin",
+    "ingredients": [
+      {
+        "item": "Small Caiman"
+      }
+    ],
+    "recipeActionString": "You begin skinning the caiman...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Caiman Skin",
+    "secondaryOutputItemName": "Caiman Meat",
+    "ingredients": [
+      {
+        "item": "Caiman"
+      }
+    ],
+    "recipeActionString": "You begin skinning the caiman...",
+    "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Caiman Skin",
+    "secondaryOutputItemName": "Caiman Meat",
+    "outputAmount": 2,
+    "ingredients": [
+      {
+        "item": "Large Caiman"
+      }
+    ],
+    "recipeActionString": "You begin skinning the caiman...",
+    "recipeButtonString": "Skin"
   }
 ]

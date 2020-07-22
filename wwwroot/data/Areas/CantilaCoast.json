@@ -6,7 +6,7 @@
     "description": "You reach the water's edge. The stones almost sing as they roll back and forth in the waves. A large lighthouse towers in the west, while the path continues eastward into a small fishing town.",
     "areaURL": "CantilaBeach",
     "actions": [
-      "Go Fishing:Crab,Angry Crab"
+      "Go Fishing:Crab,Angry Crab,Manta Ray"
     ],
     "unlockableAreas": [
       {
@@ -136,6 +136,9 @@
     "id": 54,
     "image": "Bridge",
     "description": "",
+    "actions": [
+      "Fish from the bridge:Carp,Puffer Fish,Salmon,Crab"
+    ],
     "areaURL": "DarkbourneBridge",
     "unlockableAreas": [
       {

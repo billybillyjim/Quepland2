@@ -508,6 +508,42 @@
     ]
   },
   {
+    "Name": "Caiman Meat",
+    "Description": "The meat of a caiman.",
+    "value": 50,
+    "icon": "Meat",
+    "tanningInfo": {
+      "tansIntoString": "Caiman Jerky"
+    }
+  },
+  {
+    "Name": "Caiman Jerky",
+    "Description": "A bite of caiman meat.",
+    "value": 150,
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:120",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 40
+      }
+    ]
+  },
+  {
+    "Name": "Caiman Skin",
+    "Description": "The skin of a caiman. You can tan it into leather at a tannery.",
+    "value": 30,
+    "icon": "Leather",
+    "experienceGained": "Leatherworking:30"
+  },
+  {
+    "Name": "Caiman Leather",
+    "Description": "The tanned hide of a caiman. Made into armor, it might make you stronger.",
+    "value": 300,
+    "icon": "Leather",
+    "experienceGained": "Leatherworking:30"
+  },
+  {
     "Name": "Polar Bear Leather",
     "Description": "Beautiful white leather. It can be crafted into powerful armor.",
     "value": 1700,
