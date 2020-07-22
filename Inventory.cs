@@ -84,10 +84,21 @@ public class Inventory
     {
         return items;
     }
+
+    /// <summary>
+    /// Checks if the inventory contains any items with the same name as the given GameItem.
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns></returns>
     public bool HasItem(GameItem item)
     {
         return HasItem(item.Name);
-    }
+    }    
+    /// <summary>
+    /// Checks if the inventory contains any items with the same name as the given string.
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns></returns>
     public bool HasItem(string itemName)
     {
         if (itemName == null)

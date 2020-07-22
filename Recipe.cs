@@ -14,6 +14,10 @@ public class Recipe
             if(output == null)
             {
                 output = ItemManager.Instance.GetItemByName(OutputItemName);
+                if(output == null)
+                {
+                    Console.WriteLine(OutputItemName + " is not found in item.");
+                }
             }
             return output;
         }
@@ -86,6 +90,18 @@ public class Recipe
             }
         }
         return true;
+    }
+    public List<string> GetRequiredSkills()
+    {
+        List<string> reqSkills = new List<string>();
+        foreach (Requirement r in Requirements)
+        {
+            if (r.Skill != "None")
+            {
+                reqSkills.Add(r.Skill);
+            }
+        }
+        return reqSkills;
     }
     public bool HasSpace()
     {

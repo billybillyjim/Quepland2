@@ -10,5 +10,5 @@ public class WeaponInfo
     public int EffectDuration { get; set; }
 
     public bool IsArrow { get; set; }
-    public List<Requirement> WearRequirements { get; set; }
+    public List<Requirement> WearRequirements { get; set; } = new List<Requirement>();
 }

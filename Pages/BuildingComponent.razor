@@ -4,9 +4,9 @@
 
 @if (thisBuilding != null)
 {
-    <br/>
+    <br />
     <button class="btn btn-primary" @onclick="@(() => Exit())">Exit</button>
-    <br/>
+    <br />
     <div>@thisBuilding.Name</div>
     <div>@thisBuilding.Description</div>
     @foreach (string npc in thisBuilding.NPCs)
@@ -14,10 +14,10 @@
         <Quepland_2.Components.NPCDialogComponent npc="@npc"></Quepland_2.Components.NPCDialogComponent>
     }
     @foreach (Shop Shop in thisBuilding.Shops)
-        {
+    {
         <Quepland_2.Components.ShopComponent Shop="@Shop"></Quepland_2.Components.ShopComponent>
-        }
-    @foreach(TanningSlot slot in thisBuilding.TanningSlots)
+    }
+    @foreach (TanningSlot slot in thisBuilding.TanningSlots)
     {
         <Quepland_2.Components.TanningSlotComponent Slot="@slot"></Quepland_2.Components.TanningSlotComponent>
     }
@@ -56,5 +56,8 @@
     {
         GameState.StateChanged -= OnGameStateChanged;
     }
-    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+    void OnGameStateChanged(object sender, EventArgs e)
+    {
+        StateHasChanged();
+    }
 }

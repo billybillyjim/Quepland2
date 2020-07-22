@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 [Serializable]
 public class GameItem
@@ -37,6 +38,34 @@ public class GameItem
 	public TanningInfo TanningInfo { get; set; }
 	public List<Requirement> Requirements { get; set; } = new List<Requirement>();
 
+	public List<string> GetRequiredSkills()
+    {
+		List<string> reqSkills = new List<string>();
+		foreach (Requirement r in Requirements)
+		{
+			if (r.Skill != "None")
+			{
+				reqSkills.Add(r.Skill);
+			}
+		}
+		if (ArmorInfo != null)
+		{		
+			foreach (Requirement r in ArmorInfo.WearRequirements)
+			{
+
+				reqSkills.Add(r.Skill);
+				
+			}
+		}
+		if (WeaponInfo != null)
+		{
+			foreach (Requirement r in WeaponInfo.WearRequirements)
+			{
+				reqSkills.Add(r.Skill);
+			}
+		}
+		return reqSkills;
+	}
 	public bool HasRequirements()
     {
 		foreach(Requirement r in Requirements)
@@ -84,49 +113,60 @@ public class GameItem
 		}
 		return true;
 	}
-	public string GetRequirementTooltip()
-    {
-        if (HasRequirements())
-        {
+	public string GetRequirementTooltip(bool showAll)
+	{
+		if (HasRequirements() && !showAll)
+		{
 			return "";
-        }
+		}
 		string req = "";
 
 		bool hasEquipInfo = false;
-		if(ArmorInfo != null)
-        {
+		if (ArmorInfo != null)
+		{
 			hasEquipInfo = true;
 			foreach (Requirement r in ArmorInfo.WearRequirements)
-            {
-				if(r.IsMet() == false)
-                {
+			{
+				if (r.IsMet() == false || showAll)
+				{
 					req += r.ToString() + "\n";
-                }
-            }
+				}
+			}
 		}
 		if (WeaponInfo != null)
 		{
 			hasEquipInfo = true;
 			foreach (Requirement r in WeaponInfo.WearRequirements)
 			{
-				if (r.IsMet() == false)
+				if (r.IsMet() == false || showAll)
 				{
 					req += r.ToString() + "\n";
 				}
 			}
 		}
-		if(hasEquipInfo == false)
-        {
+		if (hasEquipInfo == false)
+		{
 			foreach (Requirement r in Requirements)
 			{
-				if (r.IsMet() == false)
+				if (r.IsMet() == false || showAll)
 				{
 					req += r.ToString() + "\n";
 				}
 			}
 		}
-		req = req.Substring(0, req.Length - 1);
+		if(req.Length > 0)
+        {
+			req = req.Substring(0, req.Length - 1);
+		}
+        else
+        {
+			return "This item has no requirements.";
+        }
 		return req;
+	}
+	public string GetRequirementTooltip()
+    {
+		return GetRequirementTooltip(false);
 	}
 	public string GetSkillForWeaponExp()
     {

@@ -158,5 +158,20 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Ocean Fishing Platform",
+    "id": 55,
+    "image": "Ocean",
+    "description": "The fishing platform floats out in the ocean, just barely in sight of shore. Many large fish gather beneath here for some reason.",
+    "actions": [
+      "Go Fishing:Squid,Tuna,Yellowtail"
+    ],
+    "areaURL": "OceanFishingPlatform",
+    "requirements": [
+      {
+        "action": "Shallow Ocean Travel"
+      }
+    ]
   }
 ]

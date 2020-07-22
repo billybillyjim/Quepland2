@@ -158,5 +158,17 @@ public class ItemManager
         }
         return Items.Find(x => x.Name == "Alchemical Dust");
     }
+    public List<Recipe> GetCraftableRecipes()
+    {
+        List<Recipe> recipes = new List<Recipe>();
+        foreach(Recipe r in Recipes)
+        {
+            if (r.CanCreate())
+            {
+                recipes.Add(r);
+            }
+        }
+        return recipes;
+    }
 }
 

@@ -437,7 +437,7 @@
     }
   },
   {
-    "name": "Giant Octopus Roll",
+    "name": "Octopus Roll",
     "description": "A roll with eight limbs.",
     "gatherString": "You make a giant octopus roll.",
     "value": 2200,

@@ -47,17 +47,8 @@
       "Uragota Town",
       "Darkbourne Bridge",
       "West Uragota Docks",
-      "East Uragota Docks"
-    ]
-  },
-  {
-    "name": "Cantila Coast",
-    "areaNames": [
-      "Cantila Beach",
-      "Uragota Town",
-      "Darkbourne Bridge",
-      "West Uragota Docks",
-      "East Uragota Docks"
+      "East Uragota Docks",
+      "Ocean Fishing Platform"
     ]
   },
   {
@@ -123,7 +114,19 @@
   {
     "name": "Sahota Tir",
     "areaNames": [
-      "Sahota Ice Fields"
+      "Sahota Ice Fields",
+      "Sahota Caverns",
+      "Sahota Clearing",
+      "Sahota Dungeon"
+    ]
+  },
+  {
+    "name": "Koncave Caverns",
+    "areaNames": [
+      "Koncave Falls",
+      "Koncave Falls Mine",
+      "Koncave City Gate",
+      "Koncave City Square"
     ]
   }
 ]

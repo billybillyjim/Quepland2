@@ -2,7 +2,7 @@
 @implements IDisposable 
 
 
-        <div class="custom-dropdown" style="cursor:pointer;" onmouseleave="@(new Action(() => Close()))" @onclick="@(() => Select())">
+        <div class="custom-dropdown" style="cursor:pointer;width:fit-content;min-width:200px" onmouseleave="@(new Action(() => Close()))" @onclick="@(() => Select())">
             @if(DropdownItems == null || DropdownItems.Count == 0)
             {
                 @EmptyText
@@ -14,6 +14,10 @@
             else if (BoxText != null)
             {
                 @BoxText
+            }
+            else
+            {
+                <div>Select an item</div>
             }
             <table style="@GetStyle() left:0px; background-color: white;z-index:10;min-width:100%; position: absolute; @width">
                 @if (selected)
@@ -47,6 +51,12 @@
     private string width = "width:fit-content;";
     [Parameter]
     public string EmptyText { get; set; } = "You don't have any.";
+
+    public void Refresh()
+    {
+        Console.WriteLine("Refreshing list...");
+        StateHasChanged();
+    }
 
     public Task Choose(string item)
     {

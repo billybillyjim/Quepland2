@@ -9,14 +9,15 @@
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
-      "damage": 3
-    },
-    "requirements": [
-      {
-        "skill": "Knifesmanship",
-        "skillLevel": 1
-      }
-    ]
+      "damage": 3,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 1
+        }
+      ]
+    }
+
   },
   {
     "Name": "Stone Axe",
@@ -28,14 +29,14 @@
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 15,
-      "damage": 4
-    },
-    "requirements": [
-      {
-        "skill": "Axemanship",
-        "skillLevel": 1
-      }
-    ]
+      "damage": 4,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 1
+        }
+      ]
+    }
   },
   {
     "Name": "Copper Axe",
@@ -48,14 +49,14 @@
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 15,
-      "damage": 8
-    },
-    "requirements": [
-      {
-        "skill": "Axemanship",
-        "skillLevel": 1
-      }
-    ]
+      "damage": 8,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 1
+        }
+      ]
+    }
   },
 
   {
@@ -68,14 +69,14 @@
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 11,
-      "damage": 5
-    },
-    "requirements": [
-      {
-        "skill": "Swordsmanship",
-        "skillLevel": 1
-      }
-    ]
+      "damage": 5,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 1
+        }
+      ]
+    }
   },
   {
     "Name": "Copper Hammer",
@@ -87,14 +88,14 @@
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
-      "damage": 18
-    },
-    "requirements": [
-      {
-        "skill": "Hammermanship",
-        "skillLevel": 1
-      }
-    ]
+      "damage": 18,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 1
+        }
+      ]
+    }
   },
   {
     "name": "Bandit's Knife",
@@ -105,14 +106,14 @@
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
-      "damage": 5
-    },
-    "requirements": [
-      {
-        "skill": "Knifesmanship",
-        "skillLevel": 5
-      }
-    ]
+      "damage": 5,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 5
+        }
+      ]
+    }
   },
   {
     "name": "Ultimate Test Weapon",
@@ -123,14 +124,14 @@
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 1,
-      "damage": 500
-    },
-    "requirements": [
-      {
-        "skill": "Swordsmanship",
-        "skillLevel": 1
-      }
-    ]
+      "damage": 500,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 1
+        }
+      ]
+    }
   },
   {
     "name": "Bone Blade",
@@ -141,14 +142,14 @@
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 8,
-      "damage": 25
-    },
-    "requirements": [
-      {
-        "skill": "Swordsmanship",
-        "skillLevel": 15
-      }
-    ]
+      "damage": 25,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 15
+        }
+      ]
+    }
   },
   {
     "Name": "Brass Knife",
@@ -160,14 +161,14 @@
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
-      "damage": 8
-    },
-    "requirements": [
-      {
-        "skill": "Knifesmanship",
-        "skillLevel": 10
-      }
-    ]
+      "damage": 8,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 20
+        }
+      ]
+    }
   },
   {
     "Name": "Brass Sword",
@@ -180,14 +181,14 @@
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 11,
-      "damage": 19
-    },
-    "requirements": [
-      {
-        "skill": "Swordsmanship",
-        "skillLevel": 10
-      }
-    ]
+      "damage": 19,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 20
+        }
+      ]
+    }
   },
   {
     "Name": "Brass Axe",
@@ -200,14 +201,14 @@
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 15,
-      "damage": 35
-    },
-    "requirements": [
-      {
-        "skill": "Axemanship",
-        "skillLevel": 10
-      }
-    ]
+      "damage": 35,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 20
+        }
+      ]
+    }
   },
   {
     "Name": "Brass Hammer",
@@ -219,14 +220,14 @@
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
-      "damage": 60
-    },
-    "requirements": [
-      {
-        "skill": "Hammermanship",
-        "skillLevel": 10
-      }
-    ]
+      "damage": 60,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 20
+        }
+      ]
+    }
   },
   {
     "Name": "Tin Knife",
@@ -238,14 +239,14 @@
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
-      "damage": 5
-    },
-    "requirements": [
-      {
-        "skill": "Knifesmanship",
-        "skillLevel": 5
-      }
-    ]
+      "damage": 5,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 5
+        }
+      ]
+    }
   },
   {
     "Name": "Tin Sword",
@@ -257,14 +258,14 @@
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 11,
-      "damage": 8
-    },
-    "requirements": [
-      {
-        "skill": "Swordsmanship",
-        "skillLevel": 5
-      }
-    ]
+      "damage": 8,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 5
+        }
+      ]
+    }
   },
   {
     "Name": "Tin Axe",
@@ -277,14 +278,14 @@
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 15,
-      "damage": 15
-    },
-    "requirements": [
-      {
-        "skill": "Axemanship",
-        "skillLevel": 5
-      }
-    ]
+      "damage": 15,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 5
+        }
+      ]
+    }
   },
   {
     "Name": "Tin Hammer",
@@ -296,14 +297,14 @@
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
-      "damage": 32
-    },
-    "requirements": [
-      {
-        "skill": "Hammermanship",
-        "skillLevel": 5
-      }
-    ]
+      "damage": 32,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 5
+        }
+      ]
+    }
   },
   {
     "Name": "Zinc Knife",
@@ -315,14 +316,14 @@
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
-      "damage": 7
-    },
-    "requirements": [
-      {
-        "skill": "Knifesmanship",
-        "skillLevel": 15
-      }
-    ]
+      "damage": 7,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 15
+        }
+      ]
+    }
   },
   {
     "Name": "Zinc Sword",
@@ -334,14 +335,14 @@
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 11,
-      "damage": 12
-    },
-    "requirements": [
-      {
-        "skill": "Swordsmanship",
-        "skillLevel": 15
-      }
-    ]
+      "damage": 12,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 15
+        }
+      ]
+    }
   },
   {
     "Name": "Zinc Axe",
@@ -354,14 +355,14 @@
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 15,
-      "damage": 23
-    },
-    "requirements": [
-      {
-        "skill": "Axemanship",
-        "skillLevel": 15
-      }
-    ]
+      "damage": 23,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 15
+        }
+      ]
+    }
   },
   {
     "Name": "Zinc Hammer",
@@ -373,14 +374,14 @@
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
-      "damage": 48
-    },
-    "requirements": [
-      {
-        "skill": "Hammermanship",
-        "skillLevel": 15
-      }
-    ]
+      "damage": 48,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 15
+        }
+      ]
+    }
   },
   {
     "Name": "Bronze Knife",
@@ -392,14 +393,14 @@
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
-      "damage": 15
-    },
-    "requirements": [
-      {
-        "skill": "Knifesmanship",
-        "skillLevel": 30
-      }
-    ]
+      "damage": 15,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 30
+        }
+      ]
+    }
   },
   {
     "Name": "Bronze Sword",
@@ -411,14 +412,14 @@
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 11,
-      "damage": 30
-    },
-    "requirements": [
-      {
-        "skill": "Swordsmanship",
-        "skillLevel": 30
-      }
-    ]
+      "damage": 30,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 30
+        }
+      ]
+    }
   },
   {
     "Name": "Bronze Axe",
@@ -431,14 +432,15 @@
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 15,
-      "damage": 51
-    },
-    "requirements": [
-      {
-        "skill": "Axemanship",
-        "skillLevel": 30
-      }
-    ]
+      "damage": 51,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 30
+        }
+      ]
+    }
+    
   },
   {
     "Name": "Bronze Hammer",
@@ -450,14 +452,14 @@
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
-      "damage": 88
-    },
-    "requirements": [
-      {
-        "skill": "Hammermanship",
-        "skillLevel": 30
-      }
-    ]
+      "damage": 88,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 30
+        }
+      ]
+    }
   },
   {
     "Name": "Nickel Knife",
@@ -469,14 +471,14 @@
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
-      "damage": 19
-    },
-    "requirements": [
-      {
-        "skill": "Knifesmanship",
-        "skillLevel": 35
-      }
-    ]
+      "damage": 19,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 35
+        }
+      ]
+    }
   },
   {
     "Name": "Nickel Sword",
@@ -488,14 +490,14 @@
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 11,
-      "damage": 41
-    },
-    "requirements": [
-      {
-        "skill": "Swordsmanship",
-        "skillLevel": 35
-      }
-    ]
+      "damage": 41,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 35
+        }
+      ]
+    }
   },
   {
     "Name": "Nickel Axe",
@@ -508,14 +510,14 @@
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 15,
-      "damage": 65
-    },
-    "requirements": [
-      {
-        "skill": "Axemanship",
-        "skillLevel": 35
-      }
-    ]
+      "damage": 65,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 35
+        }
+      ]
+    }
   },
   {
     "Name": "Nickel Hammer",
@@ -527,14 +529,14 @@
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
-      "damage": 104
-    },
-    "requirements": [
-      {
-        "skill": "Hammermanship",
-        "skillLevel": 35
-      }
-    ]
+      "damage": 104,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 35
+        }
+      ]
+    }
   },
   {
     "Name": "Iron Knife",
@@ -546,14 +548,14 @@
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
-      "damage": 45
-    },
-    "requirements": [
-      {
-        "skill": "Knifesmanship",
-        "skillLevel": 45
-      }
-    ]
+      "damage": 45,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 45
+        }
+      ]
+    }
   },
   {
     "Name": "Iron Sword",
@@ -565,14 +567,14 @@
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 11,
-      "damage": 78
-    },
-    "requirements": [
-      {
-        "skill": "Swordsmanship",
-        "skillLevel": 45
-      }
-    ]
+      "damage": 78,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 45
+        }
+      ]
+    }
   },
   {
     "Name": "Iron Axe",
@@ -585,14 +587,14 @@
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 15,
-      "damage": 103
-    },
-    "requirements": [
-      {
-        "skill": "Axemanship",
-        "skillLevel": 45
-      }
-    ]
+      "damage": 103,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 45
+        }
+      ]
+    }
   },
   {
     "Name": "Iron Hammer",
@@ -604,14 +606,14 @@
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
-      "damage": 162
-    },
-    "requirements": [
-      {
-        "skill": "Hammermanship",
-        "skillLevel": 45
-      }
-    ]
+      "damage": 162,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 45
+        }
+      ]
+    }
   },
   {
     "Name": "Lead Knife",
@@ -623,14 +625,14 @@
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 7,
-      "damage": 60
-    },
-    "requirements": [
-      {
-        "skill": "Knifesmanship",
-        "skillLevel": 55
-      }
-    ]
+      "damage": 60,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 55
+        }
+      ]
+    }
   },
   {
     "Name": "Lead Sword",
@@ -642,14 +644,14 @@
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 14,
-      "damage": 135
-    },
-    "requirements": [
-      {
-        "skill": "Swordsmanship",
-        "skillLevel": 55
-      }
-    ]
+      "damage": 135,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 55
+        }
+      ]
+    }
   },
   {
     "Name": "Lead Axe",
@@ -662,14 +664,14 @@
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 22,
-      "damage": 220
-    },
-    "requirements": [
-      {
-        "skill": "Axemanship",
-        "skillLevel": 55
-      }
-    ]
+      "damage": 220,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 55
+        }
+      ]
+    }
   },
   {
     "Name": "Lesser Lead Hammer",
@@ -681,14 +683,14 @@
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 28,
-      "damage": 303
-    },
-    "requirements": [
-      {
-        "skill": "Hammermanship",
-        "skillLevel": 55
-      }
-    ]
+      "damage": 303,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 55
+        }
+      ]
+    }
   },
   {
     "Name": "Greater Lead Hammer",
@@ -700,14 +702,14 @@
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 42,
-      "damage": 508
-    },
-    "requirements": [
-      {
-        "skill": "Hammermanship",
-        "skillLevel": 62
-      }
-    ]
+      "damage": 508,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 62
+        }
+      ]
+    }
   },
   {
     "Name": "Aluminum Knife",
@@ -719,14 +721,14 @@
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 4,
-      "damage": 39
-    },
-    "requirements": [
-      {
-        "skill": "Knifesmanship",
-        "skillLevel": 75
-      }
-    ]
+      "damage": 39,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 75
+        }
+      ]
+    }
   },
   {
     "Name": "Aluminum Sword",
@@ -738,14 +740,14 @@
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 9,
-      "damage": 72
-    },
-    "requirements": [
-      {
-        "skill": "Swordsmanship",
-        "skillLevel": 75
-      }
-    ]
+      "damage": 72,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 75
+        }
+      ]
+    }
   },
   {
     "Name": "Aluminum Axe",
@@ -758,14 +760,14 @@
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 13,
-      "damage": 91
-    },
-    "requirements": [
-      {
-        "skill": "Axemanship",
-        "skillLevel": 75
-      }
-    ]
+      "damage": 91,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 75
+        }
+      ]
+    }
   },
   {
     "Name": "Aluminum Hammer",
@@ -777,14 +779,14 @@
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 17,
-      "damage": 145
-    },
-    "requirements": [
-      {
-        "skill": "Hammermanship",
-        "skillLevel": 75
-      }
-    ]
+      "damage": 145,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 75
+        }
+      ]
+    }
   },
   {
     "Name": "Golden Knife",
@@ -796,14 +798,14 @@
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 7,
-      "damage": 52
-    },
-    "requirements": [
-      {
-        "skill": "Knifesmanship",
-        "skillLevel": 65
-      }
-    ]
+      "damage": 52,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 65
+        }
+      ]
+    }
   },
   {
     "Name": "Golden Sword",
@@ -815,14 +817,14 @@
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 14,
-      "damage": 110
-    },
-    "requirements": [
-      {
-        "skill": "Swordsmanship",
-        "skillLevel": 65
-      }
-    ]
+      "damage": 110,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 65
+        }
+      ]
+    }
   },
   {
     "Name": "Golden Axe",
@@ -835,14 +837,14 @@
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 22,
-      "damage": 192
-    },
-    "requirements": [
-      {
-        "skill": "Axemanship",
-        "skillLevel": 65
-      }
-    ]
+      "damage": 192,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 65
+        }
+      ]
+    }
   },
   {
     "Name": "Golden Hammer",
@@ -854,14 +856,14 @@
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 28,
-      "damage": 273
-    },
-    "requirements": [
-      {
-        "skill": "Hammermanship",
-        "skillLevel": 65
-      }
-    ]
+      "damage": 273,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 65
+        }
+      ]
+    }
   },
   {
     "Name": "Platinum Knife",
@@ -873,14 +875,14 @@
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 7,
-      "damage": 70
-    },
-    "requirements": [
-      {
-        "skill": "Knifesmanship",
-        "skillLevel": 93
-      }
-    ]
+      "damage": 70,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 93
+        }
+      ]
+    }
   },
   {
     "Name": "Platinum Sword",
@@ -892,14 +894,14 @@
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 14,
-      "damage": 140
-    },
-    "requirements": [
-      {
-        "skill": "Swordsmanship",
-        "skillLevel": 93
-      }
-    ]
+      "damage": 140,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 93
+        }
+      ]
+    }
   },
   {
     "Name": "Platinum Axe",
@@ -912,14 +914,14 @@
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 22,
-      "damage": 240
-    },
-    "requirements": [
-      {
-        "skill": "Axemanship",
-        "skillLevel": 93
-      }
-    ]
+      "damage": 240,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 93
+        }
+      ]
+    }
   },
   {
     "Name": "Platinum Hammer",
@@ -931,14 +933,14 @@
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 28,
-      "damage": 383
-    },
-    "requirements": [
-      {
-        "skill": "Hammermanship",
-        "skillLevel": 93
-      }
-    ]
+      "damage": 383,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 93
+        }
+      ]
+    }
   },
   {
     "Name": "Steel Knife",
@@ -950,14 +952,14 @@
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
-      "damage": 95
-    },
-    "requirements": [
-      {
-        "skill": "Knifesmanship",
-        "skillLevel": 75
-      }
-    ]
+      "damage": 95,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 75
+        }
+      ]
+    }
   },
   {
     "Name": "Steel Sword",
@@ -969,14 +971,14 @@
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 10,
-      "damage": 204
-    },
-    "requirements": [
-      {
-        "skill": "Swordsmanship",
-        "skillLevel": 75
-      }
-    ]
+      "damage": 204,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 75
+        }
+      ]
+    }
   },
   {
     "Name": "Steel Axe",
@@ -989,14 +991,14 @@
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 15,
-      "damage": 330
-    },
-    "requirements": [
-      {
-        "skill": "Axemanship",
-        "skillLevel": 75
-      }
-    ]
+      "damage": 330,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 75
+        }
+      ]
+    }
   },
   {
     "Name": "Steel Hammer",
@@ -1008,14 +1010,14 @@
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 20,
-      "damage": 458
-    },
-    "requirements": [
-      {
-        "skill": "Hammermanship",
-        "skillLevel": 75
-      }
-    ]
+      "damage": 458,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 75
+        }
+      ]
+    }
   },
   {
     "Name": "Strongtium Knife",
@@ -1027,14 +1029,14 @@
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 6,
-      "damage": 192
-    },
-    "requirements": [
-      {
-        "skill": "Knifesmanship",
-        "skillLevel": 99
-      }
-    ]
+      "damage": 192,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 99
+        }
+      ]
+    }
   },
   {
     "Name": "Strongtium Sword",
@@ -1046,14 +1048,14 @@
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 11,
-      "damage": 425
-    },
-    "requirements": [
-      {
-        "skill": "Swordsmanship",
-        "skillLevel": 99
-      }
-    ]
+      "damage": 425,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 99
+        }
+      ]
+    }
   },
   {
     "Name": "Strongtium Axe",
@@ -1066,14 +1068,14 @@
     "icon": "Axe",
     "weaponInfo": {
       "attackSpeed": 16,
-      "damage": 659
-    },
-    "requirements": [
-      {
-        "skill": "Axemanship",
-        "skillLevel": 99
-      }
-    ]
+      "damage": 659,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 99
+        }
+      ]
+    }
   },
   {
     "Name": "Strongtium Hammer",
@@ -1085,13 +1087,13 @@
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
-      "damage": 945
-    },
-    "requirements": [
-      {
-        "skill": "Hammermanship",
-        "skillLevel": 99
-      }
-    ]
+      "damage": 945,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 99
+        }
+      ]
+    }
   }
 ]

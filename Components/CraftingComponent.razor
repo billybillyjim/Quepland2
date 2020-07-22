@@ -3,14 +3,14 @@
 
 @if (GameState.CurrentRecipe != null)
 {
-    <div style="height:60px;"><button @onclick="@(() => Stop())">Stop Crafting @GameState.CurrentRecipe.OutputItemName</button></div>
+    <div style="height:60px;margin:10px;"><button @onclick="@(() => Stop())">Stop Crafting @GameState.CurrentRecipe.OutputItemName</button></div>
 }
 else
 {
-    <div style="height:60px"></div>
+    <div style="height:60px;margin:10px;">Select an item to craft.</div>
 }
-<div style="display:flex;flex-wrap:wrap;width:280px;border:solid black 1px;border-radius:0.25rem;background-color:dimgray;min-height:50px;margin-left:10px;">
-    @foreach (Recipe recipe in ItemManager.Instance.Recipes)
+<div style="display:flex;flex-wrap:wrap;width:340px;border:solid black 1px;border-radius:0.25rem;background-color:dimgray;min-height:50px;margin-left:10px;">
+    @foreach (Recipe recipe in ItemManager.Instance.GetCraftableRecipes())
     {
         if (recipe.CanCreate())
         {
@@ -24,6 +24,10 @@ else
         }
 
 
+    }
+    @if(ItemManager.Instance.GetCraftableRecipes().Count == 0)
+    {
+        <div style="margin:5px;color:white;">You don't have the materials to craft anything.</div>
     }
 </div>
 
