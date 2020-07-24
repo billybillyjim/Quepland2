@@ -10,17 +10,17 @@ else
     <div style="height:60px;margin:10px;">Select an item to craft.</div>
 }
 <div style="display:flex;flex-wrap:wrap;width:340px;border:solid black 1px;border-radius:0.25rem;background-color:dimgray;min-height:50px;margin-left:10px;">
-    @foreach (Recipe recipe in ItemManager.Instance.GetCraftableRecipes())
+    @foreach (Recipe recipe in Recipes)
     {
         if (recipe.CanCreate())
         {
-            <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, recipe.OutputAmount + " " + recipe.Output.Name, recipe.GetIngredientsString())))"
-                 @onclick="@(() => GameState.SetCraftingItem(recipe))"><ItemBoxComponent Item="@recipe.Output"></ItemBoxComponent></div>
+            <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowItemTooltip(e, recipe.OutputAmount + " " + recipe.Output.Name, recipe.GetIngredientsString())))"
+                 @onclick="@(() => GameState.SetCraftingItem(recipe))"><ItemBoxComponent Item="@recipe.Output" shouldRender="@ShouldRender()"></ItemBoxComponent></div>
         }
         else if(recipe.HasSomeIngredients())
         {
-            <div style="opacity:0.5" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, recipe.Output.Name, GetTooltip(recipe))))"
-                 onmouseout="@(new Action(() => GameState.HideTooltip()))"><ItemBoxComponent Item="@recipe.Output"></ItemBoxComponent></div>
+            <div style="opacity:0.5" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowItemTooltip(e, recipe.Output.Name, GetTooltip(recipe))))"
+                 onmouseout="@(new Action(() => GameState.HideTooltip()))"><ItemBoxComponent Item="@recipe.Output" shouldRender="@ShouldRender()"></ItemBoxComponent></div>
         }
 
 
@@ -33,6 +33,17 @@ else
 
 
 @code {
+
+    private List<Recipe> Recipes = new List<Recipe>();
+
+    private bool ShouldRender()
+    {
+        if(GameState.CurrentRecipe == null)
+        {
+            return true;
+        }
+        return false;
+    }
 
     private string GetTooltip(Recipe r)
     {
@@ -49,6 +60,10 @@ else
         {
             tip += r.GetMissingIngredients() + "\n";
         }
+        if(tip.Length > 0)
+        {
+            tip = tip.Substring(0, tip.Length - 2);
+        }
         return tip;
     }
     private void Stop()
@@ -58,6 +73,8 @@ else
     }
     protected override void OnInitialized()
     {
+        Recipes.Clear();
+        Recipes.AddRange(ItemManager.Instance.GetCraftableRecipes());
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()

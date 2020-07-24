@@ -67,7 +67,7 @@
             {
                 if (item.Key != null)
                 {
-                    <ItemBoxComponent Item="@item.Key" ShowAmount="@true" shouldRender="@item.Key.Rerender" Inventory="@Player.Instance.CurrentFollower.Inventory"></ItemBoxComponent>
+                    <ItemBoxComponent Item="@item.Key" ShowAmount="@false" shouldRender="@item.Key.Rerender" Inventory="@Player.Instance.CurrentFollower.Inventory"></ItemBoxComponent>
                 }
             }
             @for (int i = 0; i < Player.Instance.CurrentFollower.Inventory.GetSize() - Player.Instance.CurrentFollower.Inventory.GetItems().Count; i++)

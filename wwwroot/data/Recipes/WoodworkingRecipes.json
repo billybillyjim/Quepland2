@@ -1020,5 +1020,1005 @@
     ],
     "maxOutputsPerAction": 1,
     "craftingSpeed": 18
+  },
+  {
+    "outputItemName": "White Pine Arrow",
+    "ingredients": [
+      {
+        "item": "Headless White Pine Arrows"
+      },
+      {
+        "item": "Copper Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:1",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "White Pine Arrow",
+    "ingredients": [
+      {
+        "item": "Headless White Pine Arrows"
+      },
+      {
+        "item": "Tin Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:1",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "White Pine Arrow",
+    "ingredients": [
+      {
+        "item": "Headless White Pine Arrows"
+      },
+      {
+        "item": "Zinc Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:1",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "White Pine Arrow",
+    "ingredients": [
+      {
+        "item": "Headless White Pine Arrows"
+      },
+      {
+        "item": "Brass Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:1",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "White Pine Arrow",
+    "ingredients": [
+      {
+        "item": "Headless White Pine Arrows"
+      },
+      {
+        "item": "Bronze Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:1",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Poplar Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Poplar Arrows"
+      },
+      {
+        "item": "Copper Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Poplar Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Poplar Arrows"
+      },
+      {
+        "item": "Tin Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Poplar Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Poplar Arrows"
+      },
+      {
+        "item": "Zinc Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Poplar Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Poplar Arrows"
+      },
+      {
+        "item": "Brass Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Poplar Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Poplar Arrows"
+      },
+      {
+        "item": "Bronze Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Poplar Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Poplar Arrows"
+      },
+      {
+        "item": "Nickel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Oak Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Oak Arrows"
+      },
+      {
+        "item": "Copper Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Oak Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Oak Arrows"
+      },
+      {
+        "item": "Tin Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Oak Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Oak Arrows"
+      },
+      {
+        "item": "Zinc Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Oak Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Oak Arrows"
+      },
+      {
+        "item": "Brass Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Oak Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Oak Arrows"
+      },
+      {
+        "item": "Bronze Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Oak Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Oak Arrows"
+      },
+      {
+        "item": "Nickel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Maple Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Maple Arrows"
+      },
+      {
+        "item": "Zinc Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Maple Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Maple Arrows"
+      },
+      {
+        "item": "Nickel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Maple Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Maple Arrows"
+      },
+      {
+        "item": "Brass Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Maple Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Maple Arrows"
+      },
+      {
+        "item": "Bronze Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Birch Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Birch Arrows"
+      },
+      {
+        "item": "Zinc Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:6",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Birch Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Birch Arrows"
+      },
+      {
+        "item": "Nickel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:6",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Birch Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Birch Arrows"
+      },
+      {
+        "item": "Brass Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:6",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Birch Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Birch Arrows"
+      },
+      {
+        "item": "Bronze Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:6",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Mesquite Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Mesquite Arrows"
+      },
+      {
+        "item": "Brass Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:8",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Mesquite Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Mesquite Arrows"
+      },
+      {
+        "item": "Bronze Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:8",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Mesquite Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Mesquite Arrows"
+      },
+      {
+        "item": "Iron Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:8",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Heavy Mesquite Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Mesquite Arrows"
+      },
+      {
+        "item": "Lead Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:8",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Mesquite Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Mesquite Arrows"
+      },
+      {
+        "item": "Aluminum Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:8",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Mahogany Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Mahogany Arrows"
+      },
+      {
+        "item": "Golden Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:12",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 40
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Mahogany Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Mahogany Arrows"
+      },
+      {
+        "item": "Platinum Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:12",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 40
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Heavy Ironwood Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Ironwood Arrows"
+      },
+      {
+        "item": "Lead Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:14",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Ironwood Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Ironwood Arrows"
+      },
+      {
+        "item": "Iron Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:14",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Ironwood Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Ironwood Arrows"
+      },
+      {
+        "item": "Aluminum Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:14",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Ironwood Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Ironwood Arrows"
+      },
+      {
+        "item": "Steel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:14",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Snakewood Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Snakewood Arrows"
+      },
+      {
+        "item": "Iron Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:16",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Snakewood Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Snakewood Arrows"
+      },
+      {
+        "item": "Aluminum Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:16",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Snakewood Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Snakewood Arrows"
+      },
+      {
+        "item": "Steel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:16",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Strong Snakewood Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Snakewood Arrows"
+      },
+      {
+        "item": "Strongtium Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:16",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Lignum Vitae Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Lignum Vitae Arrows"
+      },
+      {
+        "item": "Aluminum Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:19",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Lignum Vitae Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Lignum Vitae Arrows"
+      },
+      {
+        "item": "Steel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:19",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Strong Lignum Vitae Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Lignum Vitae Arrows"
+      },
+      {
+        "item": "Strongtium Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:19",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Lignum Vitae Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Lignum Vitae Arrows"
+      },
+      {
+        "item": "Plastinium Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:19",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Buloke Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Buloke Arrows"
+      },
+      {
+        "item": "Steel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:25",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 80
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Strong Buloke Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Buloke Arrows"
+      },
+      {
+        "item": "Strongtium Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:25",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 80
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Ice Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Ice Arrows"
+      },
+      {
+        "item": "Sahotite Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:35",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 87
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Great Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Great Arrows"
+      },
+      {
+        "item": "Strongtium Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:45",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 95
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Great Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Great Arrows"
+      },
+      {
+        "item": "Plastinium Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:45",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 95
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Great Arrow",
+    "ingredients": [
+      {
+        "item": "Headless Great Arrows"
+      },
+      {
+        "item": "Queplinium Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:45",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 95
+      }
+    ],
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
   }
 ]

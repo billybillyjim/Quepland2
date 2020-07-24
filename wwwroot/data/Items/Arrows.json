@@ -4,6 +4,7 @@
     "Description": "A flimsy stick you can shoot things with.",
     "value": 3,
     "icon": "Arrows",
+    "isStackable": true,
     "weaponInfo": {
       "damage": 9
     },
@@ -20,6 +21,7 @@
     "Description": "A cheap and flimsy arrow.",
     "value": 8,
     "icon": "Arrows",
+    "isStackable": true,
     "weaponInfo": {
       "damage": 15
     },
@@ -36,6 +38,7 @@
     "Description": "A commonly used weapon for shooting things with.",
     "value": 12,
     "icon": "Arrows",
+    "isStackable": true,
     "weaponInfo": {
       "damage": 22
     },
@@ -52,6 +55,7 @@
     "Description": "An average, cheap arrow.",
     "value": 18,
     "icon": "Arrows",
+    "isStackable": true,
     "weaponInfo": {
       "damage": 28
     },
@@ -68,6 +72,7 @@
     "Description": "Bright, thin arrows, usable but flimsy.",
     "value": 22,
     "icon": "Arrows",
+    "isStackable": true,
     "weaponInfo": {
       "damage": 32
     },
@@ -84,9 +89,27 @@
     "Description": "Run of the mill arrows for the average adventurer's bow.",
     "value": 29,
     "icon": "Arrows",
+    "isStackable": true,
     "secondaryColor": "#BD8F57",
     "weaponInfo": {
       "damage": 42
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 35
+      }
+    ]
+  },
+  {
+    "Name": "Heavy Mesquite Arrow",
+    "Description": "An extra heavy arrow made with lead arrowtips.",
+    "value": 29,
+    "icon": "HeavyArrows",
+    "isStackable": true,
+    "secondaryColor": "#BD8F57",
+    "weaponInfo": {
+      "damage": 48
     },
     "requirements": [
       {
@@ -100,6 +123,7 @@
     "Description": "Essentially weaponized furniture, extremely expensive arrows.",
     "value": 65,
     "icon": "Arrows",
+    "isStackable": true,
     "weaponInfo": {
       "damage": 30
     },
@@ -116,8 +140,26 @@
     "Description": "Sturdy arrows, good for shooting things with.",
     "value": 38,
     "icon": "Arrows",
+    "isStackable": true,
     "weaponInfo": {
       "damage": 48
+    },
+    "secondaryColor": "#9C491F",
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 65
+      }
+    ]
+  },
+  {
+    "Name": "Heavy Ironwood Arrow",
+    "Description": "Heavy, sturdy arrows, good for shooting things with.",
+    "value": 38,
+    "icon": "HeavyArrows",
+    "isStackable": true,
+    "weaponInfo": {
+      "damage": 53
     },
     "secondaryColor": "#9C491F",
     "requirements": [
@@ -132,6 +174,24 @@
     "Description": "Wibbly wobbly arrows that somehow still fly straight.",
     "value": 48,
     "icon": "Arrows",
+    "isStackable": true,
+    "weaponInfo": {
+      "damage": 55
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 75
+      }
+    ],
+    "secondaryColor": "#824121"
+  },
+  {
+    "Name": "Strong Snakewood Arrow",
+    "Description": "Wibbly wobbly arrows that somehow still fly straight.",
+    "value": 51,
+    "icon": "HeavyArrows",
+    "isStackable": true,
     "weaponInfo": {
       "damage": 55
     },
@@ -148,8 +208,26 @@
     "Description": "A very heavy arrow that packs a punch.",
     "value": 55,
     "icon": "Arrows",
+    "isStackable": true,
     "weaponInfo": {
       "damage": 62
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 83
+      }
+    ],
+    "secondaryColor": "#612901"
+  },
+  {
+    "Name": "Strong Lignum Vitae Arrow",
+    "Description": "A very heavy arrow that packs a punch.",
+    "value": 59,
+    "icon": "HeavyArrows",
+    "isStackable": true,
+    "weaponInfo": {
+      "damage": 68
     },
     "requirements": [
       {
@@ -164,8 +242,26 @@
     "Description": "An arrow made from the strongest wood in Quepland.",
     "value": 73,
     "icon": "Arrows",
+    "isStackable": true,
     "weaponInfo": {
       "damage": 70
+    },
+    "secondaryColor": "#875B24",
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 92
+      }
+    ]
+  },
+  {
+    "Name": "Strong Buloke Arrow",
+    "Description": "An arrow made from the strongest wood in Quepland.",
+    "value": 79,
+    "icon": "HeavyArrows",
+    "isStackable": true,
+    "weaponInfo": {
+      "damage": 82
     },
     "secondaryColor": "#875B24",
     "requirements": [
@@ -180,6 +276,7 @@
     "Description": "An icy arrow made from ice wood. It may freeze an opponent for a short while.",
     "value": 59,
     "icon": "Arrows",
+    "isStackable": true,
     "weaponInfo": {
       "damage": 55
     },
@@ -196,6 +293,7 @@
     "Description": "A magically imbued arrow made from wood from the Great Tree.",
     "value": 135,
     "secondaryColor": "#9F6F4F",
+    "isStackable": true,
     "icon": "Arrows",
     "weaponInfo": {
       "damage": 100

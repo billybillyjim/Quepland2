@@ -85,8 +85,8 @@ else
             }
             else
             {
-                MessageManager.AddMessage("You wait for a bite...");
-                GameState.TicksToNextAction = 5;
+                MessageManager.AddMessage("You wait for a bite... Nothing.");
+                GameState.TicksToNextAction = 3;
             }
         }
     }
@@ -120,6 +120,7 @@ else
         }
         MessageManager.AddMessage("You caught a " + d.ItemName + "!");
         Player.Instance.Inventory.AddDrop(d);
+        Player.Instance.GainExperience(d.Item.ExperienceGained);
         GameState.UpdateState();
     }
     private Drop GetNextDrop()

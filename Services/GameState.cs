@@ -222,24 +222,8 @@ using System.Threading.Tasks;
 
     private void GatherItem()
     {
-        if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking == false)
+        if (Player.Instance.FollowerGatherItem(CurrentGatherItem) == false)
         {
-            if (Player.Instance.CurrentFollower.Inventory.GetAvailableSpaces() <= 0)
-            {
-                Player.Instance.CurrentFollower.IsBanking = true;
-                Player.Instance.CurrentFollower.TicksToNextAction = Player.Instance.CurrentFollower.AutoCollectSpeed;
-                PlayerGatherItem();
-                MessageManager.AddMessage(Player.Instance.CurrentFollower.AutoCollectMessage.Replace("$", CurrentGatherItem.Name));
-            }
-            else
-            {
-                Player.Instance.CurrentFollower.Inventory.AddItem(CurrentGatherItem.Copy());             
-                Player.Instance.GainExperience(CurrentGatherItem.ExperienceGained);
-                MessageManager.AddMessage(CurrentGatherItem.GatherString + " and hand it over to " + Player.Instance.CurrentFollower.Name + ".");
-            }
-            
-        }
-        else {
             PlayerGatherItem();
         }
         if(CurrentGatherItem != null)
@@ -255,25 +239,15 @@ using System.Threading.Tasks;
     }
     private bool PlayerGatherItem()
     {
-        if (Player.Instance.Inventory.AddItem(CurrentGatherItem.Copy()) == false)
+        if (Player.Instance.PlayerGatherItem(CurrentGatherItem) == false)
         {
-            if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking)
-            {
-                MessageManager.AddMessage("Your inventory is full. You wait for your follower to return from banking.");
-            }
-            else
-            {
-                MessageManager.AddMessage("Your inventory is full.");
-                CurrentGatherItem = null;
-            }       
+            CurrentGatherItem = null;
             return false;
         }
         else
         {
-            Player.Instance.GainExperience(CurrentGatherItem.ExperienceGained);
-            MessageManager.AddMessage(CurrentGatherItem.GatherString);
+            return true;
         }
-        return true;
     }
     private void CraftItem()
     {
@@ -417,9 +391,9 @@ using System.Threading.Tasks;
         }
         else if(SmithingStage == 2)
         {
-            if (Player.Instance.Inventory.AddItem(CurrentSmithingRecipe.Output))
+            if (Player.Instance.Inventory.AddMultipleOfItem(CurrentSmithingRecipe.Output, CurrentSmithingRecipe.OutputAmount))
             {
-                MessageManager.AddMessage("You withdraw the " + CurrentSmithingRecipe.Output.Name);
+                MessageManager.AddMessage("You withdraw " + CurrentSmithingRecipe.OutputAmount + " " + CurrentSmithingRecipe.Output.Name);
                 TicksToNextAction = 12;
                 SmithingStage = 0;
             }
@@ -490,15 +464,15 @@ using System.Threading.Tasks;
         if(CurrentGatherItem != null)
         {
             int baseValue = CurrentGatherItem.GatherSpeed.ToGaussianRandom();
-            Console.WriteLine("Ticks to next gather:" + baseValue);
+           // Console.WriteLine("Ticks to next gather:" + baseValue);
             baseValue = (int)Math.Max(1, (double)baseValue * Player.Instance.GetGearMultiplier(CurrentGatherItem));
-            Console.WriteLine("Ticks to next gather with gear:" + baseValue);
+            //Console.WriteLine("Ticks to next gather with gear:" + baseValue);
             baseValue = (int)Math.Max(1, (double)baseValue * Player.Instance.GetLevelMultiplier(CurrentGatherItem));
-            Console.WriteLine("Ticks to next gather with gear and level:" + baseValue);
+            //Console.WriteLine("Ticks to next gather with gear and level:" + baseValue);
             return baseValue;
         }
         Console.WriteLine("Current Gather Item Was null.");
-        return 100000;
+        return int.MaxValue;
        
     }
     public void ShowTooltip(MouseEventArgs args, string tipName, bool alignRight)

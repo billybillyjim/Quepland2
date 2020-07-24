@@ -120,7 +120,7 @@ public class Player
         {
             TicksToNextAttack = GetWeaponAttackSpeed();
         }
-
+        item.Rerender = true;
         item.IsEquipped = true;
     }
     public void Unequip(GameItem item)
@@ -132,6 +132,7 @@ public class Player
                 TicksToNextAttack = GetWeaponAttackSpeed();
             }
             item.IsEquipped = false;
+            item.Rerender = true;
             equippedItems.Remove(item);
         }
     }
@@ -207,8 +208,15 @@ public class Player
             return;
         }
         LastGainedExp = skill;
-
-        skill.Experience += (long)(amount);
+        double multi = 1;
+        foreach(GameItem i in equippedItems)
+        {
+            if(i.ExperienceBonusSkill == skill.Name)
+            {
+                multi += i.ExperienceGainBonus;
+            }
+        }
+        skill.Experience += (long)(amount * multi);
         
 
         if (skill.Experience >= (long)Skill.GetExperienceRequired(skill.GetSkillLevelUnboosted()))
@@ -313,6 +321,58 @@ public class Player
             BattleManager.Instance.CurrentDojo = null;
         }
         BattleManager.Instance.EndBattle();
+    }
+    public bool FollowerGatherItem(GameItem item)
+    {
+        if (CurrentFollower != null && CurrentFollower.IsBanking == false)
+        {
+            if (CurrentFollower.Inventory.GetAvailableSpaces() <= 0)
+            {
+                CurrentFollower.IsBanking = true;
+                CurrentFollower.TicksToNextAction = CurrentFollower.AutoCollectSpeed;
+                MessageManager.AddMessage(CurrentFollower.AutoCollectMessage.Replace("$", item.Name));
+                return false;
+            }
+            else if(CurrentFollower.MeetsRequirements(item))
+            {
+                CurrentFollower.Inventory.AddItem(item.Copy());
+                GainExperience(item.ExperienceGained);
+                MessageManager.AddMessage(item.GatherString);
+                return true;
+            }
+            else
+            {
+                if(MessageManager.GetMessages().Any(x => x.Text.Contains(CurrentFollower.Name + " is unable to carry ")) == false)
+                {
+                    MessageManager.AddMessage(CurrentFollower.Name + " is unable to carry " + item.Name + ".");
+                }
+                
+                return false;
+            }
+
+        }
+        return false;
+    }
+    public bool PlayerGatherItem(GameItem item)
+    {
+        if (Inventory.AddItem(item.Copy()) == false)
+        {
+            if (CurrentFollower != null && CurrentFollower.IsBanking)
+            {
+                MessageManager.AddMessage("Your inventory is full. You wait for your follower to return from banking.");
+            }
+            else
+            {
+                MessageManager.AddMessage("Your inventory is full.");
+            }
+            return false;
+        }
+        else
+        {
+            GainExperience(item.ExperienceGained);
+            MessageManager.AddMessage(item.GatherString);
+        }
+        return true;
     }
     public List<GameItem> GetEquippedItems()
     {

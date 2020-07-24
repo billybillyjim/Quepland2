@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Copper Arrowtips",
+    "description": "Soft arrowtips for cheap arrows.",
+    "isStackable": true,
+    "value": 6,
+    "gatherString": "You forge some copper arrowtips.",
+    "icon": "Arrowtips",
+    "secondaryColor": "#B87333"
+  },
+  {
+    "name": "Tin Arrowtips",
+    "description": "slightly less soft arrowtips for cheap arrows.",
+    "isStackable": true,
+    "secondaryColor": "#D3D4D5",
+    "value": 7,
+    "gatherString": "You forge some tin arrowtips.",
+    "icon": "Arrowtips"
+  },
+  {
+    "name": "Zinc Arrowtips",
+    "description": "Arrowtips for arrows.",
+    "isStackable": true,
+    "secondaryColor": "#9E9EA0",
+    "value": 9,
+    "gatherString": "You forge some zinc arrowtips.",
+    "icon": "Arrowtips"
+  },
+  {
+    "name": "Brass Arrowtips",
+    "description": "Shiny metal arrowtips.",
+    "isStackable": true,
+    "secondaryColor": "#B5A642",
+    "value": 10,
+    "gatherString": "You forge some brass arrowtips.",
+    "icon": "Arrowtips"
+  },
+  {
+    "name": "Bronze Arrowtips",
+    "description": "Strong arrowtips for arrows.",
+    "isStackable": true,
+    "secondaryColor": "#CD7F32",
+    "value": 12,
+    "gatherString": "You forge some bronze arrowtips.",
+    "icon": "Arrowtips"
+  },
+  {
+    "name": "Nickel Arrowtips",
+    "description": "You can attach these to headless arrows.",
+    "isStackable": true,
+    "secondaryColor": "#838381",
+    "value": 18,
+    "gatherString": "You forge some nickel arrowtips.",
+    "icon": "Arrowtips"
+  },
+  {
+    "name": "Iron Arrowtips",
+    "description": "Quite strong arrowtips.",
+    "isStackable": true,
+    "secondaryColor": "#434341",
+    "value": 22,
+    "gatherString": "You forge some iron arrowtips.",
+    "icon": "Arrowtips"
+  },
+  {
+    "name": "Lead Arrowtips",
+    "description": "Very heavy arrowtips. They'll make the arrows heavy, too.",
+    "isStackable": true,
+    "secondaryColor": "#C0C0C0",
+    "value": 23,
+    "gatherString": "You forge some lead arrowtips.",
+    "icon": "Arrowtips"
+  },
+  {
+    "name": "Aluminum Arrowtips",
+    "description": "Very lightweight arrowtips.",
+    "isStackable": true,
+    "secondaryColor": "#F1F3F0",
+    "value": 30,
+    "gatherString": "You forge some aluminum arrowtips.",
+    "icon": "Arrowtips"
+  },
+  {
+    "name": "Golden Arrowtips",
+    "description": "Fancy arrowtips for fancy arrows.",
+    "isStackable": true,
+    "secondaryColor": "#FFD700",
+    "value": 110,
+    "gatherString": "You forge some golden arrowtips.",
+    "icon": "Arrowtips"
+  },
+  {
+    "name": "Steel Arrowtips",
+    "description": "Extremely strong arrowtips that can be used with most arrows.",
+    "isStackable": true,
+    "secondaryColor": "#9DC6E8",
+    "value": 50,
+    "gatherString": "You forge some steel arrowtips.",
+    "icon": "Arrowtips"
+  },
+  {
+    "name": "Platinum Arrowtips",
+    "description": "Extremely valuable arrowtips.",
+    "isStackable": true,
+    "secondaryColor": "#E5E4E2",
+    "value": 200,
+    "gatherString": "You forge some platinum arrowtips.",
+    "icon": "Arrowtips"
+  },
+  {
+    "name": "Strongtium Arrowtips",
+    "description": "They're quite strong.",
+    "isStackable": true,
+    "secondaryColor": "#AF7979",
+    "value": 280,
+    "gatherString": "You forge some strongtium arrowtips.",
+    "icon": "Arrowtips"
+  },
+  {
+    "name": "Sahotite Arrowtips",
+    "description": "These arrowtips are somehow always cold.",
+    "isStackable": true,
+    "value": 320,
+    "secondaryColor": "#C3D3F3",
+    "gatherString": "You forge some sahotite arrowtips.",
+    "icon": "Arrowtips"
+  },
+  {
+    "name": "Plastinium Arrowtips",
+    "description": "Extremely lightweight and durable arrowtips.",
+    "isStackable": true,
+    "value": 550,
+    "secondaryColor": "#718A94",
+    "gatherString": "You forge some plastinium arrowtips.",
+    "icon": "Arrowtips"
+  },
+  {
+    "name": "Queplinium Arrowtips",
+    "description": "These arrowtips emit a soft purple glow.",
+    "isStackable": true,
+    "value": 900,
+    "secondaryColor": "#B787DC",
+    "gatherString": "You forge some quplinium arrowtips.",
+    "icon": "Arrowtips"
+  }
+]

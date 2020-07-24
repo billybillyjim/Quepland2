@@ -40,6 +40,7 @@
     private List<GameItem> items = new List<GameItem>();
     private string gatherText = "";
     private string tooltip = "";
+    private string beginText = "";
     private Random rand = new Random();
 
     public void GatherItem(GameItem i)
@@ -50,6 +51,10 @@
             GameState.CurrentGatherItem = null;
             GameState.UpdateState();
             return;
+        }
+        if(beginText != "")
+        {
+            MessageManager.AddMessage(beginText);
         }
         GameState.CurrentGatherItem = i;
         GameState.TicksToNextAction = GameState.CurrentGatherItem.GatherSpeed.ToGaussianRandom();
@@ -117,6 +122,11 @@
                 }
             }
             gatherText = ActionText.Split(':')[0];
+            if(ActionText.Split(':').Length > 2)
+            {
+                beginText = ActionText.Split(':')[2];
+            }
+
         }
 
         GameState.UpdateState();

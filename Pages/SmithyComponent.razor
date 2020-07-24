@@ -7,7 +7,7 @@
 {
     <h3>Smithy</h3>
 
-    <CustomDropdownComponent BoxText="Select an Ore" EmptyText="You don't have any ores or bars." @bind-Value="Source" DropdownItems="@GetSmeltables()"></CustomDropdownComponent>
+    <CustomDropdownComponent BoxText="Select an Ore or Bar" EmptyText="You don't have any ores or bars." @bind-Value="Source" DropdownItems="@GetSmeltables()"></CustomDropdownComponent>
 
     <CustomDropdownComponent BoxText="Select a Product" EmptyText="Please select a source." @bind-Value="Product" DropdownItems="@GetSmithables()"></CustomDropdownComponent>
 
@@ -16,7 +16,7 @@
 
     @if (Product != "" && Source != "")
     {
-        <button class="btn btn-primary" @onclick="@(() => Smith())">Smith a @Product @amount Times</button>
+        <button class="btn btn-primary" @onclick="@(() => Smith())">Smith @Product</button>
     }
     <br />
     <br/>
@@ -71,7 +71,6 @@
             GameState.SmithingStage = 0;
             GameState.NewSmeltingRecipe = source;
             GameState.NewSmithingRecipe = product;
-            Console.WriteLine("Source is null:"+ (source != null) + ", Product is null:" + (product != null));
             MessageManager.AddMessage("You begin smithing your " + Source + " into a " + Product);
             GameState.TicksToNextAction = source.CraftingSpeed;
         }

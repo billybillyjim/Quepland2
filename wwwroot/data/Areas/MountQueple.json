@@ -7,7 +7,7 @@
     "areaURL": "QueplandFields",
     "image": "Field",
     "actions": [
-      "Chop White Pine:White Pine Logs"
+      "Chop White Pine:White Pine Logs:You swing your axe at a tree."
     ],
     "unlockableAreas": [
       {
@@ -37,9 +37,9 @@
     "areaURL": "QueplandWoods",
     "image": "Forest",
     "actions": [
-      "Gather Red Berries:Shuniku Berries",
-      "Go Fishing:Minnows,Sunfish",
-      "Chop Poplar Trees:Poplar Logs"
+      "Gather Red Berries:Shuniku Berries:You begin gathering berries.",
+      "Go Fishing:Minnows,Sunfish:You begin catching fish.",
+      "Chop Poplar Trees:Poplar Logs:You swing your axe at a tree."
     ],
     "unlockableAreas": [
       {
@@ -109,7 +109,7 @@
     "areaURL": "LowerMtQuepleTrail",
     "image": "Mountain",
     "actions": [
-      "Mine Pentlandite:Pentlandite"
+      "Mine Pentlandite:Pentlandite:You start mining."
     ],
     "buildings": [
       {
@@ -176,7 +176,7 @@
     "description": "There is a split in the trail ahead. One path winds down into the woods below. The smell of the swamp ahead greets you before you can even see it. The other path rounds the mountain to the north.",
     "areaURL": "EasternTrail",
     "actions": [
-      "Chop Oak Trees:Oak Logs"
+      "Chop Oak Trees:Oak Logs:You swing your axe at a tree."
     ],
     "unlockableAreas": [
       {

@@ -118,7 +118,7 @@ public class Recipe
         {
             if (Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(i.Item)) >= i.Amount)
             {
-                return true;
+               return true;
             }
         }
         return false;
@@ -161,6 +161,7 @@ public class Recipe
         {
                 ing += i.Amount + " " + i.Item + "\n";           
         }
+        ing = ing.Substring(0, ing.Length - 2);
         return ing;
     }
     public string GetShortIngredientsString()

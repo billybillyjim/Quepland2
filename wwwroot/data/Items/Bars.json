@@ -116,6 +116,7 @@
     "Description": "A metal made from nickel ore.",
     "gatherString": "You smelt a nickel bar.",
     "value": 150,
+    "secondaryColor": "#838381",
     "gatherSpeed": 35,
     "experienceGained": "Smithing:130",
     "icon": "Bar",

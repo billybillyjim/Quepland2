@@ -4,37 +4,56 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "River Clam"
+          "itemName": "Small Caiman",
+          "weight": 50
         },
         {
-          "itemName": "Small Caiman"
+          "itemName": "Caiman",
+          "weight": 30
         },
         {
-          "itemName": "Caiman"
+          "itemName": "Large Caiman",
+          "weight": 10
         },
         {
-          "itemName": "Large Caiman"
+          "itemName": "Moose",
+          "weight": 1
         },
         {
-          "itemName": "Moose"
+          "itemName": "Salmon",
+          "weight": 50
         },
         {
-          "itemName": "Salmon"
+          "itemName": "Giant Clam",
+          "weight": 10
         },
         {
-          "itemName": "Giant Clam"
+          "itemName": "Shad",
+          "weight": 50
         },
         {
-          "itemName": "Shad"
+          "itemName": "Sunfish",
+          "weight": 50
         },
         {
-          "itemName": "Sunfish"
+          "itemName": "Carp",
+          "weight": 50
         },
         {
-          "itemName": "Carp"
+          "itemName": "Fisherman Gloves",
+          "weight": 1
         },
         {
-
+          "itemName": "Fisherman Hat",
+          "weight": 1
+        },
+        {
+          "itemName": "Fisherman Shirt",
+          "weight": 1
+        },
+        {
+          "itemName": "Fisherman Pants",
+          "weight": 1
         }
       ]
     }

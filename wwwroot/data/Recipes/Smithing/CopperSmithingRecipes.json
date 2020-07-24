@@ -54,5 +54,15 @@
         "item": "Molten Copper Bar"
       }
     ]
+  },
+  {
+    "outputItemName": "Copper Arrowtips",
+    "ingredients": [
+      {
+        "item": "Molten Copper Bar"
+      }
+    ],
+    "outputAmount": 10
   }
+
 ]
