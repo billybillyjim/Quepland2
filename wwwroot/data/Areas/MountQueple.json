@@ -172,7 +172,7 @@
   {
     "name": "Eastern Trail",
     "id": 6,
-    "image": "Trail",
+    "image": "ReversedTrail",
     "description": "There is a split in the trail ahead. One path winds down into the woods below. The smell of the swamp ahead greets you before you can even see it. The other path rounds the mountain to the north.",
     "areaURL": "EasternTrail",
     "actions": [
