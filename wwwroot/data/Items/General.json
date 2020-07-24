@@ -121,5 +121,12 @@
     "value": 60000,
     "icon": "Camel",
     "enabledActions": "Desert Travel"
+  },
+  {
+    "Name": "River Raft",
+    "Description": "It's a shame you can't swim, or you wouldn't have needed to waste money on this.",
+    "value": 50000,
+    "icon": "Raft",
+    "enabledActions": "River Travel"
   }
 ]

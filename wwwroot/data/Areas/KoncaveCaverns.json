@@ -21,8 +21,8 @@
 
     ],
     "monsters": [
-      "Bandit",
-      "Big Bandit"
+      "Root Dweller",
+      "Stealthy Root Dweller"
     ]
   },
   {
@@ -33,6 +33,12 @@
     "areaURL": "KoncaveFallsMine",
     "actions": [
       "Mine Ores:Platinum Ore,Strongtium Ore,Sahotite Ore"
+    ],
+    "monsters": [
+      "Strong Root Dweller",
+      "Ravenous Root Dweller",
+      "Root Dweller",
+      "Stealthy Root Dweller"
     ]
   },
   {
@@ -62,10 +68,7 @@
     "name": "Koncave City Square",
     "id": 113,
     "image": "Fountain",
-    "description": "",
-    "areaURL": "KoncaveCitySquare",
-    "npcs": [
-      "Gate Guards"
-    ]
+    "description": "A large fountain fuelled by a waterfall coming out of the roof of the cavern stands in the middle of the square. Shops surround the perimeter, and a castle resides on the far side.",
+    "areaURL": "KoncaveCitySquare"
   }
 ]

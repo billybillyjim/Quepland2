@@ -135,7 +135,7 @@
     "name": "Darkbourne Bridge",
     "id": 54,
     "image": "Bridge",
-    "description": "",
+    "description": "The river is muddied by runoff from the nearby farmland. It's shallow and wide, a great place to catch carp or other river fish. You can see a wooded area beyond the bridge to the east.",
     "actions": [
       "Fish from the bridge:Carp,Puffer Fish,Salmon,Crab"
     ],

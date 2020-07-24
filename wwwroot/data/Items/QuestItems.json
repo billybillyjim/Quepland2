@@ -42,5 +42,12 @@
     "Description": "A huge number of dromedaries owned by Carl, the camel salesman at Desert's Mouth.",
     "value": 0,
     "icon": "Camels"
+  },
+  {
+    "name": "Queple's Sword",
+    "description": "A massive sword. You definitely can't use it the way it is now. Maybe there's a way to change that...",
+    "value": 0,
+    "icon": "BigSword",
+    "isSellable": false
   }
 ]

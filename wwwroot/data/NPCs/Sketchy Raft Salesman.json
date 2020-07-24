@@ -1,0 +1,15 @@
+{
+  "name": "Sketchy Raft Salesman",
+  "id": 25,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Wow, looks like you'll need a raft to go any further. Don't worry, I have some great news! I just so happen to sell rafts!"
+    }
+  ],
+  "shop": {
+    "itemNames": [
+      "River Raft"
+    ]
+  }
+}

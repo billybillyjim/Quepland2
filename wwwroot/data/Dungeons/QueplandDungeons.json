@@ -6,11 +6,16 @@
     "areaURLs": [
       "CopperMine",
       "TinMine",
-      "QuepleCaveSmithy"
+      "QuepleCaveSmithy",
+      "QuepleCaveRiver",
+      "GrumpysHome",
+      "StoneDoor"
     ],
     "monsterNames": [
       "Chicken",
-      "Rooster"
+      "Rooster",
+      "Small Kappa",
+      "Slime"
     ]
   },
   {

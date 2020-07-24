@@ -3,15 +3,23 @@
     "name": "Hoin Riverbank",
     "id": 80,
     "image": "Riverbank",
-    "description": "",
+    "description": "The river is surrounded on both sides by thick foliage. The only reasonable way to continue is by raft.",
     "areaURL": "HoinRiverbank",
+    "npcs": [
+      "Sketchy Raft Salesman"
+    ],
     "actions": [
       "Catch Fish:Salmon,Carp,Shad"
     ],
     "unlockableAreas": [
       {
         "areaURL": "HoinRiver",
-        "buttonText": "Ride Down the River"
+        "buttonText": "Ride Down the River",
+        "requirements": [
+          {
+            "action": "River Travel"
+          }
+        ]
       }
     ]
   },
@@ -19,12 +27,22 @@
     "name": "Hoin River",
     "id": 81,
     "image": "River",
-    "description": "",
+    "description": "Floating along the river you can see all sorts of fish swimming past the clear water.",
     "areaURL": "HoinRiver",
     "unlockableAreas": [
       {
         "areaURL": "PlantrainPlains",
-        "buttonText": "Continue Down the River"
+        "buttonText": "Continue Down the River",
+        "requirements": [
+          {
+            "action": "River Travel"
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      {
+        "action": "River Travel"
       }
     ]
   },
@@ -32,12 +50,22 @@
     "name": "Plantrain Plains",
     "id": 82,
     "image": "Plains",
-    "description": "",
+    "description": "The foliage along the banks of the river grow thin as you pass by an open field, full of small farm plots. A number of old buildings stand along their edge.",
     "areaURL": "PlantrainPlains",
     "unlockableAreas": [
       {
         "areaURL": "SunsHarbor",
-        "buttonText": "Continue Down the River"
+        "buttonText": "Continue Down the River",
+        "requirements": [
+          {
+            "action": "River Travel"
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      {
+        "action": "River Travel"
       }
     ]
   },
@@ -45,12 +73,17 @@
     "name": "Sun's Harbor",
     "id": 83,
     "image": "Docks",
-    "description": "",
+    "description": "A few buildings sit just off the river's edge. A large graveyard makes up the remainder of the open land not covered by trees.",
     "areaURL": "SunsHarbor",
     "unlockableAreas": [
       {
         "areaURL": "Guttermouth",
-        "buttonText": "Continue Down the River"
+        "buttonText": "Continue Down the River",
+        "requirements": [
+          {
+            "action": "River Travel"
+          }
+        ]
       }
     ],
     "buildings": [
@@ -81,18 +114,33 @@
           {}
         ]
       }
+    ],
+    "requirements": [
+      {
+        "action": "River Travel"
+      }
     ]
   },
   {
     "name": "Guttermouth",
     "id": 84,
     "image": "Village",
-    "description": "",
+    "description": "You begin to reach signs of civilization. Down at the river's mouth you can see a large city. A number of houses surround the main building here, which has the word 'Woodworks' carved on the front of it.",
     "areaURL": "Guttermouth",
     "unlockableAreas": [
       {
         "areaURL": "Ricechild",
-        "buttonText": "Continue Down the River"
+        "buttonText": "Continue Down the River",
+        "requirements": [
+          {
+            "action": "River Travel"
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      {
+        "action": "River Travel"
       }
     ]
   },
@@ -100,7 +148,12 @@
     "name": "Ricechild",
     "id": 85,
     "image": "City",
-    "description": "",
-    "areaURL": "Ricechild"
+    "description": "You reach a bustling city at the mouth of the river. There are a few interesting shops here.",
+    "areaURL": "Ricechild",
+    "requirements": [
+      {
+        "action": "River Travel"
+      }
+    ]
   }
 ]

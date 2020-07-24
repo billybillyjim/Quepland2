@@ -563,6 +563,25 @@
     ]
   },
   {
+    "name": "River Clam",
+    "description": "A small mouth with no teeth.",
+    "gatherString": "You catch a river clam.",
+    "value": 75,
+    "gatherSpeed": 35,
+    "secondaryColor": "#D9D9D9",
+    "experienceGained": "Fishing:70",
+    "icon": "Scallop",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 15
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
     "name": "Giant Clam",
     "description": "It's like a big mouth that's older than you are.",
     "gatherString": "You catch a giant clam.",

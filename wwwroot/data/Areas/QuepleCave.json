@@ -58,6 +58,44 @@
     "isUnlocked": false,
     "description": "The sound of flowing water fills the chamber as you step into a large cavern. A river flows gently by, teeming with fish.",
     "areaURL": "QuepleCaveRiver",
-    "image": "River"
+    "image": "River",
+    "actions": [
+      "Go Fishing:Shad,Salmon,River Clam"
+    ],
+    "monsters": [
+      "Small Kappa",
+      "Kappa",
+      "Fishman",
+      "Manfish",
+      "Shifnam"
+    ]
+  },
+  {
+    "name": "Stone Door",
+    "id": 16,
+    "isUnlocked": false,
+    "description": "The cavern ends abruptly with a large stone door blocking the way forward. There is an inscription on the door. You'd need to be quite strong to open it.",
+    "areaURL": "StoneDoor",
+    "image": "Door",
+    "npcs": [
+      "Stone Door"
+    ],
+    "buildings": [
+      {
+        "name": "Queple's Tomb",
+        "buttonText": "Open the door",
+        "url": "QueplesTomb",
+        "description": "The walls of the room are lit with a iridescent purple glow. A massive sarcophagus runs along the length of the room. A very large sword sits leaning against the side closest to you.",
+        "npcs": [
+          "Queple's Sarcophagus"
+        ],
+        "requirements": [
+          {
+            "skill": "Strength",
+            "skillLevel": 60
+          }
+        ]
+      }
+    ]
   }
 ]

@@ -1,0 +1,20 @@
+{
+  "name": "Queple's Tomb",
+  "id": 25,
+  "dialogs": [
+    {
+      "buttonText": "Take the sword",
+      "responseText": "You lift the sword from its spot on the sarcophagus. It's both far too large for you to wield and far too small to have been used by the giant being inside the grave.",
+      "quest": "Queple's Sword",
+      "newQuestProgressValue": 1,
+      "itemOnTalk": "Queple's Sword",
+      "requirements": [
+        {
+          "quest": "Queple's Sword",
+          "minimumQuestProgress": 0,
+          "maximumQuestProgress": 0
+        }
+      ]
+    }
+  ]
+}
