@@ -13,11 +13,12 @@
     </div>
     <div>
 
-        <div class="progress" style="width:100%;margin:1px;">
+        <div class="progress" style="width:100%;border-radius:0px;position:relative;">
             <div class="progress-bar" style="width:@(GetPlayerHPPercent());background-color:forestgreen;position:relative">
-                <div style="position:absolute;">
-                    @Player.Instance.CurrentHP / @Player.Instance.MaxHP
-                </div>
+
+            </div>
+            <div style="position:absolute;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);color:white;">
+                @Player.Instance.CurrentHP / @Player.Instance.MaxHP
             </div>
         </div>
     </div>

@@ -18,6 +18,14 @@ public class GameItem
 	public string EquipSlot { get; set; } = "None";
 	public string PrimaryColor { get; set; } = "white";
 	public string SecondaryColor { get; set; } = "lightgray";
+	public int Charges { get; set; } = 0;
+	public string Parameter { get; set; } = "";
+
+	public string UniqueID { get
+        {
+			return Name + Charges + Parameter;
+        } 
+	}
 
 	public bool IsStackable { get; set; }
 	public bool IsEquipped { get; set; }
@@ -185,7 +193,12 @@ public class GameItem
 	}
 	public string GetSkillForWeaponExp()
     {
-		foreach(Requirement req in Requirements)
+		if(WeaponInfo == null)
+        {
+			Console.WriteLine("Weapon " + Name + " has no weaponinfo.");
+			return "";
+        }
+		foreach(Requirement req in WeaponInfo.WearRequirements)
         {
 			if(req.Skill != null)
             {

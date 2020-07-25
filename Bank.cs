@@ -50,6 +50,7 @@ public class Bank
             return;
         }
         int amountToBank = Math.Min(Player.Instance.Inventory.GetNumberOfItem(item), amount);
+        Console.WriteLine("Amount to bank:" + amountToBank);
         Inventory.AddMultipleOfItem(item, Player.Instance.Inventory.RemoveItems(item, amountToBank));
     }
     public void Withdraw(GameItem item)

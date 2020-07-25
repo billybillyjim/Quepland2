@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 public class Inventory
 {
     private List<KeyValuePair<GameItem, int>> items;
-    private Dictionary<GameItem, int> itemLookupDic;
+    private Dictionary<string, int> itemLookupDic { get; set; }
     private int maxSize = 30;
     private readonly int maxValue = int.MaxValue - 1000000;
     private int totalItems { get; set; }
@@ -18,13 +18,13 @@ public class Inventory
     public Inventory(int max)
     {
         items = new List<KeyValuePair<GameItem, int>>();
-        itemLookupDic = new Dictionary<GameItem, int>();
+        itemLookupDic = new Dictionary<string, int>();
         maxSize = max;
     }
     public Inventory(int max, bool itemsStack)
     {
         items = new List<KeyValuePair<GameItem, int>>();
-        itemLookupDic = new Dictionary<GameItem, int>();
+        itemLookupDic = new Dictionary<string, int>();
         maxSize = max;
         AllItemsStack = itemsStack;
     }
@@ -95,6 +95,7 @@ public class Inventory
     /// <returns></returns>
     public bool HasItem(GameItem item)
     {
+        return HasItem(item.UniqueID, false);
         return HasItem(item.Name);
     }    
     /// <summary>
@@ -108,7 +109,20 @@ public class Inventory
         {
             return false;
         }
-        return itemLookupDic.TryGetValue(ItemManager.Instance.GetItemByName(itemName), out _);
+        return itemLookupDic.TryGetValue(ItemManager.Instance.GetItemByName(itemName).UniqueID, out _);
+        //return (items.FirstOrDefault(x => x.Key.Name == itemName).Equals(default(KeyValuePair<GameItem, int>)) == false);
+    }
+    public bool HasItem(string uniqueID, bool empty)
+    {
+        if (uniqueID == null)
+        {
+            return false;
+        }
+        if(itemLookupDic.TryGetValue(uniqueID, out int amt))
+        {
+            return true;
+        }
+        return false;
         //return (items.FirstOrDefault(x => x.Key.Name == itemName).Equals(default(KeyValuePair<GameItem, int>)) == false);
     }
     public bool HasArrows()
@@ -241,13 +255,14 @@ public class Inventory
         if (amount < 0)
         {
             amount = 0;
+            return false;
         }
 
         if (HasItem(item))
         {
             if (item.IsStackable || AllItemsStack)
             {
-                KeyValuePair<GameItem, int> pair = items.FirstOrDefault(x => x.Key.Name == item.Name);
+                KeyValuePair<GameItem, int> pair = items.FirstOrDefault(x => x.Key.UniqueID == item.UniqueID);
                 int oldAmt = pair.Value;
                 items.Remove(pair);
                 items.Add(new KeyValuePair<GameItem, int>(pair.Key, oldAmt + amount));
@@ -290,7 +305,7 @@ public class Inventory
                 return false;
             }
         }
-        return AddMultipleOfItem(ItemManager.Instance.GetCopyOfItem(drop.ItemName), drop.Amount);
+        return AddMultipleOfItem(i, drop.Amount);
     }
     /// <summary>
     /// Returns the number of items removed, 0 if none were removed.
@@ -311,7 +326,6 @@ public class Inventory
                 if (items[i].Value > amount)
                 {                   
                     int oldAmt = pair.Value;
-                    Console.WriteLine("Removing " + oldAmt + " " + item);
                     items.Remove(pair);
                     items.Add(new KeyValuePair<GameItem, int>(pair.Key, oldAmt - amount));
                     UpdateItemCount();
@@ -320,12 +334,12 @@ public class Inventory
                 else if(items[i].Value <= amount)
                 {
                     int val = items[i].Value;
-                    Console.WriteLine("removing " + val + " " + item);
                     removedItems.Add(items[i]);
                     removed += val;
                     if(removed >= amount)
                     {
-                        items.RemoveAll(x => removedItems.Contains(x));
+                        itemLookupDic.Remove(items[i].Key.UniqueID);
+                        items.RemoveAll(x => removedItems.Contains(x));                    
                         UpdateItemCount();
                         return removed;
                     }
@@ -357,34 +371,49 @@ public class Inventory
     public void Clear()
     {
         items.Clear();
+        itemLookupDic.Clear();
         UpdateItemCount();
     }
     private void UpdateItemCount()
     {
         totalItems = 0;
         //inventorySlotPos = 0;
-
+        int i = 0;
+        Console.WriteLine("Updating count for " + items.Count + " items...");
         foreach (KeyValuePair<GameItem, int> item in items)
         {
-            item.Key.Rerender = true;
-            if(itemLookupDic.TryGetValue(item.Key, out int v))
+            
+            if(item.Key != null)
             {
-                itemLookupDic[item.Key] = v;
+                Console.WriteLine("Updating count for item:" + item.Key.Name);
+                item.Key.Rerender = true;
+
+                if (itemLookupDic.TryGetValue(item.Key.UniqueID, out int v))
+                {
+                    Console.WriteLine("Lookup Dic contained value:" + item.Key.UniqueID);
+                    itemLookupDic[item.Key.UniqueID] = v;
+                }
+                else
+                {
+                    Console.WriteLine("Lookup Dic adding new value:" + item.Key.UniqueID);
+                    itemLookupDic.Add(item.Key.UniqueID, item.Value);
+                }
+                
+
+                if (item.Key.IsStackable)
+                {
+                    totalItems += 1;
+                }
+                else
+                {
+                    totalItems += item.Value;
+                }
             }
             else
             {
-                itemLookupDic.Add(item.Key, item.Value);
+                Console.WriteLine("Item was null at iterator:" + i);
             }
-            //item.Key.itemPos = inventorySlotPos;
-            if (item.Key != null && item.Key.IsStackable)
-            {
-                totalItems += 1;
-            }
-            else
-            {
-                totalItems += item.Value;
-            }
-            //inventorySlotPos++;
+            i++;
         }
     }
 

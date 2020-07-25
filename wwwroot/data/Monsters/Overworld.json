@@ -2,6 +2,8 @@
   {
     "name": "Chicken",
     "hp": 10,
+    "weaknesses": "Knifesmanship",
+    "strengths": "Axemanship",
     "attackSpeed": 10,
     "armor": 0,
     "damage": 2,
@@ -32,6 +34,8 @@
   {
     "name": "Rooster",
     "hp": 15,
+    "weaknesses": "Knifesmanship",
+    "strengths": "Axemanship",
     "attackSpeed": 8,
     "armor": 0,
     "damage": 3,
@@ -57,6 +61,8 @@
   {
     "name": "Slime",
     "hp": 25,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship",
     "attackSpeed": 12,
     "armor": 0,
     "damage": 5,
@@ -104,6 +110,8 @@
   {
     "name": "Toto",
     "hp": 55,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship",
     "attackSpeed": 7,
     "armor": 0,
     "damage": 6,
@@ -151,8 +159,8 @@
   {
     "name": "Bandit",
     "hp": 50,
-    "weakness": "Swordsmanship",
-    "strength": "Hammermanship",
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship",
     "damage": 9,
     "armor": 4,
     "attackSpeed": 5,

@@ -103,13 +103,16 @@
         {
             @foreach (KeyValuePair<GameItem, int> item in GetBankItems())
             {
-
+                if (item.Key != null)
+                {
                     <div oncontextmenu="return false;"
                          onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item.Key)))"
                          @onclick="@(() => Withdraw(item.Key))" style="margin-left:-3px;cursor:pointer">
                         <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
 
                     </div>
+                }
+
 
 
             }
@@ -120,12 +123,7 @@
                 {
                     <br />
                 }
-
-                    <div style="margin-top:19px;margin-left:-3px;">
-                        <Quepland_2.Components.ItemBoxComponent></Quepland_2.Components.ItemBoxComponent>
-
-                    </div>
-
+                <Quepland_2.Components.ItemBoxComponent></Quepland_2.Components.ItemBoxComponent>
             }
         }
         else if (addingTags)
@@ -136,20 +134,20 @@
                 {
                     if (item.Key.Tabs.Contains(Bank.Instance.CurrentTab) == false)
                     {
-                            <div oncontextmenu="return false;"
-                                 @onclick="@(() => AddTagToItem(item.Key))" style="margin-left:-3px;cursor:pointer;opacity:0.5">
-                                <Quepland_2.Components.ItemBoxComponent @key="item" Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" HideTooltip="true" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
+                        <div oncontextmenu="return false;"
+                             @onclick="@(() => AddTagToItem(item.Key))" style="margin-left:-3px;cursor:pointer;opacity:0.5">
+                            <Quepland_2.Components.ItemBoxComponent @key="item" Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" HideTooltip="true" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
 
-                            </div>
+                        </div>
                     }
                     else
                     {
 
-                            <div oncontextmenu="return false;"
-                                 @onclick="@(() => RemoveTagFromItem(item.Key))" style="margin-left:-3px;cursor:pointer">
-                                <Quepland_2.Components.ItemBoxComponent @key="item" Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" HideTooltip="true" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
+                        <div oncontextmenu="return false;"
+                             @onclick="@(() => RemoveTagFromItem(item.Key))" style="margin-left:-3px;cursor:pointer">
+                            <Quepland_2.Components.ItemBoxComponent @key="item" Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" HideTooltip="true" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
 
-                            </div>
+                        </div>
 
                     }
 
@@ -162,21 +160,21 @@
                     if (item.Key.Tabs.Contains(Bank.Instance.CurrentTab) == false)
                     {
 
-                            <div oncontextmenu="return false;"
-                                 @onclick="@(() => AddTagToItem(item.Key))" style="margin-left:-3px;cursor:pointer;opacity:0.5">
-                                <Quepland_2.Components.ItemBoxComponent @key="item" Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" HideTooltip="true" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
+                        <div oncontextmenu="return false;"
+                             @onclick="@(() => AddTagToItem(item.Key))" style="margin-left:-3px;cursor:pointer;opacity:0.5">
+                            <Quepland_2.Components.ItemBoxComponent @key="item" Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" HideTooltip="true" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
 
-                            </div>
+                        </div>
 
                     }
                     else
                     {
 
-                            <div oncontextmenu="return false;"
-                                 @onclick="@(() => RemoveTagFromItem(item.Key))" style="margin-left:-3px;cursor:pointer">
-                                <Quepland_2.Components.ItemBoxComponent @key="item" Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" HideTooltip="true" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
+                        <div oncontextmenu="return false;"
+                             @onclick="@(() => RemoveTagFromItem(item.Key))" style="margin-left:-3px;cursor:pointer">
+                            <Quepland_2.Components.ItemBoxComponent @key="item" Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" HideTooltip="true" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
 
-                            </div>
+                        </div>
 
                     }
 
@@ -188,12 +186,12 @@
             @foreach (KeyValuePair<GameItem, int> item in GetItemsForTab(Bank.Instance.CurrentTab))
             {
 
-                    <div oncontextmenu="return false;"
-                         onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item.Key)))"
-                         @onclick="@(() => Withdraw(item.Key))" style="margin-left:-3px;cursor:pointer">
-                        <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
+                <div oncontextmenu="return false;"
+                     onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item.Key)))"
+                     @onclick="@(() => Withdraw(item.Key))" style="margin-left:-3px;cursor:pointer">
+                    <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
 
-                    </div>
+                </div>
 
 
             }
@@ -203,10 +201,10 @@
             @foreach (KeyValuePair<GameItem, int> item in GetSearchItems())
             {
 
-                    <div @onclick="@(() => Withdraw(item.Key))" style="margin-left:-3px;cursor:pointer">
-                        <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
+                <div @onclick="@(() => Withdraw(item.Key))" style="margin-left:-3px;cursor:pointer">
+                    <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
 
-                    </div>
+                </div>
 
             }
         }

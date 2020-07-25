@@ -238,10 +238,12 @@ public class BattleManager
             {
                 if (m.Weaknesses.Contains(s))
                 {
+                    MessageManager.AddMessage("Your opponent seems weak to your weapon!");
                     bonus += 0.4;
                 }
                 else if (m.Strengths.Contains(s))
                 {
+                    MessageManager.AddMessage("Your opponent seems to be resistant to your weapon...");
                     bonus -= 0.4;
                 }
             }
