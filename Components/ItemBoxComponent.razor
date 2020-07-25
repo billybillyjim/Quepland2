@@ -3,7 +3,7 @@
 
 @if (Item != null)
 {
-    
+
     <div style="@(GetBackground())margin:2px;height:50px;width:50px;position:relative;box-sizing: border-box;border-radius:0.25rem;" draggable="false">
         @if (ShowAmount)
         {
@@ -17,9 +17,16 @@
             }
 
         }
-        <img style="height: 46px;width: 46px;@GetMargin()" src="/data/Images/@(Item.Icon).png" draggable="false"
-             @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowItemTooltip(e, GetTooltipTitle(), Item.Description)))"
-             @onmouseout="@(new Action(() => GameState.HideTooltip()))" />
+        @if (HideTooltip == false)
+        {
+            <img style="height: 46px;width: 46px;@GetMargin()" src="/data/Images/@(Item.Icon).png" draggable="false"
+                 @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowItemTooltip(e, GetTooltipTitle(), Item.Description)))"
+                 @onmouseout="@(new Action(() => GameState.HideTooltip()))" />
+        }
+        else
+        {
+            <img style="height: 46px;width: 46px;@GetMargin()" src="/data/Images/@(Item.Icon).png" draggable="false" />
+        }
     </div>
 }
 else
@@ -37,13 +44,14 @@ else
     public bool IsSelected { get; set; }
     [Parameter]
     public bool shouldRender { get; set; }
-    
+    [Parameter]
+    public bool HideTooltip { get; set; }
 
     protected override bool ShouldRender() => shouldRender;
 
     protected override void OnAfterRender(bool first)
     {
-        if(Item != null)
+        if (Item != null)
         {
             Item.Rerender = false;
         }
@@ -56,7 +64,7 @@ else
     {
         if (ShowAmount)
         {
-            if(Inventory == null)
+            if (Inventory == null)
             {
                 return "" + Player.Instance.Inventory.GetNumberOfItem(Item).CustomFormat();
             }
@@ -106,7 +114,7 @@ else
         string tip = "";
         if (Bank.Instance.IsBanking)
         {
-            if(Inventory == Bank.Instance.Inventory)
+            if (Inventory == Bank.Instance.Inventory)
             {
                 if (Bank.Instance.Amount == int.MaxValue)
                 {

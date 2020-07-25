@@ -7,6 +7,7 @@ public class Bank
 	private Bank() { }
 	static Bank() { }
     public List<string> Tabs = new List<string>() { "Main" };
+    public string CurrentTab = "Main";
 	public static Bank Instance { get
         {
 			return instance;

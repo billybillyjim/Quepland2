@@ -3,7 +3,7 @@
 @inject NavigationManager UriHelper
 @implements IDisposable
 
-    <div style="overflow-y:hidden;height:100%;" >
+    <div style="overflow-y:hidden;height:100%;">
 
 
         <div style="margin-bottom:35px;">
@@ -47,6 +47,51 @@
                 <button style="float: right; margin-top: -28px;" class="btn btn-primary" @onclick="@(() => DepositAll())">Deposit All</button>
             </div>
         </div>
+        <div style="display:flex;flex-wrap:wrap;">
+            @foreach (string tab in Bank.Instance.Tabs)
+            {
+                @if (Bank.Instance.CurrentTab == tab)
+                {
+                    <div>
+                        <button style="margin:3px; background-color:gray;border-color:lightgray" class="btn btn-primary">@tab</button>
+                    </div>
+                }
+                else
+                {
+                    <div>
+                        <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => SetTab(tab))">@tab</button>
+                    </div>
+                }
+            }
+            <div style="display:flex;">
+
+                @if (showTabInput)
+                {
+                    <button class="btn btn-primary" style="width:30px;height:30px;padding:0px;margin:3px;" @onclick="@(() => ToggleTabInput())">X</button>
+                    <input style="width:150px;margin:3px;" type="text" @bind="newTabString" />
+                    <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => AddTab(newTabString))">Confirm</button>
+
+                }
+                else
+                {
+                    <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => ToggleTabInput())">Add Tab</button>
+                }
+                @if (Bank.Instance.CurrentTab != "Main")
+                {
+                    @if (addingTags)
+                    {
+                        <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => ToggleAddingTags())">End Adding Items</button>
+
+                    }
+                    else
+                    {
+                        <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => ToggleAddingTags())">Add Items to Tab</button>
+
+                    }
+                }
+            </div>
+        </div>
+
 
         @if (NPCManager.Instance.GetNPCByName("Tuto").AvailableDialogCount() > 0)
         {
@@ -54,13 +99,13 @@
         }
 
     <div style="display:flex;flex-wrap:wrap;height:500px;overflow-y:auto;align-content: flex-start;" class="bank-scroll">
-        @if (searchString == "")
+        @if (searchString == "" && Bank.Instance.CurrentTab == "Main" && !addingTags)
         {
             @foreach (KeyValuePair<GameItem, int> item in GetBankItems())
             {
                 <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;margin:1px;">
-                    <div  oncontextmenu="return false;"
-                            onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item.Key)))"
+                    <div oncontextmenu="return false;"
+                         onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item.Key)))"
                          @onclick="@(() => Withdraw(item.Key))" style="margin-top:19px;margin-left:-3px;">
                         <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
 
@@ -83,6 +128,78 @@
                 </div>
             }
         }
+        else if (addingTags)
+        {
+            if (searchString == "")
+            {
+                @foreach (KeyValuePair<GameItem, int> item in GetBankItems())
+                {
+                    if (item.Key.Tabs.Contains(Bank.Instance.CurrentTab) == false)
+                    {
+                        <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;margin:1px;opacity:0.5">
+                            <div oncontextmenu="return false;"
+                                 @onclick="@(() => AddTagToItem(item.Key))" style="margin-top:19px;margin-left:-3px;">
+                                <Quepland_2.Components.ItemBoxComponent @key="item" Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" HideTooltip="true" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
+
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;margin:1px;">
+                            <div oncontextmenu="return false;"
+                                 @onclick="@(() => RemoveTagFromItem(item.Key))" style="margin-top:19px;margin-left:-3px;">
+                                <Quepland_2.Components.ItemBoxComponent @key="item" Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" HideTooltip="true" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
+
+                            </div>
+                        </div>
+                    }
+
+                }
+            }
+            else
+            {
+                @foreach (KeyValuePair<GameItem, int> item in GetSearchItems())
+                {
+                    if (item.Key.Tabs.Contains(Bank.Instance.CurrentTab) == false)
+                    {
+                        <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;margin:1px;opacity:0.5">
+                            <div oncontextmenu="return false;"
+                                 @onclick="@(() => AddTagToItem(item.Key))" style="margin-top:19px;margin-left:-3px;">
+                                <Quepland_2.Components.ItemBoxComponent @key="item" Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" HideTooltip="true" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
+
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;margin:1px;">
+                            <div oncontextmenu="return false;"
+                                 @onclick="@(() => RemoveTagFromItem(item.Key))" style="margin-top:19px;margin-left:-3px;">
+                                <Quepland_2.Components.ItemBoxComponent @key="item" Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" HideTooltip="true" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
+
+                            </div>
+                        </div>
+                    }
+
+                }
+            }
+        }
+        else if (searchString == "")
+        {
+            @foreach (KeyValuePair<GameItem, int> item in GetItemsForTab(Bank.Instance.CurrentTab))
+            {
+                <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;margin:1px;">
+                    <div oncontextmenu="return false;"
+                         onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item.Key)))"
+                         @onclick="@(() => Withdraw(item.Key))" style="margin-top:19px;margin-left:-3px;">
+                        <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
+
+                    </div>
+                </div>
+
+            }
+        }
         else
         {
             @foreach (KeyValuePair<GameItem, int> item in GetSearchItems())
@@ -102,8 +219,11 @@
 
         private bool showInput;
         private bool showSearch;
+        private bool showTabInput;
         int itemsPerRow = 10;
         private string searchString = "";
+        private string newTabString = "";
+        private bool addingTags;
         private bool rerender = true;
 
         public IOrderedEnumerable<KeyValuePair<GameItem, int>> GetBankItems()
@@ -114,6 +234,15 @@
         public IOrderedEnumerable<KeyValuePair<GameItem, int>> GetSearchItems()
         {
             IOrderedEnumerable<KeyValuePair<GameItem, int>> items = Bank.Instance.Inventory.GetItems().Where(y => y.Key.Name.ToLower().Contains(searchString.ToLower())).OrderBy(x => x.Key.ID);
+            foreach (KeyValuePair<GameItem, int> item in items)
+            {
+                item.Key.Rerender = true;
+            }
+            return items;
+        }
+        public IOrderedEnumerable<KeyValuePair<GameItem, int>> GetItemsForTab(string tab)
+        {
+            IOrderedEnumerable<KeyValuePair<GameItem, int>> items = Bank.Instance.Inventory.GetItems().Where(y => y.Key.Tabs.Contains(tab)).OrderBy(x => x.Key.ID);
             foreach (KeyValuePair<GameItem, int> item in items)
             {
                 item.Key.Rerender = true;
@@ -132,7 +261,39 @@
         }
         public void AddTab(string tab)
         {
-            Bank.Instance.Tabs.Add(tab);
+            if(Bank.Instance.Tabs.Contains(tab) == false)
+            {
+                Bank.Instance.Tabs.Add(tab);
+                ToggleTabInput();
+                GameState.UpdateState();
+            }
+
+        }
+        public void AddTagToItem(GameItem i)
+        {
+            i.Tabs.Add(Bank.Instance.CurrentTab);
+            i.Rerender = true;
+            GameState.UpdateState();
+        }
+        public void RemoveTagFromItem(GameItem i)
+        {
+            i.Tabs.Remove(Bank.Instance.CurrentTab);
+            i.Rerender = true;
+            GameState.UpdateState();
+        }
+        public void SetTab(string tab)
+        {
+            Bank.Instance.CurrentTab = tab;
+            GameState.UpdateState();
+        }
+        public void ToggleTabInput()
+        {
+            showTabInput = !showTabInput;
+            GameState.UpdateState();
+        }
+        public void ToggleAddingTags()
+        {
+            addingTags = !addingTags;
             GameState.UpdateState();
         }
         public void DeleteTab(string tab)
@@ -205,11 +366,11 @@
         {
             if (Bank.Instance.Amount == amount)
             {
-                return "cursor:normal;background-color:darkgray;";
+                return "cursor:normal; background-color:gray;border-color:lightgray";
             }
             else if (amount == -1 && Bank.Instance.Amount != 1 && Bank.Instance.Amount != 5 && Bank.Instance.Amount != 10 && Bank.Instance.Amount != int.MaxValue)
             {
-                return "cursor:normal;background-color:darkgray;";
+                return "cursor:normal; background-color:gray;border-color:lightgray";
             }
             else
             {
