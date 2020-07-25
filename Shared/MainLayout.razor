@@ -9,7 +9,7 @@
                 <NavMenu />
             </div>
         }
-        <div class="main" style="min-width:600px!important;">
+        <div class="main" style="min-width:@(GameState.MinWindowWidth)px!important;">
             <div class="top-row px-4" style="z-index:10">
                 @if (GameState.ShowStartMenu == false)
                 {
@@ -21,7 +21,7 @@
                 @Body
             </div>
             <div style="position: fixed;
-                        width: 570px;
+                        width: @(GetMessageWidth())px;
                         overflow-y: scroll;
                         max-height: 200px;
                         height: 200px;
@@ -49,6 +49,10 @@
 
 @code{
 
+    private int GetMessageWidth()
+    {
+        return GameState.MinWindowWidth - 30;
+    }
     private string GetGradient()
     {
         string bg = "background-image:linear-gradient(";

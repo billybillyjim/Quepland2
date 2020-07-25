@@ -7,14 +7,9 @@
     <div style="@(GetBackground())margin:2px;height:50px;width:50px;position:relative;box-sizing: border-box;border-radius:0.25rem;" draggable="false">
         @if (ShowAmount)
         {
-            if (Inventory == Bank.Instance.Inventory)
-            {
-                <div style="position:absolute;margin-left:2px;top:-20px;color:white">@GetAmount()</div>
-            }
-            else
-            {
-                <div style="position:absolute;margin-left:2px;margin-top:-2px;color:white">@GetAmount()</div>
-            }
+
+            <div style="position:absolute;margin-left:2px;margin-top:-2px;color:white;font-size: 15px;font-weight: bold;text-shadow: 1px 1px 4px black;">@GetAmount()</div>
+            
 
         }
         @if (HideTooltip == false)

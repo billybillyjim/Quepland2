@@ -18,6 +18,7 @@ using System.Threading.Tasks;
     public IJSRuntime JSRuntime;
 
     public static string Version { get; set; } = "0.0.3";
+
     public static string Location { get; set; } = "";
     public static bool InitCompleted { get; set; } = false;
     public static bool ShowStartMenu { get; set; } = true;
@@ -76,7 +77,8 @@ using System.Threading.Tasks;
     public int HealingTicks;
     public static int CurrentTick;
 
-    public static int GameWindowWidth;
+    public static int GameWindowWidth { get; set; }
+    public int MinWindowWidth { get; set; } = 600;
     public int SmithingStage;
     public int AlchemyStage;
 

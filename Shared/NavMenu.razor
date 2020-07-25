@@ -3,8 +3,13 @@
 
 <div class="top-row pl-4 navbar navbar-light">
     <div style="color:white;font-size:larger">Quepland 2 (@GameState.Version)</div>
-    <button class="navbar-toggler" @onclick="ToggleNavMenu">
-        <span class="navbar-toggler-icon"></span>
+    <button style="        background-color: white;
+        border: solid black 1px;
+        border-radius: 0.25rem;
+        right: -13px;
+        position: relative;
+        top: -9px;" @onclick="@(() => GameState.GoTo("Settings"))">
+        <img style="width:30px;height:30px;" src="data/Images/Settings.png"/>
     </button>
 </div>
 

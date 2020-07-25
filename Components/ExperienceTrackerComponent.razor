@@ -67,33 +67,42 @@
 </div>
 @if (ShowSettings)
 {
-    <div style="position:absolute;top:55px;right:0px;width:100%;height:300px;z-index:50;background-color:antiquewhite;">
+    <div style="position:absolute;top:55px;right:0px;width:100%;height:300px;z-index:50;background-color:white;border:solid dimgray 1px;">
         <CustomDropdownComponent DropdownItems="@skills" @bind-Value="@SetSkill" BoxText="@SetSkill"></CustomDropdownComponent>
-        <div>
+        <div style="display:flex;margin:5px;">
             @if (IsBeingTracked(SetSkill) == false)
             {
-                <button @onclick="@(() => SetTracker(SetSkill))">
+                <button class="btn btn-primary" style="margin:5px;" @onclick="@(() => SetTracker(SetSkill))">
                     Track @SetSkill Exp Rate
                 </button>
                 @if(SetSkill == "Most Recent" && Player.Instance.LastGainedExp != null)
                 {
-                    <div>(@Player.Instance.LastGainedExp.Name)</div>
+                    <div style="margin:5px;line-height: 40px; font-size: large;">(@Player.Instance.LastGainedExp.Name)</div>
                 }
             }
             else
             {
-                <button @onclick="@(() => SetTracker(SetSkill))">
+                <button style="margin:5px;" class="btn btn-primary" @onclick="@(() => SetTracker(SetSkill))">
                     Reset @SetSkill  Exp Rate
                 </button>
-                <button @onclick="@(() => PauseTracker(SetSkill))">
+                <button style="margin:5px;" class="btn btn-primary" @onclick="@(() => PauseTracker(SetSkill))">
                     Pause Tracking
                 </button>
             }
         </div>
-        <div>
-            <button @onclick="@(() => ShowRate = !ShowRate)">
-                Toggle Rate Tracker
-            </button>
+        <div style="margin:5px;">
+            @if (ShowRate)
+            {
+                <button style="margin:5px;" class="btn btn-primary" @onclick="@(() => ShowRate = !ShowRate)">
+                    Turn Rate Tracker Off
+                </button>
+            }
+            else
+            { <button style="margin:5px;" class="btn btn-primary" @onclick="@(() => ShowRate = !ShowRate)">
+                    Turn Rate Tracker On
+                </button>
+            }
+
         </div>
     </div>
 
