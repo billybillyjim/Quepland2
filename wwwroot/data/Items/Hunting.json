@@ -20,6 +20,7 @@
     "value": 50,
     "gatherString": "You put a small trap together.",
     "icon": "Trap",
+    "secondaryColor": "#F5C242",
     "trapInfo": {
       "size": 1,
       "timeToReady": 90
@@ -29,6 +30,7 @@
     "Name": "Medium Trap",
     "Description": "A trap for catching wild animals.",
     "value": 90,
+    "secondaryColor": "#66B4DE",
     "icon": "Trap",
     "gatherString": "You put a trap together.",
     "trapInfo": {
@@ -41,6 +43,7 @@
     "Description": "A large trap for catching wild animals.",
     "gatherString": "You put a large trap together.",
     "value": 150,
+    "secondaryColor": "#FFBABA",
     "icon": "Trap",
     "trapInfo": {
       "size": 4,
@@ -51,6 +54,7 @@
     "Name": "Rabbit",
     "Description": "The carcass of a rabbit.",
     "value": 30,
+    "secondaryColor": "#e0aa6d",
     "icon": "Rabbit",
     "requirements": [
       {
@@ -65,6 +69,7 @@
     "Description": "The carcass of a deer.",
     "value": 30,
     "icon": "Deer",
+    "secondaryColor": "#b59a77",
     "requirements": [
       {
         "skill": "Hunting",
@@ -78,6 +83,7 @@
     "Description": "The carcass of a male deer.",
     "value": 30,
     "icon": "Deer",
+    "secondaryColor": "#bd7b26",
     "requirements": [
       {
         "skill": "Hunting",
@@ -90,6 +96,7 @@
     "Name": "Black Bear",
     "Description": "The carcass of a bear.",
     "value": 30,
+    "secondaryColor": "#423e3b",
     "icon": "Bear",
     "requirements": [
       {
@@ -103,7 +110,8 @@
     "Name": "Moose",
     "Description": "The carcass of a moose.",
     "value": 30,
-    "icon": "Carcass",
+    "secondaryColor": "#8a5730",
+    "icon": "Moose",
     "requirements": [
       {
         "skill": "Hunting",
@@ -117,6 +125,7 @@
     "Description": "The carcass of a big bear.",
     "value": 30,
     "icon": "Bear",
+    "secondaryColor": "#614417",
     "requirements": [
       {
         "skill": "Hunting",
@@ -130,6 +139,7 @@
     "Description": "The carcass of a pigeon.",
     "value": 30,
     "icon": "Bird",
+    "secondaryColor": "#8faba6",
     "requirements": [
       {
         "skill": "Hunting",
@@ -142,6 +152,7 @@
     "Name": "Wild Boar",
     "Description": "The carcass of an angry pig.",
     "value": 30,
+    "secondaryColor": "#d8b393",
     "icon": "Boar",
     "requirements": [
       {
@@ -156,6 +167,7 @@
     "Description": "The carcass of an ugly bird.",
     "value": 30,
     "icon": "Bird",
+    "secondaryColor": "#e35577",
     "requirements": [
       {
         "skill": "Hunting",
@@ -169,6 +181,7 @@
     "Description": "The carcass of a beautiful bird.",
     "value": 30,
     "icon": "Bird",
+    "secondaryColor": "#64c0da",
     "requirements": [
       {
         "skill": "Hunting",
@@ -182,6 +195,7 @@
     "Description": "The carcass of a bison.",
     "value": 30,
     "icon": "Bison",
+    "secondaryColor": "#a95a1a",
     "requirements": [
       {
         "skill": "Hunting",
@@ -194,7 +208,8 @@
     "Name": "Big Moose",
     "Description": "The carcass of a giant moose.",
     "value": 30,
-    "icon": "Carcass",
+    "icon": "Moose",
+    "secondaryColor": "#8a5730",
     "requirements": [
       {
         "skill": "Hunting",
@@ -208,6 +223,7 @@
     "Description": "The carcass of a white bear.",
     "value": 30,
     "icon": "Bear",
+    "secondaryColor": "#f3e5c2",
     "requirements": [
       {
         "skill": "Hunting",
@@ -221,6 +237,7 @@
     "Description": "The carcass of a massive white bear.",
     "value": 30,
     "icon": "Bear",
+    "secondaryColor": "#f3e5c2",
     "requirements": [
       {
         "skill": "Hunting",
@@ -234,6 +251,7 @@
     "Description": "The carcass of a woolly mammoth.",
     "value": 30,
     "icon": "Mammoth",
+    "secondaryColor": "#9e9589",
     "requirements": [
       {
         "skill": "Hunting",
@@ -247,12 +265,14 @@
     "Description": "A weak leather from tanned rabbit hide.",
     "value": 180,
     "icon": "Leather",
+    "secondaryColor": "#e0aa6d",
     "experienceGained": "Leatherworking:10"
   },
   {
     "Name": "Rabbit Meat",
     "Description": "Raw meat from a rabbit. You'll need to turn this into jerky to eat it.",
     "value": 5,
+    "secondaryColor": "#e0aa6d",
     "icon": "Meat",
     "tanningInfo": {
       "tansIntoString": "Rabbit Jerky"
@@ -262,6 +282,7 @@
     "Name": "Rabbit Jerky",
     "Description": "Salted and dried rabbit meat.",
     "value": 18,
+    "secondaryColor": "#e0aa6d",
     "icon": "Jerky",
     "experienceGained": "Culinary Arts:30",
     "requirements": [
@@ -275,6 +296,7 @@
     "Name": "Deer Leather",
     "Description": "A basic leather from tanned deer hide.",
     "value": 250,
+    "secondaryColor": "#b59a77",
     "icon": "Leather",
     "experienceGained": "Leatherworking:20"
   },
@@ -282,6 +304,7 @@
     "Name": "Deer Meat",
     "Description": "You'll want to make this into jerky before eating it.",
     "value": 15,
+    "secondaryColor": "#b59a77",
     "icon": "Meat",
     "tanningInfo": {
       "tansIntoString": "Deer Jerky"
@@ -291,6 +314,7 @@
     "Name": "Deer Jerky",
     "Description": "Salted and dried deer meat.",
     "value": 25,
+    "secondaryColor": "#b59a77",
     "icon": "Jerky",
     "experienceGained": "Culinary Arts:50",
     "requirements": [
@@ -304,11 +328,13 @@
     "Name": "Deer Antlers",
     "Description": "Valuable antlers from the head of a male deer.",
     "value": 150,
+    "secondaryColor": "#bd7b26",
     "icon": "Antlers"
   },
   {
     "Name": "Black Bear Leather",
     "Description": "The tanned hide of a black bear. It looks really cool, making it even stronger.",
+    "secondaryColor": "#423e3b",
     "value": 500,
     "icon": "Leather",
     "experienceGained": "Leatherworking:45"
@@ -317,6 +343,7 @@
     "Name": "Bear Meat",
     "Description": "Meat from a bear.",
     "value": 40,
+    "secondaryColor": "#423e3b",
     "icon": "Meat",
     "tanningInfo": {
       "tansIntoString": "Bear Jerky"
@@ -326,6 +353,7 @@
     "Name": "Bear Jerky",
     "Description": "Salted and dried bear meat.",
     "value": 70,
+    "secondaryColor": "#423e3b",
     "icon": "Jerky",
     "experienceGained": "Culinary Arts:50",
     "requirements": [
@@ -340,10 +368,12 @@
     "Description": "Moose leather is one of the strongest leathers in Quepland.",
     "value": 800,
     "icon": "Leather",
+    "secondaryColor": "#8a5730",
     "experienceGained": "Leatherworking:70"
   },
   {
     "Name": "Moose Antlers",
+    "secondaryColor": "#8a5730",
     "Description": "Very valuable antlers from a giant moose.",
     "value": 2800,
     "icon": "Antlers"
@@ -352,6 +382,7 @@
     "Name": "Moose Meat",
     "Description": "Like beef, but bigger.",
     "value": 60,
+    "secondaryColor": "#8a5730",
     "icon": "Meat",
     "tanningInfo": {
       "tansIntoString": "Moose Jerky"
@@ -359,6 +390,7 @@
   },
   {
     "Name": "Moose Jerky",
+    "secondaryColor": "#8a5730",
     "Description": "Salted and dried moose meat.",
     "value": 90,
     "icon": "Jerky",
@@ -374,6 +406,7 @@
     "Name": "Grizzly Bear Leather",
     "Description": "Tanned grizzly bear hide. It's a powerful material to make powerful armor with.",
     "value": 1200,
+    "secondaryColor": "#614417",
     "icon": "Leather",
     "experienceGained": "Leatherworking:100"
   },
@@ -381,12 +414,14 @@
     "Name": "Wild Boar Leather",
     "Description": "This leather can be made into armor that makes you stronger, but won't defend you very well.",
     "value": 500,
+    "secondaryColor": "#d8b393",
     "icon": "Leather",
     "experienceGained": "Leatherworking:30"
   },
   {
     "Name": "Wild Boar Tusk",
     "Description": "A valuable tusk from a wild boar.",
+    "secondaryColor": "#d8b393",
     "value": 300,
     "icon": "Tusks"
   },
@@ -394,6 +429,7 @@
     "Name": "Wild Boar Meat",
     "Description": "A tough meat from a tough animal.",
     "value": 35,
+    "secondaryColor": "#d8b393",
     "icon": "Meat",
     "tanningInfo": {
       "tansIntoString": "Boar Jerky"
@@ -404,6 +440,7 @@
     "Description": "Salted and dried boar meat. It's very tough.",
     "value": 50,
     "icon": "Jerky",
+    "secondaryColor": "#d8b393",
     "experienceGained": "Culinary Arts:60",
     "requirements": [
       {
@@ -416,6 +453,7 @@
     "Name": "Pigeon Meat",
     "Description": "There's almost not meat here, but it technically counts.",
     "value": 6,
+    "secondaryColor": "#8faba6",
     "icon": "PreppedBird",
     "tanningInfo": {
       "tansIntoString": "Pigeon Jerky"
@@ -425,6 +463,7 @@
     "Name": "Pigeon Jerky",
     "Description": "It's not much, but it's also not very good.",
     "value": 15,
+    "secondaryColor": "#8faba6",
     "icon": "Jerky",
     "experienceGained": "Culinary Arts:10",
     "requirements": [
@@ -439,6 +478,7 @@
     "Description": "The meat off a turkey.",
     "value": 15,
     "icon": "PreppedBird",
+    "secondaryColor": "#e35577",
     "tanningInfo": {
       "tansIntoString": "Turkey Jerky"
     }
@@ -447,6 +487,7 @@
     "Name": "Turkey Jerky",
     "Description": "It took a lot of work-y to get this turkey jerky.",
     "value": 30,
+    "secondaryColor": "#e35577",
     "icon": "Jerky",
     "experienceGained": "Culinary Arts:30",
     "requirements": [
@@ -460,6 +501,7 @@
     "Name": "Pheasant Meat",
     "Description": "The meat of a once beautiful bird.",
     "value": 20,
+    "secondaryColor": "#64c0da",
     "icon": "PreppedBird",
     "tanningInfo": {
       "tansIntoString": "Pheasant Jerky"
@@ -469,6 +511,7 @@
     "Name": "Pheasant Jerky",
     "Description": "The jerky of a once beautiful bird.",
     "value": 50,
+    "secondaryColor": "#64c0da",
     "icon": "Jerky",
     "experienceGained": "Culinary Arts:50",
     "requirements": [
@@ -483,6 +526,7 @@
     "Description": "A thick leather that would keep you warm in the cold, if that mattered.",
     "value": 1500,
     "icon": "Leather",
+    "secondaryColor": "#a95a1a",
     "experienceGained": "Leatherworking:80"
   },
   {
@@ -490,6 +534,7 @@
     "Description": "A big bite of raw bison meat. You might want to prepare it somehow.",
     "value": 50,
     "icon": "Meat",
+    "secondaryColor": "#a95a1a",
     "tanningInfo": {
       "tansIntoString": "Bison Jerky"
     }
@@ -498,6 +543,7 @@
     "Name": "Bison Jerky",
     "Description": "A big bite of bison meat.",
     "value": 150,
+    "secondaryColor": "#a95a1a",
     "icon": "Jerky",
     "experienceGained": "Culinary Arts:150",
     "requirements": [
@@ -547,12 +593,14 @@
     "Name": "Polar Bear Leather",
     "Description": "Beautiful white leather. It can be crafted into powerful armor.",
     "value": 1700,
+    "secondaryColor": "#f3e5c2",
     "icon": "Leather",
     "experienceGained": "Leatherworking:120"
   },
   {
     "Name": "Bear Claws",
     "Description": "Terrifying claws from a giant polar bear.",
+    "secondaryColor": "#f3e5c2",
     "value": 65000,
     "icon": "Claws"
   },
@@ -560,6 +608,7 @@
     "Name": "Mammoth Leather",
     "Description": "Leather from a woolly mammoth. It's extremely thick.",
     "value": 2200,
+    "secondaryColor": "#9e9589",
     "icon": "Leather",
     "experienceGained": "Leatherworking:180"
   },
@@ -568,6 +617,7 @@
     "Description": "Big meat from a big beast.",
     "value": 110,
     "icon": "Meat",
+    "secondaryColor": "#9e9589",
     "tanningInfo": {
       "tansIntoString": "Mammoth Jerky"
     }
@@ -576,12 +626,14 @@
     "Name": "Mammoth Tusk",
     "Description": "An extremely valuable tusk from a woolly mammoth.",
     "value": 95000,
+    "secondaryColor": "#9e9589",
     "icon": "Tusks"
   },
   {
     "Name": "Mammoth Jerky",
     "Description": "A massive jerky from a massive mammoth.",
     "value": 220,
+    "secondaryColor": "#9e9589",
     "icon": "Jerky",
     "experienceGained": "Culinary Arts:250",
     "requirements": [
@@ -595,6 +647,7 @@
     "Name": "Rabbit Hide",
     "Description": "The hide of a rabbit.",
     "value": 30,
+    "secondaryColor": "#e0aa6d",
     "icon": "Hide",
     "tanningInfo": {
       "tansIntoString": "Rabbit Leather"
@@ -605,6 +658,7 @@
     "Description": "The hide of a deer.",
     "value": 30,
     "icon": "Hide",
+    "secondaryColor": "#b59a77",
     "tanningInfo": {
       "tansIntoString": "Deer Leather"
     }
@@ -612,6 +666,7 @@
   {
     "Name": "Black Bear Hide",
     "Description": "The hide of a black bear.",
+    "secondaryColor": "#423e3b",
     "value": 30,
     "icon": "Hide",
     "tanningInfo": {
@@ -622,6 +677,7 @@
     "Name": "Moose Hide",
     "Description": "The hide of a moose.",
     "value": 30,
+    "secondaryColor": "#8a5730",
     "icon": "Hide",
     "tanningInfo": {
       "tansIntoString": "Moose Leather"
@@ -631,6 +687,7 @@
     "Name": "Grizzly Bear Hide",
     "Description": "The carcass of a big bear.",
     "value": 30,
+    "secondaryColor": "#614417",
     "icon": "Hide",
     "tanningInfo": {
       "tansIntoString": "Grizzly Bear Leather"
@@ -640,6 +697,7 @@
     "Name": "Wild Boar Hide",
     "Description": "The hide of an angry pig.",
     "value": 30,
+    "secondaryColor": "#d8b393",
     "icon": "Hide",
     "tanningInfo": {
       "tansIntoString": "Boar Leather"
@@ -649,6 +707,7 @@
     "Name": "Bison Hide",
     "Description": "The hide of a bison.",
     "value": 30,
+    "secondaryColor": "#a95a1a",
     "icon": "Hide",
     "tanningInfo": {
       "tansIntoString": "Bison Leather"
@@ -658,6 +717,7 @@
     "Name": "Polar Bear Hide",
     "Description": "The hide of a white bear.",
     "value": 30,
+    "secondaryColor": "#f3e5c2",
     "icon": "Hide",
     "tanningInfo": {
       "tansIntoString": "Polar Bear Leather"
@@ -668,6 +728,7 @@
     "Description": "The hide of a woolly mammoth.",
     "value": 30,
     "icon": "Hide",
+    "secondaryColor": "#9e9589",
     "tanningInfo": {
       "tansIntoString": "Mammoth Leather"
     }
