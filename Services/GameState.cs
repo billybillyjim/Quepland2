@@ -154,7 +154,7 @@ using System.Threading.Tasks;
                 }
 
             }
-
+            Player.Instance.TickStatusEffects();
             GetDimensions();
             TicksToNextAction--;
             CurrentTick++;

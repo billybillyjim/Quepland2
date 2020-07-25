@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Reflection;
 using System.Threading.Tasks;
 
 public class BattleManager
@@ -27,6 +28,10 @@ public class BattleManager
         Monsters.AddRange(await Http.GetJsonAsync<Monster[]>("data/Monsters/Overworld.json"));
         Monsters.AddRange(await Http.GetJsonAsync<Monster[]>("data/Monsters/Bosses.json"));
         Monsters.AddRange(await Http.GetJsonAsync<Monster[]>("data/Monsters/DojoOpponents.json"));
+        foreach(Monster m in Monsters)
+        {
+            m.LoadStatusEffects();
+        }
     }
     public void StartBattle()
     {
@@ -42,6 +47,7 @@ public class BattleManager
                 monster.CurrentHP = monster.HP;
                 monster.TicksToNextAttack = monster.AttackSpeed;
                 monster.IsDefeated = false;
+                monster.CurrentStatusEffects.Clear();
             }
             BattleHasEnded = false;
         }
@@ -185,8 +191,10 @@ public class BattleManager
             }
             Target = GetNextTarget();
         }
-        int total = (int)Math.Max(1, Math.Min(Player.Instance.GetTotalDamage().ToRandomDamage() * Extensions.CalculateArmorDamageReduction(Target), Target.CurrentHP));
+        RollForPlayerAttackEffects();
+        int total = (int)Math.Max(1, Math.Min(Player.Instance.GetTotalDamage().ToRandomDamage() * CalculateTypeBonus(Target) * Extensions.CalculateArmorDamageReduction(Target), Target.CurrentHP));
         Target.CurrentHP -= total;
+        
         if(Player.Instance.GetWeapon() == null)
         {
             Player.Instance.GainExperience("Strength", total);
@@ -216,9 +224,30 @@ public class BattleManager
     public void BeAttacked(Monster opponent)
     {
         int total = (int)Math.Max(1, (opponent.Damage.ToRandomDamage() * Extensions.CalculateArmorDamageReduction()));
+        RollForMonsterAttackEffects(opponent);
         Player.Instance.CurrentHP -= total;
         Player.Instance.GainExperience("HP", total);
         MessageManager.AddMessage("The " + opponent.Name + " hit you for " + total + " damage!");
+    }
+    public double CalculateTypeBonus(Monster m)
+    {
+        double bonus = 1;
+        if(Player.Instance.GetWeapon() != null)
+        {
+            foreach(string s in Player.Instance.GetWeapon().GetRequiredSkills())
+            {
+                if (m.Weaknesses.Contains(s))
+                {
+                    bonus += 0.4;
+                }
+                else if (m.Strengths.Contains(s))
+                {
+                    bonus -= 0.4;
+                }
+            }
+        }
+
+        return Math.Min(Math.Max(bonus, 0.1), 10);
     }
     public bool AllOpponentsDefeated()
     {
@@ -265,6 +294,56 @@ public class BattleManager
     {
         return Monsters.FirstOrDefault(x => x.Name == name);
     }
-    
+    public void RollForMonsterAttackEffects(Monster m)
+    {
+        foreach(IStatusEffect e in m.StatusEffects)
+        {
+            double roll = random.NextDouble();
+            if(roll <= e.ProcOdds)
+            {
+                Player.Instance.AddStatusEffect(e);
+                MessageManager.AddMessage(e.Message);
+            }
+        }
+    }
+    public void RollForPlayerAttackEffects()
+    {
+        foreach (GameItem item in Player.Instance.GetEquippedItems())
+        {
+            double roll = random.NextDouble();
+            if (item.WeaponInfo != null)
+            {
+                foreach(IStatusEffect e in item.WeaponInfo.StatusEffects)
+                {
+                    if (roll <= e.ProcOdds)
+                    {
+                        Target.AddStatusEffect(e);
+                        MessageManager.AddMessage(e.Message);
+                    }
+                }
+            }
+            if(item.ArmorInfo != null)
+            {
+                foreach (IStatusEffect e in item.ArmorInfo.StatusEffects)
+                {
+                    if (roll <= e.ProcOdds)
+                    {
+                        Target.AddStatusEffect(e);
+                        MessageManager.AddMessage(e.Message);
+                    }
+                }
+            }           
+        }
+    }
+    public IStatusEffect GenerateStatusEffect(StatusEffectData data)
+    {
+        if(data.Name == "Poison")
+        {
+            return new PoisonEffect(data);
+        }
+
+
+        return null;
+    }
 }
 

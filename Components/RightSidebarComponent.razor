@@ -11,6 +11,16 @@
         <button style="font-size: small; text-align: center; margin: 0px; padding: 0px; min-width: 60px;" onclick="@(new Action(() => ChangeView("Debug")))"><img src="/data/Images/NoImage.png" style="height:45px;width:45px;border:solid black 4px;">Debug</button>
 
     </div>
+    <div>
+
+        <div class="progress" style="width:100%;margin:1px;">
+            <div class="progress-bar" style="width:@(GetPlayerHPPercent());background-color:forestgreen;position:relative">
+                <div style="position:absolute;">
+                    @Player.Instance.CurrentHP / @Player.Instance.MaxHP
+                </div>
+            </div>
+        </div>
+    </div>
 @if (activeWindow == "Inventory")
 {
     <InventoryViewerComponent></InventoryViewerComponent>
@@ -42,6 +52,10 @@ else if(activeWindow == "Debug")
 @code {
     private string activeWindow = "Inventory";
 
+    private string GetPlayerHPPercent()
+    {
+        return (((double)Player.Instance.CurrentHP / Player.Instance.MaxHP) * 100d) + "%";
+    }
 
     private string GetBGColor(string window)
     {

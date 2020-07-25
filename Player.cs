@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 public class Player
@@ -30,6 +31,7 @@ public class Player
 
     public Skill LastGainedExp { get; set; }
     public Skill ExpTrackerSkill { get; set; }
+    public List<IStatusEffect> CurrentStatusEffects { get; set; } = new List<IStatusEffect>();
     
     
 
@@ -306,6 +308,7 @@ public class Player
         CurrentHP = MaxHP;
         JustDied = true;
         Deaths++;
+        CurrentStatusEffects.Clear();
         if(Deaths == 1)
         {
             MessageManager.AddMessage("Whoops! Looks like you died. Don't worry, you don't lose anything but pride when you die in Quepland.");
@@ -397,5 +400,31 @@ public class Player
     {
         return Inventory.HasToolRequirement(action);
     }
+    public bool HasStatusEffect(string name)
+    {
+        return CurrentStatusEffects.Any(x => x.Name == name);
+    }
+    public void AddStatusEffect(IStatusEffect effect)
+    {
+        CurrentStatusEffects.Add(effect);
+    }
+    public void TickStatusEffects()
+    {
+        List<IStatusEffect> endedEffects = new List<IStatusEffect>();
+        foreach(IStatusEffect effect in CurrentStatusEffects)
+        {
+            effect.RemainingTime--;
+            if(effect.RemainingTime <= 0)
+            {
+                endedEffects.Add(effect);
+            }
+            else
+            {
+                effect.DoEffect(this);
+            }
+        }
+        CurrentStatusEffects.RemoveAll(x => endedEffects.Contains(x));
+    }
+
 }
 

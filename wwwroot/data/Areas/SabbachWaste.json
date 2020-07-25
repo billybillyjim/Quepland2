@@ -94,6 +94,9 @@
       {
         "action": "Desert Travel"
       }
+    ],
+    "monsters": [
+      "Serpopard"
     ]
   },
   {

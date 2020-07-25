@@ -1358,6 +1358,16 @@
           "weight": 20
         }
       ]
-    }
+    },
+    "statusEffectData": [
+      {
+        "name": "Poison",
+        "power": 10,
+        "speed": 5,
+        "duration": 100,
+        "message": "You've been poisoned!",
+        "procOdds": 0.9
+      }
+    ]
   }
 ]

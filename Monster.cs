@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public class Monster
 {
@@ -10,10 +12,48 @@ public class Monster
 	public int AttackSpeed { get; set; }
 	public int TicksToNextAttack { get; set; }
 	public bool IsDefeated { get; set; }
+	public string Strengths { get; set; }
+	public string Weaknesses { get; set; }
+	public List<IStatusEffect> CurrentStatusEffects { get; set; } = new List<IStatusEffect>();
+    public List<IStatusEffect> StatusEffects { get; set; } = new List<IStatusEffect>();
+    public List<StatusEffectData> StatusEffectData { get; set; } = new List<StatusEffectData>();
 
 	public DropTable DropTable { get; set; } = new DropTable();
 	public double GetRemainingHPPercent()
     {
 		return ((double)CurrentHP / HP) * 100d;
+    }
+    public void LoadStatusEffects()
+    {
+        foreach(StatusEffectData data in StatusEffectData)
+        {
+            StatusEffects.Add(BattleManager.Instance.GenerateStatusEffect(data));
+            Console.WriteLine("Adding status effect:" + data.Name + " to monster:" + Name);
+        }
+    }
+    public bool HasStatusEffect(string name)
+    {
+        return CurrentStatusEffects.Any(x => x.Name == name);
+    }
+    public void AddStatusEffect(IStatusEffect effect)
+    {
+        CurrentStatusEffects.Add(effect);
+    }
+    public void TickStatusEffects()
+    {
+        List<IStatusEffect> endedEffects = new List<IStatusEffect>();
+        foreach (IStatusEffect effect in CurrentStatusEffects)
+        {
+            effect.RemainingTime--;
+            if (effect.RemainingTime <= 0)
+            {
+                endedEffects.Add(effect);
+            }
+            else
+            {
+                effect.DoEffect(this);
+            }
+        }
+        CurrentStatusEffects.RemoveAll(x => endedEffects.Contains(x));
     }
 }

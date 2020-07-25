@@ -10,7 +10,7 @@
                     <div style="position:absolute;right:10px;top:2px;">Level:@s.Level </div>
                 </div>
                 <div class="progress" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, s.Name, GetSkillTooltip(s))))"
-                                      @onmouseout="@(new Action(() => GameState.HideTooltip()))" >                
+                                      @onmouseout="@(new Action(() => GameState.HideTooltip()))" style="border-radius:0;">                
                     <div class="progress-bar" style="width:@(s.Progress)%;color:black;background-color:#51d051">
 
                     </div>
