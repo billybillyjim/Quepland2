@@ -56,7 +56,7 @@
     <div style="display:flex;flex-wrap:wrap;height:500px;overflow-y:auto;align-content: flex-start;" class="bank-scroll">
         @if (searchString == "")
         {
-            @foreach (KeyValuePair<GameItem, int> item in Bank.Instance.Inventory.GetItems().OrderBy(x => x.Key.ID))
+            @foreach (KeyValuePair<GameItem, int> item in GetBankItems())
             {
                 <div style="background-color:darkgray;height:70px;width:50px;border:solid black 1px;border-radius:0.25rem;margin:1px;">
                     <div  oncontextmenu="return false;"
@@ -99,11 +99,18 @@
     </div>
     </div>
     @code {
+
         private bool showInput;
         private bool showSearch;
         int itemsPerRow = 10;
         private string searchString = "";
         private bool rerender = true;
+
+        public IOrderedEnumerable<KeyValuePair<GameItem, int>> GetBankItems()
+        {
+            return Bank.Instance.Inventory.GetItems().OrderBy(x => x.Key.ID);
+        }
+
         public IOrderedEnumerable<KeyValuePair<GameItem, int>> GetSearchItems()
         {
             IOrderedEnumerable<KeyValuePair<GameItem, int>> items = Bank.Instance.Inventory.GetItems().Where(y => y.Key.Name.ToLower().Contains(searchString.ToLower())).OrderBy(x => x.Key.ID);
@@ -121,6 +128,27 @@
         public void ClearSearch()
         {
             searchString = "";
+            GameState.UpdateState();
+        }
+        public void AddTab(string tab)
+        {
+            Bank.Instance.Tabs.Add(tab);
+            GameState.UpdateState();
+        }
+        public void DeleteTab(string tab)
+        {
+            Bank.Instance.Tabs.Remove(tab); GameState.UpdateState();
+        }
+        public void RenameTab(string tab, string newName)
+        {
+            foreach(KeyValuePair<GameItem, int> pair in Bank.Instance.Inventory.GetItems())
+            {
+                if (pair.Key.Tabs.Contains(tab))
+                {
+                    pair.Key.Tabs.Remove(tab);
+                    pair.Key.Tabs.Add(newName);
+                }
+            }
             GameState.UpdateState();
         }
         private int GetEmptyItemsToFillRow()

@@ -15,6 +15,7 @@
     <button @onclick="@(() => Test())">Smith</button>
     <button @onclick="@(() => Rates())">Rates</button>
     <button @onclick="@(() => Quests())">Quest Manager</button>
+    <button @onclick="@(() => TestMethods())">Run Tests</button>
 }
 else
 {
@@ -59,7 +60,7 @@ else
         //Player.Instance.Inventory.AddItem("Ultimate Test Weapon");
         //AreaManager.Instance.GetAreaByName("Queple Cave Smithy").Unlock();
         Player.Instance.CurrentFollower = FollowerManager.Instance.Followers[0];
-        foreach(GameItem item in ItemManager.Instance.Items)
+        foreach (GameItem item in ItemManager.Instance.Items)
         {
             Bank.Instance.Inventory.AddItem(item);
         }
@@ -82,6 +83,17 @@ else
 
         GameState.Location = "Smithy";
         UriHelper.NavigateTo("World/Smithy/");
+    }
+    private void TestMethods()
+    {
+        var watch = System.Diagnostics.Stopwatch.StartNew();
+        List<KeyValuePair<GameItem, int>> items = Bank.Instance.Inventory.GetItems().OrderBy(x => x.Key.ID).ToList();
+        watch.Stop();
+        Console.WriteLine("Get items + orderby:" + watch.ElapsedMilliseconds);
+        watch = System.Diagnostics.Stopwatch.StartNew();
+        List<KeyValuePair<GameItem, int>> noOrderItems = Bank.Instance.Inventory.GetItems();
+        watch.Stop();
+        Console.WriteLine("Get items:" + watch.ElapsedMilliseconds);
     }
 
     public void Dispose()

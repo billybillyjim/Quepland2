@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
@@ -19,6 +20,7 @@ public class ItemManager
         }
     }
     public List<GameItem> Items = new List<GameItem>();
+    public Dictionary<string, GameItem> ItemLookupDic = new Dictionary<string, GameItem>();
     public List<Recipe> Recipes = new List<Recipe>();
     public List<Recipe> SmithingRecipes = new List<Recipe>();
     public List<string> EquipmentSlots = new List<string>();
@@ -47,6 +49,7 @@ public class ItemManager
                 count++;
                 i.Category = file;
                 i.PrimaryColor = Colors[colorIter];
+                ItemLookupDic.Add(i.Name, i);
                 if(i.EquipSlot != "None")
                 {
                     if(EquipmentSlots.Contains(i.EquipSlot) == false)
@@ -98,7 +101,7 @@ public class ItemManager
 
     public GameItem GetItemByName(string name)
     {
-        return Items.FirstOrDefault(x => x.Name == name);
+        return ItemLookupDic[name];
     }
     public GameItem GetCopyOfItem(string name)
     {
@@ -177,6 +180,7 @@ public class ItemManager
         }
         return recipes;
     }
+
     public MinigameDropTable GetMinigameDropTable(string areaName)
     {
         return MinigameDropTables.FirstOrDefault(x => x.AreaName == areaName);

@@ -102,6 +102,53 @@
     }
   },
   {
+    "name": "Toto",
+    "hp": 55,
+    "attackSpeed": 7,
+    "armor": 0,
+    "damage": 6,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 50,
+          "amount": 15
+        },
+        {
+          "itemName": "Coins",
+          "weight": 50,
+          "amount": 10
+        },
+        {
+          "itemName": "Coins",
+          "weight": 50,
+          "amount": 7
+        },
+        {
+          "itemName": "Pigeon Meat",
+          "weight": 10
+        },
+        {
+          "itemName": "Poplar Logs",
+          "weight": 10
+        },
+        {
+          "itemName": "Headless Poplar Arrows",
+          "weight": 10,
+          "amount": 3
+        },
+        {
+          "itemName": "Cheese",
+          "weight": 10
+        },
+        {
+          "itemName": "Hemp",
+          "weight": 5
+        }
+      ]
+    }
+  },
+  {
     "name": "Bandit",
     "hp": 50,
     "weakness": "Swordsmanship",

@@ -54,5 +54,15 @@
         "item": "Molten Nickel Bar"
       }
     ]
+  },
+  {
+    "outputItemName": "Nickel Arrowtips",
+    "ingredients": [
+      {
+        "item": "Molten Nickel Bar"
+      }
+    ],
+    "outputAmount": 10
   }
+
 ]

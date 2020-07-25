@@ -76,9 +76,10 @@
     "id": 22,
     "image": "Village",
     "areaURL": "Sawoka",
-    "description": "A small abandoned village sits hidden among the vines. Trees sprout from the doorways of the buildings that circle a central mound, which seems to be full of coal.",
+    "description": "A small abandoned village sits hidden among the vines. Trees sprout from the doorways of the buildings that circle a central mound, which seems to be full of coal. One of the houses contains a staircase leading into a labyrinth.",
     "actions": [
       "Mine Coal:Coal"
-    ]
+    ],
+    "dungeonName": "Sawoka Dungeon"
   }
 ]

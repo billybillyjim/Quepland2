@@ -12,6 +12,8 @@ public class GameItem
 	public string EnabledActions { get; set; } = "None";
 	public string Category { get; set; } = "Unset";
 
+	public List<string> Tabs { get; set; } = new List<string>();
+
 	public string Icon { get; set; } = "Unset";
 	public string EquipSlot { get; set; } = "None";
 	public string PrimaryColor { get; set; } = "white";
@@ -207,6 +209,7 @@ public class GameItem
 		copy.ExperienceGained = ExperienceGained;
 		copy.EnabledActions = EnabledActions;
 		copy.Category = Category;
+		copy.Tabs = Tabs;
 
 		copy.Icon = Icon;
 		copy.EquipSlot = EquipSlot;

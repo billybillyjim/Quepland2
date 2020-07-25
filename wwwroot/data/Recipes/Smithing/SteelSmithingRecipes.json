@@ -60,5 +60,15 @@
         "item": "Molten Steel Bar"
       }
     ]
+  },
+  {
+    "outputItemName": "Steel Arrowtips",
+    "ingredients": [
+      {
+        "item": "Molten Steel Bar"
+      }
+    ],
+    "outputAmount": 10
   }
+
 ]

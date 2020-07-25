@@ -1,0 +1,40 @@
+{
+  "name": "Ken",
+  "id": 26,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi, welcome to my shop. I'm really into swords, if you couldn't tell. If you ever find any interesting swords on your adventures, I'd be happy to take a look at them. Maybe we can strike a deal."
+    },
+    {
+      "buttonText": "I found this sword...",
+      "responseText": "Oh wow! Where did you find this? This looks like a weapon of the giants. They used to inhabit Tackure a very long time ago. There aren't any around anymore, but I've found a number of similar blades buried here on the island.",
+      "newQuestprogressValue": 2,
+      "quest": "Queple's Sword",
+      "requirements": [
+        {
+          "item": "Queple's Sword",
+          "itemAmount": 1
+        }
+      ]
+    },
+    {
+      "buttonText": "Where can I learn more about this sword?",
+      "responseText": "Kumuhana knows a lot about the history of the island, you could probably ask him for help. He's just in the house across from this one.",
+      "newQuestprogressValue": 3,
+      "quest": "Queple's Sword",
+      "requirements": [
+        {
+          "quest": "Queple's Sword",
+          "minimumQuestProgress": 2,
+          "maximumQuestProgress": 2
+        },
+        {
+          "item": "Queple's Sword",
+          "itemAmount": 1
+        }
+      ]
+    }
+  ]
+
+}

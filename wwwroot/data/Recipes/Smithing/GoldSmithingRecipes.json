@@ -54,5 +54,15 @@
         "item": "Molten Gold Bar"
       }
     ]
+  },
+  {
+    "outputItemName": "Golden Arrowtips",
+    "ingredients": [
+      {
+        "item": "Molten Gold Bar"
+      }
+    ],
+    "outputAmount": 10
   }
+
 ]

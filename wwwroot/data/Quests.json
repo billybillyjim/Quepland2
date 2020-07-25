@@ -90,5 +90,11 @@
     "id": 5,
     "completionText": "Congratulations! You can now purchase camels from Camelpalooza!",
     "progressToComplete": 24
+  },
+  {
+    "name": "Queple's Sword",
+    "id": 6,
+    "completionText": "Congratulations! You solved the mystery of Queple's Sword!",
+    "progressToComplete": 10000
   }
 ]

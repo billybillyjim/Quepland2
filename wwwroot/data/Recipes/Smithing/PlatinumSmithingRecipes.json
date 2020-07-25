@@ -54,5 +54,15 @@
         "item": "Molten Platinum Bar"
       }
     ]
+  },
+  {
+    "outputItemName": "Platinum Arrowtips",
+    "ingredients": [
+      {
+        "item": "Molten Platinum Bar"
+      }
+    ],
+    "outputAmount": 10
   }
+
 ]

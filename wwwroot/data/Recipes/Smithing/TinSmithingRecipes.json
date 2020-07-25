@@ -54,5 +54,15 @@
         "item": "Molten Tin Bar"
       }
     ]
+  },
+  {
+    "outputItemName": "Tin Arrowtips",
+    "ingredients": [
+      {
+        "item": "Molten Tin Bar"
+      }
+    ],
+    "outputAmount": 10
   }
+
 ]

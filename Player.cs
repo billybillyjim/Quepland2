@@ -171,7 +171,7 @@ public class Player
     }
     public GameItem GetWeapon()
     {
-        return equippedItems.Find(x => x.EquipSlot == "Right Hand");
+        return equippedItems.Find(x => x.EquipSlot == "R Hand");
     }
     public int GetWeaponAttackSpeed()
     {

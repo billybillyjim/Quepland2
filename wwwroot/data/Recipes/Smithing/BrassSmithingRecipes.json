@@ -82,5 +82,15 @@
         "item": "Molten Brass Bar"
       }
     ]
+  },
+  {
+    "outputItemName": "Brass Arrowtips",
+    "ingredients": [
+      {
+        "item": "Molten Brass Bar"
+      }
+    ],
+    "outputAmount": 10
   }
+
 ]

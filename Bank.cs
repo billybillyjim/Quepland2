@@ -6,6 +6,7 @@ public class Bank
 	private static readonly Bank instance = new Bank();
 	private Bank() { }
 	static Bank() { }
+    public List<string> Tabs = new List<string>() { "Main" };
 	public static Bank Instance { get
         {
 			return instance;

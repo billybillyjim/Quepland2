@@ -73,8 +73,12 @@ else
     }
     protected override void OnInitialized()
     {
-        Recipes.Clear();
+        var watch = System.Diagnostics.Stopwatch.StartNew();
+        Recipes = new List<Recipe>();
+
         Recipes.AddRange(ItemManager.Instance.GetCraftableRecipes());
+        watch.Stop();
+        Console.WriteLine("New List Time:" + watch.ElapsedMilliseconds);
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()

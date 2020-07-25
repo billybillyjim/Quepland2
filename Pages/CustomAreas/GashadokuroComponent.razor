@@ -74,7 +74,7 @@ else
                 </div>
             </div>
             <div style="position:absolute;border-radius:0.5rem;padding:5px;right:10px;top:150px;@GetStyle(GashaRightHand)">
-                Right Hand
+                R Hand
                 <button @onclick="@(() => Target(GashaRightHand))">Target</button>
                 <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
                     <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
@@ -180,7 +180,7 @@ else
         if (GameState.IsStoppingNextTick == false)
         {
             GashaHead = BattleManager.Instance.GetMonsterByName("Gashadokuro Head");
-            GashaRightHand = BattleManager.Instance.GetMonsterByName("Gashadokuro Right Hand");
+            GashaRightHand = BattleManager.Instance.GetMonsterByName("Gashadokuro R Hand");
             GashaLeftHand = BattleManager.Instance.GetMonsterByName("Gashadokuro Left Hand");
             GashaSpine = BattleManager.Instance.GetMonsterByName("Gashadokuro Spine");
             GashaSpine.Armor = 140;

@@ -143,7 +143,7 @@
     "outputItemName": "Wild Boar Gloves",
     "ingredients": [
       {
-        "item": "Boar Leather",
+        "item": "Wild Boar Leather",
         "amount": 1
       },
       {
@@ -157,7 +157,7 @@
     "outputItemName": "Wild Boar Hat",
     "ingredients": [
       {
-        "item": "Boar Leather",
+        "item": "Wild Boar Leather",
         "amount": 2
       },
       {
@@ -171,7 +171,7 @@
     "outputItemName": "Wild Boar Boots",
     "ingredients": [
       {
-        "item": "Boar Leather",
+        "item": "Wild Boar Leather",
         "amount": 2
       },
       {
@@ -185,7 +185,7 @@
     "outputItemName": "Wild Boar Pants",
     "ingredients": [
       {
-        "item": "Boar Leather",
+        "item": "Wild Boar Leather",
         "amount": 3
       },
       {
@@ -199,7 +199,7 @@
     "outputItemName": "Wild Boar Shirt",
     "ingredients": [
       {
-        "item": "Boar Leather",
+        "item": "Wild Boar Leather",
         "amount": 4
       },
       {

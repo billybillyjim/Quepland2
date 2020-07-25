@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 public class Inventory
 {
     private List<KeyValuePair<GameItem, int>> items;
+    private Dictionary<GameItem, int> itemLookupDic;
     private int maxSize = 30;
     private readonly int maxValue = int.MaxValue - 1000000;
     private int totalItems { get; set; }
@@ -17,11 +18,13 @@ public class Inventory
     public Inventory(int max)
     {
         items = new List<KeyValuePair<GameItem, int>>();
+        itemLookupDic = new Dictionary<GameItem, int>();
         maxSize = max;
     }
     public Inventory(int max, bool itemsStack)
     {
         items = new List<KeyValuePair<GameItem, int>>();
+        itemLookupDic = new Dictionary<GameItem, int>();
         maxSize = max;
         AllItemsStack = itemsStack;
     }
@@ -105,7 +108,8 @@ public class Inventory
         {
             return false;
         }
-        return (items.FirstOrDefault(x => x.Key.Name == itemName).Equals(default(KeyValuePair<GameItem, int>)) == false);
+        return itemLookupDic.TryGetValue(ItemManager.Instance.GetItemByName(itemName), out _);
+        //return (items.FirstOrDefault(x => x.Key.Name == itemName).Equals(default(KeyValuePair<GameItem, int>)) == false);
     }
     public bool HasArrows()
     {
@@ -363,6 +367,14 @@ public class Inventory
         foreach (KeyValuePair<GameItem, int> item in items)
         {
             item.Key.Rerender = true;
+            if(itemLookupDic.TryGetValue(item.Key, out int v))
+            {
+                itemLookupDic[item.Key] = v;
+            }
+            else
+            {
+                itemLookupDic.Add(item.Key, item.Value);
+            }
             //item.Key.itemPos = inventorySlotPos;
             if (item.Key != null && item.Key.IsStackable)
             {

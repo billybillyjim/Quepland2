@@ -6,7 +6,7 @@
     "enabledActions": "Fishing",
     "damage": 1,
     "secondaryColor": "#dedfa4",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "weaponInfo": {
       "attackSpeed": 35,
       "damage": 1
@@ -26,7 +26,7 @@
     "value": 30,
     "enabledActions": "Fishing",
     "isEquipable": true,
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "secondaryColor": "#F5C242",
     "weaponInfo": {
       "attackSpeed": 35,
@@ -48,7 +48,7 @@
     "enabledActions": "Fishing",
     "isEquipable": true,
     "secondaryColor": "#66B4DE",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "weaponInfo": {
       "attackSpeed": 35,
       "damage": 3
@@ -68,7 +68,7 @@
     "value": 300,
     "enabledActions": "Fishing",
     "isEquipable": true,
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "weaponInfo": {
       "attackSpeed": 35,
       "damage": 5
@@ -89,7 +89,7 @@
     "value": 2500,
     "enabledActions": "Fishing",
     "isEquipable": true,
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "weaponInfo": {
       "attackSpeed": 35,
       "damage": 8
@@ -110,7 +110,7 @@
     "value": 30,
     "enabledActions": "Bait Fishing",
     "isEquipable": true,
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "secondaryColor": "#F5C242",
     "weaponInfo": {
       "attackSpeed": 25,

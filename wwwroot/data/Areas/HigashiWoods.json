@@ -110,6 +110,9 @@
     "isUnlocked": false,
     "description": "The woods begin to thin as you reach the other side of the bridge. Hemp grows wild here, enough to harvest however much you'd like. The trail continues southward up the mountains.",
     "areaURL": "EastHigashiWoods",
+    "npcs": [
+      "Hooded Traveller"
+    ],
     "actions": [
       "Harvest Hemp:Hemp",
       "Chop Mesquite Trees:Mesquite Logs"

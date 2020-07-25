@@ -54,5 +54,15 @@
         "item": "Molten Zinc Bar"
       }
     ]
+  },
+  {
+    "outputItemName": "Zinc Arrowtips",
+    "ingredients": [
+      {
+        "item": "Molten Zinc Bar"
+      }
+    ],
+    "outputAmount": 10
   }
+
 ]

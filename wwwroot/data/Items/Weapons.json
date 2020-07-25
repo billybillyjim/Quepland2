@@ -4,7 +4,7 @@
     "Description": "Maybe the softest knife you've ever seen.",
     "value": 150,
     "enabledActions": "Knifesmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "secondaryColor": "#B87333",
     "icon": "Dagger",
     "weaponInfo": {
@@ -24,7 +24,7 @@
     "Description": "It's an axe made of stone.",
     "value": 25,
     "enabledActions": "Axemanship Woodcutting",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "gatherSpeedBonus": 0.1,
     "icon": "Axe",
     "weaponInfo": {
@@ -44,7 +44,7 @@
     "value": 150,
     "enabledActions": "Axemanship Woodcutting",
     "secondaryColor": "#B87333",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "gatherSpeedBonus": 0.2,
     "icon": "Axe",
     "weaponInfo": {
@@ -65,7 +65,7 @@
     "secondaryColor": "#B87333",
     "value": 150,
     "enabledActions": "Swordsmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 11,
@@ -84,7 +84,7 @@
     "secondaryColor": "#B87333",
     "value": 150,
     "enabledActions": "Hammermanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
@@ -102,7 +102,7 @@
     "description": "The knife taken from a bandit. It probably wasn't his either.",
     "value": 50,
     "enabledActions": "Knifesmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
@@ -120,7 +120,7 @@
     "description": "A weapon for testing.",
     "value": 0,
     "enabledActions": "Swordsmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 1,
@@ -138,7 +138,7 @@
     "description": "A lightweight blade crafted from the remains of a gashadokuro.",
     "value": 1500,
     "enabledActions": "Swordsmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 8,
@@ -156,7 +156,7 @@
     "Description": "A soft but sturdy knife.",
     "value": 240,
     "enabledActions": "Knifesmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "secondaryColor": "#B5A642",
     "icon": "Dagger",
     "weaponInfo": {
@@ -176,7 +176,7 @@
     "value": 240,
     "secondaryColor": "#B5A642",
     "enabledActions": "Swordsmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "requiredAction": "Swordsmanship",
     "icon": "Sword",
     "weaponInfo": {
@@ -196,7 +196,7 @@
     "value": 240,
     "secondaryColor": "#B5A642",
     "enabledActions": "Axemanship Woodcutting",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "gatherSpeedBonus": 0.2,
     "icon": "Axe",
     "weaponInfo": {
@@ -216,7 +216,7 @@
     "value": 240,
     "secondaryColor": "#B5A642",
     "enabledActions": "Hammermanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
@@ -235,7 +235,7 @@
     "value": 70,
     "secondaryColor": "#D3D4D5",
     "enabledActions": "Knifesmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
@@ -254,7 +254,7 @@
     "value": 70,
     "enabledActions": "Swordsmanship",
     "secondaryColor": "#D3D4D5",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 11,
@@ -273,7 +273,7 @@
     "value": 70,
     "enabledActions": "Axemanship Woodcutting",
     "secondaryColor": "#D3D4D5",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "gatherSpeedBonus": 0.15,
     "icon": "Axe",
     "weaponInfo": {
@@ -293,7 +293,7 @@
     "value": 70,
     "enabledActions": "Hammermanship",
     "secondaryColor": "#D3D4D5",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
@@ -312,7 +312,7 @@
     "value": 90,
     "enabledActions": "Knifesmanship",
     "secondaryColor": "#9E9EA0",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
@@ -331,7 +331,7 @@
     "secondaryColor": "#9E9EA0",
     "value": 90,
     "enabledActions": "Swordsmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 11,
@@ -350,7 +350,7 @@
     "secondaryColor": "#9E9EA0",
     "value": 90,
     "enabledActions": "Axemanship Woodcutting",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "gatherSpeedBonus": 0.17,
     "icon": "Axe",
     "weaponInfo": {
@@ -370,7 +370,7 @@
     "secondaryColor": "#9E9EA0",
     "value": 90,
     "enabledActions": "Hammermanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
@@ -389,7 +389,7 @@
     "value": 150,
     "enabledActions": "Knifesmanship",
     "secondaryColor": "#CD7F32",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
@@ -408,7 +408,7 @@
     "secondaryColor": "#CD7F32",
     "value": 150,
     "enabledActions": "Swordsmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 11,
@@ -427,7 +427,7 @@
     "secondaryColor": "#CD7F32",
     "value": 150,
     "enabledActions": "Axemanship Woodcutting",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "gatherSpeedBonus": 0.25,
     "icon": "Axe",
     "weaponInfo": {
@@ -448,7 +448,7 @@
     "secondaryColor": "#CD7F32",
     "value": 150,
     "enabledActions": "Hammermanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
@@ -466,7 +466,7 @@
     "Description": "A sharp knife.",
     "value": 210,
     "enabledActions": "Knifesmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "secondaryColor": "#A9A69B",
     "icon": "Dagger",
     "weaponInfo": {
@@ -486,7 +486,7 @@
     "secondaryColor": "#A9A69B",
     "value": 210,
     "enabledActions": "Swordsmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 11,
@@ -505,7 +505,7 @@
     "secondaryColor": "#A9A69B",
     "value": 210,
     "enabledActions": "Axemanship Woodcutting",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "gatherSpeedBonus": 0.28,
     "icon": "Axe",
     "weaponInfo": {
@@ -525,7 +525,7 @@
     "secondaryColor": "#A9A69B",
     "value": 210,
     "enabledActions": "Hammermanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
@@ -544,7 +544,7 @@
     "value": 280,
     "enabledActions": "Knifesmanship",
     "secondaryColor": "#434341",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
@@ -563,7 +563,7 @@
     "secondaryColor": "#434341",
     "value": 280,
     "enabledActions": "Swordsmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 11,
@@ -582,7 +582,7 @@
     "secondaryColor": "#434341",
     "value": 280,
     "enabledActions": "Axemanship Woodcutting",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "gatherSpeedBonus": 0.35,
     "icon": "Axe",
     "weaponInfo": {
@@ -602,7 +602,7 @@
     "secondaryColor": "#434341",
     "value": 280,
     "enabledActions": "Hammermanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,
@@ -621,7 +621,7 @@
     "secondaryColor": "#C0C0C0",
     "value": 260,
     "enabledActions": "Knifesmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 7,
@@ -640,7 +640,7 @@
     "secondaryColor": "#C0C0C0",
     "value": 260,
     "enabledActions": "Swordsmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 14,
@@ -659,7 +659,7 @@
     "secondaryColor": "#C0C0C0",
     "value": 260,
     "enabledActions": "Axemanship Woodcutting",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "gatherSpeedBonus": 0.2,
     "icon": "Axe",
     "weaponInfo": {
@@ -679,7 +679,7 @@
     "secondaryColor": "#C0C0C0",
     "value": 260,
     "enabledActions": "Hammermanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 28,
@@ -698,7 +698,7 @@
     "secondaryColor": "#C0C0C0",
     "value": 520,
     "enabledActions": "Hammermanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 42,
@@ -717,7 +717,7 @@
     "value": 350,
     "enabledActions": "Knifesmanship",
     "secondaryColor": "#F1F3F0",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 4,
@@ -736,7 +736,7 @@
     "value": 350,
     "enabledActions": "Swordsmanship",
     "secondaryColor": "#F1F3F0",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 9,
@@ -755,7 +755,7 @@
     "value": 350,
     "enabledActions": "Axemanship Woodcutting",
     "secondaryColor": "#F1F3F0",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "gatherSpeedBonus": 0.45,
     "icon": "Axe",
     "weaponInfo": {
@@ -775,7 +775,7 @@
     "value": 350,
     "enabledActions": "Hammermanship",
     "secondaryColor": "#F1F3F0",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 17,
@@ -794,7 +794,7 @@
     "value": 1450,
     "enabledActions": "Knifesmanship",
     "secondaryColor": "#FFD700",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 7,
@@ -813,7 +813,7 @@
     "value": 1450,
     "enabledActions": "Swordsmanship",
     "secondaryColor": "#FFD700",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 14,
@@ -832,7 +832,7 @@
     "value": 1450,
     "enabledActions": "Axemanship Woodcutting",
     "secondaryColor": "#FFD700",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "gatherSpeedBonus": 0.3,
     "icon": "Axe",
     "weaponInfo": {
@@ -852,7 +852,7 @@
     "value": 1450,
     "enabledActions": "Hammermanship",
     "secondaryColor": "#FFD700",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 28,
@@ -871,7 +871,7 @@
     "value": 2250,
     "enabledActions": "Knifesmanship",
     "secondaryColor": "#E5E4E2",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 7,
@@ -890,7 +890,7 @@
     "value": 2250,
     "enabledActions": "Swordsmanship",
     "secondaryColor": "#E5E4E2",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 14,
@@ -908,7 +908,7 @@
     "Description": "A shiny, metal axe. It's quite heavy.",
     "value": 2250,
     "enabledActions": "Axemanship Woodcutting",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "secondaryColor": "#E5E4E2",
     "gatherSpeedBonus": 0.45,
     "icon": "Axe",
@@ -929,7 +929,7 @@
     "value": 2250,
     "enabledActions": "Hammermanship",
     "secondaryColor": "#E5E4E2",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 28,
@@ -948,7 +948,7 @@
     "value": 680,
     "secondaryColor": "#9DC6E8",
     "enabledActions": "Knifesmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 5,
@@ -967,7 +967,7 @@
     "Description": "A sharp and lightweight metal sword.",
     "value": 680,
     "enabledActions": "Swordsmanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 10,
@@ -986,7 +986,7 @@
     "Description": "A sturdy and lightweight axe to chop things with.",
     "value": 680,
     "enabledActions": "Axemanship Woodcutting",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "gatherSpeedBonus": 0.55,
     "icon": "Axe",
     "weaponInfo": {
@@ -1006,7 +1006,7 @@
     "Description": "A solid and strong hammer.",
     "value": 680,
     "enabledActions": "Hammermanship",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 20,
@@ -1025,7 +1025,7 @@
     "value": 2880,
     "enabledActions": "Knifesmanship",
     "secondaryColor": "#AF7979",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Dagger",
     "weaponInfo": {
       "attackSpeed": 6,
@@ -1044,7 +1044,7 @@
     "value": 2880,
     "enabledActions": "Swordsmanship",
     "secondaryColor": "#AF7979",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Sword",
     "weaponInfo": {
       "attackSpeed": 11,
@@ -1063,7 +1063,7 @@
     "value": 2880,
     "enabledActions": "Axemanship Woodcutting",
     "secondaryColor": "#AF7979",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "gatherSpeedBonus": 0.75,
     "icon": "Axe",
     "weaponInfo": {
@@ -1083,7 +1083,7 @@
     "value": 2880,
     "enabledActions": "Hammermanship",
     "secondaryColor": "#AF7979",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Hammer",
     "weaponInfo": {
       "attackSpeed": 21,

@@ -7,7 +7,7 @@
     "skillRequired": "Knifesmanship",
     "actionsEnabled": "Knifesmanship",
     "requiredLevel": 0,
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "damage": 3,
     "attackSpeed": 5,
     "icon": "Knife"

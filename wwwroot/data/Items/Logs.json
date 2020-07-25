@@ -77,7 +77,7 @@
     ]
   },
   {
-    "name": "Supar Maple Logs",
+    "name": "Sugar Maple Logs",
     "description": "The sugar is in the sap, not the wood.",
     "gatherString": "You chop some maple logs.",
     "gatherSpeed": 25,

@@ -16,7 +16,7 @@
     "outputItemName": "Minnow Roll",
     "ingredients": [
       {
-        "item": "Minnow"
+        "item": "Minnows"
       },
       {
         "item": "Rice Roll"
@@ -491,7 +491,7 @@
     "outputItemName": "Octopus Roll",
     "ingredients": [
       {
-        "item": "Octopus"
+        "item": "Giant Octopus"
       },
       {
         "item": "Rice Roll"

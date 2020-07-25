@@ -54,5 +54,15 @@
         "item": "Molten Aluminum Bar"
       }
     ]
+  },
+  {
+    "outputItemName": "Aluminum Arrowtips",
+    "ingredients": [
+      {
+        "item": "Molten Aluminum Bar"
+      }
+    ],
+    "outputAmount": 10
   }
+
 ]

@@ -65,5 +65,15 @@
         "item": "Molten Lead Bar"
       }
     ]
+  },
+  {
+    "outputItemName": "Lead Arrowtips",
+    "ingredients": [
+      {
+        "item": "Molten Lead Bar"
+      }
+    ],
+    "outputAmount": 10
   }
+
 ]

@@ -19,6 +19,18 @@
     ]
   },
   {
+    "name": "Sawoka Dungeon",
+    "url": "SawokaDungeon",
+    "size": 250,
+    "monsterNames": [
+      "Ground Grupper",
+      "Sawabe Swiper",
+      "Mapinguari",
+      "Tokeloshe",
+      "Kappa"
+    ]
+  },
+  {
     "name": "Sahota Dungeon",
     "url": "SahotaDungeon",
     "size": 500,

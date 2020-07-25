@@ -12,7 +12,7 @@
     "value": 20,
     "secondaryColor": "#FFE5C4",
     "enabledActions": "Archery",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 12,
@@ -38,7 +38,7 @@
     "value": 40,
     "secondaryColor": "#FFDA8A",
     "enabledActions": "Archery",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 12,
@@ -63,7 +63,7 @@
     "Description": "A bow for shooting arrows with.",
     "value": 70,
     "enabledActions": "Archery",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Bow",
     "secondaryColor": "#FFD5B0",
     "weaponInfo": {
@@ -90,7 +90,7 @@
     "value": 90,
     "secondaryColor": "#FFBD96",
     "enabledActions": "Archery",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 14,
@@ -116,7 +116,7 @@
     "value": 110,
     "secondaryColor": "#FFF6E0",
     "enabledActions": "Archery",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 10,
@@ -142,7 +142,7 @@
     "value": 150,
     "secondaryColor": "#BD8F57",
     "enabledActions": "Archery",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 10,
@@ -167,7 +167,7 @@
     "Description": "An extravagant bow.",
     "value": 350,
     "enabledActions": "Archery",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Bow",
     "secondaryColor": "#AB5F29",
     "weaponInfo": {
@@ -194,7 +194,7 @@
     "value": 250,
     "secondaryColor": "#9C491F",
     "enabledActions": "Archery",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 12,
@@ -220,7 +220,7 @@
     "value": 320,
     "secondaryColor": "#824121",
     "enabledActions": "Archery",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 12,
@@ -246,7 +246,7 @@
     "value": 450,
     "secondaryColor": "#612901",
     "enabledActions": "Archery",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 12,
@@ -271,7 +271,7 @@
     "Description": "A bow made of the strongest wood known to man.",
     "value": 650,
     "enabledActions": "Archery",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Bow",
     "secondaryColor": "#875B24",
     "weaponInfo": {
@@ -297,7 +297,7 @@
     "Description": "A bow fashioned from the wood of the Great Tree. It feels magical.",
     "value": 1650,
     "enabledActions": "Archery",
-    "equipSlot": "Right Hand",
+    "equipSlot": "R Hand",
     "icon": "Bow",
     "secondaryColor": "#9F6F4F",
     "weaponInfo": {

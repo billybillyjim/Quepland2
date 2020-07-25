@@ -82,5 +82,15 @@
         "item": "Molten Bronze Bar"
       }
     ]
+  },
+  {
+    "outputItemName": "Bronze Arrowtips",
+    "ingredients": [
+      {
+        "item": "Molten Bronze Bar"
+      }
+    ],
+    "outputAmount": 10
   }
+
 ]

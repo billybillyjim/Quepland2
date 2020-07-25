@@ -41,12 +41,24 @@
     ],
     "buildings": [
       {
-        "name": "Kazkagrin's Fortunes",
-        "buttonText": "Visit Kazkagrin's Fortunes",
-        "url": "KazkagrinsFortunes",
-        "description": "A poorly lit room is surrounded on all sides by maps, clocks, and tapestries. A strange man sits hunched over a table, awaiting your arrival.",
+        "name": "Sword Seller Hut",
+        "buttonText": "Sword Shop",
+        "url": "SwordSellerHut",
+        "description": "The walls of the hut are lined with various weapons, mostly swords. A man stands behind a display case of a number of purchasable swords.",
         "npcs": [
-          "Kazkagrin"
+          "Ken"
+        ],
+        "shops": [
+          {
+            "name": "Ken's Swords",
+            "itemNames": [
+              "Brass Sword",
+              "Bronze Sword",
+              "Nickel Sword",
+              "Iron Sword"
+            ]
+
+          }
         ]
       }
     ]
@@ -76,7 +88,7 @@
     "name": "Wana Tona Lake",
     "id": 83,
     "image": "Lake",
-    "description": "The lake is dark and deep. Here and there bubbles emerge from the waters. Something lives under here. A wall of reeds blocks off the northern part of the lake.",
+    "description": "The lake is dark and deep. Here and there bubbles emerge from the waters. Something very large lives under here. A wall of unreasonably tall reeds blocks off the northern part of the lake.",
     "areaURL": "WanaTonaLake",
     "actions": [
       "Go Fishing"

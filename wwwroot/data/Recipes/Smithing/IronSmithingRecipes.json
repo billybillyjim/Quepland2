@@ -54,5 +54,15 @@
         "item": "Molten Iron Bar"
       }
     ]
+  },
+  {
+    "outputItemName": "Iron Arrowtips",
+    "ingredients": [
+      {
+        "item": "Molten Iron Bar"
+      }
+    ],
+    "outputAmount": 10
   }
+
 ]
