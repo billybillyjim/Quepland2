@@ -28,19 +28,7 @@ else
     {
         if (GameState.InitCompleted == false)
         {
-            await AreaManager.Instance.LoadAreas(Http);
-            GameState.CurrentLand = AreaManager.Instance.GetLandByName("Quepland");
-            GameState.UriHelper = UriHelper;
-            await ItemManager.Instance.LoadItems(Http);
-            await Player.Instance.LoadSkills(Http);
-            await NPCManager.Instance.LoadNPCs(Http);
-            await QuestManager.Instance.LoadQuests(Http);
-            await BattleManager.Instance.LoadMonsters(Http);
-            await FollowerManager.Instance.LoadFollowers(Http);
-            GameState.JSRuntime = JSRuntime;
-            await GameState.GetDimensions();
-            GameState.Start();
-            GameState.InitCompleted = true;
+            await GameState.LoadData(Http, UriHelper, JSRuntime);
 
         }
         //Player.Instance.GainExperience("Strength:1000000000");

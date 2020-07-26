@@ -53,16 +53,15 @@
         }
         else if (GameState.CurrentGatherItem != null && Player.Instance.CurrentFollower.MeetsRequirements(GameState.CurrentGatherItem) == false)
         {
-            <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Cannot Gather</div>
+            <div style="margin-left:5px;margin-bottom:15px;">@Player.Instance.CurrentFollower.Name Cannot Gather</div>
         }
         else
         {
-            <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Following...</div>
+            <div style="margin-left:5px;margin-bottom:15px;">@Player.Instance.CurrentFollower.Name Following...</div>
         }
     </div>
     <div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:8px;margin:5px;border-radius:0.25rem">
-        @if (Player.Instance.CurrentFollower != null)
-        {
+
             @foreach (KeyValuePair<GameItem, int> item in Player.Instance.CurrentFollower.Inventory.GetItems().OrderBy(x => x.Key.ID))
             {
                 if (item.Key != null)
@@ -74,7 +73,7 @@
             {
                 <ItemBoxComponent Item="@null"></ItemBoxComponent>
             }
-        }
+        
     </div>
 }
 
@@ -169,6 +168,14 @@
                 {
                     GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Equip " + item, new Action(() => Player.Instance.Equip(item))));
                 }
+            }
+            if (ItemManager.Instance.CurrentShop != null)
+            {
+
+            }
+            if (item.FoodInfo != null)
+            {
+                GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Eat " + item, new Action(() => GameState.Eat(item))));
             }
             GameState.ShowContextMenu(args);
         }

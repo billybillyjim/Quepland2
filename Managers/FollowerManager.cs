@@ -23,5 +23,9 @@ public class FollowerManager
     {
         Followers.AddRange(await Http.GetJsonAsync<Follower[]>("data/Followers.json"));
     }
+    public List<Follower> GetUnlockedFollowers()
+    {
+        return Followers.Where(x => x.IsUnlocked).ToList();
+    }
 }
 

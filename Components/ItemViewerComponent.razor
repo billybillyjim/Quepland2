@@ -73,12 +73,33 @@
             {
                 @if (Item.IsSellable)
                 {
-                    <button style="position:absolute;left:5px;bottom:5px;" class="btn btn-light" @onclick="@(() => SellItem())">Sell @(Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item)))</button> @((Item.Value / 2 * Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item))) + " " + ItemManager.Instance.CurrentShop.CurrencyName)
+                    <button style="position:absolute;left:5px;bottom:5px;" class="btn btn-light" @onclick="@(() => SellItem())">Sell @(Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item)))</button>
+                    @(GetValue())
 
                 }
             }
             @if (Bank.Instance.IsBanking)
             {
+                if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Banking")
+                {
+                    @if (SaleValueOverZero())
+                    {
+                        <button style="position:absolute;right:5px;top:5px;" class="btn btn-light" @onclick="@(() => SellItem())">Sell @(Math.Min(Bank.Instance.Amount, Player.Instance.Inventory.GetNumberOfItem(Item)))</button>
+
+                    }
+                    else
+                    {
+                        <button style="position:absolute;right:5px;top:5px;opacity:0.5" class="btn btn-light" 
+                                @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Selling this would give you nothing in return!")))"
+                                @onmouseout="@(new Action(() => GameState.HideTooltip()))" 
+                                >Sell @(Math.Min(Bank.Instance.Amount, Player.Instance.Inventory.GetNumberOfItem(Item)))</button>
+
+                    }
+                    <div style="position:absolute;right:5px;top:45px">
+                        @(GetBankSaleValue())
+                    </div>
+
+                }
                 <button class="btn btn-light" style="position:absolute;left:5px;bottom:5px;" onclick="@(new Action<MouseEventArgs>((args) => BankItem()))">Deposit @Bank.Instance.GetAmountString()</button>
 
             }
@@ -91,38 +112,27 @@
     public GameItem Item { get; set; }
     private bool HideValue;
 
+    private string GetValue()
+    {
+        return (Item.Value * Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item)) / 2) + " " + ItemManager.Instance.CurrentShop.CurrencyName;
+    }
+    private string GetBankSaleValue()
+    {
+        return (Item.Value * Math.Min(Bank.Instance.Amount, Player.Instance.Inventory.GetNumberOfItem(Item)) / 2) + " Coins";
+    }
+    private bool SaleValueOverZero()
+    {
+        return (Item.Value * Math.Min(Bank.Instance.Amount, Player.Instance.Inventory.GetNumberOfItem(Item)) / 2) > 0;
+    }
+
     private void SellItem()
     {
-        if(Item.IsSellable == false)
+        GameState.SellItem(Item);
+        if(Player.Instance.Inventory.HasItem(Item) == false)
         {
-            MessageManager.AddMessage("You can't seem to sell this...");
-            return;
+            ClearItem();
         }
-        if (Item.IsEquipped)
-        {
-            MessageManager.AddMessage("You need to unequip this item before selling it.");
-            return;
-        }
-        if(ItemManager.Instance.CurrentShop != null)
-        {
-            int sellAmt = Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item));
-            if(Player.Instance.Inventory.GetAvailableSpaces() > 0 || Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.CurrentShop.Currency) > 0 || (Item.IsStackable == false))
-            {
-                Player.Instance.Inventory.RemoveItems(Item, sellAmt);
-                Player.Instance.Inventory.AddMultipleOfItem(ItemManager.Instance.CurrentShop.Currency, (sellAmt * Item.Value / 2));
-                MessageManager.AddMessage("You sold " + sellAmt + " " + Item.Name + " for " + (sellAmt * Item.Value / 2) + " " + ItemManager.Instance.CurrentShop.Currency.Name + ".");
-
-                ClearItem();
-            }
-            else
-            {
-                Console.WriteLine("No inventory space.");
-            }
-        }
-        else
-        {
-            Console.WriteLine("Shop was null");
-        }
+        GameState.UpdateState();
     }
     private void EatItem()
     {
@@ -159,7 +169,6 @@
     }
     public void ClearItem()
     {
-
         Item = null;
         HideValue = true;
         StateHasChanged();

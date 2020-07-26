@@ -402,6 +402,51 @@ using System.Threading.Tasks;
         }
 
     }
+    public void SellItem(GameItem item)
+    {
+        if (item.IsSellable == false)
+        {
+            MessageManager.AddMessage("You can't seem to sell this...");
+            return;
+        }
+        if (item.IsEquipped)
+        {
+            MessageManager.AddMessage("You need to unequip this item before selling it.");
+            return;
+        }
+        if (ItemManager.Instance.CurrentShop != null)
+        {
+            int sellAmt = Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(item));
+            if (Player.Instance.Inventory.GetAvailableSpaces() > 0 || Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.CurrentShop.Currency) > 0 || (item.IsStackable == false))
+            {
+                Player.Instance.Inventory.RemoveItems(item, sellAmt);
+                Player.Instance.Inventory.AddMultipleOfItem(ItemManager.Instance.CurrentShop.Currency, (sellAmt * item.Value / 2));
+                MessageManager.AddMessage("You sold " + sellAmt + " " + item.Name + " for " + (sellAmt * item.Value / 2) + " " + ItemManager.Instance.CurrentShop.Currency.Name + ".");
+            }
+            else
+            {
+                Console.WriteLine("No inventory space.");
+            }
+        }
+        else if(Bank.Instance.IsBanking && Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Banking")
+        {
+            int sellAmt = Math.Min(Bank.Instance.Amount, Player.Instance.Inventory.GetNumberOfItem(item));
+            if (Player.Instance.Inventory.GetAvailableSpaces() > 0 || Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName("Coins")) > 0 || (item.IsStackable == false))
+            {
+                Player.Instance.Inventory.RemoveItems(item, sellAmt);
+                Player.Instance.Inventory.AddMultipleOfItem("Coins", (sellAmt * item.Value / 2));
+                MessageManager.AddMessage("You sold " + sellAmt + " " + item.Name + " for " + (sellAmt * item.Value / 2) + " Coins.");
+            }
+            else
+            {
+                Console.WriteLine("No inventory space.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Shop was null");
+        }
+    }
     private void AlchItem()
     {
         if(AlchemyStage == 0)
@@ -488,6 +533,23 @@ using System.Threading.Tasks;
         {
             ShowTooltip(args, tipName);
         }
+    }
+
+    public async Task LoadData(System.Net.Http.HttpClient Http, NavigationManager URIHelper, IJSRuntime Jsruntime)
+    {
+        await AreaManager.Instance.LoadAreas(Http);
+        CurrentLand = AreaManager.Instance.GetLandByName("Quepland");
+        UriHelper = URIHelper;
+        await ItemManager.Instance.LoadItems(Http);
+        await Player.Instance.LoadSkills(Http);
+        await NPCManager.Instance.LoadNPCs(Http);
+        await QuestManager.Instance.LoadQuests(Http);
+        await BattleManager.Instance.LoadMonsters(Http);
+        await FollowerManager.Instance.LoadFollowers(Http);
+        JSRuntime = Jsruntime;
+        await GetDimensions();
+        Start();
+        InitCompleted = true;
     }
     public void ShowTooltip(MouseEventArgs args, string tipName, string tipData)
     {

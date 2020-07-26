@@ -96,7 +96,7 @@ public class Inventory
     public bool HasItem(GameItem item)
     {
         return HasItem(item.UniqueID, false);
-        return HasItem(item.Name);
+        //return HasItem(item.Name);
     }    
     /// <summary>
     /// Checks if the inventory contains any items with the same name as the given string.
@@ -219,9 +219,9 @@ public class Inventory
         {
             return false;
         }
-        if (amount < 0)
+        if (amount <= 0)
         {
-            amount = 0;
+            return false;
         }
         if (item.IsStackable || AllItemsStack)
         {
@@ -252,9 +252,8 @@ public class Inventory
         {
             return false;
         }
-        if (amount < 0)
+        if (amount <= 0)
         {
-            amount = 0;
             return false;
         }
 

@@ -20,7 +20,13 @@ public class ItemManager
         }
     }
     public List<GameItem> Items = new List<GameItem>();
+    /// <summary>
+    /// Stores the item by name, for fast lookup.
+    /// </summary>
     public Dictionary<string, GameItem> ItemLookupDic = new Dictionary<string, GameItem>();
+    /// <summary>
+    /// Stores the item by uniqueID, for ensuring duplicates are treated the same.
+    /// </summary>
     public Dictionary<string, GameItem> UniqueIDLookupDic = new Dictionary<string, GameItem>();
     public List<Recipe> Recipes = new List<Recipe>();
     public List<Recipe> SmithingRecipes = new List<Recipe>();
