@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-public class HypnotizeEffect : IStatusEffect
+public class SelfHealEffect : IStatusEffect
 {
-    public string Name { get; set; } = "Hypnotize";
+    public string Name { get; set; } = "SelfHeal";
     public int Duration { get; set; }
     public int Speed { get; set; }
     public int Power { get; set; }
@@ -15,7 +15,7 @@ public class HypnotizeEffect : IStatusEffect
 
     public string Message { get; set; }
     public bool SelfInflicted { get; set; }
-    public HypnotizeEffect(StatusEffectData data)
+    public SelfHealEffect(StatusEffectData data)
     {
         Name = data.Name;
         Duration = data.Duration;
@@ -30,14 +30,14 @@ public class HypnotizeEffect : IStatusEffect
     {
         if (RemainingTime % Speed == 0 && RemainingTime > 0)
         {
-            m.TicksToNextAttack = m.AttackSpeed;
+            m.CurrentHP += Power;
         }
     }
     public void DoEffect(Player p)
     {
         if (RemainingTime % Speed == 0 && RemainingTime > 0)
         {
-            p.TicksToNextAttack = p.GetWeaponAttackSpeed();
+            p.CurrentHP += Power;
         }
     }
 }

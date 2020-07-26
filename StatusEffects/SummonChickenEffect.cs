@@ -12,6 +12,7 @@ public class SummonChickenEffect : IStatusEffect
     public int RemainingTime { get; set; }
 
     public double ProcOdds { get; set; }
+    public bool SelfInflicted { get; set; }
 
     public string Message { get; set; }
     public SummonChickenEffect(StatusEffectData data)
@@ -23,6 +24,7 @@ public class SummonChickenEffect : IStatusEffect
         Power = data.Power;
         Message = data.Message;
         RemainingTime = data.Duration;
+        SelfInflicted = data.SelfInflicted;
     }
     public void DoEffect(Monster m)
     {

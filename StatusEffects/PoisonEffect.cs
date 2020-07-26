@@ -12,8 +12,9 @@ public class PoisonEffect : IStatusEffect
 	public int RemainingTime { get; set; }
 
 	public double ProcOdds { get; set; }
+    public bool SelfInflicted { get; set; }
 
-	public string Message { get; set; }
+    public string Message { get; set; }
     public PoisonEffect(StatusEffectData data)
     {
         Name = data.Name;
@@ -22,7 +23,8 @@ public class PoisonEffect : IStatusEffect
         ProcOdds = data.ProcOdds;
         Power = data.Power;
         Message = data.Message;
-        RemainingTime = data.Duration;
+        RemainingTime = data.Duration; 
+        SelfInflicted = data.SelfInflicted;
     }
     public void DoEffect(Monster m)
     {

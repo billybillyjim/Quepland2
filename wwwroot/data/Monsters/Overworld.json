@@ -1596,5 +1596,145 @@
         "procOdds": 0.1
       }
     ]
+  },
+  {
+    "name": "Fighter Frog",
+    "hp": 1000,
+    "weaknesses": "Hammermanship",
+    "strengths": "Knifesmanship",
+    "attackSpeed": 12,
+    "armor": 8,
+    "damage": 35,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    }
+  },
+  {
+    "name": "Lake Hand",
+    "hp": 1200,
+    "weaknesses": "Hammermanship",
+    "strengths": "Knifesmanship",
+    "attackSpeed": 18,
+    "armor": 22,
+    "damage": 45,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    },
+    "statusEffectData": [
+      {
+        "name": "Stun",
+        "power": 5,
+        "speed": 1,
+        "duration": 10,
+        "message": "The lake hand tries to pull you under! You've been completely disoriented!",
+        "procOdds": 0.1
+      }
+    ]
+  },
+  {
+    "name": "Lilytrap",
+    "hp": 900,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship",
+    "attackSpeed": 35,
+    "armor": 35,
+    "damage": 15,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    }
+  },
+  {
+    "name": "Kushtaka",
+    "hp": 800,
+    "weaknesses": "Knifesmanship",
+    "strengths": "Hammermanship",
+    "attackSpeed": 8,
+    "armor": 10,
+    "damage": 35,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    }
+  },
+  {
+    "name": "Black Bear",
+    "hp": 1500,
+    "weaknesses": "Axemanship",
+    "strengths": "Hammermanship",
+    "attackSpeed": 20,
+    "armor": 30,
+    "damage": 45,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Black Bear",
+          "weight": 50
+        }
+      ]
+    }
+  },
+  {
+    "name": "Living Rock",
+    "hp": 200,
+    "weaknesses": "Hammermanship",
+    "strengths": "Knifesmanship Swordsmanship Axemanship",
+    "attackSpeed": 30,
+    "armor": 380,
+    "damage": 15,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Large Stone",
+          "weight": 50
+        }
+      ]
+    }
+  },
+  {
+    "name": "Hydral Wolf",
+    "hp": 2200,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Axemanship",
+    "attackSpeed": 20,
+    "armor": 38,
+    "damage": 35,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Large Stone",
+          "weight": 50
+        }
+      ]
+    },
+    "statusEffectData": [
+      {
+        "name": "SelfHeal",
+        "power": 450,
+        "speed": 1,
+        "duration": 1,
+        "message": "The wolf regenerates a head!",
+        "procOdds": 0.1,
+        "selfInflicted": true
+      }
+    ]
   }
 ]

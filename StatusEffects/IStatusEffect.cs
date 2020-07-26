@@ -27,6 +27,10 @@ public interface IStatusEffect
 	/// The message sent when the effect is first applied.
 	/// </summary>
 	public string Message { get;set; }
+	/// <summary>
+	/// For special effects that affect the user, not the opponent.
+	/// </summary>
+	public bool SelfInflicted { get; set; }
 	public void DoEffect(Monster m);
 	public void DoEffect(Player p);
 	

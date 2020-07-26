@@ -307,8 +307,16 @@ public class BattleManager
             double roll = random.NextDouble();
             if(roll <= e.ProcOdds)
             {
-                Player.Instance.AddStatusEffect(e);
+                if (e.SelfInflicted)
+                {
+                    m.AddStatusEffect(e);
+                }
+                else
+                {
+                    Player.Instance.AddStatusEffect(e);                  
+                }
                 MessageManager.AddMessage(e.Message);
+
             }
         }
     }
@@ -323,7 +331,15 @@ public class BattleManager
                 {
                     if (roll <= e.ProcOdds)
                     {
-                        Target.AddStatusEffect(e);
+                        if (e.SelfInflicted)
+                        {
+                            Player.Instance.AddStatusEffect(e);
+                        }
+                        else
+                        {
+                            Target.AddStatusEffect(e);
+
+                        }
                         MessageManager.AddMessage(e.Message);
                     }
                 }
@@ -334,7 +350,14 @@ public class BattleManager
                 {
                     if (roll <= e.ProcOdds)
                     {
-                        Target.AddStatusEffect(e);
+                        if (e.SelfInflicted)
+                        {
+                            Player.Instance.AddStatusEffect(e);
+                        }
+                        else
+                        {
+                            Target.AddStatusEffect(e);
+                        }                        
                         MessageManager.AddMessage(e.Message);
                     }
                 }
@@ -358,6 +381,10 @@ public class BattleManager
         else if(data.Name == "Hypnotize")
         {
             return new HypnotizeEffect(data);
+        }
+        else if(data.Name == "SelfHeal")
+        {
+            return new SelfHealEffect(data);
         }
         else
         {
