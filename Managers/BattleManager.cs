@@ -44,10 +44,7 @@ public class BattleManager
         {
             foreach(Monster monster in CurrentOpponents)
             {
-                monster.CurrentHP = monster.HP;
-                monster.TicksToNextAttack = monster.AttackSpeed;
-                monster.IsDefeated = false;
-                monster.CurrentStatusEffects.Clear();
+                ResetOpponent(monster);
             }
             BattleHasEnded = false;
         }
@@ -266,6 +263,13 @@ public class BattleManager
         }
         return true;
     }
+    public void ResetOpponent(Monster monster)
+    {
+        monster.CurrentHP = monster.HP;
+        monster.TicksToNextAttack = monster.AttackSpeed;
+        monster.IsDefeated = false;
+        monster.CurrentStatusEffects.Clear();
+    }
     public void SetBoss(Quepland_2.Bosses.IBoss boss)
     {
         CurrentBoss = boss;
@@ -343,8 +347,22 @@ public class BattleManager
         {
             return new PoisonEffect(data);
         }
-
-
+        else if(data.Name == "Chicken")
+        {
+            return new SummonChickenEffect(data);
+        }
+        else if(data.Name == "Stun")
+        {
+            return new StunEffect(data);
+        }
+        else if(data.Name == "Hypnotize")
+        {
+            return new HypnotizeEffect(data);
+        }
+        else
+        {
+            Console.WriteLine("Warning:" + data.Name + " not in list of status effects in Battle Manager.");
+        }
         return null;
     }
 }

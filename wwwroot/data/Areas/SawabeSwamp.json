@@ -66,6 +66,14 @@
           {
             "itemName": "Grizzly Bear",
             "weight": 1
+          },
+          {
+            "itemName": "Turkey",
+            "weight": 5
+          },
+          {
+            "itemName": "Pheasant",
+            "weight": 5
           }
         ]
       }

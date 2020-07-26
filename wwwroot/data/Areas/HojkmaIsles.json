@@ -91,6 +91,12 @@
     "actions": [
       "Mine Iron:Iron Ore",
       "Chop Maple Trees:Sugar Maple Logs"
+    ],
+    "monsters": [
+      "Ice Spider",
+      "Chill Egg",
+      "Chill Chicken",
+      "Frost Bat"
     ]
   },
   {

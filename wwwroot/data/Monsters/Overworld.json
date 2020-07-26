@@ -29,7 +29,6 @@
         }
       ]
     }
-
   },
   {
     "name": "Rooster",
@@ -1374,7 +1373,227 @@
         "speed": 5,
         "duration": 100,
         "message": "You've been poisoned!",
-        "procOdds": 0.9
+        "procOdds": 0.1
+      }
+    ]
+  },
+  {
+    "name": "Ice Spider",
+    "hp": 1000,
+    "weaknesses": "Hammermanship",
+    "strengths": "Swordsmanship",
+    "attackSpeed": 12,
+    "armor": 10,
+    "damage": 22,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    }
+  },
+  {
+    "name": "Frost Bat",
+    "hp": 600,
+    "weaknesses": "Archery",
+    "strengths": "Knifesmanship",
+    "attackSpeed": 8,
+    "armor": 5,
+    "damage": 35,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    }
+  },
+  {
+    "name": "Chill Egg",
+    "hp": 1800,
+    "weaknesses": "Hammermanship",
+    "strengths": "Knifesmanship",
+    "attackSpeed": 35,
+    "armor": 90,
+    "damage": 15,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    },
+    "statusEffectData": [
+      {
+        "name": "Chicken",
+        "power": 100,
+        "speed": 5,
+        "duration": 5,
+        "message": "A Chill Chicken has come to protect its egg!",
+        "procOdds": 0.3
+      }
+    ]
+  },
+  {
+    "name": "Chill Chicken",
+    "hp": 2200,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship",
+    "attackSpeed": 15,
+    "armor": 10,
+    "damage": 55,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    }
+  },
+  {
+    "name": "Sand Ray",
+    "hp": 3500,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Knifesmanship",
+    "attackSpeed": 55,
+    "armor": 80,
+    "damage": 155,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    }
+  },
+  {
+    "name": "Behemoth Scorpion",
+    "hp": 4000,
+    "weaknesses": "Axemanship",
+    "strengths": "Knifesmanship Swordsmanship",
+    "attackSpeed": 25,
+    "armor": 120,
+    "damage": 35,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    },
+    "statusEffectData": [
+      {
+        "name": "Poison",
+        "power": 5,
+        "speed": 3,
+        "duration": 50,
+        "message": "You've been poisoned!",
+        "procOdds": 0.2
+      }
+    ]
+  },
+  {
+    "name": "Sand Golem",
+    "hp": 4200,
+    "weaknesses": "Hammermanship",
+    "strengths": "Knifesmanship",
+    "attackSpeed": 90,
+    "armor": 90,
+    "damage": 355,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    },
+    "statusEffectData": [
+      {
+        "name": "Stun",
+        "power": 5,
+        "speed": 1,
+        "duration": 10,
+        "message": "The sand golem's attack launches you to the ground. You've been stunned!",
+        "procOdds": 0.1
+      }
+    ]
+  },
+  {
+    "name": "Earth Golem",
+    "hp": 4500,
+    "weaknesses": "Hammermanship",
+    "strengths": "Knifesmanship",
+    "attackSpeed": 80,
+    "armor": 130,
+    "damage": 255,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    },
+    "statusEffectData": [
+      {
+        "name": "Stun",
+        "power": 5,
+        "speed": 1,
+        "duration": 15,
+        "message": "The earth golem's attack launches you to the ground. You've been stunned!",
+        "procOdds": 0.2
+      }
+    ]
+  },
+  {
+    "name": "Oni",
+    "hp": 5000,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship",
+    "attackSpeed": 25,
+    "armor": 20,
+    "damage": 85,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    }
+  },
+  {
+    "name": "Angler Squirrel",
+    "hp": 2000,
+    "weaknesses": "Axemanship",
+    "strengths": "Knifesmanship",
+    "attackSpeed": 15,
+    "armor": 10,
+    "damage": 25,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    },
+    "statusEffectData": [
+      {
+        "name": "Hypnotize",
+        "power": 5,
+        "speed": 3,
+        "duration": 15,
+        "message": "The squirrel's tail begins to move in a strange way... You're completely mesmerized.",
+        "procOdds": 0.1
       }
     ]
   }

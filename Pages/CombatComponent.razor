@@ -62,16 +62,26 @@
                 <div class="progress-bar" style="width:@(GetPlayerAttackProgress());background-color:mediumpurple">
                 </div>
             </div>
+            <div style="display:flex;margin-top:10px;">
+                @foreach(IStatusEffect effect in Player.Instance.CurrentStatusEffects)
+                {
+                    <div>
+                        <img style="height:30px;width:30px;margin:3px;" src="data/Images/@(effect.Name).png" 
+                             @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, effect.Name)))"
+                             @onmouseout="@(new Action(() => GameState.HideTooltip()))" />
+                    </div>
+                }
+            </div>
         </div>
     </div>
 
     if (BattleManager.Instance.CurrentArea != null && BattleManager.Instance.BattleHasEnded)
     {
-        <div>
-            <button @onclick="@(() => ContinueBattles())">Keep Battling</button>
+        <div style="margin-top: 100px;">
+            <button class="btn btn-outline-dark" @onclick="@(() => ContinueBattles())">Keep Battling</button>
         </div>
-        <div>
-            <button @onclick="@(() => Return())">Return</button>
+        <div style=" margin-top: 10px;margin-bottom:200px;">
+            <button class="btn btn-primary" @onclick="@(() => Return())">Return</button>
         </div>
 
     }

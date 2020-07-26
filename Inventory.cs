@@ -314,6 +314,10 @@ public class Inventory
     /// <returns></returns>
     public int RemoveItems(GameItem item, int amount)
     {
+        if(amount <= 0)
+        {
+            return 0;
+        }
         int removed = 0;
         var removedItems = new HashSet<KeyValuePair<GameItem,int>>();
         for(int i = 0; i < items.Count; i++)
@@ -377,24 +381,19 @@ public class Inventory
     {
         totalItems = 0;
         //inventorySlotPos = 0;
-        int i = 0;
-        Console.WriteLine("Updating count for " + items.Count + " items...");
         foreach (KeyValuePair<GameItem, int> item in items)
         {
             
             if(item.Key != null)
             {
-                Console.WriteLine("Updating count for item:" + item.Key.Name);
                 item.Key.Rerender = true;
 
                 if (itemLookupDic.TryGetValue(item.Key.UniqueID, out int v))
                 {
-                    Console.WriteLine("Lookup Dic contained value:" + item.Key.UniqueID);
                     itemLookupDic[item.Key.UniqueID] = v;
                 }
                 else
                 {
-                    Console.WriteLine("Lookup Dic adding new value:" + item.Key.UniqueID);
                     itemLookupDic.Add(item.Key.UniqueID, item.Value);
                 }
                 
@@ -408,11 +407,6 @@ public class Inventory
                     totalItems += item.Value;
                 }
             }
-            else
-            {
-                Console.WriteLine("Item was null at iterator:" + i);
-            }
-            i++;
         }
     }
 

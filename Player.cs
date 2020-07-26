@@ -153,7 +153,16 @@ public class Player
                 }
                 else
                 {
-                    total += Skills.Find(x => x.Name == item.GetSkillForWeaponExp()).GetSkillLevel() * 3;
+                    string skill = item.GetSkillForWeaponExp();
+                    if (skill == "")
+                    {
+                        total += GetLevel("Strength");
+                    }
+                    else 
+                    {
+                        total += Skills.Find(x => x.Name == skill).GetSkillLevel() * 3;
+                    }
+                    
                 }
 
             }

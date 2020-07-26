@@ -205,7 +205,7 @@ public class GameItem
 				return req.Skill;
             }
         }
-		Console.WriteLine("Weapon " + Name + " has no requirement for any skill, so no experience can be given.");
+		//Console.WriteLine("Weapon " + Name + " has no requirement for any skill, so no experience can be given.");
 		return "";
     }
 

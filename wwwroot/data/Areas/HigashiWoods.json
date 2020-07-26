@@ -30,6 +30,9 @@
         "drops": [
           {
             "itemName": "Rabbit"
+          },
+          {
+            "itemName": "Pigeon"
           }
         ]
       }
@@ -63,6 +66,12 @@
           {
             "itemName": "Deer",
             "weight": 5
+          },
+          {
+            "itemName": "Turkey"
+          },
+          {
+            "itemName": "Pigeon"
           }
         ]
       }
@@ -136,6 +145,14 @@
           },
           {
             "itemName": "Buck",
+            "weight": 5
+          },
+          {
+            "itemName": "Turkey",
+            "weight": 5
+          },
+          {
+            "itemName": "Pheasant",
             "weight": 5
           }
         ]
