@@ -2,8 +2,8 @@
   {
     "name": "Gashadokuro Head",
     "hp": 500,
-    "weakness": "Swordsmanship",
-    "strength": "Hammermanship",
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship",
     "damage": 29,
     "armor": 14,
     "attackSpeed": 25
@@ -11,8 +11,8 @@
   {
     "name": "Gashadokuro R Hand",
     "hp": 500,
-    "weakness": "Knifesmanship",
-    "strength": "Axemanship",
+    "weaknesses": "Knifesmanship",
+    "strengths": "Axemanship",
     "damage": 19,
     "armor": 24,
     "attackSpeed": 20
@@ -20,8 +20,8 @@
   {
     "name": "Gashadokuro Left Hand",
     "hp": 500,
-    "weakness": "Hammermanship",
-    "strength": "Swordsmanship",
+    "weaknesses": "Hammermanship",
+    "strengths": "Swordsmanship",
     "damage": 29,
     "armor": 14,
     "attackSpeed": 18
@@ -30,8 +30,8 @@
   {
     "name": "Gashadokuro Spine",
     "hp": 1500,
-    "weakness": "Axemanship",
-    "strength": "Knifesmanship",
+    "weaknesses": "Axemanship",
+    "strengths": "Knifesmanship",
     "damage": 29,
     "armor": 140,
     "attackSpeed": 1000,
@@ -71,8 +71,8 @@
   {
     "name": "Imaynimayn",
     "hp": 5500,
-    "weakness": "Axemanship",
-    "strength": "Knifesmanship",
+    "weaknesses": "Axemanship",
+    "strengths": "Knifesmanship",
     "damage": 29,
     "armor": 140,
     "attackSpeed": 25

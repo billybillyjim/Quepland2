@@ -12,6 +12,9 @@
           "quest": "Grand Theft Camel",
           "minimumQuestProgress": 0,
           "maximumQuestProgress": 0
+        },
+        {
+          "location": "DesertsMouth"
         }
       ]
     },

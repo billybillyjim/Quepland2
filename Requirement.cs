@@ -7,6 +7,8 @@ public class Requirement
 	public string Action { get; set; } = "None";
 	public string Location { get; set; } = "None";
 	public string Quest { get; set; } = "None";
+	public string AreaUnlocked { get; set; } = "None";
+	public bool RequireAreaLocked { get; set; } = false;
 	/// <summary>
 	/// The inclusive minimum step the quest must be at to fulfill the requirement.
 	/// </summary>
@@ -35,6 +37,23 @@ public class Requirement
 		if(Item != "None" && Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(Item)) < ItemAmount)
         {
 			return false;
+        }
+		if(AreaUnlocked != "None")
+        {
+            if (RequireAreaLocked)
+            {
+                if (AreaManager.Instance.GetAreaByName(AreaUnlocked).IsUnlocked)
+                {
+					return false;
+                }
+            }
+            else
+            {
+                if (AreaManager.Instance.GetAreaByName(AreaUnlocked).IsUnlocked == false)
+                {
+					return false;
+                }
+            }
         }
 		if(Quest != "None")
         {

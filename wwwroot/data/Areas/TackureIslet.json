@@ -11,7 +11,12 @@
     "unlockableAreas": [
       {
         "areaURL": "ManayoVillage",
-        "buttonText": "Enter the Village"
+        "buttonText": "Enter the village"
+      },
+      {
+        "areaURL": "EastUragotaDocks",
+        "buttonText": "Sail back to the mainland",
+        "connectsLands": true
       }
 
     ]

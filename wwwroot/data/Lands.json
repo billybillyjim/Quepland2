@@ -8,7 +8,6 @@
       "Cantila Coast",
       "Higashi Woods",
       "Sabbach Waste",
-      "Tackure Islet",
       "Hojkma Isles",
       "Togaru Hills",
       "Hoin River Valley"
@@ -23,5 +22,13 @@
     ],
     "topColor": "#BCE4FF",
     "bottomColor": "#56788F"
+  },
+  {
+    "name": "Arawasago Archipelago",
+    "regionNames": [
+      "Tackure Islet"
+    ],
+    "topColor": "#28daf7",
+    "bottomColor": "#00dbcb"
   }
 ]

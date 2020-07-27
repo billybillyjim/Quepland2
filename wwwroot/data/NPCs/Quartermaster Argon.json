@@ -259,6 +259,18 @@
           "maximumQuestProgress": 89
         }
       ]
+    },
+    {
+      "buttonText": "Please take me to Tackure",
+      "responseText": "UnlockAndGotoArea",
+      "parameter": "Koya Hasa",
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 102,
+          "maximumQuestProgress": 103
+        }
+      ]
     }
   ]
 }

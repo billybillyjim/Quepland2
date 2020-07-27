@@ -12,8 +12,8 @@ public class Monster
 	public int AttackSpeed { get; set; }
 	public int TicksToNextAttack { get; set; }
 	public bool IsDefeated { get; set; }
-	public string Strengths { get; set; }
-	public string Weaknesses { get; set; }
+    public string Strengths { get; set; } = "None";
+    public string Weaknesses { get; set; } = "None";
 	public List<IStatusEffect> CurrentStatusEffects { get; set; } = new List<IStatusEffect>();
     public List<IStatusEffect> StatusEffects { get; set; } = new List<IStatusEffect>();
     public List<StatusEffectData> StatusEffectData { get; set; } = new List<StatusEffectData>();

@@ -5,6 +5,14 @@ public class Dialog
 { 
 	public string ButtonText { get; set; } = "Unset";
 	public string ResponseText { get; set; } = "Unset";
+
+	public string ResponseWithParameter
+    {
+        get
+        {
+			return ResponseText + Parameter;
+		}
+    }
 	public string ItemOnTalk { get; set; } = "None";
 	public string Quest { get; set; } = "None";
 	public string Parameter { get; set; } = "";
@@ -30,7 +38,7 @@ public class Dialog
 	}
 	public void Talk()
     {
-		if (NPCManager.Instance.CustomDialogFunctions.TryGetValue(ResponseText, out Action a))
+		if (NPCManager.Instance.CustomDialogFunctions.TryGetValue(ResponseWithParameter, out Action a))
 		{
 			a.Invoke();
 			return;

@@ -34,17 +34,17 @@ public class NPCManager
         {
             foreach(Dialog d in npc.Dialogs)
             {
-                if(d.ResponseText == "UnlockArea")
+                if(d.ResponseWithParameter == "UnlockArea" + d.Parameter)
                 {
-                    CustomDialogFunctions.Add("UnlockArea", new Action(() => UnlockArea(d.Parameter)));
+                    CustomDialogFunctions.Add("UnlockArea" + d.Parameter, new Action(() => UnlockArea(d.Parameter)));
                 }
-                else if(d.ResponseText == "UnlockAndGotoArea")
+                else if(d.ResponseWithParameter == "UnlockAndGotoArea" + d.Parameter)
                 {
-                    CustomDialogFunctions.Add("UnlockAndGotoArea", new Action(() => UnlockAndGotoArea(d.Parameter)));
+                    CustomDialogFunctions.Add("UnlockAndGotoArea" + d.Parameter, new Action(() => UnlockAndGotoArea(d.Parameter)));
                 }
-                else if (d.ResponseText == "GotoCustomArea")
+                else if (d.ResponseWithParameter == "GotoCustomArea" + d.Parameter)
                 {
-                    CustomDialogFunctions.Add("GotoCustomArea", new Action(() => GotoCustomArea(d.Parameter)));
+                    CustomDialogFunctions.Add("GotoCustomArea" + d.Parameter, new Action(() => GotoCustomArea(d.Parameter)));
                 }
             }
         }

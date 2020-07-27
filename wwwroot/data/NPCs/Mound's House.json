@@ -4,7 +4,24 @@
   "dialogs": [
     {
       "buttonText": "Knock",
-      "responseText": "There's no answer."
+      "responseText": "There's no answer.",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "maximumQuestProgress":0
+        }
+      ]
+    },
+    {
+      "buttonText": "Knock",
+      "responseText": "There's no answer. You'll have to find another way in. You could probably kick this door down if you were strong enough. Otherwise the chimney looks accessible if you were good enough at climbing.",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 15
+        }
+      ]
     },
     {
       "buttonText": "Knock Down the Door",

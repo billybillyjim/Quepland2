@@ -104,6 +104,7 @@
     "image": "City",
     "description": "",
     "areaURL": "CentralTsuCity",
+    "dojoURL": "ZuchiDojo",
     "unlockableAreas": [
       {
         "areaURL": "NorthTsuCity",
@@ -116,14 +117,6 @@
       {
         "areaURL": "TsuCastle",
         "buttonText": "Head to the castle"
-      }
-    ],
-    "buildings": [
-      {
-        "name": "Zuchi Dojo",
-        "buttonText": "Enter the dojo",
-        "url": "ZuchiDojo",
-        "description": "The floor of the main hall is covered in hammers. A large scroll with the character for hammer hangs from the far wall."
       }
     ]
   },
