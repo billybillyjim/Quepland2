@@ -94,9 +94,9 @@ app {
     border-radius:0.25rem;
 }
 .item-view-button {
-    float: right;
-    position: relative;
-    bottom: -57px;
+    right: 5px;
+    position: absolute;
+    bottom: 5px;
 }
 .main {
     flex: 1;

@@ -7,23 +7,20 @@
         width: 350px;
         border: solid black 1px;
         padding: 5px;
+        padding-top:1px;
         margin: 5px;
+        margin-top:30px;
         position:relative;
 ">
         @if (Item != null && !HideValue)
         {
-            <div>@Item.Name</div>
-            <div style="position:absolute;top:30px;line-height:18px;">@Item.Description</div>
+            <div style="font-weight:bold;">@Item.Name</div>
+            <div style="position:relative;line-height:18px;margin-top:-2px;">@Item.Description</div>
             @if ((Item.WeaponInfo != null || Item.ArmorInfo != null) && Item.EquipSlot != "None")
             {
                 if (Item.IsEquipped)
                 {
                     <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Unequip())">Unequip</button></div>
-
-                }
-                else if (Item.HasRequirements())
-                {
-                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Equip())">Equip</button></div>
 
                 }
                 else if (Item.ArmorInfo != null && Item.HasArmorRequirements())
@@ -33,6 +30,11 @@
                 else if (Item.WeaponInfo != null && Item.HasWeaponRequirements())
                 {
                     <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Equip())">Equip</button></div>
+                }
+                else if (Item.HasRequirements() && Item.HasArmorRequirements() == false && Item.HasWeaponRequirements() == false)
+                {
+                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Equip())">Equip</button></div>
+
                 }
                 else
                 {
@@ -45,6 +47,10 @@
                     </div>
 
                 }
+                <div style="position:absolute;top:-28px;left:-1px;">
+                    <ItemStatsComponent Item="@Item"></ItemStatsComponent>
+                </div>
+
 
             }
             @if (Item.FoodInfo != null)
@@ -74,7 +80,7 @@
                 @if (Item.IsSellable)
                 {
                     <button style="position:absolute;left:5px;bottom:5px;" class="btn btn-light" @onclick="@(() => SellItem())">Sell @(Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item)))</button>
-                    @(GetValue())
+                    <div style="position:absolute;left:100px;bottom:5px;">@(GetValue())</div>
 
                 }
             }
@@ -89,10 +95,11 @@
                     }
                     else
                     {
-                        <button style="position:absolute;right:5px;top:5px;opacity:0.5" class="btn btn-light" 
+                        <button style="position:absolute;right:5px;top:5px;opacity:0.5" class="btn btn-light"
                                 @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Selling this would give you nothing in return!")))"
-                                @onmouseout="@(new Action(() => GameState.HideTooltip()))" 
-                                >Sell @(Math.Min(Bank.Instance.Amount, Player.Instance.Inventory.GetNumberOfItem(Item)))</button>
+                                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                            Sell @(Math.Min(Bank.Instance.Amount, Player.Instance.Inventory.GetNumberOfItem(Item)))
+                        </button>
 
                     }
                     <div style="position:absolute;right:5px;top:45px">
@@ -178,6 +185,7 @@
         HideValue = false;
         StateHasChanged();
     }
+
     protected override void OnInitialized()
     {
         GameState.itemViewer = this;

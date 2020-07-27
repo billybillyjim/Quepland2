@@ -134,6 +134,25 @@
     }
   },
   {
+    "name": "Ultimate Test Weapon Two, Electric Boogaloo",
+    "description": "A weapon for testing UI. This is a very long description to tests what the game does when there is a very long description, hopefully its not too bad.",
+    "value": 0,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "R Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 100,
+      "damage": 500,
+      "armorBonus": 100,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 1
+        }
+      ]
+    }
+  },
+  {
     "name": "Bone Blade",
     "description": "A lightweight blade crafted from the remains of a gashadokuro.",
     "value": 1500,
@@ -440,7 +459,7 @@
         }
       ]
     }
-    
+
   },
   {
     "Name": "Bronze Hammer",

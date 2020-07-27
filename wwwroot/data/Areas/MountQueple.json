@@ -142,6 +142,7 @@
     "description": "High up on the mountain you can see down into the valley below. Beyond the hilly forest there appears to be a desert to the east, and a swamp to the west. The path only leads higher up the mountain.",
     "areaURL": "UpperMtQuepleTrail",
     "trappingLocation": true,
+    "dojoURL": "HouchouDojo",
     "unlockableAreas": [
       {
         "areaURL": "EasternTrail",
@@ -191,6 +192,7 @@
     ],
     "monsters": [
       "Bandit",
+      "Two Bandits",
       "Big Bandit"
     ]
   },

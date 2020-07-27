@@ -390,7 +390,10 @@ public class Player
     {
         return equippedItems;
     }
-
+    public GameItem GetItemInSlot(string slot)
+    {
+        return equippedItems.FirstOrDefault(x => x.EquipSlot == slot);
+    }
     public bool HasSkillRequirement(string skill, int lvl)
     {
         Skill s = Skills.FirstOrDefault(x => x.Name == skill);

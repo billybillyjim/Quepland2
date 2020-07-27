@@ -102,6 +102,10 @@
         {
           "itemName": "Shuniku Berries",
           "weight": 5
+        },
+        {
+          "itemName": "Copper Knife",
+          "weight": 1
         }
       ]
     }
@@ -151,6 +155,10 @@
         {
           "itemName": "Hemp",
           "weight": 5
+        },
+        {
+          "itemName": "Copper Hammer",
+          "weight": 1
         }
       ]
     }
@@ -197,6 +205,10 @@
           "itemName": "Mound's House Key",
           "weight": 1,
           "amount": 30
+        },
+        {
+          "itemName": "Copper Sword",
+          "weight": 1
         }
       ]
     }
@@ -218,11 +230,11 @@
         },
         {
           "itemName": "Bandit's Knife",
-          "weight": 7
+          "weight": 3
         },
         {
           "itemName": "Bandit's Boots",
-          "weight": 7
+          "weight": 3
         },
         {
           "itemName": "Coins",
@@ -238,6 +250,14 @@
           "itemName": "Coins",
           "weight": 4,
           "amount": 600
+        },
+        {
+          "itemName": "Copper Axe",
+          "weight": 2
+        },
+        {
+          "itemName": "Copper Sword",
+          "weight": 2
         }
       ]
     }

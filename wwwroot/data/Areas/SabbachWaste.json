@@ -139,6 +139,7 @@
     "image": "Village",
     "description": "A small village resides in the wastes. A dried up creek bed runs past the edge of town.",
     "areaURL": "Leupp",
+    "dojoURL": "OnoDojo",
     "unlockableAreas": [
       {
         "areaURL": "NorthLeupp",

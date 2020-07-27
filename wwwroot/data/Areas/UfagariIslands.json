@@ -1,0 +1,12 @@
+[
+  {
+    "name": "South Ufagari Shore",
+    "id": 120,
+    "image": "Mountain",
+    "description": "The coast of the island is entirely surrounded by rocky hills. You'll have to find some other way to get to it.",
+    "areaURL": "SouthUfagariShore",
+    "actions": [
+      "Go Fishing:Butterfish,Saury,Abalone"
+    ]
+  }
+]

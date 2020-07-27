@@ -50,6 +50,31 @@ public class GameItem
 	public TanningInfo TanningInfo { get; set; }
 	public List<Requirement> Requirements { get; set; } = new List<Requirement>();
 
+	public string GetStats()
+    {
+		string stats = "";
+		int dmg = 0;
+		int arm = 0;
+		int speed = 0;
+		if(WeaponInfo != null)
+        {
+			dmg += WeaponInfo.Damage;
+			arm += WeaponInfo.ArmorBonus;
+			speed = WeaponInfo.AttackSpeed;
+		}
+		if(ArmorInfo != null)
+        {
+			dmg += ArmorInfo.Damage;
+			arm += ArmorInfo.ArmorBonus;
+		}
+		stats = dmg + ",";
+		stats += arm + ",";
+		if(speed > 0)
+        {
+			stats += speed;
+		}
+		return stats;
+    }
 	public List<string> GetRequiredSkills()
     {
 		List<string> reqSkills = new List<string>();
@@ -102,43 +127,39 @@ public class GameItem
 	}
 	public bool HasArmorRequirements()
     {
-		if(ArmorInfo != null)
+		if (ArmorInfo?.WearRequirements == null)
+		{
+			return true;
+		}
+		foreach (Requirement r in ArmorInfo.WearRequirements)
         {
-			if (WeaponInfo.WearRequirements == null)
-			{
-				return true;
-			}
-			foreach (Requirement r in ArmorInfo.WearRequirements)
+			if(r.IsMet() == false)
             {
-				if(r.IsMet() == false)
-                {
-					return false;
-                }
+				return false;
             }
-        }
+            }
+        
 		return true;
     }
 	public bool HasWeaponRequirements()
     {
-		if (WeaponInfo != null)
+		if(WeaponInfo?.WearRequirements == null)
+        {
+			return true;
+        }
+		foreach (Requirement r in WeaponInfo.WearRequirements)
 		{
-			if(WeaponInfo.WearRequirements == null)
-            {
-				return true;
-            }
-			foreach (Requirement r in WeaponInfo.WearRequirements)
+			if (r.IsMet() == false)
 			{
-				if (r.IsMet() == false)
-				{
-					return false;
-				}
+				return false;
 			}
 		}
+		
 		return true;
 	}
 	public string GetRequirementTooltip(bool showAll)
 	{
-		if (HasRequirements() && !showAll)
+		if (HasWeaponRequirements() && HasArmorRequirements() && HasRequirements() && !showAll)
 		{
 			return "";
 		}
