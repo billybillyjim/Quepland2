@@ -93,7 +93,7 @@ public class WorldTester
             bool IngredientsIncluded = true;
             foreach(Ingredient i in r.Ingredients)
             {
-                GameItem item = ItemManager.Instance.GetItemByName(i.Item);
+                GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
                 if (IncludedItems.Contains(item) == false)
                 {
                     if(item == null)
@@ -143,7 +143,7 @@ public class WorldTester
             bool IngredientsIncluded = true;
             foreach (Ingredient i in r.Ingredients)
             {
-                GameItem item = ItemManager.Instance.GetItemByName(i.Item);
+                GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
                 if (IncludedItems.Contains(item) == false)
                 {
                     IngredientsIncluded = false;
@@ -167,7 +167,7 @@ public class WorldTester
             bool IngredientsIncluded = true;
             foreach (Ingredient i in r.Ingredients)
             {
-                GameItem item = ItemManager.Instance.GetItemByName(i.Item);
+                GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
                 if (IncludedItems.Contains(item) == false)
                 {
                     IngredientsIncluded = false;
@@ -188,7 +188,7 @@ public class WorldTester
             bool IngredientsIncluded = true;
             foreach (Ingredient i in r.Ingredients)
             {
-                GameItem item = ItemManager.Instance.GetItemByName(i.Item);
+                GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
                 if (IncludedItems.Contains(item) == false)
                 {
                     Console.WriteLine("Didn't add " + item + ". It lacked ingredient:" + i.Item);
@@ -206,7 +206,7 @@ public class WorldTester
             bool IngredientsIncluded = true;
             foreach (Ingredient i in r.Ingredients)
             {
-                GameItem item = ItemManager.Instance.GetItemByName(i.Item);
+                GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
                 if (IncludedItems.Contains(item) == false)
                 {
                     IngredientsIncluded = false;

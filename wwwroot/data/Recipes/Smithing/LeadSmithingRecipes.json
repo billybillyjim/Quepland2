@@ -3,7 +3,7 @@
     "outputItemName": "Molten Lead Bar",
     "ingredients": [
       {
-        "item": "Lead Ore"
+        "itemName": "Lead Ore"
       }
     ]
   },
@@ -11,7 +11,7 @@
     "outputItemName": "Molten Lead Bar",
     "ingredients": [
       {
-        "item": "Lead Bar"
+        "itemName": "Lead Bar"
       }
     ]
   },
@@ -19,7 +19,7 @@
     "outputItemName": "Lead Knife",
     "ingredients": [
       {
-        "item": "Molten Lead Bar"
+        "itemName": "Molten Lead Bar"
       }
     ]
   },
@@ -27,7 +27,7 @@
     "outputItemName": "Lead Sword",
     "ingredients": [
       {
-        "item": "Molten Lead Bar"
+        "itemName": "Molten Lead Bar"
       }
     ]
   },
@@ -35,7 +35,7 @@
     "outputItemName": "Lead Axe",
     "ingredients": [
       {
-        "item": "Molten Lead Bar"
+        "itemName": "Molten Lead Bar"
       }
     ]
   },
@@ -43,7 +43,7 @@
     "outputItemName": "Lesser Lead Hammer",
     "ingredients": [
       {
-        "item": "Molten Lead Bar"
+        "itemName": "Molten Lead Bar"
       }
     ]
   },
@@ -51,10 +51,10 @@
     "outputItemName": "Greater Lead Hammer",
     "ingredients": [
       {
-        "item": "Molten Lead Bar"
+        "itemName": "Molten Lead Bar"
       },
       {
-        "item": "Molten Lead Bar"
+        "itemName": "Molten Lead Bar"
       }
     ]
   },
@@ -62,7 +62,7 @@
     "outputItemName": "Lead Bar",
     "ingredients": [
       {
-        "item": "Molten Lead Bar"
+        "itemName": "Molten Lead Bar"
       }
     ]
   },
@@ -70,7 +70,7 @@
     "outputItemName": "Lead Arrowtips",
     "ingredients": [
       {
-        "item": "Molten Lead Bar"
+        "itemName": "Molten Lead Bar"
       }
     ],
     "outputAmount": 10

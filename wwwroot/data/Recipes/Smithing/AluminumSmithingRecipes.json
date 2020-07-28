@@ -3,7 +3,7 @@
     "outputItemName": "Molten Aluminum Bar",
     "ingredients": [
       {
-        "item": "Aluminum Ore"
+        "itemName": "Aluminum Ore"
       }
     ]
   },
@@ -11,7 +11,7 @@
     "outputItemName": "Molten Aluminum Bar",
     "ingredients": [
       {
-        "item": "Aluminum Bar"
+        "itemName": "Aluminum Bar"
       }
     ]
   },
@@ -19,7 +19,7 @@
     "outputItemName": "Aluminum Knife",
     "ingredients": [
       {
-        "item": "Molten Aluminum Bar"
+        "itemName": "Molten Aluminum Bar"
       }
     ]
   },
@@ -27,7 +27,7 @@
     "outputItemName": "Aluminum Sword",
     "ingredients": [
       {
-        "item": "Molten Aluminum Bar"
+        "itemName": "Molten Aluminum Bar"
       }
     ]
   },
@@ -35,7 +35,7 @@
     "outputItemName": "Aluminum Axe",
     "ingredients": [
       {
-        "item": "Molten Aluminum Bar"
+        "itemName": "Molten Aluminum Bar"
       }
     ]
   },
@@ -43,7 +43,7 @@
     "outputItemName": "Aluminum Hammer",
     "ingredients": [
       {
-        "item": "Molten Aluminum Bar"
+        "itemName": "Molten Aluminum Bar"
       }
     ]
   },
@@ -51,7 +51,7 @@
     "outputItemName": "Aluminum Bar",
     "ingredients": [
       {
-        "item": "Molten Aluminum Bar"
+        "itemName": "Molten Aluminum Bar"
       }
     ]
   },
@@ -59,7 +59,7 @@
     "outputItemName": "Aluminum Arrowtips",
     "ingredients": [
       {
-        "item": "Molten Aluminum Bar"
+        "itemName": "Molten Aluminum Bar"
       }
     ],
     "outputAmount": 10

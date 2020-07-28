@@ -3,11 +3,11 @@
     "outputItemName": "Rabbit Gloves",
     "ingredients": [
       {
-        "item": "Rabbit Leather",
+        "itemName": "Rabbit Leather",
         "amount": 1
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -17,11 +17,11 @@
     "outputItemName": "Rabbit Hat",
     "ingredients": [
       {
-        "item": "Rabbit Leather",
+        "itemName": "Rabbit Leather",
         "amount": 2
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -31,11 +31,11 @@
     "outputItemName": "Rabbit Boots",
     "ingredients": [
       {
-        "item": "Rabbit Leather",
+        "itemName": "Rabbit Leather",
         "amount": 2
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -45,11 +45,11 @@
     "outputItemName": "Rabbit Pants",
     "ingredients": [
       {
-        "item": "Rabbit Leather",
+        "itemName": "Rabbit Leather",
         "amount": 3
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -59,11 +59,11 @@
     "outputItemName": "Rabbit Shirt",
     "ingredients": [
       {
-        "item": "Rabbit Leather",
+        "itemName": "Rabbit Leather",
         "amount": 4
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -73,11 +73,11 @@
     "outputItemName": "Deer Gloves",
     "ingredients": [
       {
-        "item": "Deer Leather",
+        "itemName": "Deer Leather",
         "amount": 1
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -87,11 +87,11 @@
     "outputItemName": "Deer Hat",
     "ingredients": [
       {
-        "item": "Deer Leather",
+        "itemName": "Deer Leather",
         "amount": 2
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -101,11 +101,11 @@
     "outputItemName": "Deer Boots",
     "ingredients": [
       {
-        "item": "Deer Leather",
+        "itemName": "Deer Leather",
         "amount": 2
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -115,11 +115,11 @@
     "outputItemName": "Deer Pants",
     "ingredients": [
       {
-        "item": "Deer Leather",
+        "itemName": "Deer Leather",
         "amount": 3
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -129,11 +129,11 @@
     "outputItemName": "Deer Shirt",
     "ingredients": [
       {
-        "item": "Deer Leather",
+        "itemName": "Deer Leather",
         "amount": 4
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -143,11 +143,11 @@
     "outputItemName": "Wild Boar Gloves",
     "ingredients": [
       {
-        "item": "Wild Boar Leather",
+        "itemName": "Wild Boar Leather",
         "amount": 1
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -157,11 +157,11 @@
     "outputItemName": "Wild Boar Hat",
     "ingredients": [
       {
-        "item": "Wild Boar Leather",
+        "itemName": "Wild Boar Leather",
         "amount": 2
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -171,11 +171,11 @@
     "outputItemName": "Wild Boar Boots",
     "ingredients": [
       {
-        "item": "Wild Boar Leather",
+        "itemName": "Wild Boar Leather",
         "amount": 2
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -185,11 +185,11 @@
     "outputItemName": "Wild Boar Pants",
     "ingredients": [
       {
-        "item": "Wild Boar Leather",
+        "itemName": "Wild Boar Leather",
         "amount": 3
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -199,11 +199,11 @@
     "outputItemName": "Wild Boar Shirt",
     "ingredients": [
       {
-        "item": "Wild Boar Leather",
+        "itemName": "Wild Boar Leather",
         "amount": 4
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -213,11 +213,11 @@
     "outputItemName": "Black Bear Gloves",
     "ingredients": [
       {
-        "item": "Black Bear Leather",
+        "itemName": "Black Bear Leather",
         "amount": 1
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -227,11 +227,11 @@
     "outputItemName": "Black Bear Hat",
     "ingredients": [
       {
-        "item": "Black Bear Leather",
+        "itemName": "Black Bear Leather",
         "amount": 2
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -241,11 +241,11 @@
     "outputItemName": "Black Bear Boots",
     "ingredients": [
       {
-        "item": "Black Bear Leather",
+        "itemName": "Black Bear Leather",
         "amount": 2
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -255,11 +255,11 @@
     "outputItemName": "Black Bear Pants",
     "ingredients": [
       {
-        "item": "Black Bear Leather",
+        "itemName": "Black Bear Leather",
         "amount": 3
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -269,11 +269,11 @@
     "outputItemName": "Black Bear Shirt",
     "ingredients": [
       {
-        "item": "Black Bear Leather",
+        "itemName": "Black Bear Leather",
         "amount": 4
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -283,11 +283,11 @@
     "outputItemName": "Grizzly Bear Gloves",
     "ingredients": [
       {
-        "item": "Grizzly Bear Leather",
+        "itemName": "Grizzly Bear Leather",
         "amount": 1
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -297,11 +297,11 @@
     "outputItemName": "Grizzly Bear Hat",
     "ingredients": [
       {
-        "item": "Grizzly Bear Leather",
+        "itemName": "Grizzly Bear Leather",
         "amount": 2
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -311,11 +311,11 @@
     "outputItemName": "Grizzly Bear Boots",
     "ingredients": [
       {
-        "item": "Grizzly Bear Leather",
+        "itemName": "Grizzly Bear Leather",
         "amount": 2
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -325,11 +325,11 @@
     "outputItemName": "Grizzly Bear Pants",
     "ingredients": [
       {
-        "item": "Grizzly Bear Leather",
+        "itemName": "Grizzly Bear Leather",
         "amount": 3
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -339,11 +339,11 @@
     "outputItemName": "Grizzly Bear Shirt",
     "ingredients": [
       {
-        "item": "Grizzly Bear Leather",
+        "itemName": "Grizzly Bear Leather",
         "amount": 4
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -353,11 +353,11 @@
     "outputItemName": "Moose Gloves",
     "ingredients": [
       {
-        "item": "Moose Leather",
+        "itemName": "Moose Leather",
         "amount": 1
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -367,11 +367,11 @@
     "outputItemName": "Moose Hat",
     "ingredients": [
       {
-        "item": "Moose Leather",
+        "itemName": "Moose Leather",
         "amount": 2
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -381,11 +381,11 @@
     "outputItemName": "Moose Boots",
     "ingredients": [
       {
-        "item": "Moose Leather",
+        "itemName": "Moose Leather",
         "amount": 2
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -395,11 +395,11 @@
     "outputItemName": "Moose Pants",
     "ingredients": [
       {
-        "item": "Moose Leather",
+        "itemName": "Moose Leather",
         "amount": 3
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -409,11 +409,11 @@
     "outputItemName": "Moose Shirt",
     "ingredients": [
       {
-        "item": "Moose Leather",
+        "itemName": "Moose Leather",
         "amount": 4
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -423,11 +423,11 @@
     "outputItemName": "Bison Gloves",
     "ingredients": [
       {
-        "item": "Bison Leather",
+        "itemName": "Bison Leather",
         "amount": 1
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -437,11 +437,11 @@
     "outputItemName": "Bison Hat",
     "ingredients": [
       {
-        "item": "Bison Leather",
+        "itemName": "Bison Leather",
         "amount": 2
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -451,11 +451,11 @@
     "outputItemName": "Bison Boots",
     "ingredients": [
       {
-        "item": "Bison Leather",
+        "itemName": "Bison Leather",
         "amount": 2
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -465,11 +465,11 @@
     "outputItemName": "Bison Pants",
     "ingredients": [
       {
-        "item": "Bison Leather",
+        "itemName": "Bison Leather",
         "amount": 3
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],
@@ -479,11 +479,11 @@
     "outputItemName": "Bison Shirt",
     "ingredients": [
       {
-        "item": "Bison Leather",
+        "itemName": "Bison Leather",
         "amount": 4
       },
       {
-        "item": "Leatherworking Toolkit",
+        "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
       }
     ],

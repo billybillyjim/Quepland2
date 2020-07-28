@@ -3,10 +3,10 @@
     "outputItemName": "Rice Roll",
     "ingredients": [
       {
-        "item": "Seaweed"
+        "itemName": "Seaweed"
       },
       {
-        "item": "Rice"
+        "itemName": "Rice"
       }
     ],
     "maxOutputsPerAction": 1,
@@ -16,10 +16,10 @@
     "outputItemName": "Minnow Roll",
     "ingredients": [
       {
-        "item": "Minnows"
+        "itemName": "Minnows"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:15",
@@ -35,10 +35,10 @@
     "outputItemName": "Sunfish Roll",
     "ingredients": [
       {
-        "item": "Sunfish"
+        "itemName": "Sunfish"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:25",
@@ -54,10 +54,10 @@
     "outputItemName": "Manta Ray Roll",
     "ingredients": [
       {
-        "item": "Manta Ray"
+        "itemName": "Manta Ray"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:240",
@@ -73,10 +73,10 @@
     "outputItemName": "Crab Roll",
     "ingredients": [
       {
-        "item": "Crab"
+        "itemName": "Crab"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:73",
@@ -92,10 +92,10 @@
     "outputItemName": "Angry Crab Roll",
     "ingredients": [
       {
-        "item": "Angry Crab"
+        "itemName": "Angry Crab"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:73",
@@ -111,10 +111,10 @@
     "outputItemName": "Puffer Fish Roll",
     "ingredients": [
       {
-        "item": "Puffer Fish"
+        "itemName": "Puffer Fish"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:50",
@@ -130,10 +130,10 @@
     "outputItemName": "Carp Roll",
     "ingredients": [
       {
-        "item": "Carp"
+        "itemName": "Carp"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:130",
@@ -149,10 +149,10 @@
     "outputItemName": "Icefish Roll",
     "ingredients": [
       {
-        "item": "Icefish"
+        "itemName": "Icefish"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:20",
@@ -168,10 +168,10 @@
     "outputItemName": "Shrimp Roll",
     "ingredients": [
       {
-        "item": "Shrimp"
+        "itemName": "Shrimp"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:40",
@@ -187,10 +187,10 @@
     "outputItemName": "Scallop Roll",
     "ingredients": [
       {
-        "item": "Scallop"
+        "itemName": "Scallop"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:50",
@@ -206,10 +206,10 @@
     "outputItemName": "Sardine Roll",
     "ingredients": [
       {
-        "item": "Sardine"
+        "itemName": "Sardine"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:40",
@@ -225,10 +225,10 @@
     "outputItemName": "Abalone Roll",
     "ingredients": [
       {
-        "item": "Abalone"
+        "itemName": "Abalone"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:60",
@@ -244,10 +244,10 @@
     "outputItemName": "Saury Roll",
     "ingredients": [
       {
-        "item": "Saury"
+        "itemName": "Saury"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:90",
@@ -263,10 +263,10 @@
     "outputItemName": "Butterfish Roll",
     "ingredients": [
       {
-        "item": "Butterfish"
+        "itemName": "Butterfish"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:90",
@@ -282,10 +282,10 @@
     "outputItemName": "Shad Roll",
     "ingredients": [
       {
-        "item": "Shad"
+        "itemName": "Shad"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:110",
@@ -301,10 +301,10 @@
     "outputItemName": "Squid Roll",
     "ingredients": [
       {
-        "item": "Squid"
+        "itemName": "Squid"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:140",
@@ -320,10 +320,10 @@
     "outputItemName": "Salmon Roll",
     "ingredients": [
       {
-        "item": "Salmon"
+        "itemName": "Salmon"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:200",
@@ -339,10 +339,10 @@
     "outputItemName": "Tuna Roll",
     "ingredients": [
       {
-        "item": "Tuna"
+        "itemName": "Tuna"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:350",
@@ -358,10 +358,10 @@
     "outputItemName": "Yellowtail Roll",
     "ingredients": [
       {
-        "item": "Yellowtail"
+        "itemName": "Yellowtail"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:420",
@@ -377,10 +377,10 @@
     "outputItemName": "Giant Clam Roll",
     "ingredients": [
       {
-        "item": "Giant Clam"
+        "itemName": "Giant Clam"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:700",
@@ -396,10 +396,10 @@
     "outputItemName": "Big Tuna Roll",
     "ingredients": [
       {
-        "item": "Big Tuna"
+        "itemName": "Big Tuna"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:900",
@@ -415,10 +415,10 @@
     "outputItemName": "Swordfish Roll",
     "ingredients": [
       {
-        "item": "Swordfish"
+        "itemName": "Swordfish"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:1200",
@@ -434,10 +434,10 @@
     "outputItemName": "Flounder Roll",
     "ingredients": [
       {
-        "item": "Flounder"
+        "itemName": "Flounder"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:1400",
@@ -453,10 +453,10 @@
     "outputItemName": "Sleeper Shark Roll",
     "ingredients": [
       {
-        "item": "Sleeper Shark"
+        "itemName": "Sleeper Shark"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:1600",
@@ -472,10 +472,10 @@
     "outputItemName": "Halibut Roll",
     "ingredients": [
       {
-        "item": "Halibut"
+        "itemName": "Halibut"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:1800",
@@ -491,10 +491,10 @@
     "outputItemName": "Octopus Roll",
     "ingredients": [
       {
-        "item": "Giant Octopus"
+        "itemName": "Giant Octopus"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:2000",
@@ -510,10 +510,10 @@
     "outputItemName": "Eqalussuaq Roll",
     "ingredients": [
       {
-        "item": "Eqalussuaq"
+        "itemName": "Eqalussuaq"
       },
       {
-        "item": "Rice Roll"
+        "itemName": "Rice Roll"
       }
     ],
     "experienceGained": "Culinary Arts:2200",

@@ -27,13 +27,13 @@ public class ItemManager
     /// <summary>
     /// Stores the item by uniqueID, for ensuring duplicates are treated the same.
     /// </summary>
-    public Dictionary<string, GameItem> UniqueIDLookupDic = new Dictionary<string, GameItem>();
+    public Dictionary<string, GameItem> UniqueIDLookupDic { get; set; } = new Dictionary<string, GameItem>();
     public List<Recipe> Recipes = new List<Recipe>();
     public List<Recipe> SmithingRecipes = new List<Recipe>();
     public List<string> EquipmentSlots = new List<string>();
     public List<MinigameDropTable> MinigameDropTables = new List<MinigameDropTable>();
-    public static List<string> FileNames = new List<string> { "Weapons", "Bows", "Armors", "Sushi", "Arrows", "QuestItems", "General", "Elements", "Hunting", "Fishing", "Bars", "Ores", "Arrowtips", "WoodworkingItems", "Logs" };
-    public static List<string> Colors = new List<string> { "#DC5958", "#33FF88", "#3367d6", "#ffa7f4", "#c9ad83", "gray", "#ffd066", "#eadf92", "brown", "lightblue", "silver", "dimgray", "#F1C40F", "sienna", "tan" };
+    public static List<string> FileNames = new List<string> { "Weapons", "Bows", "Armors", "Sushi", "Arrows", "QuestItems", "General", "Elements", "Hunting", "Fishing", "Bars", "Ores", "Gems", "Arrowtips", "WoodworkingItems", "Logs" };
+    public static List<string> Colors = new List<string> { "#DC5958", "#33FF88", "#3367d6", "#ffa7f4", "#c9ad83", "gray", "#ffd066", "#eadf92", "brown", "lightblue", "silver", "dimgray", "#999999" , "#F1C40F", "sienna", "tan" };
     public static int baseID;
     public static readonly int MaxItemsPerFile = 100;
     public bool IsSelling = false;
@@ -56,7 +56,11 @@ public class ItemManager
                 count++;
                 i.Category = file;
                 i.PrimaryColor = Colors[colorIter];
-                ItemLookupDic.Add(i.Name, i);
+                if(ItemLookupDic.ContainsKey(i.Name) == false)
+                {
+                    ItemLookupDic.Add(i.Name, i);
+                }
+                
                 UniqueIDLookupDic.Add(i.UniqueID, i);
                 if(i.EquipSlot != "None")
                 {
@@ -109,25 +113,32 @@ public class ItemManager
 
     public GameItem GetItemByName(string name)
     {
-        return ItemLookupDic[name];
+        return GetItemByUniqueID(ItemLookupDic[name].UniqueID);
     }
     public GameItem GetItemByUniqueID(string uniqueID)
     {
-        Console.WriteLine("Looking for item with ID:" + uniqueID);
+        //Console.WriteLine("Looking for item with ID:" + uniqueID);
         return UniqueIDLookupDic[uniqueID];
     }
-
+    public GameItem GetItem(string name, int charges, string parameter)
+    {
+        return UniqueIDLookupDic[name + "" + charges + parameter];
+    }
 
     public GameItem GetCopyOfItem(string name)
     {
-        return Items.FirstOrDefault(x => x.Name == name).Copy();
+        return GetItemByName(name).Copy();
     }
 
     public Recipe GetUnpackingRecipe(GameItem item)
     {
+        if(item == null)
+        {
+            return null;
+        }
         foreach (Recipe r in Recipes)
         {
-            if (r.Ingredients.Count == 1 && r.Ingredients[0].Item == item.Name)
+            if (r.Ingredients.Count == 1 && r.Ingredients[0].Item.Name == item.Name)
             {
                 return r;
             }

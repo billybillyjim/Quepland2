@@ -244,6 +244,8 @@ public class GameItem
 		copy.EnabledActions = EnabledActions;
 		copy.Category = Category;
 		copy.Tabs = Tabs;
+		copy.Parameter = Parameter;
+		copy.Charges = Charges;
 
 		copy.Icon = Icon;
 		copy.EquipSlot = EquipSlot;

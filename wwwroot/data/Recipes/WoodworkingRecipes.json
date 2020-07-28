@@ -3,10 +3,10 @@
     "outputItemName": "White Pine Arrow Shafts",
     "ingredients": [
       {
-        "item": "White Pine Logs"
+        "itemName": "White Pine Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -24,10 +24,10 @@
     "outputItemName": "Poplar Arrow Shafts",
     "ingredients": [
       {
-        "item": "Poplar Logs"
+        "itemName": "Poplar Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -45,10 +45,10 @@
     "outputItemName": "Oak Arrow Shafts",
     "ingredients": [
       {
-        "item": "Oak Logs"
+        "itemName": "Oak Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -66,10 +66,10 @@
     "outputItemName": "Maple Arrow Shafts",
     "ingredients": [
       {
-        "item": "Sugar Maple Logs"
+        "itemName": "Sugar Maple Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -87,10 +87,10 @@
     "outputItemName": "Birch Arrow Shafts",
     "ingredients": [
       {
-        "item": "Birch Logs"
+        "itemName": "Birch Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -108,10 +108,10 @@
     "outputItemName": "Mesquite Arrow Shafts",
     "ingredients": [
       {
-        "item": "Mesquite Logs"
+        "itemName": "Mesquite Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -129,10 +129,10 @@
     "outputItemName": "Mahogany Arrow Shafts",
     "ingredients": [
       {
-        "item": "Mahogany Logs"
+        "itemName": "Mahogany Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -150,10 +150,10 @@
     "outputItemName": "Ironwood Arrow Shafts",
     "ingredients": [
       {
-        "item": "Ironwood Logs"
+        "itemName": "Ironwood Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -171,10 +171,10 @@
     "outputItemName": "Snakewood Arrow Shafts",
     "ingredients": [
       {
-        "item": "Snakewood Logs"
+        "itemName": "Snakewood Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -192,10 +192,10 @@
     "outputItemName": "Lignum Vitae Arrow Shafts",
     "ingredients": [
       {
-        "item": "Lignum Vitae Logs"
+        "itemName": "Lignum Vitae Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -213,10 +213,10 @@
     "outputItemName": "Buloke Arrow Shafts",
     "ingredients": [
       {
-        "item": "Buloke Logs"
+        "itemName": "Buloke Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -234,10 +234,10 @@
     "outputItemName": "Ice Arrow Shafts",
     "ingredients": [
       {
-        "item": "Ice Logs"
+        "itemName": "Ice Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -255,10 +255,10 @@
     "outputItemName": "Great Arrow Shafts",
     "ingredients": [
       {
-        "item": "Great Tree Logs"
+        "itemName": "Great Tree Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -276,10 +276,10 @@
     "outputItemName": "Headless White Pine Arrows",
     "ingredients": [
       {
-        "item": "White Pine Arrow Shafts"
+        "itemName": "White Pine Arrow Shafts"
       },
       {
-        "item": "Feather"
+        "itemName": "Feather"
       }
     ],
     "experienceGained": "Woodworking:1",
@@ -295,10 +295,10 @@
     "outputItemName": "Headless Poplar Arrows",
     "ingredients": [
       {
-        "item": "Poplar Arrow Shafts"
+        "itemName": "Poplar Arrow Shafts"
       },
       {
-        "item": "Feather"
+        "itemName": "Feather"
       }
     ],
     "experienceGained": "Woodworking:2",
@@ -314,10 +314,10 @@
     "outputItemName": "Headless Oak Arrows",
     "ingredients": [
       {
-        "item": "Oak Arrow Shafts"
+        "itemName": "Oak Arrow Shafts"
       },
       {
-        "item": "Feather"
+        "itemName": "Feather"
       }
     ],
     "experienceGained": "Woodworking:3",
@@ -333,10 +333,10 @@
     "outputItemName": "Headless Maple Arrows",
     "ingredients": [
       {
-        "item": "Maple Arrow Shafts"
+        "itemName": "Maple Arrow Shafts"
       },
       {
-        "item": "Feather"
+        "itemName": "Feather"
       }
     ],
     "experienceGained": "Woodworking:5",
@@ -352,10 +352,10 @@
     "outputItemName": "Headless Birch Arrows",
     "ingredients": [
       {
-        "item": "Birch Arrow Shafts"
+        "itemName": "Birch Arrow Shafts"
       },
       {
-        "item": "Feather"
+        "itemName": "Feather"
       }
     ],
     "experienceGained": "Woodworking:5",
@@ -371,10 +371,10 @@
     "outputItemName": "Headless Mesquite Arrows",
     "ingredients": [
       {
-        "item": "Mesquite Arrow Shafts"
+        "itemName": "Mesquite Arrow Shafts"
       },
       {
-        "item": "Feather"
+        "itemName": "Feather"
       }
     ],
     "experienceGained": "Woodworking:6",
@@ -390,10 +390,10 @@
     "outputItemName": "Headless Mahogany Arrows",
     "ingredients": [
       {
-        "item": "Mahogany Arrow Shafts"
+        "itemName": "Mahogany Arrow Shafts"
       },
       {
-        "item": "Feather"
+        "itemName": "Feather"
       }
     ],
     "experienceGained": "Woodworking:7",
@@ -409,10 +409,10 @@
     "outputItemName": "Headless Ironwood Arrows",
     "ingredients": [
       {
-        "item": "Ironwood Arrow Shafts"
+        "itemName": "Ironwood Arrow Shafts"
       },
       {
-        "item": "Feather"
+        "itemName": "Feather"
       }
     ],
     "experienceGained": "Woodworking:8",
@@ -428,10 +428,10 @@
     "outputItemName": "Headless Snakewood Arrows",
     "ingredients": [
       {
-        "item": "Snakewood Arrow Shafts"
+        "itemName": "Snakewood Arrow Shafts"
       },
       {
-        "item": "Feather"
+        "itemName": "Feather"
       }
     ],
     "experienceGained": "Woodworking:9",
@@ -447,10 +447,10 @@
     "outputItemName": "Headless Lignum Vitae Arrows",
     "ingredients": [
       {
-        "item": "Lignum Vitae Arrow Shafts"
+        "itemName": "Lignum Vitae Arrow Shafts"
       },
       {
-        "item": "Feather"
+        "itemName": "Feather"
       }
     ],
     "experienceGained": "Woodworking:10",
@@ -466,10 +466,10 @@
     "outputItemName": "Headless Buloke Arrows",
     "ingredients": [
       {
-        "item": "Buloke Arrow Shafts"
+        "itemName": "Buloke Arrow Shafts"
       },
       {
-        "item": "Feather"
+        "itemName": "Feather"
       }
     ],
     "experienceGained": "Woodworking:12",
@@ -485,10 +485,10 @@
     "outputItemName": "Headless Ice Arrows",
     "ingredients": [
       {
-        "item": "Ice Arrow Shafts"
+        "itemName": "Ice Arrow Shafts"
       },
       {
-        "item": "Feather"
+        "itemName": "Feather"
       }
     ],
     "experienceGained": "Woodworking:15",
@@ -504,10 +504,10 @@
     "outputItemName": "Headless Great Arrows",
     "ingredients": [
       {
-        "item": "Great Arrow Shafts"
+        "itemName": "Great Arrow Shafts"
       },
       {
-        "item": "Feather"
+        "itemName": "Feather"
       }
     ],
     "experienceGained": "Woodworking:30",
@@ -523,7 +523,7 @@
     "outputItemName": "Bow String",
     "ingredients": [
       {
-        "item": "Hemp"
+        "itemName": "Hemp"
       }
     ],
     "maxOutputsPerAction": 1,
@@ -533,10 +533,10 @@
     "outputItemName": "White Pine Bow(Unstrung)",
     "ingredients": [
       {
-        "item": "White Pine Logs"
+        "itemName": "White Pine Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -554,10 +554,10 @@
     "outputItemName": "White Pine Bow",
     "ingredients": [
       {
-        "item": "White Pine Bow(Unstrung)"
+        "itemName": "White Pine Bow(Unstrung)"
       },
       {
-        "item": "Bow String"
+        "itemName": "Bow String"
       }
     ],
     "experienceGained": "Woodworking:5",
@@ -574,10 +574,10 @@
     "outputItemName": "Poplar Bow(Unstrung)",
     "ingredients": [
       {
-        "item": "Poplar Logs"
+        "itemName": "Poplar Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -595,10 +595,10 @@
     "outputItemName": "Poplar Bow",
     "ingredients": [
       {
-        "item": "Poplar Bow(Unstrung)"
+        "itemName": "Poplar Bow(Unstrung)"
       },
       {
-        "item": "Bow String"
+        "itemName": "Bow String"
       }
     ],
     "experienceGained": "Woodworking:7",
@@ -615,10 +615,10 @@
     "outputItemName": "Oak Bow(Unstrung)",
     "ingredients": [
       {
-        "item": "Oak Logs"
+        "itemName": "Oak Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -636,10 +636,10 @@
     "outputItemName": "Oak Bow",
     "ingredients": [
       {
-        "item": "Oak Bow(Unstrung)"
+        "itemName": "Oak Bow(Unstrung)"
       },
       {
-        "item": "Bow String"
+        "itemName": "Bow String"
       }
     ],
     "experienceGained": "Woodworking:15",
@@ -656,10 +656,10 @@
     "outputItemName": "Sugar Maple Bow(Unstrung)",
     "ingredients": [
       {
-        "item": "Sugar Maple Logs"
+        "itemName": "Sugar Maple Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -677,10 +677,10 @@
     "outputItemName": "Sugar Maple Bow",
     "ingredients": [
       {
-        "item": "Sugar Maple Bow(Unstrung)"
+        "itemName": "Sugar Maple Bow(Unstrung)"
       },
       {
-        "item": "Bow String"
+        "itemName": "Bow String"
       }
     ],
     "experienceGained": "Woodworking:25",
@@ -697,10 +697,10 @@
     "outputItemName": "Birch Bow(Unstrung)",
     "ingredients": [
       {
-        "item": "Birch Logs"
+        "itemName": "Birch Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -718,10 +718,10 @@
     "outputItemName": "Birch Bow",
     "ingredients": [
       {
-        "item": "Birch Bow(Unstrung)"
+        "itemName": "Birch Bow(Unstrung)"
       },
       {
-        "item": "Bow String"
+        "itemName": "Bow String"
       }
     ],
     "experienceGained": "Woodworking:20",
@@ -738,10 +738,10 @@
     "outputItemName": "Mesquite Bow(Unstrung)",
     "ingredients": [
       {
-        "item": "Mesquite Logs"
+        "itemName": "Mesquite Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -759,10 +759,10 @@
     "outputItemName": "Mesquite Bow",
     "ingredients": [
       {
-        "item": "Mesquite Bow(Unstrung)"
+        "itemName": "Mesquite Bow(Unstrung)"
       },
       {
-        "item": "Bow String"
+        "itemName": "Bow String"
       }
     ],
     "experienceGained": "Woodworking:35",
@@ -779,10 +779,10 @@
     "outputItemName": "Mahogany Bow(Unstrung)",
     "ingredients": [
       {
-        "item": "Mahogany Logs"
+        "itemName": "Mahogany Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -800,10 +800,10 @@
     "outputItemName": "Mahogany Bow",
     "ingredients": [
       {
-        "item": "Mahogany Bow(Unstrung)"
+        "itemName": "Mahogany Bow(Unstrung)"
       },
       {
-        "item": "Bow String"
+        "itemName": "Bow String"
       }
     ],
     "experienceGained": "Woodworking:40",
@@ -820,10 +820,10 @@
     "outputItemName": "Ironwood Bow(Unstrung)",
     "ingredients": [
       {
-        "item": "Ironwood Logs"
+        "itemName": "Ironwood Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -841,10 +841,10 @@
     "outputItemName": "Ironwood Bow",
     "ingredients": [
       {
-        "item": "Ironwood Bow(Unstrung)"
+        "itemName": "Ironwood Bow(Unstrung)"
       },
       {
-        "item": "Bow String"
+        "itemName": "Bow String"
       }
     ],
     "experienceGained": "Woodworking:60",
@@ -861,10 +861,10 @@
     "outputItemName": "Snakewood Bow(Unstrung)",
     "ingredients": [
       {
-        "item": "Snakewood Logs"
+        "itemName": "Snakewood Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -882,10 +882,10 @@
     "outputItemName": "Snakewood Bow",
     "ingredients": [
       {
-        "item": "Snakewood Bow(Unstrung)"
+        "itemName": "Snakewood Bow(Unstrung)"
       },
       {
-        "item": "Bow String"
+        "itemName": "Bow String"
       }
     ],
     "experienceGained": "Woodworking:80",
@@ -902,10 +902,10 @@
     "outputItemName": "Lignum Vitae Bow(Unstrung)",
     "ingredients": [
       {
-        "item": "Lignum Vitae Logs"
+        "itemName": "Lignum Vitae Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -923,10 +923,10 @@
     "outputItemName": "Lignum Vitae Bow",
     "ingredients": [
       {
-        "item": "Lignum Vitae Bow(Unstrung)"
+        "itemName": "Lignum Vitae Bow(Unstrung)"
       },
       {
-        "item": "Bow String"
+        "itemName": "Bow String"
       }
     ],
     "experienceGained": "Woodworking:100",
@@ -943,10 +943,10 @@
     "outputItemName": "Buloke Bow(Unstrung)",
     "ingredients": [
       {
-        "item": "Buloke Logs"
+        "itemName": "Buloke Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -964,10 +964,10 @@
     "outputItemName": "Buloke Bow",
     "ingredients": [
       {
-        "item": "Buloke Bow(Unstrung)"
+        "itemName": "Buloke Bow(Unstrung)"
       },
       {
-        "item": "Bow String"
+        "itemName": "Bow String"
       }
     ],
     "experienceGained": "Woodworking:150",
@@ -984,10 +984,10 @@
     "outputItemName": "Great Tree Bow(Unstrung)",
     "ingredients": [
       {
-        "item": "Great Tree Logs"
+        "itemName": "Great Tree Logs"
       },
       {
-        "item": "Wood Carving Knife",
+        "itemName": "Wood Carving Knife",
         "destroyOnUse": false
       }
     ],
@@ -1005,10 +1005,10 @@
     "outputItemName": "Great Tree Bow",
     "ingredients": [
       {
-        "item": "Great Tree Bow(Unstrung)"
+        "itemName": "Great Tree Bow(Unstrung)"
       },
       {
-        "item": "Bow String"
+        "itemName": "Bow String"
       }
     ],
     "experienceGained": "Woodworking:220",
@@ -1025,10 +1025,10 @@
     "outputItemName": "White Pine Arrow",
     "ingredients": [
       {
-        "item": "Headless White Pine Arrows"
+        "itemName": "Headless White Pine Arrows"
       },
       {
-        "item": "Copper Arrowtips"
+        "itemName": "Copper Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:1",
@@ -1045,10 +1045,10 @@
     "outputItemName": "White Pine Arrow",
     "ingredients": [
       {
-        "item": "Headless White Pine Arrows"
+        "itemName": "Headless White Pine Arrows"
       },
       {
-        "item": "Tin Arrowtips"
+        "itemName": "Tin Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:1",
@@ -1065,10 +1065,10 @@
     "outputItemName": "White Pine Arrow",
     "ingredients": [
       {
-        "item": "Headless White Pine Arrows"
+        "itemName": "Headless White Pine Arrows"
       },
       {
-        "item": "Zinc Arrowtips"
+        "itemName": "Zinc Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:1",
@@ -1085,10 +1085,10 @@
     "outputItemName": "White Pine Arrow",
     "ingredients": [
       {
-        "item": "Headless White Pine Arrows"
+        "itemName": "Headless White Pine Arrows"
       },
       {
-        "item": "Brass Arrowtips"
+        "itemName": "Brass Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:1",
@@ -1105,10 +1105,10 @@
     "outputItemName": "White Pine Arrow",
     "ingredients": [
       {
-        "item": "Headless White Pine Arrows"
+        "itemName": "Headless White Pine Arrows"
       },
       {
-        "item": "Bronze Arrowtips"
+        "itemName": "Bronze Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:1",
@@ -1125,10 +1125,10 @@
     "outputItemName": "Poplar Arrow",
     "ingredients": [
       {
-        "item": "Headless Poplar Arrows"
+        "itemName": "Headless Poplar Arrows"
       },
       {
-        "item": "Copper Arrowtips"
+        "itemName": "Copper Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:2",
@@ -1145,10 +1145,10 @@
     "outputItemName": "Poplar Arrow",
     "ingredients": [
       {
-        "item": "Headless Poplar Arrows"
+        "itemName": "Headless Poplar Arrows"
       },
       {
-        "item": "Tin Arrowtips"
+        "itemName": "Tin Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:2",
@@ -1165,10 +1165,10 @@
     "outputItemName": "Poplar Arrow",
     "ingredients": [
       {
-        "item": "Headless Poplar Arrows"
+        "itemName": "Headless Poplar Arrows"
       },
       {
-        "item": "Zinc Arrowtips"
+        "itemName": "Zinc Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:2",
@@ -1185,10 +1185,10 @@
     "outputItemName": "Poplar Arrow",
     "ingredients": [
       {
-        "item": "Headless Poplar Arrows"
+        "itemName": "Headless Poplar Arrows"
       },
       {
-        "item": "Brass Arrowtips"
+        "itemName": "Brass Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:2",
@@ -1205,10 +1205,10 @@
     "outputItemName": "Poplar Arrow",
     "ingredients": [
       {
-        "item": "Headless Poplar Arrows"
+        "itemName": "Headless Poplar Arrows"
       },
       {
-        "item": "Bronze Arrowtips"
+        "itemName": "Bronze Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:2",
@@ -1225,10 +1225,10 @@
     "outputItemName": "Poplar Arrow",
     "ingredients": [
       {
-        "item": "Headless Poplar Arrows"
+        "itemName": "Headless Poplar Arrows"
       },
       {
-        "item": "Nickel Arrowtips"
+        "itemName": "Nickel Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:2",
@@ -1245,10 +1245,10 @@
     "outputItemName": "Oak Arrow",
     "ingredients": [
       {
-        "item": "Headless Oak Arrows"
+        "itemName": "Headless Oak Arrows"
       },
       {
-        "item": "Copper Arrowtips"
+        "itemName": "Copper Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:3",
@@ -1265,10 +1265,10 @@
     "outputItemName": "Oak Arrow",
     "ingredients": [
       {
-        "item": "Headless Oak Arrows"
+        "itemName": "Headless Oak Arrows"
       },
       {
-        "item": "Tin Arrowtips"
+        "itemName": "Tin Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:3",
@@ -1285,10 +1285,10 @@
     "outputItemName": "Oak Arrow",
     "ingredients": [
       {
-        "item": "Headless Oak Arrows"
+        "itemName": "Headless Oak Arrows"
       },
       {
-        "item": "Zinc Arrowtips"
+        "itemName": "Zinc Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:3",
@@ -1305,10 +1305,10 @@
     "outputItemName": "Oak Arrow",
     "ingredients": [
       {
-        "item": "Headless Oak Arrows"
+        "itemName": "Headless Oak Arrows"
       },
       {
-        "item": "Brass Arrowtips"
+        "itemName": "Brass Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:3",
@@ -1325,10 +1325,10 @@
     "outputItemName": "Oak Arrow",
     "ingredients": [
       {
-        "item": "Headless Oak Arrows"
+        "itemName": "Headless Oak Arrows"
       },
       {
-        "item": "Bronze Arrowtips"
+        "itemName": "Bronze Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:3",
@@ -1345,10 +1345,10 @@
     "outputItemName": "Oak Arrow",
     "ingredients": [
       {
-        "item": "Headless Oak Arrows"
+        "itemName": "Headless Oak Arrows"
       },
       {
-        "item": "Nickel Arrowtips"
+        "itemName": "Nickel Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:3",
@@ -1365,10 +1365,10 @@
     "outputItemName": "Maple Arrow",
     "ingredients": [
       {
-        "item": "Headless Maple Arrows"
+        "itemName": "Headless Maple Arrows"
       },
       {
-        "item": "Zinc Arrowtips"
+        "itemName": "Zinc Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:5",
@@ -1385,10 +1385,10 @@
     "outputItemName": "Maple Arrow",
     "ingredients": [
       {
-        "item": "Headless Maple Arrows"
+        "itemName": "Headless Maple Arrows"
       },
       {
-        "item": "Nickel Arrowtips"
+        "itemName": "Nickel Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:5",
@@ -1405,10 +1405,10 @@
     "outputItemName": "Maple Arrow",
     "ingredients": [
       {
-        "item": "Headless Maple Arrows"
+        "itemName": "Headless Maple Arrows"
       },
       {
-        "item": "Brass Arrowtips"
+        "itemName": "Brass Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:5",
@@ -1425,10 +1425,10 @@
     "outputItemName": "Maple Arrow",
     "ingredients": [
       {
-        "item": "Headless Maple Arrows"
+        "itemName": "Headless Maple Arrows"
       },
       {
-        "item": "Bronze Arrowtips"
+        "itemName": "Bronze Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:5",
@@ -1445,10 +1445,10 @@
     "outputItemName": "Birch Arrow",
     "ingredients": [
       {
-        "item": "Headless Birch Arrows"
+        "itemName": "Headless Birch Arrows"
       },
       {
-        "item": "Zinc Arrowtips"
+        "itemName": "Zinc Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:6",
@@ -1465,10 +1465,10 @@
     "outputItemName": "Birch Arrow",
     "ingredients": [
       {
-        "item": "Headless Birch Arrows"
+        "itemName": "Headless Birch Arrows"
       },
       {
-        "item": "Nickel Arrowtips"
+        "itemName": "Nickel Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:6",
@@ -1485,10 +1485,10 @@
     "outputItemName": "Birch Arrow",
     "ingredients": [
       {
-        "item": "Headless Birch Arrows"
+        "itemName": "Headless Birch Arrows"
       },
       {
-        "item": "Brass Arrowtips"
+        "itemName": "Brass Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:6",
@@ -1505,10 +1505,10 @@
     "outputItemName": "Birch Arrow",
     "ingredients": [
       {
-        "item": "Headless Birch Arrows"
+        "itemName": "Headless Birch Arrows"
       },
       {
-        "item": "Bronze Arrowtips"
+        "itemName": "Bronze Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:6",
@@ -1525,10 +1525,10 @@
     "outputItemName": "Mesquite Arrow",
     "ingredients": [
       {
-        "item": "Headless Mesquite Arrows"
+        "itemName": "Headless Mesquite Arrows"
       },
       {
-        "item": "Brass Arrowtips"
+        "itemName": "Brass Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:8",
@@ -1545,10 +1545,10 @@
     "outputItemName": "Mesquite Arrow",
     "ingredients": [
       {
-        "item": "Headless Mesquite Arrows"
+        "itemName": "Headless Mesquite Arrows"
       },
       {
-        "item": "Bronze Arrowtips"
+        "itemName": "Bronze Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:8",
@@ -1565,10 +1565,10 @@
     "outputItemName": "Mesquite Arrow",
     "ingredients": [
       {
-        "item": "Headless Mesquite Arrows"
+        "itemName": "Headless Mesquite Arrows"
       },
       {
-        "item": "Iron Arrowtips"
+        "itemName": "Iron Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:8",
@@ -1585,10 +1585,10 @@
     "outputItemName": "Heavy Mesquite Arrow",
     "ingredients": [
       {
-        "item": "Headless Mesquite Arrows"
+        "itemName": "Headless Mesquite Arrows"
       },
       {
-        "item": "Lead Arrowtips"
+        "itemName": "Lead Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:8",
@@ -1605,10 +1605,10 @@
     "outputItemName": "Mesquite Arrow",
     "ingredients": [
       {
-        "item": "Headless Mesquite Arrows"
+        "itemName": "Headless Mesquite Arrows"
       },
       {
-        "item": "Aluminum Arrowtips"
+        "itemName": "Aluminum Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:8",
@@ -1625,10 +1625,10 @@
     "outputItemName": "Mahogany Arrow",
     "ingredients": [
       {
-        "item": "Headless Mahogany Arrows"
+        "itemName": "Headless Mahogany Arrows"
       },
       {
-        "item": "Golden Arrowtips"
+        "itemName": "Golden Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:12",
@@ -1645,10 +1645,10 @@
     "outputItemName": "Mahogany Arrow",
     "ingredients": [
       {
-        "item": "Headless Mahogany Arrows"
+        "itemName": "Headless Mahogany Arrows"
       },
       {
-        "item": "Platinum Arrowtips"
+        "itemName": "Platinum Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:12",
@@ -1665,10 +1665,10 @@
     "outputItemName": "Heavy Ironwood Arrow",
     "ingredients": [
       {
-        "item": "Headless Ironwood Arrows"
+        "itemName": "Headless Ironwood Arrows"
       },
       {
-        "item": "Lead Arrowtips"
+        "itemName": "Lead Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:14",
@@ -1685,10 +1685,10 @@
     "outputItemName": "Ironwood Arrow",
     "ingredients": [
       {
-        "item": "Headless Ironwood Arrows"
+        "itemName": "Headless Ironwood Arrows"
       },
       {
-        "item": "Iron Arrowtips"
+        "itemName": "Iron Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:14",
@@ -1705,10 +1705,10 @@
     "outputItemName": "Ironwood Arrow",
     "ingredients": [
       {
-        "item": "Headless Ironwood Arrows"
+        "itemName": "Headless Ironwood Arrows"
       },
       {
-        "item": "Aluminum Arrowtips"
+        "itemName": "Aluminum Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:14",
@@ -1725,10 +1725,10 @@
     "outputItemName": "Ironwood Arrow",
     "ingredients": [
       {
-        "item": "Headless Ironwood Arrows"
+        "itemName": "Headless Ironwood Arrows"
       },
       {
-        "item": "Steel Arrowtips"
+        "itemName": "Steel Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:14",
@@ -1745,10 +1745,10 @@
     "outputItemName": "Snakewood Arrow",
     "ingredients": [
       {
-        "item": "Headless Snakewood Arrows"
+        "itemName": "Headless Snakewood Arrows"
       },
       {
-        "item": "Iron Arrowtips"
+        "itemName": "Iron Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:16",
@@ -1765,10 +1765,10 @@
     "outputItemName": "Snakewood Arrow",
     "ingredients": [
       {
-        "item": "Headless Snakewood Arrows"
+        "itemName": "Headless Snakewood Arrows"
       },
       {
-        "item": "Aluminum Arrowtips"
+        "itemName": "Aluminum Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:16",
@@ -1785,10 +1785,10 @@
     "outputItemName": "Snakewood Arrow",
     "ingredients": [
       {
-        "item": "Headless Snakewood Arrows"
+        "itemName": "Headless Snakewood Arrows"
       },
       {
-        "item": "Steel Arrowtips"
+        "itemName": "Steel Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:16",
@@ -1805,10 +1805,10 @@
     "outputItemName": "Strong Snakewood Arrow",
     "ingredients": [
       {
-        "item": "Headless Snakewood Arrows"
+        "itemName": "Headless Snakewood Arrows"
       },
       {
-        "item": "Strongtium Arrowtips"
+        "itemName": "Strongtium Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:16",
@@ -1825,10 +1825,10 @@
     "outputItemName": "Lignum Vitae Arrow",
     "ingredients": [
       {
-        "item": "Headless Lignum Vitae Arrows"
+        "itemName": "Headless Lignum Vitae Arrows"
       },
       {
-        "item": "Aluminum Arrowtips"
+        "itemName": "Aluminum Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:19",
@@ -1845,10 +1845,10 @@
     "outputItemName": "Lignum Vitae Arrow",
     "ingredients": [
       {
-        "item": "Headless Lignum Vitae Arrows"
+        "itemName": "Headless Lignum Vitae Arrows"
       },
       {
-        "item": "Steel Arrowtips"
+        "itemName": "Steel Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:19",
@@ -1865,10 +1865,10 @@
     "outputItemName": "Strong Lignum Vitae Arrow",
     "ingredients": [
       {
-        "item": "Headless Lignum Vitae Arrows"
+        "itemName": "Headless Lignum Vitae Arrows"
       },
       {
-        "item": "Strongtium Arrowtips"
+        "itemName": "Strongtium Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:19",
@@ -1885,10 +1885,10 @@
     "outputItemName": "Lignum Vitae Arrow",
     "ingredients": [
       {
-        "item": "Headless Lignum Vitae Arrows"
+        "itemName": "Headless Lignum Vitae Arrows"
       },
       {
-        "item": "Plastinium Arrowtips"
+        "itemName": "Plastinium Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:19",
@@ -1905,10 +1905,10 @@
     "outputItemName": "Buloke Arrow",
     "ingredients": [
       {
-        "item": "Headless Buloke Arrows"
+        "itemName": "Headless Buloke Arrows"
       },
       {
-        "item": "Steel Arrowtips"
+        "itemName": "Steel Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:25",
@@ -1925,10 +1925,10 @@
     "outputItemName": "Strong Buloke Arrow",
     "ingredients": [
       {
-        "item": "Headless Buloke Arrows"
+        "itemName": "Headless Buloke Arrows"
       },
       {
-        "item": "Strongtium Arrowtips"
+        "itemName": "Strongtium Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:25",
@@ -1945,10 +1945,10 @@
     "outputItemName": "Ice Arrow",
     "ingredients": [
       {
-        "item": "Headless Ice Arrows"
+        "itemName": "Headless Ice Arrows"
       },
       {
-        "item": "Sahotite Arrowtips"
+        "itemName": "Sahotite Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:35",
@@ -1965,10 +1965,10 @@
     "outputItemName": "Great Arrow",
     "ingredients": [
       {
-        "item": "Headless Great Arrows"
+        "itemName": "Headless Great Arrows"
       },
       {
-        "item": "Strongtium Arrowtips"
+        "itemName": "Strongtium Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:45",
@@ -1985,10 +1985,10 @@
     "outputItemName": "Great Arrow",
     "ingredients": [
       {
-        "item": "Headless Great Arrows"
+        "itemName": "Headless Great Arrows"
       },
       {
-        "item": "Plastinium Arrowtips"
+        "itemName": "Plastinium Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:45",
@@ -2005,10 +2005,10 @@
     "outputItemName": "Great Arrow",
     "ingredients": [
       {
-        "item": "Headless Great Arrows"
+        "itemName": "Headless Great Arrows"
       },
       {
-        "item": "Queplinium Arrowtips"
+        "itemName": "Queplinium Arrowtips"
       }
     ],
     "experienceGained": "Woodworking:45",

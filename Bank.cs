@@ -51,7 +51,7 @@ public class Bank
         }
         int amountToBank = Math.Min(Player.Instance.Inventory.GetNumberOfItem(item), amount);
         Console.WriteLine("Amount to bank:" + amountToBank);
-        Inventory.AddMultipleOfItem(item, Player.Instance.Inventory.RemoveItems(item, amountToBank));
+        Inventory.AddMultipleOfItem(item.Copy(), Player.Instance.Inventory.RemoveItems(item, amountToBank));
     }
     public void Withdraw(GameItem item)
     {
@@ -76,7 +76,7 @@ public class Bank
             //Gets the smallest of the amount, inventory space, and number in the bank.
             maxWithdraw = Math.Min(Math.Min(amount, Player.Instance.Inventory.GetAvailableSpaces()), Inventory.GetNumberOfItem(item));
         }
-        if (Player.Instance.Inventory.AddMultipleOfItem(item, maxWithdraw))
+        if (Player.Instance.Inventory.AddMultipleOfItem(item.Copy(), maxWithdraw))
         {
             Inventory.RemoveItems(item, maxWithdraw);
         }

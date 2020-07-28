@@ -284,7 +284,7 @@ using System.Threading.Tasks;
         }
         else
         {
-            if(CurrentRecipe.Ingredients.Count == 1 && CurrentRecipe.Ingredients[0].Item == itemViewer.Item.Name && CurrentRecipe.HasSpace())
+            if(CurrentRecipe.Ingredients.Count == 1 && CurrentRecipe.Ingredients[0].Item.Name == itemViewer.Item.Name && CurrentRecipe.HasSpace())
             {
                 itemViewer.ClearItem();
                 MessageManager.AddMessage("You have run out of materials.");

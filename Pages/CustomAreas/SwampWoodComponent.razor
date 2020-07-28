@@ -4,10 +4,128 @@
 @implements IDisposable
 
 <div>This is Swampwood.</div>
+<div>
+    @foreach (List<string> row in SwampMaze.Squares)
+    {
+        <div style="display:flex;">
+            @foreach (string square in row)
+            {
+                <div style="height:20px;width:20px;border:solid black 1px;background-color:@GetColor(square)">
+
+                </div>
+            }
+        </div>
+    }
+    <button class="btn btn-primary" @onclick="@(() => Move(1,0))">
+        Go East
+    </button>
+    <button class="btn btn-primary" @onclick="@(() => Move(-1,0))">
+        Go West
+    </button>
+    <button class="btn btn-primary" @onclick="@(() => Move(0,-1))">
+        Go North
+    </button>
+    <button class="btn btn-primary" @onclick="@(() => Move(0,1))">
+        Go South
+    </button>
+</div>
+
+
 
 @code {
+
+    private int xPos;
+    private int yPos;
+
+    public void Move(int xChange, int yChange)
+    {
+        xPos += xChange;
+        yPos += yChange;
+        if(DoEffect() == false)
+        {
+            xPos -= xChange;
+            yPos -= yChange;
+        }
+
+        GameState.UpdateState();
+    }
+    public bool DoEffect()
+    {
+        string newLoc = SwampMaze.Squares[yPos][xPos];
+        if(newLoc == "Blocked")
+        {
+            MessageManager.AddMessage(SwampMaze.OpenMessages[SwampMaze.CurrentMessage] + " You look around and realize you have returned to where you were just a few minutes ago.");
+            SwampMaze.CurrentMessage++;
+
+            return false;
+        }
+        else if(newLoc == "Exit")
+        {
+            xPos = 0;
+            yPos = 0;
+            MessageManager.AddMessage("The swamp engulfs you and despite your best efforts, you find yourself back where you started.");
+        }
+        else if (newLoc.Contains("Teleport"))
+        {
+            string[] pos = newLoc.Split(':');
+            int x = int.Parse(pos[1].Split(',')[0]);
+            int y = int.Parse(pos[1].Split(',')[1]);
+            xPos = x;
+            yPos = y;
+            MessageManager.AddMessage("The vines entangle you and you find yourself in a wildly different place than you thought.");
+        }
+        else if(newLoc == "Sawoka")
+        {
+            GoToSawoka();
+        }
+        else if(newLoc == "Open")
+        {
+            MessageManager.AddMessage(SwampMaze.OpenMessages[SwampMaze.CurrentMessage]);
+            SwampMaze.CurrentMessage++;
+        }
+
+        return true;
+
+    }
+    private void GoToSawoka()
+    {
+        GameState.StopActions();
+        Area a = AreaManager.Instance.GetAreaByURL("Sawoka");
+        Land l = AreaManager.Instance.GetLandForArea(a);
+        if (l != null && l != GameState.CurrentLand)
+        {
+            GameState.CurrentLand = l;
+        }
+        GameState.Location = "Sawoka";
+        MessageManager.AddMessage("You reach a clearing and the ground rises above the swamp water. You made it to the other side of the swamp!");
+        a.Unlock();
+
+        UriHelper.NavigateTo("World/Sawoka");
+    }
+
+    public string GetColor(string s)
+    {
+        if (s.Contains("Teleport"))
+        {
+            return "lightblue";
+        }
+        else if(s == "Open")
+        {
+            return "green";
+        }
+        else if(s == "Exit")
+        {
+            return "red";
+        }
+        else if(s == "Blocked")
+        {
+            return "dimgray";
+        }
+        return "white";
+    }
     protected override void OnInitialized()
     {
+        SwampMaze.LoadMaze();
         GameState.StateChanged += OnGameStateChanged;
     }
     protected override void OnParametersSet()

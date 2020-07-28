@@ -1,44 +1,212 @@
 [
   {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Amber",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Amberite"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Lizard",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Lizardite"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Purpur",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Purpurite"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Opal",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Opal"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Garn",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Garnet"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Amet",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Amethyst"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Emer",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Emerald"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Top",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Topaz"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is thoughSapph.",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Sapphire"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Ruby",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Ruby"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Diamo",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Diamond"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Chryso",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Chrysoberyl"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Aqua",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Aquamarine"
+  },
+  {
+    "Name": "Rough Amberite",
+    "value": 600,
+    "Description": "An orange, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough amberite!",
+    "secondaryColor": "#d87e04"
+  },
+  {
+    "Name": "Rough Lizardite",
+    "value": 600,
+    "Description": "A pale green, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough lizardite!",
+    "secondaryColor": "#78a872"
+  },
+  {
+    "Name": "Rough Purpurite",
+    "value": 600,
+    "Description": "A purple, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough purpurite!",
+    "secondaryColor": "#3f073c"
+  },
+  {
+    "Name": "Rough Opal",
+    "value": 600,
+    "Description": "A flourescent, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough opal!",
+    "secondaryColor": "#b3a56c"
+  },
+  {
+    "Name": "Rough Garnet",
+    "value": 600,
+    "Description": "A deep red, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough garnet!",
+    "secondaryColor": "#a50d2b"
+  },
+  {
+    "Name": "Rough Amethyst",
+    "value": 600,
+    "Description": "A purple, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough amethyst!",
+    "secondaryColor": "#ab2996"
+  },
+  {
     "Name": "Rough Emerald",
     "value": 500,
     "Description": "A green, uncut gemstone.",
     "icon": "UncutGem",
-    "gatherString": "You found a rough emerald!"
+    "gatherString": "You found a rough emerald!",
+    "secondaryColor": "#45be7e"
+  },
+
+  {
+    "Name": "Rough Aquamarine",
+    "value": 1100,
+    "Description": "A red, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough ruby!",
+    "secondaryColor": "#45c3e2"
   },
   {
     "Name": "Rough Topaz",
     "value": 600,
     "Description": "A brown, uncut gemstone.",
     "icon": "UncutGem",
-    "gatherString": "You found a rough topaz!"
+    "gatherString": "You found a rough topaz!",
+    "secondaryColor": "#c57621"
   },
   {
     "Name": "Rough Chrysoberyl",
     "value": 700,
     "Description": "A golden, uncut gemstone.",
     "icon": "UncutGem",
-    "gatherString": "You found a rough chrysoberyl!"
+    "gatherString": "You found a rough chrysoberyl!",
+    "secondaryColor": "#d3b31a"
   },
+
   {
     "Name": "Rough Sapphire",
     "value": 900,
     "Description": "A blue, uncut gemstone.",
     "icon": "UncutGem",
-    "gatherString": "You found a rough sapphire!"
+    "gatherString": "You found a rough sapphire!",
+    "secondaryColor": "#203bd2"
   },
   {
     "Name": "Rough Ruby",
     "value": 1100,
     "Description": "A red, uncut gemstone.",
     "icon": "UncutGem",
-    "gatherString": "You found a rough ruby!"
+    "gatherString": "You found a rough ruby!",
+    "secondaryColor": "#f4093a"
   },
   {
     "Name": "Rough Diamond",
     "value": 1500,
     "Description": "A white, uncut gemstone.",
     "icon": "UncutGem",
-    "gatherString": "You found a rough diamond!"
+    "gatherString": "You found a rough diamond!",
+    "secondaryColor": "#cfd3d3"
   }
 ]

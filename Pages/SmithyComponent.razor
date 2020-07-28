@@ -95,7 +95,7 @@
         smithables.Clear();
         foreach (Recipe recipe in ItemManager.Instance.SmithingRecipes)
         {
-            if(recipe.Ingredients.Count == 1 && ItemManager.Instance.GetSmithingRecipeByIngredients(Source).OutputItemName == recipe.Ingredients[0].Item)
+            if(recipe.Ingredients.Count == 1 && ItemManager.Instance.GetSmithingRecipeByIngredients(Source).OutputItemName == recipe.Ingredients[0].ItemName)
             {
                 smithables.Add(recipe);
             }

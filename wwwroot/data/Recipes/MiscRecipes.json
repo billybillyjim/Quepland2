@@ -3,11 +3,11 @@
     "outputItemName": "Small Trap",
     "ingredients": [
       {
-        "item": "Sticks",
+        "itemName": "Sticks",
         "amount": 3
       },
       {
-        "item": "Large Stone"
+        "itemName": "Large Stone"
       }
     ],
     "maxOutputsPerAction": 1
@@ -16,11 +16,11 @@
     "outputItemName": "Medium Trap",
     "ingredients": [
       {
-        "item": "Sticks",
+        "itemName": "Sticks",
         "amount": 10
       },
       {
-        "item": "Large Stone",
+        "itemName": "Large Stone",
         "amount": 3
       }
     ],
@@ -30,11 +30,11 @@
     "outputItemName": "Large Trap",
     "ingredients": [
       {
-        "item": "Sticks",
+        "itemName": "Sticks",
         "amount": 30
       },
       {
-        "item": "Large Stone",
+        "itemName": "Large Stone",
         "amount": 5
       }
     ],

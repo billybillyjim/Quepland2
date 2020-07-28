@@ -3,7 +3,7 @@
     "outputItemName": "Feather",
     "ingredients": [
       {
-        "item": "Rooster Plumage"
+        "itemName": "Rooster Plumage"
       }
     ],
     "outputAmount": 15,
@@ -15,7 +15,7 @@
     "secondaryOutputItemName": "Rabbit Meat",
     "ingredients": [
       {
-        "item": "Rabbit"
+        "itemName": "Rabbit"
       }
     ],
     "recipeActionString": "You begin skinning the rabbit...",
@@ -26,7 +26,7 @@
     "secondaryOutputItemName": "Deer Meat",
     "ingredients": [
       {
-        "item": "Deer"
+        "itemName": "Deer"
       }
     ],
     "recipeActionString": "You begin skinning the deer...",
@@ -38,7 +38,7 @@
     "tertiaryOutputItemName": "Deer Antlers",
     "ingredients": [
       {
-        "item": "Buck"
+        "itemName": "Buck"
       }
     ],
     "recipeActionString": "You begin skinning the buck...",
@@ -49,7 +49,7 @@
     "secondaryOutputItemName": "Bear Meat",
     "ingredients": [
       {
-        "item": "Black Bear"
+        "itemName": "Black Bear"
       }
     ],
     "recipeActionString": "You begin skinning the bear...",
@@ -60,7 +60,7 @@
     "secondaryOutputItemName": "Moose Meat",
     "ingredients": [
       {
-        "item": "Moose"
+        "itemName": "Moose"
       }
     ],
     "recipeActionString": "You begin skinning the moose...",
@@ -71,7 +71,7 @@
     "secondaryOutputItemName": "Bear Meat",
     "ingredients": [
       {
-        "item": "Grizzly Bear"
+        "itemName": "Grizzly Bear"
       }
     ],
     "recipeActionString": "You begin skinning the bear...",
@@ -82,7 +82,7 @@
     "secondaryOutputItemName": "Feather",
     "ingredients": [
       {
-        "item": "Pigeon"
+        "itemName": "Pigeon"
       }
     ],
     "recipeActionString": "You begin skinning the pigeon...",
@@ -93,7 +93,7 @@
     "secondaryOutputItemName": "Wild Boar Meat",
     "ingredients": [
       {
-        "item": "Wild Boar"
+        "itemName": "Wild Boar"
       }
     ],
     "recipeActionString": "You begin skinning the boar...",
@@ -104,7 +104,7 @@
     "secondaryOutputItemName": "Feather",
     "ingredients": [
       {
-        "item": "Turkey"
+        "itemName": "Turkey"
       }
     ],
     "recipeActionString": "You begin skinning the turkey...",
@@ -115,7 +115,7 @@
     "secondaryOutputItemName": "Feather",
     "ingredients": [
       {
-        "item": "Pheasant"
+        "itemName": "Pheasant"
       }
     ],
     "recipeActionString": "You begin skinning the pheasant...",
@@ -126,7 +126,7 @@
     "secondaryOutputItemName": "Bison Meat",
     "ingredients": [
       {
-        "item": "Bison"
+        "itemName": "Bison"
       }
     ],
     "recipeActionString": "You begin skinning the bison...",
@@ -138,7 +138,7 @@
     "tertiaryOutputItemName": "Moose Antlers",
     "ingredients": [
       {
-        "item": "Big Moose"
+        "itemName": "Big Moose"
       }
     ],
     "recipeActionString": "You begin skinning the moose...",
@@ -149,7 +149,7 @@
     "secondaryOutputItemName": "Bear Meat",
     "ingredients": [
       {
-        "item": "Polar Bear"
+        "itemName": "Polar Bear"
       }
     ],
     "recipeActionString": "You begin skinning the polar bear...",
@@ -161,7 +161,7 @@
     "tertiaryOutputItemName": "Bear Claws",
     "ingredients": [
       {
-        "item": "Giant Polar Bear"
+        "itemName": "Giant Polar Bear"
       }
     ],
     "recipeActionString": "You begin skinning the polar bear...",
@@ -173,7 +173,7 @@
     "tertiaryOutputItemName": "Mammoth Tusk",
     "ingredients": [
       {
-        "item": "Woolly Mammoth"
+        "itemName": "Woolly Mammoth"
       }
     ],
     "recipeActionString": "You begin skinning the mammoth...",
@@ -183,7 +183,7 @@
     "outputItemName": "Caiman Skin",
     "ingredients": [
       {
-        "item": "Small Caiman"
+        "itemName": "Small Caiman"
       }
     ],
     "recipeActionString": "You begin skinning the caiman...",
@@ -194,7 +194,7 @@
     "secondaryOutputItemName": "Caiman Meat",
     "ingredients": [
       {
-        "item": "Caiman"
+        "itemName": "Caiman"
       }
     ],
     "recipeActionString": "You begin skinning the caiman...",
@@ -206,7 +206,7 @@
     "outputAmount": 2,
     "ingredients": [
       {
-        "item": "Large Caiman"
+        "itemName": "Large Caiman"
       }
     ],
     "recipeActionString": "You begin skinning the caiman...",

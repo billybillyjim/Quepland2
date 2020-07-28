@@ -12,7 +12,6 @@
         <div>Loading Data...</div>
     }
     <StartMenuComponent></StartMenuComponent>
-    <button @onclick="@(() => Test())">Smith</button>
     <button @onclick="@(() => Rates())">Rates</button>
     <button @onclick="@(() => Quests())">Quest Manager</button>
 }
@@ -40,7 +39,15 @@ else
         //Player.Instance.Inventory.AddItem("Buck");
         //Player.Instance.Inventory.AddItem("Small Fishing Rod");
         //Player.Instance.Inventory.AddItem("Golden Sword");
-        //Player.Instance.Inventory.AddItem("Grizzly Bear");
+        Player.Instance.Inventory.AddMultipleOfItem(ItemManager.Instance.GetItem("Unidentified Gem",0,"Rough Emerald"), 3);
+        Player.Instance.Inventory.AddMultipleOfItem(ItemManager.Instance.GetItem("Unidentified Gem",0,"Rough Topaz"), 3);
+        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItem("Unidentified Gem", 0, "Rough Ruby"));
+        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItem("Unidentified Gem", 0, "Rough Sapphire"));
+        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItem("Unidentified Gem", 0, "Rough Lizardite"));
+        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItem("Unidentified Gem", 0, "Rough Amberite"));
+        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItem("Unidentified Gem", 0, "Rough Diamond"));
+        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItem("Unidentified Gem", 0, "Rough Amethyst"));
+        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItem("Unidentified Gem", 0, "Rough Topaz"));
         Bank.Instance.Inventory.AddMultipleOfItem("White Pine Logs", 3000);
         Bank.Instance.Inventory.AddMultipleOfItem("Feather", 3000);
         Bank.Instance.Inventory.AddMultipleOfItem("Wood Carving Knife", 3000);
@@ -50,17 +57,14 @@ else
         //Player.Instance.Inventory.AddItem("Ultimate Test Weapon");
         //AreaManager.Instance.GetAreaByName("Queple Cave Smithy").Unlock();
         //Player.Instance.CurrentFollower = FollowerManager.Instance.Followers[0];
-        /*int it = 0;
-        foreach (GameItem item in ItemManager.Instance.Items)
+        /*
+        foreach (gameitem item in itemmanager.instance.items)
         {
-            if(it < 15 || item.Name == "Feather")
-            {
-                Bank.Instance.Inventory.AddItem(item);
-                it++;
-            }
 
-        }*/
+        bank.instance.inventory.additem(item);
 
+        }
+        */
         Player.Instance.CurrentHP = 50;
         Bank.Instance.Inventory.AddItem("Stone Axe");
 

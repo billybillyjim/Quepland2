@@ -3,7 +3,7 @@
     "outputItemName": "Molten Nickel Bar",
     "ingredients": [
       {
-        "item": "Nickel Ore"
+        "itemName": "Nickel Ore"
       }
     ]
   },
@@ -11,7 +11,7 @@
     "outputItemName": "Molten Nickel Bar",
     "ingredients": [
       {
-        "item": "Nickel Bar"
+        "itemName": "Nickel Bar"
       }
     ]
   },
@@ -19,7 +19,7 @@
     "outputItemName": "Nickel Knife",
     "ingredients": [
       {
-        "item": "Molten Nickel Bar"
+        "itemName": "Molten Nickel Bar"
       }
     ]
   },
@@ -27,7 +27,7 @@
     "outputItemName": "Nickel Sword",
     "ingredients": [
       {
-        "item": "Molten Nickel Bar"
+        "itemName": "Molten Nickel Bar"
       }
     ]
   },
@@ -35,7 +35,7 @@
     "outputItemName": "Nickel Axe",
     "ingredients": [
       {
-        "item": "Molten Nickel Bar"
+        "itemName": "Molten Nickel Bar"
       }
     ]
   },
@@ -43,7 +43,7 @@
     "outputItemName": "Nickel Hammer",
     "ingredients": [
       {
-        "item": "Molten Nickel Bar"
+        "itemName": "Molten Nickel Bar"
       }
     ]
   },
@@ -51,7 +51,7 @@
     "outputItemName": "Nickel Bar",
     "ingredients": [
       {
-        "item": "Molten Nickel Bar"
+        "itemName": "Molten Nickel Bar"
       }
     ]
   },
@@ -59,7 +59,7 @@
     "outputItemName": "Nickel Arrowtips",
     "ingredients": [
       {
-        "item": "Molten Nickel Bar"
+        "itemName": "Molten Nickel Bar"
       }
     ],
     "outputAmount": 10

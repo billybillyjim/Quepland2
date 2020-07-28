@@ -73,7 +73,7 @@ public class Recipe
         }
 		foreach(Ingredient ingredient in Ingredients)
         {
-            if(Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(ingredient.Item)) < ingredient.Amount)
+            if(Player.Instance.Inventory.GetNumberOfItem(ingredient.Item) < ingredient.Amount)
             {
                 return false;
             }
@@ -123,7 +123,7 @@ public class Recipe
     {
         foreach(Ingredient i in Ingredients)
         {
-            if (Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(i.Item)) >= i.Amount)
+            if (Player.Instance.Inventory.GetNumberOfItem(i.Item) >= i.Amount)
             {
                return true;
             }
@@ -135,7 +135,7 @@ public class Recipe
         string ing = "Missing:" + "\n";
         foreach (Ingredient i in Ingredients)
         {
-            if (Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(i.Item)) < i.Amount)
+            if (Player.Instance.Inventory.GetNumberOfItem(i.Item) < i.Amount)
             {
                 ing += i.Amount + " " + i.Item + "\n";
             }
@@ -201,7 +201,7 @@ public class Recipe
         {
             if (i.DestroyOnUse)
             {
-                max = Math.Min(MaxOutputsPerAction / i.Amount, Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(i.Item)));
+                max = Math.Min(MaxOutputsPerAction / i.Amount, Player.Instance.Inventory.GetNumberOfItem(i.Item));
             }
         }
         return max;
@@ -216,7 +216,7 @@ public class Recipe
             {
                 if (ingredient.DestroyOnUse)
                 {
-                    Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName(ingredient.Item), ingredient.Amount * maxOutput);
+                    Player.Instance.Inventory.RemoveItems(ingredient.Item, ingredient.Amount * maxOutput);
                     //Console.WriteLine("Removing " + (ingredient.Amount * maxOutput) + " " + ingredient.Item);
                 }
             }
@@ -261,7 +261,7 @@ public class Recipe
         int removedOnCreation = 0;
         foreach(Ingredient i in Ingredients)
         {
-            if (ItemManager.Instance.GetItemByName(i.Item).IsStackable == false && i.DestroyOnUse)
+            if (i.Item.IsStackable == false && i.DestroyOnUse)
             {
                 removedOnCreation++;
             }

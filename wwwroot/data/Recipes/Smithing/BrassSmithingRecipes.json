@@ -3,10 +3,10 @@
     "outputItemName": "Molten Brass Bar",
     "ingredients": [
       {
-        "item": "Copper Bar"
+        "itemName": "Copper Bar"
       },
       {
-        "item": "Zinc Bar"
+        "itemName": "Zinc Bar"
       }
     ]
   },
@@ -14,10 +14,10 @@
     "outputItemName": "Molten Brass Bar",
     "ingredients": [
       {
-        "item": "Copper Ore"
+        "itemName": "Copper Ore"
       },
       {
-        "item": "Zinc Bar"
+        "itemName": "Zinc Bar"
       }
     ]
   },
@@ -25,10 +25,10 @@
     "outputItemName": "Molten Brass Bar",
     "ingredients": [
       {
-        "item": "Copper Bar"
+        "itemName": "Copper Bar"
       },
       {
-        "item": "Calamine"
+        "itemName": "Calamine"
       }
     ]
   },
@@ -36,10 +36,10 @@
     "outputItemName": "Molten Brass Bar",
     "ingredients": [
       {
-        "item": "Copper Ore"
+        "itemName": "Copper Ore"
       },
       {
-        "item": "Calamine"
+        "itemName": "Calamine"
       }
     ]
   },
@@ -47,7 +47,7 @@
     "outputItemName": "Molten Brass Bar",
     "ingredients": [
       {
-        "item": "Brass Bar"
+        "itemName": "Brass Bar"
       }
     ]
   },
@@ -55,7 +55,7 @@
     "outputItemName": "Brass Knife",
     "ingredients": [
       {
-        "item": "Molten Brass Bar"
+        "itemName": "Molten Brass Bar"
       }
     ]
   },
@@ -63,7 +63,7 @@
     "outputItemName": "Brass Sword",
     "ingredients": [
       {
-        "item": "Molten Brass Bar"
+        "itemName": "Molten Brass Bar"
       }
     ]
   },
@@ -71,7 +71,7 @@
     "outputItemName": "Brass Axe",
     "ingredients": [
       {
-        "item": "Molten Brass Bar"
+        "itemName": "Molten Brass Bar"
       }
     ]
   },
@@ -79,7 +79,7 @@
     "outputItemName": "Brass Hammer",
     "ingredients": [
       {
-        "item": "Molten Brass Bar"
+        "itemName": "Molten Brass Bar"
       }
     ]
   },
@@ -87,7 +87,7 @@
     "outputItemName": "Brass Arrowtips",
     "ingredients": [
       {
-        "item": "Molten Brass Bar"
+        "itemName": "Molten Brass Bar"
       }
     ],
     "outputAmount": 10

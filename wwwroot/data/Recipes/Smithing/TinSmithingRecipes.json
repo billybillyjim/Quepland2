@@ -3,7 +3,7 @@
     "outputItemName": "Molten Tin Bar",
     "ingredients": [
       {
-        "item": "Tin Ore"
+        "itemName": "Tin Ore"
       }
     ]
   },
@@ -11,7 +11,7 @@
     "outputItemName": "Molten Tin Bar",
     "ingredients": [
       {
-        "item": "Tin Bar"
+        "itemName": "Tin Bar"
       }
     ]
   },
@@ -19,7 +19,7 @@
     "outputItemName": "Tin Knife",
     "ingredients": [
       {
-        "item": "Molten Tin Bar"
+        "itemName": "Molten Tin Bar"
       }
     ]
   },
@@ -27,7 +27,7 @@
     "outputItemName": "Tin Sword",
     "ingredients": [
       {
-        "item": "Molten Tin Bar"
+        "itemName": "Molten Tin Bar"
       }
     ]
   },
@@ -35,7 +35,7 @@
     "outputItemName": "Tin Axe",
     "ingredients": [
       {
-        "item": "Molten Tin Bar"
+        "itemName": "Molten Tin Bar"
       }
     ]
   },
@@ -43,7 +43,7 @@
     "outputItemName": "Tin Hammer",
     "ingredients": [
       {
-        "item": "Molten Tin Bar"
+        "itemName": "Molten Tin Bar"
       }
     ]
   },
@@ -51,7 +51,7 @@
     "outputItemName": "Tin Bar",
     "ingredients": [
       {
-        "item": "Molten Tin Bar"
+        "itemName": "Molten Tin Bar"
       }
     ]
   },
@@ -59,7 +59,7 @@
     "outputItemName": "Tin Arrowtips",
     "ingredients": [
       {
-        "item": "Molten Tin Bar"
+        "itemName": "Molten Tin Bar"
       }
     ],
     "outputAmount": 10

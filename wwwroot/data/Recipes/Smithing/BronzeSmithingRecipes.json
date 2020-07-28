@@ -3,10 +3,10 @@
     "outputItemName": "Molten Bronze Bar",
     "ingredients": [
       {
-        "item": "Copper Bar"
+        "itemName": "Copper Bar"
       },
       {
-        "item": "Tin Bar"
+        "itemName": "Tin Bar"
       }
     ]
   },
@@ -14,10 +14,10 @@
     "outputItemName": "Molten Bronze Bar",
     "ingredients": [
       {
-        "item": "Copper Ore"
+        "itemName": "Copper Ore"
       },
       {
-        "item": "Tin Bar"
+        "itemName": "Tin Bar"
       }
     ]
   },
@@ -25,10 +25,10 @@
     "outputItemName": "Molten Bronze Bar",
     "ingredients": [
       {
-        "item": "Copper Bar"
+        "itemName": "Copper Bar"
       },
       {
-        "item": "Tin Ore"
+        "itemName": "Tin Ore"
       }
     ]
   },
@@ -36,10 +36,10 @@
     "outputItemName": "Molten Bronze Bar",
     "ingredients": [
       {
-        "item": "Copper Ore"
+        "itemName": "Copper Ore"
       },
       {
-        "item": "Tin Ore"
+        "itemName": "Tin Ore"
       }
     ]
   },
@@ -47,7 +47,7 @@
     "outputItemName": "Molten Bronze Bar",
     "ingredients": [
       {
-        "item": "Brass Bar"
+        "itemName": "Brass Bar"
       }
     ]
   },
@@ -55,7 +55,7 @@
     "outputItemName": "Bronze Knife",
     "ingredients": [
       {
-        "item": "Molten Bronze Bar"
+        "itemName": "Molten Bronze Bar"
       }
     ]
   },
@@ -63,7 +63,7 @@
     "outputItemName": "Bronze Sword",
     "ingredients": [
       {
-        "item": "Molten Bronze Bar"
+        "itemName": "Molten Bronze Bar"
       }
     ]
   },
@@ -71,7 +71,7 @@
     "outputItemName": "Bronze Axe",
     "ingredients": [
       {
-        "item": "Molten Bronze Bar"
+        "itemName": "Molten Bronze Bar"
       }
     ]
   },
@@ -79,7 +79,7 @@
     "outputItemName": "Bronze Hammer",
     "ingredients": [
       {
-        "item": "Molten Bronze Bar"
+        "itemName": "Molten Bronze Bar"
       }
     ]
   },
@@ -87,7 +87,7 @@
     "outputItemName": "Bronze Arrowtips",
     "ingredients": [
       {
-        "item": "Molten Bronze Bar"
+        "itemName": "Molten Bronze Bar"
       }
     ],
     "outputAmount": 10

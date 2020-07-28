@@ -66,7 +66,7 @@ else
     {
         if (HasBait() && GameState.TicksToNextAction <= 0)
         {
-            Player.Instance.Inventory.RemoveItems("Fishing Bait", 1);
+            Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItem("Fishing Bait",0,""), 1);
             baitSet = true;
             MessageManager.AddMessage("You add some bait to your hook.");
             GameState.TicksToNextAction = 3;

@@ -53,6 +53,25 @@
 
 
             }
+            @if (Item.Name == "Unidentified Gem")
+            {
+                if (Item.HasRequirements())
+                {
+                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Identify())">Identify</button></div>
+                }
+                else
+                {
+                    <div class="item-view-button">
+                            <button class="btn btn-light" style="opacity:0.5" 
+                                onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.GetRequirementTooltip())))"
+                                onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                                    Identify
+                            </button>
+                    </div>
+                }
+
+
+            }
             @if (Item.FoodInfo != null)
             {
                 <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => EatItem())">Eat</button></div>
@@ -131,7 +150,22 @@
     {
         return (Item.Value * Math.Min(Bank.Instance.Amount, Player.Instance.Inventory.GetNumberOfItem(Item)) / 2) > 0;
     }
+    private void Identify()
+    {
+        GameItem i = ItemManager.Instance.GetCopyOfItem(Item.Parameter);
+        if(Player.Instance.Inventory.RemoveItems(Item, 1) == 1)
+        {
+            Player.Instance.Inventory.AddItem(i);
+            MessageManager.AddMessage("You correctly identify this as a " + i.Name);
+        }
+        if(Player.Instance.Inventory.HasItem(Item) == false)
+        {
+            ClearItem();
+        }
 
+
+        GameState.UpdateState();
+    }
     private void SellItem()
     {
         GameState.SellItem(Item);

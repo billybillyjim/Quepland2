@@ -57,10 +57,10 @@ public class Inventory
         }
         if (item.IsStackable || AllItemsStack)
         {
-            return items.FirstOrDefault(x => x.Key.Name == item.Name).Value;
+            return items.FirstOrDefault(x => x.Key.UniqueID == item.UniqueID).Value;
         }
-        int amt = items.Count(x => x.Key.Name == item.Name);
-        return items.Count(x => x.Key.Name == item.Name);
+        int amt = items.Count(x => x.Key.UniqueID == item.UniqueID);
+        return items.Count(x => x.Key.UniqueID == item.UniqueID);
     }
     /// <summary>
     /// Returns the total amount of item slots used in the inventory.
@@ -322,7 +322,7 @@ public class Inventory
         var removedItems = new HashSet<KeyValuePair<GameItem,int>>();
         for(int i = 0; i < items.Count; i++)
         {
-            if(items[i].Key.Name == item.Name)
+            if(items[i].Key.UniqueID == item.UniqueID)
             {
                 KeyValuePair<GameItem, int> pair = items[i];
                 
@@ -352,10 +352,6 @@ public class Inventory
         items.RemoveAll(x => removedItems.Contains(x));
         UpdateItemCount();
         return removed;
-    }
-    public int RemoveItems(string item, int amount)
-    {
-        return RemoveItems(items.FirstOrDefault(x => x.Key.Name == item).Key, amount);
     }
     public bool RemoveRecipeItems(Recipe recipe)
     {
