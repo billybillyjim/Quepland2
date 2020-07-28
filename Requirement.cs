@@ -72,7 +72,7 @@ public class Requirement
 		string req = "";
 		if (Location != "None" && GameState.Location != Location)
 		{
-			req += "You must be at " + Location + ".";
+			req += "You must be at " + Location;
 		}
 		if (Skill != "None" && Player.Instance.HasSkillRequirement(Skill, SkillLevel) == false)
 		{
@@ -80,7 +80,7 @@ public class Requirement
 		}
 		if (Action != "None" && Player.Instance.HasToolRequirement(Action) == false)
 		{
-			req += "You don't have any tools for " + Action + ".";
+			req += "You don't have any tools for " + Action;
 		}
 		if (Item != "None" && Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(Item)) < ItemAmount)
 		{

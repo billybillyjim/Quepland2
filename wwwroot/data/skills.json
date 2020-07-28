@@ -27,12 +27,12 @@
   {
     "name": "Deftness",
     "level": 1,
-    "description": "Deftness is the speed at which you use weapons. Knives, swords, and axes all use deftness in calculating damage dealt, but knives and swords are more reliant on it."
+    "description": "Deftness is the speed at which you use weapons. Knives, swords, and axes all use deftness in calculating damage dealt and grant deftness experience when you battle with them, but knives and swords are more reliant on it."
   },
   {
     "name": "Strength",
     "level": 1,
-    "description": "Strength is the power with which you use weapons. Swords, axes, and hammers all use strength when calculating your damage dealt, but axes and hammers are more reliant on it. Every level also increases your inventory capacity by 1, and every 10th level by 5."
+    "description": "Strength is the power with which you use weapons. Swords, axes, and hammers all use strength when calculating your damage dealt and grant strength experience when you battle with them, but axes and hammers are more reliant on it. Every level also increases your inventory capacity by 1, and every 10th level by 5."
   },
   {
     "name": "Archery",

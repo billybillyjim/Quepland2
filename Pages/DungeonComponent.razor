@@ -7,8 +7,6 @@
 @if (Dungeon != null)
 {
     <div style="margin-top:20px;">
-
-
         @if (Dungeon.Progress < 100)
         {
             <div style="margin-bottom:5px;">
@@ -18,46 +16,22 @@
                     <div class="progress-bar" style="width:@(Dungeon.GetPercentProgress())%"></div>
                 </div>
             </div>
-
-            if (IsFighting == false)
-            {
-                <button class="btn btn-success" @onclick="@(() => Spelunk())">Spelunk</button>
-            }
-            else
-            {
-                <div style="height:38px;"></div>
-            }
-
         }
-        @if (IsFighting)
+        @if (BattleManager.Instance.BattleHasEnded == false)
         {
-
-            @if (BattleManager.Instance.AllOpponentsDefeated() && BattleManager.Instance.BattleHasEnded)
-            {
-                <div style="position:fixed;bottom:280px;">
-                    <button class="btn btn-success" @onclick="@(() => Spelunk())">Continue Spelunking</button>
-                    <br />
-                    <br />
-                    <button class="btn btn-secondary" @onclick="@(() => EndFight())">Return</button>
-                </div>
-
-            }
-            else
-            {
-                <CombatComponent></CombatComponent>
-            }
+            <CombatComponent></CombatComponent>
+        }
+        else if (BattleManager.Instance.AllOpponentsDefeated())
+        {
+            <div>
+                <button class="btn btn-success" @onclick="@(() => Spelunk())">Spelunk</button>
+            </div>
         }
         else
         {
-
-            <div style="margin-top:10px;">
-                Enter:
-                <br />
-                @foreach (Area area in Dungeon.GetUnlockedAreas() ?? Enumerable.Empty<Area>())
-                {
-                    <button class="btn btn-primary" @onclick="@(() => GoToArea(area.AreaURL))">@area.Name</button>
-                    <br />
-                }
+            <div>You didn't make any progress...</div>
+            <div>
+                <button class="btn btn-success" @onclick="@(() => RetrySpelunk())">Retry Spelunk</button>
             </div>
         }
     </div>
@@ -69,11 +43,11 @@
     public string DungeonURL { get; set; }
     public Dungeon Dungeon { get; set; }
     private static Random rand = new Random();
-    private bool IsFighting;
+    private bool firstTimeIsCompleted { get; set; }
+    //private bool IsFighting;
 
     public void Spelunk()
     {
-        IsFighting = false;
         int action = rand.Next(0, (int)(Dungeon.Size - Dungeon.Progress));
         if (Dungeon.GetLockedAreas().Count > action)
         {
@@ -92,15 +66,25 @@
                 BattleManager.Instance.CurrentOpponents.Clear();
                 BattleManager.Instance.CurrentOpponents.Add(monsterToFight);
                 BattleManager.Instance.StartBattle();
-                IsFighting = true;
             }
         }
-        Dungeon.Progress++;
+        if(firstTimeIsCompleted == false)
+        {
+            firstTimeIsCompleted = true;
+        }
+        else
+        {
+            Dungeon.Progress++;
+        }
         GameState.UpdateState();
+    }
+    private void RetrySpelunk()
+    {
+        firstTimeIsCompleted = false;
+        Spelunk();
     }
     private void EndFight()
     {
-        IsFighting = false;
         GameState.UpdateState();
     }
     private void GoToArea(string areaURL)

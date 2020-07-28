@@ -105,9 +105,16 @@ public class Recipe
     }
     public bool HasSpace()
     {
-        if ((Output.IsStackable && (Player.Instance.Inventory.GetAvailableSpaces() == 0 && Player.Instance.Inventory.HasItem(Output) == false)) ||
-    Player.Instance.Inventory.GetAvailableSpaces() < OutputAmount * GetRequiredSpaces())
+        if (Output.IsStackable)
         {
+            if(Player.Instance.Inventory.GetAvailableSpaces() == 0 && Player.Instance.Inventory.HasItem(Output) == false)
+            {
+                return false;
+            }
+            
+        }
+        else if (Player.Instance.Inventory.GetAvailableSpaces() < OutputAmount * GetRequiredSpaces())
+        {           
             return false;
         }
         return true;
@@ -150,8 +157,8 @@ public class Recipe
                     req += r.ToString() + "\n";
                 }
             }
-        
-        req = req.Substring(0, req.Length - 1);
+
+        req = req.Trim();
         return req;
     }
     public string GetIngredientsString()
@@ -251,14 +258,22 @@ public class Recipe
     }
     private int GetRequiredSpaces()
     {
+        int removedOnCreation = 0;
+        foreach(Ingredient i in Ingredients)
+        {
+            if (ItemManager.Instance.GetItemByName(i.Item).IsStackable == false && i.DestroyOnUse)
+            {
+                removedOnCreation++;
+            }
+        }
         if(TertiaryOutputItemName != null)
         {
-            return 3;
+            return Math.Max(0, 3 - removedOnCreation);
         }
         else if(SecondaryOutputItemName != null)
         {
-            return 2;
+            return Math.Max(0, 2 - removedOnCreation);
         }
-        return 1;
+        return Math.Max(0, 1 - removedOnCreation);
     }
 }

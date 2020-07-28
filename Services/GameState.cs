@@ -583,7 +583,7 @@ using System.Threading.Tasks;
     }
     public static void GoTo(string url)
     {
-        Location = url;
+        Location = url;      
         UriHelper.NavigateTo(url);
     }
     public async Task GetDimensions()

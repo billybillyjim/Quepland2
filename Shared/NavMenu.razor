@@ -8,7 +8,7 @@
         border-radius: 0.25rem;
         right: -13px;
         position: relative;
-        top: -9px;" @onclick="@(() => GameState.GoTo("Settings"))">
+        top: -9px;" @onclick="@(() => GoToSettings())">
         <img style="width:30px;height:30px;" src="data/Images/Settings.png"/>
     </button>
 </div>
@@ -110,6 +110,13 @@
         GameState.StopActions();
         GameState.Location = name;
         UriHelper.NavigateTo("World/" + name + "/");
+        GameState.UpdateState();
+    }
+    public void GoToSettings()
+    {
+        GameState.StopActions();
+        GameState.Location = "Settings";
+        UriHelper.NavigateTo("Settings/");
         GameState.UpdateState();
     }
 

@@ -6,8 +6,7 @@
     "autoCollectSkill": "Woodcutting",
     "autoCollectLevel": 15,
     "inventorySize": 12,
-    "autoCollectSpeed": 100,
-    "isUnlocked": true
+    "autoCollectSpeed": 100
   },
   {
     "name": "Rumpy the Gnome",
@@ -16,8 +15,7 @@
     "autoCollectSkill": "Woodcutting",
     "autoCollectLevel": 60,
     "inventorySize": 24,
-    "autoCollectSpeed": 80,
-    "isUnlocked": true
+    "autoCollectSpeed": 80
   },
   {
     "name": "Pumpy the Gnome",
@@ -26,8 +24,7 @@
     "autoCollectSkill": "Woodcutting",
     "autoCollectLevel": 100,
     "inventorySize": 36,
-    "autoCollectSpeed": 50,
-    "isUnlocked": true
+    "autoCollectSpeed": 50
   },
   {
     "name": "Thurgood the Dwarf",
@@ -36,8 +33,7 @@
     "autoCollectSkill": "Mining",
     "autoCollectLevel": 20,
     "inventorySize": 12,
-    "autoCollectSpeed": 100,
-    "isUnlocked": true
+    "autoCollectSpeed": 100
   },
   {
     "name": "Dwarny the Dwarf",
@@ -46,8 +42,7 @@
     "autoCollectSkill": "Mining",
     "autoCollectLevel": 60,
     "inventorySize": 24,
-    "autoCollectSpeed": 80,
-    "isUnlocked": true
+    "autoCollectSpeed": 80
   },
   {
     "name": "Threnden the Dwarf",
@@ -56,8 +51,7 @@
     "autoCollectSkill": "Mining",
     "autoCollectLevel": 100,
     "inventorySize": 36,
-    "autoCollectSpeed": 50,
-    "isUnlocked": true
+    "autoCollectSpeed": 50
   },
   {
     "name": "Raka the Kushstaka",
@@ -66,8 +60,7 @@
     "autoCollectSkill": "Fishing",
     "autoCollectLevel": 25,
     "inventorySize": 12,
-    "autoCollectSpeed": 100,
-    "isUnlocked": true
+    "autoCollectSpeed": 100
   },
   {
     "name": "Sloodle the Kushstaka",
@@ -76,8 +69,7 @@
     "autoCollectSkill": "Fishing",
     "autoCollectLevel": 65,
     "inventorySize": 24,
-    "autoCollectSpeed": 80,
-    "isUnlocked": true
+    "autoCollectSpeed": 80
   },
   {
     "name": "Glindrear the Kushstaka",
@@ -86,8 +78,7 @@
     "autoCollectSkill": "Fishing",
     "autoCollectLevel": 100,
     "inventorySize": 36,
-    "autoCollectSpeed": 50,
-    "isUnlocked": true
+    "autoCollectSpeed": 50
   },
   {
     "name": "Snibbap Snubbop the Goblin",
@@ -96,7 +87,6 @@
     "autoCollectSkill": "Banking",
     "autoCollectLevel": 100,
     "inventorySize": 24,
-    "autoCollectSpeed": 20,
-    "isUnlocked": true
+    "autoCollectSpeed": 20
   }
 ]

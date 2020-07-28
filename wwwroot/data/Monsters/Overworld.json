@@ -796,8 +796,8 @@
   },
   {
     "name": "Small Kappa",
-    "hp": 330,
-    "attackSpeed": 8,
+    "hp": 230,
+    "attackSpeed": 10,
     "armor": 10,
     "damage": 15,
     "dropTable": {

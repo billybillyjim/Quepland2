@@ -23,7 +23,7 @@
                 <button class="btn btn-primary" style="position:relative"disabled>
                     @gatherText
                     <div style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;" 
-                         onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, items[0].GetRequirementTooltip())))"
+                         onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GetLowestReqTooltip())))"
                  onmouseout="@(new Action(() => GameState.HideTooltip()))"></div>
                 </button>
                 
@@ -130,6 +130,32 @@
         }
 
         GameState.UpdateState();
+    }
+    public string GetLowestReqTooltip()
+    {
+        if(items != null)
+        {
+            GameItem lowest = items[0];
+            int lowestReq = int.MaxValue;
+            foreach(GameItem i in items)
+            {
+                foreach(Requirement r in i.Requirements)
+                {
+                    if(r.Skill != "None")
+                    {
+                        if(r.SkillLevel < lowestReq)
+                        {
+                            lowest = i;
+                        }
+                        lowestReq = Math.Min(r.SkillLevel, lowestReq);
+
+                    }
+                }
+            }
+            return lowest.GetRequirementTooltip();
+            
+        }
+        return "";
     }
     public void Dispose()
     {

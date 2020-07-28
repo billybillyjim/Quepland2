@@ -3,7 +3,7 @@
 
 @if (GameState.CurrentRecipe != null)
 {
-    <div style="height:60px;margin:10px;"><button @onclick="@(() => Stop())">Stop Crafting @GameState.CurrentRecipe.OutputItemName</button></div>
+    <div style="height:60px;margin:10px;"><button class="btn btn-primary" @onclick="@(() => Stop())">Stop Crafting @GameState.CurrentRecipe.OutputItemName</button></div>
 }
 else
 {
@@ -30,7 +30,7 @@ else
         <div style="margin:5px;color:white;">You don't have the materials to craft anything.</div>
     }
 </div>
-
+<InventoryViewerComponent HideItemViewer="@true"></InventoryViewerComponent>
 
 @code {
 
@@ -62,7 +62,7 @@ else
         }
         if(tip.Length > 0)
         {
-            tip = tip.Substring(0, tip.Length - 2);
+            tip = tip.Trim();
         }
         return tip;
     }

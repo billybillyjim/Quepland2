@@ -24,14 +24,14 @@
     "Description": "It's a less soft wood.",
     "gatherString": "You chop some poplar logs.",
     "value": 9,
-    "gatherSpeed": 30,
+    "gatherSpeed": 25,
     "secondaryColor": "#FFDA8A",
-    "experienceGained": "Woodcutting:25",
+    "experienceGained": "Woodcutting:20",
     "icon": "Log",
     "requirements": [
       {
         "skill": "Woodcutting",
-        "skillLevel": 8
+        "skillLevel": 7
       },
       {
         "action": "Woodcutting"
@@ -62,7 +62,7 @@
     "description": "One of the most common types of wood.",
     "gatherString": "You chop some oak logs.",
     "value": 15,
-    "gatherSpeed": 19,
+    "gatherSpeed": 25,
     "secondaryColor": "#FFD5B0",
     "experienceGained": "Woodcutting:35",
     "icon": "Log",
@@ -80,7 +80,7 @@
     "name": "Sugar Maple Logs",
     "description": "The sugar is in the sap, not the wood.",
     "gatherString": "You chop some maple logs.",
-    "gatherSpeed": 25,
+    "gatherSpeed": 30,
     "value": 25,
     "secondaryColor": "#FFBD96",
     "experienceGained": "Woodcutting:60",
@@ -100,7 +100,7 @@
     "description": "A light colored wood with white bark.",
     "gatherString": "You chop some birch logs.",
     "secondaryColor": "#FFF6E0",
-    "gatherSpeed": 25,
+    "gatherSpeed": 30,
     "value": 45,
     "experienceGained": "Woodcutting:35",
     "icon": "Log",

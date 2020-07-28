@@ -15,7 +15,6 @@
     <button @onclick="@(() => Test())">Smith</button>
     <button @onclick="@(() => Rates())">Rates</button>
     <button @onclick="@(() => Quests())">Quest Manager</button>
-    <button @onclick="@(() => TestMethods())">Run Tests</button>
 }
 else
 {
@@ -32,23 +31,26 @@ else
 
         }
         //Player.Instance.GainExperience("Strength:1000000000");
-        Player.Instance.GainExperience("Woodcutting:1000");
+        //Player.Instance.GainExperience("Woodcutting:1000");
         //Player.Instance.Inventory.AddItem("Shuniku Berries");
         //Player.Instance.Inventory.AddItem("Wood Carving Knife");
         //Player.Instance.Inventory.AddMultipleOfItem("Coins", 1500000);
-        Player.Instance.Inventory.AddItem("Rabbit Pants");
-        Player.Instance.Inventory.AddItem("Mound's Map");
+        //Player.Instance.Inventory.AddItem("Rabbit Pants");
+        //Player.Instance.Inventory.AddItem("Mound's Map");
         //Player.Instance.Inventory.AddItem("Buck");
-        Player.Instance.Inventory.AddItem("Small Fishing Rod");
-        Player.Instance.Inventory.AddItem("Golden Sword");
+        //Player.Instance.Inventory.AddItem("Small Fishing Rod");
+        //Player.Instance.Inventory.AddItem("Golden Sword");
         //Player.Instance.Inventory.AddItem("Grizzly Bear");
-        Player.Instance.Inventory.AddMultipleOfItem("Coins", 3000);
-        Player.Instance.Inventory.AddItem("Ultimate Test Weapon Two, Electric Boogaloo");
+        Bank.Instance.Inventory.AddMultipleOfItem("White Pine Logs", 3000);
+        Bank.Instance.Inventory.AddMultipleOfItem("Feather", 3000);
+        Bank.Instance.Inventory.AddMultipleOfItem("Wood Carving Knife", 3000);
+        Bank.Instance.Inventory.AddMultipleOfItem("White Pine Arrow Shafts", 3000);
+        //Player.Instance.Inventory.AddItem("Ultimate Test Weapon Two, Electric Boogaloo");
         //Player.Instance.Inventory.AddItem("Rice");
         //Player.Instance.Inventory.AddItem("Ultimate Test Weapon");
         //AreaManager.Instance.GetAreaByName("Queple Cave Smithy").Unlock();
-        Player.Instance.CurrentFollower = FollowerManager.Instance.Followers[0];
-        int it = 0;
+        //Player.Instance.CurrentFollower = FollowerManager.Instance.Followers[0];
+        /*int it = 0;
         foreach (GameItem item in ItemManager.Instance.Items)
         {
             if(it < 15 || item.Name == "Feather")
@@ -57,7 +59,7 @@ else
                 it++;
             }
 
-        }
+        }*/
 
         Player.Instance.CurrentHP = 50;
         Bank.Instance.Inventory.AddItem("Stone Axe");
@@ -77,17 +79,6 @@ else
 
         GameState.Location = "Smithy";
         UriHelper.NavigateTo("World/Smithy/");
-    }
-    private void TestMethods()
-    {
-        var watch = System.Diagnostics.Stopwatch.StartNew();
-        List<KeyValuePair<GameItem, int>> items = Bank.Instance.Inventory.GetItems().OrderBy(x => x.Key.ID).ToList();
-        watch.Stop();
-        Console.WriteLine("Get items + orderby:" + watch.ElapsedMilliseconds);
-        watch = System.Diagnostics.Stopwatch.StartNew();
-        List<KeyValuePair<GameItem, int>> noOrderItems = Bank.Instance.Inventory.GetItems();
-        watch.Stop();
-        Console.WriteLine("Get items:" + watch.ElapsedMilliseconds);
     }
 
     public void Dispose()
