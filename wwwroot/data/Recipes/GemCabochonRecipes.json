@@ -1,0 +1,224 @@
+[
+  {
+    "outputItemName": "Amberite Cabochon",
+    "ingredients": [
+      {
+        "itemName": "Rough Amberite",
+        "amount": 1
+      }
+    ],
+    "experienceGained": "Lapidary:15",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Lizardite Cabochon",
+    "ingredients": [
+      {
+        "itemName": "Rough Lizardite",
+        "amount": 1
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Purpurite Cabochon",
+    "ingredients": [
+      {
+        "itemName": "Rough Purpurite",
+        "amount": 1
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Opal Cabochon",
+    "ingredients": [
+      {
+        "itemName": "Rough Opal",
+        "amount": 1
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Garnet Cabochon",
+    "ingredients": [
+      {
+        "itemName": "Rough Garnet",
+        "amount": 1
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Amethyst Cabochon",
+    "ingredients": [
+      {
+        "itemName": "Rough Amethyst",
+        "amount": 1
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Emerald Cabochon",
+    "ingredients": [
+      {
+        "itemName": "Rough Emerald",
+        "amount": 1
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Aquamarine Cabochon",
+    "ingredients": [
+      {
+        "itemName": "Rough Aquamarine",
+        "amount": 1
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Topaz Cabochon",
+    "ingredients": [
+      {
+        "itemName": "Rough Topaz",
+        "amount": 1
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Chrysoberyl Cabochon",
+    "ingredients": [
+      {
+        "itemName": "Rough Chrysoberyl",
+        "amount": 1
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Sapphire Cabochon",
+    "ingredients": [
+      {
+        "itemName": "Rough Sapphire",
+        "amount": 1
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Ruby Cabochon",
+    "ingredients": [
+      {
+        "itemName": "Rough Ruby",
+        "amount": 1
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Diamond Cabochon",
+    "ingredients": [
+      {
+        "itemName": "Rough Diamond",
+        "amount": 1
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  }
+
+]

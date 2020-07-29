@@ -3,31 +3,34 @@
 @inject NavigationManager UriHelper
 @implements IDisposable
 
-<div>This is Swampwood.</div>
-<div>
-    @foreach (List<string> row in SwampMaze.Squares)
-    {
-        <div style="display:flex;">
-            @foreach (string square in row)
-            {
-                <div style="height:20px;width:20px;border:solid black 1px;background-color:@GetColor(square)">
+<div>This is Swampwood. It's dark, smelly, and full of mystery. It doesn't seem like you'll be able to cross without some kind of help.</div>
+<div style="position:relative;">
+    <div style="display:flex;">
+        <div style="flex:0.4"></div>
+        <button style="position:relative;flex:0.2" class="btn btn-primary" @onclick="@(() => Move(0,-1))">
+            Go North
+        </button>
+        <div style="flex:0.4"></div>
+    </div>
+    <div style="display:flex;">
+        <div style="flex:0.2"></div>
+        <button style="position:relative;flex:0.2" class="btn btn-primary" @onclick="@(() => Move(-1,0))">
+            Go West
+        </button>
+        <div style="flex:0.2"></div>
+        <button style="position:relative;flex:0.2" class="btn btn-primary" @onclick="@(() => Move(1,0))">
+            Go East
+        </button>
+        <div style="flex:0.2"></div>
+    </div>
+    <div style="display:flex;">
+        <div style="flex:0.4"></div>
+        <button style="position:relative;flex:0.2" class="btn btn-primary" @onclick="@(() => Move(0,1))">
+            Go South
+        </button>
+        <div style="flex:0.4"></div>
+    </div>
 
-                </div>
-            }
-        </div>
-    }
-    <button class="btn btn-primary" @onclick="@(() => Move(1,0))">
-        Go East
-    </button>
-    <button class="btn btn-primary" @onclick="@(() => Move(-1,0))">
-        Go West
-    </button>
-    <button class="btn btn-primary" @onclick="@(() => Move(0,-1))">
-        Go North
-    </button>
-    <button class="btn btn-primary" @onclick="@(() => Move(0,1))">
-        Go South
-    </button>
 </div>
 
 
@@ -47,10 +50,19 @@
             yPos -= yChange;
         }
 
+        xPos = Math.Max(0, Math.Min(xPos, SwampMaze.Squares.Count - 1));
+        yPos = Math.Max(0, Math.Min(yPos, SwampMaze.Squares.Count - 1));
         GameState.UpdateState();
     }
     public bool DoEffect()
     {
+        if (xPos < 0 || yPos < 0 || xPos >= SwampMaze.Squares.Count || yPos >= SwampMaze.Squares.Count)
+        {
+            xPos = 0;
+            yPos = 0;
+            MessageManager.AddMessage("You crawl over a fallen tree branch to you find yourself back where you started.");
+            return false;
+        }
         string newLoc = SwampMaze.Squares[yPos][xPos];
         if(newLoc == "Blocked")
         {
@@ -63,7 +75,7 @@
         {
             xPos = 0;
             yPos = 0;
-            MessageManager.AddMessage("The swamp engulfs you and despite your best efforts, you find yourself back where you started.");
+            MessageManager.AddMessage("You crawl over a fallen tree branch to you find yourself back where you started.");
         }
         else if (newLoc.Contains("Teleport"))
         {
@@ -72,7 +84,8 @@
             int y = int.Parse(pos[1].Split(',')[1]);
             xPos = x;
             yPos = y;
-            MessageManager.AddMessage("The vines entangle you and you find yourself in a wildly different place than you thought.");
+            MessageManager.AddMessage(SwampMaze.TeleportMessages[SwampMaze.CurrentMessage]);
+            SwampMaze.CurrentMessage++;
         }
         else if(newLoc == "Sawoka")
         {

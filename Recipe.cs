@@ -206,6 +206,11 @@ public class Recipe
         }
         return max;
     }
+    /// <summary>
+    /// Returns true if the item was sucessfully created. Outputs the number created for the message manager.
+    /// </summary>
+    /// <param name="created"></param>
+    /// <returns></returns>
     public bool Create(out int created)
     {
         created = 0;

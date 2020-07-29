@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29521.150
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quepland_2", "Quepland_2.csproj", "{E8A904D6-2233-4286-8B43-117BCC274822}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quepland2Tests", "..\InventoryTests\Quepland2Tests.csproj", "{36A720F6-AF27-4C18-8F13-81DD9ED6245E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quepland2Tests", "..\InventoryTests\Quepland2Tests.csproj", "{36A720F6-AF27-4C18-8F13-81DD9ED6245E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

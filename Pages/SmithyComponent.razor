@@ -74,6 +74,7 @@
             MessageManager.AddMessage("You begin smithing your " + Source + " into a " + Product);
             GameState.TicksToNextAction = source.CraftingSpeed;
         }
+        GameState.UpdateState();
     }
     private string GetProgress()
     {

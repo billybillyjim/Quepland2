@@ -30,6 +30,8 @@ public class ItemManager
     public Dictionary<string, GameItem> UniqueIDLookupDic { get; set; } = new Dictionary<string, GameItem>();
     public List<Recipe> Recipes = new List<Recipe>();
     public List<Recipe> SmithingRecipes = new List<Recipe>();
+    public List<Recipe> GemCuttingRecipes = new List<Recipe>();
+    public List<Recipe> GemCabochonRecipes = new List<Recipe>();
     public List<string> EquipmentSlots = new List<string>();
     public List<MinigameDropTable> MinigameDropTables = new List<MinigameDropTable>();
     public static List<string> FileNames = new List<string> { "Weapons", "Bows", "Armors", "Sushi", "Arrows", "QuestItems", "General", "Elements", "Hunting", "Fishing", "Bars", "Ores", "Gems", "Arrowtips", "WoodworkingItems", "Logs" };
@@ -92,8 +94,13 @@ public class ItemManager
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/SushiRecipes.json"));
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/MiscRecipes.json"));
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/LeatherworkingRecipes.json"));
+        Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/GemRecipes.json"));
 
         MinigameDropTables.AddRange(await Http.GetJsonAsync<MinigameDropTable[]>("data/MinigameDropTables.json"));
+
+        GemCabochonRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/GemCabochonRecipes.json"));
+        Console.WriteLine("Cabochon Recipes:" + GemCabochonRecipes.Count);
+        GemCuttingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/GemCuttingRecipes.json"));
 
         SmithingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/Smithing/AluminumSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/Smithing/BrassSmithingRecipes.json"));
@@ -150,6 +157,18 @@ public class ItemManager
         foreach(Recipe recipe in SmithingRecipes)
         {
             if(recipe.GetShortIngredientsString() == ingredients)
+            {
+                return recipe;
+            }
+        }
+        Console.WriteLine("Failed to find recipe with ingredients:" + ingredients);
+        return null;
+    }
+    public Recipe GetCabochonRecipeByIngredients(string ingredients)
+    {
+        foreach (Recipe recipe in GemCabochonRecipes)
+        {
+            if (recipe.GetShortIngredientsString() == ingredients)
             {
                 return recipe;
             }

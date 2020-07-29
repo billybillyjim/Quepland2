@@ -24,7 +24,7 @@ public static class SwampMaze
         "You hear the sound of two creatures fighting up in a tree near you, followed by a splash as they tumble into the water below. The struggle abruptly ends in silence.",
         "Every time you turn around you can't help but feel the swamp has changed behind you. Those vines weren't like that before, were they?",
         "A swarm of bugs swirls around a rather large tree in the way in front of you. You stay low to the swamp water and pass by unharmed.",
-        "You struggle over branks and through bushes to continue deeper into the swamp.",
+        "You struggle over branches and through bushes to continue deeper into the swamp.",
         "An extremely old bridge sits in the path ahead. It leads nowhere but it's a welcome reprieve from walking through swamp water.",
         "You pass by a number of trees with odd markings on them. It almost looks like a human did this.",
         "The swamp grows light as you approach a clearing. There's only swamp in every direction, but the sunlight is nice.",
@@ -36,7 +36,26 @@ public static class SwampMaze
         "As you continue forward it seems like the trees ahead of you are moving. But when you get close, it appears it was just an illusion.",
         "Some strange plants line the roots of the trees here. Once in a while they shoot a puff of smelly brown powder into the air.",
         "You stumble across a swamp hand, out of the water, consuming something. You take a long way around.",
-        "A jumble of swamp snakes cover the roots of the trees, here. It's impossible to tell what's tree and what's snake. "
+        "A jumble of swamp snakes cover the roots of the trees, here. It's impossible to tell what's tree and what's snake."
+
+    };
+    public static List<string> TeleportMessages = new List<string>()
+    {
+        "The vines entangle you and by the time you struggle free you find yourself in a wildly different place than you thought.",
+        "As you walk you hear the howls of some strange creature and turn around. When you turn back you feel like you're somewhere different.",
+        "You cross a number of massive lilypads sitting on the water, but fall in on the last one. When you surface your surroundings have completely changed.",
+        "The swamp is light here and travel is easy, for a moment, or so you think. When you continue forward you find you're back where you've already been.",
+        "You carefully step over tree roots and mossy slime as you continue into the swamp. Or you try to, but slip and hit your head. When you get back up, the swamp has changed.",
+        "The swamp water bubbles ominously here, you decide to take a slightly longer path around, but you get lost. A few minutes later, you find yourself somewhere completey different.",
+        "You approach a group of impassable trees. Strange birds screech as you get near. You try to work your way around but lose your way. You have no idea where you are now.",
+        "You can barely make out your way forward as the swamp grows very dark. Regardless, you continue forward, only to find you have lost any sense of direction and end up somwhere else.",
+        "Every time you turn around you can't help but feel the swamp has changed behind you. Those vines weren't like that before, were they? You turn ahead to see the swamp has changed ahead of you as well.",
+        "A swarm of bugs swirls around a rather large tree in the way in front of you. You try to stay low to the swamp water and pass by but you trip and fall. When you stand back up the bugs are gone, and so is the tree. Where are you?",
+        "An old bridge sits in the path ahead. It's a welcome reprieve from walking through swamp water. You cross and step down you lose sight of the bridge. Did you imagine it? The swamp ahead looks completely different.",
+        "You pass by a tree and do a double take. This is tree is from a far different place than you thought you were.",
+        "The trees are so thick that you need to crawl between gaps in the roots. It's a tight fit but you manage to make it through. On the other side you turn around to see no sign of the trees you crawled through.",
+        "You can't help but feel a sense of deja vu as you reach a small mound in the swamp. You're not where you thought you were.",
+        "You stumble across a swamp hand, out of the water, consuming something. You take a long way around, but get lost. You end up somewhere else, entirely disoriented."
 
     };
     private static int currentMessage;
@@ -59,6 +78,7 @@ public static class SwampMaze
         if(MazeLoaded == false)
         {
             OpenMessages.Shuffle();
+            TeleportMessages.Shuffle();
             Squares.AddRange(new[]
             {
                 new List<string>

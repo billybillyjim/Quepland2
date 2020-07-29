@@ -22,6 +22,12 @@
     "icon": "Knife"
   },
   {
+    "Name": "Rock Tumbler",
+    "Description": "A round box full of hard rocks. You can smooth gemstones down with it.",
+    "value": 5000,
+    "icon": "Tumbler"
+  },
+  {
     "name": "Feather",
     "description": "Soft, fluffy, and useful for making arrows with.",
     "gatherString": "You separate the feathers into a pile.",

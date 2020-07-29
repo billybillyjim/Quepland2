@@ -1,0 +1,110 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+    <div style="margin-top:-10px;margin-bottom:10px;background-color:lightgray;padding:10px;border-radius:0.5rem;">
+
+        <div @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GetTooltip())))"
+             @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            Cabochon Stone
+        </div>
+        @if (Player.Instance.GetLevel("Lapidary") >= 15)
+        {
+            <div style="margin-left:-10px;">
+                <CustomDropdownComponent BoxText="Select a gem to shape" EmptyText="You don't have any gems that you have the level to cut." @bind-Value="Source" DropdownItems="@GetAvailableGems()"></CustomDropdownComponent>
+            </div>
+            @if (Source != "")
+            {
+                <div>
+                    <button class="btn btn-primary" @onclick="@(() => Shape())">Shape Gem</button>
+                </div>
+            }
+            else
+            {
+                <div @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need to select a gem first.")))"
+                     @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                    <button class="btn btn-primary" style="opacity:0.5">Shape Gem</button>
+                </div>
+            }
+
+        }
+
+    </div>
+
+@code {
+
+    private List<Recipe> cuttableGems = new List<Recipe>();
+    private string s = "";
+    string Source
+    {
+        get { return s; }
+        set
+        {
+            s = value;
+            UpdateList();
+        }
+    }
+
+    public string GetTooltip()
+    {
+        if(Player.Instance.GetLevel("Lapidary") >= 15)
+        {
+            return "You've found a cabochon table. You can use your lapidary knowledge here to cut gems into smooth stones.";
+        }
+        else
+        {
+            return "You've found a strange stone that can spin in place. You have no idea how to use it, though.";
+        }
+    }
+    public void Shape()
+    {
+        if(Source != "")
+        {
+            Recipe output = ItemManager.Instance.GetCabochonRecipeByIngredients("1 " + Source);
+            output.Create(out _);
+            if (Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(Source)) == 0)
+            {
+                Source = "";
+            }
+        }
+
+        GameState.UpdateState();
+    }
+    public List<string> GetAvailableGems()
+    {
+        if (cuttableGems.Count > 0)
+        {
+            return cuttableGems.Select(x => x.Ingredients[0].ItemName).ToList();
+        }
+        return new List<string>();
+    }
+    public void UpdateList()
+    {
+        cuttableGems.Clear();
+        foreach (Recipe recipe in ItemManager.Instance.GemCabochonRecipes)
+        {
+            if (recipe != null && recipe.Output != null)
+            {
+                if (recipe.CanCreate())
+                {
+                    cuttableGems.Add(recipe);
+                }
+            }
+
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        UpdateList();
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e)
+    {
+        UpdateList();
+        StateHasChanged();
+    }
+}
