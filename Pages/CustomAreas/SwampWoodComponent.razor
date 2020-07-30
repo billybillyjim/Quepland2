@@ -5,14 +5,14 @@
 
 <div>This is Swampwood. It's dark, smelly, and full of mystery. It doesn't seem like you'll be able to cross without some kind of help.</div>
 <div style="position:relative;">
-    <div style="display:flex;">
+    <div style="display:flex;margin:5px;">
         <div style="flex:0.4"></div>
         <button style="position:relative;flex:0.2" class="btn btn-primary" @onclick="@(() => Move(0,-1))">
             Go North
         </button>
         <div style="flex:0.4"></div>
     </div>
-    <div style="display:flex;">
+    <div style="display:flex;margin:5px;">
         <div style="flex:0.2"></div>
         <button style="position:relative;flex:0.2" class="btn btn-primary" @onclick="@(() => Move(-1,0))">
             Go West
@@ -23,7 +23,7 @@
         </button>
         <div style="flex:0.2"></div>
     </div>
-    <div style="display:flex;">
+    <div style="display: flex;margin: 5px;">
         <div style="flex:0.4"></div>
         <button style="position:relative;flex:0.2" class="btn btn-primary" @onclick="@(() => Move(0,1))">
             Go South

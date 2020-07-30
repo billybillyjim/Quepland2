@@ -15,6 +15,12 @@ public class Inventory
     private readonly int maxValue = int.MaxValue - 1000000;
     private int totalItems { get; set; }
     public bool AllItemsStack;
+
+    public Inventory() 
+    {
+        items = new List<KeyValuePair<GameItem, int>>();
+        itemLookupDic = new Dictionary<string, int>();
+    }
     public Inventory(int max)
     {
         items = new List<KeyValuePair<GameItem, int>>();

@@ -314,25 +314,35 @@ public class Player
     }
     public void Die()
     {
-        CurrentHP = MaxHP;
-        JustDied = true;
-        Deaths++;
-        CurrentStatusEffects.Clear();
-        if(Deaths == 1)
+        if(GameState.CurrentGameMode == GameState.GameType.Hardcore)
         {
-            MessageManager.AddMessage("Whoops! Looks like you died. Don't worry, you don't lose anything but pride when you die in Quepland.");
+            MessageManager.AddMessage("Whoops! Looks like you died. As a hardcore account your journey is now over. Better luck next time!");
+            JustDied = true;
+            GameState.ShowStartMenu = true;
         }
         else
         {
-            MessageManager.AddMessage("Whoops! Looks like you died.");
+            CurrentHP = MaxHP;
+            JustDied = true;
+            Deaths++;
+            CurrentStatusEffects.Clear();
+            if (Deaths == 1)
+            {
+                MessageManager.AddMessage("Whoops! Looks like you died. Don't worry, you don't lose anything but pride when you die in Quepland.");
+            }
+            else
+            {
+                MessageManager.AddMessage("Whoops! Looks like you died.");
+            }
+            if (BattleManager.Instance.CurrentDojo != null)
+            {
+                BattleManager.Instance.CurrentDojo.CurrentOpponent = 0;
+                BattleManager.Instance.CurrentDojo.HasBegunChallenge = false;
+                BattleManager.Instance.CurrentDojo = null;
+            }
+            BattleManager.Instance.EndBattle();
         }
-        if (BattleManager.Instance.CurrentDojo != null)
-        {
-            BattleManager.Instance.CurrentDojo.CurrentOpponent = 0;
-            BattleManager.Instance.CurrentDojo.HasBegunChallenge = false;
-            BattleManager.Instance.CurrentDojo = null;
-        }
-        BattleManager.Instance.EndBattle();
+
     }
     public bool FollowerGatherItem(GameItem item)
     {
@@ -437,6 +447,13 @@ public class Player
         }
         CurrentStatusEffects.RemoveAll(x => endedEffects.Contains(x));
     }
-
+    public void ResetStats()
+    {
+        foreach(Skill s in Skills)
+        {
+            s.Level = 0;
+            s.Experience = 0;
+        }
+    }
 }
 

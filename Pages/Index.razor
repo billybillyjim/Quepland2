@@ -24,6 +24,7 @@ else
 
     protected async override Task OnInitializedAsync()
     {
+        SaveManager.jSRuntime = JSRuntime;
         if (GameState.InitCompleted == false)
         {
             await GameState.LoadData(Http, UriHelper, JSRuntime);

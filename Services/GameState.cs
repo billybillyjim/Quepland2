@@ -14,6 +14,13 @@ using System.Threading.Tasks;
 
     public class GameState
     {
+    public enum GameType
+    {
+        Normal,
+        Hardcore,
+        Ultimate
+    }
+    public static GameType CurrentGameMode;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
@@ -75,7 +82,7 @@ using System.Threading.Tasks;
     public static readonly int GameSpeed = 200;
     public int TicksToNextHeal;
     public int HealingTicks;
-    public static int CurrentTick;
+    public static int CurrentTick { get; set; }
 
     public static int GameWindowWidth { get; set; }
     public int MinWindowWidth { get; set; } = 600;
@@ -86,6 +93,8 @@ using System.Threading.Tasks;
     private RecipeTester RecipeTester = new RecipeTester();
     private static Random Random = new Random();
 
+    public bool SaveGame = false;
+
 
     public void Start()
     {
@@ -95,73 +104,83 @@ using System.Threading.Tasks;
         }
         //QuestTester.TestQuests();
         //RecipeTester.TestRecipes();
-        GameTimer = new Timer(new TimerCallback(_ =>
+        GameTimer = new Timer(new TimerCallback(async _ =>
         {
-            if (IsOnHuntingTrip)
-            {
-                CurrentTick++;
-                StateHasChanged();
-                return;
-            }
-            if (stopActions)
-            {
-                ClearActions();
-            }
-            else if (stopNoncombatActions)
-            {
-                ClearNonCombatActions();
-            }
-            if(TicksToNextAction <= 0 && CurrentGatherItem != null)
-            {                
-                GatherItem();
-            }
-            else if(TicksToNextAction <= 0 && CurrentRecipe != null)
-            {
-                CraftItem();
-            }
-            else if(TicksToNextAction <= 0 && CurrentSmithingRecipe != null && CurrentSmeltingRecipe != null)
-            {
-                SmithItem();
-            }
-            else if(TicksToNextAction <= 0 && CurrentAlchemyFormula != null)
-            {
-                AlchItem();
-            }
-            else if(BattleManager.Instance.CurrentOpponents != null && BattleManager.Instance.CurrentOpponents.Count > 0)
-            {
-                BattleManager.Instance.DoBattle();
-            }
-            if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking)
-            {
-                Player.Instance.CurrentFollower.TicksToNextAction--;
-                if(Player.Instance.CurrentFollower.TicksToNextAction <= 0)
-                {
-                    Player.Instance.CurrentFollower.BankItems();
-                }
-            }
-            if(CurrentFood != null && CurrentTick % CurrentFood.FoodInfo.HealSpeed == 0)
-            {
-                HealPlayer();
-            }
-            if(EXPTrackerComponent != null)
-            {
-                if(CurrentTick % 5 == 0)
-                {
-                    foreach (ExperienceTracker t in EXPTrackerComponent.TrackedExperinceRates)
-                    {
-                        t.TimeSinceTrackerStarted += TimeSpan.FromMilliseconds(GameSpeed * 5);
-                    }
-                }
-
-            }
-            Player.Instance.TickStatusEffects();
-            GetDimensions();
-            TicksToNextAction--;
-            CurrentTick++;
-            TooltipManager.currentDelay++;
+            await Tick();
             StateHasChanged();
         }), null, GameSpeed, GameSpeed);
         StateHasChanged();
+    }
+
+    private async Task Tick()
+    {
+        if (IsOnHuntingTrip)
+        {
+            CurrentTick++;
+            StateHasChanged();
+            return;
+        }
+        if (stopActions)
+        {
+            ClearActions();
+        }
+        else if (stopNoncombatActions)
+        {
+            ClearNonCombatActions();
+        }
+        if (TicksToNextAction <= 0 && CurrentGatherItem != null)
+        {
+            GatherItem();
+        }
+        else if (TicksToNextAction <= 0 && CurrentRecipe != null)
+        {
+            CraftItem();
+        }
+        else if (TicksToNextAction <= 0 && CurrentSmithingRecipe != null && CurrentSmeltingRecipe != null)
+        {
+            SmithItem();
+        }
+        else if (TicksToNextAction <= 0 && CurrentAlchemyFormula != null)
+        {
+            AlchItem();
+        }
+        else if (BattleManager.Instance.CurrentOpponents != null && BattleManager.Instance.CurrentOpponents.Count > 0)
+        {
+            BattleManager.Instance.DoBattle();
+        }
+        if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking)
+        {
+            Player.Instance.CurrentFollower.TicksToNextAction--;
+            if (Player.Instance.CurrentFollower.TicksToNextAction <= 0)
+            {
+                Player.Instance.CurrentFollower.BankItems();
+            }
+        }
+        if (CurrentFood != null && CurrentTick % CurrentFood.FoodInfo.HealSpeed == 0)
+        {
+            HealPlayer();
+        }
+        if (EXPTrackerComponent != null)
+        {
+            if (CurrentTick % 5 == 0)
+            {
+                foreach (ExperienceTracker t in EXPTrackerComponent.TrackedExperinceRates)
+                {
+                    t.TimeSinceTrackerStarted += TimeSpan.FromMilliseconds(GameSpeed * 5);
+                }
+            }
+
+        }
+        Player.Instance.TickStatusEffects();
+        await GetDimensions();
+        TicksToNextAction--;
+        CurrentTick++;
+        TooltipManager.currentDelay++;
+        if (SaveGame)
+        {
+            await SaveManager.SaveGame();
+            SaveGame = false;
+        }
     }
     /// <summary>
     /// Pauses actions at the beginning of the next game tick.

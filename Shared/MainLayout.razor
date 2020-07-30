@@ -2,33 +2,44 @@
 @inject GameState GameState
 
 
-    <div style="width:1200px;display:flex;">
+    <div style="width:1200px;display:flex;background-color:slategray;color:white;">
         @if (GameState.ShowStartMenu == false)
         {
             <div class="sidebar" style=" height: 100%;min-height:100vh; width: 300px !important; @GetGradient()">
                 <NavMenu />
             </div>
         }
-        <div class="main" style="min-width:@(GameState.MinWindowWidth)px!important;">
-            <div class="top-row px-4" style="z-index:10">
-                @if (GameState.ShowStartMenu == false)
-                {
-                    <Quepland_2.Components.ExperienceTrackerComponent></Quepland_2.Components.ExperienceTrackerComponent>
-                }
+    <div class="main" style="min-width:@(GameState.MinWindowWidth)px!important;">
+        @if (GameState.ShowStartMenu == false)
+        {
+        <div class="top-row px-4" style="z-index:10;background-color:dimgray;border:none">
+            <div @onclick="@(() => SaveManager.SaveGame())">
+                Save Game
             </div>
+            <Quepland_2.Components.ExperienceTrackerComponent></Quepland_2.Components.ExperienceTrackerComponent>
 
+        </div>
+        }
             <div>
                 @Body
             </div>
-            <div style="position: fixed;
+            @if (GameState.ShowStartMenu == false)
+            {
+                <div style="position: fixed;
                         width: @(GetMessageWidth())px;
                         overflow-y: scroll;
                         max-height: 200px;
                         height: 200px;
                         bottom: 0px;
-                        background-color: white;
+                        background-color: #bbcdde;
+                        border-radius:0.5rem;
+                        padding-left:10px!important;
+                        margin-left:15px;
                         overflow-x: hidden;" class="custom-scroll">
-            <Quepland_2.Components.MessagesMenuComponent></Quepland_2.Components.MessagesMenuComponent></div>
+                    <Quepland_2.Components.MessagesMenuComponent></Quepland_2.Components.MessagesMenuComponent>
+                </div>
+            }
+
         </div>
 
         @if (GameState.ShowStartMenu == false)

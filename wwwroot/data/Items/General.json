@@ -134,5 +134,11 @@
     "value": 50000,
     "icon": "Raft",
     "enabledActions": "River Travel"
+  },
+  {
+    "Name": "Gym Membership Card",
+    "Description": "This card will let you into the gym in Kogoe.",
+    "value": 500,
+    "icon": "Card"
   }
 ]

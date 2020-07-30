@@ -22,6 +22,9 @@
     "name": "Sawoka Dungeon",
     "url": "SawokaDungeon",
     "size": 250,
+    "areaURLs": [
+      "Sawoka"
+    ],
     "monsterNames": [
       "Ground Grupper",
       "Sawabe Swiper",
@@ -34,6 +37,9 @@
     "name": "Sahota Dungeon",
     "url": "SahotaDungeon",
     "size": 500,
+    "areaURLs": [
+      "SahotaIceFields"
+    ],
     "monsterNames": [
       "Frost Fighter",
       "Chenoo",

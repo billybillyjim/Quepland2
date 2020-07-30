@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,10 +20,15 @@ public class AreaManager
         }
     }
     public List<Area> Areas = new List<Area>();
+    [JsonIgnore]
     public List<Region> Regions = new List<Region>();
+    [JsonIgnore]
     public List<Land> Lands = new List<Land>();
+    [JsonIgnore]
     public List<Dungeon> Dungeons = new List<Dungeon>();
+    [JsonIgnore]
     public List<Smithy> Smithies = new List<Smithy>();
+    [JsonIgnore]
     public List<Dojo> Dojos = new List<Dojo>();
     public async Task LoadAreas(HttpClient Http)
     {

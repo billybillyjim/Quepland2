@@ -5,18 +5,18 @@
 @if (NPC != null && NPC.AvailableDialogCount() > 0)
 {
 
-    <div style="        
-        border: solid 1px black;
+    <div style="        border: solid 1px black;
         padding: 5px;
         margin: 5px;
-        background: bisque;
+        background: #b0daff;
+        color:black;
         border-radius: 0.5rem;">
         @npc
         @foreach (Dialog d in NPC.GetDialogsAtDepth(NPC.ConversationDepth))
         {
             @if (d.HasRequirements())
             {
-                <button class="btn btn-light" @onclick="@(() => Talk(d))">@d.ButtonText</button>
+                <button class="btn btn-dark" @onclick="@(() => Talk(d))">@d.ButtonText</button>
             }
 
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -22,13 +23,18 @@ public class Area
         }
     }
     public int ID { get; set; }
+    [JsonIgnore]
     public string Image { get; set; } = "NoImage";
+    [JsonIgnore]
     public string Description { get; set; } = "This place is indescribable... Or maybe the dev just forgot to describe it.";
     public bool IsUnlocked { get; set; }
+    [JsonIgnore]
     public bool IsHidden { get; set; }
 
     public string DojoURL { get; set; }
+    [JsonIgnore]
     private Dojo dojo;
+    [JsonIgnore]
     public Dojo Dojo { get
         {
             if(dojo == null)
@@ -38,15 +44,21 @@ public class Area
             return dojo;
         } 
     }
+    [JsonIgnore]
     public List<string> Actions { get; set; } = new List<string>();
+    [JsonIgnore]
     public List<string> Monsters { get; set; } = new List<string>();
+    [JsonIgnore]
     public List<string> NPCs { get; set; } = new List<string>();
+    [JsonIgnore]
     public List<AreaUnlock> UnlockableAreas { get; set; } = new List<AreaUnlock>();
+    [JsonIgnore]
     public List<Building> Buildings { get; set; } = new List<Building>();
     public HunterTrapSlot TrapSlot { get; set; }
     public HuntingTripInfo HuntingTripInfo { get; set; }
     public string DungeonName { get; set; }
     private Dungeon _dungeon;
+    [JsonIgnore]
     public Dungeon Dungeon
     {
         get
@@ -58,7 +70,9 @@ public class Area
             return _dungeon;
         }
     }
+    [JsonIgnore]
     public List<Shop> Shops { get; set; } = new List<Shop>();
+    [JsonIgnore]
     public List<Requirement> Requirements { get; set; } = new List<Requirement>();
 
     public bool HasRequirements()

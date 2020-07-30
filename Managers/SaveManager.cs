@@ -1,7 +1,9 @@
 ﻿using Microsoft.JSInterop;
+using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Diagnostics;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 
 
@@ -12,20 +14,86 @@ public static class SaveManager
 
     public static async Task SaveGame()
     {
-        await SetItemAsync("Guid", GameState.Guid.ToString());
+        Stopwatch w = new Stopwatch();
+        w.Start();
+        await SetItemAsync("Version", GameState.Version);
+        await SetItemAsync("Playtime", GetSaveString(GameState.CurrentTick));
+        await SetItemAsync("Game Mode", GetSaveString(GameState.CurrentGameMode));
+        w.Stop();
+        Console.WriteLine("Time for version, playtime, and game mode:" + w.ElapsedMilliseconds + "ms.");
+        w.Restart();
+        await SetItemAsync("Player", GetSaveString(Player.Instance)); 
+        w.Stop();
+        Console.WriteLine("Time for Player:" + w.ElapsedMilliseconds + "ms.");
+        w.Restart();
+        await SetItemAsync("Bank", GetSaveString(Bank.Instance));
+        w.Stop();
+        Console.WriteLine("Time for Bank:" + w.ElapsedMilliseconds + "ms.");
+        w.Restart();
+        await SetItemAsync("Areas", JsonConvert.SerializeObject(AreaManager.Instance));
+        w.Stop();
+        Console.WriteLine("Time for Areas:" + w.ElapsedMilliseconds + "ms.");
     }
-    public async static Task SaveGuid()
+    public static async Task LoadSaveGame()
     {
-        await SetItemAsync("Guid", GameState.Guid.ToString());
-    }
-    public async static Task GetGuid()
-    {
-        if (await ContainsKeyAsync("Guid"))
+        var serializerSettings = new JsonSerializerSettings { ObjectCreationHandling = ObjectCreationHandling.Replace };
+        if(await ContainsKeyAsync("Playtime"))
         {
-            GameState.Guid = Guid.Parse(await GetItemAsync<string>("Guid"));
+            GameState.CurrentTick = int.Parse(Decrypt(await GetItemAsync<string>("Playtime")));
+        }
+        if(await ContainsKeyAsync("Game Mode"))
+        {
+            string mode = Decrypt(await GetItemAsync<string>("Game Mode"));
+            if(mode == "Normal")
+            {
+                GameState.CurrentGameMode = GameState.GameType.Normal;
+            }
+            else if(mode == "Hardcore")
+            {
+                GameState.CurrentGameMode = GameState.GameType.Hardcore;
+            }
+            else if(mode == "Ultimate")
+            {
+                GameState.CurrentGameMode = GameState.GameType.Ultimate;
+            }
+        }
+        if (await ContainsKeyAsync("Player"))
+        {
+            JsonConvert.PopulateObject(Decrypt(await GetItemAsync<string>("Player")), Player.Instance, serializerSettings);
+        }
+        if (await ContainsKeyAsync("Bank"))
+        {
+            JsonConvert.PopulateObject(Decrypt(await GetItemAsync<string>("Bank")), Bank.Instance, serializerSettings);
+        }
+        if (await ContainsKeyAsync("Areas"))
+        {
+            JsonConvert.PopulateObject(await GetItemAsync<string>("Areas"), AreaManager.Instance, serializerSettings);
         }
     }
+    public static string GetSaveString(Object o)
+    {
+        return Crypt(JsonConvert.SerializeObject(o));
+    }
+    private static byte[] key = new byte[8] { 1, 2, 3, 4, 5, 6, 7, 8 };
+    private static byte[] iv = new byte[8] { 1, 2, 3, 4, 5, 6, 7, 8 };
 
+    private static string Crypt(this string text)
+    {
+        SymmetricAlgorithm algorithm = DES.Create();
+        ICryptoTransform transform = algorithm.CreateEncryptor(key, iv);
+        byte[] inputbuffer = Encoding.Unicode.GetBytes(text);
+        byte[] outputBuffer = transform.TransformFinalBlock(inputbuffer, 0, inputbuffer.Length);
+        return Convert.ToBase64String(outputBuffer);
+    }
+
+    private static string Decrypt(this string text)
+    {
+        SymmetricAlgorithm algorithm = DES.Create();
+        ICryptoTransform transform = algorithm.CreateDecryptor(key, iv);
+        byte[] inputbuffer = Convert.FromBase64String(text);
+        byte[] outputBuffer = transform.TransformFinalBlock(inputbuffer, 0, inputbuffer.Length);
+        return Encoding.Unicode.GetString(outputBuffer);
+    }
     public async static Task SetItemAsync(string key, object data)
     {
         if (key == null || key.Length == 0)
