@@ -2,13 +2,13 @@
 @implements IDisposable
 
     <div style="display:flex;">
-        <button style="font-size: small; text-align: center; margin: 0px; padding: 0px; min-width: 60px;@GetBGColor("Inventory")" onclick="@(new Action(() => ChangeView("Inventory")))"><img src="/data/Images/Inventory.png" style="height:45px;width:45px;border:solid black 4px;">Inv</button>
-        <button style="font-size: small; text-align: center; margin: 0px; padding: 0px; min-width: 60px;@GetBGColor("Equipment")" onclick="@(new Action(() => ChangeView("Equipment")))"><img src="/data/Images/Equipment.png" style="height:45px;width:45px;border:solid black 4px;">Equip</button>
-        <button style="font-size: small; text-align: center; margin: 0px; padding: 0px; min-width: 60px;@GetBGColor("Skills")" onclick="@(new Action(() => ChangeView("Skills")))"><img src="/data/Images/Skills.png" style="height:45px;width:45px;border:solid black 4px;">Skills</button>
-        <button style="font-size: small; text-align: center; margin: 0px; padding: 0px; min-width: 60px;@GetBGColor("Quests")" onclick="@(new Action(() => ChangeView("Quests")))"><img src="/data/Images/Quests.png" style="height:45px;width:45px;border:solid black 4px;">Quests</button>
-        <button style="font-size: small; text-align: center; margin: 0px; padding: 0px; min-width: 60px;@GetBGColor("Crafting")" onclick="@(new Action(() => ChangeView("Crafting")))"><img src="/data/Images/Craft.png" style="height:45px;width:45px;border:solid black 4px;">Craft</button>
-        <button style="font-size: small; text-align: center; margin: 0px; padding: 0px; min-width: 60px;@GetBGColor("Followers")" onclick="@(new Action(() => ChangeView("Followers")))"><img src="/data/Images/Followers.png" style="height:45px;width:45px;border:solid black 4px;">Team</button>
-        <button style="font-size: small; text-align: center; margin: 0px; padding: 0px; min-width: 60px;" onclick="@(new Action(() => ChangeView("Debug")))"><img src="/data/Images/NoImage.png" style="height:45px;width:45px;border:solid black 4px;">Debug</button>
+        <button class="sidebar-buttons" style="@GetBGColor("Inventory")" onclick="@(new Action(() => ChangeView("Inventory")))"><img src="/data/Images/WhiteInventory.png" style="height:42px;width:42px;">Inv</button>
+        <button class="sidebar-buttons" style="@GetBGColor("Equipment")" onclick="@(new Action(() => ChangeView("Equipment")))"><img src="/data/Images/WhiteEquipment.png" style="height:42px;width:42px;">Equip</button>
+        <button class="sidebar-buttons" style="@GetBGColor("Skills")" onclick="@(new Action(() => ChangeView("Skills")))"><img src="/data/Images/WhiteSkills.png" style="height:42px;width:42px;">Skills</button>
+        <button class="sidebar-buttons" style="@GetBGColor("Quests")" onclick="@(new Action(() => ChangeView("Quests")))"><img src="/data/Images/WhiteQuests.png" style="height:42px;width:42px;">Quests</button>
+        <button class="sidebar-buttons" style="@GetBGColor("Crafting")" onclick="@(new Action(() => ChangeView("Crafting")))"><img src="/data/Images/WhiteCraft.png" style="height:42px;width:42px;">Craft</button>
+        <button class="sidebar-buttons" style="@GetBGColor("Followers")" onclick="@(new Action(() => ChangeView("Followers")))"><img src="/data/Images/WhiteFollowers.png" style="height:42px;width:42px;">Team</button>
+        <button class="sidebar-buttons" style="" onclick="@(new Action(() => ChangeView("Debug")))"><img src="/data/Images/NoImage.png" style="height:45px;width:45px;border:solid black 4px;">Debug</button>
 
     </div>
     <div>
@@ -62,9 +62,9 @@ else if(activeWindow == "Debug")
     {
         if(activeWindow == window)
         {
-            return "background-color:lightgray";
+            return "background-color:#303030";
         }
-        return "background-color:white";
+        return "background-color:#4d4d4d";
     }
     public void ChangeView(string view)
     {

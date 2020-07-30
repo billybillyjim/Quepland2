@@ -17,7 +17,7 @@ else
     @foreach (string loc in locations)
     {
         <div>
-            if (CurrentLocation == loc)
+            @if (CurrentLocation == loc)
             {
             <button class="btn btn-primary" disabled>@loc</button>
             }

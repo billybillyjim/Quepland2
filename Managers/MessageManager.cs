@@ -13,7 +13,7 @@ public static class MessageManager
 
     public static void AddMessage(string message)
     {
-        AddMessage(message, "black");
+        AddMessage(message, "white");
     }
     public static void AddMessage(string newMessageString, string color)
     {

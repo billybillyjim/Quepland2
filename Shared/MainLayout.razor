@@ -2,7 +2,7 @@
 @inject GameState GameState
 
 
-    <div style="width:1200px;display:flex;background-color:slategray;color:white;">
+    <div style="width:1200px;display:flex;background-color:#2d2d2d;color:white;">
         @if (GameState.ShowStartMenu == false)
         {
             <div class="sidebar" style=" height: 100%;min-height:100vh; width: 300px !important; @GetGradient()">
@@ -12,7 +12,7 @@
     <div class="main" style="min-width:@(GameState.MinWindowWidth)px!important;">
         @if (GameState.ShowStartMenu == false)
         {
-        <div class="top-row px-4" style="z-index:10;background-color:dimgray;border:none">
+        <div class="top-row px-4" style="z-index:10;background-color:dimgray;border:none;height:60px;">
             <div @onclick="@(() => SaveManager.SaveGame())">
                 Save Game
             </div>
@@ -31,7 +31,7 @@
                         max-height: 200px;
                         height: 200px;
                         bottom: 0px;
-                        background-color: #bbcdde;
+                        background-color: #4d4d4d;
                         border-radius:0.5rem;
                         padding-left:10px!important;
                         margin-left:15px;
@@ -44,7 +44,7 @@
 
         @if (GameState.ShowStartMenu == false)
         {
-            <div style="width: 360px!important;background-color:darkgray;">
+            <div style="width: 360px!important;background-color:#4d4d4d;">
                 <Quepland_2.Components.RightSidebarComponent></Quepland_2.Components.RightSidebarComponent>
             </div>
         }

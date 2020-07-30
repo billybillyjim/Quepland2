@@ -37,7 +37,7 @@
             </div>
             <div class="progress" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowItemTooltip(e, "To Level " + (Player.Instance.LastGainedExp.GetSkillLevelUnboosted() + 1), "" + Player.Instance.LastGainedExp.Experience + "/" + (long)Skill.GetExperienceRequired(Player.Instance.LastGainedExp.GetSkillLevelUnboosted()))))"
              onmouseout="@(new Action(() => GameState.HideTooltip()))" >
-                <div class="progress-bar" style="width:@(Player.Instance.LastGainedExp.Progress)%">
+                <div class="progress-bar" style="background-color:#51d051;width:@(Player.Instance.LastGainedExp.Progress)%">
 
                 </div>
             </div>
@@ -55,7 +55,7 @@
             @Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience
         </div>
         <div class="progress">
-            <div class="progress-bar" style="width:@(Player.Instance.Skills.Find(x => x.Name == SetSkill).Progress)%">
+            <div class="progress-bar" style="background-color: #51d051; width: @(Player.Instance.Skills.Find(x => x.Name == SetSkill).Progress) %">
 
             </div>
         </div>

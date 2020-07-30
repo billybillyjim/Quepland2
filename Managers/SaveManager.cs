@@ -22,17 +22,10 @@ public static class SaveManager
         w.Stop();
         Console.WriteLine("Time for version, playtime, and game mode:" + w.ElapsedMilliseconds + "ms.");
         w.Restart();
-        await SetItemAsync("Player", GetSaveString(Player.Instance)); 
+        await SetItemAsync("Skills", GetSaveString(Player.Instance.Skills)); 
         w.Stop();
-        Console.WriteLine("Time for Player:" + w.ElapsedMilliseconds + "ms.");
-        w.Restart();
-        await SetItemAsync("Bank", GetSaveString(Bank.Instance));
-        w.Stop();
-        Console.WriteLine("Time for Bank:" + w.ElapsedMilliseconds + "ms.");
-        w.Restart();
-        await SetItemAsync("Areas", JsonConvert.SerializeObject(AreaManager.Instance));
-        w.Stop();
-        Console.WriteLine("Time for Areas:" + w.ElapsedMilliseconds + "ms.");
+        Console.WriteLine("Time for Skills:" + w.ElapsedMilliseconds + "ms.");
+
     }
     public static async Task LoadSaveGame()
     {
@@ -57,18 +50,15 @@ public static class SaveManager
                 GameState.CurrentGameMode = GameState.GameType.Ultimate;
             }
         }
-        if (await ContainsKeyAsync("Player"))
+        if (await ContainsKeyAsync("Skills"))
         {
-            JsonConvert.PopulateObject(Decrypt(await GetItemAsync<string>("Player")), Player.Instance, serializerSettings);
+            Player.Instance.Skills.Clear();
+            JsonConvert.PopulateObject(Decrypt(await GetItemAsync<string>("Skills")), Player.Instance.Skills, serializerSettings);
         }
-        if (await ContainsKeyAsync("Bank"))
-        {
-            JsonConvert.PopulateObject(Decrypt(await GetItemAsync<string>("Bank")), Bank.Instance, serializerSettings);
-        }
-        if (await ContainsKeyAsync("Areas"))
-        {
-            JsonConvert.PopulateObject(await GetItemAsync<string>("Areas"), AreaManager.Instance, serializerSettings);
-        }
+    }
+    public static async Task<bool> HasSaveFile()
+    {
+        return await ContainsKeyAsync("Version");
     }
     public static string GetSaveString(Object o)
     {

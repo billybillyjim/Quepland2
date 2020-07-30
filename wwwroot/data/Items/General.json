@@ -140,5 +140,11 @@
     "Description": "This card will let you into the gym in Kogoe.",
     "value": 500,
     "icon": "Card"
+  },
+  {
+    "Name": "Ice",
+    "Description": "It's cold water.",
+    "value": 5,
+    "icon": "Ice"
   }
 ]

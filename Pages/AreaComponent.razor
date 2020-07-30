@@ -13,7 +13,7 @@
     {
         if (a == "Smithy")
         {
-            <button class="btn btn-outline-dark" @onclick="(() => EnterSmithy())">Smith</button>
+            <button class="btn btn-dark" @onclick="(() => EnterSmithy())">Smith</button>
             <br />
         }
         else if(a == "Cabochon")
@@ -66,7 +66,7 @@
     @if (thisArea.Monsters != null && thisArea.Monsters.Count > 0)
     {
         <div>
-            <button class="btn btn-outline-dark" @onclick="@(e => FindBattles())">Battle</button>
+            <button class="btn btn-dark" @onclick="@(e => FindBattles())">Battle</button>
 
         </div>
         <br />

@@ -4,12 +4,31 @@
 
 @foreach(Quest q in QuestManager.Instance.Quests)
 {
-    <div>@q.Name</div>
-    <div>@q.Progress</div>
-    <div>@q.ProgressToComplete</div>
-    <br/>
+    <div style="margin:5px;">
+        <div style="padding-left:5px;background-color:#b9b9b9;cursor:pointer;@GetStyle(q)">@q.Name</div>
+    </div>
 }
 @code {
+
+
+    public string GetStyle(Quest q)
+    {
+        string color = "";
+        if(q.Progress == 0)
+        {
+            color =  "color:black;";
+        }
+        else if (q.IsComplete)
+        {
+            color = "color:green;";
+        }
+        else
+        {
+            color = "color:yellow;";
+        }
+        return color;
+    }
+
     protected override void OnInitialized()
     {
         GameState.StateChanged += OnGameStateChanged;

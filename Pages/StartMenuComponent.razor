@@ -7,28 +7,36 @@
 
         @if (GameState.InitCompleted)
         {
-            if (GameState.CurrentGameMode == GameState.GameType.Hardcore && Player.Instance.JustDied)
+            if (hasSave)
             {
-                <button class="btn btn-primary" onclick="@(new Action(() => ResetGame()))">Begin New Game</button>
+                <button class="btn btn-primary" @onclick="@(() => LoadGame())">
+                    Load Game
+                </button>
             }
             else
             {
-                <button class="btn btn-primary" onclick="@(new Action(() => StartGame()))">Begin New Game</button>
-                <button onclick="@(new Action(() => TestAlch()))">Test Alchemy</button>
+                if (GameState.CurrentGameMode == GameState.GameType.Hardcore && Player.Instance.JustDied)
+                {
+                    <button class="btn btn-primary" onclick="@(new Action(() => ResetGame()))">Begin New Game</button>
+                }
+                else
+                {
+                    <button class="btn btn-primary" onclick="@(new Action(() => StartGame()))">Begin New Game</button>
+                    <button onclick="@(new Action(() => TestAlch()))">Test Alchemy</button>
+                }
+
+                <br />
+                <div style="margin-left:-10px;">
+                    <Quepland_2.Components.CustomDropdownComponent DropdownItems="@GetGameModes()" @bind-Value="@selectedMode" BoxText="Game Mode(Normal)"></Quepland_2.Components.CustomDropdownComponent>
+
+                </div>
             }
 
-            <br/>
-            <div style="margin-left:-10px;">
-                <Quepland_2.Components.CustomDropdownComponent DropdownItems="@GetGameModes()" @bind-Value="@selectedMode" BoxText="Game Mode(Normal)"></Quepland_2.Components.CustomDropdownComponent>
 
-            </div>
-            <div @onclick="@(() => SaveManager.LoadSaveGame())">
-                Load Game
-            </div>
         }
         else
         {
-            <button disabled>Begin New Game</button>
+            <button class="btn btn-primary" disabled>Begin New Game</button>
         }
 
 
@@ -38,7 +46,7 @@
 @code {
 
     public string selectedMode = "Normal";
-
+    bool hasSave = false;
     public List<string> GetGameModes()
     {
         List<string> modes = new List<string>();
@@ -70,6 +78,13 @@
         }
         GameState.ShowStartMenu = false;
         AreaManager.Instance.GetAreaByName("Quepland Fields").Unlock();
+        UriHelper.NavigateTo("/World/QueplandFields");
+    }
+    public void LoadGame()
+    {
+        SaveManager.LoadSaveGame();
+        GameState.ShowStartMenu = false;
+        GameState.Location = "QueplandFields";
         UriHelper.NavigateTo("/World/QueplandFields");
     }
     public void StartGame()
@@ -104,9 +119,11 @@
         GameState.Location = "MountQuepleAlchemicalHall";
         UriHelper.NavigateTo("/World/AlchemicalHall/WindHall/");
     }
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
+        hasSave = await SaveManager.HasSaveFile();
         GameState.StateChanged += OnGameStateChanged;
+
     }
     public void Dispose()
     {
