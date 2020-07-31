@@ -37,4 +37,13 @@ public class Quest
 			Console.WriteLine("Game attempted to complete Quest:" + Name + " more than once. Progress:" + Progress);
         }
     }
+	public QuestSaveData GetSaveData()
+    {
+		return new QuestSaveData { ID = ID, IsCompleted = IsComplete, Progress = Progress };
+    }
+	public void LoadFromSave(QuestSaveData data)
+    {
+		IsComplete = data.IsCompleted;
+		_progress = data.Progress;
+    }
 }

@@ -26,4 +26,13 @@ public class Region
 	private List<Area> _areas { get; set; }
 	public List<string> AreaNames { get; set; }
 	public bool IsUnlocked { get; set; }
+
+	public void LoadSaveData(RegionSaveData data)
+    {
+		IsUnlocked = data.IsUnlocked;
+    }
+	public RegionSaveData GetSaveData()
+    {
+		return new RegionSaveData { IsUnlocked = IsUnlocked, Name = Name };
+    }
 }

@@ -37,12 +37,12 @@ public class Area
     [JsonIgnore]
     public Dojo Dojo { get
         {
-            if(dojo == null)
+            if (dojo == null)
             {
                 dojo = AreaManager.Instance.GetDojoByURL(DojoURL);
             }
             return dojo;
-        } 
+        }
     }
     [JsonIgnore]
     public List<string> Actions { get; set; } = new List<string>();
@@ -63,7 +63,7 @@ public class Area
     {
         get
         {
-            if(_dungeon == null && DungeonName != null)
+            if (_dungeon == null && DungeonName != null)
             {
                 _dungeon = AreaManager.Instance.Dungeons.FirstOrDefault(x => x.Name == DungeonName);
             }
@@ -120,21 +120,32 @@ public class Area
     }
     public bool HasUnlockableAreas()
     {
-        if(UnlockableAreas != null && UnlockableAreas.Count > 0)
+        if (UnlockableAreas != null && UnlockableAreas.Count > 0)
         {
-            foreach(AreaUnlock unlock in UnlockableAreas)
+            foreach (AreaUnlock unlock in UnlockableAreas)
             {
-                if(unlock == null)
+                if (unlock == null)
                 {
                     Console.WriteLine("Area " + Name + " has a null value.");
                 }
-                if(unlock.HasRequirements() && AreaManager.Instance.GetAreaByURL(unlock.AreaURL).IsUnlocked == false)
+                if (unlock.HasRequirements() && AreaManager.Instance.GetAreaByURL(unlock.AreaURL).IsUnlocked == false)
                 {
                     return true;
                 }
             }
         }
         return false;
+    }
+
+    public AreaSaveData GetSaveData()
+    {
+        return new AreaSaveData { IsUnlocked = IsUnlocked, TrapSlot = TrapSlot, TripInfo = HuntingTripInfo, ID = ID };
+    }
+    public void LoadSaveData(AreaSaveData data)
+    {
+        IsUnlocked = data.IsUnlocked;
+        TrapSlot = data.TrapSlot;
+        HuntingTripInfo = data.TripInfo;
     }
 }
 

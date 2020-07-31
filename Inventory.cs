@@ -127,7 +127,6 @@ public class Inventory
         }
         if(itemLookupDic.TryGetValue(uniqueID, out int amt))
         {
-            Console.WriteLine("Inventory already has " + amt + " of item:" + uniqueID);
             return true;
         }
         return false;

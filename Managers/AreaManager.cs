@@ -99,5 +99,37 @@ public class AreaManager
         Console.WriteLine("Failed to find dojo with URL:" + url);
         return null;
     }
+    public List<AreaSaveData> GetAreaSave()
+    {
+        List<AreaSaveData> data = new List<AreaSaveData>();
+        foreach (Area a in Areas)
+        {
+            data.Add(a.GetSaveData());
+        }
+        return data;
+    }
+    public void LoadAreaSave(List<AreaSaveData> data)
+    {
+        foreach(AreaSaveData d in data)
+        {
+            Areas.Find(x => x.ID == d.ID).LoadSaveData(d);
+        }
+    }
+    public List<RegionSaveData> GetRegionSaveData()
+    {
+        List<RegionSaveData> data = new List<RegionSaveData>();
+        foreach(Region r in Regions)
+        {
+            data.Add(r.GetSaveData());
+        }
+        return data;
+    }
+    public void LoadRegionSave(List<RegionSaveData> data)
+    {
+        foreach (RegionSaveData d in data)
+        {
+            Regions.Find(x => x.Name == d.Name).LoadSaveData(d);
+        }
+    }
 }
 

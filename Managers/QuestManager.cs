@@ -33,5 +33,21 @@ public class QuestManager
     {
         return Quests.FirstOrDefault(x => x.Name == name);
     }
+    public List<QuestSaveData> GetQuestSaveData()
+    {
+        List<QuestSaveData> data = new List<QuestSaveData>();
+        foreach(Quest q in Quests)
+        {
+            data.Add(q.GetSaveData());
+        }
+        return data;
+    }
+    public void LoadQuestSave(List<QuestSaveData> data)
+    {
+        foreach(QuestSaveData d in data)
+        {
+            Quests.Find(x => x.ID == d.ID).LoadFromSave(d);
+        }
+    }
 }
 

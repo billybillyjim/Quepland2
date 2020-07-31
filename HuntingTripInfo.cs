@@ -10,5 +10,4 @@ public class HuntingTripInfo
 	public bool IsActive { get; set; }
 	public DateTime ReturnTime { get; set; }
 	public DateTime StartTime { get; set; }
-	public Area Area { get; set; }
 }

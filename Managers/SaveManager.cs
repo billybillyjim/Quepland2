@@ -20,20 +20,12 @@ public static class SaveManager
         await SetItemAsync("Version", GameState.Version);
         await SetItemAsync("Playtime", GetSaveString(GameState.CurrentTick));
         await SetItemAsync("Game Mode", GetSaveString(GameState.CurrentGameMode));
-        w.Stop();
-        Console.WriteLine("Time for version, playtime, and game mode:" + w.ElapsedMilliseconds + "ms.");
-        w.Restart();
         await SetItemAsync("Skills", GetSaveString(Player.Instance.Skills)); 
-        w.Stop();
-        Console.WriteLine("Time for Skills:" + w.ElapsedMilliseconds + "ms."); 
-        w.Restart();
         await SetItemAsync("Inventory", GetItemSave(Player.Instance.Inventory));
-        w.Stop();
-        Console.WriteLine("Time for Inv:" + w.ElapsedMilliseconds + "ms.");
-        w.Restart();
         await SetItemAsync("Bank", GetItemSave(Bank.Instance.Inventory));
-        w.Stop();
-        Console.WriteLine("Time for Bank:" + w.ElapsedMilliseconds + "ms.");
+        await SetItemAsync("Areas", GetAreaSave());
+        await SetItemAsync("Regions", GetRegionSave());
+        await SetItemAsync("Quests", GetQuestSave());
     }
     public static async Task LoadSaveGame()
     {
@@ -73,6 +65,18 @@ public static class SaveManager
             Bank.Instance.Inventory.Clear();
             Bank.Instance.Inventory.LoadData(await GetItemAsync<string>("Bank"));
         }
+        if(await ContainsKeyAsync("Areas"))
+        {
+            AreaManager.Instance.LoadAreaSave(JsonConvert.DeserializeObject<List<AreaSaveData>>(await GetItemAsync<string>("Areas")));
+        }
+        if(await ContainsKeyAsync("Regions"))
+        {
+            AreaManager.Instance.LoadRegionSave(JsonConvert.DeserializeObject<List<RegionSaveData>>(await GetItemAsync<string>("Regions")));
+        }
+        if(await ContainsKeyAsync("Quests"))
+        {
+            QuestManager.Instance.LoadQuestSave(JsonConvert.DeserializeObject<List<QuestSaveData>>(await GetItemAsync<string>("Quests")));
+        }
     }
     public static string GetItemSave(Inventory i)
     { 
@@ -82,6 +86,18 @@ public static class SaveManager
             data += pair.Key.UniqueID + "_" + pair.Value + "/";
         }
         return data;
+    }
+    public static string GetAreaSave()
+    {
+        return JsonConvert.SerializeObject(AreaManager.Instance.GetAreaSave());
+    }
+    public static string GetRegionSave()
+    {
+        return JsonConvert.SerializeObject(AreaManager.Instance.GetRegionSaveData());
+    }
+    public static string GetQuestSave()
+    {
+        return JsonConvert.SerializeObject(QuestManager.Instance.GetQuestSaveData());
     }
     public static async Task<bool> HasSaveFile()
     {
