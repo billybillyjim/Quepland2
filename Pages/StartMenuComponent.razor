@@ -80,9 +80,9 @@
         AreaManager.Instance.GetAreaByName("Quepland Fields").Unlock();
         UriHelper.NavigateTo("/World/QueplandFields");
     }
-    public void LoadGame()
+    public async Task LoadGame()
     {
-        SaveManager.LoadSaveGame();
+        await SaveManager.LoadSaveGame();
         GameState.ShowStartMenu = false;
         GameState.Location = "QueplandFields";
         UriHelper.NavigateTo("/World/QueplandFields");

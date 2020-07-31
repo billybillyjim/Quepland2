@@ -14,7 +14,7 @@
         }
         @if (HideTooltip == false)
         {
-            <img style="height: 46px;width: 46px;@GetMargin()" src="/data/Images/@(Item.Icon).png" draggable="false" loading=lazy
+            <img style="height: 46px;width: 46px;@GetMargin()" src="/data/Images/@(Item.Icon).png" draggable="false"
                  @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowItemTooltip(e, GetTooltipTitle(), Item.Description)))"
                  @onmouseout="@(new Action(() => GameState.HideTooltip()))" />
         }

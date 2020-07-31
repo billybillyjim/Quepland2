@@ -409,7 +409,7 @@ public class Player
         Skill s = Skills.FirstOrDefault(x => x.Name == skill);
         if (s == null)
         {
-            Console.WriteLine("Failed to find game item:" + skill);
+            Console.WriteLine("Failed to find skill:" + skill);
             return false;
         }
         return s.Level >= lvl;

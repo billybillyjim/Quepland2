@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 public class Inventory
 {
-    private List<KeyValuePair<GameItem, int>> items;
+    private List<KeyValuePair<GameItem, int>> items { get; set; }
     private Dictionary<string, int> itemLookupDic { get; set; }
     private int maxSize = 30;
     private readonly int maxValue = int.MaxValue - 1000000;
@@ -126,6 +127,7 @@ public class Inventory
         }
         if(itemLookupDic.TryGetValue(uniqueID, out int amt))
         {
+            Console.WriteLine("Inventory already has " + amt + " of item:" + uniqueID);
             return true;
         }
         return false;
@@ -440,7 +442,7 @@ public class Inventory
             return true;
         }
         foreach (KeyValuePair<GameItem, int> i in items)
-        {
+        {       
             //item.Key.itemPos = inventorySlotPos;
             if (i.Key != null && i.Key.EnabledActions.Contains(action))
             {
@@ -458,6 +460,32 @@ public class Inventory
             total += i.Key.Value * i.Value;
         }
         return total;
+    }
+    public void LoadData(string data)
+    {
+        string[] i = data.Split('/');
+        if(i.Length == 0)
+        {
+            return;
+        }
+        foreach(string line in i)
+        {
+            string[] s = line.Split('_');
+            if(s.Length != 2)
+            {
+                continue;
+            }
+            string id = s[0];
+            if(int.TryParse(s[1], out int amt))
+            {
+                GameItem it = ItemManager.Instance.GetItemByUniqueID(id);
+                AddMultipleOfItem(it, amt);
+            }
+            else
+            {
+                Console.WriteLine("Error loading item in line:" + line);
+            }
+        }
     }
 }
 

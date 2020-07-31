@@ -1,6 +1,7 @@
 ﻿using Microsoft.JSInterop;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;
@@ -24,8 +25,15 @@ public static class SaveManager
         w.Restart();
         await SetItemAsync("Skills", GetSaveString(Player.Instance.Skills)); 
         w.Stop();
-        Console.WriteLine("Time for Skills:" + w.ElapsedMilliseconds + "ms.");
-
+        Console.WriteLine("Time for Skills:" + w.ElapsedMilliseconds + "ms."); 
+        w.Restart();
+        await SetItemAsync("Inventory", GetItemSave(Player.Instance.Inventory));
+        w.Stop();
+        Console.WriteLine("Time for Inv:" + w.ElapsedMilliseconds + "ms.");
+        w.Restart();
+        await SetItemAsync("Bank", GetItemSave(Bank.Instance.Inventory));
+        w.Stop();
+        Console.WriteLine("Time for Bank:" + w.ElapsedMilliseconds + "ms.");
     }
     public static async Task LoadSaveGame()
     {
@@ -55,6 +63,25 @@ public static class SaveManager
             Player.Instance.Skills.Clear();
             JsonConvert.PopulateObject(Decrypt(await GetItemAsync<string>("Skills")), Player.Instance.Skills, serializerSettings);
         }
+        if(await ContainsKeyAsync("Inventory"))
+        {
+            Player.Instance.Inventory.Clear();
+            Player.Instance.Inventory.LoadData(await GetItemAsync<string>("Inventory"));
+        }
+        if (await ContainsKeyAsync("Bank"))
+        {
+            Bank.Instance.Inventory.Clear();
+            Bank.Instance.Inventory.LoadData(await GetItemAsync<string>("Bank"));
+        }
+    }
+    public static string GetItemSave(Inventory i)
+    { 
+        string data = "";
+        foreach(KeyValuePair<GameItem, int> pair in i.GetItems())
+        {
+            data += pair.Key.UniqueID + "_" + pair.Value + "/";
+        }
+        return data;
     }
     public static async Task<bool> HasSaveFile()
     {
