@@ -31,6 +31,7 @@ public static class SaveManager
             await SetItemAsync("GameState", JsonConvert.SerializeObject(GameState.GetSaveData()));
             await SetItemAsync("Player", JsonConvert.SerializeObject(Player.Instance.GetSaveData()));
             await SetItemAsync("Followers", FollowerManager.Instance.GetSaveData());
+            await SetItemAsync("TanningInfo", GetTanningSave());
 
             LastSave = DateTime.UtcNow;
         }
@@ -150,6 +151,13 @@ public static class SaveManager
         }
         watch.Stop();
         Console.WriteLine(watch.ElapsedMilliseconds);
+        watch.Restart(); 
+        if (await ContainsKeyAsync("TanningInfo"))
+        {
+            AreaManager.Instance.LoadTanningSave(JsonConvert.DeserializeObject<List<TanningSaveData>>(await GetItemAsync<string>("TanningInfo")));
+        }
+        watch.Stop();
+        Console.WriteLine(watch.ElapsedMilliseconds);
         watch.Restart();
     }
     public static string GetItemSave(Inventory i)
@@ -181,6 +189,10 @@ public static class SaveManager
             s += skill.Name + ":" + skill.Experience + ",";
         }
         return s;
+    }
+    public static string GetTanningSave()
+    {
+        return JsonConvert.SerializeObject(AreaManager.Instance.GetTanningSaveData());
     }
     public static async Task<bool> HasSaveFile()
     {

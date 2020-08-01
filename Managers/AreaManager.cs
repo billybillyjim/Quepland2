@@ -20,6 +20,7 @@ public class AreaManager
         }
     }
     public List<Area> Areas = new List<Area>();
+    public List<Building> Buildings = new List<Building>();
     [JsonIgnore]
     public List<Region> Regions = new List<Region>();
     [JsonIgnore]
@@ -37,7 +38,13 @@ public class AreaManager
         {
             Areas.AddRange(await Http.GetJsonAsync<Area[]>("data/Areas/" + region.Name.RemoveWhitespace() + ".json"));
         }
-        
+        foreach(Area a in Areas)
+        {
+            foreach(Building b in a.Buildings)
+            {
+                Buildings.Add(b);
+            }
+        }
         Lands.AddRange(await Http.GetJsonAsync<Land[]>("data/Lands.json"));
         Dungeons.AddRange(await Http.GetJsonAsync<Dungeon[]>("data/Dungeons/QueplandDungeons.json"));
         Smithies.AddRange(await Http.GetJsonAsync<Smithy[]>("data/Smithies.json"));
@@ -129,6 +136,30 @@ public class AreaManager
         foreach (RegionSaveData d in data)
         {
             Regions.Find(x => x.Name == d.Name).LoadSaveData(d);
+        }
+    }
+    public List<TanningSaveData> GetTanningSaveData()
+    {
+        List<TanningSaveData> data = new List<TanningSaveData>();
+        foreach(Building b in Buildings)
+        {
+            if(b.TanningSlots.Count > 0)
+            {
+                foreach(TanningSlot slot in b.TanningSlots)
+                {
+                    TanningSaveData d = slot.GetSaveData();
+                    d.BuildingName = b.Name;
+                    data.Add(d);
+                }
+            }
+        }
+        return data;
+    }
+    public void LoadTanningSave(List<TanningSaveData> data)
+    {
+        foreach(TanningSaveData d in data)
+        {
+            Buildings.Find(x => x.Name == d.BuildingName).LoadTanningData(d);
         }
     }
 }

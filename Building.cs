@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Quepland_2.Components;
+using System;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 
 public class Building
 {
@@ -12,6 +14,7 @@ public class Building
 	public List<Shop> Shops { get; set; } = new List<Shop>();
 	public List<TanningSlot> TanningSlots { get; set; } = new List<TanningSlot>();
     public List<Requirement> Requirements { get; set; } = new List<Requirement>();
+    private int loadedTanningSlotsIterator;
 
     public bool HasRequirements()
     {
@@ -46,5 +49,11 @@ public class Building
         }
         req = req.Substring(0, req.Length - 1);
         return req;
+    }
+    public void LoadTanningData(TanningSaveData data)
+    {
+        TanningSlots[loadedTanningSlotsIterator].LoadData(data);
+        loadedTanningSlotsIterator++;
+        
     }
 }
