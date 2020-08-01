@@ -29,10 +29,11 @@ using System.Threading.Tasks;
     public static string Location { get; set; } = "";
     public static bool InitCompleted { get; set; } = false;
     public static bool ShowStartMenu { get; set; } = true;
+    public static bool ShowSettings { get; set; }
     private bool stopActions = false;
     private bool stopNoncombatActions = false;
     public bool IsStoppingNextTick { get; set; }
-    public bool IsOnHuntingTrip { get; set; } 
+    public static bool IsOnHuntingTrip { get; set; } 
     private Timer GameTimer { get; set; }
     public int testInt = 0;
     private static Guid _guid;
@@ -70,7 +71,7 @@ using System.Threading.Tasks;
     
     public GameItem CurrentFood;
     public Recipe CurrentRecipe;
-    public Land CurrentLand;
+    public static Land CurrentLand;
     public ItemViewerComponent itemViewer;
     public InventoryViewerComponent inventoryViewer;
     public SmithyComponent SmithingComponent;
@@ -83,7 +84,7 @@ using System.Threading.Tasks;
     public int TicksToNextHeal;
     public int HealingTicks;
     public static int CurrentTick { get; set; }
-
+    public static int AutoSaveInterval { get; set; } = 9000;
     public static int GameWindowWidth { get; set; }
     public int MinWindowWidth { get; set; } = 600;
     public int SmithingStage;
@@ -180,6 +181,10 @@ using System.Threading.Tasks;
         {
             await SaveManager.SaveGame();
             SaveGame = false;
+        }
+        else if (CurrentTick % AutoSaveInterval == 0)
+        {
+            await SaveManager.SaveGame();
         }
     }
     /// <summary>
@@ -602,7 +607,15 @@ using System.Threading.Tasks;
     }
     public static void GoTo(string url)
     {
-        Location = url;      
+        if (url.Contains("World/"))
+        {
+            Location = url.Split("World/")[1];
+        }
+        else
+        {
+            Location = url;
+        }
+         
         UriHelper.NavigateTo(url);
     }
     public async Task GetDimensions()
@@ -612,6 +625,15 @@ using System.Threading.Tasks;
     public void HideTooltip()
     {
         TooltipManager.HideTip();
+    }
+    public static GameStateSaveData GetSaveData()
+    {
+        return new GameStateSaveData { IsHunting = IsOnHuntingTrip, Location = Location };
+    }
+    public static void LoadSaveData(GameStateSaveData data)
+    {
+        IsOnHuntingTrip = data.IsHunting;
+        GoTo("/World/" + data.Location);
     }
     private void StateHasChanged()
     {

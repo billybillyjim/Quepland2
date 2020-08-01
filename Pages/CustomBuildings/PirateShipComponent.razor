@@ -14,20 +14,19 @@ else if (GetProgress() == 2)
 }
 else
 {
+<div style="margin-bottom:200px;">
     @foreach (string loc in locations)
     {
-        <div>
+        <div style="margin:5px;">
             @if (CurrentLocation == loc)
             {
-            <button class="btn btn-primary" disabled>@loc</button>
+                <button class="btn btn-primary" disabled>@loc</button>
             }
             else
             {
-            <button class="btn btn-primary" @onclick="@(() => GoTo(loc))">@loc</button>
+                <button class="btn btn-primary" @onclick="@(() => GoTo(loc))">@loc</button>
             }
         </div>
-
-        <br />
     }
 
     @if (CurrentLocation == "Main Deck")
@@ -52,7 +51,7 @@ else
     else if (CurrentLocation == "Crow's Nest")
     {
         <p>The climb up to the nest is quite arduous. You can see for miles in every direction from here.</p>
-
+        <Quepland_2.Components.NPCDialogComponent npc="Pirate Crewman"></Quepland_2.Components.NPCDialogComponent>
     }
     else if (CurrentLocation == "Forecastle")
     {
@@ -68,6 +67,8 @@ else
     {
         <button class="btn btn-primary" @onclick="@(() => GoAshore())">Go Ashore</button>
     }
+</div>
+    
 }
 
 @code {

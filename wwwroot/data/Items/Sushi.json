@@ -77,9 +77,9 @@
     "gatherSpeed": 15,
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 90,
+      "healAmount": 15,
+      "healSpeed": 2,
       "buffedSkill": "Fishing",
       "buffAmount": 5
     }
@@ -93,9 +93,9 @@
     "gatherSpeed": 15,
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 11,
+      "healAmount": 11,
+      "healSpeed": 11,
       "buffedSkill": "Knifesmanship",
       "buffAmount": 3
     }
@@ -109,9 +109,9 @@
     "gatherSpeed": 15,
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 11,
+      "healAmount": 11,
+      "healSpeed": 11,
       "buffedSkill": "Knifesmanship",
       "buffAmount": 6
     }
@@ -125,9 +125,9 @@
     "icon": "Sushi",
     "secondaryColor": "#F5C242",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 60,
+      "healAmount": 4,
+      "healSpeed": 5,
       "buffedSkill": "HP",
       "buffAmount": 8
     }
@@ -141,9 +141,9 @@
     "icon": "Sushi",
     "secondaryColor": "#E0D7AB",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 60,
+      "healAmount": 5,
+      "healSpeed": 5,
       "buffedSkill": "Lapidary",
       "buffAmount": 4
     }
@@ -157,8 +157,8 @@
     "icon": "Sushi",
     "secondaryColor": "#E0D7AB",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
+      "healDuration": 90,
+      "healAmount": 40,
       "healSpeed": 10,
       "buffedSkill": "Lapidary",
       "buffAmount": 8
@@ -174,8 +174,8 @@
     "secondaryColor": "#BFF9FF",
     "foodInfo": {
       "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healAmount": 3,
+      "healSpeed": 5,
       "buffedSkill": "Knifesmanship",
       "buffAmount": 2
     }
@@ -190,8 +190,8 @@
     "icon": "Sushi",
     "foodInfo": {
       "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healAmount": 3,
+      "healSpeed": 4,
       "buffedSkill": "Swordsmanship",
       "buffAmount": 2
     }
@@ -205,9 +205,9 @@
     "icon": "Sushi",
     "secondaryColor": "#EB9875",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 3,
-      "healSpeed": 10,
+      "healDuration": 60,
+      "healAmount": 6,
+      "healSpeed": 5,
       "buffedSkill": "Deftness",
       "buffAmount": 2
     }
@@ -221,9 +221,9 @@
     "secondaryColor": "#C9C8C5",
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 60,
+      "healAmount": 7,
+      "healSpeed": 5,
       "buffedSkill": "Hammermanship",
       "buffAmount": 2
     }
@@ -237,9 +237,9 @@
     "gatherSpeed": 15,
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 60,
+      "healAmount": 9,
+      "healSpeed": 5,
       "buffedSkill": "Axemanship",
       "buffAmount": 3
     }
@@ -253,9 +253,9 @@
     "secondaryColor": "#A6A6A6",
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 90,
+      "healAmount": 10,
+      "healSpeed": 5,
       "buffedSkill": "Archery",
       "buffAmount": 3
     }
@@ -269,9 +269,9 @@
     "icon": "Sushi",
     "secondaryColor": "#D6FFDC",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 90,
+      "healAmount": 13,
+      "healSpeed": 4,
       "buffedSkill": "Culinary Arts",
       "buffAmount": 3
     }
@@ -285,9 +285,9 @@
     "icon": "Sushi",
     "secondaryColor": "#FDF0FF",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 120,
+      "healAmount": 14,
+      "healSpeed": 5,
       "buffedSkill": "Alchemy",
       "buffAmount": 3
     }
@@ -301,9 +301,9 @@
     "secondaryColor": "#D9D9D9",
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 120,
+      "healAmount": 15,
+      "healSpeed": 5,
       "buffedSkill": "Strength",
       "buffAmount": 3
     }
@@ -317,9 +317,9 @@
     "gatherSpeed": 15,
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 150,
+      "healAmount": 18,
+      "healSpeed": 5,
       "buffedSkill": "Mining",
       "buffAmount": 3
     }
@@ -333,9 +333,9 @@
     "gatherSpeed": 15,
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 120,
+      "healAmount": 20,
+      "healSpeed": 4,
       "buffedSkill": "Smithing",
       "buffAmount": 4
     }
@@ -349,9 +349,9 @@
     "secondaryColor": "#FFC95E",
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 150,
+      "healAmount": 21,
+      "healSpeed": 5,
       "buffedSkill": "Woodcutting",
       "buffAmount": 4
     }
@@ -365,9 +365,9 @@
     "secondaryColor": "#459CED",
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 240,
+      "healAmount": 22,
+      "healSpeed": 5,
       "buffedSkill": "Woodworking",
       "buffAmount": 4
     }
@@ -381,9 +381,9 @@
     "secondaryColor": "#3A63A6",
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 240,
+      "healAmount": 25,
+      "healSpeed": 5,
       "buffedSkill": "Axemanship",
       "buffAmount": 5
     }
@@ -397,9 +397,9 @@
     "secondaryColor": "#9C6DED",
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 300,
+      "healAmount": 28,
+      "healSpeed": 5,
       "buffedSkill": "Swordsmanship",
       "buffAmount": 7
     }
@@ -413,9 +413,9 @@
     "secondaryColor": "#D48A4E",
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 300,
+      "healAmount": 33,
+      "healSpeed": 5,
       "buffedSkill": "Hammermanship",
       "buffAmount": 7
     }
@@ -429,9 +429,9 @@
     "secondaryColor": "#C7AE97",
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 360,
+      "healAmount": 35,
+      "healSpeed": 5,
       "buffedSkill": "Hunting",
       "buffAmount": 7
     }
@@ -445,9 +445,9 @@
     "secondaryColor": "#B97D42",
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 360,
+      "healAmount": 38,
+      "healSpeed": 5,
       "buffedSkill": "Leatherworking",
       "buffAmount": 7
     }
@@ -461,16 +461,16 @@
     "secondaryColor": "#ed8e00",
     "icon": "Sushi",
     "foodInfo": {
-      "healDuration": 30,
-      "healAmount": 2,
-      "healSpeed": 10,
+      "healDuration": 360,
+      "healAmount": 40,
+      "healSpeed": 5,
       "buffedSkill": "Mining",
       "buffAmount": 8
     }
   },
   {
     "name": "Eqalussuaq Roll",
-    "description": "This should probably be poisonous...",
+    "description": "This is definitely poisonous...",
     "gatherString": "You make an eqalussaq roll.",
     "value": 2600,
     "gatherSpeed": 15,

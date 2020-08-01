@@ -16,7 +16,9 @@
         {
             @if (d.HasRequirements())
             {
-                <button class="btn btn-dark" @onclick="@(() => Talk(d))">@d.ButtonText</button>
+                <br />
+                <button class="btn btn-dark" style="margin:5px;" @onclick="@(() => Talk(d))">@d.ButtonText</button>
+
             }
 
         }

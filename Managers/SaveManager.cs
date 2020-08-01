@@ -11,21 +11,31 @@ using System.Threading.Tasks;
 public static class SaveManager
 {
     public static string SaveVersion = "";
+    public static DateTime LastSave;
     public static IJSRuntime jSRuntime;
 
     public static async Task SaveGame()
     {
-        Stopwatch w = new Stopwatch();
-        w.Start();
-        await SetItemAsync("Version", GameState.Version);
-        await SetItemAsync("Playtime", GetSaveString(GameState.CurrentTick));
-        await SetItemAsync("Game Mode", GetSaveString(GameState.CurrentGameMode));
-        await SetItemAsync("Skills", GetSaveString(Player.Instance.Skills)); 
-        await SetItemAsync("Inventory", GetItemSave(Player.Instance.Inventory));
-        await SetItemAsync("Bank", GetItemSave(Bank.Instance.Inventory));
-        await SetItemAsync("Areas", GetAreaSave());
-        await SetItemAsync("Regions", GetRegionSave());
-        await SetItemAsync("Quests", GetQuestSave());
+        try
+        {
+            await SetItemAsync("Version", GameState.Version);
+            await SetItemAsync("Playtime", GetSaveString(GameState.CurrentTick));
+            await SetItemAsync("Game Mode", GetSaveString(GameState.CurrentGameMode));
+            await SetItemAsync("Skills", GetSkillsSave());
+            await SetItemAsync("Inventory", GetItemSave(Player.Instance.Inventory));
+            await SetItemAsync("Bank", GetItemSave(Bank.Instance.Inventory));
+            await SetItemAsync("Areas", GetAreaSave());
+            await SetItemAsync("Regions", GetRegionSave());
+            await SetItemAsync("Quests", GetQuestSave());
+            await SetItemAsync("GameState", JsonConvert.SerializeObject(GameState.GetSaveData()));
+
+            LastSave = DateTime.UtcNow;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Failed to save.");
+            Console.WriteLine(e.Message);
+        }
     }
     public static async Task LoadSaveGame()
     {
@@ -52,8 +62,15 @@ public static class SaveManager
         }
         if (await ContainsKeyAsync("Skills"))
         {
-            Player.Instance.Skills.Clear();
-            JsonConvert.PopulateObject(Decrypt(await GetItemAsync<string>("Skills")), Player.Instance.Skills, serializerSettings);
+            string[] data = (await GetItemAsync<string>("Skills")).Split(',');
+            foreach(string d in data)
+            {
+                if(d.Length > 1)
+                {
+                    Player.Instance.Skills.Find(x => x.Name == d.Split(':')[0]).LoadExperience(long.Parse(d.Split(':')[1]));
+
+                }
+            }
         }
         if(await ContainsKeyAsync("Inventory"))
         {
@@ -77,6 +94,11 @@ public static class SaveManager
         {
             QuestManager.Instance.LoadQuestSave(JsonConvert.DeserializeObject<List<QuestSaveData>>(await GetItemAsync<string>("Quests")));
         }
+        if(await ContainsKeyAsync("GameState"))
+        {
+            GameState.LoadSaveData(JsonConvert.DeserializeObject<GameStateSaveData>(await GetItemAsync<string>("GameState")));
+        }
+        
     }
     public static string GetItemSave(Inventory i)
     { 
@@ -98,6 +120,15 @@ public static class SaveManager
     public static string GetQuestSave()
     {
         return JsonConvert.SerializeObject(QuestManager.Instance.GetQuestSaveData());
+    }
+    public static string GetSkillsSave()
+    {
+        string s = "";
+        foreach(Skill skill in Player.Instance.Skills)
+        {
+            s += skill.Name + ":" + skill.Experience + ",";
+        }
+        return s;
     }
     public static async Task<bool> HasSaveFile()
     {

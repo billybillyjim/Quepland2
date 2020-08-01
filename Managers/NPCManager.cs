@@ -36,15 +36,19 @@ public class NPCManager
             {
                 if(d.ResponseWithParameter == "UnlockArea" + d.Parameter)
                 {
-                    CustomDialogFunctions.Add("UnlockArea" + d.Parameter, new Action(() => UnlockArea(d.Parameter)));
+                    CustomDialogFunctions.TryAdd("UnlockArea" + d.Parameter, new Action(() => UnlockArea(d.Parameter)));
                 }
                 else if(d.ResponseWithParameter == "UnlockAndGotoArea" + d.Parameter)
                 {
-                    CustomDialogFunctions.Add("UnlockAndGotoArea" + d.Parameter, new Action(() => UnlockAndGotoArea(d.Parameter)));
+                    CustomDialogFunctions.TryAdd("UnlockAndGotoArea" + d.Parameter, new Action(() => UnlockAndGotoArea(d.Parameter)));
                 }
                 else if (d.ResponseWithParameter == "GotoCustomArea" + d.Parameter)
                 {
-                    CustomDialogFunctions.Add("GotoCustomArea" + d.Parameter, new Action(() => GotoCustomArea(d.Parameter)));
+                    CustomDialogFunctions.TryAdd("GotoCustomArea" + d.Parameter, new Action(() => GotoCustomArea(d.Parameter)));
+                }
+                else if (d.ResponseWithParameter == "DieAndGotoArea" + d.Parameter)
+                {
+                    CustomDialogFunctions.TryAdd("DieAndGotoArea" + d.Parameter, new Action(() => DieAndGotoArea(d.Parameter)));
                 }
             }
         }
@@ -80,6 +84,20 @@ public class NPCManager
         a.Unlock();
         GameState.GoTo("World/" + a.AreaURL);
         
+    }
+    public void DieAndGotoArea(string area)
+    {
+        MessageManager.AddMessage("The pirates throw you overboard and you drown.");
+        Player.Instance.Die();
+        MessageManager.AddMessage("You wake up near the docks of Koya Hasa.");
+        Area a = AreaManager.Instance.GetAreaByName(area);
+        Land l = AreaManager.Instance.GetLandForArea(a);
+        if (l != null && l != GameState.CurrentLand)
+        {
+            GameState.CurrentLand = l;
+        }
+        a.Unlock();
+        GameState.GoTo("World/" + a.AreaURL);
     }
     public void GotoCustomArea(string url)
     {

@@ -8,12 +8,15 @@
         border-radius: 0.25rem;
         right: -13px;
         position: relative;
-        top: -9px;" @onclick="@(() => GoToSettings())">
+        top: -9px;" @onclick="@(() => ToggleSettings())">
         <img style="width:30px;height:30px;" src="data/Images/Settings.png"/>
     </button>
 </div>
 
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu" style="width:300px!important">
+    @if(GameState.IsOnHuntingTrip == false)
+    {
+   
     <ul class="nav flex-column">
         <li class="nav-item px-3">
             <div style="@GetStyle("Bank")" onclick="@(new Action(() => GoToArea("Bank")))">
@@ -71,6 +74,23 @@
 
         }
     </ul>
+    }
+    <ul style="position:absolute;padding:0;bottom:10px;left:10px;">
+        <li>
+            @if(SaveManager.LastSave != DateTime.MinValue)
+            {
+                <div>
+                    Last Save:@SaveManager.LastSave.ToShortTimeString()
+                </div>
+            }
+            else
+            {
+                <div>
+                    Last Save:Never
+                </div>
+            }
+        </li>
+    </ul>
 </div>
 
 @code {
@@ -112,11 +132,9 @@
         UriHelper.NavigateTo("World/" + name + "/");
         GameState.UpdateState();
     }
-    public void GoToSettings()
+    public void ToggleSettings()
     {
-        GameState.StopActions();
-        GameState.Location = "Settings";
-        UriHelper.NavigateTo("Settings/");
+        GameState.ShowSettings = !GameState.ShowSettings;
         GameState.UpdateState();
     }
 

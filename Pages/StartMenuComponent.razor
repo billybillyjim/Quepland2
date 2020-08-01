@@ -76,16 +76,15 @@
         {
             Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItemByName("Stone Axe"));
         }
-        GameState.ShowStartMenu = false;
         AreaManager.Instance.GetAreaByName("Quepland Fields").Unlock();
+        GameState.ShowStartMenu = false;
         UriHelper.NavigateTo("/World/QueplandFields");
     }
     public async Task LoadGame()
     {
-        await SaveManager.LoadSaveGame();
         GameState.ShowStartMenu = false;
-        GameState.Location = "QueplandFields";
-        UriHelper.NavigateTo("/World/QueplandFields");
+        AreaManager.Instance.GetAreaByName("Quepland Fields").Unlock();
+        await SaveManager.LoadSaveGame();
     }
     public void StartGame()
     {

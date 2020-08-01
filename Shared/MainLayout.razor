@@ -9,17 +9,14 @@
                 <NavMenu />
             </div>
         }
-    <div class="main" style="min-width:@(GameState.MinWindowWidth)px!important;">
-        @if (GameState.ShowStartMenu == false)
-        {
-        <div class="top-row px-4" style="z-index:10;background-color:dimgray;border:none;height:60px;">
-            <div @onclick="@(() => SaveManager.SaveGame())">
-                Save Game
-            </div>
-            <Quepland_2.Components.ExperienceTrackerComponent></Quepland_2.Components.ExperienceTrackerComponent>
+        <div class="main" style="min-width:@(GameState.MinWindowWidth)px!important;">
+            @if (GameState.ShowStartMenu == false)
+            {
+                <div class="top-row px-4" style="z-index:10;background-color:dimgray;border:none;height:60px;">
+                    <Quepland_2.Components.ExperienceTrackerComponent></Quepland_2.Components.ExperienceTrackerComponent>
 
-        </div>
-        }
+                </div>
+            }
             <div>
                 @Body
             </div>
@@ -47,6 +44,13 @@
             <div style="width: 360px!important;background-color:#4d4d4d;">
                 <Quepland_2.Components.RightSidebarComponent></Quepland_2.Components.RightSidebarComponent>
             </div>
+            @if (GameState.ShowSettings)
+            {
+                <div>
+                    <Quepland_2.Pages.SettingsComponent></Quepland_2.Pages.SettingsComponent>
+                </div>
+            }
+
         }
         @if (TooltipManager.ShouldShow())
         {
@@ -56,6 +60,7 @@
         {
             <Quepland_2.Components.ContextMenuComponent Menu="@GameState.CurrentContextMenu" xPos="@TooltipManager.xPos" yPos="@TooltipManager.yPos"></Quepland_2.Components.ContextMenuComponent>
         }
+
     </div>
 
 @code{

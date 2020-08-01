@@ -126,6 +126,10 @@
             {
                 beginText = ActionText.Split(':')[2];
             }
+            else
+            {
+                beginText = "";
+            }
 
         }
 
@@ -153,7 +157,7 @@
                 }
             }
             return lowest.GetRequirementTooltip();
-            
+
         }
         return "";
     }

@@ -66,4 +66,17 @@ public class Skill
     {
         return Name;
     }
+    public void LoadExperience(long amount)
+    {
+        if (amount <= 0)
+        {
+            return;
+        }
+        Experience += amount;
+
+        while(Experience >= (long)Skill.GetExperienceRequired(GetSkillLevelUnboosted()))
+        {
+            Level++;
+        }
+    }
 }

@@ -171,8 +171,9 @@
     },
     {
       "buttonText": "Don't question me",
-      "responseText": "Well it's a quick trip off the plank for you! \nThe pirates throw you overboard and you drown.",
       "quest": "Case of the Dead Pirate",
+      "responseText": "DieAndGotoArea",
+      "parameter": "Koya Hasa",
       "newQuestProgressValue": 104,
       "requirements": [
         {
@@ -184,7 +185,7 @@
     },
     {
       "buttonText": "Both Fremp and Jack claim the other did it",
-      "responseText": "Hmmm. I'll call up some of the crew and see if they saw anything.",
+      "responseText": "Hmmm. You should talk to the crewman in the crow's nest right now. He is close to both of them and might have seen something.",
       "quest": "Case of the Dead Pirate",
       "newQuestProgressValue": 11,
       "requirements": [
@@ -249,7 +250,8 @@
     },
     {
       "buttonText": "I did it",
-      "responseText": "What? Why would you kill our captain!? You scoundrel! \nThe pirates throw you overboard and you drown.",
+      "responseText": "DieAndGotoArea",
+      "parameter": "Koya Hasa",
       "quest": "Case of the Dead Pirate",
       "newQuestProgressValue": 104,
       "requirements": [

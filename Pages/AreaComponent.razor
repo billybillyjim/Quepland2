@@ -9,90 +9,96 @@
     <h1>@thisArea.Name</h1>
     <p>@thisArea.Description</p>
 
-    @foreach (string a in thisArea.Actions ?? Enumerable.Empty<string>())
+    @if (GameState.IsOnHuntingTrip == false)
     {
-        if (a == "Smithy")
+        @foreach (string a in thisArea.Actions ?? Enumerable.Empty<string>())
         {
-            <button class="btn btn-dark" @onclick="(() => EnterSmithy())">Smith</button>
-            <br />
-        }
-        else if(a == "Cabochon")
-        {
-            <Quepland_2.Components.CabochonStoneComponent></Quepland_2.Components.CabochonStoneComponent>
-        }
-        else
-        {
-            <Quepland_2.Components.GatherButtonComponent ActionText="@a"></Quepland_2.Components.GatherButtonComponent>
-            <br />
-        }
+            if (a == "Smithy")
+            {
+                <button class="btn btn-dark" @onclick="(() => EnterSmithy())">Smith</button>
+                <br />
+            }
+            else if (a == "Cabochon")
+            {
+                <Quepland_2.Components.CabochonStoneComponent></Quepland_2.Components.CabochonStoneComponent>
+            }
+            else
+            {
+                <Quepland_2.Components.GatherButtonComponent ActionText="@a"></Quepland_2.Components.GatherButtonComponent>
+                <br />
+            }
 
-    }
-    @foreach (Building b in thisArea.Buildings)
-    {
-        if (b.HasRequirements())
+        }
+        @foreach (Building b in thisArea.Buildings)
+        {
+            if (b.HasRequirements())
+            {
+                <div>
+                    <button class="btn btn-success" @onclick="@(() => EnterBuilding(b.URL))">@b.ButtonText</button>
+                </div>
+            }
+            else
+            {
+                <div>
+                    <button class="btn btn-success" style="opacity:0.5"
+                            onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, b.Name, b.GetRequirementTooltip())))"
+                            onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                        @b.ButtonText
+                        </button>
+                    </div>
+                }
+
+
+                <br />
+            }
+        @if (thisArea.DojoURL != null)
         {
             <div>
-                <button class="btn btn-success" @onclick="@(() => EnterBuilding(b.URL))">@b.ButtonText</button>
+                <button class="btn btn-dark" @onclick="@(() => EnterDojo(thisArea.DojoURL))">Enter @thisArea.Dojo.Name</button>
+
             </div>
+            <br />
         }
-        else
+        @if (thisArea.DungeonName != null)
         {
             <div>
-                <button class="btn btn-success" style="opacity:0.5" 
-                        onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, b.Name, b.GetRequirementTooltip())))"
-                        onmouseout="@(new Action(() => GameState.HideTooltip()))">@b.ButtonText</button>
+                <button class="btn btn-dark" @onclick="@(() => EnterDungeon(thisArea.Dungeon.URL))">@thisArea.Dungeon.GetButtonText()</button>
+
             </div>
+            <br />
+        }
+        @if (thisArea.Monsters != null && thisArea.Monsters.Count > 0)
+        {
+            <div>
+                <button class="btn btn-dark" @onclick="@(e => FindBattles())">Battle</button>
+
+            </div>
+            <br />
+        }
+        @foreach (AreaUnlock a in thisArea.UnlockableAreas)
+        {
+            if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false || a.ConnectsLands)
+            {
+
+                <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@a"></Quepland_2.Components.AreaUnlockComponent>
+                <br />
+            }
         }
 
 
-        <br />
-    }
-    @if (thisArea.DojoURL != null)
-    {
-        <div>
-            <button class="btn btn-dark" @onclick="@(() => EnterDojo(thisArea.DojoURL))">Enter @thisArea.Dojo.Name</button>
-
-        </div>
-        <br />
-    }
-    @if (thisArea.DungeonName != null)
-    {
-        <div>
-            <button class="btn btn-dark" @onclick="@(() => EnterDungeon(thisArea.Dungeon.URL))">@thisArea.Dungeon.GetButtonText()</button>
-
-        </div>
-        <br />
-    }
-    @if (thisArea.Monsters != null && thisArea.Monsters.Count > 0)
-    {
-        <div>
-            <button class="btn btn-dark" @onclick="@(e => FindBattles())">Battle</button>
-
-        </div>
-        <br />
-    }
-    @foreach (AreaUnlock a in thisArea.UnlockableAreas)
-    {
-        if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false || a.ConnectsLands)
+        @if (thisArea.TrapSlot != null)
         {
-
-            <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@a"></Quepland_2.Components.AreaUnlockComponent>
+            <Quepland_2.Components.HuntingTrapComponent Slot="@thisArea.TrapSlot"></Quepland_2.Components.HuntingTrapComponent>
             <br />
         }
     }
 
-
-    @if (thisArea.TrapSlot != null)
-    {
-        <Quepland_2.Components.HuntingTrapComponent Slot="@thisArea.TrapSlot"></Quepland_2.Components.HuntingTrapComponent>
-        <br />
-    }
     @if (thisArea.HuntingTripInfo != null)
     {
-        <Quepland_2.Components.HuntingTripComponent TripInfo="@thisArea.HuntingTripInfo" area="@thisArea"></Quepland_2.Components.HuntingTripComponent>
+        <Quepland_2.Components.HuntingTripComponent TripInfo="@thisArea.HuntingTripInfo"></Quepland_2.Components.HuntingTripComponent>
         <br />
     }
-    @if (thisArea.NPCs.Count > 0)
+    @if (thisArea.NPCs.Count > 0 && GameState.IsOnHuntingTrip == false)
     {
         @foreach (string npc in thisArea.NPCs)
         {
