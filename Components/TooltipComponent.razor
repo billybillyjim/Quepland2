@@ -39,6 +39,7 @@
     [Parameter]
     public double yPos { get; set; }
 
+
     private int distanceFromMouse = 23;
 
 
@@ -58,14 +59,23 @@
 
     private string GetStyle()
     {
-        if (faceRight)
+        string style = "text-align:" + Tip.Alignment + ";";
+        if (Tip.ShowAbove)
         {
-
-            return "text-align:" + Tip.Alignment + ";top:" + (yPos + distanceFromMouse) + "px;right:" + (GameState.GameWindowWidth - xPos) + "px;";
+            style += "top:" + ((yPos - distanceFromMouse - (50))) + "px;";
         }
         else
         {
-            return "text-align:" + Tip.Alignment + ";top:" + (yPos + distanceFromMouse) + "px;left:" + xPos + "px;";
+            style += "top:" + (yPos + distanceFromMouse) + "px;";
+        }
+        if (faceRight)
+        {
+
+            return style + "right:" + (GameState.GameWindowWidth - xPos) + "px;";
+        }
+        else
+        {
+            return style + "left:" + xPos + "px;";
         }
     }
 

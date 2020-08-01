@@ -35,6 +35,11 @@ public class Follower
         IsBanking = false;
     }
 
+    public void SendToBank()
+    {
+        IsBanking = true;
+        TicksToNextAction = AutoCollectSpeed;
+    }
 
     public bool MeetsRequirements(GameItem item)
     {

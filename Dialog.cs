@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Dialog
 { 
@@ -15,6 +16,7 @@ public class Dialog
     }
 	public string ItemOnTalk { get; set; } = "None";
 	public string Quest { get; set; } = "None";
+	public string UnlockedFollower { get; set; } = "None";
 	public string Parameter { get; set; } = "";
 	public bool ConsumeRequiredItems { get; set; }
 	public bool CompleteQuest { get; set; } = false;
@@ -33,7 +35,13 @@ public class Dialog
 				return false;
 			}
 		}
-
+		if(UnlockedFollower != "None")
+        {
+            if (FollowerManager.Instance.GetFollowerByName(UnlockedFollower).IsUnlocked)
+            {
+				return false;
+            }
+        }
 		return true;
 	}
 	public void Talk()
@@ -82,6 +90,10 @@ public class Dialog
 				}
 			}
 		}
+		if(UnlockedFollower != "None")
+        {
+			FollowerManager.Instance.GetFollowerByName(UnlockedFollower).IsUnlocked = true;
+        }
 		MessageManager.AddMessage(ResponseText);
 		if (Quest != "None" && NewQuestProgressValue != -1)
 		{

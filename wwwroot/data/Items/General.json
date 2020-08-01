@@ -146,5 +146,11 @@
     "Description": "It's cold water.",
     "value": 5,
     "icon": "Ice"
+  },
+  {
+    "Name": "Bandit's Blade",
+    "Description": "The sharp part of a sword. You could probably reattach it to a hilt and make a working weapon with it.",
+    "value": 5,
+    "icon": "Blade"
   }
 ]

@@ -39,5 +39,25 @@
       }
     ],
     "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Bandit's Sword",
+    "ingredients": [
+      {
+        "itemName": "Bandit's Blade",
+        "amount": 1
+      },
+      {
+        "itemName": "Brass Sword",
+        "amount": 1
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 1
   }
 ]

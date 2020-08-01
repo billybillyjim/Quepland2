@@ -35,35 +35,40 @@
 </div>
 @if (Player.Instance.CurrentFollower != null)
 {
-    <div style="margin-left:5px;">
+<div style="margin-left:5px;">
 
-        @if (Player.Instance.CurrentFollower.IsBanking)
-        {
-            <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Banking...</div>
-            <div class="progress" style="height:15px;margin-right:5px;">
-                <div class="progress-bar" style="width:@((((double)Player.Instance.CurrentFollower.TicksToNextAction / Player.Instance.CurrentFollower.AutoCollectSpeed) * 100d))%">
+    @if (Player.Instance.CurrentFollower.IsBanking)
+    {
+        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Banking...</div>
+        <div class="progress" style="height:15px;margin-right:5px;">
+            <div class="progress-bar" style="width:@((((double)Player.Instance.CurrentFollower.TicksToNextAction / Player.Instance.CurrentFollower.AutoCollectSpeed) * 100d))%">
 
-                </div>
             </div>
-        }
-        else if (Player.Instance.CurrentFollower.MeetsRequirements(GameState.CurrentGatherItem))
-        {
-            <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Gathering...</div>
-            <div class="progress" style="height:15px;margin-right:5px;">
-                <div class="progress-bar" style="width:@(100 -(((double)Player.Instance.CurrentFollower.Inventory.GetAvailableSpaces() / Player.Instance.CurrentFollower.InventorySize) * 100d))%">
+        </div>
+    }
+    else if (Player.Instance.CurrentFollower.MeetsRequirements(GameState.CurrentGatherItem))
+    {
+        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Gathering...</div>
+        <div class="progress" style="height:15px;margin-right:5px;">
+            <div class="progress-bar" style="width:@(100 -(((double)Player.Instance.CurrentFollower.Inventory.GetAvailableSpaces() / Player.Instance.CurrentFollower.InventorySize) * 100d))%">
 
-                </div>
             </div>
-        }
-        else if (GameState.CurrentGatherItem != null && Player.Instance.CurrentFollower.MeetsRequirements(GameState.CurrentGatherItem) == false)
+        </div>
+    }
+    else if (GameState.CurrentGatherItem != null && Player.Instance.CurrentFollower.MeetsRequirements(GameState.CurrentGatherItem) == false)
+    {
+        <div style="margin-left:5px;margin-bottom:15px;">@Player.Instance.CurrentFollower.Name Cannot Gather</div>
+    }
+    else
+    {
+        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Following...</div>
+        @if (Player.Instance.CurrentFollower.Inventory.GetUsedSpaces() > 0)
         {
-            <div style="margin-left:5px;margin-bottom:15px;">@Player.Instance.CurrentFollower.Name Cannot Gather</div>
+            <div><button class="btn btn-primary" style="height:25px;line-height:25px;padding-top:0px;margin-top:0px;" @onclick="@(() => Player.Instance.CurrentFollower.SendToBank())">Send to Bank</button></div>
         }
-        else
-        {
-            <div style="margin-left:5px;margin-bottom:15px;">@Player.Instance.CurrentFollower.Name Following...</div>
-        }
-    </div>
+    }
+
+</div>
     <div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:8px;margin:5px;border-radius:0.25rem">
 
         @foreach (KeyValuePair<GameItem, int> item in Player.Instance.CurrentFollower.Inventory.GetItems().OrderBy(x => x.Key.ID))

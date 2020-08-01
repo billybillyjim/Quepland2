@@ -75,17 +75,22 @@
         }
     </ul>
     }
+    <ul style="margin-bottom:50px;">
+
+    </ul>
     <ul style="position:absolute;padding:0;bottom:10px;left:10px;">
         <li>
             @if(SaveManager.LastSave != DateTime.MinValue)
             {
-                <div>
-                    Last Save:@SaveManager.LastSave.ToShortTimeString()
+                <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, SaveManager.LastSave.ToLongTimeString() + "\n" + SaveManager.LastSave.ToLongDateString() + " UTC", false, true)))"
+                                         onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                    Last Save:@SaveManager.LastSave.ToLocalTime().ToShortTimeString() UTC
                 </div>
             }
             else
             {
-                <div>
+                <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You've never saved on this playthough. The game will autosave every 30 minutes, or you can manually save in the settings menu above.", false, true)))"
+                                         onmouseout="@(new Action(() => GameState.HideTooltip()))">
                     Last Save:Never
                 </div>
             }

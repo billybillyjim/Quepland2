@@ -4,6 +4,7 @@
     "value": 500,
     "Description": "A white belt that proves you don't know anything yet.",
     "icon": "Belt",
+    "secondaryColor": "#e6e6e6",
     "equipSlot": "Waist",
     "armorInfo": {
       "damage": 3,
@@ -15,6 +16,7 @@
     "value": 2500,
     "Description": "A yellow belt proves you are a beginner at martial arts.",
     "icon": "Belt",
+    "secondaryColor": "#fff896",
     "equipSlot": "Waist",
     "armorInfo": {
       "damage": 5,
@@ -26,6 +28,7 @@
     "value": 7000,
     "Description": "An orange belt proves you are a novice at martial arts.",
     "icon": "Belt",
+    "secondaryColor": "#f5d576",
     "equipSlot": "Waist",
     "armorInfo": {
       "damage": 8,
@@ -37,6 +40,7 @@
     "value": 15000,
     "Description": "A green belt proves you are competent at martial arts.",
     "icon": "Belt",
+    "secondaryColor": "#71f268",
     "equipSlot": "Waist",
     "armorInfo": {
       "damage": 11,
@@ -49,6 +53,7 @@
     "Description": "A blue belt proves you are knowledgeable at martial arts.",
     "icon": "Belt",
     "equipSlot": "Waist",
+    "secondaryColor": "#61b1f2",
     "armorInfo": {
       "damage": 14,
       "armorBonus": 1
@@ -59,6 +64,7 @@
     "value": 45000,
     "Description": "A purple belt proves you are skilled at martial arts.",
     "icon": "Belt",
+    "secondaryColor": "#9a52de",
     "equipSlot": "Waist",
     "armorInfo": {
       "damage": 17,
@@ -70,6 +76,7 @@
     "value": 80000,
     "Description": "A brown belt proves you are an expert at martial arts.",
     "icon": "Belt",
+    "secondaryColor": "#a37d2a",
     "equipSlot": "Waist",
     "armorInfo": {
       "damage": 23,
@@ -81,6 +88,7 @@
     "value": 125000,
     "Description": "A black belt proves you are a master at martial arts.",
     "icon": "Belt",
+    "secondaryColor": "#474747",
     "equipSlot": "Waist",
     "armorInfo": {
       "damage": 29,
@@ -90,6 +98,7 @@
   {
     "Name": "Golden Belt",
     "value": 250000,
+    "secondaryColor": "#cfb221",
     "Description": "A golden belt proves you are a master at fighting in style.",
     "icon": "Belt",
     "equipSlot": "Waist",
@@ -107,15 +116,10 @@
     "experienceGained": "Leatherworking:15",
     "icon": "Glove",
     "equipSlot": "Hands",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 1
-      }
-    ],
     "armorInfo": {
       "armorBonus": 1
-    }
+    },
+    "secondaryColor": "#e0aa6d"
   },
   {
     "name": "Rabbit Hat",
@@ -126,15 +130,10 @@
     "experienceGained": "Leatherworking:25",
     "icon": "Hat",
     "equipSlot": "Head",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 2
-      }
-    ],
     "armorInfo": {
       "armorBonus": 1
-    }
+    },
+    "secondaryColor": "#e0aa6d"
   },
   {
     "name": "Rabbit Boots",
@@ -145,15 +144,10 @@
     "experienceGained": "Leatherworking:35",
     "icon": "Boots",
     "equipSlot": "Feet",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 3
-      }
-    ],
     "armorInfo": {
       "armorBonus": 1
-    }
+    },
+    "secondaryColor": "#e0aa6d"
   },
   {
     "name": "Rabbit Pants",
@@ -164,15 +158,10 @@
     "equipSlot": "Legs",
     "experienceGained": "Leatherworking:45",
     "icon": "Pants",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 4
-      }
-    ],
     "armorInfo": {
       "armorBonus": 2
-    }
+    },
+    "secondaryColor": "#e0aa6d"
   },
   {
     "name": "Rabbit Shirt",
@@ -183,15 +172,10 @@
     "equipSlot": "Chest",
     "experienceGained": "Leatherworking:55",
     "icon": "Shirt",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 5
-      }
-    ],
     "armorInfo": {
       "armorBonus": 3
-    }
+    },
+    "secondaryColor": "#e0aa6d"
   },
   {
     "name": "Deer Gloves",
@@ -202,15 +186,10 @@
     "experienceGained": "Leatherworking:55",
     "icon": "Glove",
     "equipSlot": "Hands",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 5
-      }
-    ],
     "armorInfo": {
       "armorBonus": 2
-    }
+    },
+    "secondaryColor": "#b59a77"
   },
   {
     "name": "Deer Hat",
@@ -221,15 +200,10 @@
     "experienceGained": "Leatherworking:70",
     "icon": "Hat",
     "equipSlot": "Head",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 7
-      }
-    ],
     "armorInfo": {
       "armorBonus": 2
-    }
+    },
+    "secondaryColor": "#b59a77"
   },
   {
     "name": "Deer Boots",
@@ -240,15 +214,10 @@
     "equipSlot": "Feet",
     "experienceGained": "Leatherworking:85",
     "icon": "Boots",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 9
-      }
-    ],
     "armorInfo": {
       "armorBonus": 2
-    }
+    },
+    "secondaryColor": "#b59a77"
   },
   {
     "name": "Deer Pants",
@@ -259,15 +228,10 @@
     "equipSlot": "Legs",
     "experienceGained": "Leatherworking:100",
     "icon": "Pants",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 11
-      }
-    ],
     "armorInfo": {
       "armorBonus": 3
-    }
+    },
+    "secondaryColor": "#b59a77"
   },
   {
     "name": "Deer Shirt",
@@ -278,15 +242,10 @@
     "experienceGained": "Leatherworking:115",
     "icon": "Shirt",
     "equipSlot": "Chest",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 13
-      }
-    ],
     "armorInfo": {
       "armorBonus": 5
-    }
+    },
+    "secondaryColor": "#b59a77"
   },
   {
     "name": "Wild Boar Gloves",
@@ -297,12 +256,7 @@
     "experienceGained": "Leatherworking:95",
     "icon": "Glove",
     "equipSlot": "Hands",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 43
-      }
-    ],
+    "secondaryColor": "#d8b393",
     "armorInfo": {
       "armorBonus": 1,
       "damage": 2,
@@ -323,12 +277,7 @@
     "experienceGained": "Leatherworking:110",
     "icon": "Hat",
     "equipSlot": "Head",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 45
-      }
-    ],
+    "secondaryColor": "#d8b393",
     "armorInfo": {
       "armorBonus": 1,
       "damage": 3,
@@ -349,12 +298,7 @@
     "experienceGained": "Leatherworking:135",
     "icon": "Boots",
     "equipSlot": "Feet",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 47
-      }
-    ],
+    "secondaryColor": "#d8b393",
     "armorInfo": {
       "armorBonus": 1,
       "damage": 4,
@@ -375,12 +319,7 @@
     "experienceGained": "Leatherworking:150",
     "icon": "Pants",
     "equipSlot": "Legs",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 49
-      }
-    ],
+    "secondaryColor": "#d8b393",
     "armorInfo": {
       "armorBonus": 3,
       "damage": 5,
@@ -401,12 +340,7 @@
     "experienceGained": "Leatherworking:175",
     "icon": "Shirt",
     "equipSlot": "Chest",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 51
-      }
-    ],
+    "secondaryColor": "#d8b393",
     "armorInfo": {
       "armorBonus": 5,
       "damage": 8,
@@ -416,7 +350,7 @@
           "skillLevel": 45
         }
       ]
-      
+
     }
   },
   {
@@ -428,12 +362,7 @@
     "equipSlot": "Hands",
     "experienceGained": "Leatherworking:130",
     "icon": "Glove",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 55
-      }
-    ],
+    "secondaryColor": "#423e3b",
     "armorInfo": {
       "armorBonus": 5,
       "damage": 3,
@@ -454,12 +383,7 @@
     "experienceGained": "Leatherworking:150",
     "icon": "Hat",
     "equipSlot": "Head",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 57
-      }
-    ],
+    "secondaryColor": "#423e3b",
     "armorInfo": {
       "armorBonus": 6,
       "damage": 1,
@@ -480,12 +404,7 @@
     "experienceGained": "Leatherworking:175",
     "icon": "Boots",
     "equipSlot": "Feet",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 59
-      }
-    ],
+    "secondaryColor": "#423e3b",
     "armorInfo": {
       "armorBonus": 8,
       "damage": 2,
@@ -506,12 +425,7 @@
     "experienceGained": "Leatherworking:200",
     "icon": "Pants",
     "equipSlot": "Legs",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 61
-      }
-    ],
+    "secondaryColor": "#423e3b",
     "armorInfo": {
       "armorBonus": 8,
       "damage": 1,
@@ -532,12 +446,7 @@
     "equipSlot": "Chest",
     "experienceGained": "Leatherworking:225",
     "icon": "Shirt",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 64
-      }
-    ],
+    "secondaryColor": "#423e3b",
     "armorInfo": {
       "armorBonus": 12,
       "damage": 2,
@@ -558,12 +467,7 @@
     "equipSlot": "Hands",
     "experienceGained": "Leatherworking:150",
     "icon": "Glove",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 65
-      }
-    ],
+    "secondaryColor": "#8a5730",
     "armorInfo": {
       "armorBonus": 17,
       "wearRequirements": [
@@ -583,12 +487,7 @@
     "experienceGained": "Leatherworking:170",
     "icon": "NoAntlerHat",
     "equipSlot": "Head",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 67
-      }
-    ],
+    "secondaryColor": "#8a5730",
     "armorInfo": {
       "armorBonus": 18,
       "wearRequirements": [
@@ -600,7 +499,7 @@
     }
   },
   {
-    "name": "Moose Hat (Antlered)",
+    "name": "Moose Hat(Antlered)",
     "value": 4500,
     "description": "A sturdy hat made from moose leather. The added antlers make it cooler and stronger.",
     "gatherString": "You attach antlers to the hat.",
@@ -608,21 +507,16 @@
     "experienceGained": "Leatherworking:170",
     "icon": "AntlerHat",
     "equipSlot": "Head",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 70,
-        "wearRequirements": [
-          {
-            "skill": "Strength",
-            "skillLevel": 68
-          }
-        ]
-      }
-    ],
+    "secondaryColor": "#8a5730",
     "armorInfo": {
       "armorBonus": 20,
-      "damage": 10
+      "damage": 10,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 68
+        }
+      ]
     }
   },
   {
@@ -634,12 +528,7 @@
     "experienceGained": "Leatherworking:200",
     "icon": "Boots",
     "equipSlot": "Feet",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 69
-      }
-    ],
+    "secondaryColor": "#8a5730",
     "armorInfo": {
       "armorBonus": 19,
       "damage": 2,
@@ -660,12 +549,7 @@
     "experienceGained": "Leatherworking:220",
     "icon": "Pants",
     "equipSlot": "Legs",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 71
-      }
-    ],
+    "secondaryColor": "#8a5730",
     "armorInfo": {
       "armorBonus": 22,
       "damage": 1,
@@ -686,12 +570,7 @@
     "gatherSpeed": 15,
     "experienceGained": "Leatherworking:250",
     "icon": "Shirt",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 74
-      }
-    ],
+    "secondaryColor": "#8a5730",
     "armorInfo": {
       "armorBonus": 28,
       "damage": 2,
@@ -712,12 +591,7 @@
     "equipSlot": "Hands",
     "experienceGained": "Leatherworking:210",
     "icon": "Glove",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 80
-      }
-    ],
+    "secondaryColor": "#614417",
     "armorInfo": {
       "armorBonus": 10,
       "damage": 10,
@@ -738,12 +612,7 @@
     "experienceGained": "Leatherworking:230",
     "icon": "Hat",
     "equipSlot": "Head",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 82
-      }
-    ],
+    "secondaryColor": "#614417",
     "armorInfo": {
       "armorBonus": 10,
       "damage": 10,
@@ -764,12 +633,7 @@
     "experienceGained": "Leatherworking:270",
     "icon": "Boots",
     "equipSlot": "Feet",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 83
-      }
-    ],
+    "secondaryColor": "#614417",
     "armorInfo": {
       "armorBonus": 14,
       "damage": 6,
@@ -790,12 +654,7 @@
     "equipSlot": "Legs",
     "experienceGained": "Leatherworking:330",
     "icon": "Pants",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 84
-      }
-    ],
+    "secondaryColor": "#614417",
     "armorInfo": {
       "armorBonus": 16,
       "damage": 10,
@@ -816,12 +675,7 @@
     "equipSlot": "Chest",
     "experienceGained": "Leatherworking:370",
     "icon": "Shirt",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 88
-      }
-    ],
+    "secondaryColor": "#614417",
     "armorInfo": {
       "armorBonus": 20,
       "damage": 12,
@@ -842,12 +696,7 @@
     "equipSlot": "Hands",
     "experienceGained": "Leatherworking:250",
     "icon": "Glove",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 91
-      }
-    ],
+    "secondaryColor": "#a95a1a",
     "armorInfo": {
       "armorBonus": 18,
       "damage": 3,
@@ -868,12 +717,7 @@
     "equipSlot": "Head",
     "experienceGained": "Leatherworking:280",
     "icon": "Hat",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 92
-      }
-    ],
+    "secondaryColor": "#a95a1a",
     "armorInfo": {
       "armorBonus": 20,
       "damage": 6,
@@ -894,12 +738,7 @@
     "experienceGained": "Leatherworking:370",
     "icon": "Boots",
     "equipSlot": "Feet",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 93
-      }
-    ],
+    "secondaryColor": "#a95a1a",
     "armorInfo": {
       "armorBonus": 24,
       "damage": 4,
@@ -920,12 +759,7 @@
     "experienceGained": "Leatherworking:430",
     "icon": "Pants",
     "equipSlot": "Legs",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 94
-      }
-    ],
+    "secondaryColor": "#a95a1a",
     "armorInfo": {
       "armorBonus": 26,
       "damage": 7,
@@ -946,12 +780,7 @@
     "equipSlot": "Chest",
     "experienceGained": "Leatherworking:570",
     "icon": "Shirt",
-    "requirements": [
-      {
-        "skill": "Leatherworking",
-        "skillLevel": 95
-      }
-    ],
+    "secondaryColor": "#a95a1a",
     "armorInfo": {
       "armorBonus": 29,
       "damage": 8,
@@ -968,6 +797,7 @@
     "value": 30,
     "description": "A pair of boots taken from a bandit who probably won't be using them anymore.",
     "icon": "Boots",
+    "secondaryColor": "",
     "equipSlot": "Feet",
     "armorInfo": {
       "armorBonus": 1,

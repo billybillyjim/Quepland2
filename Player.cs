@@ -350,8 +350,7 @@ public class Player
         {
             if (CurrentFollower.Inventory.GetAvailableSpaces() <= 0)
             {
-                CurrentFollower.IsBanking = true;
-                CurrentFollower.TicksToNextAction = CurrentFollower.AutoCollectSpeed;
+                CurrentFollower.SendToBank();
                 MessageManager.AddMessage(CurrentFollower.AutoCollectMessage.Replace("$", item.Name));
                 return false;
             }

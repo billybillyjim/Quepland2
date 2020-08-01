@@ -86,6 +86,7 @@ using System.Threading.Tasks;
     public static int CurrentTick { get; set; }
     public static int AutoSaveInterval { get; set; } = 9000;
     public static int GameWindowWidth { get; set; }
+    public static int GameWindowHeight { get; set; }
     public int MinWindowWidth { get; set; } = 600;
     public int SmithingStage;
     public int AlchemyStage;
@@ -254,12 +255,20 @@ using System.Threading.Tasks;
         }
         if(CurrentGatherItem != null)
         {
-            if (PossibleGatherItems.Count > 1)
+            if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking)
             {
-                int roll = Random.Next(0, PossibleGatherItems.Count);
-                CurrentGatherItem = PossibleGatherItems[roll];
+                    TicksToNextAction = Player.Instance.CurrentFollower.TicksToNextAction;               
             }
-            TicksToNextAction = GetTicksToNextGather();
+            else
+            {
+                if (PossibleGatherItems.Count > 1)
+                {
+                    int roll = Random.Next(0, PossibleGatherItems.Count);
+                    CurrentGatherItem = PossibleGatherItems[roll];
+                }
+                TicksToNextAction = GetTicksToNextGather();
+            }
+
         }
 
     }
@@ -267,13 +276,22 @@ using System.Threading.Tasks;
     {
         if (Player.Instance.PlayerGatherItem(CurrentGatherItem) == false)
         {
-            CurrentGatherItem = null;
-            return false;
+            if(Player.Instance.CurrentFollower != null)
+            {
+                if (Player.Instance.CurrentFollower.IsBanking == false)
+                {
+                    CurrentGatherItem = null;
+                    return false;
+                }
+                else
+                {
+                    TicksToNextAction = Player.Instance.CurrentFollower.TicksToNextAction;
+                }
+            }
+
         }
-        else
-        {
-            return true;
-        }
+        return true;
+        
     }
     private void CraftItem()
     {
@@ -558,7 +576,11 @@ using System.Threading.Tasks;
             ShowTooltip(args, tipName);
         }
     }
-
+    public void ShowTooltip(MouseEventArgs args, string tipName, bool alignRight, bool showAbove)
+    {
+        TooltipManager.ShowTip(args, tipName, alignRight, showAbove);
+        UpdateState();
+    }
     public async Task LoadData(System.Net.Http.HttpClient Http, NavigationManager URIHelper, IJSRuntime Jsruntime)
     {
         await AreaManager.Instance.LoadAreas(Http);
@@ -621,6 +643,7 @@ using System.Threading.Tasks;
     public async Task GetDimensions()
     {
         GameWindowWidth = await JSRuntime.InvokeAsync<int>("getWidth");
+        GameWindowHeight = await JSRuntime.InvokeAsync<int>("getHeight");
     }
     public void HideTooltip()
     {

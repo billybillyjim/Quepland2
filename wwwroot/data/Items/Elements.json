@@ -4,7 +4,8 @@
     "Description": "A pure elemental powder. It's black.",
     "value": 10,
     "isStackable": true,
-    "icon": "Powder",
+    "secondaryColor": "#595959",
+    "icon": "PowderBag",
     "alchemyInfo": {
       "queplarValue": 15
     }
@@ -14,7 +15,8 @@
     "Description": "A pure elemental powder. It's white.",
     "value": 25,
     "isStackable": true,
-    "icon": "Powder",
+    "secondaryColor": "#ffffff",
+    "icon": "PowderBag",
     "alchemyInfo": {
       "queplarValue": 20
     }
@@ -24,7 +26,8 @@
     "Description": "A pure elemental powder. It's a light blue.",
     "value": 50,
     "isStackable": true,
-    "icon": "Powder",
+    "icon": "PowderBag",
+    "secondaryColor": "#bafeff",
     "alchemyInfo": {
       "queplarValue": 25
     }
@@ -34,7 +37,8 @@
     "Description": "A pure elemental powder. It's dark red.",
     "value": 80,
     "isStackable": true,
-    "icon": "Powder",
+    "secondaryColor": "#a33e3b",
+    "icon": "PowderBag",
     "alchemyInfo": {
       "queplarValue": 30
     }
@@ -43,8 +47,9 @@
     "Name": "Siliquen",
     "Description": "A pure elemental powder. It's gray.",
     "value": 110,
+    "secondaryColor": "#8c8c8c",
     "isStackable": true,
-    "icon": "Powder",
+    "icon": "PowderBag",
     "alchemyInfo": {
       "queplarValue": 40
     }
@@ -54,7 +59,8 @@
     "Description": "A pure elemental powder. It's violet.",
     "value": 150,
     "isStackable": true,
-    "icon": "Powder",
+    "secondaryColor": "#9a7cc4",
+    "icon": "PowderBag",
     "alchemyInfo": {
       "queplarValue": 50
     }
@@ -64,7 +70,8 @@
     "Description": "A pure elemental powder. It's yellow.",
     "value": 190,
     "isStackable": true,
-    "icon": "Powder",
+    "secondaryColor": "#e6e360",
+    "icon": "PowderBag",
     "alchemyInfo": {
       "queplarValue": 60
     }
@@ -74,7 +81,8 @@
     "Description": "A pure elemental powder. It's dark blue.",
     "value": 210,
     "isStackable": true,
-    "icon": "Powder",
+    "secondaryColor": "#4572a8",
+    "icon": "PowderBag",
     "alchemyInfo": {
       "queplarValue": 75
     }
@@ -84,17 +92,19 @@
     "Description": "A pure elemental powder. It glows green.",
     "value": 260,
     "isStackable": true,
-    "icon": "Powder",
+    "secondaryColor": "#63d64f",
+    "icon": "PowderBag",
     "alchemyInfo": {
       "queplarValue": 90
     }
   },
   {
     "Name": "Queplonium",
-    "Description": "A pure elemental powder. It glows orange.",
+    "Description": "A pure elemental powder. It glows purple.",
     "value": 350,
     "isStackable": true,
-    "icon": "Powder",
+    "icon": "PowderBag",
+    "secondaryColor": "#9c40de",
     "alchemyInfo": {
       "queplarValue": 100
     }
@@ -104,6 +114,7 @@
     "Description": "A dull powder that is all that remains of a failed alchemy attempt.",
     "value": 1,
     "isStackable": true,
+    "secondaryColor": "",
     "icon": "Powder"
   }
 ]

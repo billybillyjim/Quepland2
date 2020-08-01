@@ -171,6 +171,24 @@
     }
   },
   {
+    "name": "Bandit's Sword",
+    "description": "A sword made from a bandit's blade and a brass sword put together.",
+    "value": 500,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "R Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 11,
+      "damage": 33,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 20
+        }
+      ]
+    }
+  },
+  {
     "Name": "Brass Knife",
     "Description": "A soft but sturdy knife.",
     "value": 240,

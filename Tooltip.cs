@@ -4,6 +4,7 @@
     public string Title { get; set; }
     public string Text { get; set; }
     public bool RightAlignData { get; set; }
+    public bool ShowAbove { get; set; }
     public string Alignment { get
         {
             if (RightAlignData)

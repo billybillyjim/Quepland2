@@ -52,21 +52,24 @@ else
         Bank.Instance.Inventory.AddMultipleOfItem("White Pine Logs", 3000);
         Bank.Instance.Inventory.AddMultipleOfItem("Feather", 3000);
         Bank.Instance.Inventory.AddMultipleOfItem("Wood Carving Knife", 3000);
-        Bank.Instance.Inventory.AddMultipleOfItem("White Pine Arrow Shafts", 3000); 
+        Bank.Instance.Inventory.AddMultipleOfItem("White Pine Arrow Shafts", 3000);
         Bank.Instance.Inventory.AddMultipleOfItem("Copper Hammer", 3000);
         //Player.Instance.Inventory.AddItem("Ultimate Test Weapon Two, Electric Boogaloo");
         //Player.Instance.Inventory.AddItem("Rice");
         //Player.Instance.Inventory.AddItem("Ultimate Test Weapon");
         //AreaManager.Instance.GetAreaByName("Queple Cave Smithy").Unlock();
         //Player.Instance.CurrentFollower = FollowerManager.Instance.Followers[0];
-        /*
+
         foreach (GameItem item in ItemManager.Instance.Items)
         {
 
-        Bank.Instance.Inventory.AddItem(item);
+            //Bank.Instance.Inventory.AddItem(item);
 
         }
-        */
+        foreach(Follower f in FollowerManager.Instance.Followers)
+        {
+            Console.WriteLine(f.Name);
+        }
         Player.Instance.CurrentHP = 50;
         Bank.Instance.Inventory.AddItem("Stone Axe");
 

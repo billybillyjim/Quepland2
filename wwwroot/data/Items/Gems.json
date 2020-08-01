@@ -313,7 +313,7 @@
     "Description": "A white gemstone tumbled to produce a smooth surface.",
     "icon": "TumbledGem",
     "gatherString": "You tumble the diamond until it's completely smooth.",
-    "secondaryColor": "#DFDFDF"
+    "secondaryColor": "#FFFFFF"
   },
   {
     "Name": "Amberite Cabochon",
@@ -419,7 +419,7 @@
     "Description": "A white gemstone manually cut to produce a smooth surface on one side.",
     "icon": "CabochonGem",
     "gatherString": "You cut the diamond until it's completely smooth.",
-    "secondaryColor": "#DFDFDF"
+    "secondaryColor": "#FFFFFF"
   },
   {
     "Name": "Cut Amberite",
@@ -525,6 +525,6 @@
     "Description": "A white gemstone cut to produce beautifully ordered facets.",
     "icon": "CutDiamond",
     "gatherString": "You cut the diamond until it's completely smooth.",
-    "secondaryColor": "#DFDFDF"
+    "secondaryColor": "#FFFFFF"
   }
 ]

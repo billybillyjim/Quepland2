@@ -5,6 +5,36 @@
     {
       "buttonText": "Hello",
       "responseText": "Hi, welcome to my store! Feel free to browse, I'll buy practically anything off you for the right price."
+    },
+    {
+      "buttonText": "Can I hire that gnome?",
+      "responseText": "You want to hire Lumpy? I mean, I wouldn't say no... How about 1000 coins for him?",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Lumpy the Gnome"
+        }
+      ]
+    },
+    {
+      "buttonText": "Deal",
+      "responseText": "Wonderful! Have fun getting him to do anything.",
+      "depth": 1,
+      "unlockedFollower": "Lumpy the Gnome",
+      "ConsumeRequiredItems": true,
+      "requirements": [
+        {
+          "item": "Coins",
+          "itemAmount": 1000
+        }
+      ],
+      "newDepthOnTalk": 0
+    },
+    {
+      "buttonText": "No thanks",
+      "responseText": "Ah, well, if you change your mind let me know.",
+      "depth": 1,
+      "newDepthOnTalk": 0
     }
   ]
 }

@@ -27,5 +27,9 @@ public class FollowerManager
     {
         return Followers.Where(x => x.IsUnlocked).ToList();
     }
+    public Follower GetFollowerByName(string name)
+    {
+        return Followers.FirstOrDefault(x => x.Name == name);
+    }
 }
 

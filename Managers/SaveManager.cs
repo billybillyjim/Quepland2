@@ -20,6 +20,7 @@ public static class SaveManager
         {
             await SetItemAsync("Version", GameState.Version);
             await SetItemAsync("Playtime", GetSaveString(GameState.CurrentTick));
+            await SetItemAsync("LastSave", DateTime.UtcNow);
             await SetItemAsync("Game Mode", GetSaveString(GameState.CurrentGameMode));
             await SetItemAsync("Skills", GetSkillsSave());
             await SetItemAsync("Inventory", GetItemSave(Player.Instance.Inventory));
@@ -59,6 +60,10 @@ public static class SaveManager
             {
                 GameState.CurrentGameMode = GameState.GameType.Ultimate;
             }
+        }
+        if(await ContainsKeyAsync("LastSave"))
+        {
+            LastSave = DateTime.Parse(await GetItemAsync<string>("LastSave"));
         }
         if (await ContainsKeyAsync("Skills"))
         {

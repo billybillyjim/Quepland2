@@ -8,6 +8,7 @@ public class Requirement
 	public string Location { get; set; } = "None";
 	public string Quest { get; set; } = "None";
 	public string AreaUnlocked { get; set; } = "None";
+	public string LockedFollower { get; set; } = "None";
 	public bool RequireAreaLocked { get; set; } = false;
 	/// <summary>
 	/// The inclusive minimum step the quest must be at to fulfill the requirement.
@@ -35,6 +36,10 @@ public class Requirement
 			return false;
         }
 		if(Item != "None" && Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(Item)) < ItemAmount)
+        {
+			return false;
+        }
+		if(LockedFollower != "None" && FollowerManager.Instance.GetFollowerByName(LockedFollower).IsUnlocked)
         {
 			return false;
         }

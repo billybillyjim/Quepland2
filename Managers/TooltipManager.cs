@@ -23,6 +23,15 @@ public static class TooltipManager
         Tooltips.AddRange(await Http.GetJsonAsync<Tooltip[]>("data/Tooltips.json"));
     }
 
+    public static void ShowTip(MouseEventArgs args, string tipName, bool alignRight, bool showAbove)
+    {
+        ShowTip(args, tipName);
+
+        CurrentTip.RightAlignData = alignRight;
+        CurrentTip.ShowAbove = showAbove;
+        
+    }
+
     public static void ShowTip(MouseEventArgs args, string tipName, bool alignRight)
     {
         ShowTip(args, tipName);

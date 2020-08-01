@@ -313,7 +313,36 @@
       "drops": [
         {
           "itemName": "Coins",
+          "weight": 50,
+          "amount": 15
+        },
+        {
+          "itemName": "Coins",
+          "weight": 50,
+          "amount": 50
+        },
+        {
+          "itemName": "Bandit's Blade",
+          "weight": 2
+        },
+        {
+          "itemName": "Nickel Knife",
           "weight": 20
+        },
+        {
+          "itemName": "Coins",
+          "weight": 50,
+          "amount": 20
+        },
+        {
+          "itemName": "Coins",
+          "weight": 20,
+          "amount": 70
+        },
+        {
+          "itemName": "Coins",
+          "weight": 4,
+          "amount": 500
         }
       ]
     }

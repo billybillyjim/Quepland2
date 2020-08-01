@@ -11,6 +11,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 1
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -23,6 +29,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 2
       }
     ],
     "maxOutputsPerAction": 1
@@ -39,6 +51,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 3
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -51,6 +69,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 4
       }
     ],
     "maxOutputsPerAction": 1
@@ -67,6 +91,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 5
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -79,6 +109,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 5
       }
     ],
     "maxOutputsPerAction": 1
@@ -95,6 +131,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 7
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -107,6 +149,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 9
       }
     ],
     "maxOutputsPerAction": 1
@@ -123,6 +171,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 11
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -135,6 +189,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 13
       }
     ],
     "maxOutputsPerAction": 1
@@ -151,6 +211,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 43
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -163,6 +229,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 45
       }
     ],
     "maxOutputsPerAction": 1
@@ -179,6 +251,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 47
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -191,6 +269,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 49
       }
     ],
     "maxOutputsPerAction": 1
@@ -207,6 +291,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 51
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -219,6 +309,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 55
       }
     ],
     "maxOutputsPerAction": 1
@@ -235,6 +331,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 57
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -247,6 +349,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 59
       }
     ],
     "maxOutputsPerAction": 1
@@ -263,6 +371,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 61
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -275,6 +389,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 64
       }
     ],
     "maxOutputsPerAction": 1
@@ -291,6 +411,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 80
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -303,6 +429,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 82
       }
     ],
     "maxOutputsPerAction": 1
@@ -319,6 +451,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 83
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -331,6 +469,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 84
       }
     ],
     "maxOutputsPerAction": 1
@@ -347,6 +491,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 88
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -359,6 +509,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 65
       }
     ],
     "maxOutputsPerAction": 1
@@ -375,6 +531,37 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 67
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Moose Hat(Antlered)",
+    "ingredients": [
+      {
+        "itemName": "Moose Hat",
+        "amount": 1
+      },
+      {
+        "itemName": "Moose Antlers",
+        "amount": 1
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 70
+
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -387,6 +574,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 69
       }
     ],
     "maxOutputsPerAction": 1
@@ -403,6 +596,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 71
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -415,6 +614,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 74
       }
     ],
     "maxOutputsPerAction": 1
@@ -431,6 +636,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 91
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -443,6 +654,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 92
       }
     ],
     "maxOutputsPerAction": 1
@@ -459,6 +676,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 93
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -473,6 +696,12 @@
         "destroyOnUse": false
       }
     ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 94
+      }
+    ],
     "maxOutputsPerAction": 1
   },
   {
@@ -485,6 +714,12 @@
       {
         "itemName": "Leatherworking Toolkit",
         "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 95
       }
     ],
     "maxOutputsPerAction": 1

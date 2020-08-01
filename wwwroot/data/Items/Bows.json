@@ -215,6 +215,25 @@
     "icon": "UnstrungBow"
   },
   {
+    "Name": "Root Bow",
+    "Description": "A bow dropped by a root dweller. It's extremely old, but made with such strong wood it still works just fine.",
+    "value": 1320,
+    "secondaryColor": "#824121",
+    "enabledActions": "Archery",
+    "equipSlot": "R Hand",
+    "icon": "Bow",
+    "weaponInfo": {
+      "attackSpeed": 10,
+      "damage": 75
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 70
+      }
+    ]
+  },
+  {
     "Name": "Snakewood Bow",
     "Description": "A twisted bow, it's surprisingly effective.",
     "value": 320,
