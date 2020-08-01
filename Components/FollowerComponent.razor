@@ -20,9 +20,17 @@
     </div>
     
 }
+@if (HasUnlockedAnyFollower() == false)
+{
+    <div style="margin:10px;color:white;">Explore the world and maybe you'll find some others who would join you on your adventure. They might not do it for free, though.</div>
+}
 
 @code {
 
+    public bool HasUnlockedAnyFollower()
+    {
+        return FollowerManager.Instance.Followers.Any(x => x.IsUnlocked);
+    }
     public void SwitchFollowers(Follower f)
     {
         Player.Instance.CurrentFollower = f;

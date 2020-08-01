@@ -24,7 +24,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "0.0.3";
+    public static string Version { get; set; } = "0.0.4";
 
     public static string Location { get; set; } = "";
     public static bool InitCompleted { get; set; } = false;

@@ -52,10 +52,21 @@
     {
         double amountCompleted = DateTime.UtcNow.Subtract(TripInfo.StartTime).TotalHours / TripInfo.ReturnTime.Subtract(TripInfo.StartTime).TotalHours;
         EndHunt(amountCompleted * TripInfo.ReturnTime.Subtract(TripInfo.StartTime).TotalSeconds, false);
+        
+
     }
 
     public void EndHunt(double totalTimeHunting, bool useFloor)
     {
+        if(totalTimeHunting < 600)
+        {
+            MessageManager.AddMessage("You decide against going on a hunt before you catch anything.");
+            TripInfo.IsActive = false;
+            TripInfo.StartTime = DateTime.MinValue;
+            TripInfo.ReturnTime = DateTime.MinValue;
+            GameState.IsOnHuntingTrip = false;
+            return;
+        }
         double caughtBase = totalTimeHunting * (1 / 3600d) * (double)((Player.Instance.GetLevel("Hunting") + 4) / 4d);
         double caught = caughtBase.ToGaussianRandom();
         int catchFloor = 0;
@@ -82,9 +93,6 @@
                 MessageManager.AddMessage("You hunted a " + d + " on your trip, but it got away.");
             }
         }
-        Console.WriteLine("Caught Base:" + caughtBase);
-        Console.WriteLine("Total Time Hunting:" + totalTimeHunting);
-        Console.WriteLine("Catch Floor:" + catchFloor);
         TripInfo.IsActive = false;
         TripInfo.StartTime = DateTime.MinValue;
         TripInfo.ReturnTime = DateTime.MinValue;

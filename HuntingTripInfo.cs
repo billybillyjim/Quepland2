@@ -10,4 +10,11 @@ public class HuntingTripInfo
 	public bool IsActive { get; set; }
 	public DateTime ReturnTime { get; set; }
 	public DateTime StartTime { get; set; }
+
+	public void LoadSaveData(bool isActive, DateTime rTime, DateTime sTime)
+    {
+		IsActive = isActive;
+		ReturnTime = rTime;
+		StartTime = sTime;
+    }
 }

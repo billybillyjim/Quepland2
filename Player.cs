@@ -454,5 +454,20 @@ public class Player
             s.Experience = 0;
         }
     }
+    public PlayerSaveData GetSaveData()
+    {
+        return new PlayerSaveData { ActiveFollowerName = CurrentFollower?.Name ?? "None", CurrentHP = CurrentHP, MaxHP = MaxHP, DeathCount = Deaths, InventorySize = Inventory.GetSize()};
+    }
+    public void LoadSaveData(PlayerSaveData data)
+    {
+        if(data.ActiveFollowerName != "None")
+        {
+            CurrentFollower = FollowerManager.Instance.GetFollowerByName(data.ActiveFollowerName);
+        }
+        CurrentHP = data.CurrentHP;
+        MaxHP = data.MaxHP;
+        Deaths = data.DeathCount;
+        Inventory.SetSize(data.InventorySize);
+    }
 }
 

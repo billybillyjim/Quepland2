@@ -16,7 +16,7 @@ public class Inventory
     private readonly int maxValue = int.MaxValue - 1000000;
     private int totalItems { get; set; }
     public bool AllItemsStack;
-
+    public bool IsLoadingSave = false;
     public Inventory() 
     {
         items = new List<KeyValuePair<GameItem, int>>();
@@ -46,6 +46,14 @@ public class Inventory
     public int GetSize()
     {
         return maxSize;
+    }
+    /// <summary>
+    /// Used for loading size of inventory after loading a save.
+    /// </summary>
+    /// <param name="size"></param>
+    public void SetSize(int size)
+    {
+        maxSize = size;
     }
     /// <summary>
     /// Returns the amount of that specific item in the inventory.
@@ -382,6 +390,10 @@ public class Inventory
     }
     private void UpdateItemCount()
     {
+        if (IsLoadingSave)
+        {
+            return;
+        }
         totalItems = 0;
         //inventorySlotPos = 0;
         foreach (KeyValuePair<GameItem, int> item in items)
@@ -467,6 +479,7 @@ public class Inventory
         {
             return;
         }
+        IsLoadingSave = true;
         foreach(string line in i)
         {
             string[] s = line.Split('_');
@@ -485,6 +498,8 @@ public class Inventory
                 Console.WriteLine("Error loading item in line:" + line);
             }
         }
+        IsLoadingSave = false;
+        UpdateItemCount();
     }
 }
 

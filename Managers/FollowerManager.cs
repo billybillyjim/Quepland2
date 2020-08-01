@@ -31,5 +31,28 @@ public class FollowerManager
     {
         return Followers.FirstOrDefault(x => x.Name == name);
     }
+    public string GetSaveData()
+    {
+        string data = "";
+        foreach(Follower f in Followers)
+        {
+            data += f.Name + ":" + f.IsUnlocked + ",";
+        }
+        return data;
+    }
+    public void LoadSaveData(string data)
+    {
+        string[] lines = data.Split(',');
+        foreach(string line in lines)
+        {
+            if(line.Length < 2)
+            {
+                continue;
+            }
+            string name = line.Split(':')[0];
+            bool unlock = bool.Parse(line.Split(':')[1]);
+            Followers.Find(x => x.Name == name).IsUnlocked = unlock;
+        }
+    }
 }
 

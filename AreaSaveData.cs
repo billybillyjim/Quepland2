@@ -4,6 +4,9 @@ public class AreaSaveData
 {
 	public int ID { get; set; }
 	public bool IsUnlocked { get; set; }
-	public HunterTrapSlot TrapSlot { get; set; }
-	public HuntingTripInfo TripInfo { get; set; }
+	public DateTime TrapHarvestTime { get; set; }
+	public string TrapState { get; set; }
+	public bool TripIsActive { get; set; }
+	public DateTime TripStartTime { get; set; }
+	public DateTime TripReturnTime { get; set; }
 }

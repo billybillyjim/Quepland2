@@ -139,13 +139,26 @@ public class Area
 
     public AreaSaveData GetSaveData()
     {
-        return new AreaSaveData { IsUnlocked = IsUnlocked, TrapSlot = TrapSlot, TripInfo = HuntingTripInfo, ID = ID };
+        return new AreaSaveData { IsUnlocked = IsUnlocked,
+            TrapHarvestTime = TrapSlot?.HarvestTime ?? DateTime.MinValue,
+            TrapState = TrapSlot?.State ?? "Unset",
+            TripIsActive = HuntingTripInfo?.IsActive ?? false,
+            TripReturnTime = HuntingTripInfo?.ReturnTime ?? DateTime.MinValue,
+            TripStartTime = HuntingTripInfo?.StartTime ?? DateTime.MinValue,
+            ID = ID };
     }
     public void LoadSaveData(AreaSaveData data)
     {
         IsUnlocked = data.IsUnlocked;
-        TrapSlot = data.TrapSlot;
-        HuntingTripInfo = data.TripInfo;
+        if(TrapSlot != null)
+        {
+            TrapSlot.State = data.TrapState;
+            TrapSlot.HarvestTime = data.TrapHarvestTime;
+        }
+        if(HuntingTripInfo != null)
+        {
+            HuntingTripInfo.LoadSaveData(data.TripIsActive, data.TripReturnTime, data.TripStartTime);
+        }
     }
 }
 
