@@ -201,7 +201,7 @@ public class Recipe
         {
             if (i.DestroyOnUse)
             {
-                max = Math.Min(MaxOutputsPerAction / i.Amount, Player.Instance.Inventory.GetNumberOfItem(i.Item));
+                max = Math.Min(MaxOutputsPerAction, Player.Instance.Inventory.GetNumberOfItem(i.Item) / i.Amount);
             }
         }
         return max;

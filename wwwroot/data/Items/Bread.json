@@ -325,5 +325,47 @@
     "value": 5,
     "gatherSpeed": 3,
     "icon": "BucketFull"
+  },
+  {
+    "name": "Quern Stone",
+    "description": "A heavy rock on another heavy rock with a handle. You can mindlessly grind grain with one.",
+    "value": 500,
+    "gatherSpeed": 3,
+    "icon": "StoneWheel"
+  },
+  {
+    "name": "Yeast",
+    "description": "An amazing creature that makes bread taste good.",
+    "value": 50,
+    "gatherSpeed": 3,
+    "icon": "PowderBag"
+  },
+  {
+    "name": "Milk",
+    "description": "Delicious milk.",
+    "value": 80,
+    "gatherSpeed": 3,
+    "icon": "Milk"
+  },
+  {
+    "name": "Sugar",
+    "description": "Sweet sugar.",
+    "value": 100,
+    "gatherSpeed": 3,
+    "icon": "PowderBag"
+  },
+  {
+    "name": "Salt",
+    "description": "Salty.",
+    "value": 120,
+    "gatherSpeed": 3,
+    "icon": "PowderBag"
+  },
+  {
+    "name": "Oil",
+    "description": "Good in small doses.",
+    "value": 150,
+    "gatherSpeed": 3,
+    "icon": "Oil"
   }
 ]

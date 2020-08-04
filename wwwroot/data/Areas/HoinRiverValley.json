@@ -1,7 +1,7 @@
 [
   {
     "name": "Hoin Riverbank",
-    "id": 80,
+    "id": 130,
     "image": "Riverbank",
     "description": "The river is surrounded on both sides by thick foliage. The only reasonable way to continue is by raft.",
     "areaURL": "HoinRiverbank",
@@ -25,7 +25,7 @@
   },
   {
     "name": "Hoin River",
-    "id": 81,
+    "id": 131,
     "image": "River",
     "description": "Floating along the river you can see all sorts of fish swimming past the clear water.",
     "areaURL": "HoinRiver",
@@ -48,7 +48,7 @@
   },
   {
     "name": "Plantrain Plains",
-    "id": 82,
+    "id": 132,
     "image": "Plains",
     "description": "The foliage along the banks of the river grow thin as you pass by an open field, full of small farm plots. A number of old buildings stand along their edge.",
     "areaURL": "PlantrainPlains",
@@ -67,11 +67,14 @@
       {
         "action": "River Travel"
       }
+    ],
+    "actions": [
+      "Harvest Rye:Rye"
     ]
   },
   {
     "name": "Sun's Harbor",
-    "id": 83,
+    "id": 133,
     "image": "Docks",
     "description": "A few buildings sit just off the river's edge. A large graveyard makes up the remainder of the open land not covered by trees.",
     "areaURL": "SunsHarbor",
@@ -123,7 +126,7 @@
   },
   {
     "name": "Guttermouth",
-    "id": 84,
+    "id": 134,
     "image": "Village",
     "description": "You begin to reach signs of civilization. Down at the river's mouth you can see a large city. A number of houses surround the main building here, which has the word 'Woodworks' carved on the front of it.",
     "areaURL": "Guttermouth",
@@ -146,13 +149,36 @@
   },
   {
     "name": "Ricechild",
-    "id": 85,
+    "id": 135,
     "image": "City",
     "description": "You reach a bustling city at the mouth of the river. There are a few interesting shops here.",
     "areaURL": "Ricechild",
     "requirements": [
       {
         "action": "River Travel"
+      }
+    ],
+    "buildings": [
+      {
+        "name": "Brian's Bakery",
+        "buttonText": "Bakery",
+        "url": "BriansBakery",
+        "description": "A skinny, orange-haired man stands behind the counter. He addresses you as plural even though you're the only one in the shop.",
+        "shops": [
+          {
+            "name": "Brian's Baking Goods",
+            "itemNames": [
+              "Quern Stone",
+              "Yeast",
+              "Milk",
+              "Sugar",
+              "Bread",
+              "Rye Bread"
+            ],
+            "costMultiplier": 5
+
+          }
+        ]
       }
     ]
   }

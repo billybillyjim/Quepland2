@@ -79,6 +79,7 @@
   {
     "name": "Sahota Dungeon",
     "image": "Snowflake",
+    "id": 103,
     "description": "",
     "areaURL": "SahotaDungeon",
     "actions": [

@@ -5,6 +5,9 @@
     "image": "MountainPath",
     "description": "The path leads out of the woods into an open plain. The road continues uphill, winding up out of sight. A solitary knight guards the way forward.",
     "areaURL": "SouthernTrail",
+    "actions": [
+      "Harvest Wheat:Wheat"
+    ],
     "unlockableAreas": [
       {
         "areaURL": "Route7",

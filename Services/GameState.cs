@@ -113,6 +113,8 @@ using System.Threading.Tasks;
             StateHasChanged();
         }), null, GameSpeed, GameSpeed);
         StateHasChanged();
+        QuestTester.TestQuests();
+        RecipeTester.TestRecipes();
     }
 
     private async Task Tick()
@@ -667,6 +669,10 @@ using System.Threading.Tasks;
     public static void LoadSaveData(GameStateSaveData data)
     {
         IsOnHuntingTrip = data.IsHunting;
+        if(data.Location == "Battle")
+        {
+            data.Location = "QueplandFields";
+        }
         GoTo("/World/" + data.Location);
     }
     private void StateHasChanged()

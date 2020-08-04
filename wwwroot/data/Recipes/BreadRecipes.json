@@ -151,7 +151,7 @@
         "itemName": "Oil"
       },
       {
-        "itemName": "Egg"
+        "itemName": "Chicken Egg"
       }
     ],
     "experienceGained": "Culinary Arts:50",
@@ -214,5 +214,65 @@
       }
     ],
     "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Flour",
+    "ingredients": [
+      {
+        "itemName": "Wheat"
+      },
+      {
+        "itemName": "Quern Stone",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Culinary Arts:5",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 3
+  },
+  {
+    "outputItemName": "Rye Flour",
+    "ingredients": [
+      {
+        "itemName": "Rye"
+      },
+      {
+        "itemName": "Quern Stone",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Culinary Arts:15",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 15
+      }
+    ],
+    "maxOutputsPerAction": 3
+  },
+  {
+    "outputItemName": "Durum Flour",
+    "ingredients": [
+      {
+        "itemName": "Durum"
+      },
+      {
+        "itemName": "Quern Stone",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Culinary Arts:25",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 30
+      }
+    ],
+    "maxOutputsPerAction": 3
   }
 ]

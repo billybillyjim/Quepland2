@@ -27,7 +27,8 @@
     "description": "Beyond the first few hills the trail leads into a large valley. On the far side you can see a castle town. Farm houses dot the landscape before you. There's a forest to the south with trees of similar sizes neatly arranged in rows.",
     "areaURL": "TsuValley",
     "actions": [
-      "Chop Buloke Trees:Buloke Logs"
+      "Chop Buloke Trees:Buloke Logs",
+      "Harvest Durum:Durum"
     ],
     "unlockableAreas": [
       {
