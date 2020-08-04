@@ -162,5 +162,21 @@ public class AreaManager
             Buildings.Find(x => x.Name == d.BuildingName).LoadTanningData(d);
         }
     }
+    public List<DojoSaveData> GetDojoSaveData()
+    {
+        List<DojoSaveData> data = new List<DojoSaveData>();
+        foreach(Dojo d in Dojos)
+        {
+            data.Add(d.GetSaveData());
+        }
+        return data;
+    }
+    public void LoadDojoSaveData(List<DojoSaveData> data)
+    {
+        foreach(DojoSaveData d in data)
+        {
+            Dojos.Find(x => x.Name == d.Name).LastWinTime = d.LastWin;
+        }
+    }
 }
 

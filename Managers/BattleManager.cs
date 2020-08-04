@@ -154,6 +154,10 @@ public class BattleManager
                 if(CurrentDojo != null)
                 {
                     CurrentDojo.CurrentOpponent++;
+                    if(CurrentDojo.CurrentOpponent >= CurrentDojo.Opponents.Count)
+                    {
+                        CurrentDojo.LastWinTime = DateTime.Now;
+                    }
                 }
                 WonLastBattle = true;
                 EndBattle();

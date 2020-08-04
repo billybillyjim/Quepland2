@@ -32,27 +32,25 @@ public static class SaveManager
             await SetItemAsync("Player", JsonConvert.SerializeObject(Player.Instance.GetSaveData()));
             await SetItemAsync("Followers", FollowerManager.Instance.GetSaveData());
             await SetItemAsync("TanningInfo", GetTanningSave());
+            await SetItemAsync("Dojos", JsonConvert.SerializeObject(AreaManager.Instance.GetDojoSaveData()));
 
             LastSave = DateTime.UtcNow;
+            GameState.IsSaving = false;
         }
         catch (Exception e)
         {
             Console.WriteLine("Failed to save.");
             Console.WriteLine(e.Message);
+            GameState.IsSaving = false;
         }
     }
     public static async Task LoadSaveGame()
     {
         var serializerSettings = new JsonSerializerSettings { ObjectCreationHandling = ObjectCreationHandling.Replace };
-        Stopwatch watch = new Stopwatch();
-        watch.Start();
         if(await ContainsKeyAsync("Playtime"))
         {
             GameState.CurrentTick = int.Parse(Decrypt(await GetItemAsync<string>("Playtime")));
         }
-        watch.Stop();
-        Console.WriteLine(watch.ElapsedMilliseconds);
-        watch.Restart();
         if(await ContainsKeyAsync("Game Mode"))
         {
             string mode = Decrypt(await GetItemAsync<string>("Game Mode"));
@@ -69,16 +67,10 @@ public static class SaveManager
                 GameState.CurrentGameMode = GameState.GameType.Ultimate;
             }
         }
-        watch.Stop();
-        Console.WriteLine(watch.ElapsedMilliseconds);
-        watch.Restart();
         if (await ContainsKeyAsync("LastSave"))
         {
             LastSave = DateTime.Parse(await GetItemAsync<string>("LastSave"));
         }
-        watch.Stop();
-        Console.WriteLine(watch.ElapsedMilliseconds);
-        watch.Restart();
         if (await ContainsKeyAsync("Skills"))
         {
             string[] data = (await GetItemAsync<string>("Skills")).Split(',');
@@ -91,74 +83,48 @@ public static class SaveManager
                 }
             }
         }
-        watch.Stop();
-        Console.WriteLine(watch.ElapsedMilliseconds);
-        watch.Restart();
         if (await ContainsKeyAsync("Inventory"))
         {
             Player.Instance.Inventory.Clear();
             Player.Instance.Inventory.LoadData(await GetItemAsync<string>("Inventory"));
         }
-        watch.Stop();
-        Console.WriteLine(watch.ElapsedMilliseconds);
-        watch.Restart();
         if (await ContainsKeyAsync("Bank"))
         {
             Bank.Instance.Inventory.Clear();
             Bank.Instance.Inventory.LoadData(await GetItemAsync<string>("Bank"));
         }
-        watch.Stop();
-        Console.WriteLine(watch.ElapsedMilliseconds);
-        watch.Restart();
         if (await ContainsKeyAsync("Areas"))
         {
             AreaManager.Instance.LoadAreaSave(JsonConvert.DeserializeObject<List<AreaSaveData>>(await GetItemAsync<string>("Areas")));
         }
-        watch.Stop();
-        Console.WriteLine(watch.ElapsedMilliseconds);
-        watch.Restart();
         if (await ContainsKeyAsync("Regions"))
         {
             AreaManager.Instance.LoadRegionSave(JsonConvert.DeserializeObject<List<RegionSaveData>>(await GetItemAsync<string>("Regions")));
         }
-        watch.Stop();
-        Console.WriteLine(watch.ElapsedMilliseconds);
-        watch.Restart();
         if (await ContainsKeyAsync("Quests"))
         {
             QuestManager.Instance.LoadQuestSave(JsonConvert.DeserializeObject<List<QuestSaveData>>(await GetItemAsync<string>("Quests")));
         }
-        watch.Stop();
-        Console.WriteLine(watch.ElapsedMilliseconds);
-        watch.Restart();
         if (await ContainsKeyAsync("GameState"))
         {
             GameState.LoadSaveData(JsonConvert.DeserializeObject<GameStateSaveData>(await GetItemAsync<string>("GameState")));
         }
-        watch.Stop();
-        Console.WriteLine(watch.ElapsedMilliseconds);
-        watch.Restart();
         if (await ContainsKeyAsync("Followers"))
         {
             FollowerManager.Instance.LoadSaveData(await GetItemAsync<string>("Followers"));
         }
-        watch.Stop();
-        Console.WriteLine(watch.ElapsedMilliseconds);
-        watch.Restart();
         if (await ContainsKeyAsync("Player"))
         {
             Player.Instance.LoadSaveData(JsonConvert.DeserializeObject<PlayerSaveData>(await GetItemAsync<string>("Player")));
         }
-        watch.Stop();
-        Console.WriteLine(watch.ElapsedMilliseconds);
-        watch.Restart(); 
         if (await ContainsKeyAsync("TanningInfo"))
         {
             AreaManager.Instance.LoadTanningSave(JsonConvert.DeserializeObject<List<TanningSaveData>>(await GetItemAsync<string>("TanningInfo")));
         }
-        watch.Stop();
-        Console.WriteLine(watch.ElapsedMilliseconds);
-        watch.Restart();
+        if(await ContainsKeyAsync("Dojos"))
+        {
+            AreaManager.Instance.LoadDojoSaveData(JsonConvert.DeserializeObject<List<DojoSaveData>>(await GetItemAsync<string>("Dojos")));
+        }
     }
     public static string GetItemSave(Inventory i)
     { 

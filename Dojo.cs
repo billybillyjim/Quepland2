@@ -34,4 +34,13 @@ public class Dojo
 	public int CurrentOpponent { get; set; }
 	public bool HasBegunChallenge { get; set; }
 	public DateTime? LastWinTime { get; set; }
+
+	public DojoSaveData GetSaveData()
+    {
+		return new DojoSaveData { Name = Name, LastWin = LastWinTime };
+    }
+	public void LoadFromSave(DojoSaveData data)
+    {
+		LastWinTime = data.LastWin;
+    }
 }

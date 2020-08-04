@@ -75,6 +75,7 @@ using System.Threading.Tasks;
     public ItemViewerComponent itemViewer;
     public InventoryViewerComponent inventoryViewer;
     public SmithyComponent SmithingComponent;
+    public OvenComponent OvenComponent;
     public NavMenu NavMenu;
     public ContextMenu CurrentContextMenu;
     public ExperienceTrackerComponent EXPTrackerComponent;
@@ -96,7 +97,7 @@ using System.Threading.Tasks;
     private static Random Random = new Random();
 
     public bool SaveGame = false;
-
+    public static bool IsSaving = false;
 
     public void Start()
     {
@@ -162,6 +163,7 @@ using System.Threading.Tasks;
         {
             HealPlayer();
         }
+        
         if (EXPTrackerComponent != null)
         {
             if (CurrentTick % 5 == 0)
@@ -173,6 +175,12 @@ using System.Threading.Tasks;
             }
 
         }
+        if (Player.Instance.JustDied)
+        {
+            CurrentFood = null;
+            HealingTicks = 0;
+            Player.Instance.JustDied = false;
+        }
         Player.Instance.TickStatusEffects();
         await GetDimensions();
         TicksToNextAction--;
@@ -180,6 +188,7 @@ using System.Threading.Tasks;
         TooltipManager.currentDelay++;
         if (SaveGame)
         {
+            IsSaving = true;
             await SaveManager.SaveGame();
             SaveGame = false;
         }
@@ -315,6 +324,10 @@ using System.Threading.Tasks;
                 if (CurrentRecipe.HasSpace())
                 {
                     MessageManager.AddMessage("You have run out of materials.");
+                    if(OvenComponent != null)
+                    {
+                        OvenComponent.Source = "";
+                    }
                 }
                 else
                 {
@@ -330,6 +343,10 @@ using System.Threading.Tasks;
             {
                 itemViewer.ClearItem();
                 MessageManager.AddMessage("You have run out of materials.");
+                if (OvenComponent != null)
+                {
+                    OvenComponent.Source = "";
+                }
             }
            
             CurrentRecipe = null;
@@ -365,14 +382,8 @@ using System.Threading.Tasks;
     }
     private void HealPlayer()
     {
-        if (Player.Instance.JustDied)
-        {
-            CurrentFood = null;
-            HealingTicks = 0;
-            Player.Instance.JustDied = false;
-            return;
-        }
-        Player.Instance.CurrentHP += CurrentFood.FoodInfo.HealAmount;
+
+        Player.Instance.CurrentHP = Math.Min(Player.Instance.MaxHP, Player.Instance.CurrentHP + CurrentFood.FoodInfo.HealAmount);
         if (Player.Instance.CurrentHP <= 0)
         {
             Player.Instance.Die();

@@ -151,6 +151,15 @@
       {
         "action": "Desert Travel"
       }
+    ],
+    "buildings": [
+      {
+        "name": "Public Oven",
+        "buttonText": "Public Oven",
+        "url": "LeuppOven",
+        "description": "You enter the public oven. You can bake bread here, if you have the dough.",
+        "hasOven": true
+      }
     ]
   },
   {

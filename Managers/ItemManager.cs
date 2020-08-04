@@ -32,10 +32,19 @@ public class ItemManager
     public List<Recipe> SmithingRecipes = new List<Recipe>();
     public List<Recipe> GemCuttingRecipes = new List<Recipe>();
     public List<Recipe> GemCabochonRecipes = new List<Recipe>();
+    public List<Recipe> BakingRecipes = new List<Recipe>();
     public List<string> EquipmentSlots = new List<string>();
     public List<MinigameDropTable> MinigameDropTables = new List<MinigameDropTable>();
-    public static List<string> FileNames = new List<string> { "Weapons", "Bows", "Armors", "Sushi", "Jerkies", "Arrows", "QuestItems", "General", "Elements", "Hunting", "Fishing", "Bars", "Ores", "Gems", "Arrowtips", "WoodworkingItems", "Logs" };
-    public static List<string> Colors = new List<string> { "#DC5958", "#33FF88", "#3367d6", "#ffa7f4", "#c26761", "#c9ad83", "gray", "#ffd066", "#eadf92", "brown", "lightblue", "silver", "dimgray", "#999999" , "#F1C40F", "sienna", "tan" };
+    public static List<string> FileNames = new List<string> 
+    { "Weapons", "Bows", "Armors", "Sushi", "Jerkies", "Bread",
+        "Arrows", "QuestItems", "General", "Elements", "Hunting", 
+        "Fishing", "Bars", "Ores", "Gems", "Arrowtips", 
+        "WoodworkingItems", "Logs" };
+    public static List<string> Colors = new List<string> 
+    { "#DC5958", "#33FF88", "#3367d6", "#ffa7f4", "#c26761", "#ce8758",
+        "#c9ad83", "gray", "#ffd066", "#eadf92", "brown", 
+        "lightblue", "silver", "dimgray", "#999999" , "#F1C40F",
+        "sienna", "tan" };
     public static int baseID;
     public static readonly int MaxItemsPerFile = 100;
     public bool IsSelling = false;
@@ -95,12 +104,14 @@ public class ItemManager
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/MiscRecipes.json"));
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/LeatherworkingRecipes.json"));
         Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/GemRecipes.json"));
+        Recipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/BreadRecipes.json"));
 
         MinigameDropTables.AddRange(await Http.GetJsonAsync<MinigameDropTable[]>("data/MinigameDropTables.json"));
 
         GemCabochonRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/GemCabochonRecipes.json"));
-        Console.WriteLine("Cabochon Recipes:" + GemCabochonRecipes.Count);
         GemCuttingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/GemCuttingRecipes.json"));
+
+        BakingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/BakingRecipes.json"));
 
         SmithingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/Smithing/AluminumSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetJsonAsync<Recipe[]>("data/Recipes/Smithing/BrassSmithingRecipes.json"));
@@ -164,6 +175,18 @@ public class ItemManager
         Console.WriteLine("Failed to find recipe with ingredients:" + ingredients);
         return null;
     }
+    public Recipe GetBakingRecipeByOutput(string output)
+    {
+        foreach (Recipe recipe in BakingRecipes)
+        {
+            if (recipe.OutputItemName == output)
+            {
+                return recipe;
+            }
+        }
+        Console.WriteLine("Failed to find recipe with output:" + output);
+        return null;
+    }
     public Recipe GetCabochonRecipeByIngredients(string ingredients)
     {
         foreach (Recipe recipe in GemCabochonRecipes)
@@ -193,10 +216,7 @@ public class ItemManager
         double baseValue = formula.InputMetal.AlchemyInfo.QueplarValue * formula.LocationMultiplier;
         double elementalValue = formula.Element.AlchemyInfo.QueplarValue * formula.ActionMultiplier;
         double totalValue = baseValue + elementalValue;
-        Console.WriteLine("Base Value:" + formula.InputMetal.AlchemyInfo.QueplarValue + " x " + formula.LocationMultiplier);
-        Console.WriteLine("Elemental Value:" + formula.Element.AlchemyInfo.QueplarValue + " x " + formula.LocationMultiplier);
-        Console.WriteLine("Total Value:" + baseValue + " + " + elementalValue);
-        Console.WriteLine("Sum:" + totalValue);
+
         foreach (GameItem i in Items)
         {
             if (i.AlchemyInfo != null && i.SmithingInfo != null)
