@@ -6,7 +6,6 @@ public class WeaponInfo
     public int AttackSpeed { get; set; }
     public int Damage { get; set; }
     public int ArmorBonus { get; set; }
-    public int EffectDuration { get; set; }
 
     public bool IsArrow { get; set; }
     public List<Requirement> WearRequirements { get; set; } = new List<Requirement>(); 

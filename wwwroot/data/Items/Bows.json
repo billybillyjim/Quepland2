@@ -329,5 +329,24 @@
         "skillLevel": 99
       }
     ]
+  },
+  {
+    "Name": "Spine Shooter",
+    "Description": "A section of a cactus that can be used to shoot its spines.",
+    "value": 5000,
+    "secondaryColor": "green",
+    "enabledActions": "Archery",
+    "equipSlot": "R Hand",
+    "icon": "Shooter",
+    "weaponInfo": {
+      "attackSpeed": 4,
+      "damage": 30
+    },
+    "requirements": [
+      {
+        "skill": "Archery",
+        "skillLevel": 75
+      }
+    ]
   }
 ]

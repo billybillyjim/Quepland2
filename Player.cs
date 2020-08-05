@@ -147,7 +147,11 @@ public class Player
             if(item.WeaponInfo != null)
             {
                 total += item.WeaponInfo.Damage;
-                if (GetWeapon().EnabledActions == "Archery" && Inventory.HasArrows() == false)
+                if(GetWeapon().Name == "Spine Shooter")
+                {
+                    total -= GetWeapon().WeaponInfo.Damage;
+                }
+                else if (GetWeapon().EnabledActions == "Archery" && Inventory.HasArrows() == false)
                 {
                     total += GetLevel("Strength");
                 }
@@ -171,14 +175,22 @@ public class Player
                 total += item.ArmorInfo.Damage;
             }
         }
-        if(GetWeapon() != null && GetWeapon().EnabledActions == "Archery")
+        if(GetWeapon() != null)
         {
-            if (Inventory.HasArrows())
+            if(GetWeapon().Name == "Spine Shooter")
             {
-                total += Inventory.GetStrongestArrow().WeaponInfo.Damage;
+                if(Inventory.HasItem("Cactus Spine"))
+                {
+                    total += 10;
+                }
             }
+            else if (GetWeapon().EnabledActions == "Archery" && Inventory.HasArrows())
+            {
+                total += Inventory.GetStrongestArrow().WeaponInfo.Damage;                        
+            }
+
         }
-        return total;
+        return Math.Max(1, total);
     }
     public GameItem GetWeapon()
     {

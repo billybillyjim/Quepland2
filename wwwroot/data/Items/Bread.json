@@ -49,7 +49,8 @@
       "healDuration": 3,
       "healSpeed": 3,
       "healAmount": 3
-    }
+    },
+    "isStackable": true
   },
   {
     "name": "Rye Flour",
@@ -62,7 +63,8 @@
       "healDuration": 3,
       "healSpeed": 3,
       "healAmount": 3
-    }
+    },
+    "isStackable": true
   },
   {
     "name": "Durum Flour",
@@ -75,7 +77,8 @@
       "healDuration": 3,
       "healSpeed": 3,
       "healAmount": 3
-    }
+    },
+    "isStackable": true
   },
   {
     "name": "Dough (Unleavened)",
@@ -338,7 +341,8 @@
     "description": "An amazing creature that makes bread taste good.",
     "value": 50,
     "gatherSpeed": 3,
-    "icon": "PowderBag"
+    "icon": "PowderBag",
+    "isStackable": true
   },
   {
     "name": "Milk",
@@ -359,7 +363,8 @@
     "description": "Salty.",
     "value": 120,
     "gatherSpeed": 3,
-    "icon": "PowderBag"
+    "icon": "PowderBag",
+    "isStackable": true
   },
   {
     "name": "Oil",

@@ -59,5 +59,19 @@
       }
     ],
     "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Cactus Club",
+    "ingredients": [
+      {
+        "itemName": "Cactus Club (Empty)",
+        "amount": 1
+      },
+      {
+        "itemName": "Cactus Spine",
+        "amount": 10000
+      }
+    ],
+    "maxOutputsPerAction": 1
   }
 ]

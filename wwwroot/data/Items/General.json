@@ -152,5 +152,41 @@
     "Description": "The sharp part of a sword. You could probably reattach it to a hilt and make a working weapon with it.",
     "value": 5,
     "icon": "Blade"
+  },
+  {
+    "name": "Cactus Spines",
+    "description": "Pokey spines from a cactus.",
+    "gatherString": "You get some cactus spines.",
+    "value": 2,
+    "icon": "Spine",
+    "isStackable": true
+  },
+  {
+    "name": "Cactus Club (Empty)",
+    "description": "A club made from a special living cactus. If you covered it in spines, it would really do some damage.",
+    "value": 50,
+    "icon": "CactusClub"
+  },
+  {
+    "name": "Sand",
+    "description": "It's tiny little rocks, basically.",
+    "gatherString": "You get some sand.",
+    "value": 2,
+    "icon": "Powder",
+    "isStackable": true
+  },
+  {
+    "name": "Sandstone",
+    "description": "Is it stone? Is it sand?",
+    "gatherString": "You get some sandstone.",
+    "value": 20,
+    "icon": "Brick",
+    "isStackable": true
+  },
+  {
+    "name": "Honey",
+    "description": "Sweet, sweet honey.",
+    "value": 50,
+    "icon": "Honey"
   }
 ]

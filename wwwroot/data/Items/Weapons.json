@@ -1132,5 +1132,42 @@
         }
       ]
     }
+  },
+  {
+    "name": "Cactus Club",
+    "description": "A club made from a special living cactus, covered in its spines.",
+    "value": 5000,
+    "enabledActions": "Axemanship",
+    "equipSlot": "R Hand",
+    "icon": "CactusClub",
+    "weaponInfo": {
+      "attackSpeed": 15,
+      "damage": 60,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 50
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Zombisword",
+    "Description": "A sword of the undead. It's quite large and feels much heavier than it looks.",
+    "value": 3280,
+    "enabledActions": "Swordsmanship",
+    "secondaryColor": "#999999",
+    "equipSlot": "R Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 18,
+      "damage": 250,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 90
+        }
+      ]
+    }
   }
 ]

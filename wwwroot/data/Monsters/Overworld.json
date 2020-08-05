@@ -1035,8 +1035,37 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
-          "weight": 20
+          "itemName": "Cactus Spines",
+          "weight": 100,
+          "amount": 3
+        },
+        {
+          "itemName": "Cactus Spines",
+          "weight": 200,
+          "amount": 5
+        },
+        {
+          "itemName": "Cactus Spines",
+          "weight": 90,
+          "amount": 15
+        },
+        {
+          "itemName": "Cactus Spines",
+          "weight": 30,
+          "amount": 25
+        },
+        {
+          "itemName": "Cactus Spines",
+          "weight": 15,
+          "amount": 50
+        },
+        {
+          "itemName": "Spine Club(Empty)",
+          "weight": 2
+        },
+        {
+          "itemName": "Spine Shooter",
+          "weight": 1
         }
       ]
     }
@@ -1125,7 +1154,7 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Salt",
           "weight": 20
         }
       ]
@@ -1140,7 +1169,7 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Sugar",
           "weight": 20
         }
       ]
@@ -1155,7 +1184,7 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Yeast",
           "weight": 20
         }
       ]
@@ -1170,7 +1199,7 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Flour",
           "weight": 20
         }
       ]
@@ -1185,7 +1214,7 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Oil",
           "weight": 20
         }
       ]
