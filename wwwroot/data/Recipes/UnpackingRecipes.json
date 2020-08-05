@@ -211,5 +211,16 @@
     ],
     "recipeActionString": "You begin skinning the caiman...",
     "recipeButtonString": "Skin"
+  },
+  {
+    "outputItemName": "Baobhan Tooth",
+    "outputAmount": 20,
+    "ingredients": [
+      {
+        "itemName": "Baobhan Jaw"
+      }
+    ],
+    "recipeActionString": "You begin pulling teeth...",
+    "recipeButtonString": "Yank"
   }
 ]

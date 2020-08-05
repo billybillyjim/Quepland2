@@ -374,6 +374,10 @@ public class BattleManager
         {
             return new PoisonEffect(data);
         }
+        else if (data.Name == "Burn")
+        {
+            return new BurnEffect(data);
+        }
         else if(data.Name == "Chicken")
         {
             return new SummonChickenEffect(data);

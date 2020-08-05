@@ -188,5 +188,41 @@
     "description": "Sweet, sweet honey.",
     "value": 50,
     "icon": "Honey"
+  },
+  {
+    "name": "Baobhan Hair",
+    "description": "Hair from the head of a baobhan. It's quite valuable.",
+    "value": 200,
+    "icon": "Hair"
+  },
+  {
+    "name": "Baobhan Tooth",
+    "description": "A tooth from the mouth of a baobhan. It's magical.",
+    "value": 120,
+    "icon": "Tooth"
+  },
+  {
+    "name": "Baobhan Jaw",
+    "description": "A jaw from the mouth of a baobhan. It's got teeth in it.",
+    "value": 1800,
+    "icon": "Jaw"
+  },
+  {
+    "name": "Great Tree Seed",
+    "description": "A seed from the Great Tree. It's a prized possesion among the citizens of Koncave.",
+    "value": 5000,
+    "icon": "Seed"
+  },
+  {
+    "name": "Steelflame Axe Handle",
+    "description": "A handle to a powerful flaming axe. It's missing a head.",
+    "value": 15000,
+    "icon": "AxeHandle"
+  },
+  {
+    "name": "Steelflame Axe Head",
+    "description": "A head to a powerful flaming axe. It's missing a handle.",
+    "value": 15000,
+    "icon": "AxeHead"
   }
 ]

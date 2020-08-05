@@ -1079,7 +1079,21 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Sand",
+          "weight": 20
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 5
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 15
+        },
+        {
+          "itemName": "Sandstone",
           "weight": 20
         }
       ]
@@ -1094,8 +1108,22 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Sand",
           "weight": 20
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 15
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 25
+        },
+        {
+          "itemName": "Sandstone",
+          "weight": 40
         }
       ]
     }
@@ -1109,7 +1137,39 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Pufferfish",
+          "weight": 20
+        },
+        {
+          "itemName": "Carp",
+          "weight": 20
+        },
+        {
+          "itemName": "Small Caiman",
+          "weight": 20
+        },
+        {
+          "itemName": "Shrimp",
+          "weight": 20
+        },
+        {
+          "itemName": "Scallop",
+          "weight": 20
+        },
+        {
+          "itemName": "Sardine",
+          "weight": 20
+        },
+        {
+          "itemName": "Abalone",
+          "weight": 20
+        },
+        {
+          "itemName": "Saury",
+          "weight": 20
+        },
+        {
+          "itemName": "Butterfish",
           "weight": 20
         }
       ]
@@ -1124,8 +1184,40 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Pufferfish",
+          "weight": 10
+        },
+        {
+          "itemName": "Carp",
+          "weight": 10
+        },
+        {
+          "itemName": "Small Caiman",
+          "weight": 10
+        },
+        {
+          "itemName": "Shrimp",
           "weight": 20
+        },
+        {
+          "itemName": "Scallop",
+          "weight": 20
+        },
+        {
+          "itemName": "Sardine",
+          "weight": 20
+        },
+        {
+          "itemName": "Abalone",
+          "weight": 30
+        },
+        {
+          "itemName": "Saury",
+          "weight": 30
+        },
+        {
+          "itemName": "Butterfish",
+          "weight": 30
         }
       ]
     }
@@ -1139,7 +1231,39 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Pufferfish",
+          "weight": 30
+        },
+        {
+          "itemName": "Carp",
+          "weight": 30
+        },
+        {
+          "itemName": "Small Caiman",
+          "weight": 30
+        },
+        {
+          "itemName": "Shrimp",
+          "weight": 10
+        },
+        {
+          "itemName": "Scallop",
+          "weight": 10
+        },
+        {
+          "itemName": "Sardine",
+          "weight": 10
+        },
+        {
+          "itemName": "Abalone",
+          "weight": 20
+        },
+        {
+          "itemName": "Saury",
+          "weight": 20
+        },
+        {
+          "itemName": "Butterfish",
           "weight": 20
         }
       ]
@@ -1186,6 +1310,30 @@
         {
           "itemName": "Yeast",
           "weight": 20
+        },
+        {
+          "itemName": "Tin Bar",
+          "weight": 20
+        },
+        {
+          "itemName": "Bronze Bar",
+          "weight": 20
+        },
+        {
+          "itemName": "Brass Bar",
+          "weight": 20
+        },
+        {
+          "itemName": "Copper Bar",
+          "weight": 20
+        },
+        {
+          "itemName": "Zinc Bar",
+          "weight": 20
+        },
+        {
+          "itemName": "Nickel Bar",
+          "weight": 20
         }
       ]
     }
@@ -1215,6 +1363,26 @@
       "drops": [
         {
           "itemName": "Oil",
+          "weight": 20
+        },
+        {
+          "itemName": "Butterfish",
+          "weight": 20
+        },
+        {
+          "itemName": "Wild Boar Meat",
+          "weight": 20
+        },
+        {
+          "itemName": "Pigeon Meat",
+          "weight": 20
+        },
+        {
+          "itemName": "Turkey Meat",
+          "weight": 20
+        },
+        {
+          "itemName": "Caiman Meat",
           "weight": 20
         }
       ]
@@ -1289,7 +1457,7 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Ice",
           "weight": 20
         }
       ]
@@ -1304,7 +1472,31 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Buck",
+          "weight": 20
+        },
+        {
+          "itemName": "Deer",
+          "weight": 20
+        },
+        {
+          "itemName": "Black Bear",
+          "weight": 20
+        },
+        {
+          "itemName": "Rabbit",
+          "weight": 20
+        },
+        {
+          "itemName": "Pigeon",
+          "weight": 20
+        },
+        {
+          "itemName": "Turkey",
+          "weight": 20
+        },
+        {
+          "itemName": "Pheasant",
           "weight": 20
         }
       ]
@@ -1319,7 +1511,35 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Yellowtail",
+          "weight": 2
+        },
+        {
+          "itemName": "Giant Clam",
+          "weight": 2
+        },
+        {
+          "itemName": "Big Tuna",
+          "weight": 2
+        },
+        {
+          "itemName": "Swordfish",
+          "weight": 2
+        },
+        {
+          "itemName": "Shrimp",
+          "weight": 20
+        },
+        {
+          "itemName": "Scallop",
+          "weight": 20
+        },
+        {
+          "itemName": "Icefish",
+          "weight": 20
+        },
+        {
+          "itemName": "Shad",
           "weight": 20
         }
       ]
@@ -1334,7 +1554,27 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "White Pine Logs",
+          "weight": 20
+        },
+        {
+          "itemName": "Great Tree Logs",
+          "weight": 20
+        },
+        {
+          "itemName": "Ice Logs",
+          "weight": 20
+        },
+        {
+          "itemName": "Buloke Logs",
+          "weight": 20
+        },
+        {
+          "itemName": "Poplar Logs",
+          "weight": 20
+        },
+        {
+          "itemName": "Oak Logs",
           "weight": 20
         }
       ]
@@ -1349,8 +1589,46 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
-          "weight": 20
+          "itemName": "Baobhan Hair",
+          "weight": 30
+        },
+        {
+          "itemName": "Baobhan Tooth",
+          "weight": 30
+        },
+        {
+          "itemName": "Baobhan Jaw",
+          "weight": 2
+        },
+        {
+          "itemName": "Nitroquen",
+          "weight": 5,
+          "amount": 5
+        },
+        {
+          "itemName": "Siliquen",
+          "weight": 5,
+          "amount": 5
+        },
+        {
+          "itemName": "Quephorus",
+          "weight": 5,
+          "amount": 5
+        },
+        {
+          "itemName": "Quelfur",
+          "weight": 5,
+          "amount": 5
+        },
+        {
+          "itemName": "Bariquem",
+          "weight": 5,
+          "amount": 5
+        },
+        {
+          "itemName": "Oxyquen",
+          "weight": 5,
+          "amount": 5
         }
       ]
     }

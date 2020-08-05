@@ -10,7 +10,8 @@
         "itemName": "Large Stone"
       }
     ],
-    "maxOutputsPerAction": 1
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start connecting the trap pieces together..."
   },
   {
     "outputItemName": "Medium Trap",
@@ -24,7 +25,8 @@
         "amount": 3
       }
     ],
-    "maxOutputsPerAction": 1
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start connecting the trap pieces together..."
   },
   {
     "outputItemName": "Large Trap",
@@ -38,6 +40,7 @@
         "amount": 5
       }
     ],
+    "recipeActionString": "You start connecting the trap pieces together...",
     "maxOutputsPerAction": 1
   },
   {
@@ -52,6 +55,7 @@
         "amount": 1
       }
     ],
+    "recipeActionString": "You attempt to attach the pieces of the sword together...",
     "requirements": [
       {
         "skill": "Smithing",
@@ -70,6 +74,28 @@
       {
         "itemName": "Cactus Spine",
         "amount": 10000
+      }
+    ],
+    "recipeActionString": "You painstakingly begin sticking all 10,000 cactus spines into the club...",
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Steelflame Axe",
+    "ingredients": [
+      {
+        "itemName": "Steelflame Axe Head",
+        "amount": 1
+      },
+      {
+        "itemName": "Steelflame Axe Handle",
+        "amount": 1
+      }
+    ],
+    "recipeActionString": "You attempt to attach the pieces of the axe together...",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
       }
     ],
     "maxOutputsPerAction": 1

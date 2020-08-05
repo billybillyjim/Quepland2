@@ -1169,5 +1169,35 @@
         }
       ]
     }
+  },
+  {
+    "Name": "Steelflame Axe",
+    "Description": "A flaming axe. You can use it to chop down trees or enemies very quickly.",
+    "value": 32800,
+    "enabledActions": "Axemanship",
+    "secondaryColor": "#red",
+    "equipSlot": "R Hand",
+    "icon": "FlameAxe",
+    "gatherSpeedBonus": 0.8,
+    "weaponInfo": {
+      "attackSpeed": 14,
+      "damage": 200,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 80
+        }
+      ],
+      "statusEffectData": [
+        {
+          "name": "Burn",
+          "power": 35,
+          "speed": 2,
+          "duration": 20,
+          "message": "The axe burns your opponent!",
+          "procOdds": 0.1
+        }
+      ]
+    }
   }
 ]
