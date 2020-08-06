@@ -845,7 +845,7 @@
     "icon": "Shirt",
     "experienceGainBonus": 0.025,
     "experienceBonusSkill": "Fishing",
-    "equipSlot": "Body",
+    "equipSlot": "Chest",
     "armorInfo": {
       "armorBonus": 3
     }

@@ -79,6 +79,10 @@ public class ItemManager
                     {
                         EquipmentSlots.Add(i.EquipSlot);
                     }
+                    if(i.EquipSlot == "Body")
+                    {
+                        Console.WriteLine(i.Name);
+                    }
                 }
                 
             }

@@ -7,17 +7,17 @@
         <div style="margin-right:10px;line-height:28px;flex:1;" 
              @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Damage", "This is a measure of how much this item boosts your damage. Higher numbers are better!")))"
              @onmouseout="@(new Action(() => GameState.HideTooltip()))" >
-            <img src="data/Images/Attack.png" style="height:26px;width:26px;margin-top:-3px;"/> @GetAttack() <span style="@GetColor(GetAttackDifference())">(@GetAttackDifference())</span>
+            <img src="data/Images/Attack.png" style="height:26px;width:26px;margin-top:-3px;"/> @GetAttack() <span style="@GetColor(GetAttackDifference(), false)">(@GetAttackDifference())</span>
         </div>
         <div style="margin-right:10px;line-height:28px;flex:1;"
              @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Armor", "This is a measure of how much this item boosts your armor. Higher numbers are better!")))"
              @onmouseout="@(new Action(() => GameState.HideTooltip()))">
-            <img src="data/Images/Armor.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetArmor() <span style="@GetColor(GetArmorDifference())">(@GetArmorDifference())</span>
+            <img src="data/Images/Armor.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetArmor() <span style="@GetColor(GetArmorDifference(), false)">(@GetArmorDifference())</span>
         </div>
         <div style="margin-right:10px;line-height:28px;flex:1;"
              @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Speed", "This is a measure of how many game ticks this weapon attacks at. Lower is faster!")))"
              @onmouseout="@(new Action(() => GameState.HideTooltip()))">
-            <img src="data/Images/Speed.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetSpeed() <span style="@GetColor(GetSpeedDifference())">(@GetSpeedDifference())</span>
+            <img src="data/Images/Speed.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetSpeed() <span style="@GetColor(GetSpeedDifference(), true)">(@GetSpeedDifference())</span>
         </div>
     </div>
 }
@@ -39,8 +39,12 @@
         }
         return "data/Images/" + i + "Down.png";
     }
-    public string GetColor(int value)
+    public string GetColor(int value, bool reverse)
     {
+        if (reverse)
+        {
+            value = -value;
+        }
         if(value > 0)
         {
             return "color:darkgreen;";

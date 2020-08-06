@@ -664,7 +664,7 @@ using System.Threading.Tasks;
     }
     public static GameStateSaveData GetSaveData()
     {
-        return new GameStateSaveData { IsHunting = IsOnHuntingTrip, Location = Location };
+        return new GameStateSaveData { IsHunting = IsOnHuntingTrip, Location = Location, CurrentLand = CurrentLand.Name };
     }
     public static void LoadSaveData(GameStateSaveData data)
     {
@@ -677,6 +677,7 @@ using System.Threading.Tasks;
         {
             data.Location = "QueplandFields";
         }
+        CurrentLand = AreaManager.Instance.GetLandByName(data.CurrentLand);
         GoTo("/World/" + data.Location);
     }
     private void StateHasChanged()

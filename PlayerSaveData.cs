@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class PlayerSaveData
 {
@@ -7,4 +8,5 @@ public class PlayerSaveData
 	public int DeathCount { get; set; }
 	public int InventorySize { get; set; }
 	public string ActiveFollowerName { get; set; }
+	public List<string> EquippedItems { get; set; }
 }

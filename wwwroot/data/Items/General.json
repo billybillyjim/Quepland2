@@ -224,5 +224,11 @@
     "description": "A head to a powerful flaming axe. It's missing a handle.",
     "value": 15000,
     "icon": "AxeHead"
+  },
+  {
+    "name": "Shrinking Cloth",
+    "description": "A magical cloth once owned by the guardian Imaynimayn. It could be used to make a giant's weapon the right size for you to wield.",
+    "value": 15000,
+    "icon": "Cloth"
   }
 ]

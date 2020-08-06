@@ -65,6 +65,15 @@
 
           }
         ]
+      },
+      {
+        "name": "Kumuhana's House",
+        "buttonText": "Enter House",
+        "url": "KumuhanasHouse",
+        "description": "You find a man sitting at the firepit, grinding some grain with a quern-stone.",
+        "npcs": [
+          "Kumuhana"
+        ]
       }
     ]
   },

@@ -10,7 +10,9 @@ namespace Quepland_2.Bosses
     {
         public void OnDie(Monster monster)
         {
-               MessageManager.AddMessage("The creature screams in rage and disappears under the water. The waterfall opens up to reveal a pile of treasure. You grab something quickly and escape before the creature returns.");
+            Drop d = ItemManager.Instance.GetMinigameDropTable("Sotu Nran Waterfall").DropTable.GetDrop();
+            MessageManager.AddMessage("The creature screams in rage and disappears under the water. The waterfall opens up to reveal a pile of treasure. You grab " + d.Amount + " " + d.Item + " quickly and escape before the creature returns.");
+            Player.Instance.Inventory.AddDrop(d);
         }
         public void OnAttack() 
         {
@@ -20,8 +22,8 @@ namespace Quepland_2.Bosses
                 pad.Tick();
                 if(PlayerPosition == pad.Position && pad.HasFallen)
                 {
-                    MessageManager.AddMessage("You fall into the water and feel your life force quickly draining!", "red");
-                    Player.Instance.CurrentHP -= (Player.Instance.MaxHP / 4);
+                    MessageManager.AddMessage("The water feels like its draining your life force!", "red");
+                    Player.Instance.CurrentHP -= (Player.Instance.MaxHP / 5);
                     Monsters[0].CurrentHP += Player.Instance.MaxHP / 4;
                 }
             }
@@ -50,12 +52,10 @@ namespace Quepland_2.Bosses
         public void OnBeAttacked(Monster monster)
         {
 
-
-
         }
-        public int SpecialAttackSpeed { get; set; } = 30;
-        public int TicksToNextSpecialAttack { get; set; } = 30;
-        private int attackRatio = 18;
+        public int SpecialAttackSpeed { get; set; } = 25;
+        public int TicksToNextSpecialAttack { get; set; } = 25;
+        private int attackRatio = 13;
         private int currentTick = 0;
         public List<Monster> Monsters { get; set; }
         public Lilypad NextLilypadTarget;

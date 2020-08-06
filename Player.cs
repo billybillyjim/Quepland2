@@ -468,7 +468,14 @@ public class Player
     }
     public PlayerSaveData GetSaveData()
     {
-        return new PlayerSaveData { ActiveFollowerName = CurrentFollower?.Name ?? "None", CurrentHP = CurrentHP, MaxHP = MaxHP, DeathCount = Deaths, InventorySize = Inventory.GetSize()};
+        return new PlayerSaveData {
+            ActiveFollowerName = CurrentFollower?.Name ?? "None",
+            CurrentHP = CurrentHP,
+            MaxHP = MaxHP,
+            DeathCount = Deaths,
+            InventorySize = Inventory.GetSize(),
+            EquippedItems = equippedItems.Select(x => x.Name).ToList()
+        };
     }
     public void LoadSaveData(PlayerSaveData data)
     {
@@ -480,6 +487,14 @@ public class Player
         MaxHP = data.MaxHP;
         Deaths = data.DeathCount;
         Inventory.SetSize(data.InventorySize);
+        foreach(string s in data.EquippedItems)
+        {
+            if(s != null && s.Length > 1)
+            {
+                Equip(Inventory.GetItems().FirstOrDefault(x => x.Key.Name == s).Key);
+
+            }
+        }
     }
 }
 

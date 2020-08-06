@@ -15,9 +15,15 @@
     },
     {
       "buttonText": "Can you tell about this sword? I don't care about history.",
-      "responseText": "",
-      "newDepthOnTalk": 2,
-      "depth": 11
+      "responseText": "This sword... Amazing! It's a weapon of Imaynimayn! This in incredible! Where did you find this?",
+      "newQuestprogressValue": 4,
+      "quest": "Queple's Sword",
+      "requirements": [
+        {
+          "item": "Queple's Sword",
+          "itemAmount": 1
+        }
+      ]
     },
     {
       "buttonText": "Keep Listening",
@@ -57,7 +63,7 @@
     },
     {
       "buttonText": "Keep Listening",
-      "responseText": "The Walker tired of conversation, being of little brain, and grew angry it struck her with a bolt of lightning, killing her. Imaynimayn flew into a rage at Potaki’s death, not only with the Walker but also with the giants who failed to solve their problem on their own...",
+      "responseText": "The Walker tired of conversation, being of little brain, and grew angry it struck her with a bolt of lightning, killing her. Imaynimayn flew into a rage at Potaki's death, not only with the Walker but also with the giants who failed to solve their problem on their own...",
       "depth": 7,
       "newDepthOnTalk": 8
     },
@@ -69,7 +75,7 @@
     },
     {
       "buttonText": "Keep Listening",
-      "responseText": "Imaynimayn agreed and granted Queple a magical pole to defeat the Stormwalker with. The two were evenly matched, but the dull-witted stormwalker was unprepared for Queple’s magic pole, and was quickly launched far to the south, never to be seen again...",
+      "responseText": "Imaynimayn agreed and granted Queple a magical pole to defeat the Stormwalker with. The two were evenly matched, but the dull-witted stormwalker was unprepared for Queple's magic pole, and was quickly launched far to the south, never to be seen again...",
       "depth": 9,
       "newDepthOnTalk": 10
     },
@@ -80,8 +86,8 @@
       "newDepthOnTalk": 11
     },
     {
-      "buttonText": "Keep Listening",
-      "responseText": "Queple led his people away from Tackure, using his staff to travel to the mainland south of here. They say Imaynimayn still resides on the island, though no human has ever seen him and lived...",
+      "buttonText": "Thanks",
+      "responseText": "No problem, stranger. Just let me know if you want to hear the legend again. I'll be here grinding grain most days.",
       "depth": 11,
       "newDepthOnTalk": 0
     },
