@@ -4,7 +4,7 @@
 @if (Item != null)
 {
 
-    <div style="@(GetBackground())margin:2px;height:50px;width:50px;position:relative;box-sizing: border-box;border-radius:0.25rem;" draggable="false">
+    <div class="unselectable" style="@(GetBackground())margin:2px;height:50px;width:50px;position:relative;box-sizing: border-box;border-radius:0.25rem;" draggable="false">
         @if (ShowAmount)
         {
 
@@ -26,7 +26,7 @@
 }
 else
 {
-    <div style="border:solid black 1px;margin:2px;height:50px;width:50px;background-color:gray;border-radius:0.25rem"></div>
+    <div class="unselectable" style="border:solid black 1px;margin:2px;height:50px;width:50px;background-color:gray;border-radius:0.25rem"></div>
 }
 @code {
     [Parameter]

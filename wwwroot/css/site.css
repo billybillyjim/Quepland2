@@ -34,6 +34,13 @@ app {
     transition: width .2s cubic-bezier(0.65, 0.05, 0.36, 1) !important;
 }
 
+.unselectable {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
 .sidebar-buttons {
     border-radius: 0px;
     line-height: 15px;

@@ -2,7 +2,8 @@
 @implements IDisposable
 @inject NavigationManager UriHelper
 
-    <div style="        height: 130px;
+    <div class="unselectable"
+         style="        height: 130px;
         min-height:130px;
         width: 350px;
         border: solid black 1px;
@@ -50,8 +51,12 @@
                 <div style="position:absolute;top:-28px;left:-1px;">
                     <ItemStatsComponent Item="@Item"></ItemStatsComponent>
                 </div>
-
-
+            }
+            else if (Item.WeaponInfo != null)
+            {
+                <div style="position:absolute;top:-28px;left:-1px;">
+                    <ItemStatsComponent Item="@Item"></ItemStatsComponent>
+                </div>
             }
             @if (Item.Name == "Unidentified Gem")
             {
@@ -75,6 +80,9 @@
             @if (Item.FoodInfo != null)
             {
                 <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => EatItem())">Eat</button></div>
+                <div style="position:absolute;top:-28px;left:-1px;">
+                    <ItemStatsComponent Item="@Item"></ItemStatsComponent>
+                </div>
             }
             @if (ItemManager.Instance.GetUnpackingRecipe(Item) != null)
             {
@@ -102,7 +110,9 @@
                     {
                         <button style="position:absolute;left:5px;bottom:5px;" class="btn btn-light"
                                 @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You can't sell that here.")))"
-                                @onmouseout="@(new Action(() => GameState.HideTooltip()))">Sell</button>
+                                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                            Sell
+                        </button>
                     }
                     else
                     {

@@ -221,6 +221,7 @@ public class BattleManager
             {
                 Player.Instance.GainExperienceFromWeapon(Player.Instance.GetWeapon(), total);
                 MessageManager.AddMessage("You hit the " + Target.Name + " for " + total + " damage!");
+                Player.Instance.Inventory.RemoveItems(Player.Instance.Inventory.GetStrongestArrow(), 1);
             }
             
         }
