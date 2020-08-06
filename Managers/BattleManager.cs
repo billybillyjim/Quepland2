@@ -141,11 +141,20 @@ public class BattleManager
                 }
                 else if (opponent.TicksToNextAttack < 0 && opponent.IsDefeated == false)
                 {
-                    if (CurrentBoss != null)
+                    if (CurrentBoss != null && CurrentBoss.CustomAttacks)
                     {
                         CurrentBoss.OnAttack();
                     }
-                    BeAttacked(opponent);
+                    else if(CurrentBoss != null)
+                    {
+                        CurrentBoss.OnAttack();
+                        BeAttacked(opponent);
+                    }
+                    else
+                    {
+                        BeAttacked(opponent);
+                        
+                    }
                     opponent.TicksToNextAttack = opponent.AttackSpeed;
                 }
             }

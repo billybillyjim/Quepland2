@@ -70,11 +70,11 @@
   },
   {
     "name": "Imaynimayn",
-    "hp": 5500,
-    "weaknesses": "Axemanship",
+    "hp": 15500,
+    "weaknesses": "",
     "strengths": "Knifesmanship",
-    "damage": 29,
-    "armor": 140,
-    "attackSpeed": 25
+    "damage": 165,
+    "armor": 450,
+    "attackSpeed": 1
   }
 ]

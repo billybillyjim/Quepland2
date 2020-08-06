@@ -24,7 +24,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "0.0.5";
+    public static string Version { get; set; } = "0.0.6";
 
     public static string Location { get; set; } = "";
     public static bool InitCompleted { get; set; } = false;
@@ -113,8 +113,8 @@ using System.Threading.Tasks;
             StateHasChanged();
         }), null, GameSpeed, GameSpeed);
         StateHasChanged();
-        QuestTester.TestQuests();
-        RecipeTester.TestRecipes();
+        //QuestTester.TestQuests();
+        //RecipeTester.TestRecipes();
     }
 
     private async Task Tick()
@@ -669,7 +669,11 @@ using System.Threading.Tasks;
     public static void LoadSaveData(GameStateSaveData data)
     {
         IsOnHuntingTrip = data.IsHunting;
-        if(data.Location == "Battle")
+        if (data.Location == "Battle")
+        {
+            data.Location = "QueplandFields";
+        }
+        if (data.Location == null || data.Location == "")
         {
             data.Location = "QueplandFields";
         }

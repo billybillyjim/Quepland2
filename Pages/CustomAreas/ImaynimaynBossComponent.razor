@@ -1,0 +1,180 @@
+﻿@page "/World/SotuNran/Waterfall/"
+@using Bosses.ImaynimaynElements
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+@if (startedBattle == false)
+{
+    <div>
+        A giant snake-like beast emerges from the water. It has the tusks of a walrus and the head of a fish. It roars and lunges at you.
+    </div>
+    <button class="btn btn-danger" style="position:relative;top:380px;" @onclick="@(() => StartBattle())">Fight</button>
+}
+else
+{
+    @if (BattleManager.Instance.AllOpponentsDefeated())
+    {
+        <button class="btn btn-danger" style="position:relative;top:380px;" @onclick="@(() => StartBattle())">Fight Again</button>
+
+    }
+    else if (BattleManager.Instance.BattleHasEnded)
+    {
+        <button class="btn btn-danger" style="position:relative;top:380px;" @onclick="@(() => StartBattle())">Fight Again</button>
+    }
+    else
+    {
+        <div style="position:relative">
+            <CombatComponent></CombatComponent>
+        </div>
+        
+    }
+    @if (BattleManager.Instance.CurrentBoss != null)
+    {
+        <div style="position:relative">
+            <div style="position:absolute;top:0px;left:133px;">
+                @if ((BattleManager.Instance.CurrentBoss as Bosses.Imaynimayn).PlayerPosition == "Top" || TopLily.HasFallen)
+                {
+                    <button class="btn btn-primary" style="opacity:0.5;@GetStyle(TopLily)">Jump Here</button>
+                }
+                else
+                {
+                    <button class="btn btn-primary" @onclick="@(() => Jump(TopLily))" style="@GetStyle(TopLily)">Jump Here</button>
+                }
+            </div>
+            <div style="position:absolute;top:60px;left:20px;">
+                @if ((BattleManager.Instance.CurrentBoss as Bosses.Imaynimayn).PlayerPosition == "Left" || LeftLily.HasFallen)
+                {
+                    <button class="btn btn-primary" style="opacity:0.5;@GetStyle(LeftLily)">Jump Here</button>
+                }
+                else
+                {
+                    <button class="btn btn-primary" @onclick="@(() => Jump(LeftLily))" style="@GetStyle(LeftLily)">Jump Here</button>
+                }
+            </div>
+            <div style="position:absolute;top:120px;left:133px;">
+                @if ((BattleManager.Instance.CurrentBoss as Bosses.Imaynimayn).PlayerPosition == "Bottom" || BottomLily.HasFallen)
+                {
+                    <button class="btn btn-primary" style="opacity:0.5;@GetStyle(BottomLily)">Jump Here</button>
+                }
+                else
+                {
+                    <button class="btn btn-primary" @onclick="@(() => Jump(BottomLily))" style="@GetStyle(BottomLily)">Jump Here</button>
+                }
+            </div>
+            <div style="position:absolute;top:60px;left:250px;">
+                @if ((BattleManager.Instance.CurrentBoss as Bosses.Imaynimayn).PlayerPosition == "Right" || RightLily.HasFallen)
+                {
+                    <button class="btn btn-primary" style="opacity:0.5;@GetStyle(RightLily)">Jump Here</button>
+                }
+                else
+                {
+                    <button class="btn btn-primary" @onclick="@(() => Jump(RightLily))" style="@GetStyle(RightLily)">Jump Here</button>
+                }
+            </div>
+        </div>
+    }
+
+}
+
+
+
+@code {
+
+    private bool startedBattle;
+    public Monster Imaynimayn;
+    private Lilypad TopLily;
+    private Lilypad LeftLily;
+    private Lilypad BottomLily;
+    private Lilypad RightLily;
+
+    public void Target(Monster monster)
+    {
+        BattleManager.Instance.Target = monster;
+    }
+    private string GetPlayerHPPercent()
+    {
+        return (((double)Player.Instance.CurrentHP / Player.Instance.MaxHP) * 100d) + "%";
+    }
+    private string GetOpponentAttackProgress(Monster opponent)
+    {
+        return (100 - (((double)opponent.TicksToNextAttack / opponent.AttackSpeed) * 100d)) + "%";
+    }
+    private string GetPlayerAttackProgress()
+    {
+        return (100 - (((double)Player.Instance.TicksToNextAttack / Player.Instance.GetWeaponAttackSpeed()) * 100d)) + "%";
+    }
+    private void Jump(Lilypad lily)
+    {
+        (BattleManager.Instance.CurrentBoss as Bosses.Imaynimayn).PlayerPosition = lily.Position;
+        (BattleManager.Instance.CurrentBoss as Bosses.Imaynimayn).NextLilypadTarget = lily;
+        Player.Instance.TicksToNextAttack = Player.Instance.GetWeaponAttackSpeed();
+        MessageManager.AddMessage("You jump to a nearby lilypad and regain your balance.");
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+
+    }
+    public void StartBattle()
+    {
+        if (GameState.IsStoppingNextTick == false)
+        {
+            TopLily = new Lilypad("Top");
+            LeftLily = new Lilypad("Left");
+            RightLily = new Lilypad("Right");
+            BottomLily = new Lilypad("Bottom");
+            Imaynimayn = BattleManager.Instance.GetMonsterByName("Imaynimayn");
+            BattleManager.Instance.CurrentOpponents.Clear();
+            BattleManager.Instance.CurrentOpponents.Add(Imaynimayn);
+            BattleManager.Instance.SetBoss(new Quepland_2.Bosses.Imaynimayn());
+            (BattleManager.Instance.CurrentBoss as Bosses.Imaynimayn).Lilypads.Add(TopLily);
+            (BattleManager.Instance.CurrentBoss as Bosses.Imaynimayn).Lilypads.Add(LeftLily);
+            (BattleManager.Instance.CurrentBoss as Bosses.Imaynimayn).Lilypads.Add(RightLily);
+            (BattleManager.Instance.CurrentBoss as Bosses.Imaynimayn).Lilypads.Add(BottomLily);
+            BattleManager.Instance.StartBattle();
+            startedBattle = true;
+            Jump(TopLily);
+        }
+
+    }
+
+    public string GetStyle(Lilypad pad)
+    {
+        if (pad.Fall)
+        {
+            if (pad.CurrentTick == 3)
+            {
+                return "background-color:#34d13f";
+            }
+            else if (pad.CurrentTick == 2)
+            {
+                return "background-color:#4dad39";
+            }
+            else if (pad.CurrentTick == 1)
+            {
+                return "background-color:#92ab38";
+            }
+            else
+            {
+                return "background-color:#964523";
+            }
+        }
+        else if(pad.HasFallen)
+        {
+            return "background-color:#964523";
+        }
+        else
+        {
+            return "background-color:#34d13f";
+        }
+
+    }
+    public void Dispose()
+    {
+        startedBattle = false;
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

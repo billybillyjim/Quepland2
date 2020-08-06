@@ -25,7 +25,7 @@ public class Player
     public Follower CurrentFollower { get; set; }
     public int MaxHP = 50;
     public int CurrentHP;
-    public int TicksToNextAttack;
+    public int TicksToNextAttack { get; set; }
     public int Deaths { get; set; }
     public bool JustDied { get; set; }
 

@@ -123,6 +123,13 @@
     "areaURL": "SotuNran",
     "actions": [
       "Go Fishing:Shad"
+    ],
+    "buildings": [
+      {
+        "name": "Waterfall",
+        "buttonText": "Approach the waterfall",
+        "url": "Waterfall"
+      }
     ]
   }
 ]

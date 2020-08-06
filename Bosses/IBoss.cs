@@ -14,5 +14,6 @@ namespace Quepland_2.Bosses
         List<Monster> Monsters { get; set; }
         int SpecialAttackSpeed { get; set; }
         int TicksToNextSpecialAttack { get; set; }
+        bool CustomAttacks { get; set; }
     }
 }
