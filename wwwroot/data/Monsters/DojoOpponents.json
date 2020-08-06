@@ -60,7 +60,15 @@
     "armor": 0,
     "damage": 320,
     "weaknesses": "Knifesmanship",
-    "strengths": "Hammermanship"
+    "strengths": "Hammermanship",
+    "dropTable": {
+      "alwaysDrops": [
+        {
+          "itemName": "Dojo Tokens",
+          "amount": 7500
+        }
+      ]
+    }
   },
   {
     "name": "Tanto",
@@ -114,7 +122,15 @@
     "armor": 7,
     "damage": 8,
     "weaknesses": "Swordsmanship",
-    "strengths": "Knifesmanship"
+    "strengths": "Knifesmanship",
+    "dropTable": {
+      "alwaysDrops": [
+        {
+          "itemName": "Dojo Tokens",
+          "amount": 500
+        }
+      ]
+    }
   },
   {
     "name": "Shunai",
@@ -177,7 +193,15 @@
     "armor": 47,
     "damage": 100,
     "weaknesses": "Axemanship",
-    "strengths": "Swordsmanship"
+    "strengths": "Swordsmanship",
+    "dropTable": {
+      "alwaysDrops": [
+        {
+          "itemName": "Dojo Tokens",
+          "amount": 2500
+        }
+      ]
+    }
   },
   {
     "name": "Fets",
@@ -249,7 +273,15 @@
     "armor": 147,
     "damage": 300,
     "weaknesses": "Hammermanship",
-    "strengths": "Axemanship"
+    "strengths": "Axemanship",
+    "dropTable": {
+      "alwaysDrops": [
+        {
+          "itemName": "Dojo Tokens",
+          "amount": 5000
+        }
+      ]
+    }
   },
   {
     "name": "Vasilly",
@@ -321,6 +353,14 @@
     "armor": 110,
     "damage": 400,
     "weaknesses": "Swordsmanship",
-    "strengths": "Hammermanship Axemanship"
+    "strengths": "Hammermanship Axemanship",
+    "dropTable": {
+      "alwaysDrops": [
+        {
+          "itemName": "Dojo Tokens",
+          "amount": 10000
+        }
+      ]
+    }
   }
 ]

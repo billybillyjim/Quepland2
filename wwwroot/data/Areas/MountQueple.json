@@ -79,6 +79,7 @@
         "shops": [
           {
             "name": "Jumbo's Supply Store",
+            "limitBoughtItemsToSoldItems": false,
             "itemNames": [
               "Minnow Net",
               "Stone Axe",
@@ -149,6 +150,9 @@
         "buttonText": "Continue Down into the Valley"
       }
 
+    ],
+    "npcs": [
+      "Fojimafa"
     ]
   },
   {

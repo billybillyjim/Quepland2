@@ -1,0 +1,36 @@
+{
+  "name": "Fojimafa",
+  "id": 32,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Aaarrrgh!!!! I deserved to win that fight! The other guy didn't fight fair! No matter how many times I swing my knife it feels like he's cheating! I hardly do any damage! To top it off, I don't even get any consolation tokens for trying! This dojo system is stupid.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "I have some dojo tokens",
+      "responseText": "You do? Hey I'll trade you! I have all these belts and I can't even wear them.",
+      "depth": 1,
+      "requirements": [
+        {
+          "itemName": "Dojo Tokens",
+          "itemAmount": 1
+        }
+      ]
+    }
+  ],
+  "shop": {
+    "currencyName": "Dojo Tokens",
+    "itemNames": [
+      "White Belt",
+      "Yellow Belt",
+      "Orange Belt",
+      "Green Belt",
+      "Blue Belt",
+      "Purple Belt",
+      "Brown Belt",
+      "Black Belt",
+      "Golden Belt"
+    ]
+  }
+}

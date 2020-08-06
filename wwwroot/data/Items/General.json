@@ -230,5 +230,12 @@
     "description": "A magical cloth once owned by the guardian Imaynimayn. It could be used to make a giant's weapon the right size for you to wield.",
     "value": 15000,
     "icon": "Cloth"
+  },
+  {
+    "name": "Dojo Tokens",
+    "description": "Tokens rewarded for defeating everyone at a dojo.",
+    "value": 1,
+    "icon": "Token",
+    "isStackable": true
   }
 ]

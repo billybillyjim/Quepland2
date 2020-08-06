@@ -1,7 +1,7 @@
 ﻿@inject GameState GameState
 @implements IDisposable
 
-    <div style="margin-top:-10px;margin-bottom:10px;background-color:lightgray;padding:10px;border-radius:0.5rem;">
+    <div style="margin-top:-10px;margin-bottom:10px;background-color:#9e9e9e;padding:10px;border-radius:0.5rem;">
 
         <div @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GetTooltip())))"
              @onmouseout="@(new Action(() => GameState.HideTooltip()))">

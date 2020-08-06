@@ -36,4 +36,16 @@ public class Shop
 	}
 	private GameItem currency;
 	public string CurrencyName { get; set; } = "Coins";
+	public bool LimitBoughtItemsToSoldItems { get; set; } = true;
+	public bool HasItem(GameItem item)
+    {
+		foreach(GameItem i in Items)
+        {
+			if(i.Name == item.Name)
+            {
+				return true;
+            }
+        }
+		return false;
+    }
 }

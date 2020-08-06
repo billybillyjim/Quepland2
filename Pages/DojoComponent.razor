@@ -19,6 +19,13 @@
             Challenge Again in:@(GetNextChallengeTime())
         </div>
     }
+    else if (thisDojo.LastLossTime.HasValue && thisDojo.LastLossTime.Value.AddMinutes(3).CompareTo(DateTime.UtcNow) > 0)
+    { 
+        <div>Sorry! You lost. Try and improve your skills and come back later.</div>
+        <div>
+            Challenge Again in:@(GetNextChallengeTimeForFailure())
+        </div>
+    }
     else if (thisDojo.CurrentOpponent == 0 && thisDojo.HasBegunChallenge == false)
     {
         <button class="btn btn-primary" @onclick="@(() => BeginChallenge())">
@@ -56,7 +63,17 @@
             return thisDojo.LastWinTime.Value.AddHours(22).Subtract(DateTime.UtcNow).ToString(@"hh\:mm\:ss");
         }
     }
-
+    private string GetNextChallengeTimeForFailure()
+    {
+        if (thisDojo.LastLossTime.HasValue == false)
+        {
+            return "Now";
+        }
+        else
+        {
+            return thisDojo.LastLossTime.Value.AddMinutes(3).Subtract(DateTime.UtcNow).ToString(@"hh\:mm\:ss");
+        }
+    }
     private void BeginChallenge()
     {
         thisDojo.HasBegunChallenge = true;

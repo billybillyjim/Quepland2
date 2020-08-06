@@ -34,6 +34,7 @@ public class Dojo
 	public int CurrentOpponent { get; set; }
 	public bool HasBegunChallenge { get; set; }
 	public DateTime? LastWinTime { get; set; }
+	public DateTime? LastLossTime { get; set; }
 
 	public DojoSaveData GetSaveData()
     {

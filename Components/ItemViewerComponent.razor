@@ -62,11 +62,11 @@
                 else
                 {
                     <div class="item-view-button">
-                            <button class="btn btn-light" style="opacity:0.5" 
+                        <button class="btn btn-light" style="opacity:0.5"
                                 onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.GetRequirementTooltip())))"
                                 onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                                    Identify
-                            </button>
+                            Identify
+                        </button>
                     </div>
                 }
 
@@ -86,8 +86,8 @@
                 else
                 {
                     <div class="item-view-button">
-                        <button class="btn btn-light" style="opacity:0.7" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have enough inventory space.")))"
-                                onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                        <button class="btn btn-light" style="opacity:0.7" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have enough inventory space.")))"
+                                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
                             @ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString
                         </button>
                     </div>
@@ -98,8 +98,19 @@
             {
                 @if (Item.IsSellable)
                 {
-                    <button style="position:absolute;left:5px;bottom:5px;" class="btn btn-light" @onclick="@(() => SellItem())">Sell @(Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item)))</button>
-                    <div style="position:absolute;left:100px;bottom:5px;">@(GetValue())</div>
+                    @if (ItemManager.Instance.CurrentShop.LimitBoughtItemsToSoldItems && ItemManager.Instance.CurrentShop.HasItem(Item) == false)
+                    {
+                        <button style="position:absolute;left:5px;bottom:5px;" class="btn btn-light"
+                                @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You can't sell that here.")))"
+                                @onmouseout="@(new Action(() => GameState.HideTooltip()))">Sell</button>
+                    }
+                    else
+                    {
+                        {
+                            <button style="position:absolute;left:5px;bottom:5px;" class="btn btn-light" @onclick="@(() => SellItem())">Sell @(Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item)))</button>
+                            <div style="position:absolute;left:100px;bottom:5px;">@(GetValue())</div>
+                        }
+                    }
 
                 }
             }
