@@ -1,0 +1,76 @@
+{
+  "name": "Snibbap",
+  "id": 35,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "What do you want?",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Snibbap"
+        }
+      ]
+    },
+    {
+      "buttonText": "Would you work for me?",
+      "responseText": "Hmmm... I may be interested, for a price.",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Snibbap"
+        }
+      ]
+    },
+    {
+      "buttonText": "What can you do?",
+      "responseText": "I'm a goblin, but I mostly work with banks and finances. I can transfer your less liquid assets into pure cash, just let me know what you want to get rid of in your bank.",
+      "depth": 1,
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Snibbap"
+        }
+      ]
+    },
+    {
+      "buttonText": "How much?",
+      "responseText": "I just so happen to be in a bit of debt, if you could spare me 867530 coins, I would be glad to make a deal.",
+      "depth": 2,
+      "newDepthOnTalk": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Snibbap"
+        }
+      ]
+    },
+    {
+      "buttonText": "Deal",
+      "responseText": "Really? I didn't actually expect you to agree... Well, a deal's a deal. I can't do much, but I'll haul things to and from the bank for you.",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Snibbap"
+        },
+        {
+          "item": "Coins",
+          "itemAmount": 867530
+        }
+      ],
+      "unlockedFollower": "Snibbap",
+      "ConsumeRequiredItems": true
+    },
+    {
+      "buttonText": "I don't have that much",
+      "responseText": "Figures.",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Snibbap"
+        }
+      ]
+
+    }
+  ]
+}

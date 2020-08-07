@@ -1,0 +1,76 @@
+{
+  "name": "Skia the Monopod",
+  "id": 37,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hey there.",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Skia the Monopod"
+        }
+      ]
+    },
+    {
+      "buttonText": "What can you do?",
+      "responseText": "I'm a monopod, we're really good at smithing. I could help you, if you'd like.",
+      "depth": 1,
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Skia the Monopod"
+        }
+      ]
+    },
+    {
+      "buttonText": "Would you work for me?",
+      "responseText": "Sure, if you pay me.",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Skia the Monopod"
+        }
+      ]
+    },
+    {
+      "buttonText": "How much?",
+      "responseText": "Oh, 100,000 coins would probably be enough.",
+      "depth": 2,
+      "newDepthOnTalk": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Skia the Monopod"
+        }
+      ]
+    },
+    {
+      "buttonText": "Deal",
+      "responseText": "Great! Take me with you the next time you go smithing.",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Skia the Monopod"
+        },
+        {
+          "item": "Coins",
+          "itemAmount": 100000
+        }
+      ],
+      "unlockedFollower": "Skia the Monopod",
+      "ConsumeRequiredItems": true
+    },
+    {
+      "buttonText": "I don't have that much",
+      "responseText": "Sorry to hear that. Smithing is a good way to bring in money, if you know what you're doing.",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Skia the Monopod"
+        }
+      ]
+
+    }
+  ]
+}

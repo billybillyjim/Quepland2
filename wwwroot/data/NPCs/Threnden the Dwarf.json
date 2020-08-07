@@ -24,6 +24,17 @@
       ]
     },
     {
+      "buttonText": "What can you do?",
+      "responseText": "I'm a dwarf. I carry mined ores to the bank, so you don't have to do it yourself. I'm very good at it, too!",
+      "depth": 1,
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Threnden the Dwarf"
+        }
+      ]
+    },
+    {
       "buttonText": "How much?",
       "responseText": "Hmm, for you? With your skills I would do it for 25,000,000 coins.",
       "depth": 2,

@@ -22,6 +22,7 @@ public class BattleManager
     public Dojo CurrentDojo { get; set; }
     public bool BattleHasEnded = true;
     public bool WonLastBattle = false;
+    public bool AutoBattle { get; set; }
     private static readonly Random random = new Random();
     public async Task LoadMonsters(HttpClient Http)
     {
@@ -293,6 +294,12 @@ public class BattleManager
     {
         BattleHasEnded = true;
         CurrentBoss = null;
+        if(Player.Instance.JustDied == false &&
+            AutoBattle &&
+            CurrentArea != null)
+        {
+            StartBattle(CurrentArea);
+        }
     }
     private Monster GetNextTarget()
     {

@@ -54,7 +54,7 @@
     "autoCollectSpeed": 50
   },
   {
-    "name": "Raka the Kushstaka",
+    "name": "Raka",
     "description": "One of the friendly Kushtaka, though not very skilled.",
     "autoCollectMessage": "Raka waddles away with a load of $.",
     "autoCollectSkill": "Fishing",
@@ -63,7 +63,7 @@
     "autoCollectSpeed": 100
   },
   {
-    "name": "Sloodle the Kushstaka",
+    "name": "Sloodle",
     "description": "Sloodle is an exceptional helper, rare among the Kushtaka.",
     "autoCollectMessage": "Sloodle quickly waddles away with a load of $.",
     "autoCollectSkill": "Fishing",
@@ -72,7 +72,7 @@
     "autoCollectSpeed": 80
   },
   {
-    "name": "Glindrear the Kushstaka",
+    "name": "Glindrear",
     "description": "A friendly Kushtaka, and extremely skilled, too.",
     "autoCollectMessage": "Grlindrear waddle-runs away with a load of $.",
     "autoCollectSkill": "Fishing",
@@ -81,12 +81,30 @@
     "autoCollectSpeed": 50
   },
   {
-    "name": "Snibbap Snubbop the Goblin",
+    "name": "Snibbap",
     "description": "A disgusting creature. It's no surprise most goblins avoid being seen.",
     "autoCollectMessage": "Snibbap does the thing.",
     "autoCollectSkill": "Banking",
     "autoCollectLevel": 100,
     "inventorySize": 24,
+    "autoCollectSpeed": 20
+  },
+  {
+    "name": "Tolani Seba",
+    "description": "A scout. She can find monsters for you to battle with.",
+    "autoCollectMessage": "Tolani Seba finds an opponent.",
+    "autoCollectSkill": "Scout",
+    "autoCollectLevel": 100,
+    "inventorySize": 0,
+    "autoCollectSpeed": 20
+  },
+  {
+    "name": "Anthretagro",
+    "description": "A man in a toga. You aren't sure where he came from but it doesn't seem like he belongs here.",
+    "autoCollectMessage": "Anthretagro finds what you are looking for.",
+    "autoCollectSkill": "Advanced Scout",
+    "autoCollectLevel": 100,
+    "inventorySize": 0,
     "autoCollectSpeed": 20
   }
 ]

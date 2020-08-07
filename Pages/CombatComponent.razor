@@ -8,40 +8,40 @@
     <div style="width:550px;height:300px;">
         @foreach (Monster opponent in BattleManager.Instance.CurrentOpponents)
         {
-        <div>
-            @opponent.Name
             <div>
-                @opponent.CurrentHP / @opponent.HP
-            </div>
-            <div style="display:flex">
-                <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
-                    <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
-                    <div class="progress-bar" style="width:@(GetOpponentAttackProgress(opponent));background-color:mediumpurple">
+                @opponent.Name
+                <div>
+                    @opponent.CurrentHP / @opponent.HP
+                </div>
+                <div style="display:flex">
+                    <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
+                        <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+                        <div class="progress-bar" style="width:@(GetOpponentAttackProgress(opponent));background-color:mediumpurple">
+
+                        </div>
+                    </div>
+                    @if (opponent == BattleManager.Instance.Target || opponent.IsDefeated)
+                    {
+                        <div class="btn btn primary" style="width:120px;height:40px;font-size:large;position:relative;opacity:0.5;margin-left:10px;background-color:black">
+                            <div style="color:white">Target</div>
+
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="btn btn primary" style="width:120px;height:40px;font-size:large;position:relative;margin-left:10px;background-color:black" @onclick="@(() => SwitchTargets(opponent))">
+                            <div style="color:white">Target</div>
+
+                        </div>
+                    }
+                </div>
+
+                <div class="progress" style="width:550px;margin-top:10px;">
+                    <div class="progress-bar" style="width:@(opponent.GetRemainingHPPercent())%;background-color:forestgreen">
 
                     </div>
                 </div>
-                @if (opponent == BattleManager.Instance.Target || opponent.IsDefeated)
-                {
-                    <div class="btn btn primary" style="width:120px;height:40px;font-size:large;position:relative;opacity:0.5;margin-left:10px;background-color:black">
-                        <div style="color:white">Target</div>
-
-                    </div>
-                }
-                else
-                {
-                    <div class="btn btn primary" style="width:120px;height:40px;font-size:large;position:relative;margin-left:10px;background-color:black"  @onclick="@(() => SwitchTargets(opponent))">
-                        <div style="color:white">Target</div>
-
-                    </div>
-                }
             </div>
-
-            <div class="progress" style="width:550px;margin-top:10px;">
-                <div class="progress-bar" style="width:@(opponent.GetRemainingHPPercent())%;background-color:forestgreen">
-
-                </div>
-            </div>
-        </div>
         }
 
         <div>
@@ -63,10 +63,10 @@
                 </div>
             </div>
             <div style="display:flex;margin-top:10px;">
-                @foreach(IStatusEffect effect in Player.Instance.CurrentStatusEffects)
+                @foreach (IStatusEffect effect in Player.Instance.CurrentStatusEffects)
                 {
                     <div>
-                        <img style="height:30px;width:30px;margin:3px;" src="data/Images/@(effect.Name).png" 
+                        <img style="height:30px;width:30px;margin:3px;" src="data/Images/@(effect.Name).png"
                              @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, effect.Name)))"
                              @onmouseout="@(new Action(() => GameState.HideTooltip()))" />
                     </div>
@@ -83,7 +83,16 @@
         <div style=" margin-top: 10px;margin-bottom:200px;">
             <button class="btn btn-primary" @onclick="@(() => Return())">Return</button>
         </div>
+        @if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill.Contains("Scout"))
+        {
+            <div style=" margin-top: 10px;margin-bottom:200px;">
+                <button class="btn btn-primary" @onclick="@(() => AutoBattle())">Auto Battle</button>
+            </div>
+            @if(Player.Instance.CurrentFollower.AutoCollectSkill == "Advanced Scout")
+            {
 
+            }
+        }
     }
 
 }
@@ -91,13 +100,19 @@
 
 @code {
 
+    
     public void SwitchTargets(Monster m)
     {
-        if(BattleManager.Instance.CurrentOpponents.Contains(m) && m.IsDefeated == false)
+        if (BattleManager.Instance.CurrentOpponents.Contains(m) && m.IsDefeated == false)
         {
             BattleManager.Instance.Target = m;
         }
 
+        GameState.UpdateState();
+    }
+    private void AutoBattle()
+    {
+        BattleManager.Instance.AutoBattle = true;
         GameState.UpdateState();
     }
     private void ContinueBattles()

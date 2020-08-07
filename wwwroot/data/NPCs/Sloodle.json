@@ -1,73 +1,73 @@
 {
-  "name": "Raka",
-  "id": 31,
+  "name": "Sloodle",
+  "id": 33,
   "dialogs": [
     {
       "buttonText": "Hello",
-      "responseText": "Ahoy!",
+      "responseText": "Hi.",
       "newDepthOnTalk": 1,
       "requirements": [
         {
-          "lockedFollower": "Raka"
+          "lockedFollower": "Sloodle"
         }
       ]
     },
     {
       "buttonText": "Would you work for me?",
-      "responseText": "For a price, sure.",
+      "responseText": "I'd work for anyone, if they pay me.",
       "depth": 1,
       "newDepthOnTalk": 2,
       "requirements": [
         {
-          "lockedFollower": "Raka"
+          "lockedFollower": "Sloodle"
         }
       ]
     },
     {
       "buttonText": "What can you do?",
-      "responseText": "I'm a friendly Kushtaka. I carry fish to the bank after you catch them. I'm a bit of a beginner at it, though.",
+      "responseText": "I'm a friendly Kushtaka, I can carry fish from where you catch them to your bank, so you don't have to do it yourself. I'm pretty good at it.",
       "depth": 1,
       "newDepthOnTalk": 1,
       "requirements": [
         {
-          "lockedFollower": "Raka"
+          "lockedFollower": "Glindrear"
         }
       ]
     },
     {
       "buttonText": "How much?",
-      "responseText": "I'm still learning, so I'll work for cheap. How about 2,000 coins?",
+      "responseText": "Oh, I'd say 200,000 coins would be reasonable.",
       "depth": 2,
       "newDepthOnTalk": 3,
       "requirements": [
         {
-          "lockedFollower": "Raka"
+          "lockedFollower": "Sloodle"
         }
       ]
     },
     {
       "buttonText": "Deal",
-      "responseText": "Hurray! Let me know when you need my help.",
+      "responseText": "Great! That's a done deal then.",
       "depth": 3,
       "requirements": [
         {
-          "lockedFollower": "Raka"
+          "lockedFollower": "Sloodle"
         },
         {
           "item": "Coins",
-          "itemAmount": 2000
+          "itemAmount": 200000
         }
       ],
-      "unlockedFollower": "Raka",
+      "unlockedFollower": "Sloodle",
       "ConsumeRequiredItems": true
     },
     {
       "buttonText": "I don't have that much",
-      "responseText": "Oh, sorry, then. Let me know if you get that much.",
+      "responseText": "Well I guess that's bad news for you, then. Let me know if you manage to get your hands on some more money.",
       "depth": 3,
       "requirements": [
         {
-          "lockedFollower": "Raka"
+          "lockedFollower": "Sloodle"
         }
       ]
 

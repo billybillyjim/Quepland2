@@ -119,6 +119,21 @@
         "areaURL": "TsuCastle",
         "buttonText": "Head to the castle"
       }
+    ],
+    "buildings": [
+      {
+        "name": "Tsu Castle",
+        "buttonText": "Visit the castle",
+        "url": "TsuCastle",
+        "description": "This is the castle."
+      },
+      {
+        "name": "Archery Shop",
+        "buttonText": "Archery Shop",
+        "url": "ArcheryShop",
+        "description": "This is the archery shop."
+      }
+
     ]
   },
   {
@@ -139,7 +154,14 @@
         "buttonText": "Enter the Alchemy Guild",
         "url": "AlchemyGuild",
         "description": "This is the alchemy guild."
+      },
+      {
+        "name": "Archery Shop",
+        "buttonText": "Archery Shop",
+        "url": "ArcheryShop",
+        "description": "This is the archery shop."
       }
+      
     ]
   },
   {
@@ -158,23 +180,8 @@
     ]
   },
   {
-    "name": "Tsu Castle",
-    "id": 97,
-    "image": "City",
-    "description": "",
-    "areaURL": "TsuCastle",
-    "buildings": [
-      {
-        "name": "Archery Shop",
-        "buttonText": "Archery Shop",
-        "url": "ArcheryShop",
-        "description": "This is the archery shop."
-      }
-    ]
-  },
-  {
     "name": "Tangei Gardens",
-    "id": 98,
+    "id": 97,
     "image": "Garden",
     "description": "A garden",
     "areaURL": "TangeiGardens"
