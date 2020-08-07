@@ -38,17 +38,29 @@
 
 @code 
 {
+    /// <summary>
+    /// The value to be bound to some parent component string.
+    /// </summary>
     [Parameter]
     public string Value { get; set; }
+    /// <summary>
+    /// Shown when there are dropdown items, but none have been selected yet.
+    /// </summary>
     [Parameter]
     public string BoxText { get; set; }
     private string selectedValue;
+    /// <summary>
+    /// A list of items shown in the dropdown menu. The selected item is set to Value.
+    /// </summary>
     [Parameter]
     public List<string> DropdownItems { get; set; }
     [Parameter]
     public EventCallback<string> ValueChanged { get; set; }
     private bool selected;
     private string width = "width:fit-content;";
+    /// <summary>
+    /// The text shown when the list is empty. Defaults to "You don't have any."
+    /// </summary>
     [Parameter]
     public string EmptyText { get; set; } = "You don't have any.";
 

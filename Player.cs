@@ -22,7 +22,8 @@ public class Player
     public Inventory Inventory = new Inventory(30);
     private List<GameItem> equippedItems = new List<GameItem>();
     public List<Skill> Skills = new List<Skill>();
-    public Follower CurrentFollower { get; set; }
+    private Follower currentFollower;
+    public Follower CurrentFollower { get { return currentFollower; } }
     public int MaxHP = 50;
     public int CurrentHP;
     public int TicksToNextAttack { get; set; }
@@ -33,7 +34,13 @@ public class Player
     public Skill ExpTrackerSkill { get; set; }
     public List<IStatusEffect> CurrentStatusEffects { get; set; } = new List<IStatusEffect>();
     
-    
+    public void SetFollower(Follower f)
+    {
+        BattleManager.Instance.AutoBattle = false;
+        BattleManager.Instance.SelectedOpponent = null;
+        currentFollower = f;
+
+    }
 
     public async Task LoadSkills(HttpClient Http)
     {
@@ -481,7 +488,7 @@ public class Player
     {
         if(data.ActiveFollowerName != "None")
         {
-            CurrentFollower = FollowerManager.Instance.GetFollowerByName(data.ActiveFollowerName);
+           SetFollower(FollowerManager.Instance.GetFollowerByName(data.ActiveFollowerName));
         }
         CurrentHP = data.CurrentHP;
         MaxHP = data.MaxHP;

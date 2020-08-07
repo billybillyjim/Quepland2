@@ -33,7 +33,7 @@
     }
     public void SwitchFollowers(Follower f)
     {
-        Player.Instance.CurrentFollower = f;
+        Player.Instance.SetFollower(f);
         GameState.UpdateState();
     }
 
@@ -46,11 +46,11 @@
         string bg = "";
         if(FollowerManager.Instance.GetUnlockedFollowers().IndexOf(f) % 2 == 0)
         {
-            bg += "background-color:darkgray;";
+            bg += "background-color:dimgray;";
         }
         else
         {
-            bg += "background-color:lightgray;";
+            bg += "background-color:gray;";
         }
 
         return bg;

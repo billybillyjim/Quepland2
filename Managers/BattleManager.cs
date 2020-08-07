@@ -22,7 +22,9 @@ public class BattleManager
     public Dojo CurrentDojo { get; set; }
     public bool BattleHasEnded = true;
     public bool WonLastBattle = false;
+    public bool WaitedAutoBattleGameTick { get; set; }
     public bool AutoBattle { get; set; }
+    public Monster SelectedOpponent { get; set; }
     private static readonly Random random = new Random();
     public async Task LoadMonsters(HttpClient Http)
     {
@@ -49,6 +51,7 @@ public class BattleManager
             }
             BattleHasEnded = false;
         }
+        WaitedAutoBattleGameTick = false;
         Target = GetNextTarget();
     }
     public void StartBattle(Area area)
@@ -57,6 +60,7 @@ public class BattleManager
         int r = random.Next(0, CurrentArea.Monsters.Count);
         CurrentOpponents.Clear();
         CurrentOpponents.Add(Monsters.FirstOrDefault(x => x.Name == CurrentArea.Monsters[r]));
+        SelectedOpponent = null;
         if(CurrentOpponents[0] == null)
         {
             Console.WriteLine("No monsters found for area.");
@@ -76,12 +80,17 @@ public class BattleManager
     {
         CurrentOpponents.Clear();
         CurrentOpponents.Add(opponent);
+        if (AutoBattle)
+        {
+            SelectedOpponent = opponent;
+        }
         StartBattle();
     }
     public void StartBattle(List<Monster> opponents)
     {
         CurrentOpponents.Clear();
         CurrentOpponents.AddRange(opponents);
+        SelectedOpponent = null;
         StartBattle();
     }
     public void DoBattle()
@@ -298,7 +307,7 @@ public class BattleManager
             AutoBattle &&
             CurrentArea != null)
         {
-            StartBattle(CurrentArea);
+            WaitedAutoBattleGameTick = true;           
         }
     }
     private Monster GetNextTarget()

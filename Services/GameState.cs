@@ -24,7 +24,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "0.0.7";
+    public static string Version { get; set; } = "0.0.8";
 
     public static string Location { get; set; } = "";
     public static bool InitCompleted { get; set; } = false;
@@ -151,7 +151,22 @@ using System.Threading.Tasks;
         }
         else if (BattleManager.Instance.CurrentOpponents != null && BattleManager.Instance.CurrentOpponents.Count > 0)
         {
-            BattleManager.Instance.DoBattle();
+            if (BattleManager.Instance.WaitedAutoBattleGameTick)
+            {
+                if (BattleManager.Instance.SelectedOpponent != null)
+                {
+                    BattleManager.Instance.StartBattle(BattleManager.Instance.SelectedOpponent);
+                }
+                else
+                {
+                    BattleManager.Instance.StartBattle(BattleManager.Instance.CurrentArea);
+                }
+            }
+            else
+            {
+                BattleManager.Instance.DoBattle();
+            }
+            
         }
         if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking)
         {

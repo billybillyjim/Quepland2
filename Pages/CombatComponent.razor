@@ -75,32 +75,57 @@
         </div>
     </div>
 
-    if (BattleManager.Instance.CurrentArea != null && BattleManager.Instance.BattleHasEnded)
+    @if (BattleManager.Instance.CurrentArea != null && BattleManager.Instance.BattleHasEnded)
     {
-        <div style="margin-top: 100px;">
-            <button class="btn btn-outline-light" @onclick="@(() => ContinueBattles())">Keep Battling</button>
-        </div>
-        <div style=" margin-top: 10px;margin-bottom:200px;">
-            <button class="btn btn-primary" @onclick="@(() => Return())">Return</button>
-        </div>
-        @if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill.Contains("Scout"))
-        {
-            <div style=" margin-top: 10px;margin-bottom:200px;">
-                <button class="btn btn-primary" @onclick="@(() => AutoBattle())">Auto Battle</button>
-            </div>
-            @if(Player.Instance.CurrentFollower.AutoCollectSkill == "Advanced Scout")
+        <div style="margin-top: 100px; margin-bottom: 200px;">
+            @if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill.Contains("Scout"))
             {
-
+                <div style=" margin-top: 10px;">
+                    <button class="btn btn-primary" @onclick="@(() => AutoBattle())">Auto Battle</button>
+                </div>
+                @if (Player.Instance.CurrentFollower.AutoCollectSkill == "Advanced Scout")
+                {
+                    <div style="margin-left:-10px;">
+                        <Quepland_2.Components.CustomDropdownComponent BoxText="Select an opponent" @bind-Value="@selectedOpponent" DropdownItems="@GetPossibleOpponents()" EmptyText="There are no opponents to fight here"></Quepland_2.Components.CustomDropdownComponent>
+                    </div>
+                }
             }
-        }
-    }
+            else
+            {
+                <div>
+                    <button class="btn btn-primary" @onclick="@(() => ContinueBattles())">Keep Battling</button>
+                </div>
+            }
+            <div style=" margin-top: 10px;">
+                <button class="btn btn-primary" @onclick="@(() => Return())">Return</button>
+            </div>
+        </div>
 
+    }
+    else if (BattleManager.Instance.AutoBattle)
+    {
+        <div style="margin-top: 100px; margin-bottom: 200px;">
+            <div>
+                <button class="btn btn-primary" @onclick="@(() => StopAutoBattle())">Stop Auto Battling</button>
+            </div>
+        </div>
+    }
 }
 
 
 @code {
 
-    
+    private string selectedOpponent = "";
+
+    public List<string> GetPossibleOpponents()
+    {
+        if(BattleManager.Instance.CurrentArea?.Monsters == null)
+        {
+            return new List<string>();
+        }
+        return BattleManager.Instance.CurrentArea.Monsters;
+    }
+
     public void SwitchTargets(Monster m)
     {
         if (BattleManager.Instance.CurrentOpponents.Contains(m) && m.IsDefeated == false)
@@ -113,12 +138,29 @@
     private void AutoBattle()
     {
         BattleManager.Instance.AutoBattle = true;
+        ContinueBattles();
+        GameState.UpdateState();
+    }
+    private void StopAutoBattle()
+    {
+        BattleManager.Instance.AutoBattle = false;
+        BattleManager.Instance.CurrentOpponents.Clear();
+        BattleManager.Instance.EndBattle();
         GameState.UpdateState();
     }
     private void ContinueBattles()
     {
         GameState.StopNonCombatActions();
-        BattleManager.Instance.StartBattle(BattleManager.Instance.CurrentArea);
+        if (BattleManager.Instance.AutoBattle && selectedOpponent != "")
+        {
+            BattleManager.Instance.StartBattle(BattleManager.Instance.GetMonsterByName(selectedOpponent));
+        }
+        else
+        {
+            BattleManager.Instance.StartBattle(BattleManager.Instance.CurrentArea);
+        }
+
+
         GameState.UpdateState();
     }
     private string GetPlayerHPPercent()

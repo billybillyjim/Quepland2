@@ -67,6 +67,10 @@ else
 
         }
         Bank.Instance.Inventory.IsLoadingSave = false;
+        foreach(Follower f in FollowerManager.Instance.Followers)
+        {
+            f.IsUnlocked = true;
+        }
         Player.Instance.CurrentHP = 50;
         Bank.Instance.Inventory.AddItem("Stone Axe");
 
