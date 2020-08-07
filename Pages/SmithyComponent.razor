@@ -8,7 +8,6 @@
     <h3>Smithy</h3>
 
     <CustomDropdownComponent BoxText="Select an Ore or Bar" EmptyText="You don't have any ores or bars." @bind-Value="Source" DropdownItems="@GetSmeltables()"></CustomDropdownComponent>
-
     <CustomDropdownComponent BoxText="Select a Product" EmptyText="Please select a source." @bind-Value="Product" DropdownItems="@GetSmithables()"></CustomDropdownComponent>
 
 
@@ -19,7 +18,7 @@
         <button class="btn btn-primary" @onclick="@(() => Smith())">Smith @Product</button>
     }
     <br />
-    <br/>
+    <br />
     <div>
         <div class="progress" style="width:300px;">
             <div class="progress-bar" style="@GetProgress()"></div>
@@ -32,7 +31,9 @@
     [Parameter]
     public string Location { get; set; }
     private string s = "";
-    string Source { get { return s; }
+    string Source
+    {
+        get { return s; }
         set
         {
             s = value;
@@ -46,7 +47,7 @@
 
     public List<string> GetSmithables()
     {
-        if(smithables.Count > 0)
+        if (smithables.Count > 0)
         {
             return smithables.Select(x => x.OutputItemName).ToList();
         }
@@ -64,8 +65,18 @@
     {
         Recipe source = ItemManager.Instance.GetSmithingRecipeByIngredients(Source);
         Recipe product = ItemManager.Instance.GetSmithingRecipeByOutput(Product);
-
-        if (source.CanCreate())
+        if (Player.Instance.CurrentFollower != null &&
+            Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing" &&
+            source.CanCreateFromInventory(Bank.Instance.Inventory))
+        {
+            GameState.StopActions();
+            GameState.SmithingStage = 0;
+            GameState.NewSmeltingRecipe = source;
+            GameState.NewSmithingRecipe = product;
+            MessageManager.AddMessage("You and " + Player.Instance.CurrentFollower.Name + " begin smithing your " + Source + " into a " + Product);
+            GameState.TicksToNextAction = source.CraftingSpeed;
+        }
+        else if (source.CanCreate())
         {
             GameState.StopActions();
             GameState.SmithingStage = 0;
@@ -96,7 +107,7 @@
         smithables.Clear();
         foreach (Recipe recipe in ItemManager.Instance.SmithingRecipes)
         {
-            if(recipe.Ingredients.Count == 1 && ItemManager.Instance.GetSmithingRecipeByIngredients(Source).OutputItemName == recipe.Ingredients[0].ItemName)
+            if (recipe.Ingredients.Count == 1 && ItemManager.Instance.GetSmithingRecipeByIngredients(Source).OutputItemName == recipe.Ingredients[0].ItemName)
             {
                 smithables.Add(recipe);
             }
@@ -118,10 +129,34 @@
 
         }
     }
+    public void UpdateBankSmeltables()
+    {
+        Smithy s = AreaManager.Instance.Smithies.FirstOrDefault(x => x.Location == Location);
+        smeltables.Clear();
+        foreach (Recipe recipe in ItemManager.Instance.SmithingRecipes)
+        {
+            if (recipe != null && recipe.Output != null)
+            {
+                if (s.SmeltableMetals.Contains(recipe.Output) && recipe.CanCreateFromInventory(Bank.Instance.Inventory))
+                {
+                    smeltables.Add(recipe);
+                }
+            }
+
+        }
+    }
     protected override void OnInitialized()
     {
         GameState.SmithingComponent = this;
-        UpdateSmeltables();
+        if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
+        {
+            UpdateBankSmeltables();
+        }
+        else
+        {
+            UpdateSmeltables();
+        }
+
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()

@@ -80,6 +80,25 @@ public class Recipe
         }
         return true;
     }
+    public bool CanCreateFromInventory(Inventory inv)
+    {
+        if (HasSpace() == false)
+        {
+            return false;
+        }
+        else if (HasRequirements() == false)
+        {
+            return false;
+        }
+        foreach (Ingredient ingredient in Ingredients)
+        {
+            if (inv.GetNumberOfItem(ingredient.Item) < ingredient.Amount)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
     public bool HasRequirements()
     {
         foreach (Requirement r in Requirements)

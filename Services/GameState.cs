@@ -425,34 +425,27 @@ using System.Threading.Tasks;
         }
         if(SmithingStage == 0)
         {
-            if (Player.Instance.Inventory.RemoveRecipeItems(CurrentSmeltingRecipe))
+            if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
             {
-                MessageManager.AddMessage("You smelt the " + CurrentSmeltingRecipe.GetShortIngredientsString() + " into a " + CurrentSmeltingRecipe.OutputItemName);
-                Player.Instance.Inventory.AddItem(CurrentSmeltingRecipe.Output);
-                //Player.Instance.GainExperience("Smithing", CurrentSmeltingItem.SmithingInfo.SmeltingExperience);
-                TicksToNextAction = CurrentSmeltingRecipe.CraftingSpeed;
-                SmithingStage = 1;
+
             }
-            else
+            if(DoSmelting() == false)
             {
-                if(SmithingComponent != null)
+                if (SmithingComponent != null)
                 {
                     SmithingComponent.UpdateSmeltables();
                 }
                 MessageManager.AddMessage("You have run out of ores.");
-                StopActions();
+                StopActions();               
             }
         }
         else if(SmithingStage == 1)
         {
-            if (Player.Instance.Inventory.RemoveRecipeItems(CurrentSmithingRecipe))
+            if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
             {
-                MessageManager.AddMessage("You hammer the " + CurrentSmeltingRecipe.OutputItemName + " into a " + CurrentSmithingRecipe.OutputItemName + " and place it in water to cool.");              
-                //Player.Instance.GainExperience("Smithing", CurrentSmeltingItem.SmithingInfo.SmeltingExperience);
-                TicksToNextAction = CurrentSmithingRecipe.CraftingSpeed;
-                SmithingStage = 2;
+
             }
-            else
+            if (DoSmithing() == false)
             {
                 if (SmithingComponent != null)
                 {
@@ -463,6 +456,10 @@ using System.Threading.Tasks;
         }
         else if(SmithingStage == 2)
         {
+            if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
+            {
+
+            }
             if (Player.Instance.Inventory.AddMultipleOfItem(CurrentSmithingRecipe.Output, CurrentSmithingRecipe.OutputAmount))
             {
                 MessageManager.AddMessage("You withdraw " + CurrentSmithingRecipe.OutputAmount + " " + CurrentSmithingRecipe.Output.Name);
@@ -471,6 +468,39 @@ using System.Threading.Tasks;
             }
         }
 
+    }
+    private bool DoSmelting()
+    {
+        if (Player.Instance.Inventory.RemoveRecipeItems(CurrentSmeltingRecipe))
+        {
+            MessageManager.AddMessage("You smelt the " + CurrentSmeltingRecipe.GetShortIngredientsString() + " into a " + CurrentSmeltingRecipe.OutputItemName);
+            Player.Instance.Inventory.AddItem(CurrentSmeltingRecipe.Output);
+            //Player.Instance.GainExperience("Smithing", CurrentSmeltingItem.SmithingInfo.SmeltingExperience);
+            TicksToNextAction = CurrentSmeltingRecipe.CraftingSpeed;
+            SmithingStage = 1;
+            return true;
+        }
+        return false;
+    }
+    private bool DoAutoSmelting()
+    {
+        if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
+        {
+
+        }
+        return false;
+    }
+    private bool DoSmithing()
+    {
+        if (Player.Instance.Inventory.RemoveRecipeItems(CurrentSmithingRecipe))
+        {
+            MessageManager.AddMessage("You hammer the " + CurrentSmeltingRecipe.OutputItemName + " into a " + CurrentSmithingRecipe.OutputItemName + " and place it in water to cool.");
+            //Player.Instance.GainExperience("Smithing", CurrentSmeltingItem.SmithingInfo.SmeltingExperience);
+            TicksToNextAction = CurrentSmithingRecipe.CraftingSpeed;
+            SmithingStage = 2;
+            return true;
+        }
+        return false;
     }
     public void SellItem(GameItem item)
     {

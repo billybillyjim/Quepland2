@@ -34,6 +34,12 @@ public class Follower
         Inventory.Clear();
         IsBanking = false;
     }
+    public void WithdrawItem(GameItem item)
+    {
+        int amtToWithdraw = Math.Min(Inventory.GetAvailableSpaces(), Bank.Instance.Inventory.GetNumberOfItem(item));
+        Inventory.AddMultipleOfItem(item, Bank.Instance.Inventory.RemoveItems(item, amtToWithdraw));
+        IsBanking = false;
+    }
 
     public void SendToBank()
     {
