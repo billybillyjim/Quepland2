@@ -89,7 +89,7 @@
     "name": "West Tsu City",
     "id": 93,
     "image": "City",
-    "description": "",
+    "description": "As you enter the city you find a large temple complex covers the western region. The main road leads directly to the center of town, where a massive castle towers over the little houses.",
     "areaURL": "WestTsuCity",
     "unlockableAreas": [
       {
