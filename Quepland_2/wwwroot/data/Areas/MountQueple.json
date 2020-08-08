@@ -1,0 +1,237 @@
+[
+  {
+    "name": "Quepland Fields",
+    "id": 0,
+    "isUnlocked": true,
+    "description": "There is a small stream and a forest of white pine trees. A large poplar tree has been chopped and laid across the path. You'll need to chop through it to continue on the path.",
+    "areaURL": "QueplandFields",
+    "image": "Field",
+    "actions": [
+      "Chop White Pine:White Pine Logs:You swing your axe at a tree."
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "QueplandWoods",
+        "buttonText": "Clear away tree",
+        "requirements": [
+          {
+            "Skill": "Woodcutting",
+            "SkillLevel": 2
+          },
+          {
+            "Action": "Woodcutting"
+          }
+        ]
+      }
+
+    ],
+    "npcs": [
+      "Tuto"
+    ]
+  },
+  {
+    "name": "Quepland Woods",
+    "id": 1,
+    "isUnlocked": false,
+    "description": "You enter a thick woods consisting of mostly poplar trees. The path meanders up the mountain along a brook full of minnows and sunfish. In the distance you can see the smokestacks of a small village.",
+    "areaURL": "QueplandWoods",
+    "image": "Forest",
+    "actions": [
+      "Gather Red Berries:Shuniku Berries:You begin gathering berries.",
+      "Go Fishing:Minnows,Sunfish:You begin catching fish.",
+      "Chop Poplar Trees:Poplar Logs:You swing your axe at a tree."
+    ],
+    "unlockableAreas": [
+      {
+        "AreaURL": "Teppas",
+        "ButtonText": "Continue into the village"
+      }
+    ],
+    "npcs": [
+      "Tuto"
+    ]
+  },
+  {
+    "name": "Teppas",
+    "id": 2,
+    "isUnlocked": false,
+    "description": "You reach a small mountain village, small houses and shops are scattered about inside a short stone wall. A massive mansion spans most of the far wall; a windy street continues through the hilly terrain.",
+    "areaURL": "Teppas",
+    "image": "Village",
+    "buildings": [
+      {
+        "name": "Mayor's House",
+        "buttonText": "Visit the Mansion",
+        "url": "MayorsHouse",
+        "description": "You enter a lavish mansion. A large chandelier hangs over a magnificent curved staircase to the second floor. The carpet near the entrance is faded and worn.",
+        "npcs": [
+          "The Mayor"
+        ]
+      },
+      {
+        "name": "Teppas General Store",
+        "buttonText": "General Store",
+        "url": "GeneralStore",
+        "description": "You find a clean, orderly shop stocked with a number of useful supplies for an adventurer. The man behind the counter welcomes you as you enter.",
+        "npcs": [
+          "Jumbo"
+        ],
+        "shops": [
+          {
+            "name": "Jumbo's Supply Store",
+            "limitBoughtItemsToSoldItems": false,
+            "itemNames": [
+              "Minnow Net",
+              "Stone Axe",
+              "Wood Carving Knife"
+            ]
+
+          }
+        ]
+      }
+    ],
+    "unlockableAreas": [
+      {
+        "AreaURL": "LowerMtQuepleTrail",
+        "ButtonText": "Continue Through Town"
+      }
+
+    ],
+    "monsters": [
+      "Chicken",
+      "Rooster"
+    ]
+  },
+  {
+    "name": "Lower Mt Queple Trail",
+    "id": 3,
+    "isUnlocked": false,
+    "description": "Beyond the village you find a rocky terrain, sparse with trees or wildlife.  You spot a rocky overhang that appears to cover a cave entrance. There is a small shack with a sign on the top that reads, \"Signs\", though some of the letters are written backwards...",
+    "areaURL": "LowerMtQuepleTrail",
+    "image": "Mountain",
+    "actions": [
+      "Mine Pentlandite:Pentlandite:You start mining."
+    ],
+    "buildings": [
+      {
+        "name": "Sign Man's Signs",
+        "buttonText": "Enter the Sign Shop",
+        "url": "SignMansSigns",
+        "description": "You enter the dimly lit shack to find a thin, gray-bearded man sitting behind a desk with the words \"Sign Man\" drawn in large red letters across it. ",
+        "npcs": [
+          "The Sign Man"
+        ]
+      }
+    ],
+    "unlockableAreas": [
+      {
+        "AreaURL": "QuepleCaveEntrance",
+        "ButtonText": "Enter the Cave"
+      },
+      {
+        "areaURL": "UpperMtQuepleTrail",
+        "buttonText": "Continue Up the Trail"
+      }
+
+    ]
+  },
+  {
+    "name": "Upper Mt Queple Trail",
+    "id": 4,
+    "image": "MountainTop",
+    "isUnlocked": false,
+    "description": "High up on the mountain you can see down into the valley below. Beyond the hilly forest there appears to be a desert to the east, and a swamp to the west. The path only leads higher up the mountain.",
+    "areaURL": "UpperMtQuepleTrail",
+    "trappingLocation": true,
+    "dojoURL": "HouchouDojo",
+    "unlockableAreas": [
+      {
+        "areaURL": "EasternTrail",
+        "buttonText": "Continue Down into the Valley"
+      }
+
+    ],
+    "npcs": [
+      "Fojimafa"
+    ]
+  },
+  {
+    "name": "Mt Queple Peak",
+    "id": 5,
+    "image": "MountainPeak",
+    "isUnlocked": false,
+    "description": "A lone, dilapidated building stands near the mountain's peak. Harsh winds eminate outward from its shattered windows and broken doors.",
+    "areaURL": "MtQueplePeak",
+    "buildings": [
+      {
+        "name": "Wind Hall",
+        "buttonText": "Enter the Building",
+        "url": "WindHall",
+        "description": "The roaring wind grows stronger as you approach the innermost room of the building. Inside you find a pool, swirling with air.",
+        "npcs": [
+          "Oikaaz"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Eastern Trail",
+    "id": 6,
+    "image": "ReversedTrail",
+    "description": "There is a split in the trail ahead. One path winds down into the woods below. The smell of the swamp ahead greets you before you can even see it. The other path rounds the mountain to the north.",
+    "areaURL": "EasternTrail",
+    "actions": [
+      "Chop Oak Trees:Oak Logs:You swing your axe at a tree."
+    ],
+    "unlockableAreas": [
+      {
+        "AreaURL": "Swampedge",
+        "ButtonText": "Enter the Swamp"
+      },
+      {
+        "areaURL": "NorthernTrail",
+        "buttonText": "Follow the Trail North"
+      }
+
+    ],
+    "monsters": [
+      "Bandit",
+      "Two Bandits",
+      "Big Bandit"
+    ]
+  },
+  {
+    "name": "Northern Trail",
+    "id": 7,
+    "image": "Trail",
+    "description": "As you come around the side of the mountain you spy the ocean beyond a large field. The path will lead you straight down to the water. Or, it would, if the bridge weren't out. You'll have to find some way across.",
+    "areaURL": "NorthernTrail",
+    "unlockableAreas": [
+      {
+        "areaURL": "CantilaBeach",
+        "buttonText": "Jump the Gap",
+        "requirements": [
+          {
+            "skill": "Deftness",
+            "skillLevel": 15
+          }
+        ]
+      },
+      {
+        "areaURL": "CantilaBeach",
+        "buttonText": "Fix the Bridge",
+        "requirements": [
+          {
+            "skill": "Woodworking",
+            "skillLevel": 15
+          },
+          {
+            "item": "White Pine Logs",
+            "itemAmount": 7
+          }
+        ]
+      }
+
+    ]
+  }
+]

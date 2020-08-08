@@ -1,0 +1,75 @@
+{
+  "name": "Pumpy the Gnome",
+  "id": 27,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Oh, HI! Are you and ADVENTURER?",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Pumpy the Gnome"
+        }
+      ]
+    },
+    {
+      "buttonText": "Yes",
+      "responseText": "That is WONDERFUL! Do you KNOW what this MEANS!? I'm a GNOME! You're an ADVENTURER! Do you SEE what I MEAN??",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Pumpy the Gnome"
+        }
+      ]
+    },
+    {
+      "buttonText": "No",
+      "responseText": "That is GREAT for you DUDE! I don't suppose you NEED some HELP with ANYTHING?! ANYTHING at ALL???",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Pumpy the Gnome"
+        }
+      ]
+    },
+    {
+      "buttonText": "Sure",
+      "responseText": "OKAY! This is SO EXCITING!! Now YOU just pay ME 10,000,000 COINS, and WE can GOOOO!!!!",
+      "depth": 2,
+      "newDepthOnTalk": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Pumpy the Gnome"
+        }
+      ]
+    },
+    {
+      "buttonText": "I don't have that much",
+      "responseText": "WOW!! DUDE! That IS A BUMMER!--BUT! I BELIEVE in YOU! YOU can DO THIS! Just KEEP ON ADVENTURING, YEAH!!",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Pumpy the Gnome"
+        }
+      ]
+    },
+    {
+      "buttonText": "Here you are",
+      "responseText": "YEEEEAAAAAHHHH! LET'S GOOO! YOU and ME! WOODCUTTING TEAM! LET's GET THOSE LOGS!",
+      "depth": 3,
+      "unlockedFollower": "Pumpy the Gnome",
+      "ConsumeRequiredItems": true,
+      "requirements": [
+        {
+          "item": "Coins",
+          "itemAmount": 10000000
+        },
+        {
+          "lockedFollower": "Pumpy the Gnome"
+        }
+      ]
+    }
+  ]
+}

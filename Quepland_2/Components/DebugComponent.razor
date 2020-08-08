@@ -1,0 +1,55 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+    <div>
+        @foreach (Skill s in Player.Instance.Skills)
+        {
+        <div>
+            <button @onclick="@(() => LevelSkill(s))">@s.Name</button>
+            <button @onclick="@(() => LevelSkill(s, 5))">5</button>
+            <button @onclick="@(() => LevelSkill(s, 10))">10</button>
+        </div>
+        <br/>
+        }
+        <button @onclick="@(() => UnlockWorld())">
+            Unlock World
+        </button>
+    </div>
+
+
+
+@code {
+
+    public void UnlockWorld()
+    {
+        foreach(Region r in AreaManager.Instance.Regions)
+        {
+            r.IsUnlocked = true;
+        }
+        foreach(Area a in AreaManager.Instance.Areas)
+        {
+            a.IsUnlocked = true;
+            a.IsHidden = false;
+        }
+    }
+    public void LevelSkill(Skill s)
+    {
+        Player.Instance.GainExperience(s, (long)Skill.GetExperienceRequired(s.Level) - s.Experience);
+    }
+    public void LevelSkill(Skill s, int amt)
+    {
+        for(int i = 0; i < amt; i++)
+        {
+            LevelSkill(s);
+        }
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Oikaaz",
+  "id": 17,
+  "dialogs": [
+    {
+      "buttonText": "What is this place?",
+      "responseText": "Welcome to the Wind Hall. It is one of the few locations in the world that allows for the practice of Alchemy. Alchemy is a secret art, you will likely need a teacher to assist you in learning the proper steps.",
+      "quest": "Chrysopoeian Crisis",
+      "newQuestProgressValue": 1,
+      "requirements": [
+        {
+          "quest": "Chrysopoeian Crisis",
+          "minimumQuestProgress": 0,
+          "maximumQuestProgress": 0
+        }
+      ]
+    },
+    {
+      "buttonText": "Where can I find a teacher?",
+      "responseText": "The alchemists of Tsu City are known all around Quepland. Perhaps you have heard of them? It would be a good place to start.",
+      "quest": "Chrysopoeian Crisis",
+      "newQuestProgressValue": 3,
+      "requirements": [
+        {
+          "quest": "Chrysopoeian Crisis",
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 2
+        }
+      ]
+    },
+    {
+      "buttonText": "Can you teach me?",
+      "responseText": "Ha! Though I have studied on my own for many years, I fear I am no closer to understanding the secrets of alchemy than I was when I started.",
+      "quest": "Chrysopoeian Crisis",
+      "newQuestProgressValue": 4,
+      "requirements": [
+        {
+          "quest": "Chrysopoeian Crisis",
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "Well why don't you get a teacher?",
+      "responseText": "I had a teacher, once, when I lived in Tsu City. I suppose I should warn you that not all those in the Alchemy Guild are open to sharing their secrets with outsiders. If you are not careful you may end up like me, teacherless; or worse, like my teacher, dead.",
+      "quest": "Chrysopoeian Crisis",
+      "newQuestProgressValue": 5,
+      "requirements": [
+        {
+          "quest": "Chrysopoeian Crisis",
+          "minimumQuestProgress": 4,
+          "maximumQuestProgress": 4
+        }
+      ]
+    },
+    {
+      "buttonText": "Why learn alchemy if its so difficult and dangerous?",
+      "responseText": "There is some value of the pursuit of knowledge for its own sake. The chance to turn copper into gold is also a good incentive.",
+      "quest": "Chrysopoeian Crisis",
+      "newQuestProgressValue": 6,
+      "requirements": [
+        {
+          "quest": "Chrysopoeian Crisis",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 5
+        }
+      ]
+    },
+    {
+      "buttonText": "I can turn copper into gold?",
+      "responseText": "If you learn the recipe, sure. Though converting metals into weaker, more common metals is far easier. I'm afraid I've already told you more than I should have. Please do not mention me if you do choose to visit the Alchemy Guild.",
+      "quest": "Chrysopoeian Crisis",
+      "newQuestProgressValue": 7,
+      "requirements": [
+        {
+          "quest": "Chrysopoeian Crisis",
+          "minimumQuestProgress": 6,
+          "maximumQuestProgress": 6
+        }
+      ]
+    }
+  ]
+}

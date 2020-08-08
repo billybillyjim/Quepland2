@@ -1,0 +1,216 @@
+{
+  "name": "Kazkagrin",
+  "id": 8,
+  "dialogs": [
+    {
+      "buttonText": "Can you help me?",
+      "responseText": "That depends. What do you need?",
+      "newQuestprogressValue": 4,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 1
+        }
+      ]
+    },
+    {
+      "buttonText": "Hello",
+      "responseText": "Greetings, I am Kazkagrin, the fortune teller. I can help you find anything you are looking for. Also I can tell you how long you've been in this realm.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "How long have I been here?",
+      "responseText": "GetPlaytime",
+      "newDepthOnTalk": 0,
+      "depth": 1
+    },
+    {
+      "buttonText": "Can you help me find a man named Mound?",
+      "responseText": "I can! That's what I do, find things. Now what would you like to know about this Mound?",
+      "newQuestprogressValue": 5,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 2,
+          "maximumQuestProgress": 4
+        }
+      ]
+    },
+    {
+      "buttonText": "Well, I'm asking you where he is.",
+      "responseText": "Right, right. I understand. People always come to me asking to learn more about people, you want to know more about Mound, I get it. Well he was born...",
+      "newQuestprogressValue": 6,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 5
+        }
+      ]
+    },
+    {
+      "buttonText": "Just tell me where I can find him!",
+      "responseText": "Okay, okay, no need to yell. If you want an accurate result I'll need something of his to base my gue-- I mean prediction on. Do you have something of his?",
+      "newQuestprogressValue": 15,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 6,
+          "maximumQuestProgress": 13
+        }
+      ]
+    },
+    {
+      "buttonText": "Listen On...",
+      "responseText": "On the 13th of Kisragg, here in this very village. The son of Taksahn and Oosei, he spent his early years as a fisherman as well. When he turned 17, he joined a group of pirates who had made port in town, hoping to become rich on the seas...",
+      "newQuestprogressValue": 7,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 6,
+          "maximumQuestProgress": 6
+        }
+      ]
+    },
+    {
+      "buttonText": "Listen On...",
+      "responseText": "But while he was aboard the crew mutinied, in the ensuing battle he was forced to jump overboard. Fortunately he managed to grasp an overthrown barrel of ale and drifted to a desert island. After three days on the island, he discovered...",
+      "newQuestprogressValue": 8,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 7,
+          "maximumQuestProgress": 7
+        }
+      ]
+    },
+    {
+      "buttonText": "Listen On...",
+      "responseText": "A cave that led out into the seas. At low tide he was able to walk far enough into the cave to find a fleet of 7 sailing ships in a large cavern. There was no sign of any surviving crew, but the sails were in tact. He spent the next few...",
+      "newQuestprogressValue": 9,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 8,
+          "maximumQuestProgress": 8
+        }
+      ]
+    },
+    {
+      "buttonText": "Listen On...",
+      "responseText": "Hours gathering fruit from around the island before boarding the largest ship and sailing it home. He made sure to make note of the stars as he left the island so he could return for the other 6 ships. After recovering all of them, he used his newly gained...",
+      "newQuestprogressValue": 10,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 9,
+          "maximumQuestProgress": 9
+        }
+      ]
+    },
+    {
+      "buttonText": "Listen On...",
+      "responseText": "Wealth to reinvest in a boat business. But something about the journey had changed him, and though he was wealthier than he had ever imagined, being the son of a poor fisherman, he still yearned for more. When the towns' population began to decline, the need for...",
+      "newQuestprogressValue": 11,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 10,
+          "maximumQuestProgress": 10
+        }
+      ]
+    },
+    {
+      "buttonText": "Listen On...",
+      "responseText": "Boats in the area quickly dried up. He made plans to move his business to a more populated area, and had even struck a deal with the dock magistrate in Ricechild when his father broke his leg in a fishing accident. Between the poor boat sales and the costs of setting...",
+      "newQuestprogressValue": 12,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 11,
+          "maximumQuestProgress": 11
+        }
+      ]
+    },
+    {
+      "buttonText": "Listen On...",
+      "responseText": "Up a new deal with the dock magistrate, he had barely any liquid assets to assist in taking care of his father. He had hoped to quickly sell a boat so that he could hire a follower to take care of his father, but there was a limited window of time before the deal for...",
+      "newQuestprogressValue": 13,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 12,
+          "maximumQuestProgress": 12
+        }
+      ]
+    },
+    {
+      "buttonText": "Listen On...",
+      "responseText": "To follow through, and he became desperate. He decided to offer the boats at a loss, to anyone who would be willing to buy them. But when a buyer eventually did come, Mound couldn't bring himself to give up his own wealth so freely. So he took the money and escaped without giving his customer the deed for the boat.",
+      "newQuestprogressValue": 14,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 13,
+          "maximumQuestProgress": 13
+        }
+      ]
+    },
+    {
+      "buttonText": "Okay, but where can I find him now?",
+      "responseText": "Hmm, I might be able to assist you with that. If you want an accurate result I'll need something of his to base my gue-- I mean prediction on. Do you have something of his?",
+      "newQuestprogressValue": 15,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 14,
+          "maximumQuestProgress": 14
+        }
+      ]
+    },
+    {
+      "buttonText": "Where can I find something of Mound's?",
+      "responseText": "I don't know, that's sort of the catch-22 of my abilities. My previous clients have found success breaking and entering, then stealing the possessions of their targest. Nasty stuff, really.",
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 15,
+          "maximumQuestProgress": 16
+        }
+      ]
+    },
+    {
+      "buttonText": "I found Mound's Hat",
+      "responseText": "\"Very good. Let me see it.\" He says as he takes it out of your hands. After turning it over and over, he gives it a big sniff before putting it on his own head. Ah yes, it seems as though this man has fallen down a deep canyon to the east. He is still alive, but I suspect reaching him may prove difficult.",
+      "newQuestprogressValue": 18,
+      "quest": "Mound Is Missing",
+      "consumeRequiredItems": true,
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 17,
+          "maximumQuestProgress": 17
+        },
+        {
+          "item": "Mound's Hat",
+          "itemAmount": 1
+        }
+      ]
+    }
+  ]
+}

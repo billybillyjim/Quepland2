@@ -1,0 +1,181 @@
+﻿@page "/QuestManagement/"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+    <div style="display:flex;">
+        <div>
+            <div style="width:300px;height:400px;overflow-y:scroll;">
+                @foreach (Quest quest in QuestManager.Instance.Quests)
+                {
+                    <div style="@GetStyle(quest)"
+                         @onclick="@(() => SelectQuest(quest))">
+                        @quest.Name
+                    </div>
+                }
+            </div>
+            <div style="width:300px;height:400px;overflow-y:scroll;">
+                @if (SelectedQuest != null)
+                {
+                    @foreach (Dialog d in RelatedDialogs)
+                    {
+                        <div style="@GetStyle(d)"
+                             @onclick="@(() => SelectDialog(d))">
+                            @d.ButtonText
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        <div>
+            @if (SelectedDialog != null)
+            {
+                <div>
+                    Button Text:@SelectedDialog.ButtonText
+                </div>
+                <div>
+                    Response:@SelectedDialog.ResponseText
+                </div>
+                <div>
+                    Quest:@SelectedDialog.Quest
+                </div>
+                <div>
+                    New Quest Progress Value:@SelectedDialog.NewQuestProgressValue
+                </div>
+                <div>
+                    Item Given:@SelectedDialog.ItemOnTalk
+                </div>
+                <div>
+                    Requirements:
+                    @foreach (Requirement req in SelectedDialog.Requirements)
+                    {
+                        @if (req.MinimumQuestProgress != 0)
+                        {
+                            <div>Min Quest:@req.MinimumQuestProgress</div>
+                        }
+                        @if (req.MaximumQuestProgress != int.MaxValue)
+                        {
+                            <div>Max Quest:@req.MaximumQuestProgress</div>
+                        }
+
+
+                    }
+                </div>
+                @foreach(Dialog d in NextAvailableDialogs)
+                {
+                    <div @onclick="@(() => SelectDialog(d))">
+                         @GetSpeaker(d) : @d.ButtonText
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+
+
+
+@code {
+    public Quest SelectedQuest;
+    public List<Dialog> RelatedDialogs = new List<Dialog>();
+    public List<Dialog> NextAvailableDialogs = new List<Dialog>();
+    public Dialog SelectedDialog;
+
+    public void SelectQuest(Quest q)
+    {
+        SelectedQuest = q;
+        LoadDialogs();
+        GameState.UpdateState();
+    }
+    public void SelectDialog(Dialog d)
+    {
+        SelectedDialog = d;
+        if(d.Quest != "None")
+        {
+            QuestManager.Instance.GetQuestByName(d.Quest).Progress = d.NewQuestProgressValue;
+            LoadNextDialogs();
+        }
+        GameState.UpdateState();
+    }
+    public void LoadDialogs()
+    {
+        RelatedDialogs.Clear();
+        foreach(NPC npc in NPCManager.Instance.NPCs)
+        {
+            foreach(Dialog d in npc.Dialogs)
+            {
+                if(d.Quest == SelectedQuest.Name)
+                {
+                    RelatedDialogs.Add(d);
+                }
+            }
+        }
+    }
+    public void LoadNextDialogs()
+    {
+        NextAvailableDialogs.Clear();
+        foreach (NPC npc in NPCManager.Instance.NPCs)
+        {
+            foreach (Dialog d in npc.Dialogs)
+            {
+                if (d.Quest == SelectedDialog.Quest)
+                {
+                    bool meetsQuestReqs = true;
+                    foreach(Requirement req in d.Requirements)
+                    {
+                        int progress = QuestManager.Instance.GetQuestByName(SelectedDialog.Quest).Progress;
+                        if (progress < req.MinimumQuestProgress || progress > req.MaximumQuestProgress)
+                        {
+                            meetsQuestReqs = false;
+                        }
+
+                    }
+                    if (meetsQuestReqs)
+                    {
+                        NextAvailableDialogs.Add(d);
+                    }
+                }
+            }
+        }
+    }
+    public string GetSpeaker(Dialog d)
+    {
+        return NPCManager.Instance.NPCs.FirstOrDefault(x => x.Dialogs.FirstOrDefault(y => y == d) != null).Name;
+    }
+    public string GetStyle(Quest q)
+    {
+        if(SelectedQuest == q)
+        {
+            return "background-color:lightgray";
+        }
+        return "brackground-color:white";
+    }
+    public string GetStyle(Dialog d)
+    {
+        if (SelectedDialog == d)
+        {
+            return "background-color:lightgray";
+        }
+        if(SelectedDialog != null)
+        {
+            if (d.Quest == SelectedDialog.Quest && d.HasRequirements())
+            {
+                return "background-color:green;";
+            }
+            else if (d.Quest == SelectedDialog.Quest && d.HasRequirements() == false)
+            {
+                return "background-color:yellow";
+            }
+        }
+
+        return "brackground-color:white";
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

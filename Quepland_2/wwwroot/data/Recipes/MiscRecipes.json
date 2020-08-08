@@ -1,0 +1,103 @@
+[
+  {
+    "outputItemName": "Small Trap",
+    "ingredients": [
+      {
+        "itemName": "Sticks",
+        "amount": 3
+      },
+      {
+        "itemName": "Large Stone"
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start connecting the trap pieces together..."
+  },
+  {
+    "outputItemName": "Medium Trap",
+    "ingredients": [
+      {
+        "itemName": "Sticks",
+        "amount": 10
+      },
+      {
+        "itemName": "Large Stone",
+        "amount": 3
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start connecting the trap pieces together..."
+  },
+  {
+    "outputItemName": "Large Trap",
+    "ingredients": [
+      {
+        "itemName": "Sticks",
+        "amount": 30
+      },
+      {
+        "itemName": "Large Stone",
+        "amount": 5
+      }
+    ],
+    "recipeActionString": "You start connecting the trap pieces together...",
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Bandit's Sword",
+    "ingredients": [
+      {
+        "itemName": "Bandit's Blade",
+        "amount": 1
+      },
+      {
+        "itemName": "Brass Sword",
+        "amount": 1
+      }
+    ],
+    "recipeActionString": "You attempt to attach the pieces of the sword together...",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Cactus Club",
+    "ingredients": [
+      {
+        "itemName": "Cactus Club (Empty)",
+        "amount": 1
+      },
+      {
+        "itemName": "Cactus Spines",
+        "amount": 10000
+      }
+    ],
+    "recipeActionString": "You painstakingly begin sticking all 10,000 cactus spines into the club...",
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Steelflame Axe",
+    "ingredients": [
+      {
+        "itemName": "Steelflame Axe Head",
+        "amount": 1
+      },
+      {
+        "itemName": "Steelflame Axe Handle",
+        "amount": 1
+      }
+    ],
+    "recipeActionString": "You attempt to attach the pieces of the axe together...",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
+      }
+    ],
+    "maxOutputsPerAction": 1
+  }
+]

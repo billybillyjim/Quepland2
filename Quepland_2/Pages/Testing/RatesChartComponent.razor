@@ -1,0 +1,130 @@
+﻿@page "/Rates/Charts"
+@inject GameState GameState
+@implements IDisposable
+@inject NavigationManager UriHelper
+
+<button @onclick="@(() => Rates())">Rates</button>
+<button @onclick="@(() => Max())">Max</button>
+<button @onclick="@(() => UriHelper.NavigateTo("/WorldCheck/"))">World</button>
+
+<div style="overflow-y:scroll">
+    @foreach (string category in ItemManager.FileNames)
+    {
+        if (Category == category)
+        {
+            <div style="font-weight:bold">
+                @category
+            </div>
+        }
+        else
+        {
+            <div @onclick="@(() => SetCategory(category))">
+                @category
+            </div>
+        }
+
+    }
+
+</div>
+<br />
+<div style="height:500px;width:1000px;position:relative;background-color:lightgray;">
+    @foreach (GameItem item in ItemManager.Instance.Items.Where(x => x.Category == Category && x.EnabledActions == "None").ToList())
+    {
+        <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GetItemInfo(item))))"
+             onmouseout="@(new Action(() => GameState.HideTooltip()))"
+             style="position:absolute;@GetPos(item);height:5px;width:5px;background-color:black;border-radius:5px;">
+            <div>
+                @item.Name
+            </div>
+        </div>
+
+    }
+
+</div>
+<div style="height:300px;width:1000px">
+
+</div>
+
+
+
+@code {
+
+    private string Category = "Unset";
+    private double maxHeight;
+    private double maxWidth;
+    private void SetCategory(string cat)
+    {
+        Category = cat;
+        CalculateMaxes();
+        GameState.UpdateState();
+    }
+    private void CalculateMaxes()
+    {
+        maxHeight = 0;
+        maxWidth = 0;
+        foreach (GameItem item in ItemManager.Instance.Items.Where(x => x.Category == Category && x.EnabledActions == "None").ToList())
+        {
+            double height = ((double)item.Value / (item.GatherSpeed * 5));
+            if (height > maxHeight)
+            {
+                maxHeight = height;
+            }
+            if (item.ExperienceGained.Contains(':'))
+            {
+                int xp = int.Parse(item.ExperienceGained.Split(':')[1]);
+                double w = ((double)xp / (item.GatherSpeed * 5));
+                if (w > maxWidth)
+                {
+                    maxWidth = w;
+                }
+            }
+        }
+    }
+    private string GetPos(GameItem item)
+    {
+
+        double height = ((double)item.Value / (item.GatherSpeed * 5));
+        double width = 0;
+        if (item.ExperienceGained.Contains(':'))
+        {
+            int xp = int.Parse(item.ExperienceGained.Split(':')[1]);
+            width = ((double)xp / (item.GatherSpeed * 5));
+        }
+
+        return "bottom:" + ((double)height / maxHeight * 100) + "%;" + "left:" + ((double)width / maxWidth * 100) + "%";
+    }
+    private string GetItemInfo(GameItem item)
+    {
+        string data = item.Name + "\n";
+
+        data += "Gather Speed:" + item.GatherSpeed + "\n";
+
+        if (item.ExperienceGained.Contains(':'))
+        {
+            int expGain = int.Parse(item.ExperienceGained.Split(':')[1]);
+            data += "XP:" + item.ExperienceGained + "\n";
+            data += "XP/HR:" + ((expGain / (double)item.GatherSpeed) * 5 * 60 * 60) + "\n";
+        }
+        data += "GP:" + item.Value + "\n";
+        data += "GP/HR:" + (((item.Value / (double)item.GatherSpeed) * 5 * 60 * 60)) + "\n";
+        return data;
+    }
+    private void Rates()
+    {
+        UriHelper.NavigateTo("/Rates/");
+    }
+    private void Max()
+    {
+        UriHelper.NavigateTo("/Rates/Max/");
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.HideTooltip();
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

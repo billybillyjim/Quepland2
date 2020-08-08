@@ -1,0 +1,131 @@
+﻿@inject GameState GameState
+@inject NavigationManager UriHelper
+
+    <div style="position:relative">
+        <h1>Welcome to Quepland</h1>
+        <p>Quepland 2 is a semi-idle adventure game set in the world of Quepland.</p>
+
+        @if (GameState.InitCompleted)
+        {
+            if (hasSave)
+            {
+                <button class="btn btn-primary" @onclick="@(() => LoadGame())">
+                    Load Game
+                </button>
+            }
+            else
+            {
+                if (GameState.CurrentGameMode == GameState.GameType.Hardcore && Player.Instance.JustDied)
+                {
+                    <button class="btn btn-primary" onclick="@(new Action(() => ResetGame()))">Begin New Game</button>
+                }
+                else
+                {
+                    <button class="btn btn-primary" onclick="@(new Action(() => StartGame()))">Begin New Game</button>
+                    <button onclick="@(new Action(() => TestAlch()))">Test Alchemy</button>
+                }
+
+                <br />
+                <div style="margin-left:-10px;">
+                    <Quepland_2.Components.CustomDropdownComponent DropdownItems="@GetGameModes()" @bind-Value="@selectedMode" BoxText="Game Mode(Normal)"></Quepland_2.Components.CustomDropdownComponent>
+
+                </div>
+            }
+
+
+        }
+        else
+        {
+            <button class="btn btn-primary" disabled>Begin New Game</button>
+        }
+
+
+    </div>
+
+
+@code {
+
+    public string selectedMode = "Normal";
+    bool hasSave = false;
+    public List<string> GetGameModes()
+    {
+        List<string> modes = new List<string>();
+        var values = Enum.GetValues(typeof(GameState.GameType));
+        foreach (var v in values)
+        {
+            modes.Add(v.ToString());
+        }
+        return modes;
+    }
+    public void ResetGame()
+    {
+        Player.Instance.ResetStats();
+        Player.Instance.Inventory.Clear();
+        Player.Instance.GetEquippedItems().Clear();
+        Bank.Instance.Inventory.Clear();
+        foreach(Area a in AreaManager.Instance.Areas)
+        {
+            a.IsUnlocked = false;
+        }
+        foreach(Region r in AreaManager.Instance.Regions)
+        {
+            r.IsUnlocked = false;
+        }
+        SetGameMode();
+        if (GameState.CurrentGameMode == GameState.GameType.Ultimate)
+        {
+            Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItemByName("Stone Axe"));
+        }
+        AreaManager.Instance.GetAreaByName("Quepland Fields").Unlock();
+        GameState.ShowStartMenu = false;
+        UriHelper.NavigateTo("/World/QueplandFields");
+    }
+    public async Task LoadGame()
+    {
+        GameState.ShowStartMenu = false;
+        await SaveManager.LoadSaveGame();
+    }
+    public void StartGame()
+    {
+        SetGameMode();
+        if(GameState.CurrentGameMode == GameState.GameType.Ultimate)
+        {
+            Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItemByName("Stone Axe"));
+        }
+        GameState.ShowStartMenu = false;
+        AreaManager.Instance.GetAreaByName("Quepland Fields").Unlock();
+        GameState.GoTo("World/QueplandFields");
+    }
+    public void SetGameMode()
+    {
+        if(selectedMode == "Normal")
+        {
+            GameState.CurrentGameMode = GameState.GameType.Normal;
+        }
+        else if(selectedMode == "Hardcore")
+        {
+            GameState.CurrentGameMode = GameState.GameType.Hardcore;
+        }
+        else if(selectedMode == "Ultimate")
+        {
+            GameState.CurrentGameMode = GameState.GameType.Ultimate;
+        }
+    }
+    public void TestAlch()
+    {
+        GameState.ShowStartMenu = false;
+        GameState.Location = "MountQuepleAlchemicalHall";
+        UriHelper.NavigateTo("/World/AlchemicalHall/WindHall/");
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        hasSave = await SaveManager.HasSaveFile();
+        GameState.StateChanged += OnGameStateChanged;
+
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

@@ -1,0 +1,88 @@
+﻿@inherits LayoutComponentBase
+@inject GameState GameState
+
+
+<div style="width:1200px;display:flex;background-color:#2d2d2d;color:white;">
+    @if (GameState.ShowStartMenu == false)
+    {
+        <div class="sidebar" style=" height: 100%;min-height:100vh; width: 300px !important; @GetGradient()">
+            <NavMenu />
+        </div>
+    }
+    <div class="main" style="min-width:@(GameState.MinWindowWidth)px!important;">
+        @if (GameState.ShowStartMenu == false)
+        {
+            <div class="top-row px-4" style="z-index:10;background-color:dimgray;border:none;height:60px;">
+                <Quepland_2.Components.ExperienceTrackerComponent></Quepland_2.Components.ExperienceTrackerComponent>
+
+            </div>
+        }
+        <div>
+            @Body
+        </div>
+        @if (GameState.ShowStartMenu == false)
+        {
+            <div style="position: fixed;
+                        width: @(GetMessageWidth())px;
+                        overflow-y: scroll;
+                        max-height: 200px;
+                        height: 200px;
+                        bottom: 0px;
+                        background-color: #4d4d4d;
+                        border-radius:0.5rem;
+                        padding-left:10px!important;
+                        margin-left:15px;
+                        overflow-x: hidden;" class="custom-scroll">
+                <Quepland_2.Components.MessagesMenuComponent></Quepland_2.Components.MessagesMenuComponent>
+            </div>
+        }
+
+    </div>
+
+    @if (GameState.ShowStartMenu == false)
+    {
+        <div style="width: 360px!important;background-color:#4d4d4d;">
+            <Quepland_2.Components.RightSidebarComponent></Quepland_2.Components.RightSidebarComponent>
+        </div>
+        @if (GameState.ShowSettings)
+        {
+            <div>
+                <Quepland_2.Pages.SettingsComponent></Quepland_2.Pages.SettingsComponent>
+            </div>
+        }
+
+    }
+    @if (TooltipManager.ShouldShow())
+    {
+        <Quepland_2.Components.TooltipComponent Tip="@TooltipManager.CurrentTip" xPos="@TooltipManager.xPos" yPos="@TooltipManager.yPos"></Quepland_2.Components.TooltipComponent>
+    }
+    @if (TooltipManager.ShowContext)
+    {
+        <Quepland_2.Components.ContextMenuComponent Menu="@GameState.CurrentContextMenu" xPos="@TooltipManager.xPos" yPos="@TooltipManager.yPos"></Quepland_2.Components.ContextMenuComponent>
+    }
+
+</div>
+
+@code{
+
+    private int GetMessageWidth()
+    {
+        return GameState.MinWindowWidth - 30;
+    }
+    private string GetGradient()
+    {
+        string bg = "background-image:linear-gradient(";
+        bg += GameState.CurrentLand.TopColor + " 0%, " + GameState.CurrentLand.BottomColor + " 60%);";
+        return bg;
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+
+}

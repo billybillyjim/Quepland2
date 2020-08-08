@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Zuchi Dojo",
+    "opponentNames": [
+      "Smashy",
+      "Scoph",
+      "Fuzzy",
+      "Money",
+      "Ezai",
+      "Wizz",
+      "Smwojo"
+    ],
+    "url": "ZuchiDojo",
+    "description": "The floor of the main hall is covered in hammers. A large scroll with the character for hammer hangs from the far wall."
+  },
+  {
+    "name": "Houchou Dojo",
+    "opponentNames": [
+      "Tanto",
+      "Deba",
+      "Mes",
+      "Dos",
+      "Kozuka",
+      "Kaiken"
+    ],
+    "url": "HouchouDojo",
+    "description": "The walls of the hall are covered in knives knives of various sizes. Each member of the dojo stands in line, awaiting their next challenger."
+  },
+  {
+    "name": "Ittou Dojo",
+    "opponentNames": [
+      "Shunai",
+      "Sodo",
+      "Sam",
+      "One Blade Billy",
+      "Kurisutay",
+      "Danbura",
+      "Token"
+    ],
+    "url": "IttouDojo",
+    "description": "A single sword sits above the back wall of the dojo. Members line the sides of the hall, sitting with their legs crossed."
+  },
+  {
+    "name": "Ono Dojo",
+    "opponentNames": [
+      "Fets",
+      "Roo",
+      "Akku",
+      "Mack",
+      "Wari",
+      "Swings",
+      "Masakar",
+      "Futo"
+    ],
+    "url": "OnoDojo",
+    "description": "You find the halls of this dojo lined with weapons, most of which are axes. A great double-sided axe hangs directly over the dojo master, dangling by a thread."
+  },
+  {
+    "name": "Tsuyo Dojo",
+    "opponentNames": [
+      "Vasilly",
+      "Dreian",
+      "Razzmatazz",
+      "Rocker",
+      "Salami",
+      "Bean",
+      "Wonny",
+      "Lasah"
+    ],
+    "url": "TsuyoDojo",
+    "description": "The hall looks more like a gym than a dojo hall. There are weights and workout stations strewn about haphazardly. A very large man stands in the center of the room lifting weights."
+  },
+  {
+    "name": "Nittou Dojo",
+    "opponentNames": [
+      "Smashy",
+      "Scoph",
+      "Fuzzy",
+      "Money",
+      "Ezai",
+      "Wizz",
+      "Smwojo"
+    ],
+    "url": "NittouDojo",
+    "description": "A pair of swords stand crossed at the back of the dojo. Everyone in the dojo is wielding at least two swords."
+  }
+]

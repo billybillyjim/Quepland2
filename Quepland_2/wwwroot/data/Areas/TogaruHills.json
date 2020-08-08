@@ -1,0 +1,189 @@
+[
+  {
+    "name": "Great Shoe Lake",
+    "id": 90,
+    "image": "Lake",
+    "description": "You reach the foot of a pointed mountain range. A trail continues up into the hills. It curves along a large oblong lake. Here and there the water bubbles violently before returning to silence.",
+    "areaURL": "GreatShoeLake",
+    "actions": [
+      "Go Fishing:Crab,Angry Crab,Giant Carp"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "TsuValley",
+        "buttonText": "Hike the trail"
+      }
+
+    ],
+    "monsters": [
+      "Bandit",
+      "Big Bandit"
+    ]
+  },
+  {
+    "name": "Tsu Valley",
+    "id": 91,
+    "image": "Trail",
+    "description": "Beyond the first few hills the trail leads into a large valley. On the far side you can see a castle town. Farm houses dot the landscape before you. There's a forest to the south with trees of similar sizes neatly arranged in rows.",
+    "areaURL": "TsuValley",
+    "actions": [
+      "Chop Buloke Trees:Buloke Logs",
+      "Harvest Durum:Durum"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "WestTsuCity",
+        "buttonText": "Follow the road toward the castle"
+      },
+      {
+        "areaURL": "TreeNursery",
+        "buttonText": "Head to the forest"
+      }
+
+    ],
+    "huntingTripInfo": {
+      "dropTable": {
+        "drops": [
+          {
+            "itemName": "Rabbit",
+            "weight": 10
+          },
+          {
+            "itemName": "Wild Boar",
+            "weight": 5
+          },
+          {
+            "itemName": "Bison",
+            "weight": 3
+          }
+        ]
+      }
+    },
+    "buildings": [
+      {
+        "name": "Tsu Farms",
+        "buttonText": "Visit a farm",
+        "url": "TsuFarms",
+        "description": "A simple house stands surrounded by a patch of trees. An old man and woman are working in the garden as you approach.",
+        "npcs": [
+          "Old Woman",
+          "Old Man"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tree Nursery",
+    "id": 92,
+    "image": "Forest",
+    "description": "You enter the tree nursery. There are many trees perfect for chopping all around you, though it appears as though they are owned by someone else.",
+    "areaURL": "TreeNursery",
+    "actions": [
+      "Go Fishing:Crab,Angry Crab"
+    ],
+    "npcs": [
+      "Tree Guard"
+    ]
+  },
+  {
+    "name": "West Tsu City",
+    "id": 93,
+    "image": "City",
+    "description": "",
+    "areaURL": "WestTsuCity",
+    "unlockableAreas": [
+      {
+        "areaURL": "CentralTsuCity",
+        "buttonText": "Continue to the city center"
+      }
+    ],
+    "dojoURL": "ZuchiDojo"
+  },
+  {
+    "name": "Central Tsu City",
+    "id": 94,
+    "image": "City",
+    "description": "",
+    "areaURL": "CentralTsuCity",
+    "dojoURL": "ZuchiDojo",
+    "unlockableAreas": [
+      {
+        "areaURL": "NorthTsuCity",
+        "buttonText": "Go north"
+      },
+      {
+        "areaURL": "EastTsuCity",
+        "buttonText": "Continue on the main road east"
+      },
+      {
+        "areaURL": "TsuCastle",
+        "buttonText": "Head to the castle"
+      }
+    ],
+    "buildings": [
+      {
+        "name": "Tsu Castle",
+        "buttonText": "Visit the castle",
+        "url": "TsuCastle",
+        "description": "This is the castle."
+      },
+      {
+        "name": "Archery Shop",
+        "buttonText": "Archery Shop",
+        "url": "ArcheryShop",
+        "description": "This is the archery shop."
+      }
+
+    ]
+  },
+  {
+    "name": "North Tsu City",
+    "id": 95,
+    "image": "City",
+    "description": "",
+    "areaURL": "NorthTsuCity",
+    "unlockableAreas": [
+      {
+        "areaURL": "TangeiGardens",
+        "buttonText": "Enter the garden"
+      }
+    ],
+    "buildings": [
+      {
+        "name": "Alchemy Guild",
+        "buttonText": "Enter the Alchemy Guild",
+        "url": "AlchemyGuild",
+        "description": "This is the alchemy guild."
+      },
+      {
+        "name": "Archery Shop",
+        "buttonText": "Archery Shop",
+        "url": "ArcheryShop",
+        "description": "This is the archery shop."
+      }
+      
+    ]
+  },
+  {
+    "name": "East Tsu City",
+    "id": 96,
+    "image": "City",
+    "description": "",
+    "areaURL": "EastTsuCity",
+    "buildings": [
+      {
+        "name": "Elemental Emporium",
+        "buttonText": "Elemential Emporium",
+        "url": "ElementalEmporium",
+        "description": "It's the elemental emporium!"
+      }
+    ]
+  },
+  {
+    "name": "Tangei Gardens",
+    "id": 97,
+    "image": "Garden",
+    "description": "A garden",
+    "areaURL": "TangeiGardens"
+  }
+]

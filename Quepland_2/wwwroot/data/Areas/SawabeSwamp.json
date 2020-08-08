@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Swampedge",
+    "id": 20,
+    "image": "Swamp",
+    "description": "You enter an enormous, smelly swamp. The sunlight is blocked by thick, entangled trees. Rice grows wild here. The path leads into a dark wooded area.",
+    "areaURL": "Swampedge",
+    "actions": [
+      "Chop Snakewood Trees:Snakewood Logs",
+      "Gather Rice:Rice"
+    ],
+    "unlockableAreas": [
+      {
+        "AreaURL": "Swampwood",
+        "ButtonText": "Enter the Woods"
+      }
+
+    ]
+  },
+  {
+    "name": "Swampwood",
+    "id": 21,
+    "image": "Forest",
+    "areaURL": "Swampwood",
+    "description": "The swamp grows dark under the tree canopy. The sound of bugs and swamp creatures is disorienting. You'd need to be a skilled pathfinder to make it any deeper.",
+    "monsters": [
+      "Chicken",
+      "Rooster"
+    ],
+    "unlockableAreas": [
+      {
+        "AreaURL": "Sawoka",
+        "ButtonText": "Travel further into the swamp",
+        "requirements": [
+          {
+            "skill": "Hunting",
+            "skillLevel": 35
+          }
+        ]
+      }
+
+    ],
+    "huntingTripInfo": {
+      "dropTable": {
+        "drops": [
+          {
+            "itemName": "Rabbit",
+            "weight": 15
+          },
+          {
+            "itemName": "Buck",
+            "weight": 10
+          },
+          {
+            "itemName": "Deer",
+            "weight": 15
+          },
+          {
+            "itemName": "Wild Boar",
+            "weight": 8
+          },
+          {
+            "itemName": "Black Bear",
+            "weight": 2
+          },
+          {
+            "itemName": "Grizzly Bear",
+            "weight": 1
+          },
+          {
+            "itemName": "Turkey",
+            "weight": 5
+          },
+          {
+            "itemName": "Pheasant",
+            "weight": 5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "Sawoka",
+    "id": 22,
+    "image": "Village",
+    "areaURL": "Sawoka",
+    "description": "A small abandoned village sits hidden among the vines. Trees sprout from the doorways of the buildings that circle a central mound, which seems to be full of coal. One of the houses contains a staircase leading into a labyrinth.",
+    "actions": [
+      "Mine Coal:Coal",
+      "Cabochon"
+    ],
+    "dungeonName": "Sawoka Dungeon"
+  }
+]

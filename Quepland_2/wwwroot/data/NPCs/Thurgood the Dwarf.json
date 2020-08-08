@@ -1,0 +1,80 @@
+{
+  "name": "Thurgood the Dwarf",
+  "id": 28,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Thurgood the Dwarf"
+        }
+      ]
+    },
+    {
+      "buttonText": "Can I hire you?",
+      "responseText": "I don't see why not. I've just been standing here for such a long time now...",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Thurgood the Dwarf"
+        }
+      ]
+    },
+    {
+      "buttonText": "What can you do?",
+      "responseText": "I'm a dwarf. I carry ores from where you mine them to where you store them. I'm a bit rusty, having been standing here so long.",
+      "depth": 1,
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Threnden the Dwarf"
+        }
+      ]
+    },
+    {
+      "buttonText": "How much?",
+      "responseText": "Oh I don't need any money. I'm beyond that stuff. Transcended, if you catch my drift. But I am very hungry. Got any cheese? I could eat a ton.",
+      "depth": 2,
+      "newDepthOnTalk": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Thurgood the Dwarf"
+        }
+      ]
+    },
+    {
+      "buttonText": "Here is 1 cheese",
+      "responseText": "Thanks! But this isn't enough to make me follow you. You're gonna need more cheese than that!",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Thurgood the Dwarf"
+        },
+        {
+          "item": "Cheese",
+          "itemAmount": 1
+        }
+      ],
+      "ConsumeRequiredItems": true
+    },
+    {
+      "buttonText": "Here is 10 cheese",
+      "responseText": "Thanks! I'll follow you now.",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Thurgood the Dwarf"
+        },
+        {
+          "item": "Cheese",
+          "itemAmount": 10
+        }
+      ],
+      "unlockedFollower": "Thurgood the Dwarf",
+      "ConsumeRequiredItems": true
+    }
+  ]
+}

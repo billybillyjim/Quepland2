@@ -1,0 +1,169 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (Item != null)
+{
+    @if (ItemHasCombatStats())
+    {
+    <div style="width:350px;height:28px;border:solid black 1px;position:relative;background-color:gray;display:flex;">
+        <div style="margin-right:10px;line-height:28px;flex:1;"
+             @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Damage", "This is a measure of how much this item boosts your damage. Higher numbers are better!")))"
+             @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            <img src="data/Images/Attack.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetAttack() <span style="@GetColor(GetAttackDifference(), false)">(@GetAttackDifference())</span>
+        </div>
+        @if (Item.EquipSlot != "None")
+        {
+            <div style="margin-right:10px;line-height:28px;flex:1;"
+                 @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Armor", "This is a measure of how much this item boosts your armor. Higher numbers are better!")))"
+                 @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                <img src="data/Images/Armor.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetArmor() <span style="@GetColor(GetArmorDifference(), false)">(@GetArmorDifference())</span>
+            </div>
+            <div style="margin-right:10px;line-height:28px;flex:1;"
+                 @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Speed", "This is a measure of how many game ticks this weapon attacks at. Lower is faster!")))"
+                 @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                <img src="data/Images/Speed.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetSpeed() <span style="@GetColor(GetSpeedDifference(), true)">(@GetSpeedDifference())</span>
+            </div>
+        }
+
+    </div>
+    }
+    else if (Item.FoodInfo != null)
+    {
+<div style="width:350px;height:28px;border:solid black 1px;position:relative;background-color:gray;display:flex;">
+    <div style="margin-right:10px;line-height:28px;flex:1;"
+         @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Heal Amount", "This is a measure of how much this item heals you per heal.")))"
+         @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+        <img src="data/Images/HealAmount.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetHealAmount()
+    </div>
+    <div style="margin-right:10px;line-height:28px;flex:1;"
+         @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Heal Duration", "This is a measure of how many times this item heals you.")))"
+         @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+        <img src="data/Images/HealDuration.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetHealDuration()
+    </div>
+    <div style="margin-right:10px;line-height:28px;flex:1;"
+         @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Heal Speed", "This is a measure of how many game ticks this food takes to heal you. Lower is better!")))"
+         @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+        <img src="data/Images/Speed.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetHealSpeed()
+    </div>
+    @if (GetBoostedAmount() > 0)
+    {
+        <div style="margin-right:10px;line-height:28px;flex:1;"
+             @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Boosts " + GetBoostedStat() + " by " + GetBoostedAmount(), "This is the skill that is boosted by this food.")))"
+             @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            <img src="data/Images/@(GetBoostedStat()).png" style="height:26px;width:26px;margin-top:-3px;" /> @GetBoostedAmount()
+        </div>
+    }
+
+</div>
+    }
+}
+
+
+@code {
+    [Parameter]
+    public GameItem Item { get; set; }
+
+    public bool ItemHasCombatStats()
+    {
+        return Item.ArmorInfo != null || Item.WeaponInfo != null;
+    }
+    public string GetImage(string i)
+    {
+        if (GetAttackDifference() >= 0)
+        {
+            return "data/Images/" + i + "Up.png";
+        }
+        return "data/Images/" + i + "Down.png";
+    }
+    public string GetColor(int value, bool reverse)
+    {
+        if (reverse)
+        {
+            value = -value;
+        }
+        if (value > 0)
+        {
+            return "color:darkgreen;";
+        }
+        else if (value < 0)
+        {
+            return "color:darkred;";
+        }
+        return "color:black;";
+    }
+    public int GetAttack()
+    {
+        return Item.WeaponInfo?.Damage ?? 0 + Item.ArmorInfo?.Damage ?? 0;
+    }
+    public int GetArmor()
+    {
+        return Item.WeaponInfo?.ArmorBonus ?? 0 + Item.ArmorInfo?.ArmorBonus ?? 0;
+    }
+    public int GetSpeed()
+    {
+        return Item.WeaponInfo?.AttackSpeed ?? 0;
+    }
+    public int GetHealAmount()
+    {
+        return Item.FoodInfo?.HealAmount ?? 0;
+    }
+    public int GetHealSpeed()
+    {
+        return Item.FoodInfo?.HealSpeed ?? 0;
+    }
+    public int GetHealDuration()
+    {
+        return Item.FoodInfo?.HealDuration ?? 0;
+    }
+    public string GetBoostedStat()
+    {
+        return Item.FoodInfo?.BuffedSkill ?? "None";
+    }
+    public int GetBoostedAmount()
+    {
+        return Item.FoodInfo?.BuffAmount ?? 0;
+    }
+    public int GetAttackDifference()
+    {
+        int bonus = Item.WeaponInfo?.Damage ?? 0 + Item.ArmorInfo?.Damage ?? 0;
+        GameItem comp = Player.Instance.GetItemInSlot(Item.EquipSlot);
+        if (comp == null)
+        {
+            return bonus;
+        }
+        int compBonus = comp.WeaponInfo?.Damage ?? 0 + comp.ArmorInfo?.Damage ?? 0;
+        return bonus - compBonus;
+    }
+    public int GetArmorDifference()
+    {
+        int bonus = Item.WeaponInfo?.ArmorBonus ?? 0 + Item.ArmorInfo?.ArmorBonus ?? 0;
+        GameItem comp = Player.Instance.GetItemInSlot(Item.EquipSlot);
+        if (comp == null)
+        {
+            return bonus;
+        }
+        int compBonus = comp.WeaponInfo?.ArmorBonus ?? 0 + comp.ArmorInfo?.ArmorBonus ?? 0;
+        return bonus - compBonus;
+    }
+    public int GetSpeedDifference()
+    {
+        int speed = Item.WeaponInfo?.AttackSpeed ?? 0;
+        GameItem comp = Player.Instance.GetItemInSlot(Item.EquipSlot);
+        if (comp == null)
+        {
+            return speed;
+        }
+        int compSpeed = comp.WeaponInfo?.AttackSpeed ?? 0;
+        return speed - compSpeed;
+    }
+
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

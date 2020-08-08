@@ -1,0 +1,67 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@foreach (Follower follower in FollowerManager.Instance.GetUnlockedFollowers())
+{
+
+    <div style="position:relative;height:46px;line-height:46px;@GetBG(follower)">
+        @if (Player.Instance.CurrentFollower == follower)
+        {
+            <div style="margin-left:10px;margin-top:-2px;color:black;">@follower.Name</div>
+            <button class="btn btn-primary" style="position:absolute;right:2px;top:2px;" @onclick="@(() => SwitchFollowers(null))">Unassign</button>
+
+        }
+        else
+        {
+            <div style="margin-left:10px;">@follower.Name</div>
+            <button class="btn btn-primary" style="position: absolute; right: 4px; top: 4px;" @onclick="@(() => SwitchFollowers(follower))">Assign</button>
+
+        }
+    </div>
+    
+}
+@if (HasUnlockedAnyFollower() == false)
+{
+    <div style="margin:10px;color:white;">Explore the world and maybe you'll find some others who would join you on your adventure. They might not do it for free, though.</div>
+}
+
+@code {
+
+    public bool HasUnlockedAnyFollower()
+    {
+        return FollowerManager.Instance.Followers.Any(x => x.IsUnlocked);
+    }
+    public void SwitchFollowers(Follower f)
+    {
+        Player.Instance.SetFollower(f);
+        GameState.UpdateState();
+    }
+
+    public string GetBG(Follower f)
+    {
+        if (f == Player.Instance.CurrentFollower)
+        {
+            return "background-color:#f5f5f5;border:solid 2px black;";
+        }
+        string bg = "";
+        if(FollowerManager.Instance.GetUnlockedFollowers().IndexOf(f) % 2 == 0)
+        {
+            bg += "background-color:dimgray;";
+        }
+        else
+        {
+            bg += "background-color:gray;";
+        }
+
+        return bg;
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

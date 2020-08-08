@@ -1,0 +1,701 @@
+[
+  {
+    "Name": "Copper Bar",
+    "Description": "The squishiest metal bar.",
+    "gatherString": "You smelt a copper bar.",
+    "value": 50,
+    "gatherSpeed": 15,
+    "experienceGained": "Smithing:15",
+    "secondaryColor": "#B87333",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 15
+    },
+    "alchemyInfo": {
+      "queplarValue": 5
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 1
+      }
+    ]
+  },
+  {
+    "Name": "Tin Bar",
+    "Description": "A beautiful, soft metal bar.",
+    "gatherString": "You smelt a tin bar.",
+    "value": 50,
+    "gatherSpeed": 15,
+    "requiredLevel": 4,
+    "experienceGained": "Smithing:18",
+    "requiredAction": "Smithing",
+    "secondaryColor": "#D3D4D5",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 20
+    },
+    "alchemyInfo": {
+      "queplarValue": 15
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 4
+      }
+    ]
+  },
+  {
+    "Name": "Zinc Bar",
+    "Description": "This would be more useful combined with another metal.",
+    "gatherString": "You smelt a zinc bar.",
+    "value": 70,
+    "gatherSpeed": 20,
+    "experienceGained": "Smithing:30",
+    "secondaryColor": "#9E9EA0",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 30
+    },
+    "alchemyInfo": {
+      "queplarValue": 25
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 15
+      }
+    ]
+  },
+  {
+    "Name": "Brass Bar",
+    "Description": "A sturdy metal made from copper and zinc.",
+    "gatherString": "You smelt a brass bar.",
+    "secondaryColor": "#B5A642",
+    "value": 90,
+    "gatherSpeed": 25,
+    "experienceGained": "Smithing:50",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 50
+    },
+    "alchemyInfo": {
+      "queplarValue": 35
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 25
+      }
+    ]
+  },
+  {
+    "Name": "Bronze Bar",
+    "Description": "A strong metal made from copper and tin.",
+    "gatherString": "You smelt a bronze bar.",
+    "secondaryColor": "#CD7F32",
+    "value": 110,
+    "gatherSpeed": 30,
+    "experienceGained": "Smithing:80",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 80
+    },
+    "alchemyInfo": {
+      "queplarValue": 45
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 30
+      }
+    ]
+  },
+  {
+    "Name": "Nickel Bar",
+    "Description": "A metal made from nickel ore.",
+    "gatherString": "You smelt a nickel bar.",
+    "value": 150,
+    "secondaryColor": "#838381",
+    "gatherSpeed": 35,
+    "experienceGained": "Smithing:130",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 130
+    },
+    "alchemyInfo": {
+      "queplarValue": 65
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 35
+      }
+    ]
+  },
+  {
+    "Name": "Iron Bar",
+    "Description": "A very strong metal bar.",
+    "gatherString": "You smelt an iron bar.",
+    "secondaryColor": "#434341",
+    "value": 190,
+    "gatherSpeed": 45,
+    "experienceGained": "Smithing:180",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 180
+    },
+    "alchemyInfo": {
+      "queplarValue": 55
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 45
+      }
+    ]
+  },
+  {
+    "Name": "Lead Bar",
+    "Description": "A heavy metal bar.",
+    "gatherString": "You smelt a lead bar.",
+    "secondaryColor": "#C0C0C0",
+    "value": 190,
+    "gatherSpeed": 55,
+    "experienceGained": "Smithing:220",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 220
+    },
+    "alchemyInfo": {
+      "queplarValue": 75
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 55
+      }
+    ]
+  },
+  {
+    "Name": "Bucket of Mercury",
+    "Description": "A heavy metal bar.",
+    "gatherString": "You smelt a lead bar.",
+    "value": 240,
+    "gatherSpeed": 55,
+    "experienceGained": "Smithing:100",
+    "icon": "Bucket",
+    "smithingInfo": {
+      "smithingExperience": 100
+    },
+    "alchemyInfo": {
+      "queplarValue": 85
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 60
+      }
+    ]
+  },
+  {
+    "Name": "Aluminum Bar",
+    "Description": "A lightweight metal bar.",
+    "gatherString": "You smelt an aluminum bar.",
+    "secondaryColor": "#F1F3F0",
+    "value": 270,
+    "gatherSpeed": 40,
+    "experienceGained": "Smithing:180",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 180
+    },
+    "alchemyInfo": {
+      "queplarValue": 105
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "Name": "Gold Bar",
+    "Description": "A bar of solid gold.",
+    "gatherString": "You smelt a gold bar.",
+    "secondaryColor": "#FFD700",
+    "value": 1000,
+    "gatherSpeed": 45,
+    "experienceGained": "Smithing:700",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 700
+    },
+    "alchemyInfo": {
+      "queplarValue": 125
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 85
+      }
+    ]
+  },
+  {
+    "Name": "Steel Bar",
+    "Description": "An extremely hard metal bar.",
+    "secondaryColor": "#9DC6E8",
+    "gatherString": "You smelt a steel bar.",
+    "value": 400,
+    "gatherSpeed": 50,
+    "experienceGained": "Smithing:100",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 100
+    },
+    "alchemyInfo": {
+      "queplarValue": 115
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "Name": "Platinum Bar",
+    "Description": "A solid platinum bar.",
+    "gatherString": "You smelt a platinum bar.",
+    "secondaryColor": "#E5E4E2",
+    "value": 1800,
+    "gatherSpeed": 50,
+    "experienceGained": "Smithing:950",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 950
+    },
+    "alchemyInfo": {
+      "queplarValue": 135
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 93
+      }
+    ]
+  },
+  {
+    "Name": "Strongtium Bar",
+    "Description": "A solid strongtium bar. Unsurprisingly, It looks very strong.",
+    "gatherString": "You smelt a strongtium bar.",
+    "value": 2500,
+    "gatherSpeed": 50,
+    "experienceGained": "Smithing:1000",
+    "secondaryColor": "#AF7979",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 1000
+    },
+    "alchemyInfo": {
+      "queplarValue": 155
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 99
+      }
+    ]
+  },
+  {
+    "Name": "Sahotite Bar",
+    "Description": "A solid bar of Sahotite. It saps the heat from your hand when you touch it.",
+    "gatherString": "You smelt a sahotite bar.",
+    "value": 3000,
+    "gatherSpeed": 70,
+    "experienceGained": "Smithing:1200",
+    "secondaryColor": "#C3D3F3",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 1200
+    },
+    "alchemyInfo": {
+      "queplarValue": 175
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 110
+      }
+    ]
+  },
+  {
+    "Name": "Plastinium Bar",
+    "Description": "A solid bar of Plastinium. You can bend it with your bare hands, but you can't break it.",
+    "gatherString": "You smelt a plastinium bar.",
+    "value": 5000,
+    "gatherSpeed": 90,
+    "experienceGained": "Smithing:1600",
+    "secondaryColor": "#718A94",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 1600
+    },
+    "alchemyInfo": {
+      "queplarValue": 195
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 122
+      }
+    ]
+  },
+  {
+    "Name": "Queplinium Bar",
+    "Description": "A solid bar of Queplinium. It glows brightly.",
+    "gatherString": "You smelt a queplinium bar.",
+    "value": 8000,
+    "gatherSpeed": 110,
+    "experienceGained": "Smithing:2400",
+    "secondaryColor": "#B787DC",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 2400
+    },
+    "alchemyInfo": {
+      "queplarValue": 205
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 130
+      }
+    ]
+  },
+  {
+    "Name": "Molten Copper Bar",
+    "Description": "The squishiest molten metal bar.",
+    "gatherString": "You smelt a copper bar.",
+    "value": 50,
+    "gatherSpeed": 15,
+    "experienceGained": "Smithing:15",
+    "secondaryColor": "#B87333",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 15
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 1
+      }
+    ]
+  },
+  {
+    "Name": "Molten Tin Bar",
+    "Description": "A beautiful, soft, liquid metal bar.",
+    "gatherString": "You smelt a tin bar.",
+    "value": 50,
+    "gatherSpeed": 15,
+    "secondaryColor": "#D3D4D5",
+    "requiredLevel": 4,
+    "experienceGained": "Smithing:18",
+    "requiredAction": "Smithing",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 20
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 4
+      }
+    ]
+  },
+  {
+    "Name": "Molten Zinc Bar",
+    "Description": "This would be more useful combined with another metal.",
+    "gatherString": "You smelt a zinc bar.",
+    "secondaryColor": "#9E9EA0",
+    "value": 70,
+    "gatherSpeed": 20,
+    "experienceGained": "Smithing:30",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 30
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 15
+      }
+    ]
+  },
+  {
+    "Name": "Molten Brass Bar",
+    "Description": "A sturdy melted metal made from copper and zinc.",
+    "gatherString": "You smelt a brass bar.",
+    "value": 90,
+    "gatherSpeed": 25,
+    "experienceGained": "Smithing:50",
+    "secondaryColor": "#B5A642",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 50
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 25
+      }
+    ]
+  },
+  {
+    "Name": "Molten Bronze Bar",
+    "Description": "A strong melted metal made from copper and tin.",
+    "gatherString": "You smelt a bronze bar.",
+    "value": 110,
+    "gatherSpeed": 30,
+    "secondaryColor": "#CD7F32",
+    "experienceGained": "Smithing:80",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 80
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 30
+      }
+    ]
+  },
+  {
+    "Name": "Molten Nickel Bar",
+    "Description": "A molten metal made from nickel ore.",
+    "gatherString": "You smelt a nickel bar.",
+    "secondaryColor": "#A9A69B",
+    "value": 150,
+    "gatherSpeed": 35,
+    "experienceGained": "Smithing:130",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 130
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 35
+      }
+    ]
+  },
+  {
+    "Name": "Molten Iron Bar",
+    "Description": "A very strong metal liquid.",
+    "gatherString": "You smelt an iron bar.",
+    "secondaryColor": "#434341",
+    "value": 190,
+    "gatherSpeed": 45,
+    "experienceGained": "Smithing:180",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 180
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 45
+      }
+    ]
+  },
+  {
+    "Name": "Molten Lead Bar",
+    "Description": "A heavy metal liquid.",
+    "gatherString": "You smelt a lead bar.",
+    "secondaryColor": "#C0C0C0",
+    "value": 190,
+    "gatherSpeed": 55,
+    "experienceGained": "Smithing:220",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 220
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 55
+      }
+    ]
+  },
+  {
+    "Name": "Molten Bucket of Mercury",
+    "Description": "A heavy metal bucket.",
+    "gatherString": "You smelt a lead bar.",
+    "value": 240,
+    "gatherSpeed": 55,
+    "experienceGained": "Smithing:100",
+    "icon": "Bucket",
+    "smithingInfo": {
+      "smithingExperience": 100
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 60
+      }
+    ]
+  },
+  {
+    "Name": "Molten Aluminum Bar",
+    "Description": "A lightweight metal bar soup.",
+    "gatherString": "You smelt an aluminum bar.",
+    "value": 270,
+    "gatherSpeed": 40,
+    "experienceGained": "Smithing:180",
+    "secondaryColor": "#F1F3F0",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 180
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "Name": "Molten Gold Bar",
+    "Description": "A bar of soon to be gold.",
+    "gatherString": "You smelt a gold bar.",
+    "secondaryColor": "#FFD700",
+    "value": 1000,
+    "gatherSpeed": 45,
+    "experienceGained": "Smithing:700",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 700
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 85
+      }
+    ]
+  },
+  {
+    "Name": "Molten Steel Bar",
+    "Description": "An extremely hard metal bar. Or, it will be when it hardens.",
+    "gatherString": "You smelt a steel bar.",
+    "secondaryColor": "#9DC6E8",
+    "value": 400,
+    "gatherSpeed": 50,
+    "experienceGained": "Smithing:100",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 100
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "Name": "Molten Platinum Bar",
+    "Description": "A liquid platinum bar.",
+    "gatherString": "You smelt a platinum bar.",
+    "secondaryColor": "#E5E4E2",
+    "value": 1800,
+    "gatherSpeed": 50,
+    "experienceGained": "Smithing:950",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 950
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 93
+      }
+    ]
+  },
+  {
+    "Name": "Molten Strongtium Bar",
+    "Description": "A melted strongtium bar. Unsurprisingly, It looks very strong, even as a liquid.",
+    "gatherString": "You smelt a strongtium bar.",
+    "value": 2500,
+    "gatherSpeed": 50,
+    "experienceGained": "Smithing:1000",
+    "secondaryColor": "#AF7979",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 1000
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 99
+      }
+    ]
+  },
+  {
+    "Name": "Molten Sahotite Bar",
+    "Description": "A molten bar of Sahotite. Somehow, it saps the heat from your hand when you touch it, even when molten.",
+    "gatherString": "You smelt a sahotite bar.",
+    "value": 3000,
+    "gatherSpeed": 70,
+    "experienceGained": "Smithing:1200",
+    "secondaryColor": "#C3D3F3",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 1200
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 110
+      }
+    ]
+  },
+  {
+    "Name": "Molten Plastinium Bar",
+    "Description": "A molten bar of Plastinium. It looks like a glowing soup.",
+    "gatherString": "You smelt a plastinium bar.",
+    "value": 5000,
+    "gatherSpeed": 90,
+    "experienceGained": "Smithing:1600",
+    "secondaryColor": "#718A94",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 1600
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 122
+      }
+    ]
+  },
+  {
+    "Name": "Molten Queplinium Bar",
+    "Description": "A molten bar of Queplinium. The glow from the metal is almost blinding in its liquid state.",
+    "gatherString": "You smelt a queplinium bar.",
+    "value": 8000,
+    "gatherSpeed": 110,
+    "experienceGained": "Smithing:2400",
+    "icon": "Bar",
+    "secondaryColor": "#B787DC",
+    "smithingInfo": {
+      "smithingExperience": 2400
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 130
+      }
+    ]
+  }
+]

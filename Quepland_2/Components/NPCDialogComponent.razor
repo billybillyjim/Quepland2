@@ -1,0 +1,59 @@
+﻿@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+@if (NPC != null && NPC.AvailableDialogCount() > 0)
+{
+
+    <div style="        border: solid 1px black;
+        padding: 5px;
+        margin: 5px;
+        background: #b0daff;
+        color:black;
+        border-radius: 0.5rem;">
+        @npc
+        @foreach (Dialog d in NPC.GetDialogsAtDepth(NPC.ConversationDepth))
+        {
+            @if (d.HasRequirements())
+            {
+                <br />
+                <button class="btn btn-dark" style="margin:5px;" @onclick="@(() => Talk(d))">@d.ButtonText</button>
+
+            }
+
+        }
+        @if (NPC.Shop != null)
+        {
+            <ShopComponent Shop="@NPC.Shop"></ShopComponent>
+        }
+
+
+    </div>
+    <br />
+}
+@code {
+    [Parameter]
+    public string npc { get; set; }
+    private NPC NPC;
+
+    private void Talk(Dialog d)
+    {
+        d.Talk();
+        NPC.ConversationDepth = d.NewDepthOnTalk;
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    protected override void OnParametersSet()
+    {
+        NPC = NPCManager.Instance.GetNPCByName(npc);
+        GameState.UpdateState();
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

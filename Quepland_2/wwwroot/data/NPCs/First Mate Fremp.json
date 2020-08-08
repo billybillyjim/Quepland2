@@ -1,0 +1,85 @@
+{
+  "name": "First Mate Fremp",
+  "id": 12,
+  "dialogs": [
+    {
+      "buttonText": "Where were you last night?",
+      "responseText": "I was in the crew's quarters, sleeping. Just like the rest of the crew.",
+      "quest": "Case of the Dead Pirate",
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 6
+        }
+      ]
+    },
+    {
+      "buttonText": "Did you see anything?",
+      "responseText": "No, I was sleeping. Just like the rest of the crew.",
+      "quest": "Case of the Dead Pirate",
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 6
+        }
+      ]
+    },
+    {
+      "buttonText": "Who would want to kill the captain?",
+      "responseText": "Probably Two Legs Jack, he was captain before we voted him out.",
+      "quest": "Case of the Dead Pirate",
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 6
+        }
+      ]
+    },
+    {
+      "buttonText": "Can I search your bunk?",
+      "responseText": "No. I'd rather no outsiders butt their nose into our business, thank you. It's obvious that Two Legs Jack did it, stop wasting your time.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 6,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 5
+        }
+      ]
+    },
+    {
+      "buttonText": "Can you teach me how to juggle?",
+      "responseText": "That's a strange request to make in the middle of your little investigation. But, I can't resist teaching the art of juggling to an interested learner. To start with... \nThe pirate shows you the basics of juggling while Two Legs Jack searches his bunk.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 8,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 7,
+          "maximumQuestProgress": 7
+        }
+      ]
+    },
+    {
+      "buttonText": "Jack says he found this knife in your bunk.",
+      "responseText": "The liar! He must have set me up! How can you trust such a man who can't even keep hold of his crew?! You know we voted him out of his captainship, right? He's obviously framing me to escape punishment for his vengeful act!",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 10,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 9,
+          "maximumQuestProgress": 9
+        },
+        {
+          "item": "Bloody Knife",
+          "itemAmount": 1
+        }
+      ]
+    }
+  ]
+}

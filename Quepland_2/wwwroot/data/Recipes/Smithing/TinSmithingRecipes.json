@@ -1,0 +1,68 @@
+[
+  {
+    "outputItemName": "Molten Tin Bar",
+    "ingredients": [
+      {
+        "itemName": "Tin Ore"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Tin Bar",
+    "ingredients": [
+      {
+        "itemName": "Tin Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Tin Knife",
+    "ingredients": [
+      {
+        "itemName": "Molten Tin Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Tin Sword",
+    "ingredients": [
+      {
+        "itemName": "Molten Tin Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Tin Axe",
+    "ingredients": [
+      {
+        "itemName": "Molten Tin Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Tin Hammer",
+    "ingredients": [
+      {
+        "itemName": "Molten Tin Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Tin Bar",
+    "ingredients": [
+      {
+        "itemName": "Molten Tin Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Tin Arrowtips",
+    "ingredients": [
+      {
+        "itemName": "Molten Tin Bar"
+      }
+    ],
+    "outputAmount": 10
+  }
+
+]

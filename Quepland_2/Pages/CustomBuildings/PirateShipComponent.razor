@@ -1,0 +1,131 @@
+﻿@page "/World/EastUragotaDocks/PirateShip"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+
+
+<h1>Pirate Ship</h1>
+@if (GetProgress() < 2)
+{
+    <Quepland_2.Components.NPCDialogComponent npc="Captain Nobeard"></Quepland_2.Components.NPCDialogComponent>
+}
+else if (GetProgress() == 2)
+{
+    <button class="btn btn-primary" @onclick="@(() => SetSail())">Set Sail</button>
+}
+else
+{
+<div style="margin-bottom:200px;">
+    @foreach (string loc in locations)
+    {
+        <div style="margin:5px;">
+            @if (CurrentLocation == loc)
+            {
+                <button class="btn btn-primary" disabled>@loc</button>
+            }
+            else
+            {
+                <button class="btn btn-primary" @onclick="@(() => GoTo(loc))">@loc</button>
+            }
+        </div>
+    }
+
+    @if (CurrentLocation == "Main Deck")
+    {
+        <p>You're standing on the deck of a large, wooden ship.</p>
+    }
+    else if (CurrentLocation == "Captain's Quarters")
+    {
+        <p>The captain's quarters are clean and tidy, save for all the blood. You could almost forget you were on a boat in here.</p>
+        <Quepland_2.Components.NPCDialogComponent npc="Quartermaster Argon"></Quepland_2.Components.NPCDialogComponent>
+    }
+    else if (CurrentLocation == "Crew's Quarters")
+    {
+        <p>The crew's quarters lie below deck, it's dark and smelly down here.</p>
+        <Quepland_2.Components.NPCDialogComponent npc="First Mate Fremp"></Quepland_2.Components.NPCDialogComponent>
+    }
+    else if (CurrentLocation == "Store Room")
+    {
+        <p>The store room is located at the bottom of the boat. There's not much reason to go down here.</p>
+        <Quepland_2.Components.NPCDialogComponent npc="Doctor Squid"></Quepland_2.Components.NPCDialogComponent>
+    }
+    else if (CurrentLocation == "Crow's Nest")
+    {
+        <p>The climb up to the nest is quite arduous. You can see for miles in every direction from here.</p>
+        <Quepland_2.Components.NPCDialogComponent npc="Pirate Crewman"></Quepland_2.Components.NPCDialogComponent>
+    }
+    else if (CurrentLocation == "Forecastle")
+    {
+        <p>The quartermaster keeps all his books and charts here. A large table stands in the middle of the room with an equally large map spread across it.</p>
+        <Quepland_2.Components.NPCDialogComponent npc="Two Legs Jack"></Quepland_2.Components.NPCDialogComponent>
+    }
+
+    @if (GetProgress() >= 100 && QuestManager.Instance.GetQuestByName("Case of the Dead Pirate").IsComplete)
+    {
+        <button class="btn btn-warning" @onclick="@(() => GoAshore())">Sail to Tackure</button>
+    }
+    else if (GetProgress() >= 100)
+    {
+        <button class="btn btn-primary" @onclick="@(() => GoAshore())">Go Ashore</button>
+    }
+</div>
+    
+}
+
+@code {
+
+    private string CurrentLocation = "Main Deck";
+    private List<NPC> NPCs = new List<NPC>();
+    private List<string> locations = new List<string>() { "Main Deck", "Captain's Quarters", "Crew's Quarters", "Store Room", "Crow's Nest", "Forecastle" };
+
+    private void GoTo(string newloc)
+    {
+        CurrentLocation = newloc;
+        GameState.UpdateState();
+    }
+    public void GoAshore()
+    {
+        GameState.StopActions();
+        Area a = AreaManager.Instance.GetAreaByURL("KoyaHasa");
+        Land l = AreaManager.Instance.GetLandForArea(a);
+        if (l != null && l != GameState.CurrentLand)
+        {
+            GameState.CurrentLand = l;
+        }
+        GameState.Location = "KoyaHasa";
+
+
+        if (QuestManager.Instance.GetQuestByName("Case of the Dead Pirate").IsComplete == false)
+        {
+            a.Unlock();
+            QuestManager.Instance.GetQuestByName("Case of the Dead Pirate").Complete();
+        }
+        UriHelper.NavigateTo("World/KoyaHasa");
+
+    }
+    private void SetSail()
+    {
+        QuestManager.Instance.GetQuestByName("Case of the Dead Pirate").Progress = 3;
+        MessageManager.AddMessage("You set sail on the pirate ship. The crew throw a party on the first night aboard. As things begin to settle down in the early morning, there's a yell from below deck. You and a few others rush to the sound of the noise to find the captian dead, with Quartermaster Argon standing over his dead body.");
+        CurrentLocation = "Captain's Quarters";
+        GameState.UpdateState();
+    }
+    private int GetProgress()
+    {
+        return QuestManager.Instance.GetQuestByName("Case of the Dead Pirate").Progress;
+
+    }
+    protected override void OnInitialized()
+    {
+        NPCs.Clear();
+        foreach (string npc in AreaManager.Instance.GetAreaByName("East Uragota Docks").Buildings[0].NPCs)
+        {
+            NPCs.Add(NPCManager.Instance.GetNPCByName(npc));
+        }
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

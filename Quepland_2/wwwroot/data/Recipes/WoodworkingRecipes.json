@@ -1,0 +1,2113 @@
+[
+  {
+    "outputItemName": "White Pine Arrow Shafts",
+    "ingredients": [
+      {
+        "itemName": "White Pine Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:1",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start carving arrow shafts...",
+    "outputAmount": 10
+  },
+  {
+    "outputItemName": "Poplar Arrow Shafts",
+    "ingredients": [
+      {
+        "itemName": "Poplar Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "recipeActionString": "You start carving arrow shafts...",
+    "maxOutputsPerAction": 1,
+    "outputAmount": 10
+  },
+  {
+    "outputItemName": "Oak Arrow Shafts",
+    "ingredients": [
+      {
+        "itemName": "Oak Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "recipeActionString": "You start carving arrow shafts...",
+    "maxOutputsPerAction": 1,
+    "outputAmount": 10
+  },
+  {
+    "outputItemName": "Maple Arrow Shafts",
+    "ingredients": [
+      {
+        "itemName": "Sugar Maple Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:4",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "recipeActionString": "You start carving arrow shafts...",
+    "maxOutputsPerAction": 1,
+    "outputAmount": 8
+  },
+  {
+    "outputItemName": "Birch Arrow Shafts",
+    "ingredients": [
+      {
+        "itemName": "Birch Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "recipeActionString": "You start carving arrow shafts...",
+    "maxOutputsPerAction": 1,
+    "outputAmount": 8
+  },
+  {
+    "outputItemName": "Mesquite Arrow Shafts",
+    "ingredients": [
+      {
+        "itemName": "Mesquite Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:6",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "recipeActionString": "You start carving arrow shafts...",
+    "maxOutputsPerAction": 1,
+    "outputAmount": 8
+  },
+  {
+    "outputItemName": "Mahogany Arrow Shafts",
+    "ingredients": [
+      {
+        "itemName": "Mahogany Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:10",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 40
+      }
+    ],
+    "recipeActionString": "You start carving arrow shafts...",
+    "maxOutputsPerAction": 1,
+    "outputAmount": 6
+  },
+  {
+    "outputItemName": "Ironwood Arrow Shafts",
+    "ingredients": [
+      {
+        "itemName": "Ironwood Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:8",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
+      }
+    ],
+    "recipeActionString": "You start carving arrow shafts...",
+    "maxOutputsPerAction": 1,
+    "outputAmount": 6
+  },
+  {
+    "outputItemName": "Snakewood Arrow Shafts",
+    "ingredients": [
+      {
+        "itemName": "Snakewood Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:9",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
+      }
+    ],
+    "recipeActionString": "You start carving arrow shafts...",
+    "maxOutputsPerAction": 1,
+    "outputAmount": 5
+  },
+  {
+    "outputItemName": "Lignum Vitae Arrow Shafts",
+    "ingredients": [
+      {
+        "itemName": "Lignum Vitae Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:10",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
+      }
+    ],
+    "recipeActionString": "You start carving arrow shafts...",
+    "maxOutputsPerAction": 1,
+    "outputAmount": 5
+  },
+  {
+    "outputItemName": "Buloke Arrow Shafts",
+    "ingredients": [
+      {
+        "itemName": "Buloke Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:12",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 80
+      }
+    ],
+    "recipeActionString": "You start carving arrow shafts...",
+    "maxOutputsPerAction": 1,
+    "outputAmount": 4
+  },
+  {
+    "outputItemName": "Ice Arrow Shafts",
+    "ingredients": [
+      {
+        "itemName": "Ice Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:15",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 87
+      }
+    ],
+    "recipeActionString": "You start carving arrow shafts...",
+    "maxOutputsPerAction": 1,
+    "outputAmount": 4
+  },
+  {
+    "outputItemName": "Great Arrow Shafts",
+    "ingredients": [
+      {
+        "itemName": "Great Tree Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:30",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 95
+      }
+    ],
+    "recipeActionString": "You start carving arrow shafts...",
+    "maxOutputsPerAction": 1,
+    "outputAmount": 4
+  },
+  {
+    "outputItemName": "Headless White Pine Arrows",
+    "ingredients": [
+      {
+        "itemName": "White Pine Arrow Shafts"
+      },
+      {
+        "itemName": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:1",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "recipeActionString": "You begin attaching feathers to the arrow shafts...",
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Poplar Arrows",
+    "ingredients": [
+      {
+        "itemName": "Poplar Arrow Shafts"
+      },
+      {
+        "itemName": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "recipeActionString": "You begin attaching feathers to the arrow shafts...",
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Oak Arrows",
+    "ingredients": [
+      {
+        "itemName": "Oak Arrow Shafts"
+      },
+      {
+        "itemName": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "recipeActionString": "You begin attaching feathers to the arrow shafts...",
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Maple Arrows",
+    "ingredients": [
+      {
+        "itemName": "Maple Arrow Shafts"
+      },
+      {
+        "itemName": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "recipeActionString": "You begin attaching feathers to the arrow shafts...",
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Birch Arrows",
+    "ingredients": [
+      {
+        "itemName": "Birch Arrow Shafts"
+      },
+      {
+        "itemName": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "recipeActionString": "You begin attaching feathers to the arrow shafts...",
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Mesquite Arrows",
+    "ingredients": [
+      {
+        "itemName": "Mesquite Arrow Shafts"
+      },
+      {
+        "itemName": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:6",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "recipeActionString": "You begin attaching feathers to the arrow shafts...",
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Mahogany Arrows",
+    "ingredients": [
+      {
+        "itemName": "Mahogany Arrow Shafts"
+      },
+      {
+        "itemName": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:7",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 40
+      }
+    ],
+    "recipeActionString": "You begin attaching feathers to the arrow shafts...",
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Ironwood Arrows",
+    "ingredients": [
+      {
+        "itemName": "Ironwood Arrow Shafts"
+      },
+      {
+        "itemName": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:8",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
+      }
+    ],
+    "recipeActionString": "You begin attaching feathers to the arrow shafts...",
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Snakewood Arrows",
+    "ingredients": [
+      {
+        "itemName": "Snakewood Arrow Shafts"
+      },
+      {
+        "itemName": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:9",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
+      }
+    ],
+    "recipeActionString": "You begin attaching feathers to the arrow shafts...",
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Lignum Vitae Arrows",
+    "ingredients": [
+      {
+        "itemName": "Lignum Vitae Arrow Shafts"
+      },
+      {
+        "itemName": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:10",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
+      }
+    ],
+    "recipeActionString": "You begin attaching feathers to the arrow shafts...",
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Buloke Arrows",
+    "ingredients": [
+      {
+        "itemName": "Buloke Arrow Shafts"
+      },
+      {
+        "itemName": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:12",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 80
+      }
+    ],
+    "recipeActionString": "You begin attaching feathers to the arrow shafts...",
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Ice Arrows",
+    "ingredients": [
+      {
+        "itemName": "Ice Arrow Shafts"
+      },
+      {
+        "itemName": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:15",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 87
+      }
+    ],
+    "recipeActionString": "You begin attaching feathers to the arrow shafts...",
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Headless Great Arrows",
+    "ingredients": [
+      {
+        "itemName": "Great Arrow Shafts"
+      },
+      {
+        "itemName": "Feather"
+      }
+    ],
+    "experienceGained": "Woodworking:30",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 95
+      }
+    ],
+    "recipeActionString": "You begin attaching feathers to the arrow shafts...",
+    "maxOutputsPerAction": 10
+  },
+  {
+    "outputItemName": "Bow String",
+    "ingredients": [
+      {
+        "itemName": "Hemp"
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8,
+    "recipeActionString": "You start working the hemp into a bow string..."
+  },
+  {
+    "outputItemName": "White Pine Bow(Unstrung)",
+    "ingredients": [
+      {
+        "itemName": "White Pine Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:15",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "recipeActionString": "You begin carving the wood into a bow...",
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "White Pine Bow",
+    "ingredients": [
+      {
+        "itemName": "White Pine Bow(Unstrung)"
+      },
+      {
+        "itemName": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Poplar Bow(Unstrung)",
+    "ingredients": [
+      {
+        "itemName": "Poplar Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:20",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "recipeActionString": "You begin carving the wood into a bow...",
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Poplar Bow",
+    "ingredients": [
+      {
+        "itemName": "Poplar Bow(Unstrung)"
+      },
+      {
+        "itemName": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:7",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Oak Bow(Unstrung)",
+    "ingredients": [
+      {
+        "itemName": "Oak Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:40",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "recipeActionString": "You begin carving the wood into a bow...",
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Oak Bow",
+    "ingredients": [
+      {
+        "itemName": "Oak Bow(Unstrung)"
+      },
+      {
+        "itemName": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:15",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Sugar Maple Bow(Unstrung)",
+    "ingredients": [
+      {
+        "itemName": "Sugar Maple Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:60",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "recipeActionString": "You begin carving the wood into a bow...",
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Sugar Maple Bow",
+    "ingredients": [
+      {
+        "itemName": "Sugar Maple Bow(Unstrung)"
+      },
+      {
+        "itemName": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:25",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Birch Bow(Unstrung)",
+    "ingredients": [
+      {
+        "itemName": "Birch Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:50",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "recipeActionString": "You begin carving the wood into a bow...",
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Birch Bow",
+    "ingredients": [
+      {
+        "itemName": "Birch Bow(Unstrung)"
+      },
+      {
+        "itemName": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:20",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Mesquite Bow(Unstrung)",
+    "ingredients": [
+      {
+        "itemName": "Mesquite Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:70",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "recipeActionString": "You begin carving the wood into a bow...",
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Mesquite Bow",
+    "ingredients": [
+      {
+        "itemName": "Mesquite Bow(Unstrung)"
+      },
+      {
+        "itemName": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:35",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 8
+  },
+  {
+    "outputItemName": "Mahogany Bow(Unstrung)",
+    "ingredients": [
+      {
+        "itemName": "Mahogany Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:120",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 40
+      }
+    ],
+    "recipeActionString": "You begin wastefully carving the wood into a bow...",
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 9
+  },
+  {
+    "outputItemName": "Mahogany Bow",
+    "ingredients": [
+      {
+        "itemName": "Mahogany Bow(Unstrung)"
+      },
+      {
+        "itemName": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:40",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 40
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 9
+  },
+  {
+    "outputItemName": "Ironwood Bow(Unstrung)",
+    "ingredients": [
+      {
+        "itemName": "Ironwood Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "recipeActionString": "You begin carving the wood into a bow...",
+    "experienceGained": "Woodworking:140",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 10
+  },
+  {
+    "outputItemName": "Ironwood Bow",
+    "ingredients": [
+      {
+        "itemName": "Ironwood Bow(Unstrung)"
+      },
+      {
+        "itemName": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:60",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 10
+  },
+  {
+    "outputItemName": "Snakewood Bow(Unstrung)",
+    "ingredients": [
+      {
+        "itemName": "Snakewood Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "recipeActionString": "You begin carving the wood into a bow...",
+    "experienceGained": "Woodworking:180",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 13
+  },
+  {
+    "outputItemName": "Snakewood Bow",
+    "ingredients": [
+      {
+        "itemName": "Snakewood Bow(Unstrung)"
+      },
+      {
+        "itemName": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:80",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 13
+  },
+  {
+    "outputItemName": "Lignum Vitae Bow(Unstrung)",
+    "ingredients": [
+      {
+        "itemName": "Lignum Vitae Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:230",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
+      }
+    ],
+    "recipeActionString": "You begin carving the wood into a bow...",
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 15
+  },
+  {
+    "outputItemName": "Lignum Vitae Bow",
+    "ingredients": [
+      {
+        "itemName": "Lignum Vitae Bow(Unstrung)"
+      },
+      {
+        "itemName": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:100",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 15
+  },
+  {
+    "outputItemName": "Buloke Bow(Unstrung)",
+    "ingredients": [
+      {
+        "itemName": "Buloke Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:320",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 80
+      }
+    ],
+    "recipeActionString": "You begin carving the wood into a bow...",
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 16
+  },
+  {
+    "outputItemName": "Buloke Bow",
+    "ingredients": [
+      {
+        "itemName": "Buloke Bow(Unstrung)"
+      },
+      {
+        "itemName": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:150",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 80
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 16
+  },
+  {
+    "outputItemName": "Great Tree Bow(Unstrung)",
+    "ingredients": [
+      {
+        "itemName": "Great Tree Logs"
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:480",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 95
+      }
+    ],
+    "recipeActionString": "You begin carving the wood into a bow...",
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 18
+  },
+  {
+    "outputItemName": "Great Tree Bow",
+    "ingredients": [
+      {
+        "itemName": "Great Tree Bow(Unstrung)"
+      },
+      {
+        "itemName": "Bow String"
+      }
+    ],
+    "experienceGained": "Woodworking:220",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 95
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 18
+  },
+  {
+    "outputItemName": "White Pine Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless White Pine Arrows"
+      },
+      {
+        "itemName": "Copper Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:1",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "White Pine Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless White Pine Arrows"
+      },
+      {
+        "itemName": "Tin Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:1",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "White Pine Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless White Pine Arrows"
+      },
+      {
+        "itemName": "Zinc Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:1",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "White Pine Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless White Pine Arrows"
+      },
+      {
+        "itemName": "Brass Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:1",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "White Pine Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless White Pine Arrows"
+      },
+      {
+        "itemName": "Bronze Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:1",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Poplar Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Poplar Arrows"
+      },
+      {
+        "itemName": "Copper Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Poplar Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Poplar Arrows"
+      },
+      {
+        "itemName": "Tin Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Poplar Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Poplar Arrows"
+      },
+      {
+        "itemName": "Zinc Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Poplar Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Poplar Arrows"
+      },
+      {
+        "itemName": "Brass Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Poplar Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Poplar Arrows"
+      },
+      {
+        "itemName": "Bronze Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Poplar Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Poplar Arrows"
+      },
+      {
+        "itemName": "Nickel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:2",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 5
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Oak Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Oak Arrows"
+      },
+      {
+        "itemName": "Copper Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Oak Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Oak Arrows"
+      },
+      {
+        "itemName": "Tin Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Oak Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Oak Arrows"
+      },
+      {
+        "itemName": "Zinc Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Oak Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Oak Arrows"
+      },
+      {
+        "itemName": "Brass Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Oak Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Oak Arrows"
+      },
+      {
+        "itemName": "Bronze Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Oak Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Oak Arrows"
+      },
+      {
+        "itemName": "Nickel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:3",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 15
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Maple Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Maple Arrows"
+      },
+      {
+        "itemName": "Zinc Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Maple Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Maple Arrows"
+      },
+      {
+        "itemName": "Nickel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Maple Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Maple Arrows"
+      },
+      {
+        "itemName": "Brass Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Maple Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Maple Arrows"
+      },
+      {
+        "itemName": "Bronze Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:5",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Birch Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Birch Arrows"
+      },
+      {
+        "itemName": "Zinc Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:6",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Birch Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Birch Arrows"
+      },
+      {
+        "itemName": "Nickel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:6",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Birch Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Birch Arrows"
+      },
+      {
+        "itemName": "Brass Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:6",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Birch Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Birch Arrows"
+      },
+      {
+        "itemName": "Bronze Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:6",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Mesquite Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Mesquite Arrows"
+      },
+      {
+        "itemName": "Brass Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:8",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Mesquite Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Mesquite Arrows"
+      },
+      {
+        "itemName": "Bronze Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:8",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Mesquite Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Mesquite Arrows"
+      },
+      {
+        "itemName": "Iron Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:8",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Heavy Mesquite Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Mesquite Arrows"
+      },
+      {
+        "itemName": "Lead Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:8",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Mesquite Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Mesquite Arrows"
+      },
+      {
+        "itemName": "Aluminum Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:8",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Mahogany Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Mahogany Arrows"
+      },
+      {
+        "itemName": "Golden Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:12",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 40
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Mahogany Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Mahogany Arrows"
+      },
+      {
+        "itemName": "Platinum Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:12",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 40
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Heavy Ironwood Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Ironwood Arrows"
+      },
+      {
+        "itemName": "Lead Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:14",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Ironwood Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Ironwood Arrows"
+      },
+      {
+        "itemName": "Iron Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:14",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Ironwood Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Ironwood Arrows"
+      },
+      {
+        "itemName": "Aluminum Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:14",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Ironwood Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Ironwood Arrows"
+      },
+      {
+        "itemName": "Steel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:14",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 50
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Snakewood Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Snakewood Arrows"
+      },
+      {
+        "itemName": "Iron Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:16",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Snakewood Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Snakewood Arrows"
+      },
+      {
+        "itemName": "Aluminum Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:16",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Snakewood Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Snakewood Arrows"
+      },
+      {
+        "itemName": "Steel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:16",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Strong Snakewood Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Snakewood Arrows"
+      },
+      {
+        "itemName": "Strongtium Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:16",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 60
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Lignum Vitae Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Lignum Vitae Arrows"
+      },
+      {
+        "itemName": "Aluminum Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:19",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Lignum Vitae Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Lignum Vitae Arrows"
+      },
+      {
+        "itemName": "Steel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:19",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Strong Lignum Vitae Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Lignum Vitae Arrows"
+      },
+      {
+        "itemName": "Strongtium Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:19",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Lignum Vitae Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Lignum Vitae Arrows"
+      },
+      {
+        "itemName": "Plastinium Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:19",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 70
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Buloke Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Buloke Arrows"
+      },
+      {
+        "itemName": "Steel Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:25",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 80
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Strong Buloke Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Buloke Arrows"
+      },
+      {
+        "itemName": "Strongtium Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:25",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 80
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Ice Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Ice Arrows"
+      },
+      {
+        "itemName": "Sahotite Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:35",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 87
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Great Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Great Arrows"
+      },
+      {
+        "itemName": "Strongtium Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:45",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 95
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Great Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Great Arrows"
+      },
+      {
+        "itemName": "Plastinium Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:45",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 95
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  },
+  {
+    "outputItemName": "Great Arrow",
+    "ingredients": [
+      {
+        "itemName": "Headless Great Arrows"
+      },
+      {
+        "itemName": "Queplinium Arrowtips"
+      }
+    ],
+    "experienceGained": "Woodworking:45",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 95
+      }
+    ],
+    "recipeActionString": "You begin adding arrowtips to the arrow...",
+    "maxOutputsPerAction": 10,
+    "outputAmount": 1
+  }
+]

@@ -1,0 +1,140 @@
+﻿@inject GameState GameState
+@implements IDisposable 
+    <div>
+        @if (activeMenu == "None")
+        {
+            @foreach (Skill s in Player.Instance.Skills)
+            {
+                <div style="position:relative">
+                    <div style="cursor:pointer" @onclick="@(() => SetMenu(s.Name))">@s.Name</div> 
+                    <div style="position:absolute;right:10px;top:2px;">Level:@s.Level </div>
+                </div>
+                <div class="progress" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, s.Name, GetSkillTooltip(s))))"
+                                      @onmouseout="@(new Action(() => GameState.HideTooltip()))" style="border-radius:0;background-color:darkgray">                
+                    <div class="progress-bar" style="width:@(s.Progress)%;color:black;background-color:#51d051">
+
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <button style="margin:5px;" class="btn btn-primary" @onclick="@(() => SetMenu("None"))">Back</button>
+
+            <div style="margin:5px;">
+                @if(currentSkill != null)
+                {
+                <div style="font-weight:bold;">
+                    @currentSkill.Name
+                </div>
+                    <div>
+                        @currentSkill.Description
+                    </div>
+                    
+                }
+            </div>
+            <div class="custom-scroll" style="overflow-y:scroll;max-height:60vh;height:100%">
+                @foreach (GameItem i in RelevantItems)
+                {
+                    <div style="margin-left:5px;margin-right:5px;@GetBGColor(i)">
+                        <div style="margin-left:5px;font-weight:bold;">
+                            @i.Name
+                        </div>
+                        <div style="margin-left:5px;">
+                            @foreach (string s in GetRequirementsString(i))
+                            {
+                                <div>
+                                    @s
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                }
+            </div>
+
+        }
+    </div>
+
+@code {
+
+    private string activeMenu = "None";
+    private Skill currentSkill;
+    private List<GameItem> RelevantItems = new List<GameItem>();
+
+    public void SetMenu(string skill)
+    {
+        activeMenu = skill;
+        if(skill != "None")
+        {
+            currentSkill = Player.Instance.Skills.FirstOrDefault(x => x.Name == skill);
+            LoadRelevantItems();
+        }
+        GameState.UpdateState();
+    }
+    public void LoadRelevantItems()
+    {
+        RelevantItems.Clear();
+        foreach(GameItem i in ItemManager.Instance.Items)
+        {
+            if (i.GetRequiredSkills().Contains(activeMenu) && i.Name.Contains("Molten") == false)
+            {
+                RelevantItems.Add(i);
+            }
+        }
+    }
+    public List<string> GetRequirementsString(GameItem item)
+    {
+        List<string> reqs = new List<string>();
+        foreach(Requirement r in item.Requirements)
+        {
+            if(r.Skill != "None")
+            {
+                reqs.Add(r.SkillLevel + " " + r.Skill);
+            }
+        }
+        if(item.WeaponInfo != null)
+        {
+            foreach (Requirement r in item.WeaponInfo.WearRequirements)
+            {
+                if (r.Skill != "None")
+                {
+                    reqs.Add(r.SkillLevel + " " + r.Skill);
+                }
+            }
+        }
+        if (item.ArmorInfo != null)
+        {
+            foreach (Requirement r in item.ArmorInfo.WearRequirements)
+            {
+                if (r.Skill != "None")
+                {
+                    reqs.Add(r.SkillLevel + " " + r.Skill);
+                }
+            }
+        }
+        return reqs;
+    }
+    private string GetBGColor(GameItem i)
+    {
+        if(RelevantItems.IndexOf(i) % 2 == 0)
+        {
+            return "background-color:lightgray";
+        }
+        return "background-color:darkgray";
+    }
+    private string GetSkillTooltip(Skill s)
+    {
+        return "Exp:" + s.Experience + "\nTo Level:" + Math.Round(Skill.GetExperienceRequired(s.GetSkillLevelUnboosted()));
+
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

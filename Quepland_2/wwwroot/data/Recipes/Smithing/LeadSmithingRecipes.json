@@ -1,0 +1,79 @@
+[
+  {
+    "outputItemName": "Molten Lead Bar",
+    "ingredients": [
+      {
+        "itemName": "Galena"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Lead Bar",
+    "ingredients": [
+      {
+        "itemName": "Lead Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Lead Knife",
+    "ingredients": [
+      {
+        "itemName": "Molten Lead Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Lead Sword",
+    "ingredients": [
+      {
+        "itemName": "Molten Lead Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Lead Axe",
+    "ingredients": [
+      {
+        "itemName": "Molten Lead Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Lesser Lead Hammer",
+    "ingredients": [
+      {
+        "itemName": "Molten Lead Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Greater Lead Hammer",
+    "ingredients": [
+      {
+        "itemName": "Molten Lead Bar"
+      },
+      {
+        "itemName": "Molten Lead Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Lead Bar",
+    "ingredients": [
+      {
+        "itemName": "Molten Lead Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Lead Arrowtips",
+    "ingredients": [
+      {
+        "itemName": "Molten Lead Bar"
+      }
+    ],
+    "outputAmount": 10
+  }
+
+]

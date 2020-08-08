@@ -1,0 +1,157 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (Player.Instance.HasToolRequirement("Bait Fishing"))
+{
+
+
+<div style="display:flex;margin:10px;">
+    @if (lineCast && GameState.TicksToNextAction <= 0)
+    {
+        <button class="btn btn-primary" style="opacity:1;margin:10px;"  @onclick="@ReelIn">
+            Reel
+        </button>
+    }
+    else
+    {
+        <button class="btn btn-primary" style="opacity:0.5;margin:10px;">
+            Reel
+        </button>
+    }
+    @if (baitSet && !lineCast && GameState.TicksToNextAction <= 0)
+    {
+        <button class="btn btn-primary" style="opacity:1;margin:10px;"  @onclick="@CastLine">
+            Cast
+        </button>
+    }
+    else
+    {
+        <button class="btn btn-primary" style="opacity:0.5;margin:10px;">
+            Cast
+        </button>
+    }
+    @if (baitSet == false && lineCast == false)
+    {
+        <button class="btn btn-primary" style="opacity:1;margin:10px;" @onclick="@AddBait">
+            Add Bait
+        </button>
+    }
+    else
+    {
+        <button class="btn btn-primary" style="opacity:0.5;margin:10px;">
+            Add Bait
+        </button>
+    }
+</div>
+}
+else
+{
+    <div>You'll need a fishing rod to go bait fishing.</div>
+}
+
+
+
+
+@code {
+
+    [Parameter]
+    public string areaName { get; set; }
+    private MinigameDropTable Table { get; set; }
+    private bool baitSet;
+    private bool lineCast;
+    private bool fishCaught;
+    private Random rand = new Random();
+
+    public void AddBait()
+    {
+        if (HasBait() && GameState.TicksToNextAction <= 0)
+        {
+            Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItem("Fishing Bait",0,""), 1);
+            baitSet = true;
+            MessageManager.AddMessage("You add some bait to your hook.");
+            GameState.TicksToNextAction = 3;
+        }
+    }
+    public void CastLine()
+    {
+        if(baitSet && lineCast == false && GameState.TicksToNextAction <= 0)
+        {
+            lineCast = true;
+            if (rand.Next(0, 99) <= Player.Instance.GetLevel("Fishing"))
+            {
+                fishCaught = true;
+                MessageManager.AddMessage("You caught a fish! Reel it in!");
+                GameState.TicksToNextAction = 3;
+            }
+            else
+            {
+                MessageManager.AddMessage("You wait for a bite... Nothing.");
+                GameState.TicksToNextAction = 3;
+            }
+        }
+    }
+    public void ReelIn()
+    {
+        if (fishCaught)
+        {
+            baitSet = false;
+            lineCast = false;
+            fishCaught = false;
+            GatherItem(GetNextDrop());
+        }
+        else
+        {
+            lineCast = false;
+            MessageManager.AddMessage("You reel the line back in.");
+        }
+    }
+    public bool HasBait()
+    {
+        return Player.Instance.Inventory.HasItem("Fishing Bait");
+    }
+    public void GatherItem(Drop d)
+    {
+        if (d == null)
+        {
+            Console.WriteLine("Drop was null");
+            GameState.CurrentGatherItem = null;
+            GameState.UpdateState();
+            return;
+        }
+        MessageManager.AddMessage("You caught a " + d.ItemName + "!");
+        Player.Instance.Inventory.AddDrop(d);
+        Player.Instance.GainExperience(d.Item.ExperienceGained);
+        GameState.UpdateState();
+    }
+    private Drop GetNextDrop()
+    {
+        return Table.DropTable.GetDropWithRequirements();
+    }
+    private bool CanGatherAny()
+    {
+        if (Table == null)
+        {
+            Console.WriteLine("Table was null in bait fishing component.");
+            return false;
+        }
+        foreach (Drop drop in Table.DropTable.Drops)
+        {
+            if (drop.Item.HasSkillRequirements())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    protected override void OnInitialized()
+    {
+        Table = ItemManager.Instance.GetMinigameDropTable(areaName);
+        GameState.StateChanged += OnGameStateChanged;
+    }
+
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

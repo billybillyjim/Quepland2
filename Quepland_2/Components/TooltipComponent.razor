@@ -1,0 +1,93 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+
+    <pre style="        
+        z-index: 1000;
+        white-space: pre-line;
+        max-width: 800px;
+        display: flex;
+        position: absolute !important; 
+        background-color:#282828;
+        color:whitesmoke;
+        padding-left:20px;
+        padding-right:20px;
+        padding-top:10px;
+        padding-bottom:10px;
+        line-height:15px;
+        border-radius:0.5rem;
+        @GetStyle()">       
+             @if(Tip.Title != "")
+            {
+                @Tip.Title
+                <br />
+
+            }
+            @((MarkupString)Tip.Text)
+        </pre>
+
+
+
+
+
+@code {
+
+    [Parameter]
+    public Tooltip Tip { get; set; }
+    [Parameter]
+    public double xPos { get; set; }
+    [Parameter]
+    public double yPos { get; set; }
+
+
+    private int distanceFromMouse = 23;
+
+
+    private bool faceRight;
+
+    protected override void OnParametersSet()
+    {
+        if (xPos >= GameState.GameWindowWidth - 300)
+        {
+            faceRight = true;
+        }
+        else
+        {
+            faceRight = false;
+        }
+    }
+
+    private string GetStyle()
+    {
+        string style = "text-align:" + Tip.Alignment + ";";
+        if (Tip.ShowAbove)
+        {
+            style += "top:" + ((yPos - distanceFromMouse - (50))) + "px;";
+        }
+        else
+        {
+            style += "top:" + (yPos + distanceFromMouse) + "px;";
+        }
+        if (faceRight)
+        {
+
+            return style + "right:" + (GameState.GameWindowWidth - xPos) + "px;";
+        }
+        else
+        {
+            return style + "left:" + xPos + "px;";
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+
+    }
+
+    void IDisposable.Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

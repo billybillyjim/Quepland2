@@ -1,0 +1,41 @@
+﻿@inject GameState GameState
+@implements IDisposable 
+<h3>Quests</h3>
+
+@foreach(Quest q in QuestManager.Instance.Quests)
+{
+    <div style="margin:5px;">
+        <div style="padding-left:5px;background-color:#b9b9b9;cursor:pointer;@GetStyle(q)">@q.Name</div>
+    </div>
+}
+@code {
+
+
+    public string GetStyle(Quest q)
+    {
+        string color = "";
+        if(q.Progress == 0)
+        {
+            color =  "color:black;";
+        }
+        else if (q.IsComplete)
+        {
+            color = "color:green;";
+        }
+        else
+        {
+            color = "color:yellow;";
+        }
+        return color;
+    }
+
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

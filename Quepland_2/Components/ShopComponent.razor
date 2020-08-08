@@ -1,0 +1,134 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if(Shop != null)
+{
+
+
+<div>
+    @Shop.Name
+</div>
+<div>
+    Quantity:
+    <div>
+        <button style="@GetButtonStyle(1)" @onclick="@(() => UpdateAmount(1))">1</button>
+        <button style="@GetButtonStyle(5)" @onclick="@(() => UpdateAmount(5))">5</button>
+        <button style="@GetButtonStyle(10)" @onclick="@(() => UpdateAmount(10))">10</button>
+        <button style="@GetButtonStyle(20)" @onclick="@(() => UpdateAmount(20))">x</button>
+        <button style="@GetButtonStyle(int.MaxValue)" @onclick="@(() => UpdateAmount(int.MaxValue))">Max</button>
+    </div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;">
+    @foreach (GameItem item in Shop.Items)
+    {
+        <div @onclick="@(() => Buy(item))"
+             onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, item.Name, GetTooltip(item))))"
+             onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            <Quepland_2.Components.ItemBoxComponent Item="@item" ShowAmount="@false"></Quepland_2.Components.ItemBoxComponent>
+
+        </div>
+    }
+    @for (int i = 0; i < GetEmptyItemsToFillRow(); i++)
+    {
+        int temp = i;
+        if (temp % itemsPerRow == 0)
+        {
+            <br />
+        }
+        <Quepland_2.Components.ItemBoxComponent Item="@null"></Quepland_2.Components.ItemBoxComponent>
+    }
+</div>
+}
+@code {
+
+    string shopName { get; set; }
+    [Parameter]
+    public Shop Shop { get; set; }
+    int itemsPerRow = 10;
+    private int GetEmptyItemsToFillRow()
+    {
+        return itemsPerRow - (Shop.Items.Count % itemsPerRow);
+    }
+    private void Buy(GameItem item)
+    {
+        if(item == null)
+        {
+            return;
+        }
+        int maxBuy = GetMaxBuy(item);
+        //If the item is stackable and the player has a stack in their inventory already, or the player has space for another item
+        if ((item.IsStackable && Player.Instance.Inventory.HasItem(item) && Player.Instance.Inventory.GetAvailableSpaces() == 0) ||
+         (item.IsStackable && Player.Instance.Inventory.GetAvailableSpaces() > 0))
+        {
+
+        }
+        else
+        {
+            //Gets the smallest of the amount, inventory space, and number in the bank.
+            maxBuy = Math.Min(maxBuy, Player.Instance.Inventory.GetAvailableSpaces());
+        }
+        if (Player.Instance.Inventory.RemoveItems(Shop.Currency, (int)(item.Value * Shop.CostMultiplier * maxBuy)) > 0)
+        {
+            Player.Instance.Inventory.AddMultipleOfItem(item, maxBuy);
+        }
+
+        GameState.UpdateState();
+    }
+    private string GetButtonStyle(int val)
+    {
+        if (val == ItemManager.Instance.SellAmount)
+        {
+            return "cursor:pointer;";
+        }
+        else
+        {
+            return "cursor:normal;background-color:darkgray;";
+        }
+    }
+    private string GetTooltip(GameItem item)
+    {
+        string tip = "Buy ";
+        int maxBuy = GetMaxBuy(item);
+        if(maxBuy == 0)
+        {
+            maxBuy = ItemManager.Instance.SellAmount;
+            if(maxBuy == int.MaxValue)
+            {
+                maxBuy = 1;
+            }
+        }
+        tip += maxBuy + " for " + (maxBuy * item.Value * Shop.CostMultiplier) + " " + Shop.CurrencyName;
+        return tip;
+    }
+    private bool CanAfford(GameItem item)
+    {
+        return item.Value * Shop.CostMultiplier < Player.Instance.Inventory.GetNumberOfItem(Shop.Currency);
+    }
+    public void UpdateAmount(int amt)
+    {
+        ItemManager.Instance.SellAmount = amt;
+    }
+    protected override void OnParametersSet()
+    {
+        ItemManager.Instance.CurrentShop = Shop;
+    }
+    private int GetMaxBuy(GameItem item)
+    {
+        int maxBuy = Math.Max(0, ItemManager.Instance.SellAmount);
+        maxBuy = Math.Min(Player.Instance.Inventory.GetNumberOfItem(Shop.Currency) / (int)(item.Value * Shop.CostMultiplier), maxBuy);
+        return maxBuy;
+    }
+    protected override void OnInitialized()
+    {
+
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+
+        ItemManager.Instance.CurrentShop = null;
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

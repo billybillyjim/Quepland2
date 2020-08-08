@@ -1,0 +1,141 @@
+[
+  {
+    "name": "Mount Queple",
+    "areaNames": [
+      "Quepland Fields",
+      "Quepland Woods",
+      "Teppas",
+      "Lower Mt Queple Trail",
+      "Upper Mt Queple Trail",
+      "Eastern Trail",
+      "Northern Trail"
+    ],
+    "isUnlocked": true
+  },
+  {
+    "name": "Queple Cave",
+    "areaNames": [
+      "Queple Cave Entrance",
+      "Copper Mine",
+      "Tin Mine",
+      "Queple Cave Smithy",
+      "Grumpy's Gnome Home",
+      "Queple Cave River",
+      "Stone Door"
+    ]
+  },
+  {
+    "name": "Sawabe Swamp",
+    "areaNames": [
+      "Swampedge",
+      "Swampwood",
+      "Sawoka"
+    ]
+  },
+  {
+    "name": "Higashi Woods",
+    "areaNames": [
+      "Cochee Clearing",
+      "Higashi Woods",
+      "Deep Higashi Woods",
+      "Higashi Bridge",
+      "East Higashi Woods",
+      "Higashi Canyon Floor"
+    ]
+  },
+  {
+    "name": "Cantila Coast",
+    "areaNames": [
+      "Cantila Beach",
+      "Uragota Town",
+      "Darkbourne Bridge",
+      "West Uragota Docks",
+      "East Uragota Docks",
+      "Ocean Fishing Platform"
+    ]
+  },
+  {
+    "name": "Tackure Islet",
+    "areaNames": [
+      "Koya Hasa",
+      "Manayo Village",
+      "Laau Kaila",
+      "Wana Tona Lake",
+      "Sotu Nran"
+    ]
+  },
+  {
+    "name": "Sabbach Waste",
+    "areaNames": [
+      "Southern Trail",
+      "Route 7",
+      "Desert's Mouth",
+      "Bunkten's Crossing",
+      "Abandoned Shack",
+      "Oasis",
+      "Leupp",
+      "North Leupp"
+    ]
+  },
+  {
+    "name": "Hojkma Isles",
+    "areaNames": [
+      "Kogoe Docks",
+      "Kogoe Town",
+      "Fjellover Pass",
+      "Foot of Mt Yama",
+      "Mt Yama",
+      "Mt Yama Cave",
+      "Mt Yama Mine",
+      "Upper Mt Yama Mine"
+    ]
+  },
+  {
+    "name": "Hoin River Valley",
+    "areaNames": [
+      "Hoin Riverbank",
+      "Hoin River",
+      "Plantrain Plains",
+      "Sun's Harbor",
+      "Guttermouth",
+      "Ricechild"
+    ]
+  },
+  {
+    "name": "Togaru Hills",
+    "areaNames": [
+      "Great Shoe Lake",
+      "Tsu Valley",
+      "Tree Nursery",
+      "West Tsu City",
+      "Central Tsu City",
+      "East Tsu City",
+      "North Tsu City",
+      "Tangei Gardens"
+    ]
+  },
+  {
+    "name": "Sahota Tir",
+    "areaNames": [
+      "Sahota Ice Fields",
+      "Sahota Caverns",
+      "Sahota Clearing",
+      "Sahota Dungeon"
+    ]
+  },
+  {
+    "name": "Koncave Caverns",
+    "areaNames": [
+      "Koncave Falls",
+      "Koncave Falls Mine",
+      "Koncave City Gate",
+      "Koncave City Square"
+    ]
+  },
+  {
+    "name": "Ufagari Islands",
+    "areaNames": [
+      "South Ufagari Shore"
+    ]
+  }
+]

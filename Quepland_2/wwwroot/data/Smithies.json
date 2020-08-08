@@ -1,0 +1,15 @@
+[
+  {
+    "Location": "QuepleCaveSmithy",
+    "smeltableMetalNames": [
+      "Molten Copper Bar",
+      "Molten Tin Bar",
+      "Molten Zinc Bar",
+      "Molten Brass Bar",
+      "Molten Bronze Bar",
+      "Molten Nickel Bar",
+      "Molten Iron Bar",
+      "Molten Lead Bar"
+    ]
+  }
+]

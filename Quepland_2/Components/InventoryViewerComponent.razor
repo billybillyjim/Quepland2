@@ -1,0 +1,205 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (HideItemViewer == false)
+{
+    <ItemViewerComponent Item="@SelectedItem"></ItemViewerComponent>
+
+}
+<div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:3px;margin:2px;border-radius:0.25rem;max-height:600px;overflow-y:auto" class="custom-scroll">
+    @foreach (KeyValuePair<GameItem, int> item in Player.Instance.Inventory.GetItems().OrderBy(x => x.Key.ID))
+    {
+        if (item.Key != null)
+        {
+
+            if (item.Key.IsStackable)
+            {
+                <div oncontextmenu="return false;" draggable="false"
+                     onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item.Key)))"
+                     onclick="@(new Action<MouseEventArgs>((args) => SelectItem(args, item.Key)))"><ItemBoxComponent Item="@item.Key" ShowAmount="@true" IsSelected="@(SelectedItem == item.Key)" shouldRender="@item.Key.Rerender"></ItemBoxComponent></div>
+            }
+            else
+            {
+                <div oncontextmenu="return false;" draggable="false"
+                     onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item.Key)))"
+                     onclick="@(new Action<MouseEventArgs>((args) => SelectItem(args, item.Key)))"><ItemBoxComponent Item="@item.Key" ShowAmount="@false" IsSelected="@(SelectedItem == item.Key)" shouldRender="@item.Key.Rerender"></ItemBoxComponent></div>
+
+            }
+
+        }
+    }
+    @for (int i = 0; i < Player.Instance.Inventory.GetSize() - Player.Instance.Inventory.GetUsedSpaces(); i++)
+    {
+        <div onclick="@(new Action<MouseEventArgs>((args) => DeselectItem()))"><ItemBoxComponent Item="@null"></ItemBoxComponent></div>
+    }
+</div>
+@if (Player.Instance.CurrentFollower != null)
+{
+<div style="margin-left:5px;">
+
+    @if (Player.Instance.CurrentFollower.IsBanking)
+    {
+        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Banking...</div>
+        <div class="progress" style="height:15px;margin-right:5px;">
+            <div class="progress-bar" style="width:@((((double)Player.Instance.CurrentFollower.TicksToNextAction / Player.Instance.CurrentFollower.AutoCollectSpeed) * 100d))%">
+
+            </div>
+        </div>
+    }
+    else if (Player.Instance.CurrentFollower.MeetsRequirements(GameState.CurrentGatherItem))
+    {
+        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Gathering...</div>
+        <div class="progress" style="height:15px;margin-right:5px;">
+            <div class="progress-bar" style="width:@(100 -(((double)Player.Instance.CurrentFollower.Inventory.GetAvailableSpaces() / Player.Instance.CurrentFollower.InventorySize) * 100d))%">
+
+            </div>
+        </div>
+    }
+    else if (GameState.CurrentGatherItem != null && Player.Instance.CurrentFollower.MeetsRequirements(GameState.CurrentGatherItem) == false)
+    {
+        <div style="margin-left:5px;margin-bottom:15px;">@Player.Instance.CurrentFollower.Name Cannot Gather</div>
+    }
+    else
+    {
+        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Following...</div>
+        @if (Player.Instance.CurrentFollower.Inventory.GetUsedSpaces() > 0)
+        {
+            <div><button class="btn btn-primary" style="height:25px;line-height:25px;padding-top:0px;margin-top:0px;" @onclick="@(() => Player.Instance.CurrentFollower.SendToBank())">Send to Bank</button></div>
+        }
+    }
+
+</div>
+    <div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:8px;margin:5px;border-radius:0.25rem">
+
+        @foreach (KeyValuePair<GameItem, int> item in Player.Instance.CurrentFollower.Inventory.GetItems().OrderBy(x => x.Key.ID))
+        {
+            if (item.Key != null)
+            {
+                <ItemBoxComponent Item="@item.Key" ShowAmount="@false" shouldRender="@item.Key.Rerender" Inventory="@Player.Instance.CurrentFollower.Inventory"></ItemBoxComponent>
+            }
+        }
+        @for (int i = 0; i < Player.Instance.CurrentFollower.Inventory.GetSize() - Player.Instance.CurrentFollower.Inventory.GetItems().Count; i++)
+        {
+            <ItemBoxComponent Item="@null"></ItemBoxComponent>
+        }
+
+    </div>
+}
+
+
+@code {
+
+    private int selectedItemID = -1;
+    public GameItem SelectedItem;
+    [Parameter]
+    public string CustomAction { get; set; }
+    [Parameter]
+    public bool HideItemViewer { get; set; }
+
+    private void BankItem(GameItem item, int amount)
+    {
+        Bank.Instance.Deposit(item, amount);
+
+        if (Player.Instance.Inventory.GetNumberOfItem(item) == 0)
+        {
+            Console.WriteLine(SelectedItem);
+            SelectedItem = null;
+        }
+
+        GameState.UpdateState();
+    }
+    private void SelectItem(MouseEventArgs args, GameItem item)
+    {
+        GameState.itemViewer.ShowItem();
+        if (CustomAction == "Bank" && !args.ShiftKey)
+        {
+            BankItem(item, Bank.Instance.Amount);
+        }
+        else if (CustomAction == "Equip" && !args.ShiftKey)
+        {
+            Player.Instance.Equip(item);
+        }
+        else
+        {
+            if (SelectedItem != null)
+            {
+                SelectedItem.Rerender = true;
+            }
+            SelectedItem = item;
+            item.Rerender = true;
+        }
+        GameState.UpdateState();
+    }
+    public void DeselectItem()
+    {
+        if (SelectedItem != null)
+        {
+            SelectedItem.Rerender = true;
+        }
+        selectedItemID = -1;
+        SelectedItem = null;
+        GameState.UpdateState();
+    }
+    public void ShowMenu(MouseEventArgs args, GameItem item)
+    {
+        if (args.Button == 2)
+        {
+            GameState.CurrentContextMenu = new ContextMenu();
+            if (Bank.Instance.IsBanking)
+            {
+                GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit " + Bank.Instance.Amount + " " + item, new Action(() => BankItem(item, Bank.Instance.Amount))));
+                if (Bank.Instance.Amount != 1)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit 1 " + item, new Action(() => BankItem(item, 1))));
+
+                }
+                if (Bank.Instance.Amount != 5)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit 5 " + item, new Action(() => BankItem(item, 5))));
+
+                }
+                if (Bank.Instance.Amount != 10)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit 10 " + item, new Action(() => BankItem(item, 10))));
+
+                }
+                if (Bank.Instance.Amount != int.MaxValue)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit All " + item, new Action(() => BankItem(item, int.MaxValue))));
+
+                }
+            }
+            if (item.EquipSlot != "None")
+            {
+                if (item.IsEquipped)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Unequip " + item, new Action(() => Player.Instance.Unequip(item))));
+                }
+                else
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Equip " + item, new Action(() => Player.Instance.Equip(item))));
+                }
+            }
+            if (ItemManager.Instance.CurrentShop != null)
+            {
+
+            }
+            if (item.FoodInfo != null)
+            {
+                GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Eat " + item, new Action(() => GameState.Eat(item))));
+            }
+            GameState.ShowContextMenu(args);
+        }
+    }
+    protected override void OnInitialized()
+    {
+        GameState.inventoryViewer = this;
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}
+

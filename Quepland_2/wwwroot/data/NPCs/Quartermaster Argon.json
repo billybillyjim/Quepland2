@@ -1,0 +1,278 @@
+{
+  "name": "Quartermaster Argon",
+  "id": 13,
+  "dialogs": [
+    {
+      "buttonText": "What happened?",
+      "responseText": "Isn't it obvious? Somebody stabbed the captain.",
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 3,
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "Who would want to kill the captain?",
+      "responseText": "An excellent question. As the only sober person on this ship, you are the most capable of figuring that out.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 4,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 3,
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "Me? How am I supposed to solve this?",
+      "responseText": "Hardly matters to us. Just let me know when you've found the culprit and we'll throw him overboard and be on our way.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 5,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 4,
+          "maximumQuestProgress": 4
+        }
+      ]
+    },
+    {
+      "buttonText": "Okay, I'll find the killer",
+      "responseText": "Right. Let me know when you do.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 5,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 4,
+          "maximumQuestProgress": 4
+        }
+      ]
+    },
+    {
+      "buttonText": "First Mate Fremp did it",
+      "responseText": "What? You haven't done any investigating yet. How could you possibly know who did it?",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 90,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 5
+        }
+      ]
+    },
+    {
+      "buttonText": "Don't question my methods",
+      "responseText": "*Sigh* Whatever, let's get this over with. \nThe pirates throw the first mate overboard and continue the voyage to the island.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 100,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 90,
+          "maximumQuestProgress": 90
+        }
+      ]
+    },
+    {
+      "buttonText": "You did it!",
+      "responseText": "What? I found the body and I have no motive. You haven't even done any investigating yet. How could you possibly know who did it?",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 91,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 5
+        }
+      ]
+    },
+    {
+      "buttonText": "Don't question my methods",
+      "responseText": "*Sigh* Whatever, let's get this over with. \nThe pirates throw the quartermaster overboard and continue the voyage to the island. It ends up taking quite a long time given that the quartermaster was also the only navigator aboard.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 101,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 91,
+          "maximumQuestProgress": 91
+        }
+      ]
+    },
+    {
+      "buttonText": "Two Legs Jack did it",
+      "responseText": "What? You haven't done any investigating yet. How could you possibly know who did it?",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 92,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 5
+        }
+      ]
+    },
+    {
+      "buttonText": "Don't question my methods",
+      "responseText": "*Sigh* Whatever, let's get this over with. \nThe pirates throw Jack overboard and continue the voyage to the island.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 102,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 92,
+          "maximumQuestProgress": 92
+        }
+      ]
+    },
+    {
+      "buttonText": "Doctor Squid did it",
+      "responseText": "What? You haven't done any investigating yet. How could you possibly know who did it?",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 93,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 5
+        }
+      ]
+    },
+    {
+      "buttonText": "Don't question my methods",
+      "responseText": "*Sigh* Whatever, let's get this over with. \nThe pirates throw the doctor overboard and continue the voyage to the island. Half the crew perishes of scurvy before arriving on the island.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 103,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 93,
+          "maximumQuestProgress": 93
+        }
+      ]
+    },
+    {
+      "buttonText": "I did it",
+      "responseText": "What? Why would you kill our captain!?",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 94,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 5
+        }
+      ]
+    },
+    {
+      "buttonText": "Don't question me",
+      "quest": "Case of the Dead Pirate",
+      "responseText": "DieAndGotoArea",
+      "parameter": "Koya Hasa",
+      "newQuestProgressValue": 104,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 94,
+          "maximumQuestProgress": 94
+        }
+      ]
+    },
+    {
+      "buttonText": "Both Fremp and Jack claim the other did it",
+      "responseText": "Hmmm. You should talk to the crewman in the crow's nest right now. He is close to both of them and might have seen something.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 11,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 10,
+          "maximumQuestProgress": 10
+        }
+      ]
+    },
+    {
+      "buttonText": "First Mate Fremp did it",
+      "responseText": "First Mate Fremp? That traitor! Let's throw him overboard! \nThe pirates throw the first mate overboard and continue the voyage to the island.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 100,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 7,
+          "maximumQuestProgress": 89
+        }
+      ]
+    },
+    {
+      "buttonText": "You did it!",
+      "responseText": "What? I found the body and I have no motive. Your accusation doesn't make any sense! \nThe pirates throw the quartermaster overboard despite his resistance and continue the voyage to the island. It ends up taking quite a long time given that the quartermaster was also the only navigator aboard.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 101,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 7,
+          "maximumQuestProgress": 89
+        }
+      ]
+    },
+    {
+      "buttonText": "Two Legs Jack did it",
+      "responseText": "Two Legs Jack! The scoundrel must have been jealous of losing the captain's seat! Throw him overboard!\nThe pirates throw Jack overboard and continue the voyage to the island.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 102,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 7,
+          "maximumQuestProgress": 89
+        }
+      ]
+    },
+    {
+      "buttonText": "Doctor Squid did it",
+      "responseText": "That drunkard! He probably didn't even know what he was doing! Throw him overboard! \nThe pirates throw the doctor overboard and continue the voyage to the island. Half the crew perishes of scurvy before arriving on the island.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 103,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 7,
+          "maximumQuestProgress": 89
+        }
+      ]
+    },
+    {
+      "buttonText": "I did it",
+      "responseText": "DieAndGotoArea",
+      "parameter": "Koya Hasa",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 104,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 7,
+          "maximumQuestProgress": 89
+        }
+      ]
+    },
+    {
+      "buttonText": "Please take me to Tackure",
+      "responseText": "UnlockAndGotoArea",
+      "parameter": "Koya Hasa",
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 102,
+          "maximumQuestProgress": 103
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,441 @@
+{
+  "name": "Camel Carl",
+  "id": 22,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi, welcome to camelpalooza... Is what I would say, if I had any camels anymore!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 1,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 0,
+          "maximumQuestProgress": 0
+        },
+        {
+          "location": "DesertsMouth"
+        }
+      ]
+    },
+    {
+      "buttonText": "I could help you",
+      "responseText": "What? Why would you help a stranger like me?",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 2,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 1
+        }
+      ]
+    },
+    {
+      "buttonText": "I need a camel",
+      "responseText": "Oh, this is a fortunate encounter! You can get my camels back!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 3,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 2,
+          "maximumQuestProgress": 2
+        }
+      ]
+    },
+    {
+      "buttonText": "I am a good person",
+      "responseText": "Oh, this is a fortunate encounter! You can get my camels back!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 3,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 2,
+          "maximumQuestProgress": 2
+        }
+      ]
+    },
+    {
+      "buttonText": "I am an adventurer!",
+      "responseText": "Oh, this is a fortunate encounter! You can get my camels back!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 3,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 2,
+          "maximumQuestProgress": 2
+        }
+      ]
+    },
+    {
+      "buttonText": "What happened?",
+      "responseText": "They came in the night, some thieves of some sort. Maybe pirates, I'm not sure. But they came and stole all my camels!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 4,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 1
+        }
+      ]
+    },
+    {
+      "buttonText": "What happened?",
+      "responseText": "They came in the night, some thieves of some sort. Maybe pirates, I'm not sure. But they came and stole all my camels!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 4,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 3,
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "Where did they go?",
+      "responseText": "I have no idea! They're pirates, they could be out to sea by now!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 5,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 4,
+          "maximumQuestProgress": 4
+        }
+      ]
+    },
+    {
+      "buttonText": "You should go find them",
+      "responseText": "Me? How could I possibly do that?",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 6,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 5
+        }
+      ]
+    },
+    {
+      "buttonText": "Maybe ask other pirates if they know anything",
+      "responseText": "Hmmm, well I guess I could do that. I'll see what I can find.",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 7,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 6,
+          "maximumQuestProgress": 6
+        }
+      ]
+    },
+    {
+      "buttonText": "Try searching port towns for information",
+      "responseText": "Hmmm, well I guess I could do that. I'll see what I can find.",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 7,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 6,
+          "maximumQuestProgress": 6
+        }
+      ]
+    },
+    {
+      "buttonText": "Did you find the pirates?",
+      "responseText": "Oh, it's terrible! The pirates have already shipped the camels to their secret hideout in the islands north of here. There are dozens of them and I have no way to defeat them!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 8,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 7,
+          "maximumQuestProgress": 7
+        },
+        {
+          "location": "UragotaTown"
+        }
+      ]
+    },
+    {
+      "buttonText": "I could defeat them for you",
+      "responseText": "Would you do that for me? I would be eternally grateful if you could save my camels! A pirate named Kai is waiting at the eastern docks, he said he can ferry people to the secret hideout. Its location is not so secret, apparently.",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 19,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 8,
+          "maximumQuestProgress": 8
+        },
+        {
+          "location": "UragotaTown"
+        }
+      ]
+    },
+    {
+      "buttonText": "You can do it!",
+      "responseText": "How could I defeat them? I don't even have a weapon!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 9,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 8,
+          "maximumQuestProgress": 8
+        },
+        {
+          "location": "UragotaTown"
+        }
+      ]
+    },
+    {
+      "buttonText": "I can get you a weapon",
+      "responseText": "You could? I'm not very strong or skilled, but if you could find an iron sword, I could probably use it...",
+      "quest": "Grand Theft Camel",
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 9,
+          "maximumQuestProgress": 9
+        },
+        {
+          "location": "UragotaTown"
+        }
+      ]
+    },
+    {
+      "buttonText": "Here's an iron sword",
+      "responseText": "Oh this is perfect! Though... I don't think I can fight the pirates on my own without any armor to protect myself with...",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 10,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 9,
+          "maximumQuestProgress": 9
+        },
+        {
+          "location": "UragotaTown"
+        },
+        {
+          "item": "Iron Sword"
+        }
+      ],
+      "consumeRequiredItems": true
+    },
+    {
+      "buttonText": "I can get you armor",
+      "responseText": "You could? I'm not very strong or skilled, but if you could find a leather shirt made from boar skin, I could probably use it...",
+      "quest": "Grand Theft Camel",
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 10,
+          "maximumQuestProgress": 10
+        },
+        {
+          "location": "UragotaTown"
+        }
+      ]
+    },
+    {
+      "buttonText": "Here's an boar shirt",
+      "responseText": "Oh this is perfect! Though... I don't think I can fight the pirates on my own without any food to heal myself with...",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 11,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 10,
+          "maximumQuestProgress": 10
+        },
+        {
+          "location": "UragotaTown"
+        },
+        {
+          "item": "Wild Boar Shirt"
+        }
+      ],
+      "consumeRequiredItems": true
+    },
+    {
+      "buttonText": "I can get you food",
+      "responseText": "You could? I'm not very strong or skilled, but if you could find me 5 Abalone Sushi, I could probably use it...",
+      "quest": "Grand Theft Camel",
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 11,
+          "maximumQuestProgress": 11
+        },
+        {
+          "location": "UragotaTown"
+        }
+      ]
+    },
+    {
+      "buttonText": "Here's your sushi",
+      "responseText": "Oh this is perfect! Though... Um... I can't think of anymore excuses... I'm scared of dying there!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 12,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 11,
+          "maximumQuestProgress": 11
+        },
+        {
+          "location": "UragotaTown"
+        },
+        {
+          "item": "Abalone Sushi",
+          "itemAmount": 5
+        }
+      ],
+      "consumeRequiredItems": true
+    },
+    {
+      "buttonText": "You can do it!",
+      "responseText": "You really think so? I guess I am pretty well kitted out now... And I do have food... I'll give it a try...",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 14,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 12,
+          "maximumQuestProgress": 12
+        },
+        {
+          "location": "UragotaTown"
+        }
+      ]
+    },
+    {
+      "buttonText": "Dying isn't so bad",
+      "responseText": "What? You talk as if you've experienced it before.",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 13,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 12,
+          "maximumQuestProgress": 12
+        },
+        {
+          "location": "UragotaTown"
+        }
+      ]
+    },
+    {
+      "buttonText": "I have, it's no big deal",
+      "responseText": "Okay, I don't believe you but somehow your calm response to death has given me courage. I guess I am pretty well kitted out now... And I do have food... I'll give it a try...",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 14,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 13,
+          "maximumQuestProgress": 13
+        },
+        {
+          "location": "UragotaTown"
+        }
+      ]
+    },
+    {
+      "buttonText": "Don't worry, you won't die anyways",
+      "responseText": "You really think so? I guess I am pretty well kitted out now... And I do have food... I'll give it a try...",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 14,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 13,
+          "maximumQuestProgress": 13
+        },
+        {
+          "location": "UragotaTown"
+        }
+      ]
+    },
+    {
+      "buttonText": "How'd it go?",
+      "responseText": "I did it! I really did it! I slaughtered them all! I took the camels back! Hahahahaha! I've never felt so alive!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 24,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 14,
+          "maximumQuestProgress": 14
+        },
+        {
+          "location": "UragotaTown"
+        }
+      ]
+    },
+    {
+      "buttonText": "I'll try to find them",
+      "responseText": "Oh, thank you so much! Good luck!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 16,
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 5
+        }
+      ]
+    },
+    {
+      "buttonText": "Here are your camels",
+      "responseText": "Oh, thank you so much! I can finally reopen the store!",
+      "quest": "Grand Theft Camel",
+      "newQuestProgressValue": 25,
+      "requirements": [
+        {
+          "item": "A lot of Camels",
+          "itemAmount": 1
+        }
+      ],
+      "consumeRequiredItems": true,
+      "completeQuest": true
+    },
+    {
+      "buttonText": "Can I get a free camel for helping you?",
+      "responseText": "I'm sorry, I can't afford to simply give away my camels to every adventurer who does me a favor. I'm already selling them to you for a discounted price, so you should be grateful! Besides, you need to get through the desert, don't you?",
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 25,
+          "maximumQuestProgress": 25
+        },
+        {
+          "location": "Camelpalooza"
+        }
+      ]
+    },
+    {
+      "buttonText": "Can I get a free camel for helping you?",
+      "responseText": "Helping me? You didn't really do anything! I defeated the bandits myself. Tell you what, I'll take the cost of the stuff you gave me out of the camel price. Deal?",
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 24,
+          "maximumQuestProgress": 24
+        },
+        {
+          "location": "Camelpalooza"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+[
+  {
+    "outputItemName": "Dough (Unleavened)",
+    "secondaryOutputItemName": "Empty Bucket",
+    "ingredients": [
+      {
+        "itemName": "Flour"
+      },
+      {
+        "itemName": "Bucket of Water"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Rye Dough (Unleavened)",
+    "secondaryOutputItemName": "Empty Bucket",
+    "ingredients": [
+      {
+        "itemName": "Rye Flour"
+      },
+      {
+        "itemName": "Bucket of Water"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Durum Dough (Unleavened)",
+    "secondaryOutputItemName": "Empty Bucket",
+    "ingredients": [
+      {
+        "itemName": "Durum Flour"
+      },
+      {
+        "itemName": "Bucket of Water"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Dough",
+    "secondaryOutputItemName": "Empty Bucket",
+    "ingredients": [
+      {
+        "itemName": "Flour"
+      },
+      {
+        "itemName": "Bucket of Water"
+      },
+      {
+        "itemName": "Yeast"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Rye Dough",
+    "secondaryOutputItemName": "Empty Bucket",
+    "ingredients": [
+      {
+        "itemName": "Rye Flour"
+      },
+      {
+        "itemName": "Bucket of Water"
+      },
+      {
+        "itemName": "Yeast"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Durum Dough",
+    "secondaryOutputItemName": "Empty Bucket",
+    "ingredients": [
+      {
+        "itemName": "Durum Flour"
+      },
+      {
+        "itemName": "Bucket of Water"
+      },
+      {
+        "itemName": "Yeast"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Advanced Dough",
+    "secondaryOutputItemName": "Empty Bucket",
+    "ingredients": [
+      {
+        "itemName": "Flour"
+      },
+      {
+        "itemName": "Bucket of Water"
+      },
+      {
+        "itemName": "Yeast"
+      },
+      {
+        "itemName": "Salt"
+      },
+      {
+        "itemName": "Sugar"
+      },
+      {
+        "itemName": "Oil"
+      },
+      {
+        "itemName": "Chicken Egg"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Sweet Dough",
+    "secondaryOutputItemName": "Empty Bucket",
+    "ingredients": [
+      {
+        "itemName": "Flour"
+      },
+      {
+        "itemName": "Bucket of Water"
+      },
+      {
+        "itemName": "Yeast"
+      },
+      {
+        "itemName": "Sugar"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Milk Dough",
+    "secondaryOutputItemName": "Empty Bucket",
+    "ingredients": [
+      {
+        "itemName": "Flour"
+      },
+      {
+        "itemName": "Bucket of Water"
+      },
+      {
+        "itemName": "Yeast"
+      },
+      {
+        "itemName": "Milk"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Flour",
+    "ingredients": [
+      {
+        "itemName": "Wheat"
+      },
+      {
+        "itemName": "Quern Stone",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Culinary Arts:5",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 3
+  },
+  {
+    "outputItemName": "Rye Flour",
+    "ingredients": [
+      {
+        "itemName": "Rye"
+      },
+      {
+        "itemName": "Quern Stone",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Culinary Arts:15",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 15
+      }
+    ],
+    "maxOutputsPerAction": 3
+  },
+  {
+    "outputItemName": "Durum Flour",
+    "ingredients": [
+      {
+        "itemName": "Durum"
+      },
+      {
+        "itemName": "Quern Stone",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Culinary Arts:25",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 30
+      }
+    ],
+    "maxOutputsPerAction": 3
+  }
+]

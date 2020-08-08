@@ -1,0 +1,68 @@
+[
+  {
+    "outputItemName": "Molten Aluminum Bar",
+    "ingredients": [
+      {
+        "itemName": "Bauxite"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Aluminum Bar",
+    "ingredients": [
+      {
+        "itemName": "Aluminum Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Aluminum Knife",
+    "ingredients": [
+      {
+        "itemName": "Molten Aluminum Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Aluminum Sword",
+    "ingredients": [
+      {
+        "itemName": "Molten Aluminum Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Aluminum Axe",
+    "ingredients": [
+      {
+        "itemName": "Molten Aluminum Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Aluminum Hammer",
+    "ingredients": [
+      {
+        "itemName": "Molten Aluminum Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Aluminum Bar",
+    "ingredients": [
+      {
+        "itemName": "Molten Aluminum Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Aluminum Arrowtips",
+    "ingredients": [
+      {
+        "itemName": "Molten Aluminum Bar"
+      }
+    ],
+    "outputAmount": 10
+  }
+
+]

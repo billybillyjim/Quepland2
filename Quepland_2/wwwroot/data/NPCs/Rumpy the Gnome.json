@@ -1,0 +1,97 @@
+{
+  "name": "Rumpy the Gnome",
+  "id": 26,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Oh, hello there!",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Rumpy the Gnome"
+        }
+      ]
+    },
+    {
+      "buttonText": "What are you doing in this cave?",
+      "responseText": "Oh I'm just, you know, enjoying the damp darkness.",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Rumpy the Gnome"
+        }
+      ]
+    },
+    {
+      "buttonText": "Sounds miserable",
+      "responseText": "It is! but at least no one can see my face down here.",
+      "depth": 2,
+      "newDepthOnTalk": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Rumpy the Gnome"
+        }
+      ]
+    },
+    {
+      "buttonText": "What's wrong with your face?",
+      "responseText": "It's just so ugly! Us gnomes are renowned for our good looks, at least among ourselves. But me? I don't fit the stereotype at all!",
+      "depth": 3,
+      "newDepthOnTalk": 4,
+      "requirements": [
+        {
+          "lockedFollower": "Rumpy the Gnome"
+        }
+      ]
+    },
+    {
+      "buttonText": "Would you like to join me on my adventure?",
+      "responseText": "I really would, but I just can't leave the cave looking the way I do.",
+      "depth": 4,
+      "newDepthOnTalk": 5,
+      "requirements": [
+        {
+          "lockedFollower": "Rumpy the Gnome"
+        }
+      ]
+    },
+    {
+      "buttonText": "Would you like to join me on my adventure?",
+      "responseText": "I really would, but I just can't leave the cave looking the way I do.",
+      "depth": 2,
+      "newDepthOnTalk": 5,
+      "requirements": [
+        {
+          "lockedFollower": "Rumpy the Gnome"
+        }
+      ]
+    },
+    {
+      "buttonText": "I'll give you 250,000 coins",
+      "responseText": "Wait. What? Two hundred and fifty thousand coins?? I don't know how I could say no to that!",
+      "depth": 5,
+      "unlockedFollower": "Rumpy the Gnome",
+      "ConsumeRequiredItems": true,
+      "requirements": [
+        {
+          "item": "Coins",
+          "itemAmount": 250000
+        },
+        {
+          "lockedFollower": "Rumpy the Gnome"
+        }
+      ]
+    },
+    {
+      "buttonText": "What if I paid you?",
+      "responseText": "You'd have to pay an awful lot to get me to change my mind. A few hundred thousand coins, at the very least!",
+      "depth": 5,
+      "requirements": [
+        {
+          "lockedFollower": "Rumpy the Gnome"
+        }
+      ]
+    }
+  ]
+}

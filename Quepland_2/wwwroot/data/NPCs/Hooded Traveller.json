@@ -1,0 +1,53 @@
+{
+  "name": "Hooded Traveller",
+  "id": 22,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hey there. You seem like you've got a good head on your shoulders. I like you. Maybe we can work out some kind of deal.",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "areaUnlocked": "Hoin Riverbank",
+          "requireAreaLocked": true
+        }
+      ]
+    },
+    {
+      "buttonText": "What kind of deal?",
+      "responseText": "Oh it's nothing much. Let's not talk here, though. Meet me at the Hoin River and we can talk more there.",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "areaUnlocked": "Hoin Riverbank",
+          "requireAreaLocked": true
+        }
+      ]
+    },
+    {
+      "buttonText": "Where is the Hoin River?",
+      "responseText": "Never been there? Follow me, and we can go right there.",
+      "depth": 2,
+      "newDepthOnTalk": 3,
+      "requirements": [
+        {
+          "areaUnlocked": "Hoin Riverbank",
+          "requireAreaLocked": true
+        }
+      ]
+    },
+    {
+      "buttonText": "Okay, I'll follow you",
+      "responseText": "UnlockAndGotoArea",
+      "parameter": "Hoin Riverbank",
+      "depth": 3,
+      "requirements": [
+        {
+          "areaUnlocked": "Hoin Riverbank",
+          "requireAreaLocked": true
+        }
+      ]
+    }
+  ]
+}

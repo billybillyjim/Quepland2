@@ -1,0 +1,16 @@
+{
+  "name": "Grumpy the Gnome",
+  "id": 3,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Oh great. Another adventurer. Don't waste your time!",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Would you like to work for me?",
+      "responseText": "Oh no you don't! Just turn around and walk away. I've made the mistake of indentured servitude once in my life and I don't plan on making it again.",
+      "depth": 1
+    }
+  ]
+}

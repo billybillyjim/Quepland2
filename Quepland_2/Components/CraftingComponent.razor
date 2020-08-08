@@ -1,0 +1,89 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (GameState.CurrentRecipe != null)
+{
+    <div style="height:60px;margin:10px;"><button class="btn btn-primary" @onclick="@(() => Stop())">Stop Crafting @GameState.CurrentRecipe.OutputItemName</button></div>
+}
+else
+{
+    <div style="height:60px;margin:10px;">Select an item to craft.</div>
+}
+<div style="display:flex;flex-wrap:wrap;width:340px;border:solid black 1px;border-radius:0.25rem;background-color:dimgray;min-height:50px;margin-left:10px;">
+    @foreach (Recipe recipe in Recipes)
+    {
+        if (recipe.CanCreate())
+        {
+            <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowItemTooltip(e, recipe.OutputAmount + " " + recipe.Output.Name, recipe.GetIngredientsString())))"
+                 @onclick="@(() => GameState.SetCraftingItem(recipe))"><ItemBoxComponent Item="@recipe.Output" shouldRender="@ShouldRender()"></ItemBoxComponent></div>
+        }
+        else if(recipe.HasSomeIngredients())
+        {
+            <div style="opacity:0.5" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowItemTooltip(e, recipe.Output.Name, GetTooltip(recipe))))"
+                 onmouseout="@(new Action(() => GameState.HideTooltip()))"><ItemBoxComponent Item="@recipe.Output" shouldRender="@ShouldRender()"></ItemBoxComponent></div>
+        }
+
+
+    }
+    @if(ItemManager.Instance.GetCraftableRecipes().Count == 0)
+    {
+        <div style="margin:5px;color:white;">You don't have the materials to craft anything.</div>
+    }
+</div>
+<InventoryViewerComponent HideItemViewer="@true"></InventoryViewerComponent>
+
+@code {
+
+    private List<Recipe> Recipes = new List<Recipe>();
+
+    private bool ShouldRender()
+    {
+        if(GameState.CurrentRecipe == null)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    private string GetTooltip(Recipe r)
+    {
+        string tip = "";
+        if(r.HasRequirements() == false)
+        {
+            tip += r.GetRequirementTooltip() + "\n";
+        }
+        if(r.HasSpace() == false)
+        {
+            tip += "You don't have the inventory space to make this." + "\n";
+        }
+        if (r.GetMissingIngredients() != "Missing:\n")
+        {
+            tip += r.GetMissingIngredients() + "\n";
+        }
+        if(tip.Length > 0)
+        {
+            tip = tip.Trim();
+        }
+        return tip;
+    }
+    private void Stop()
+    {
+        GameState.StopActions();
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        var watch = System.Diagnostics.Stopwatch.StartNew();
+        Recipes = new List<Recipe>();
+
+        Recipes.AddRange(ItemManager.Instance.GetCraftableRecipes());
+        watch.Stop();
+        Console.WriteLine("New List Time:" + watch.ElapsedMilliseconds);
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

@@ -1,0 +1,213 @@
+[
+  {
+    "name": "Kogoe Docks",
+    "id": 70,
+    "image": "Docks",
+    "description": "You step onto the dock of a small, chilly village. Ice floes surround this snowy wasteland, the whole island is covered in a frosty shroud.",
+    "areaURL": "KogoeDocks",
+    "unlockableAreas": [
+      {
+        "areaURL": "KogoeTown",
+        "buttonText": "Enter Town"
+      }
+    ]
+  },
+  {
+    "name": "Kogoe Town",
+    "id": 71,
+    "image": "Village",
+    "description": "You enter the small fishing village. A road runs through the middle of town, with a small shop on one side and a large gymnasium on the other.",
+    "areaURL": "KogoeTown",
+    "unlockableAreas": [
+      {
+        "areaURL": "FjelloverPass",
+        "buttonText": "Head to the Mountain"
+      }
+    ],
+    "buildings": [
+      {
+        "name": "House Of Fish",
+        "buttonText": "Enter the shop",
+        "url": "HouseOfFish",
+        "description": "The small, smelly room is full of fish, mostly freshly caught. There are a number of fishing supplies also available for purchase.",
+        "shops": [
+          {
+            "name": "House of Fish",
+            "itemNames": [
+              "Fishing Bait"
+            ]
+
+          }
+        ]
+      },
+      {
+        "name": "Kogoe Gym",
+        "buttonText": "Enter the gym",
+        "url": "KogoeGym",
+        "description": "The gym is quite large and features a number of rooms to train in. An old woman sits at the entry desk and asks for your membership card.",
+        "shops": [
+          {
+            "name": "Kogoe Gym Membership",
+            "itemNames": [
+              "Gym Membership Card"
+            ]
+
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fjellover Pass",
+    "id": 72,
+    "image": "Trail",
+    "description": "The trail leads through a deep valley. Mt. Yama towers in the distance, glowing in the sun. There are deposits of iron ore lying along the sides of the path. The trail upward is blocked by a rockslide.",
+    "areaURL": "FjelloverPass",
+    "unlockableAreas": [
+      {
+        "areaURL": "MtYamaFoot",
+        "buttonText": "Mine the rocks away",
+        "requirements": [
+          {
+            "skill": "Mining",
+            "skillLevel": 40
+          },
+          {
+            "action": "Mining"
+          }
+        ]
+      },
+      {
+        "areaURL": "MtYamaFoot",
+        "buttonText": "Lift the rocks away",
+        "requirements": [
+          {
+            "skill": "Strength",
+            "skillLevel": 60
+          }
+        ]
+      }
+    ],
+    "actions": [
+      "Mine Iron:Iron Ore",
+      "Chop Maple Trees:Sugar Maple Logs"
+    ],
+    "monsters": [
+      "Ice Spider",
+      "Chill Egg",
+      "Chill Chicken",
+      "Frost Bat",
+      "Hydral Wolf"
+    ]
+  },
+  {
+    "name": "Foot of Mt Yama",
+    "id": 73,
+    "image": "MountainPath",
+    "description": "The path grows steep as it ascends up Mt. Yama. Trees dot the landscape, covered in a thick layer of snow. Here and there frosty clouds rise up from small caverns that lead into the mountain.",
+    "areaURL": "MtYamaFoot",
+    "unlockableAreas": [
+      {
+        "areaURL": "MtYama",
+        "buttonText": "Climb the Mountain"
+      }
+    ],
+    "actions": [
+      "Mine Calamine:Calamine"
+    ],
+    "huntingTripInfo": {
+      "dropTable": {
+        "drops": [
+          {
+            "itemName": "Buck",
+            "weight": 10
+          },
+          {
+            "itemName": "Deer",
+            "weight": 8
+          },
+          {
+            "itemName": "Moose",
+            "weight": 6
+          },
+          {
+            "itemName": "Black Bear",
+            "weight": 4
+          },
+          {
+            "itemName": "Grizzly Bear",
+            "weight": 4
+          },
+          {
+            "itemName": "Polar Bear",
+            "weight": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "Mt Yama",
+    "id": 74,
+    "image": "Mountain",
+    "description": "The path ends at the mouth of a large cave. You can hear footsteps echoing inside.",
+    "areaURL": "MtYama",
+    "unlockableAreas": [
+      {
+        "areaURL": "MtYamaCave",
+        "buttonText": "Enter the Cave"
+      }
+    ]
+  },
+  {
+    "name": "Mt Yama Cave",
+    "id": 75,
+    "image": "Cave",
+    "description": "Strange metallic creatures roam the entrance of the cave. A wide crack marks the right side of the entrance wall. The cave seems to run deep into the underworld.",
+    "areaURL": "MtYamaCave",
+    "unlockableAreas": [
+      {
+        "areaURL": "SahotaIceFields",
+        "buttonText": "Enter the Underworld",
+        "connectsLands": true
+      }
+    ]
+  },
+  {
+    "name": "Mt Yama Mine",
+    "id": 76,
+    "image": "Mine",
+    "description": "Through the gap you find a few large ore veins. There appears to be gold and bauxite higher up, but you'll need a way to reach them.",
+    "areaURL": "MtYamaMine",
+    "actions": [
+      "Mine for ores:Galena,Cinnabar,Penlandite"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "UpperMtLevelMine",
+        "buttonText": "Build a Ladder",
+        "requirements": [
+          {
+            "skill": "Woodworking",
+            "skillLevel": 60
+          },
+          {
+            "item": "Mesquite Logs",
+            "itemAmount": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Upper Mt Yama Mine",
+    "id": 77,
+    "image": "Mine",
+    "description": "The upper level of the mine contains large gold and bauxite deposits. You can mine either here.",
+    "areaURL": "UpperMtYamaMine",
+    "actions": [
+      "Mine Gold:Gold Ore",
+      "Mine Bauxite:Bauxite"
+    ]
+  }
+]

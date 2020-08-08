@@ -1,0 +1,82 @@
+{
+  "name": "Two Legs Jack",
+  "id": 14,
+  "dialogs": [
+    {
+      "buttonText": "Where were you last night?",
+      "responseText": "I was up on deck, playing music on this violin. The other crew can attest to that.",
+      "quest": "Case of the Dead Pirate",
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 6
+        }
+      ]
+    },
+    {
+      "buttonText": "Did you see anything?",
+      "responseText": "Maybe. I saw First Mate Fremp go below deck much before the rest of us.",
+      "quest": "Case of the Dead Pirate",
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 6
+        }
+      ]
+    },
+    {
+      "buttonText": "Who would want to kill the captain?",
+      "responseText": "The first mate seemed quite mad when we voted Nobeard captain instead of him. I'd reckon he might have wanted revenge.",
+      "quest": "Case of the Dead Pirate",
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 6
+        }
+      ]
+    },
+    {
+      "buttonText": "Can I search your bunk?",
+      "responseText": "Sure, but there's not much to see. \nYou search Jack's bunk and find nothing of interest.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 6,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 5
+        }
+      ]
+    },
+    {
+      "buttonText": "Can you help me search Fremp's bunk?",
+      "responseText": "Fremp? Sure, if you distract him I can see what I can do.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 7,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 6,
+          "maximumQuestProgress": 6
+        }
+      ]
+    },
+    {
+      "buttonText": "Did you find anything?",
+      "responseText": "A bloody knife! He was the murderer! You should confront him at once!",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 9,
+      "itemOnTalk": "Bloody Knife",
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 8,
+          "maximumQuestProgress": 8
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+[
+  {
+    "outputItemName": "Molten Brass Bar",
+    "ingredients": [
+      {
+        "itemName": "Copper Bar"
+      },
+      {
+        "itemName": "Zinc Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Brass Bar",
+    "ingredients": [
+      {
+        "itemName": "Copper Ore"
+      },
+      {
+        "itemName": "Zinc Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Brass Bar",
+    "ingredients": [
+      {
+        "itemName": "Copper Bar"
+      },
+      {
+        "itemName": "Calamine"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Brass Bar",
+    "ingredients": [
+      {
+        "itemName": "Copper Ore"
+      },
+      {
+        "itemName": "Calamine"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Brass Bar",
+    "ingredients": [
+      {
+        "itemName": "Brass Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Brass Knife",
+    "ingredients": [
+      {
+        "itemName": "Molten Brass Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Brass Sword",
+    "ingredients": [
+      {
+        "itemName": "Molten Brass Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Brass Axe",
+    "ingredients": [
+      {
+        "itemName": "Molten Brass Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Brass Hammer",
+    "ingredients": [
+      {
+        "itemName": "Molten Brass Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Brass Arrowtips",
+    "ingredients": [
+      {
+        "itemName": "Molten Brass Bar"
+      }
+    ],
+    "outputAmount": 10
+  }
+
+]

@@ -1,0 +1,76 @@
+{
+  "name": "Raka",
+  "id": 31,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Ahoy!",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Raka"
+        }
+      ]
+    },
+    {
+      "buttonText": "Would you work for me?",
+      "responseText": "For a price, sure.",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Raka"
+        }
+      ]
+    },
+    {
+      "buttonText": "What can you do?",
+      "responseText": "I'm a friendly Kushtaka. I carry fish to the bank after you catch them. I'm a bit of a beginner at it, though.",
+      "depth": 1,
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Raka"
+        }
+      ]
+    },
+    {
+      "buttonText": "How much?",
+      "responseText": "I'm still learning, so I'll work for cheap. How about 2,000 coins?",
+      "depth": 2,
+      "newDepthOnTalk": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Raka"
+        }
+      ]
+    },
+    {
+      "buttonText": "Deal",
+      "responseText": "Hurray! Let me know when you need my help.",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Raka"
+        },
+        {
+          "item": "Coins",
+          "itemAmount": 2000
+        }
+      ],
+      "unlockedFollower": "Raka",
+      "ConsumeRequiredItems": true
+    },
+    {
+      "buttonText": "I don't have that much",
+      "responseText": "Oh, sorry, then. Let me know if you get that much.",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Raka"
+        }
+      ]
+
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "name": "Queple Cave Entrance",
+    "id": 10,
+    "isUnlocked": false,
+    "description": "You climb through the opening of the cave to find a twisting series of paths to take. You can hear creatures scuttling along the walls and the sound of rushing water echoing in the distance.",
+    "areaURL": "QuepleCaveEntrance",
+    "image": "Cave",
+    "dungeonName": "Queple Cave"
+  },
+  {
+    "name": "Copper Mine",
+    "id": 11,
+    "isUnlocked": false,
+    "description": "You find a large opening in the cave, the walls glitter with a bright metallic brown. It seems to be a motherlode of copper!",
+    "areaURL": "CopperMine",
+    "image": "Mine",
+    "actions": [
+      "Mine Copper:Copper Ore"
+    ]
+  },
+  {
+    "name": "Tin Mine",
+    "id": 12,
+    "isUnlocked": false,
+    "description": "The cave opens into a large cavern full of crystalic ore. It looks like a tin motherlode!",
+    "areaURL": "TinMine",
+    "image": "Mine",
+    "actions": [
+      "Mine Tin:Tin Ore"
+    ]
+  },
+  {
+    "name": "Queple Cave Smithy",
+    "id": 13,
+    "isUnlocked": false,
+    "description": "At the end of the cavern you see a glowing red light. You step through the opening to see a completely functioning smithy!",
+    "areaURL": "QuepleCaveSmithy",
+    "image": "Smithy",
+    "actions": [
+      "Smithy"
+    ]
+  },
+  {
+    "name": "Grumpy's Gnome Home",
+    "id": 14,
+    "isUnlocked": false,
+    "description": "You find a round wooden door at the end of a particularly long cave tunnel. It appears to be the home of an angry gnome.",
+    "areaURL": "GrumpysHome",
+    "image": "House",
+    "npcs": [
+      "Grumpy The Gnome"
+    ]
+  },
+  {
+    "name": "Queple Cave River",
+    "id": 15,
+    "isUnlocked": false,
+    "description": "The sound of flowing water fills the chamber as you step into a large cavern. A river flows gently by, teeming with fish.",
+    "areaURL": "QuepleCaveRiver",
+    "image": "River",
+    "actions": [
+      "Go Fishing:Shad,Salmon,River Clam"
+    ],
+    "monsters": [
+      "Small Kappa",
+      "Kappa",
+      "Fishman",
+      "Manfish",
+      "Shifnam"
+    ]
+  },
+  {
+    "name": "Stone Door",
+    "id": 16,
+    "isUnlocked": false,
+    "description": "The cavern ends abruptly with a large stone door blocking the way forward. There is an inscription on the door. You'd need to be quite strong to open it.",
+    "areaURL": "StoneDoor",
+    "image": "Door",
+    "npcs": [
+      "Stone Door"
+    ],
+    "buildings": [
+      {
+        "name": "Queple's Tomb",
+        "buttonText": "Open the door",
+        "url": "QueplesTomb",
+        "description": "The walls of the room are lit with a iridescent purple glow. A massive sarcophagus runs along the length of the room. A very large sword sits leaning against the side closest to you.",
+        "npcs": [
+          "Queple's Sarcophagus"
+        ],
+        "requirements": [
+          {
+            "skill": "Strength",
+            "skillLevel": 60
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,530 @@
+[
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Amber",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Amberite"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Lizard",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Lizardite"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Purpur",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Purpurite"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Opal",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Opal"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Garn",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Garnet"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Amet",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Amethyst"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Emer",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Emerald"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Top",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Topaz"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is thoughSapph.",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Sapphire"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Ruby",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Ruby"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Diamo",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Diamond"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Chryso",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Chrysoberyl"
+  },
+  {
+    "Name": "Unidentified Gem",
+    "value": 10,
+    "Description": "A gemstone, you're not sure what it is though.Aqua",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "parameter": "Rough Aquamarine"
+  },
+  {
+    "Name": "Rough Amberite",
+    "value": 600,
+    "Description": "An orange, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough amberite!",
+    "secondaryColor": "#d87e04"
+  },
+  {
+    "Name": "Rough Lizardite",
+    "value": 600,
+    "Description": "A pale green, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough lizardite!",
+    "secondaryColor": "#78a872"
+  },
+  {
+    "Name": "Rough Purpurite",
+    "value": 600,
+    "Description": "A purple, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough purpurite!",
+    "secondaryColor": "#3f073c"
+  },
+  {
+    "Name": "Rough Opal",
+    "value": 600,
+    "Description": "A flourescent, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough opal!",
+    "secondaryColor": "#b3a56c"
+  },
+  {
+    "Name": "Rough Garnet",
+    "value": 600,
+    "Description": "A deep red, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough garnet!",
+    "secondaryColor": "#a50d2b"
+  },
+  {
+    "Name": "Rough Amethyst",
+    "value": 600,
+    "Description": "A purple, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough amethyst!",
+    "secondaryColor": "#ab2996"
+  },
+  {
+    "Name": "Rough Emerald",
+    "value": 500,
+    "Description": "A green, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough emerald!",
+    "secondaryColor": "#45be7e"
+  },
+
+  {
+    "Name": "Rough Aquamarine",
+    "value": 1100,
+    "Description": "A red, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough ruby!",
+    "secondaryColor": "#45c3e2"
+  },
+  {
+    "Name": "Rough Topaz",
+    "value": 600,
+    "Description": "A brown, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough topaz!",
+    "secondaryColor": "#c57621"
+  },
+  {
+    "Name": "Rough Chrysoberyl",
+    "value": 700,
+    "Description": "A golden, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough chrysoberyl!",
+    "secondaryColor": "#d3b31a"
+  },
+
+  {
+    "Name": "Rough Sapphire",
+    "value": 900,
+    "Description": "A blue, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough sapphire!",
+    "secondaryColor": "#203bd2"
+  },
+  {
+    "Name": "Rough Ruby",
+    "value": 1100,
+    "Description": "A red, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough ruby!",
+    "secondaryColor": "#f4093a"
+  },
+  {
+    "Name": "Rough Diamond",
+    "value": 1500,
+    "Description": "A white, uncut gemstone.",
+    "icon": "UncutGem",
+    "gatherString": "You found a rough diamond!",
+    "secondaryColor": "#DFDFDF"
+  },
+  {
+    "Name": "Tumbled Amberite",
+    "value": 600,
+    "Description": "An orange gemstone tumbled to produce a smooth surface.",
+    "icon": "TumbledGem",
+    "gatherString": "You tumble the amberite until it's completely smooth.",
+    "secondaryColor": "#d87e04"
+  },
+  {
+    "Name": "Tumbled Lizardite",
+    "value": 600,
+    "Description": "A pale green gemstone tumbled to produce a smooth surface.",
+    "icon": "TumbledGem",
+    "gatherString": "You tumble the lizardite until it's completely smooth.",
+    "secondaryColor": "#78a872"
+  },
+  {
+    "Name": "Tumbled Purpurite",
+    "value": 600,
+    "Description": "A purple gemstone tumbled to produce a smooth surface.",
+    "icon": "TumbledGem",
+    "gatherString": "You tumble the purpurite until it's completely smooth.",
+    "secondaryColor": "#3f073c"
+  },
+  {
+    "Name": "Tumbled Opal",
+    "value": 600,
+    "Description": "A flourescent gemstone tumbled to produce a smooth surface.",
+    "icon": "TumbledGem",
+    "gatherString": "You tumble the opal until it's completely smooth.",
+    "secondaryColor": "#b3a56c"
+  },
+  {
+    "Name": "Tumbled Garnet",
+    "value": 600,
+    "Description": "A deep red gemstone tumbled to produce a smooth surface.",
+    "icon": "TumbledGem",
+    "gatherString": "You tumble the garnet until it's completely smooth.",
+    "secondaryColor": "#a50d2b"
+  },
+  {
+    "Name": "Tumbled Amethyst",
+    "value": 600,
+    "Description": "A purple gemstone tumbled to produce a smooth surface.",
+    "icon": "TumbledGem",
+    "gatherString": "You tumble the amethyst until it's completely smooth.",
+    "secondaryColor": "#ab2996"
+  },
+  {
+    "Name": "Tumbled Emerald",
+    "value": 500,
+    "Description": "A green gemstone tumbled to produce a smooth surface.",
+    "icon": "TumbledGem",
+    "gatherString": "You tumble the emerald until it's completely smooth.",
+    "secondaryColor": "#45be7e"
+  },
+
+  {
+    "Name": "Tumbled Aquamarine",
+    "value": 1100,
+    "Description": "A red gemstone tumbled to produce a smooth surface.",
+    "icon": "TumbledGem",
+    "gatherString": "You tumble the ruby until it's completely smooth.",
+    "secondaryColor": "#45c3e2"
+  },
+  {
+    "Name": "Tumbled Topaz",
+    "value": 600,
+    "Description": "A brown gemstone tumbled to produce a smooth surface.",
+    "icon": "TumbledGem",
+    "gatherString": "You tumble the topaz until it's completely smooth.",
+    "secondaryColor": "#c57621"
+  },
+  {
+    "Name": "Tumbled Chrysoberyl",
+    "value": 700,
+    "Description": "A golden gemstone tumbled to produce a smooth surface.",
+    "icon": "TumbledGem",
+    "gatherString": "You tumble the chrysoberyl until it's completely smooth.",
+    "secondaryColor": "#d3b31a"
+  },
+
+  {
+    "Name": "Tumbled Sapphire",
+    "value": 900,
+    "Description": "A blue gemstone tumbled to produce a smooth surface.",
+    "icon": "TumbledGem",
+    "gatherString": "You tumble the sapphire until it's completely smooth.",
+    "secondaryColor": "#203bd2"
+  },
+  {
+    "Name": "Tumbled Ruby",
+    "value": 1100,
+    "Description": "A red gemstone tumbled to produce a smooth surface.",
+    "icon": "TumbledGem",
+    "gatherString": "You tumble the ruby until it's completely smooth.",
+    "secondaryColor": "#f4093a"
+  },
+  {
+    "Name": "Tumbled Diamond",
+    "value": 1500,
+    "Description": "A white gemstone tumbled to produce a smooth surface.",
+    "icon": "TumbledGem",
+    "gatherString": "You tumble the diamond until it's completely smooth.",
+    "secondaryColor": "#FFFFFF"
+  },
+  {
+    "Name": "Amberite Cabochon",
+    "value": 600,
+    "Description": "An orange gemstone manually cut to produce a smooth surface on one side.",
+    "icon": "CabochonGem",
+    "gatherString": "You cut the amberite until it's completely smooth.",
+    "secondaryColor": "#d87e04"
+  },
+  {
+    "Name": "Lizardite Cabochon",
+    "value": 600,
+    "Description": "A pale green gemstone manually cut to produce a smooth surface on one side.",
+    "icon": "CabochonGem",
+    "gatherString": "You cut the lizardite until it's completely smooth.",
+    "secondaryColor": "#78a872"
+  },
+  {
+    "Name": "Purpurite Cabochon",
+    "value": 600,
+    "Description": "A purple gemstone manually cut to produce a smooth surface on one side.",
+    "icon": "CabochonGem",
+    "gatherString": "You cut the purpurite until it's completely smooth.",
+    "secondaryColor": "#3f073c"
+  },
+  {
+    "Name": "Opal Cabochon",
+    "value": 600,
+    "Description": "A flourescent gemstone manually cut to produce a smooth surface on one side.",
+    "icon": "CabochonGem",
+    "gatherString": "You cut the opal until it's completely smooth.",
+    "secondaryColor": "#b3a56c"
+  },
+  {
+    "Name": "Garnet Cabochon",
+    "value": 600,
+    "Description": "A deep red gemstone manually cut to produce a smooth surface on one side.",
+    "icon": "CabochonGem",
+    "gatherString": "You cut the garnet until it's completely smooth.",
+    "secondaryColor": "#a50d2b"
+  },
+  {
+    "Name": "Amethyst Cabochon",
+    "value": 600,
+    "Description": "A purple gemstone manually cut to produce a smooth surface on one side.",
+    "icon": "CabochonGem",
+    "gatherString": "You cut the amethyst until it's completely smooth.",
+    "secondaryColor": "#ab2996"
+  },
+  {
+    "Name": "Emerald Cabochon",
+    "value": 500,
+    "Description": "A green gemstone manually cut to produce a smooth surface on one side.",
+    "icon": "CabochonGem",
+    "gatherString": "You cut the emerald until it's completely smooth.",
+    "secondaryColor": "#45be7e"
+  },
+
+  {
+    "Name": "Aquamarine Cabochon",
+    "value": 1100,
+    "Description": "A red gemstone manually cut to produce a smooth surface on one side.",
+    "icon": "CabochonGem",
+    "gatherString": "You cut the ruby until it's completely smooth.",
+    "secondaryColor": "#45c3e2"
+  },
+  {
+    "Name": "Topaz Cabochon",
+    "value": 600,
+    "Description": "A brown gemstone manually cut to produce a smooth surface on one side.",
+    "icon": "CabochonGem",
+    "gatherString": "You cut the topaz until it's completely smooth.",
+    "secondaryColor": "#c57621"
+  },
+  {
+    "Name": "Chrysoberyl Cabochon",
+    "value": 700,
+    "Description": "A golden gemstone manually cut to produce a smooth surface on one side.",
+    "icon": "CabochonGem",
+    "gatherString": "You cut the chrysoberyl until it's completely smooth.",
+    "secondaryColor": "#d3b31a"
+  },
+
+  {
+    "Name": "Sapphire Cabochon",
+    "value": 900,
+    "Description": "A blue gemstone manually cut to produce a smooth surface on one side.",
+    "icon": "CabochonGem",
+    "gatherString": "You cut the sapphire until it's completely smooth.",
+    "secondaryColor": "#203bd2"
+  },
+  {
+    "Name": "Ruby Cabochon",
+    "value": 1100,
+    "Description": "A red gemstone manually cut to produce a smooth surface on one side.",
+    "icon": "CabochonGem",
+    "gatherString": "You cut the ruby until it's completely smooth.",
+    "secondaryColor": "#f4093a"
+  },
+  {
+    "Name": "Diamond Cabochon",
+    "value": 1500,
+    "Description": "A white gemstone manually cut to produce a smooth surface on one side.",
+    "icon": "CabochonGem",
+    "gatherString": "You cut the diamond until it's completely smooth.",
+    "secondaryColor": "#FFFFFF"
+  },
+  {
+    "Name": "Cut Amberite",
+    "value": 600,
+    "Description": "An orange gemstone cut to produc beautifully ordered facets.",
+    "icon": "CutGem",
+    "gatherString": "You cut the amberite until it's completely smooth.",
+    "secondaryColor": "#d87e04"
+  },
+  {
+    "Name": "Cut Lizardite",
+    "value": 600,
+    "Description": "A pale green gemstone cut to produce beautifully ordered facets.",
+    "icon": "CutGem",
+    "gatherString": "You cut the lizardite until it's completely smooth.",
+    "secondaryColor": "#78a872"
+  },
+  {
+    "Name": "Cut Purpurite",
+    "value": 600,
+    "Description": "A purple gemstone cut to produce beautifully ordered facets.",
+    "icon": "CutGem",
+    "gatherString": "You cut the purpurite until it's completely smooth.",
+    "secondaryColor": "#3f073c"
+  },
+  {
+    "Name": "Cut Opal",
+    "value": 600,
+    "Description": "A flourescent gemstone cut to produce beautifully ordered facets.",
+    "icon": "CutGem",
+    "gatherString": "You cut the opal until it's completely smooth.",
+    "secondaryColor": "#b3a56c"
+  },
+  {
+    "Name": "Cut Garnet",
+    "value": 600,
+    "Description": "A deep red gemstone cut to produce beautifully ordered facets.",
+    "icon": "CutGem",
+    "gatherString": "You cut the garnet until it's completely smooth.",
+    "secondaryColor": "#a50d2b"
+  },
+  {
+    "Name": "Cut Amethyst",
+    "value": 600,
+    "Description": "A purple gemstone cut to produce beautifully ordered facets.",
+    "icon": "CutGem",
+    "gatherString": "You cut the amethyst until it's completely smooth.",
+    "secondaryColor": "#ab2996"
+  },
+  {
+    "Name": "Cut Emerald",
+    "value": 500,
+    "Description": "A green gemstone cut to produce beautifully ordered facets.",
+    "icon": "CutGem",
+    "gatherString": "You cut the emerald until it's completely smooth.",
+    "secondaryColor": "#45be7e"
+  },
+
+  {
+    "Name": "Cut Aquamarine",
+    "value": 1100,
+    "Description": "A red gemstone cut to produce beautifully ordered facets.",
+    "icon": "CutGem",
+    "gatherString": "You cut the ruby until it's completely smooth.",
+    "secondaryColor": "#45c3e2"
+  },
+  {
+    "Name": "Cut Topaz",
+    "value": 600,
+    "Description": "A brown gemstone cut to produce beautifully ordered facets.",
+    "icon": "CutGem",
+    "gatherString": "You cut the topaz until it's completely smooth.",
+    "secondaryColor": "#c57621"
+  },
+  {
+    "Name": "Cut Chrysoberyl",
+    "value": 700,
+    "Description": "A golden gemstone cut to produce beautifully ordered facets.",
+    "icon": "CutGem",
+    "gatherString": "You cut the chrysoberyl until it's completely smooth.",
+    "secondaryColor": "#d3b31a"
+  },
+
+  {
+    "Name": "Cut Sapphire",
+    "value": 900,
+    "Description": "A blue gemstone cut to produce beautifully ordered facets.",
+    "icon": "CutGem",
+    "gatherString": "You cut the sapphire until it's completely smooth.",
+    "secondaryColor": "#203bd2"
+  },
+  {
+    "Name": "Cut Ruby",
+    "value": 1100,
+    "Description": "A red gemstone cut to produc beautifully ordered facets.",
+    "icon": "CutGem",
+    "gatherString": "You cut the ruby until it's completely smooth.",
+    "secondaryColor": "#f4093a"
+  },
+  {
+    "Name": "Cut Diamond",
+    "value": 1500,
+    "Description": "A white gemstone cut to produce beautifully ordered facets.",
+    "icon": "CutDiamond",
+    "gatherString": "You cut the diamond until it's completely smooth.",
+    "secondaryColor": "#FFFFFF"
+  }
+]

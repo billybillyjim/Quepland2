@@ -1,0 +1,35 @@
+{
+  "name": "Ittru",
+  "id": 6,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Sssh! You'll scare away the fish! Don't talk unless you have something to say."
+    },
+    {
+      "buttonText": "Do you know what happened to Mound?",
+      "responseText": "Mound? He disappeared last June, haven't seen him since. There's a fortune teller in town who's pretty good at finding things, maybe ask him. His shop is the furthest down the main street of town.",
+      "newQuestprogressValue": 2,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 1
+        }
+      ]
+    },
+    {
+      "buttonText": "Do you know where Mound's house is?",
+      "responseText": "Sure, it's right on the other side of Darkbourne Bridge. You can't miss it, he put up a big, ugly ad for his boat business.",
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 15,
+          "maximumQuestProgress": 16
+        }
+      ]
+    }
+  ]
+}

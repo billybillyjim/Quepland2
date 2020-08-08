@@ -1,0 +1,49 @@
+﻿@page "/World/CantilaBeach/CantilaLighthouse"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+
+    <h1>The Lighthouse</h1>
+<br />
+<button class="btn btn-primary" @onclick="@(() => Exit())">Return to the beach</button>
+<br />
+
+@if (location == "Outside")
+{
+    <div>There is a small door on the front of the lighthouse, but it's locked. A staircase wraps around to the top of the tower.</div>
+    <div>
+        <button class="btn btn-primary" @onclick="@(() => ChangeLocations("Tower Top"))">Climb up the stairs</button>
+    </div>
+}
+else if (location == "Tower Top")
+{
+    <div>The lighthouse is shining brightly, but there's no one here. You feel a slight rumble beneath your feet. A strange desire to open the door down below stirs within you.</div>
+    <div>
+        <button class="btn btn-primary" @onclick="@(() => ChangeLocations("Outside"))">Climb down the stairs</button>
+    </div>
+}
+
+
+@code {
+
+    private string location = "Outside";
+
+    private void ChangeLocations(string newloc)
+    {
+        location = newloc;
+        GameState.UpdateState();
+    }
+    private void Exit()
+    {
+        UriHelper.NavigateTo("/World/CantilaBeach");
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

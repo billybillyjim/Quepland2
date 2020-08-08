@@ -1,0 +1,142 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (Item != null)
+{
+
+    <div class="unselectable" style="@(GetBackground())margin:2px;height:50px;width:50px;position:relative;box-sizing: border-box;border-radius:0.25rem;" draggable="false">
+        @if (ShowAmount)
+        {
+
+            <div style="position:absolute;margin-left:2px;margin-top:-2px;color:white;font-size: 15px;font-weight: bold;text-shadow: 1px 1px 4px black;">@GetAmount()</div>
+            
+
+        }
+        @if (HideTooltip == false)
+        {
+            <img style="height: 46px;width: 46px;@GetMargin()" src="/data/Images/@(Item.Icon).png" draggable="false"
+                 @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowItemTooltip(e, GetTooltipTitle(), Item.Description)))"
+                 @onmouseout="@(new Action(() => GameState.HideTooltip()))" />
+        }
+        else
+        {
+            <img style="height: 46px;width: 46px;@GetMargin()" src="/data/Images/@(Item.Icon).png" draggable="false" />
+        }
+    </div>
+}
+else
+{
+    <div class="unselectable" style="border:solid black 1px;margin:2px;height:50px;width:50px;background-color:gray;border-radius:0.25rem"></div>
+}
+@code {
+    [Parameter]
+    public GameItem Item { get; set; }
+    [Parameter]
+    public bool ShowAmount { get; set; }
+    [Parameter]
+    public Inventory Inventory { get; set; }
+    [Parameter]
+    public bool IsSelected { get; set; }
+    [Parameter]
+    public bool shouldRender { get; set; }
+    [Parameter]
+    public bool HideTooltip { get; set; }
+
+    protected override bool ShouldRender() => shouldRender;
+
+    protected override void OnAfterRender(bool first)
+    {
+        if (Item != null)
+        {
+            Item.Rerender = false;
+        }
+
+        shouldRender = false;
+
+    }
+
+    private string GetAmount()
+    {
+        if (ShowAmount)
+        {
+            if (Inventory == null)
+            {
+                return "" + Player.Instance.Inventory.GetNumberOfItem(Item).CustomFormat();
+            }
+            return "" + Inventory.GetNumberOfItem(Item).CustomFormat();
+        }
+        return "";
+    }
+    private string GetBackground()
+    {
+        string style = "";
+        string border = "border:solid black 1px;";
+        if (IsSelected)
+        {
+            border = "border:solid white 2px;";
+            style = "background-color:lightgreen;";
+        }
+        else
+        {
+
+            if (Item != null)
+            {
+                style = "background: linear-gradient(155deg, " + Item.SecondaryColor + " 60%, " + Item.PrimaryColor + " 50%);";
+
+            }
+            else
+            {
+                style = "background-color:darkgray;";
+            }
+
+        }
+        if (Item != null && Item.IsEquipped)
+        {
+            border = "border:solid 2px lightgreen;";
+        }
+        return style + border;
+    }
+    private string GetMargin()
+    {
+        if (IsSelected)
+        {
+            return "margin:1px;";
+        }
+        return "margin:2px;";
+    }
+    public string GetTooltipTitle()
+    {
+        string tip = "";
+        if (Bank.Instance.IsBanking)
+        {
+            if (Inventory == Bank.Instance.Inventory)
+            {
+                if (Bank.Instance.Amount == int.MaxValue)
+                {
+                    tip = "Withdraw All " + Item.Name;
+                }
+                else
+                {
+                    tip = "Withdraw " + Bank.Instance.Amount + " " + Item.Name;
+                }
+            }
+        }
+        else
+        {
+            tip = Item.Name;
+        }
+
+        return tip;
+    }
+
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.HideTooltip();
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

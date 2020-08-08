@@ -1,0 +1,112 @@
+﻿@inject GameState GameState
+@implements IDisposable 
+
+
+        <div class="custom-dropdown" style="cursor:pointer;width:fit-content;min-width:200px" onmouseleave="@(new Action(() => Close()))" @onclick="@(() => Select())">
+            @if(DropdownItems == null || DropdownItems.Count == 0)
+            {
+                @EmptyText
+            }
+            else if(selectedValue != null)
+            {
+                @selectedValue
+            }
+            else if (BoxText != null)
+            {
+                @BoxText
+            }
+            else
+            {
+                <div>Select an item</div>
+            }
+            <table style="@GetStyle() left:0px; background-color: white;z-index:10;min-width:100%; position: absolute; @width">
+                @if (selected)
+                {
+                    @foreach (string item in DropdownItems)
+                    {
+                        <tr class="custom-dropdown-item">
+                            <td @onclick="@(() => Choose(item))">
+                                @item
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+
+
+
+@code 
+{
+    /// <summary>
+    /// The value to be bound to some parent component string.
+    /// </summary>
+    [Parameter]
+    public string Value { get; set; }
+    /// <summary>
+    /// Shown when there are dropdown items, but none have been selected yet.
+    /// </summary>
+    [Parameter]
+    public string BoxText { get; set; }
+    private string selectedValue;
+    /// <summary>
+    /// A list of items shown in the dropdown menu. The selected item is set to Value.
+    /// </summary>
+    [Parameter]
+    public List<string> DropdownItems { get; set; }
+    [Parameter]
+    public EventCallback<string> ValueChanged { get; set; }
+    private bool selected;
+    private string width = "width:fit-content;";
+    /// <summary>
+    /// The text shown when the list is empty. Defaults to "You don't have any."
+    /// </summary>
+    [Parameter]
+    public string EmptyText { get; set; } = "You don't have any.";
+
+    public void Refresh()
+    {
+        Console.WriteLine("Refreshing list...");
+        StateHasChanged();
+    }
+
+    public Task Choose(string item)
+    {
+        Value = item;
+        selectedValue = item;
+        selected = false;
+        GameState.UpdateState();
+        return ValueChanged.InvokeAsync(Value);
+    }
+    public void Select()
+    {
+        if(DropdownItems.Count > 0)
+        {
+            selected = !selected;
+            GameState.UpdateState();
+        }
+
+    }
+    public void Close()
+    {
+        selected = false;
+        GameState.UpdateState();
+    }
+    public string GetStyle()
+    {
+        if(selected)
+        {
+            return "border-collapse: separate !important; border: solid gray 1px; border-radius: 0.25rem; ";
+        }
+        return "";
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

@@ -1,0 +1,371 @@
+[
+  {
+    "Name": "Copper Ore",
+    "Description": "It's a very soft, green ore.",
+    "gatherString": "You mine some copper ore.",
+    "value": 10,
+    "gatherSpeed": 15,
+    "requiredLevel": 1,
+    "experienceGained": "Mining:18",
+    "icon": "Ore",
+    "secondaryColor": "#B87333",
+    "smithingInfo": {
+      "smeltsIntoString": "Copper Bar",
+      "smeltingExperience": 12
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 1
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Tin Ore",
+    "Description": "A beautiful ore with ditetragonal dipramidal crystals.",
+    "gatherString": "You mine some tin ore.",
+    "value": 10,
+    "gatherSpeed": 15,
+    "experienceGained": "Mining:28",
+    "icon": "Ore",
+    "secondaryColor": "#D3D4D5",
+    "smithingInfo": {
+      "smeltsIntoString": "Tin Bar",
+      "smeltingExperience": 18
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 1
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Calamine",
+    "Description": "An ore with zinc in it.",
+    "gatherString": "You mine some calamine.",
+    "value": 8,
+    "gatherSpeed": 15,
+    "secondaryColor": "#9E9EA0",
+    "experienceGained": "Mining:70",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 45
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 15
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Iron Ore",
+    "Description": "A rusty rock with goodies inside.",
+    "gatherString": "You mine some iron ore.",
+    "value": 30,
+    "gatherSpeed": 25,
+    "secondaryColor": "#434341",
+    "experienceGained": "Mining:110",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 80
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 25
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Pentlandite",
+    "Description": "There's nickel in there.",
+    "gatherString": "You mine some pentlandite.",
+    "value": 20,
+    "gatherSpeed": 20,
+    "secondaryColor": "#A9A69B",
+    "experienceGained": "Mining:90",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 60
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 22
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Galena",
+    "Description": "A heavy lead ore. Don't lick it!",
+    "secondaryColor": "#C0C0C0",
+    "gatherString": "You mine some galena.",
+    "value": 80,
+    "gatherSpeed": 40,
+    "experienceGained": "Mining:170",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 160
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 55
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Cinnabar",
+    "Description": "An ore with mercury and sulfur in it.",
+    "gatherString": "You mine some cinnabar.",
+    "value": 110,
+    "gatherSpeed": 30,
+    "experienceGained": "Mining:220",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 90
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 65
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Bauxite",
+    "Description": "An aluminum ore with little pisolites in it.",
+    "gatherString": "You mine some bauxite.",
+    "secondaryColor": "#F1F3F0",
+    "value": 110,
+    "gatherSpeed": 40,
+    "experienceGained": "Mining:130",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 110
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 75
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Gold Ore",
+    "Description": "It's got gold in it! Neat!",
+    "gatherString": "You mine some gold ore.",
+    "secondaryColor": "#FFD700",
+    "value": 350,
+    "gatherSpeed": 50,
+    "experienceGained": "Mining:150",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 180
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 85
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Platinum Ore",
+    "Description": "A very valuable ore with platinum in it.",
+    "gatherString": "You mine some platnium ore.",
+    "secondaryColor": "#E5E4E2",
+    "value": 530,
+    "gatherSpeed": 70,
+    "experienceGained": "Mining:250",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 280
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 93
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Coal",
+    "Description": "A black rock that tastes bad but burns good.",
+    "value": 55,
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 30
+      },
+      {
+        "action": "Mining"
+      }
+    ],
+    "gatherSpeed": 3000,
+    "experienceGained": "Mining:80",
+    "secondaryColor": "#202020",
+    "gatherString": "You mine some coal.",
+    "icon": "Coal"
+  },
+  {
+    "Name": "Strongtium Ore",
+    "Description": "A powerful ore named after its main characteristic.",
+    "gatherString": "You mine some strongtium ore.",
+    "value": 400,
+    "gatherSpeed": 90,
+    "secondaryColor": "#AF7979",
+    "experienceGained": "Mining:550",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 500
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 98
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Sahotite Ore",
+    "Description": "An ore found deep in the underworld. It feels cold to the touch.",
+    "gatherString": "You mine some sahotite ore.",
+    "value": 630,
+    "gatherSpeed": 100,
+    "experienceGained": "Mining:850",
+    "secondaryColor": "#C3D3F3",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 600
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 112
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Plastinium Ore",
+    "Description": "It's technically a metal, but it's very bendy.",
+    "gatherString": "You mine some plastinium ore.",
+    "value": 890,
+    "gatherSpeed": 140,
+    "experienceGained": "Mining:990",
+    "secondaryColor": "#718A94",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 800
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 125
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Queplinium Ore",
+    "Description": "An ore containing Queplinium. It emits a soft glow.",
+    "gatherString": "You mine some queplinium ore.",
+    "value": 1300,
+    "gatherSpeed": 190,
+    "experienceGained": "Mining:2000",
+    "secondaryColor": "#B787DC",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 1200
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 140
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "Name": "Stone Pickaxe",
+    "Description": "A pickaxe made of solid stone. It's not very effective.",
+    "value": 15,
+    "enabledActions": "Mining",
+    "secondaryColor": "#454545",
+    "equipSlot": "R Hand",
+    "gatherSpeedBonus": 0.1,
+    "icon": "Pickaxe",
+    "weaponInfo": {
+      "attackSpeed": 20,
+      "damage": 25,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Bronze Pickaxe",
+    "Description": "A pickaxe made of solid Bronze. It's a hair more useful than a stone one.",
+    "value": 90,
+    "enabledActions": "Mining",
+    "secondaryColor": "#454545",
+    "equipSlot": "R Hand",
+    "gatherSpeedBonus": 0.15,
+    "icon": "Pickaxe",
+    "weaponInfo": {
+      "attackSpeed": 20,
+      "damage": 25,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 20
+        }
+      ]
+    }
+  }
+]

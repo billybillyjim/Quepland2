@@ -1,0 +1,100 @@
+[
+  {
+    "name": "Mayor's Assistant",
+    "id": 0,
+    "completionText": "Congratulations! You completed Mayor's Assistant! The mayor has rewarded you with a copper axe and you learned a thing or two about cutting wood along the way.",
+    "progressToComplete": 6,
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 3
+      }
+    ],
+    "rewards": [
+      {
+        "skill": "Woodcutting",
+        "experienceGain": 500
+      },
+      {
+        "item": "Copper Axe",
+        "itemAmount": 1
+      }
+    ]
+  },
+  {
+    "name": "Oriole Ornithology",
+    "id": 1,
+    "completionText": "Congratulations! You completed the tutorial! You now know everything you need to know to set out on an adventure! Good luck out there!",
+    "progressToComplete": 6,
+    "rewards": [
+      {
+        "skill": "Woodcutting",
+        "experienceGain": 50
+      }
+    ]
+  },
+  {
+    "name": "Mound Is Missing",
+    "id": 2,
+    "completionText": "Congratulations! You solved the mystery!",
+    "progressToComplete": 29,
+    "rewards": [
+      {
+        "skill": "Fishing",
+        "experienceGain": 1000
+      }
+    ]
+  },
+  {
+    "name": "Case of the Dead Pirate",
+    "id": 3,
+    "completionText": "Congratulations! You discovered the murderer! Probably. You can talk to the crew on the island to see if you were right. You spent the remaining time at sea learning from the pirate crew.",
+    "progressToComplete": 100,
+    "rewards": [
+      {
+        "skill": "Swordsmanship",
+        "experienceGain": 10000
+      },
+      {
+        "skill": "Archery",
+        "experienceGain": 5000
+      },
+      {
+        "skill": "Culinary Arts",
+        "experienceGain": 3000
+      },
+      {
+        "skill": "Woodworking",
+        "experienceGain": 5000
+      }
+    ]
+  },
+  {
+    "name": "Chrysopoeian Crisis",
+    "id": 4,
+    "completionText": "Congratulations! You solved the crisis!",
+    "progressToComplete": 1000,
+    "rewards": [
+      {
+        "skill": "Alchemy",
+        "experienceGain": 3000
+      },
+      {
+        "skill": "Knifesmanship",
+        "experienceGain": 2000
+      }
+    ]
+  },
+  {
+    "name": "Grand Theft Camel",
+    "id": 5,
+    "completionText": "Congratulations! You can now purchase camels from Camelpalooza!",
+    "progressToComplete": 24
+  },
+  {
+    "name": "Queple's Sword",
+    "id": 6,
+    "completionText": "Congratulations! You solved the mystery of Queple's Sword!",
+    "progressToComplete": 10000
+  }
+]

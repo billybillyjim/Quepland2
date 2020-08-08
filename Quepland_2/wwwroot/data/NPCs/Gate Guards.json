@@ -1,0 +1,57 @@
+{
+  "name": "Gate Guards",
+  "id": 21,
+  "dialogs": [
+    {
+      "buttonText": "Can I go through this gate?",
+      "responseText": "Sure, we'll need to see your passport and you'll be good to go.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "I don't have a passport.",
+      "responseText": "Oh, well then you can't come in.",
+      "depth": 1,
+      "newDepthOnTalk": 2
+    },
+    {
+      "buttonText": "How do I get a passport?",
+      "responseText": "You can apply for a passport at the passport application office in the city square.",
+      "depth": 1,
+      "newDepthOnTalk": 4
+    },
+    {
+      "buttonText": "How do I get a passport?",
+      "responseText": "You can apply for a passport at the passport application office in the city square.",
+      "depth": 2,
+      "newDepthOnTalk": 4
+    },
+    {
+      "buttonText": "Would you take a bribe?",
+      "responseText": "No. But I would take a passport.",
+      "depth": 2,
+      "newDepthOnTalk": 3
+    },
+    {
+      "buttonText": "How do I get a passport?",
+      "responseText": "You can apply for a passport at the passport application office in the city square.",
+      "depth": 3,
+      "newDepthOnTalk": 4
+    },
+    {
+      "buttonText": "How am I supposed to do that if I can't enter the city?",
+      "responseText": "Not my problem. Let me know if you acquire a passport and I'll be glad to let you in.",
+      "depth": 4,
+      "newDepthOnTalk": 0
+    },
+    {
+      "buttonText": "I have a passport.",
+      "responseText": "Great to hear! I'll open the gate right away.",
+      "requirements": [
+        {
+          "item": "Koncave City Passport",
+          "itemAmount": 1
+        }
+      ]
+    }
+  ]
+}

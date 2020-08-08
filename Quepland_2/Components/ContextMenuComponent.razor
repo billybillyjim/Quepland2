@@ -1,0 +1,125 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (Menu != null && Menu.Buttons.Count > 0)
+{
+    <div style="
+        position: absolute;
+        width: 190px;
+        z-index: 1000;
+        height: @(Menu.GetHeight())px; @GetStyle()">
+        <div style="
+            width: 190px;
+            position: absolute !important;
+            color:whitesmoke;
+            padding-top:10px;
+            padding-bottom:10px;
+            line-height:15px;
+            border-radius:0.5rem;
+            background-color:#282828;
+            padding-left:3px;
+            padding-right:3px;">
+            @foreach (ContextButton button in Menu.Buttons)
+            {
+                <div style="
+                position: relative;
+                cursor: pointer;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top:3px;
+                padding-bottom:3px;
+                @GetButtonStyle(button)" @onclick="@(() => DoAction(button))" @onmouseover="@(() => SetBGColor(button, "#353535"))" @onmouseout="@(() => SetBGColor(button, "#282828"))">
+                    @button.ActionText
+                </div>
+            }
+
+        </div>
+        <div style="position:absolute;top:-55px;right:-90px;width:50px;height:250%;background-color:#00000000;" 
+             @onmouseover="@(new Action<MouseEventArgs>((args) => HideMenu(args)))">
+        </div>
+        <div style="position: absolute;top: -55px;left: -80px;width: 50px;height: 250%;background-color: #00000000;" 
+             @onmouseover="@(new Action<MouseEventArgs>((args) => HideMenu(args)))">
+        </div>
+        <div style="position: absolute;left: -80px; bottom: -50px;width: 200%; height: 30px;background-color: #00000000;" 
+             @onmouseover="@(new Action<MouseEventArgs>((args) => HideMenu(args)))">
+        </div>
+        <div style="position: absolute;left: -80px;top: -55px;width: 200%;height: 30px;background-color: #00000000;" 
+             @onmouseover="@(new Action<MouseEventArgs>((args) => HideMenu(args)))">
+        </div>
+    </div>
+}
+
+
+
+
+
+
+@code {
+
+    [Parameter]
+    public ContextMenu Menu { get; set; }
+    [Parameter]
+    public double xPos { get; set; }
+    [Parameter]
+    public double yPos { get; set; }
+
+    private int distanceFromMouse = 2;
+
+    private bool faceRight;
+
+    protected override void OnParametersSet()
+    {
+        if (xPos >= GameState.GameWindowWidth - 300)
+        {
+            faceRight = true;
+        }
+        else
+        {
+            faceRight = false;
+        }
+    }
+    private void SetBGColor(ContextButton button, string color)
+    {
+        button.Color = color;
+        GameState.UpdateState();
+    }
+    private string GetStyle()
+    {
+        if (faceRight)
+        {
+
+            return "text-align:right;top:" + (yPos + distanceFromMouse) + "px;right:" + (GameState.GameWindowWidth - xPos) + "px;";
+        }
+        else
+        {
+            return "text-align:right;top:" + (yPos + distanceFromMouse) + "px;left:" + xPos + "px;";
+        }
+    }
+    private string GetButtonStyle(ContextButton button)
+    {
+        return "background-color:" + button.Color;
+    }
+    private void HideMenu(MouseEventArgs args)
+    {
+
+        TooltipManager.ShowContext = false;
+
+        GameState.UpdateState();
+    }
+    private void DoAction(ContextButton button)
+    {
+        button.OnClick();
+        TooltipManager.ShowContext = false;
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+
+    }
+
+    void IDisposable.Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

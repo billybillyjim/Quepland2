@@ -1,0 +1,161 @@
+﻿@page "/World/AlchemicalHall/{HallName}/"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+@if (GameState.AlchemyStage == 0)
+{
+    <div>
+        <Quepland_2.Components.CustomDropdownComponent EmptyText="Select Metal" BoxText="@metal" DropdownItems="@Metals" @bind-Value="@metal"></Quepland_2.Components.CustomDropdownComponent>
+    </div>
+
+    <div>
+        <Quepland_2.Components.CustomDropdownComponent EmptyText="Select Element" BoxText="@element" DropdownItems="@Elements" @bind-Value="@element"></Quepland_2.Components.CustomDropdownComponent>
+
+    </div>
+
+    <div>
+        <Quepland_2.Components.CustomDropdownComponent EmptyText="Select Action" BoxText="@action" DropdownItems="@Actions" @bind-Value="@action"></Quepland_2.Components.CustomDropdownComponent>
+
+    </div>
+    @if(metal != null && element != null && action != null)
+    {
+        <button class="btn btn-primary" @onclick="@(() => BeginAlchemy())">
+            Attempt Alchemy
+        </button>
+    }
+}
+@if (GameState.AlchemyStage == 1)
+{
+    <div>
+        Adding Metal...
+        <div class="progress">
+            <div class="progress-bar" style="width:@GetWidth()">
+
+            </div>
+        </div>
+    </div>
+}
+@if (GameState.AlchemyStage == 2)
+{
+<div>
+    Applying Element...
+    <div class="progress">
+        <div class="progress-bar" style="width:@GetWidth()">
+
+        </div>
+    </div>
+</div>
+}
+@if (GameState.AlchemyStage == 3)
+{
+<div>
+    Doing Action...
+    <div class="progress">
+        <div class="progress-bar" style="width:@GetWidth()">
+
+        </div>
+    </div>
+</div>
+}
+
+
+
+
+@code {
+
+    [Parameter]
+    public double QueplarMultiplier { get; set; } = 1;
+    [Parameter]
+    public string HallName { get; set; }
+    private string stage = "Start";
+    private string metal = "Select a Metal";
+    private string element = "Select an Element";
+    private string action = "Select an Action";
+    private double ticksToComplete;
+    private List<string> Metals = new List<string>();
+    private List<string> Elements = new List<string>();
+    private List<string> Actions = new List<string>() { "Calcinate", "Dissolve", "Fermentate", "Sublimate", "Project", "Cibate" };
+
+    private void LoadMetals()
+    {
+        Metals.Clear();
+        foreach (KeyValuePair<GameItem, int> item in Player.Instance.Inventory.GetItems())
+        {
+            if (item.Key.SmithingInfo != null)
+            {
+                Metals.Add(item.Key.Name);
+            }
+        }
+    }
+    private void LoadElements()
+    {
+        Elements.Clear();
+        foreach (KeyValuePair<GameItem, int> item in Player.Instance.Inventory.GetItems())
+        {
+            if (item.Key.AlchemyInfo != null && item.Key.SmithingInfo == null)
+            {
+                Elements.Add(item.Key.Name);
+            }
+        }
+    }
+    public void BeginAlchemy()
+    {
+        AlchemicalFormula formula = new AlchemicalFormula();
+        formula.InputMetal = ItemManager.Instance.GetItemByName(metal);
+        formula.Element = ItemManager.Instance.GetItemByName(element);
+        formula.ActionString = action;
+        formula.ActionMultiplier = GetActionMultiplier();
+        formula.LocationMultiplier = QueplarMultiplier;
+        GameState.CurrentAlchemyFormula = formula;
+        ticksToComplete = 10;
+        GameState.AlchemyStage = 0;
+    }
+    private double GetActionMultiplier()
+    {
+        if(action == "Calcinate")
+        {
+            return 0.1;
+        }
+        else if(action == "Dissolve")
+        {
+            return 0.2;
+        }
+        else if(action == "Fermentate")
+        {
+            return 0.4;
+        }
+        else if(action == "Sublimate")
+        {
+            return 0.5;
+        }
+        else if(action == "Project")
+        {
+            return 0.8;
+        }
+        else if(action == "Cibate")
+        {
+            return 0.9;
+        }
+        else
+        {
+            Console.WriteLine("Action multiplier not found.");
+            return 0.1;
+        }
+    }
+    public string GetWidth()
+    {
+        return (100 - ((GameState.TicksToNextAction / ticksToComplete) * 100)) + "px;";
+    }
+    protected override void OnInitialized()
+    {
+        LoadMetals();
+        LoadElements();
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

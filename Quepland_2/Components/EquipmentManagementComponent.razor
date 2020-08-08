@@ -1,0 +1,104 @@
+﻿@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+<div>
+    <div style="width:360px;height:28px;border:solid black 1px;position:relative;background-color:gray;display:flex;">
+        <div style="margin-right:10px;line-height:28px;flex:1;"
+             @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Damage", "This is a measure of how much all your equipped items boost your damage. Higher numbers are better!")))"
+             @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            <img src="data/Images/Attack.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetAttack()
+        </div>
+        <div style="margin-right:10px;line-height:28px;flex:1;"
+             @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Armor", "This is a measure of how much all your equipped items boost your armor. Higher numbers are better!")))"
+             @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            <img src="data/Images/Armor.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetArmor()
+        </div>
+        <div style="margin-right:10px;line-height:28px;flex:1;"
+             @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Speed", "This is a measure of how many game ticks this weapon (Or your fists!) attacks at. Lower is faster!")))"
+             @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            <img src="data/Images/Speed.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetSpeed()
+        </div>
+    </div>
+</div>
+<div style="display:flex;flex-direction:column;flex-flow:wrap;">
+    @foreach (string slot in ItemManager.Instance.EquipmentSlots)
+    {
+        <div style="width:70px;margin:5px;">
+            @slot
+
+            <div @onclick="@(() => Unequip(GetItemAtSlot(slot)))">
+                <Quepland_2.Components.ItemBoxComponent Item="@GetItemAtSlot(slot)" shouldRender="@ShouldRerender(slot)"></Quepland_2.Components.ItemBoxComponent>
+            </div>
+        </div>
+    }
+    <div style="height:60vh;display:flex;flex-direction:column;">
+        <Quepland_2.Components.InventoryViewerComponent></Quepland_2.Components.InventoryViewerComponent>
+
+    </div>
+</div>
+
+
+@code {
+
+    public int GetAttack()
+    {
+        int total = 0;
+        foreach (GameItem i in Player.Instance.GetEquippedItems())
+        {
+            total += i.WeaponInfo?.Damage ?? 0 + i.ArmorInfo?.Damage ?? 0;
+        }
+        return total;
+    }
+    public int GetArmor()
+    {
+        int total = 0;
+        foreach (GameItem i in Player.Instance.GetEquippedItems())
+        {
+            total += i.WeaponInfo?.ArmorBonus ?? 0 + i.ArmorInfo?.ArmorBonus ?? 0;
+        }
+        return total;
+    }
+    public int GetSpeed()
+    {
+        return Player.Instance.GetWeaponAttackSpeed();
+    }
+
+    private void Unequip(GameItem item)
+    {
+        Player.Instance.Unequip(item);
+        TooltipManager.HideTip();
+        GameState.UpdateState();
+    }
+    private GameItem GetItemAtSlot(string slot)
+    {
+        foreach (GameItem i in Player.Instance.GetEquippedItems())
+        {
+            if (i.EquipSlot == slot)
+            {
+                return i;
+            }
+        }
+        return null;
+    }
+    private bool ShouldRerender(string slot)
+    {
+        foreach (GameItem i in Player.Instance.GetEquippedItems())
+        {
+            if (i.EquipSlot == slot)
+            {
+                return i.Rerender;
+            }
+        }
+        return true;
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

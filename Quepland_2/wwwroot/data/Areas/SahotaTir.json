@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Sahota Ice Fields",
+    "id": 100,
+    "image": "Snowflake",
+    "description": "A cavern of ice extends in all directions for miles. Magical ice monsters roam the open plain, while the walls appear to be harvestable. Here and there it appears you may be able to enter the walls through caves, but they are blocked off with thick, hardy roots.",
+    "areaURL": "SahotaIceFields",
+    "actions": [
+      "Mine Ice:Ice",
+      "Chop Ice Trees:Ice Logs"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "MtYamaCave",
+        "buttonText": "Climb out to Quepland",
+        "connectsLands": true
+      },
+      {
+        "areaURL": "SahotaCaverns",
+        "buttonText": "Chop the roots away",
+        "connectsLands": true
+      },
+      {
+        "areaURL": "SahotaDungeon",
+        "buttonText": "Continue along the main cave path"
+      }
+
+    ],
+    "monsters": [
+      "Bandit",
+      "Big Bandit"
+    ]
+  },
+  {
+    "name": "Sahota Caverns",
+    "id": 101,
+    "image": "Snowflake",
+    "description": "",
+    "areaURL": "SahotaCaverns",
+    "actions": [
+      "Mine Ice:Ice",
+      "Chop Ice Trees:Ice Logs"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "SahotaClearing",
+        "buttonText": "Continue further into the caves",
+        "connectsLands": true
+      }
+
+    ],
+    "monsters": [
+      "Bandit",
+      "Big Bandit"
+    ]
+  },
+  {
+    "name": "Sahota Clearing",
+    "id": 102,
+    "image": "Snowflake",
+    "description": "",
+    "areaURL": "SahotaClearing",
+    "actions": [
+      "Mine Ice:Ice",
+      "Chop Ice Trees:Ice Logs"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "KoncaveCityGate",
+        "buttonText": "Head to the gate"
+      }
+
+    ],
+    "monsters": [
+      "Bandit",
+      "Big Bandit"
+    ]
+  },
+  {
+    "name": "Sahota Dungeon",
+    "image": "Snowflake",
+    "id": 103,
+    "description": "",
+    "areaURL": "SahotaDungeon",
+    "actions": [
+      "Mine Ice:Ice",
+      "Chop Ice Trees:Ice Logs"
+    ],
+    "monsters": [
+      "Bandit",
+      "Big Bandit"
+    ]
+  }
+]

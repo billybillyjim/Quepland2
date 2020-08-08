@@ -1,0 +1,173 @@
+[
+  {
+    "name": "Cochee Clearing",
+    "id": 40,
+    "image": "Tree",
+    "isUnlocked": false,
+    "description": "The forest beyond Uragota is different, somehow. An eerie stillness eminates from within, only perturbed by the sound of leaves in the breeze. A large tree has fallen in the path, you'll need to cut it away to continue.",
+    "areaURL": "CocheeClearing",
+    "trappingLocation": true,
+    "actions": [
+      "Chop Birch Trees:Birch Logs"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "HigashiWoods",
+        "buttonText": "Enter the Forest",
+        "requirements": [
+          {
+            "skill": "Woodcutting",
+            "skillLevel": 30
+          },
+          {
+            "action": "Woodcutting"
+          }
+        ]
+      }
+    ],
+    "trapSlot": {
+      "dropTable": {
+        "drops": [
+          {
+            "itemName": "Rabbit"
+          },
+          {
+            "itemName": "Pigeon"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "Higashi Woods",
+    "id": 41,
+    "image": "Forest",
+    "isUnlocked": false,
+    "description": "Trees blanket the hilly terrain, as you make your way further into the woods you find ample supplies for building traps. Large stones and sturdy sticks lie along the path.",
+    "areaURL": "HigashiWoods",
+    "actions": [
+      "Gather Stones:Large Stone",
+      "Gather Sticks:Sticks"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "DeepHigashiWoods",
+        "buttonText": "Continue into the Heart of the Forest"
+      }
+
+    ],
+    "huntingTripInfo": {
+      "dropTable": {
+        "drops": [
+          {
+            "itemName": "Rabbit",
+            "weight": 10
+          },
+          {
+            "itemName": "Deer",
+            "weight": 5
+          },
+          {
+            "itemName": "Turkey"
+          },
+          {
+            "itemName": "Pigeon"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "Deep Higashi Woods",
+    "id": 42,
+    "image": "DeepForest",
+    "isUnlocked": false,
+    "description": "As you continue along the path the forest grows dark and musty. There are piles of cheese lying along the path, some have transformed into mossy mounds, while others seem quite fresh. The road continues up a steep hill ahead.",
+    "areaURL": "DeepHigashiWoods",
+    "actions": [
+      "Get Some Cheese:Cheese"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "HigashiBridge",
+        "buttonText": "Continue up the Hill"
+      }
+
+    ],
+    "npcs": [
+      "Excited Traveller"
+    ]
+  },
+  {
+    "name": "Higashi Bridge",
+    "id": 43,
+    "image": "CanyonBridge",
+    "isUnlocked": false,
+    "description": "A small bridge provides the only way across a deep canyon. As you step across the flimsy bridge you can hear the sound of bones rattling beneath your feet. It would be wise to not stay on the bridge any longer than necessary.",
+    "areaURL": "HigashiBridge",
+    "unlockableAreas": [
+      {
+        "areaURL": "EastHigashiWoods",
+        "buttonText": "Cross The Bridge"
+      }
+    ]
+  },
+  {
+    "name": "East Higashi Woods",
+    "id": 44,
+    "image": "Forest",
+    "isUnlocked": false,
+    "description": "The woods begin to thin as you reach the other side of the bridge. Hemp grows wild here, enough to harvest however much you'd like. The trail continues southward up the mountains.",
+    "areaURL": "EastHigashiWoods",
+    "npcs": [
+      "Hooded Traveller"
+    ],
+    "actions": [
+      "Harvest Hemp:Hemp",
+      "Chop Mesquite Trees:Mesquite Logs"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "SouthernTrail",
+        "buttonText": "Exit the Woods"
+      }
+    ],
+    "huntingTripInfo": {
+      "dropTable": {
+        "drops": [
+          {
+            "itemName": "Rabbit",
+            "weight": 10
+          },
+          {
+            "itemName": "Deer",
+            "weight": 5
+          },
+          {
+            "itemName": "Buck",
+            "weight": 5
+          },
+          {
+            "itemName": "Turkey",
+            "weight": 5
+          },
+          {
+            "itemName": "Pheasant",
+            "weight": 5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "Higashi Canyon Floor",
+    "id": 45,
+    "image": "Canyon",
+    "isUnlocked": false,
+    "description": "The path slopes steeply downward until arriving at the floor of the canyon. It's quite dark, but you can see the light of a nearby fire. A short, heavily bearded man sits beside it warming his hands.",
+    "areaURL": "HigashiCanyon",
+    "npcs": [
+      "Mound"
+    ]
+  }
+]

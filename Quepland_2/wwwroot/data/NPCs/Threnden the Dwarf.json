@@ -1,0 +1,96 @@
+{
+  "name": "Threnden the Dwarf",
+  "id": 30,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hey there.",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Threnden the Dwarf"
+        }
+      ]
+    },
+    {
+      "buttonText": "Would you work for me?",
+      "responseText": "I work for anyone with enough money to pay me.",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Threnden the Dwarf"
+        }
+      ]
+    },
+    {
+      "buttonText": "What can you do?",
+      "responseText": "I'm a dwarf. I carry mined ores to the bank, so you don't have to do it yourself. I'm very good at it, too!",
+      "depth": 1,
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Threnden the Dwarf"
+        }
+      ]
+    },
+    {
+      "buttonText": "How much?",
+      "responseText": "Hmm, for you? With your skills I would do it for 25,000,000 coins.",
+      "depth": 2,
+      "newDepthOnTalk": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Threnden the Dwarf"
+        }
+      ]
+    },
+    {
+      "buttonText": "How much? I'm a master miner, by the way.",
+      "responseText": "Hmm, master miner you say? In that case I would do it for 12,000,000 coins.",
+      "depth": 2,
+      "newDepthOnTalk": 4,
+      "requirements": [
+        {
+          "lockedFollower": "Threnden the Dwarf"
+        },
+        {
+          "skill": "Mining",
+          "skillLevel": 100
+        }
+      ]
+    },
+    {
+      "buttonText": "Here you go (Pay 25,000,000)",
+      "responseText": "Thanks! I'll follow you now.",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Threnden the Dwarf"
+        },
+        {
+          "item": "Coins",
+          "itemAmount": 25000000
+        }
+      ],
+      "unlockedFollower": "Threnden the Dwarf",
+      "ConsumeRequiredItems": true
+    },
+    {
+      "buttonText": "Here you go (Pay 12,000,000)",
+      "responseText": "Thanks! I'll follow you now.",
+      "depth": 4,
+      "requirements": [
+        {
+          "lockedFollower": "Threnden the Dwarf"
+        },
+        {
+          "item": "Coins",
+          "itemAmount": 12000000
+        }
+      ],
+      "unlockedFollower": "Threnden the Dwarf",
+      "ConsumeRequiredItems": true
+    }
+  ]
+}

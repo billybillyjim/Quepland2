@@ -1,0 +1,10 @@
+{
+  "name": "Stone Door",
+  "id": 24,
+  "dialogs": [
+    {
+      "buttonText": "Read the door",
+      "responseText": "Here lies Queple, the offspring of Imaynimayn, the Sorrow-Thief of Man and Wielder of the Serpent of the Pool of Wounds. Having slain the Walker of the Harm of the Sail and imprisoned the Walker of the Terror of the Adder, he lies in Honor as Savior of his Land."
+    }
+  ]
+}

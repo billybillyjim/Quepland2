@@ -1,0 +1,83 @@
+[
+  {
+    "name": "Koncave Falls",
+    "id": 110,
+    "image": "Waterfall",
+    "description": "The waterfall is surrounded on all sides by a giant root system. Strange, humanlike creatures dart into the darkness as you approach. There are a number of sparkling rocks jutting out from the roots that cling to the roof of the cavern.",
+    "areaURL": "KoncaveFalls",
+    "actions": [
+      "Fish Something:Icefish,Salmon,Shad,Crab,Giant Clam",
+      "Chop Roots:Great Tree Logs"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "KoncaveFallsMine",
+        "buttonText": "Climb the vines to reach the rocks"
+      },
+      {
+        "areaURL": "KoncaveGate",
+        "buttonText": "Continue on the path"
+      }
+
+    ],
+    "monsters": [
+      "Root Dweller",
+      "Stealthy Root Dweller"
+    ]
+  },
+  {
+    "name": "Koncave Falls Mine",
+    "id": 111,
+    "image": "Mine",
+    "description": "The waterfall is surrounded on all sides by a giant root system. Strange, humanlike creatures dart into the darkness as you approach. There are a number of sparkling rocks jutting out from the roots that cling to the roof of the cavern.",
+    "areaURL": "KoncaveFallsMine",
+    "actions": [
+      "Mine Ores:Platinum Ore,Strongtium Ore,Sahotite Ore"
+    ],
+    "monsters": [
+      "Strong Root Dweller",
+      "Ravenous Root Dweller",
+      "Root Dweller",
+      "Stealthy Root Dweller"
+    ]
+  },
+  {
+    "name": "Koncave City Gate",
+    "id": 112,
+    "image": "Gate",
+    "description": "Two guards stand watch at the front of a massive gate.",
+    "areaURL": "KoncaveCityGate",
+    "dojoURL": "TsuyoDojo",
+    "unlockableAreas": [
+      {
+        "areaURL": "KoncaveCitySquare",
+        "buttonText": "Enter the city",
+        "requirements": [
+          {
+            "item": "Caligin Passport",
+            "itemAmount": 1
+          }
+        ]
+      }
+
+    ],
+    "npcs": [
+      "Gate Guards"
+    ]
+  },
+  {
+    "name": "Koncave City Square",
+    "id": 113,
+    "image": "Fountain",
+    "description": "A large fountain fuelled by a waterfall coming out of the roof of the cavern stands in the middle of the square. Shops surround the perimeter, and a castle resides on the far side.",
+    "areaURL": "KoncaveCitySquare",
+    "buildings": [
+      {
+        "name": "Tsuyo Dojo",
+        "buttonText": "Enter the dojo",
+        "url": "TsuyoDojo"      
+
+      }
+    ]
+  }
+]

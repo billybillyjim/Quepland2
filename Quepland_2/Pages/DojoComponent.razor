@@ -1,0 +1,109 @@
+﻿@page "/World/Dojo/{dojoURL}"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+
+@if (thisDojo != null)
+{
+    <br />
+    <h1>@thisDojo.Name</h1>
+    <div>@thisDojo.Description</div>
+    @foreach (string npc in thisDojo.NPCs)
+    {
+        <Quepland_2.Components.NPCDialogComponent npc="@npc"></Quepland_2.Components.NPCDialogComponent>
+    }
+    <br />
+    @if (thisDojo.LastWinTime.HasValue && thisDojo.LastWinTime.Value.AddHours(22).CompareTo(DateTime.UtcNow) > 0)
+    {
+        <div>Congratulations! You defeated every member of the dojo. You can come back tomorrow to do it again.</div>
+        <div>
+            Challenge Again in:@(GetNextChallengeTime())
+        </div>
+    }
+    else if (thisDojo.LastLossTime.HasValue && thisDojo.LastLossTime.Value.AddMinutes(3).CompareTo(DateTime.UtcNow) > 0)
+    { 
+        <div>Sorry! You lost. Try and improve your skills and come back later.</div>
+        <div>
+            Challenge Again in:@(GetNextChallengeTimeForFailure())
+        </div>
+    }
+    else if (thisDojo.CurrentOpponent == 0 && thisDojo.HasBegunChallenge == false)
+    {
+        <button class="btn btn-primary" @onclick="@(() => BeginChallenge())">
+            Begin Challenge
+        </button>
+    }
+    else if (thisDojo.HasBegunChallenge && thisDojo.CurrentOpponent < thisDojo.Opponents.Count)
+    {
+        <CombatComponent></CombatComponent>
+
+        if (BattleManager.Instance.BattleHasEnded && thisDojo.CurrentOpponent > 0 && thisDojo.CurrentOpponent < thisDojo.Opponents.Count)
+        {
+            <button class="btn btn-primary" @onclick="@(() => ContinueChallenge())">Continue</button>
+        }
+    }
+
+}
+
+
+
+@code {
+    [Parameter]
+    public string dojoURL { get; set; }
+
+    public Dojo thisDojo { get; set; }
+
+    private string GetNextChallengeTime()
+    {
+        if (thisDojo.LastWinTime.HasValue == false)
+        {
+            return "Now";
+        }
+        else
+        {
+            return thisDojo.LastWinTime.Value.AddHours(22).Subtract(DateTime.UtcNow).ToString(@"hh\:mm\:ss");
+        }
+    }
+    private string GetNextChallengeTimeForFailure()
+    {
+        if (thisDojo.LastLossTime.HasValue == false)
+        {
+            return "Now";
+        }
+        else
+        {
+            return thisDojo.LastLossTime.Value.AddMinutes(3).Subtract(DateTime.UtcNow).ToString(@"hh\:mm\:ss");
+        }
+    }
+    private void BeginChallenge()
+    {
+        thisDojo.HasBegunChallenge = true;
+        BattleManager.Instance.CurrentDojo = thisDojo;
+        BattleManager.Instance.StartBattle(thisDojo.Opponents[thisDojo.CurrentOpponent]);
+        GameState.UpdateState();
+    }
+    private void ContinueChallenge()
+    {
+        BattleManager.Instance.StartBattle(thisDojo.Opponents[thisDojo.CurrentOpponent]);
+        GameState.UpdateState();
+    }
+    private void Talk(Dialog d)
+    {
+        d.Talk();
+        GameState.UpdateState();
+    }
+    protected override void OnParametersSet()
+    {
+        thisDojo = AreaManager.Instance.GetDojoByURL(dojoURL);
+
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

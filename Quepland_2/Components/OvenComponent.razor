@@ -1,0 +1,105 @@
+﻿@inject GameState GameState
+@using Quepland_2.Components
+@implements IDisposable
+
+<CustomDropdownComponent BoxText="Select a Recipe" EmptyText="You don't have anything to bake." @bind-Value="Source" DropdownItems="@GetRecipes()"></CustomDropdownComponent>
+
+<br />
+
+@if (Source != "")
+{
+    <button class="btn btn-primary" @onclick="@(() => Bake())">Bake @Source</button>
+}
+else
+{
+    <button class="btn btn-primary" style="opacity:0.5">Bake</button>
+}
+<br />
+<br />
+<div>
+    <div class="progress" style="width:300px;">
+        <div class="progress-bar" style="@GetProgress()"></div>
+    </div>
+</div>
+
+
+@code {
+
+    private string s = "";
+    public string Source
+    {
+        get { return s; }
+        set
+        {
+            s = value;
+            UpdateRecipes();
+        }
+    }
+    int amount = 1;
+    private bool isBaking = false;
+    private List<Recipe> recipes = new List<Recipe>();
+
+    public List<string> GetRecipes()
+    {
+        if (recipes.Count > 0)
+        {
+            return recipes.Select(x => x.OutputItemName).ToList();
+        }
+        return new List<string>();
+    }
+
+    public void Bake()
+    {
+        Recipe source = ItemManager.Instance.GetBakingRecipeByOutput(Source);
+
+        if (source.CanCreate())
+        {
+            GameState.StopActions();
+            GameState.SetCraftingItem(source);
+            MessageManager.AddMessage("You begin baking " + Source + ".");
+            GameState.TicksToNextAction = source.CraftingSpeed;
+            isBaking = true;
+        }
+        GameState.UpdateState();
+    }
+    private string GetProgress()
+    {
+        if (GameState.CurrentRecipe != null && isBaking)
+        {
+            return "width:" + (100 - ((double)GameState.TicksToNextAction / GameState.CurrentRecipe.CraftingSpeed) * 100d) + "%";
+        }
+        return "width:0%";
+    }
+
+    public void UpdateRecipes()
+    {
+        recipes.Clear();
+        foreach (Recipe recipe in ItemManager.Instance.BakingRecipes)
+        {
+            if (recipe?.Output != null)
+            {
+                if (recipe.CanCreate())
+                {
+                    recipes.Add(recipe);
+                }
+            }
+
+        }
+        if (recipes.Count == 0)
+        {
+            isBaking = false;
+        }
+    }
+    protected override void OnInitialized()
+    {
+        UpdateRecipes();
+        GameState.OvenComponent = this;
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.OvenComponent = null;
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

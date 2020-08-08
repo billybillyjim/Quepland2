@@ -1,0 +1,76 @@
+{
+  "name": "Anthretago",
+  "id": 38,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "And likewise to you, traveller.",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Anthretago"
+        }
+      ]
+    },
+    {
+      "buttonText": "What can you do?",
+      "responseText": "One the one hand, I am a scout, and I can find monsters for you to fight. On the other hand, I have a keen eye, and can choose the specific creatures you'd prefer to battle with.",
+      "depth": 1,
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Anthretago"
+        }
+      ]
+    },
+    {
+      "buttonText": "Would you work for me?",
+      "responseText": "I would work for any great adventurer, tying my legacy to theirs. But one must prove their worth before I simply follow blindly.",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Anthretago"
+        }
+      ]
+    },
+    {
+      "buttonText": "How do I prove I am worthy?",
+      "responseText": "Give me 10,000 dojo tokens. Only a great warrior would be capable of both acquiring so many and casually giving them away.",
+      "depth": 2,
+      "newDepthOnTalk": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Anthretago"
+        }
+      ]
+    },
+    {
+      "buttonText": "Deal",
+      "responseText": "I am overjoyed to work for one such as yourself. Let me guide you, then, to whatever beasts you wish to slay.",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Anthretago"
+        },
+        {
+          "item": "Dojo Tokens",
+          "itemAmount": 100000
+        }
+      ],
+      "unlockedFollower": "Anthretago",
+      "ConsumeRequiredItems": true
+    },
+    {
+      "buttonText": "I don't have that many",
+      "responseText": "Few adventurers ever will. To complete the dojo circuits many times is a difficult task. If you grow in your abilities and your limitations restrict your answer no more, please come see me again.",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Anthretago"
+        }
+      ]
+
+    }
+  ]
+}

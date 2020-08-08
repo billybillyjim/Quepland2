@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Gashadokuro Head",
+    "hp": 500,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship",
+    "damage": 29,
+    "armor": 14,
+    "attackSpeed": 25
+  },
+  {
+    "name": "Gashadokuro R Hand",
+    "hp": 500,
+    "weaknesses": "Knifesmanship",
+    "strengths": "Axemanship",
+    "damage": 19,
+    "armor": 24,
+    "attackSpeed": 20
+  },
+  {
+    "name": "Gashadokuro Left Hand",
+    "hp": 500,
+    "weaknesses": "Hammermanship",
+    "strengths": "Swordsmanship",
+    "damage": 29,
+    "armor": 14,
+    "attackSpeed": 18
+    
+  },
+  {
+    "name": "Gashadokuro Spine",
+    "hp": 1500,
+    "weaknesses": "Axemanship",
+    "strengths": "Knifesmanship",
+    "damage": 29,
+    "armor": 140,
+    "attackSpeed": 1000,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 500
+        },
+        {
+          "itemName": "Bone Shard",
+          "weight": 3
+        },
+        {
+          "itemName": "Bandit's Boots",
+          "weight": 3
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 1000
+        },
+        {
+          "itemName": "Coins",
+          "weight": 2,
+          "amount": 3000
+        },
+        {
+          "itemName": "Coins",
+          "weight": 1,
+          "amount": 5000
+        }
+      ]
+    }
+  },
+  {
+    "name": "Imaynimayn",
+    "hp": 15500,
+    "weaknesses": "",
+    "strengths": "Knifesmanship",
+    "damage": 165,
+    "armor": 450,
+    "attackSpeed": 1
+  }
+]

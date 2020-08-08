@@ -1,0 +1,181 @@
+{
+  "name": "Mound",
+  "id": 9,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello."
+    },
+    {
+      "buttonText": "I found you!",
+      "responseText": "Who? Me? Why were you looking for me?",
+      "newQuestprogressValue": 19,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 1,
+          "maximumQuestProgress": 18
+        }
+      ]
+    },
+    {
+      "buttonText": "I didn't know where you were",
+      "responseText": "You're an odd fellow. Look, I just want to be left alone. I have nothing to hide. If I give you something will you leave me be?",
+      "newQuestprogressValue": 20,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 19,
+          "maximumQuestProgress": 19
+        }
+      ]
+    },
+    {
+      "buttonText": "Yes",
+      "responseText": "Excellent. Here's a map to an island I once visited when I was younger. As an adventurer you'll probably find more use out of them than I will. Now please leave.",
+      "newQuestprogressValue": 29,
+      "quest": "Mound Is Missing",
+      "itemOnTalk": "Mound's Map",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 20,
+          "maximumQuestProgress": 20
+        }
+      ]
+    },
+    {
+      "buttonText": "No",
+      "responseText": "What? Why not? What do you want from me??",
+      "newQuestprogressValue": 21,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 20,
+          "maximumQuestProgress": 20
+        }
+      ]
+    },
+    {
+      "buttonText": "Tell me a story",
+      "responseText": "What kind of adventurer are you? Is this what you do? Walk up to strangers hiding in canyons and demand story time?",
+      "newQuestprogressValue": 22,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 21,
+          "maximumQuestProgress": 21
+        }
+      ]
+    },
+    {
+      "buttonText": "On second thought just give me something",
+      "responseText": "Okay. Take this map, it will lead you to an island I visited in my younger days. Now please leave me be.",
+      "newQuestprogressValue": 29,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 21,
+          "maximumQuestProgress": 26
+        }
+      ]
+    },
+    {
+      "buttonText": "Yes",
+      "responseText": "Okay, sure whatever. I'll tell you a story and then you need to leave me be. There exists in this world a great tree, larger than any you'll find here in Quepland...",
+      "newQuestprogressValue": 23,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 22,
+          "maximumQuestProgress": 22
+        }
+      ]
+    },
+    {
+      "buttonText": "Listen On",
+      "responseText": "No one knows where the tree came from, or how it came to be so big, but a group of people began living in and around it. Whether by coincidence or by some gift from the Great Tree, these people began to perform magical acts...",
+      "newQuestprogressValue": 24,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 23,
+          "maximumQuestProgress": 23
+        }
+      ]
+    },
+    {
+      "buttonText": "Listen On",
+      "responseText": "They discovered a method by which they could extract the very nature of an object from its substance. The item would fade away, but what remained they called Seeds. These seeds could not grow like the tree they lived around, but they provided a base for even more powerful magic...",
+      "newQuestprogressValue": 25,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 24,
+          "maximumQuestProgress": 24
+        }
+      ]
+    },
+    {
+      "buttonText": "Listen On",
+      "responseText": "The tribe was willing to share their technique with whoever asked it of them, on the condition the learner would vow to never use the magic for destructive purposes. Of course, they eventually were decieved by an evil man, who used his new-found powers to raise an army from the roots of the tree...",
+      "newQuestprogressValue": 26,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 25,
+          "maximumQuestProgress": 25
+        }
+      ]
+    },
+    {
+      "buttonText": "Listen On",
+      "responseText": "He was on the verge of killing off every last magician, so that only he would have the knowledge to defeat himself, when his own creations turned on him. After his death, the tribe of the Great Tree left the area. Since their departure a new city has been built underneath the trunk of the tree, which you can visit if you find a way through.",
+      "newQuestprogressValue": 27,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 26,
+          "maximumQuestProgress": 26
+        }
+      ]
+    },
+    {
+      "buttonText": "That was boring",
+      "responseText": "What!? It's a true story! And it's supposed to be giving you a hint that you can learn magic if you go to the Great Tree! What more do you want from me?!",
+      "newQuestprogressValue": 28,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 27,
+          "maximumQuestProgress": 27
+        }
+      ]
+    },
+    {
+      "buttonText": "I would like the thing you mentioned before now",
+      "responseText": "Enough! Take this map. Now leave me be! I won't say another word!",
+      "newQuestprogressValue": 29,
+      "quest": "Mound Is Missing",
+      "itemOnTalk": "Mound's Map",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 28,
+          "maximumQuestProgress": 28
+        }
+      ]
+    }
+  ]
+}

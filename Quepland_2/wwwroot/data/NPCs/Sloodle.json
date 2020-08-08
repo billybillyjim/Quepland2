@@ -1,0 +1,76 @@
+{
+  "name": "Sloodle",
+  "id": 33,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi.",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Sloodle"
+        }
+      ]
+    },
+    {
+      "buttonText": "Would you work for me?",
+      "responseText": "I'd work for anyone, if they pay me.",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Sloodle"
+        }
+      ]
+    },
+    {
+      "buttonText": "What can you do?",
+      "responseText": "I'm a friendly Kushtaka, I can carry fish from where you catch them to your bank, so you don't have to do it yourself. I'm pretty good at it.",
+      "depth": 1,
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Glindrear"
+        }
+      ]
+    },
+    {
+      "buttonText": "How much?",
+      "responseText": "Oh, I'd say 200,000 coins would be reasonable.",
+      "depth": 2,
+      "newDepthOnTalk": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Sloodle"
+        }
+      ]
+    },
+    {
+      "buttonText": "Deal",
+      "responseText": "Great! That's a done deal then.",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Sloodle"
+        },
+        {
+          "item": "Coins",
+          "itemAmount": 200000
+        }
+      ],
+      "unlockedFollower": "Sloodle",
+      "ConsumeRequiredItems": true
+    },
+    {
+      "buttonText": "I don't have that much",
+      "responseText": "Well I guess that's bad news for you, then. Let me know if you manage to get your hands on some more money.",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Sloodle"
+        }
+      ]
+
+    }
+  ]
+}

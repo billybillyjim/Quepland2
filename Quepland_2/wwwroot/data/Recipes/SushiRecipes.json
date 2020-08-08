@@ -1,0 +1,528 @@
+[
+  {
+    "outputItemName": "Rice Roll",
+    "ingredients": [
+      {
+        "itemName": "Seaweed"
+      },
+      {
+        "itemName": "Rice"
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "craftingSpeed": 6
+  },
+  {
+    "outputItemName": "Minnow Roll",
+    "ingredients": [
+      {
+        "itemName": "Minnows"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:15",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Sunfish Roll",
+    "ingredients": [
+      {
+        "itemName": "Sunfish"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:25",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 3
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Manta Ray Roll",
+    "ingredients": [
+      {
+        "itemName": "Manta Ray"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:240",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 64
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Crab Roll",
+    "ingredients": [
+      {
+        "itemName": "Crab"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:73",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 11
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Angry Crab Roll",
+    "ingredients": [
+      {
+        "itemName": "Angry Crab"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:73",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 11
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Puffer Fish Roll",
+    "ingredients": [
+      {
+        "itemName": "Puffer Fish"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 8
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Carp Roll",
+    "ingredients": [
+      {
+        "itemName": "Carp"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:130",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 45
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Icefish Roll",
+    "ingredients": [
+      {
+        "itemName": "Icefish"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:20",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Shrimp Roll",
+    "ingredients": [
+      {
+        "itemName": "Shrimp"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:40",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 6
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Scallop Roll",
+    "ingredients": [
+      {
+        "itemName": "Scallop"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Sardine Roll",
+    "ingredients": [
+      {
+        "itemName": "Sardine"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:40",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Abalone Roll",
+    "ingredients": [
+      {
+        "itemName": "Abalone"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:60",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 40
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Saury Roll",
+    "ingredients": [
+      {
+        "itemName": "Saury"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:90",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 43
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Butterfish Roll",
+    "ingredients": [
+      {
+        "itemName": "Butterfish"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:90",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 47
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Shad Roll",
+    "ingredients": [
+      {
+        "itemName": "Shad"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:110",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 50
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Squid Roll",
+    "ingredients": [
+      {
+        "itemName": "Squid"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:140",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 55
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Salmon Roll",
+    "ingredients": [
+      {
+        "itemName": "Salmon"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:200",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 60
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Tuna Roll",
+    "ingredients": [
+      {
+        "itemName": "Tuna"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:350",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 67
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Yellowtail Roll",
+    "ingredients": [
+      {
+        "itemName": "Yellowtail"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:420",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 70
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Giant Clam Roll",
+    "ingredients": [
+      {
+        "itemName": "Giant Clam"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:700",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 76
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Big Tuna Roll",
+    "ingredients": [
+      {
+        "itemName": "Big Tuna"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:900",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 80
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Swordfish Roll",
+    "ingredients": [
+      {
+        "itemName": "Swordfish"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:1200",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 81
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Flounder Roll",
+    "ingredients": [
+      {
+        "itemName": "Flounder"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:1400",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 85
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Sleeper Shark Roll",
+    "ingredients": [
+      {
+        "itemName": "Sleeper Shark"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:1600",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 88
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Halibut Roll",
+    "ingredients": [
+      {
+        "itemName": "Halibut"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:1800",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 91
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Octopus Roll",
+    "ingredients": [
+      {
+        "itemName": "Giant Octopus"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:2000",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 93
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Eqalussuaq Roll",
+    "ingredients": [
+      {
+        "itemName": "Eqalussuaq"
+      },
+      {
+        "itemName": "Rice Roll"
+      }
+    ],
+    "experienceGained": "Culinary Arts:2200",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 95
+      }
+    ],
+    "maxOutputsPerAction": 1
+  }
+]

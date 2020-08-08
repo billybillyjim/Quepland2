@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Queple Cave",
+    "url": "QuepleCave",
+    "size": 50,
+    "areaURLs": [
+      "CopperMine",
+      "TinMine",
+      "QuepleCaveSmithy",
+      "QuepleCaveRiver",
+      "GrumpysHome",
+      "StoneDoor"
+    ],
+    "monsterNames": [
+      "Chicken",
+      "Rooster",
+      "Small Kappa",
+      "Slime"
+    ]
+  },
+  {
+    "name": "Sawoka Dungeon",
+    "url": "SawokaDungeon",
+    "size": 250,
+    "areaURLs": [
+      "Sawoka"
+    ],
+    "monsterNames": [
+      "Ground Grupper",
+      "Sawabe Swiper",
+      "Mapinguari",
+      "Tokeloshe",
+      "Kappa"
+    ]
+  },
+  {
+    "name": "Sahota Dungeon",
+    "url": "SahotaDungeon",
+    "size": 500,
+    "areaURLs": [
+      "SahotaIceFields"
+    ],
+    "monsterNames": [
+      "Frost Fighter",
+      "Chenoo",
+      "Akhlut",
+      "Italian Christmas Tree"
+    ]
+  }
+]

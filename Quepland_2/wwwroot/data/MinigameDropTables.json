@@ -1,0 +1,148 @@
+[
+  {
+    "areaName": "Hoin River",
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Small Caiman",
+          "weight": 50
+        },
+        {
+          "itemName": "Caiman",
+          "weight": 30
+        },
+        {
+          "itemName": "Large Caiman",
+          "weight": 10
+        },
+        {
+          "itemName": "Moose",
+          "weight": 1
+        },
+        {
+          "itemName": "Salmon",
+          "weight": 50
+        },
+        {
+          "itemName": "Giant Clam",
+          "weight": 10
+        },
+        {
+          "itemName": "Shad",
+          "weight": 50
+        },
+        {
+          "itemName": "Sunfish",
+          "weight": 50
+        },
+        {
+          "itemName": "Carp",
+          "weight": 50
+        },
+        {
+          "itemName": "Fisherman Gloves",
+          "weight": 1
+        },
+        {
+          "itemName": "Fisherman Hat",
+          "weight": 1
+        },
+        {
+          "itemName": "Fisherman Shirt",
+          "weight": 1
+        },
+        {
+          "itemName": "Fisherman Pants",
+          "weight": 1
+        }
+      ]
+    }
+  },
+  {
+    "areaName": "Sotu Nran Waterfall",
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 7000
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 10000
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 25000
+        },
+        {
+          "itemName": "Strong Buloke Arrow",
+          "weight": 50,
+          "amount": 30
+        },
+        {
+          "itemName": "Strong Lignum Vitae Arrow",
+          "weight": 50,
+          "amount": 30
+        },
+        {
+          "itemName": "Cinnabar",
+          "weight": 20,
+          "amount": 10
+        },
+        {
+          "itemName": "Gold Ore",
+          "weight": 20,
+          "amount": 10
+        },
+        {
+          "itemName": "Cut Garnet",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Cut Amethyst",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Cut Emerald",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Cut Topaz",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Cut Aquamarine",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Cut Diamond",
+          "weight": 10,
+          "amount": 1
+        },
+        {
+          "itemName": "Cut Ruby",
+          "weight": 10,
+          "amount": 1
+        },
+        {
+          "itemName": "Cut Sapphire",
+          "weight": 10,
+          "amount": 1
+        },
+        {
+          "itemName": "Queplinium Ore",
+          "weight": 5,
+          "amount": 1
+        }
+      ]
+    }
+  }
+]

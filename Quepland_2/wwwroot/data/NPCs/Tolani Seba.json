@@ -1,0 +1,65 @@
+{
+  "name": "Tolani Seba",
+  "id": 36,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello. Looking for a hired hand?",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Tolani Seba"
+        }
+      ]
+    },
+    {
+      "buttonText": "How much?",
+      "responseText": "My scouting services are 100,000 coins.",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Tolani Seba"
+        }
+      ]
+    },
+    {
+      "buttonText": "What can you do?",
+      "responseText": "I'm a scout. I can seek out monsters for you to fight, so you can focus more on other things.",
+      "depth": 1,
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Tolani Seba"
+        }
+      ]
+    },
+    {
+      "buttonText": "Deal",
+      "responseText": "You're a smart adventurer. You won't regret this decision.",
+      "depth": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Tolani Seba"
+        },
+        {
+          "item": "Coins",
+          "itemAmount": 100000
+        }
+      ],
+      "unlockedFollower": "Tolani Seba",
+      "ConsumeRequiredItems": true
+    },
+    {
+      "buttonText": "I don't have that much",
+      "responseText": "Well the offer still stands. Maybe come back when you do, okay?",
+      "depth": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Tolani Seba"
+        }
+      ]
+
+    }
+  ]
+}

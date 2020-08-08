@@ -1,0 +1,119 @@
+[
+  {
+    "name": "Lumpy the Gnome",
+    "description": "Lumpy is just barely capable of moving logs from one location to another.",
+    "autoCollectMessage": "Lumpy stubles off with a load of $.",
+    "autoCollectSkill": "Woodcutting",
+    "autoCollectLevel": 15,
+    "inventorySize": 12,
+    "autoCollectSpeed": 100
+  },
+  {
+    "name": "Rumpy the Gnome",
+    "description": "Rumpy has an ugly butt-chin which has always encouraged him to move quickly enough to never be seen.",
+    "autoCollectMessage": "Rumpy scurries off with a load of $.",
+    "autoCollectSkill": "Woodcutting",
+    "autoCollectLevel": 60,
+    "inventorySize": 24,
+    "autoCollectSpeed": 80
+  },
+  {
+    "name": "Pumpy the Gnome",
+    "description": "Pumpy is PUMPED to do work that needs to be done. It's like an addiction, man.",
+    "autoCollectMessage": "Pumpy launches away with a load of $.",
+    "autoCollectSkill": "Woodcutting",
+    "autoCollectLevel": 100,
+    "inventorySize": 36,
+    "autoCollectSpeed": 50
+  },
+  {
+    "name": "Thurgood the Dwarf",
+    "description": "Thurgood barely qualifies as a dwarf. He's a big fan of dairy.",
+    "autoCollectMessage": "Thurgood walks away with a load of $.",
+    "autoCollectSkill": "Mining",
+    "autoCollectLevel": 20,
+    "inventorySize": 12,
+    "autoCollectSpeed": 100
+  },
+  {
+    "name": "Dwarny the Dwarf",
+    "description": "Dwarny is actually a gnome. Don't tell him!",
+    "autoCollectMessage": "Dwarny scurries away with a load of $.",
+    "autoCollectSkill": "Mining",
+    "autoCollectLevel": 60,
+    "inventorySize": 24,
+    "autoCollectSpeed": 80
+  },
+  {
+    "name": "Threnden the Dwarf",
+    "description": "Threnden lives to haul rocks from point A to point B.",
+    "autoCollectMessage": "Threnden dashes off with a load of $.",
+    "autoCollectSkill": "Mining",
+    "autoCollectLevel": 100,
+    "inventorySize": 36,
+    "autoCollectSpeed": 50
+  },
+  {
+    "name": "Raka",
+    "description": "One of the friendly Kushtaka, though not very skilled.",
+    "autoCollectMessage": "Raka waddles away with a load of $.",
+    "autoCollectSkill": "Fishing",
+    "autoCollectLevel": 25,
+    "inventorySize": 12,
+    "autoCollectSpeed": 100
+  },
+  {
+    "name": "Sloodle",
+    "description": "Sloodle is an exceptional helper, rare among the Kushtaka.",
+    "autoCollectMessage": "Sloodle quickly waddles away with a load of $.",
+    "autoCollectSkill": "Fishing",
+    "autoCollectLevel": 65,
+    "inventorySize": 24,
+    "autoCollectSpeed": 80
+  },
+  {
+    "name": "Glindrear",
+    "description": "A friendly Kushtaka, and extremely skilled, too.",
+    "autoCollectMessage": "Grlindrear waddle-runs away with a load of $.",
+    "autoCollectSkill": "Fishing",
+    "autoCollectLevel": 100,
+    "inventorySize": 36,
+    "autoCollectSpeed": 50
+  },
+  {
+    "name": "Snibbap",
+    "description": "A disgusting creature. It's no surprise most goblins avoid being seen.",
+    "autoCollectMessage": "Snibbap does the thing.",
+    "autoCollectSkill": "Banking",
+    "autoCollectLevel": 100,
+    "inventorySize": 24,
+    "autoCollectSpeed": 20
+  },
+  {
+    "name": "Skia the Monopod",
+    "description": "A smith. She can assist you in converting ores into solid metal items.",
+    "autoCollectMessage": "Skia helps.",
+    "autoCollectSkill": "Smithing",
+    "autoCollectLevel": 100,
+    "inventorySize": 24,
+    "autoCollectSpeed": 10
+  },
+  {
+    "name": "Tolani Seba",
+    "description": "A scout. She can find monsters for you to battle with.",
+    "autoCollectMessage": "Tolani Seba finds an opponent.",
+    "autoCollectSkill": "Scout",
+    "autoCollectLevel": 100,
+    "inventorySize": 0,
+    "autoCollectSpeed": 20
+  },
+  {
+    "name": "Anthretagro",
+    "description": "A man in a toga. You aren't sure where he came from but it doesn't seem like he belongs here.",
+    "autoCollectMessage": "Anthretagro finds what you are looking for.",
+    "autoCollectSkill": "Advanced Scout",
+    "autoCollectLevel": 100,
+    "inventorySize": 0,
+    "autoCollectSpeed": 20
+  }
+]

@@ -1,0 +1,861 @@
+[
+  {
+    "name": "Minnow Net",
+    "description": "It's a small net made for minnows, but you can catch any fish with it, probably.",
+    "value": 10,
+    "enabledActions": "Fishing",
+    "damage": 1,
+    "secondaryColor": "#dedfa4",
+    "equipSlot": "R Hand",
+    "weaponInfo": {
+      "attackSpeed": 35,
+      "damage": 1
+    },
+    "gatherSpeedBonus": 0.1,
+    "icon": "Net",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 1
+      }
+    ]
+  },
+  {
+    "name": "Small Net",
+    "description": "A small fishing net.",
+    "value": 30,
+    "enabledActions": "Fishing",
+    "isEquipable": true,
+    "equipSlot": "R Hand",
+    "secondaryColor": "#F5C242",
+    "weaponInfo": {
+      "attackSpeed": 35,
+      "damage": 2
+    },
+    "gatherSpeedBonus": 0.2,
+    "icon": "Net",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 15
+      }
+    ]
+  },
+  {
+    "name": "Medium Net",
+    "description": "A decently sized fishing net.",
+    "value": 80,
+    "enabledActions": "Fishing",
+    "isEquipable": true,
+    "secondaryColor": "#66B4DE",
+    "equipSlot": "R Hand",
+    "weaponInfo": {
+      "attackSpeed": 35,
+      "damage": 3
+    },
+    "gatherSpeedBonus": 0.30,
+    "icon": "Net",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 40
+      }
+    ]
+  },
+  {
+    "name": "Large Net",
+    "description": "A large net. It somehow makes it easier to catch fish with.",
+    "value": 300,
+    "enabledActions": "Fishing",
+    "isEquipable": true,
+    "equipSlot": "R Hand",
+    "weaponInfo": {
+      "attackSpeed": 35,
+      "damage": 5
+    },
+    "secondaryColor": "#FFBABA",
+    "gatherSpeedBonus": 0.45,
+    "icon": "Net",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 60
+      }
+    ]
+  },
+  {
+    "name": "Magic Net",
+    "description": "A magical net imbued with some strange power. It emits a soft green light.",
+    "value": 2500,
+    "enabledActions": "Fishing",
+    "isEquipable": true,
+    "equipSlot": "R Hand",
+    "weaponInfo": {
+      "attackSpeed": 35,
+      "damage": 8
+    },
+    "secondaryColor": "#459CED",
+    "gatherSpeedBonus": 0.6,
+    "icon": "Net",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
+    "name": "Small Fishing Rod",
+    "description": "A small fishing rod.",
+    "value": 30,
+    "enabledActions": "Bait Fishing",
+    "isEquipable": true,
+    "equipSlot": "R Hand",
+    "secondaryColor": "#F5C242",
+    "weaponInfo": {
+      "attackSpeed": 25,
+      "damage": 8
+    },
+    "gatherSpeedBonus": 0.2,
+    "icon": "Rod",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 15
+      }
+    ]
+  },
+  {
+    "name": "Minnows",
+    "description": "The tiniest fish you can catch.",
+    "gatherString": "You catch some minnows.",
+    "value": 2,
+    "gatherSpeed": 12,
+    "experienceGained": "Fishing:8",
+    "icon": "SmallFish",
+    "secondaryColor": "#dedfa4",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 1
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Sunfish",
+    "description": "Smallfry.",
+    "gatherString": "You catch a sunfish.",
+    "value": 6,
+    "gatherSpeed": 15,
+    "secondaryColor": "#95a282",
+    "experienceGained": "Fishing:22",
+    "icon": "TwoFish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 6
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Manta Ray",
+    "description": "A wide flat fish.",
+    "gatherString": "You catch a manta ray.",
+    "value": 200,
+    "gatherSpeed": 40,
+    "experienceGained": "Fishing:130",
+    "secondaryColor": "#a5e6ef",
+    "icon": "MantaRay",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 75
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Angry Crab",
+    "description": "An angry, powerless crab. You wonder what it's complaining about.",
+    "gatherString": "You catch an angry crab.",
+    "value": 11,
+    "gatherSpeed": 11,
+    "secondaryColor": "#e22f2f",
+    "experienceGained": "Fishing:11",
+    "icon": "Crab",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 11
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Crab",
+    "description": "A crab. It's got big, meaty claws.",
+    "gatherString": "You catch a crab.",
+    "value": 11,
+    "gatherSpeed": 11,
+    "secondaryColor": "#eb6337",
+    "experienceGained": "Fishing:8",
+    "icon": "Crab",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 8
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Puffer Fish",
+    "description": "A small fish that converts into a big fish when you poke it.",
+    "gatherString": "You catch a puffer fish.",
+    "value": 28,
+    "gatherSpeed": 19,
+    "secondaryColor": "#F5C242",
+    "experienceGained": "Fishing:16",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 15
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Carp",
+    "description": "A slow, dumb fish. Paint it orange and you'll have a koi.",
+    "gatherString": "You catch a carp.",
+    "value": 20,
+    "secondaryColor": "#E0D7AB",
+    "gatherSpeed": 40,
+    "experienceGained": "Fishing:160",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 50
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Small Caiman",
+    "description": "A small reptile, for now...",
+    "gatherString": "You catch a small caiman.",
+    "value": 80,
+    "secondaryColor": "#E0D7AB",
+    "gatherSpeed": 40,
+    "experienceGained": "Fishing:180",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 30
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Caiman",
+    "description": "A normal-sized reptile, for now...",
+    "gatherString": "You catch a caiman.",
+    "value": 280,
+    "secondaryColor": "#E0D7AB",
+    "gatherSpeed": 40,
+    "experienceGained": "Fishing:230",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 50
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Large Caiman",
+    "description": "It used to be smaller, probably.",
+    "gatherString": "You catch a large caiman.",
+    "value": 800,
+    "secondaryColor": "#E0D7AB",
+    "gatherSpeed": 40,
+    "experienceGained": "Fishing:280",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 70
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Icefish",
+    "description": "Small, white fish that thrive in icy cold water.",
+    "gatherString": "You catch an icefish.",
+    "value": 10,
+    "gatherSpeed": 4,
+    "secondaryColor": "#BFF9FF",
+    "experienceGained": "Fishing:12",
+    "icon": "SmallFish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 23
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Shrimp",
+    "description": "An eldritch horror that turns pink if you cook it.",
+    "gatherString": "You catch a shrimp.",
+    "value": 15,
+    "gatherSpeed": 9,
+    "secondaryColor": "#FFC1BF",
+    "experienceGained": "Fishing:20",
+    "icon": "Shrimp",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 3
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Scallop",
+    "description": "A clam by any other name...",
+    "gatherString": "You catch a scallop.",
+    "value": 25,
+    "gatherSpeed": 18,
+    "secondaryColor": "#EB9875",
+    "experienceGained": "Fishing:50",
+    "icon": "Scallop",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 20
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Sardine",
+    "description": "A small fish.",
+    "gatherString": "You catch a sardine.",
+    "value": 30,
+    "gatherSpeed": 14,
+    "secondaryColor": "#C9C8C5",
+    "experienceGained": "Fishing:40",
+    "icon": "SmallFish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 25
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Abalone",
+    "description": "Ugly on the outside, pretty on the inside.",
+    "gatherString": "You catch an abalone.",
+    "value": 90,
+    "gatherSpeed": 23,
+    "secondaryColor": "#66B4DE",
+    "experienceGained": "Fishing:60",
+    "icon": "TwoFish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 40
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Saury",
+    "description": "Saury, I had to catch you.",
+    "gatherString": "You catch a saury.",
+    "value": 70,
+    "gatherSpeed": 20,
+    "secondaryColor": "#A6A6A6",
+    "experienceGained": "Fishing:85",
+    "icon": "TwoFish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 45
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Butterfish",
+    "description": "Needs more butter.",
+    "gatherString": "You catch a butterfish.",
+    "value": 100,
+    "gatherSpeed": 28,
+    "secondaryColor": "#D6FFDC",
+    "experienceGained": "Fishing:90",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 50
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Shad",
+    "description": "It's a fish.",
+    "gatherString": "You catch a shad.",
+    "value": 40,
+    "gatherSpeed": 35,
+    "secondaryColor": "#FDF0FF",
+    "experienceGained": "Fishing:185",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 55
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Squid",
+    "description": "It's got a lot of arms.",
+    "gatherString": "You catch a squid.",
+    "value": 140,
+    "gatherSpeed": 35,
+    "secondaryColor": "#D9D9D9",
+    "experienceGained": "Fishing:140",
+    "icon": "Squid",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 56
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Salmon",
+    "description": "A fish that can swim upstream.",
+    "gatherString": "You catch a salmon.",
+    "value": 150,
+    "gatherSpeed": 45,
+    "secondaryColor": "#FFBABA",
+    "experienceGained": "Fishing:210",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 60
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Tuna",
+    "description": "A large ocean fish.",
+    "gatherString": "You catch a tuna.",
+    "value": 450,
+    "gatherSpeed": 90,
+    "secondaryColor": "#3A63A6",
+    "experienceGained": "Fishing:450",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 70
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Giant Carp",
+    "description": "It's like a regular carp, but giant.",
+    "gatherString": "You catch a giant carp.",
+    "value": 480,
+    "gatherSpeed": 70,
+    "secondaryColor": "#E0D7AB",
+    "experienceGained": "Fishing:420",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 65
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Yellowtail",
+    "description": "It's got a yellow tail.",
+    "gatherString": "You catch a yellowtail.",
+    "value": 230,
+    "gatherSpeed": 70,
+    "secondaryColor": "#FFC95E",
+    "experienceGained": "Fishing:380",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 73
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "River Clam",
+    "description": "A small mouth with no teeth.",
+    "gatherString": "You catch a river clam.",
+    "value": 75,
+    "gatherSpeed": 35,
+    "secondaryColor": "#D9D9D9",
+    "experienceGained": "Fishing:70",
+    "icon": "Scallop",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 15
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Giant Clam",
+    "description": "It's like a big mouth that's older than you are.",
+    "gatherString": "You catch a giant clam.",
+    "value": 750,
+    "gatherSpeed": 95,
+    "secondaryColor": "#459CED",
+    "experienceGained": "Fishing:700",
+    "icon": "Scallop",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 75
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Big Tuna",
+    "description": "It's like a tuna, but bigger.",
+    "gatherString": "You catch a big tuna.",
+    "value": 1500,
+    "gatherSpeed": 100,
+    "secondaryColor": "#3A63A6",
+    "experienceGained": "Fishing:1300",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 83
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Swordfish",
+    "description": "A fish with a sword for a nose.",
+    "gatherString": "You catch a swordfish.",
+    "value": 1200,
+    "gatherSpeed": 100,
+    "secondaryColor": "#9C6DED",
+    "experienceGained": "Fishing:1500",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 81
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Flounder",
+    "description": "A silly-looking fish that seems to have grown sideways.",
+    "gatherString": "You catch a flounder.",
+    "value": 200,
+    "gatherSpeed": 80,
+    "secondaryColor": "#D48A4E",
+    "experienceGained": "Fishing:1600",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 85
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Sleeper Shark",
+    "description": "It's sleeping with the fishes now.",
+    "gatherString": "You catch a sleeper shark.",
+    "value": 1500,
+    "gatherSpeed": 120,
+    "secondaryColor": "#C7AE97",
+    "experienceGained": "Fishing:2500",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 87
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Halibut",
+    "description": "It's like a bigger, uglier flounder.",
+    "gatherString": "You catch a halibut.",
+    "value": 800,
+    "gatherSpeed": 100,
+    "secondaryColor": "#B97D42",
+    "experienceGained": "Fishing:2700",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 91
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Giant Octopus",
+    "description": "A big octopus.",
+    "gatherString": "You catch a giant octopus.",
+    "value": 1800,
+    "gatherSpeed": 125,
+    "secondaryColor": "#ed8e00",
+    "experienceGained": "Fishing:2900",
+    "icon": "Octopus",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 93
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Eqalussuaq",
+    "description": "While its prey tries to pronounce its name, it eats them.",
+    "gatherString": "You catch an eqalussuaq.",
+    "value": 3000,
+    "gatherSpeed": 150,
+    "secondaryColor": "#B5B7BA",
+    "experienceGained": "Fishing:3500",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 98
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Lion's Mane Jellyfish",
+    "description": "Neither a lion, nor a jelly, nor a fish.",
+    "gatherString": "You catch a jellyfish.",
+    "value": 3500,
+    "gatherSpeed": 170,
+    "secondaryColor": "#F25C5C",
+    "experienceGained": "Fishing:4000",
+    "icon": "Jellyfish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 99
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Oar Fish",
+    "description": "Is it a monster, oar a fish?",
+    "gatherString": "You catch an oar fish.",
+    "value": 4000,
+    "gatherSpeed": 180,
+    "secondaryColor": "#FF9E42",
+    "experienceGained": "Fishing:4200",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 105
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Colossal Squid",
+    "description": "It's a giant squid. Well, technically it's not a \"giant squid\", but it is very big.",
+    "gatherString": "You catch a colossal squid.",
+    "value": 5000,
+    "gatherSpeed": 220,
+    "secondaryColor": "#E36039",
+    "experienceGained": "Fishing:4800",
+    "icon": "Squid",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 110
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Fisherman Gloves",
+    "description": "A special pair of gloves worn by fishermen. Just wearing them makes you learn fishing more quickly.",
+    "gatherString": "You found a pair of gloves!",
+    "value": 2000,
+    "gatherSpeed": 220,
+    "experienceGained": "Fishing:2000",
+    "icon": "Glove",
+    "experienceGainBonus": 0.025,
+    "experienceBonusSkill": "Fishing",
+    "equipSlot": "Hands",
+    "armorInfo": {
+      "armorBonus": 3
+    }
+  },
+  {
+    "name": "Fisherman Hat",
+    "description": "A special hat for fishermen.",
+    "gatherString": "You found a hat!",
+    "value": 2000,
+    "gatherSpeed": 220,
+    "experienceGained": "Fishing:2000",
+    "icon": "Hat",
+    "experienceGainBonus": 0.025,
+    "experienceBonusSkill": "Fishing",
+    "equipSlot": "Head",
+    "armorInfo": {
+      "armorBonus": 3
+    }
+  },
+  {
+    "name": "Fisherman Pants",
+    "description": "These pants go all the way down.",
+    "gatherString": "You found a pair of pants!",
+    "value": 2000,
+    "gatherSpeed": 220,
+    "experienceGained": "Fishing:2000",
+    "icon": "Pants",
+    "experienceGainBonus": 0.025,
+    "experienceBonusSkill": "Fishing",
+    "equipSlot": "Legs",
+    "armorInfo": {
+      "armorBonus": 3
+    }
+  },
+  {
+    "name": "Fisherman Shirt",
+    "description": "A plaid shirt. It will identify you as a fisherman from a distance.",
+    "gatherString": "You found a shirt!",
+    "value": 2000,
+    "gatherSpeed": 220,
+    "experienceGained": "Fishing:2000",
+    "icon": "Shirt",
+    "experienceGainBonus": 0.025,
+    "experienceBonusSkill": "Fishing",
+    "equipSlot": "Chest",
+    "armorInfo": {
+      "armorBonus": 3
+    }
+  },
+  {
+    "name": "Fishing Bait",
+    "description": "Tiny little worms for fishing with.",
+    "gatherString": "You get some fishing bait.",
+    "value": 1,
+    "icon": "Bait",
+    "isStackable": true
+  }
+]

@@ -1,0 +1,173 @@
+{
+  "name": "Kumuhana",
+  "id": 27,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello. Welcome to Tackure Islet! Our island is small, but there is much to see and do here.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Can you tell me the history of this place?",
+      "responseText": "Of course. I love when travellers show interest in our island. Tackure was not always inhabited by people, at least not by normal humans. In ages past, Tackure was the island of the giants...",
+      "newDepthOnTalk": 2,
+      "depth": 1
+    },
+    {
+      "buttonText": "Can you tell about this sword? I don't care about history.",
+      "responseText": "This sword... Amazing! It's a weapon of Imaynimayn! This in incredible! Where did you find this?",
+      "newQuestprogressValue": 4,
+      "quest": "Queple's Sword",
+      "requirements": [
+        {
+          "item": "Queple's Sword",
+          "itemAmount": 1
+        }
+      ]
+    },
+    {
+      "buttonText": "Keep Listening",
+      "responseText": "They lived here with the Serpent Guardians, Imaynimayn and Potaki. The guardians possessed powerful magic that supplied the giants with food and shelter, in exchange the giants gave offerings of wealth to the guardians...",
+      "depth": 2,
+      "newDepthOnTalk": 3
+    },
+    {
+      "buttonText": "Keep Listening",
+      "responseText": "For centuries they lived peacefully, until a disturbance in the sky brought a Stormwalker down to the lower plane. The Walker of Clouds left Hiskaten, the city in the sky, and descended to the sea...",
+      "depth": 3,
+      "newDepthOnTalk": 4
+    },
+    {
+      "buttonText": "Stormwalker? Walker of the Clouds?",
+      "responseText": "You are from Quepland but you do not know these? Long ago Stormwalkers roamed their domains, bringing destruction everywhere they went. Mankind lived in caves and travelled often to avoid the storms. Each Walker had its own domain and its own name. The Walker of Clouds lived in Hiskaten and was always shrouded in a terrible rain and fog.",
+      "depth": 4,
+      "newDepthOnTalk": 4
+    },
+    {
+      "buttonText": "Keep Listening",
+      "responseText": "It found Tackure and sought to make the island's highest peak its new home. The torrential whirlwind of fog and rain that followed the Walker of Clouds shrouded the whole island in a thick storm...",
+      "depth": 4,
+      "newDepthOnTalk": 5
+    },
+    {
+      "buttonText": "Keep Listening",
+      "responseText": "The giants quickly rallied together and confronted the Walker. They demanded it find another place to live. Despite their protests, the Walker was tired of travelling and had already made up its mind...",
+      "depth": 5,
+      "newDepthOnTalk": 6
+    },
+    {
+      "buttonText": "Keep Listening",
+      "responseText": "When they failed to persuade the Walker to leave, they requested help from the Guardians. Potaki went alone to reason with the Walker, hoping she could help it find another place to live...",
+      "depth": 6,
+      "newDepthOnTalk": 7
+    },
+    {
+      "buttonText": "Keep Listening",
+      "responseText": "The Walker tired of conversation, being of little brain, and grew angry it struck her with a bolt of lightning, killing her. Imaynimayn flew into a rage at Potaki's death, not only with the Walker but also with the giants who failed to solve their problem on their own...",
+      "depth": 7,
+      "newDepthOnTalk": 8
+    },
+    {
+      "buttonText": "Keep Listening",
+      "responseText": "He was about to destroy the whole island when one of the giants came to him and calmed him. The giant Queple was young and strong, and offered to defeat the Stormwalker and to lead his people away from Tackure so that Imaynimayn could mourn in peace...",
+      "depth": 8,
+      "newDepthOnTalk": 9
+    },
+    {
+      "buttonText": "Keep Listening",
+      "responseText": "Imaynimayn agreed and granted Queple a magical pole to defeat the Stormwalker with. The two were evenly matched, but the dull-witted stormwalker was unprepared for Queple's magic pole, and was quickly launched far to the south, never to be seen again...",
+      "depth": 9,
+      "newDepthOnTalk": 10
+    },
+    {
+      "buttonText": "Keep Listening",
+      "responseText": "Queple led his people away from Tackure, using his staff to travel to the mainland south of here. They say Imaynimayn still resides on the island, though no human has ever seen him and lived...",
+      "depth": 10,
+      "newDepthOnTalk": 11
+    },
+    {
+      "buttonText": "Thanks",
+      "responseText": "No problem, stranger. Just let me know if you want to hear the legend again. I'll be here grinding grain most days.",
+      "depth": 11,
+      "newDepthOnTalk": 0
+    },
+    {
+      "buttonText": "I found this sword...",
+      "responseText": "This sword... Amazing! It's a weapon of Imaynimayn! This in incredible! Where did you find this?",
+      "newQuestprogressValue": 4,
+      "quest": "Queple's Sword",
+      "requirements": [
+        {
+          "item": "Queple's Sword",
+          "itemAmount": 1
+        }
+      ]
+    },
+    {
+      "buttonText": "Near Mount Queple",
+      "responseText": "Interesting! We don't know much about what happened to the giants after they left Tackure. They likely settled in the area around Mount Queple if you found it there.",
+      "newQuestprogressValue": 7,
+      "quest": "Queple's Sword",
+      "requirements": [
+        {
+          "quest": "Queple's Sword",
+          "minimumQuestProgress": 4,
+          "maximumQuestProgress": 4
+        }
+      ]
+    },
+    {
+      "buttonText": "From Queple's Grave",
+      "responseText": "You found Queple's grave?? You stole from Queple's grave?? I'm both amazed and offended! How dare you steal a priceless artifact of the giants!",
+      "newQuestprogressValue": 5,
+      "quest": "Queple's Sword",
+      "requirements": [
+        {
+          "quest": "Queple's Sword",
+          "minimumQuestProgress": 4,
+          "maximumQuestProgress": 4
+        }
+      ]
+    },
+    {
+      "buttonText": "I want to use it as a weapon",
+      "responseText": "Such a priceless artifact as the sword of the great hero Queple should by no means be used as a weapon! You should give it to me, or return it as an offering to Imaynimayn in Wana Tona at the very least.",
+      "newQuestprogressValue": 8,
+      "quest": "Queple's Sword",
+      "requirements": [
+        {
+          "quest": "Queple's Sword",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 5
+        }
+      ]
+    },
+    {
+      "buttonText": "He wasn't using it anymore",
+      "responseText": "Such a priceless artifact as the sword of the great hero Queple should by no means be used as a weapon! You should give it to me, or return it as an offering to Imaynimayn in Wana Tona at the very least.",
+      "newQuestprogressValue": 8,
+      "quest": "Queple's Sword",
+      "requirements": [
+        {
+          "quest": "Queple's Sword",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 5
+        }
+      ]
+    },
+    {
+      "buttonText": "What should I do with it?",
+      "responseText": "Such a priceless artifact as the sword of the great hero Queple should be returned to its rightful place! Perhaps as an offering to Imaynimayn in Wana Tona.",
+      "newQuestprogressValue": 8,
+      "quest": "Queple's Sword",
+      "requirements": [
+        {
+          "quest": "Queple's Sword",
+          "minimumQuestProgress": 7,
+          "maximumQuestProgress": 7
+        }
+      ]
+    }
+  ]
+
+}

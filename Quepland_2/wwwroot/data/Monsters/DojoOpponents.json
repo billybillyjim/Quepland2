@@ -1,0 +1,366 @@
+[
+  {
+    "name": "Smashy",
+    "hp": 5200,
+    "attackSpeed": 20,
+    "armor": 30,
+    "damage": 95,
+    "weaknesses": "Knifesmanship",
+    "strengths": "Hammermanship"
+  },
+  {
+    "name": "Scoph",
+    "hp": 6200,
+    "attackSpeed": 18,
+    "armor": 35,
+    "damage": 120,
+    "weaknesses": "Knifesmanship",
+    "strengths": "Hammermanship"
+  },
+  {
+    "name": "Fuzzy",
+    "hp": 7500,
+    "attackSpeed": 16,
+    "armor": 40,
+    "damage": 140,
+    "weaknesses": "Knifesmanship",
+    "strengths": "Hammermanship"
+  },
+  {
+    "name": "Munny",
+    "hp": 8500,
+    "attackSpeed": 15,
+    "armor": 45,
+    "damage": 160,
+    "weaknesses": "Knifesmanship",
+    "strengths": "Hammermanship"
+  },
+  {
+    "name": "Ezai",
+    "hp": 9000,
+    "attackSpeed": 25,
+    "armor": 65,
+    "damage": 220,
+    "weaknesses": "Knifesmanship",
+    "strengths": "Hammermanship"
+  },
+  {
+    "name": "Wizz",
+    "hp": 9000,
+    "attackSpeed": 15,
+    "armor": 125,
+    "damage": 270,
+    "weaknesses": "Knifesmanship",
+    "strengths": "Hammermanship"
+  },
+  {
+    "name": "Smwojo",
+    "hp": 10000,
+    "attackSpeed": 12,
+    "armor": 0,
+    "damage": 320,
+    "weaknesses": "Knifesmanship",
+    "strengths": "Hammermanship",
+    "dropTable": {
+      "alwaysDrops": [
+        {
+          "itemName": "Dojo Tokens",
+          "amount": 7500
+        }
+      ]
+    }
+  },
+  {
+    "name": "Tanto",
+    "hp": 100,
+    "attackSpeed": 5,
+    "armor": 2,
+    "damage": 3,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Knifesmanship"
+  },
+  {
+    "name": "Deba",
+    "hp": 200,
+    "attackSpeed": 5,
+    "armor": 3,
+    "damage": 4,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Knifesmanship"
+  },
+  {
+    "name": "Mes",
+    "hp": 300,
+    "attackSpeed": 5,
+    "armor": 4,
+    "damage": 5,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Knifesmanship"
+  },
+  {
+    "name": "Dos",
+    "hp": 400,
+    "attackSpeed": 5,
+    "armor": 5,
+    "damage": 6,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Knifesmanship"
+  },
+  {
+    "name": "Kozuka",
+    "hp": 500,
+    "attackSpeed": 5,
+    "armor": 6,
+    "damage": 7,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Knifesmanship"
+  },
+  {
+    "name": "Kaiken",
+    "hp": 800,
+    "attackSpeed": 4,
+    "armor": 7,
+    "damage": 8,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Knifesmanship",
+    "dropTable": {
+      "alwaysDrops": [
+        {
+          "itemName": "Dojo Tokens",
+          "amount": 500
+        }
+      ]
+    }
+  },
+  {
+    "name": "Shunai",
+    "hp": 700,
+    "attackSpeed": 10,
+    "armor": 20,
+    "damage": 30,
+    "weaknesses": "Axemanship",
+    "strengths": "Swordsmanship"
+  },
+  {
+    "name": "Sodo",
+    "hp": 900,
+    "attackSpeed": 10,
+    "armor": 30,
+    "damage": 40,
+    "weaknesses": "Axemanship",
+    "strengths": "Swordsmanship"
+  },
+  {
+    "name": "Sam",
+    "hp": 1100,
+    "attackSpeed": 10,
+    "armor": 33,
+    "damage": 50,
+    "weaknesses": "Axemanship",
+    "strengths": "Swordsmanship"
+  },
+  {
+    "name": "One Blade Billy",
+    "hp": 1300,
+    "attackSpeed": 10,
+    "armor": 35,
+    "damage": 60,
+    "weaknesses": "Axemanship",
+    "strengths": "Swordsmanship"
+  },
+  {
+    "name": "Kurisutay",
+    "hp": 1500,
+    "attackSpeed": 7,
+    "armor": 38,
+    "damage": 70,
+    "weaknesses": "Axemanship",
+    "strengths": "Swordsmanship"
+  },
+  {
+    "name": "Danbura",
+    "hp": 1800,
+    "attackSpeed": 13,
+    "armor": 42,
+    "damage": 150,
+    "weaknesses": "Axemanship",
+    "strengths": "Swordsmanship"
+  },
+  {
+    "name": "Token",
+    "hp": 2000,
+    "attackSpeed": 10,
+    "armor": 47,
+    "damage": 100,
+    "weaknesses": "Axemanship",
+    "strengths": "Swordsmanship",
+    "dropTable": {
+      "alwaysDrops": [
+        {
+          "itemName": "Dojo Tokens",
+          "amount": 2500
+        }
+      ]
+    }
+  },
+  {
+    "name": "Fets",
+    "hp": 1400,
+    "attackSpeed": 15,
+    "armor": 40,
+    "damage": 90,
+    "weaknesses": "Hammermanship",
+    "strengths": "Axemanship"
+  },
+  {
+    "name": "Roo",
+    "hp": 1600,
+    "attackSpeed": 15,
+    "armor": 50,
+    "damage": 110,
+    "weaknesses": "Hammermanship",
+    "strengths": "Axemanship"
+  },
+  {
+    "name": "Akku",
+    "hp": 1700,
+    "attackSpeed": 15,
+    "armor": 60,
+    "damage": 150,
+    "weaknesses": "Hammermanship",
+    "strengths": "Axemanship"
+  },
+  {
+    "name": "Mack",
+    "hp": 2200,
+    "attackSpeed": 12,
+    "armor": 70,
+    "damage": 160,
+    "weaknesses": "Hammermanship",
+    "strengths": "Axemanship"
+  },
+  {
+    "name": "Wari",
+    "hp": 2500,
+    "attackSpeed": 18,
+    "armor": 90,
+    "damage": 270,
+    "weaknesses": "Hammermanship",
+    "strengths": "Axemanship"
+  },
+  {
+    "name": "Swings",
+    "hp": 2800,
+    "attackSpeed": 15,
+    "armor": 100,
+    "weaknesses": "Hammermanship",
+    "strengths": "Axemanship",
+    "damage": 250
+  },
+  {
+    "name": "Masakar",
+    "hp": 3000,
+    "attackSpeed": 15,
+    "armor": 147,
+    "damage": 300,
+    "weaknesses": "Hammermanship",
+    "strengths": "Axemanship"
+  },
+  {
+    "name": "Futo",
+    "hp": 3000,
+    "attackSpeed": 15,
+    "armor": 147,
+    "damage": 300,
+    "weaknesses": "Hammermanship",
+    "strengths": "Axemanship",
+    "dropTable": {
+      "alwaysDrops": [
+        {
+          "itemName": "Dojo Tokens",
+          "amount": 5000
+        }
+      ]
+    }
+  },
+  {
+    "name": "Vasilly",
+    "hp": 8000,
+    "attackSpeed": 30,
+    "armor": 110,
+    "damage": 400,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship Axemanship"
+  },
+  {
+    "name": "Dreian",
+    "hp": 9000,
+    "attackSpeed": 30,
+    "armor": 110,
+    "damage": 400,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship Axemanship"
+  },
+  {
+    "name": "Razzmatazz",
+    "hp": 10000,
+    "attackSpeed": 30,
+    "armor": 110,
+    "damage": 400,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship Axemanship"
+  },
+  {
+    "name": "Rocker",
+    "hp": 11000,
+    "attackSpeed": 30,
+    "armor": 110,
+    "damage": 400,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship Axemanship"
+  },
+  {
+    "name": "Salami",
+    "hp": 12000,
+    "attackSpeed": 30,
+    "armor": 110,
+    "damage": 400,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship Axemanship"
+  },
+  {
+    "name": "Bean",
+    "hp": 15000,
+    "attackSpeed": 30,
+    "armor": 110,
+    "damage": 400,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship Axemanship"
+  },
+  {
+    "name": "Wonny",
+    "hp": 7000,
+    "attackSpeed": 30,
+    "armor": 110,
+    "damage": 400,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship Axemanship"
+  },
+  {
+    "name": "Lasah",
+    "hp": 22000,
+    "attackSpeed": 30,
+    "armor": 110,
+    "damage": 400,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship Axemanship",
+    "dropTable": {
+      "alwaysDrops": [
+        {
+          "itemName": "Dojo Tokens",
+          "amount": 10000
+        }
+      ]
+    }
+  }
+]

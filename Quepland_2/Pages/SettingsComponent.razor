@@ -1,0 +1,49 @@
+﻿@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+    <div style="position:absolute;left:300px;top:50px;display:flex;margin-top:10px;padding:5px;background-color:black;width:@(GameState.MinWindowWidth)px">
+        <div>
+            <div>
+                Set Main Window Size:
+            </div>
+            <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => ResizeWindow(600))">Small (600px)</button>
+            <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => ResizeWindow(686))">Less Small (686px)</button>
+            <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => ResizeWindow(900))">Medium (900px)</button>
+            <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => ResizeWindow(1200))">Less Wide (1200px)</button>
+            <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => ResizeWindow(1260))">Wide (1260px)</button>
+        </div>
+        <div>
+            <button class="btn btn-primary" @onclick="@(() => SaveManager.SaveGame())">Manual Save</button>
+            <div>
+                The game autosaves once every half hour, but you can manually save here. If it was successful, the save time in the bottom left corner will change.
+            </div>
+        </div>
+        <div>
+            You can export your save to keep a backup somewhere. You can load an exported save from the main menu.
+            <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => ExportSave())">Export Save</button>
+            <input />
+        </div>
+    </div>
+
+    @code {
+
+        public void ExportSave()
+        {
+
+        }
+        public void ResizeWindow(int w)
+        {
+            GameState.MinWindowWidth = w;
+            GameState.UpdateState();
+        }
+        protected override void OnInitialized()
+        {
+            GameState.StateChanged += OnGameStateChanged;
+        }
+        public void Dispose()
+        {
+            GameState.StateChanged -= OnGameStateChanged;
+        }
+        void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+    }

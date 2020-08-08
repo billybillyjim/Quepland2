@@ -1,0 +1,83 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+    <div style="display:flex;">
+        <button class="sidebar-buttons" style="@GetBGColor("Inventory")" onclick="@(new Action(() => ChangeView("Inventory")))"><img src="/data/Images/WhiteInventory.png" style="height:42px;width:42px;">Inv</button>
+        <button class="sidebar-buttons" style="@GetBGColor("Equipment")" onclick="@(new Action(() => ChangeView("Equipment")))"><img src="/data/Images/WhiteEquipment.png" style="height:42px;width:42px;">Equip</button>
+        <button class="sidebar-buttons" style="@GetBGColor("Skills")" onclick="@(new Action(() => ChangeView("Skills")))"><img src="/data/Images/WhiteSkills.png" style="height:42px;width:42px;">Skills</button>
+        <button class="sidebar-buttons" style="@GetBGColor("Quests")" onclick="@(new Action(() => ChangeView("Quests")))"><img src="/data/Images/WhiteQuests.png" style="height:42px;width:42px;">Quests</button>
+        <button class="sidebar-buttons" style="@GetBGColor("Crafting")" onclick="@(new Action(() => ChangeView("Crafting")))"><img src="/data/Images/WhiteCraft.png" style="height:42px;width:42px;">Craft</button>
+        <button class="sidebar-buttons" style="@GetBGColor("Followers")" onclick="@(new Action(() => ChangeView("Followers")))"><img src="/data/Images/WhiteFollowers.png" style="height:42px;width:42px;">Team</button>
+        <button class="sidebar-buttons" style="" onclick="@(new Action(() => ChangeView("Debug")))"><img src="/data/Images/NoImage.png" style="height:45px;width:45px;border:solid black 4px;">Debug</button>
+
+    </div>
+    <div>
+
+        <div class="progress" style="width:100%;border-radius:0px;position:relative;background-color:darkred;">
+            <div class="progress-bar" style="width:@(GetPlayerHPPercent());background-color:forestgreen;position:relative">
+
+            </div>
+            <div style="position:absolute;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);color:white;">
+                @Player.Instance.CurrentHP / @Player.Instance.MaxHP
+            </div>
+        </div>
+    </div>
+@if (activeWindow == "Inventory")
+{
+    <InventoryViewerComponent></InventoryViewerComponent>
+}
+else if (activeWindow == "Skills")
+{
+    <SkillsComponent></SkillsComponent>
+}
+else if (activeWindow == "Quests")
+{
+    <QuestsComponent></QuestsComponent>
+}
+else if (activeWindow == "Crafting")
+{
+    <CraftingComponent></CraftingComponent>
+}
+else if (activeWindow == "Followers")
+{
+    <FollowerComponent></FollowerComponent>
+}
+else if (activeWindow == "Equipment")
+{
+    <EquipmentManagementComponent></EquipmentManagementComponent>
+}
+else if(activeWindow == "Debug")
+{
+    <DebugComponent></DebugComponent>
+}
+@code {
+    private string activeWindow = "Inventory";
+
+    private string GetPlayerHPPercent()
+    {
+        return (((double)Player.Instance.CurrentHP / Player.Instance.MaxHP) * 100d) + "%";
+    }
+
+    private string GetBGColor(string window)
+    {
+        if(activeWindow == window)
+        {
+            return "background-color:#303030";
+        }
+        return "background-color:#4d4d4d";
+    }
+    public void ChangeView(string view)
+    {
+        activeWindow = view;
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

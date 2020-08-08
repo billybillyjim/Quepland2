@@ -1,0 +1,275 @@
+[
+  {
+    "outputItemName": "Tumbled Amberite",
+    "ingredients": [
+      {
+        "itemName": "Rough Amberite",
+        "amount": 1
+      },
+      {
+        "itemName": "Rock Tumbler",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:15",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Tumbled Lizardite",
+    "ingredients": [
+      {
+        "itemName": "Rough Lizardite",
+        "amount": 1
+      },
+      {
+        "itemName": "Rock Tumbler",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Tumbled Purpurite",
+    "ingredients": [
+      {
+        "itemName": "Rough Purpurite",
+        "amount": 1
+      },
+      {
+        "itemName": "Rock Tumbler",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Tumbled Opal",
+    "ingredients": [
+      {
+        "itemName": "Rough Opal",
+        "amount": 1
+      },
+      {
+        "itemName": "Rock Tumbler",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Tumbled Garnet",
+    "ingredients": [
+      {
+        "itemName": "Rough Garnet",
+        "amount": 1
+      },
+      {
+        "itemName": "Rock Tumbler",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Tumbled Amethyst",
+    "ingredients": [
+      {
+        "itemName": "Rough Amethyst",
+        "amount": 1
+      },
+      {
+        "itemName": "Rock Tumbler",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Tumbled Emerald",
+    "ingredients": [
+      {
+        "itemName": "Rough Emerald",
+        "amount": 1
+      },
+      {
+        "itemName": "Rock Tumbler",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Tumbled Aquamarine",
+    "ingredients": [
+      {
+        "itemName": "Rough Aquamarine",
+        "amount": 1
+      },
+      {
+        "itemName": "Rock Tumbler",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Tumbled Topaz",
+    "ingredients": [
+      {
+        "itemName": "Rough Topaz",
+        "amount": 1
+      },
+      {
+        "itemName": "Rock Tumbler",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Tumbled Chrysoberyl",
+    "ingredients": [
+      {
+        "itemName": "Rough Chrysoberyl",
+        "amount": 1
+      },
+      {
+        "itemName": "Rock Tumbler",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Tumbled Sapphire",
+    "ingredients": [
+      {
+        "itemName": "Rough Sapphire",
+        "amount": 1
+      },
+      {
+        "itemName": "Rock Tumbler",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Tumbled Ruby",
+    "ingredients": [
+      {
+        "itemName": "Rough Ruby",
+        "amount": 1
+      },
+      {
+        "itemName": "Rock Tumbler",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Tumbled Diamond",
+    "ingredients": [
+      {
+        "itemName": "Rough Diamond",
+        "amount": 1
+      },
+      {
+        "itemName": "Rock Tumbler",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:25",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  }
+]

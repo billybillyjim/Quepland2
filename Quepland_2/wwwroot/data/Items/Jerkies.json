@@ -1,0 +1,232 @@
+[
+  {
+    "Name": "Rabbit Jerky",
+    "Description": "Salted and dried rabbit meat.",
+    "value": 18,
+    "secondaryColor": "#e0aa6d",
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:30",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 1
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 300,
+      "healAmount": 1,
+      "healSpeed": 10,
+      "buffedSkill": "Knifesmanship",
+      "buffAmount": 5
+    }
+  },
+  {
+    "Name": "Deer Jerky",
+    "Description": "Salted and dried deer meat.",
+    "value": 25,
+    "secondaryColor": "#b59a77",
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 5
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 300,
+      "healAmount": 1,
+      "healSpeed": 10,
+      "buffedSkill": "Archery",
+      "buffAmount": 5
+    }
+  },
+  {
+    "Name": "Bear Jerky",
+    "Description": "Salted and dried bear meat.",
+    "value": 70,
+    "secondaryColor": "#423e3b",
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 30
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 600,
+      "healAmount": 1,
+      "healSpeed": 10,
+      "buffedSkill": "Hammermanship",
+      "buffAmount": 5
+    }
+  },
+  {
+    "Name": "Moose Jerky",
+    "secondaryColor": "#8a5730",
+    "Description": "Salted and dried moose meat.",
+    "value": 90,
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:70",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 45
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 600,
+      "healAmount": 1,
+      "healSpeed": 10,
+      "buffedSkill": "Swordsmanship",
+      "buffAmount": 5
+    }
+  },
+  {
+    "Name": "Boar Jerky",
+    "Description": "Salted and dried boar meat. It's very tough.",
+    "value": 50,
+    "icon": "Jerky",
+    "secondaryColor": "#d8b393",
+    "experienceGained": "Culinary Arts:60",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 35
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 600,
+      "healAmount": 1,
+      "healSpeed": 10,
+      "buffedSkill": "Mining",
+      "buffAmount": 5
+    }
+  },
+  {
+    "Name": "Pigeon Jerky",
+    "Description": "It's not much, but it's also not very good.",
+    "value": 15,
+    "secondaryColor": "#8faba6",
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:10",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 1
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 300,
+      "healAmount": 1,
+      "healSpeed": 10,
+      "buffedSkill": "Axemanship",
+      "buffAmount": 5
+    }
+  },
+  {
+    "Name": "Turkey Jerky",
+    "Description": "It took a lot of work-y to get this turkey jerky.",
+    "value": 30,
+    "secondaryColor": "#e35577",
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:30",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 10
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 600,
+      "healAmount": 1,
+      "healSpeed": 10,
+      "buffedSkill": "Deftness",
+      "buffAmount": 5
+    }
+  },
+  {
+    "Name": "Pheasant Jerky",
+    "Description": "The jerky of a once beautiful bird.",
+    "value": 50,
+    "secondaryColor": "#64c0da",
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 14
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 600,
+      "healAmount": 1,
+      "healSpeed": 10,
+      "buffedSkill": "Smithing",
+      "buffAmount": 5
+    }
+  },
+  {
+    "Name": "Bison Jerky",
+    "Description": "A big bite of bison meat.",
+    "value": 150,
+    "secondaryColor": "#a95a1a",
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:150",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 68
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 1200,
+      "healAmount": 3,
+      "healSpeed": 10,
+      "buffedSkill": "Woodcutting",
+      "buffAmount": 5
+    }
+  },
+  {
+    "Name": "Caiman Jerky",
+    "Description": "A bite of caiman meat.",
+    "value": 150,
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:120",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 40
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 600,
+      "healAmount": 1,
+      "healSpeed": 10,
+      "buffedSkill": "Fishing",
+      "buffAmount": 5
+    }
+  },
+  {
+    "Name": "Mammoth Jerky",
+    "Description": "A massive jerky from a massive mammoth.",
+    "value": 220,
+    "secondaryColor": "#9e9589",
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:250",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 89
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 120,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Strength",
+      "buffAmount": 5
+    }
+  }
+]

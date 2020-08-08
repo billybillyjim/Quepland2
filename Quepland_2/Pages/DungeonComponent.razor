@@ -1,0 +1,112 @@
+﻿@page "/Underworld/{DungeonURL}"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+
+@if (Dungeon != null)
+{
+    <div style="margin-top:20px;">
+        @if (Dungeon.Progress < 100)
+        {
+            <div style="margin-bottom:5px;">
+                Progress
+                <div class="progress" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Progress", "You've explored " + Dungeon.GetPercentProgress() + "% of this dungeon.")))"
+                     onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                    <div class="progress-bar" style="width:@(Dungeon.GetPercentProgress())%"></div>
+                </div>
+            </div>
+        }
+        @if (BattleManager.Instance.BattleHasEnded == false)
+        {
+            <CombatComponent></CombatComponent>
+        }
+        else if (BattleManager.Instance.AllOpponentsDefeated())
+        {
+            <div>
+                <button class="btn btn-success" @onclick="@(() => Spelunk())">Spelunk</button>
+            </div>
+        }
+        else
+        {
+            <div>You didn't make any progress...</div>
+            <div>
+                <button class="btn btn-success" @onclick="@(() => RetrySpelunk())">Retry Spelunk</button>
+            </div>
+        }
+    </div>
+}
+
+
+@code {
+    [Parameter]
+    public string DungeonURL { get; set; }
+    public Dungeon Dungeon { get; set; }
+    private static Random rand = new Random();
+    private bool firstTimeIsCompleted { get; set; }
+    //private bool IsFighting;
+
+    public void Spelunk()
+    {
+        int action = rand.Next(0, (int)(Dungeon.Size - Dungeon.Progress));
+        if (Dungeon.GetLockedAreas().Count > action)
+        {
+            Area areaToUnlock = Dungeon.GetRandomLockedArea();
+            if (areaToUnlock != null)
+            {
+                areaToUnlock.Unlock();
+                MessageManager.AddMessage("While spelunking you discovered a new area:" + areaToUnlock.Name);
+            }
+        }
+        else
+        {
+            Monster monsterToFight = Dungeon.GetRandomMonster();
+            if (monsterToFight != null)
+            {
+                BattleManager.Instance.CurrentOpponents.Clear();
+                BattleManager.Instance.CurrentOpponents.Add(monsterToFight);
+                BattleManager.Instance.StartBattle();
+            }
+        }
+        if(firstTimeIsCompleted == false)
+        {
+            firstTimeIsCompleted = true;
+        }
+        else
+        {
+            Dungeon.Progress++;
+        }
+        GameState.UpdateState();
+    }
+    private void RetrySpelunk()
+    {
+        firstTimeIsCompleted = false;
+        Spelunk();
+    }
+    private void EndFight()
+    {
+        GameState.UpdateState();
+    }
+    private void GoToArea(string areaURL)
+    {
+        GameState.StopActions();
+        GameState.Location = areaURL;
+
+        UriHelper.NavigateTo("World/" + areaURL);
+    }
+    protected override void OnParametersSet()
+    {
+        Dungeon = AreaManager.Instance.Dungeons.FirstOrDefault(x => x.URL == DungeonURL);
+        BattleManager.Instance.CurrentArea = null;
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

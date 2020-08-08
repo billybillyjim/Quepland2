@@ -1,0 +1,59 @@
+﻿@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+
+@if (areaToUnlock != null)
+{
+
+    @if (areaToUnlock.HasRequirements())
+    {
+        <div style="position:relative">
+            <button  class="btn btn-warning" @onclick="(() => GoToArea())">@areaToUnlock.ButtonText</button>
+
+        </div>
+    }
+    else
+    {
+        <div style="position:relative">
+            <button class="btn btn-warning" style="position:relative" disabled>
+                @areaToUnlock.ButtonText
+                <div style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;"  
+                     onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, areaToUnlock.ToString())))"
+             onmouseout="@(new Action(() => GameState.HideTooltip()))"></div>
+            </button>
+            
+        </div>
+    }
+}
+@code {
+
+    [Parameter]
+    public AreaUnlock areaToUnlock { get; set; }
+
+    private void GoToArea()
+    {
+        GameState.StopActions();
+        Area a = AreaManager.Instance.GetAreaByURL(areaToUnlock.AreaURL);
+        Land l = AreaManager.Instance.GetLandForArea(a);
+        if (l != null && l != GameState.CurrentLand)
+        {
+            GameState.CurrentLand = l;
+        }
+        GameState.Location = areaToUnlock.AreaURL;
+
+        a.Unlock();
+
+        UriHelper.NavigateTo("World/" + areaToUnlock.AreaURL);
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

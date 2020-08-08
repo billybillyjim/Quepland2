@@ -1,0 +1,184 @@
+[
+  {
+    "name": "Southern Trail",
+    "id": 60,
+    "image": "MountainPath",
+    "description": "The path leads out of the woods into an open plain. The road continues uphill, winding up out of sight. A solitary knight guards the way forward.",
+    "areaURL": "SouthernTrail",
+    "actions": [
+      "Harvest Wheat:Wheat"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "Route7",
+        "buttonText": "Continue South"
+      }
+
+    ]
+  },
+  {
+    "name": "Route 7",
+    "id": 61,
+    "image": "WindingPath",
+    "description": "The route leads up into the hills. At the peak you take in the view. The hills quickly descend into a shrubby plain, beyond which is an endless desert. ",
+    "areaURL": "Route7",
+    "unlockableAreas": [
+      {
+        "areaURL": "DesertsMouth",
+        "buttonText": "Go to the Desert"
+      }
+
+    ]
+  },
+  {
+    "name": "Desert's Mouth",
+    "id": 62,
+    "image": "Camel",
+    "description": "A small building sits at the side of the road. You can both hear and smell the camels living in the pen behind the building. The desert lies just ahead of the single sign of civilization.",
+    "areaURL": "DesertsMouth",
+    "unlockableAreas": [
+      {
+        "areaURL": "BunktensCrossing",
+        "buttonText": "Enter the Desert"
+      }
+
+    ],
+    "buildings": [
+      {
+        "name": "Camelpalooza",
+        "buttonText": "Enter the Camel Shop",
+        "url": "Camelpalooza",
+        "description": "You enter building to find a number of camels for sale. You can buy one and ride it to cross the desert.",
+        "npcs": [
+          "Camel Carl"
+        ],
+        "requirements": [
+          {
+            "quest": "Grand Theft Camel",
+            "minimumQuestProgress": 24
+          }
+        ],
+        "shops": [
+          {
+            "name": "Camelpalooza",
+            "itemNames": [
+              "Camel"
+            ]
+
+          }
+        ]
+      }
+    ],
+    "npcs": [
+      "Camel Carl"
+    ]
+  },
+  {
+    "name": "Bunkten's Crossing",
+    "id": 63,
+    "image": "Crossing",
+    "description": "You reach an intersection in the middle of the desert wasteland. It's pure sand and shrubs as far as the eye can see. A giant sign is posted into the ground.",
+    "areaURL": "BunktensCrossing",
+    "unlockableAreas": [
+      {
+        "areaURL": "AbandonedShack",
+        "buttonText": "Go East"
+      },
+      {
+        "areaURL": "Oasis",
+        "buttonText": "Continue South"
+      },
+      {
+        "areaURL": "Leupp",
+        "buttonText": "Go West"
+      }
+    ],
+    "requirements": [
+      {
+        "action": "Desert Travel"
+      }
+    ],
+    "monsters": [
+      "Serpopard"
+    ]
+  },
+  {
+    "name": "Abandoned Shack",
+    "id": 64,
+    "image": "House",
+    "description": "The road fades into the desert landscape as you arrive at a small shack. The door swings open in the dusty wind.",
+    "areaURL": "AbandonedShack",
+    "requirements": [
+      {
+        "action": "Desert Travel"
+      }
+    ]
+  },
+  {
+    "name": "Oasis",
+    "id": 65,
+    "image": "Oasis",
+    "description": "A large pool of water supports a number of trees here. To the south you see another mountain range.",
+    "areaURL": "Oasis",
+    "actions": [
+      "Chop Trees:Lignum Vitae Logs,Mesquite Logs,Birch Logs"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "GreatShoeLake",
+        "buttonText": "Continue southward"
+      }
+
+    ],
+    "requirements": [
+      {
+        "action": "Desert Travel"
+      }
+    ]
+  },
+  {
+    "name": "Leupp",
+    "id": 66,
+    "image": "Village",
+    "description": "A small village resides in the wastes. A dried up creek bed runs past the edge of town.",
+    "areaURL": "Leupp",
+    "dojoURL": "OnoDojo",
+    "unlockableAreas": [
+      {
+        "areaURL": "NorthLeupp",
+        "buttonText": "Continue to the North Gate"
+      }
+
+    ],
+    "requirements": [
+      {
+        "action": "Desert Travel"
+      }
+    ],
+    "buildings": [
+      {
+        "name": "Public Oven",
+        "buttonText": "Public Oven",
+        "url": "LeuppOven",
+        "description": "You enter the public oven. You can bake bread here, if you have the dough.",
+        "hasOven": true
+      }
+    ]
+  },
+  {
+    "name": "North Leupp",
+    "id": 67,
+    "image": "Village",
+    "description": "A sturdy fence surrounds the northern half of the city. A lumberjack supply store has been built into part of the wall. A guard stands watch at the gate.",
+    "areaURL": "NorthLeupp",
+    "actions": [
+      "Chop Basla Trees:Balsa Logs",
+      "Chop Mahogany Trees:Mahogany Logs"
+    ],
+    "requirements": [
+      {
+        "action": "Desert Travel"
+      }
+    ]
+  }
+]

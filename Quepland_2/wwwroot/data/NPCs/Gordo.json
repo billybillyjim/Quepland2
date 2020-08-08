@@ -1,0 +1,23 @@
+{
+  "name": "Gordo",
+  "id": 4,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "He-h-hello there. W-w-would you like to buy a boat? I-i promise y-you won't be dis-a-apointed!"
+    },
+    {
+      "buttonText": "Why's this called Mound's Boats if you're named Gordo?",
+      "responseText": "O-o-o-h-h that's a fu-funny question, haha! We-well Mound isn't he-here right now so-so so I'm taking ov-over.",
+      "newQuestprogressValue": 1,
+      "quest": "Mound Is Missing",
+      "requirements": [
+        {
+          "quest": "Mound Is Missing",
+          "minimumQuestProgress": 0,
+          "maximumQuestProgress": 0
+        }
+      ]
+    }
+  ]
+}

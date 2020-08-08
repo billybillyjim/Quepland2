@@ -1,0 +1,228 @@
+﻿@page "/Rates/Max"
+@inject GameState GameState
+@implements IDisposable
+@inject NavigationManager UriHelper
+
+<button @onclick="@(() => Rates())">Rates</button>
+<button @onclick="@(() => Charts())">Charts</button>
+<button @onclick="@(() => UriHelper.NavigateTo("/WorldCheck/"))">World</button>
+<div style="overflow-y:scroll">
+    @foreach (Skill skill in Player.Instance.Skills)
+    {
+        if (skill.Name == SkillString)
+        {
+            <div style="font-weight:bold">
+                @skill.Name
+            </div>
+        }
+        else
+        {
+            <div @onclick="@(() => SetSkill(skill.Name))">
+                @skill.Name
+            </div>
+        }
+
+    }
+
+</div>
+<br />
+<div style="width:1000px;position:relative;background-color:lightgray;">
+    <div>Max:@TimeToMax Hours</div>
+    @foreach (KeyValuePair<GameItem, double> action in BestRatesAtLevel)
+    {
+        <div>@action.Key.Name</div>
+        <div>@action.Value</div>
+    }
+    @foreach (KeyValuePair<Recipe, double> action in BestRecipeRatesAtLevel)
+    {
+        <div>@action.Key.Output.Name</div>
+        <div>@action.Value</div>
+    }
+</div>
+<div style="height:300px;width:1000px">
+
+</div>
+
+
+
+@code {
+
+    private string SkillString;
+    private Skill Skill;
+    public double TimeToMax;
+    public List<KeyValuePair<GameItem, double>> BestRatesAtLevel = new List<KeyValuePair<GameItem, double>>();
+    public List<KeyValuePair<Recipe, double>> BestRecipeRatesAtLevel = new List<KeyValuePair<Recipe, double>>();
+
+    public List<GameItem> RelevantGear = new List<GameItem>();
+    private void SetSkill(string skill)
+    {
+        SkillString = skill;
+        Skill = Player.Instance.Skills.Find(x => x.Name == skill);
+        CalculateMaxTime();
+
+        GameState.UpdateState();
+    }
+    private void CalculateMaxTime()
+    {
+        GetRelevantGear();
+        BestRatesAtLevel = new List<KeyValuePair<GameItem, double>>();
+        foreach (GameItem item in ItemManager.Instance.Items)
+        {
+            bool sameSkill = false;
+            int lvl = 1;
+            foreach(Requirement req in item.Requirements)
+            {
+                if(req.Action == SkillString)
+                {
+                    sameSkill = true;
+                    if (req.SkillLevel != 0)
+                    {
+                        lvl = req.SkillLevel;
+                    }
+                }
+
+            }
+            if (sameSkill)
+            {
+                if (item.ExperienceGained.Contains(':'))
+                {
+                    GetBestGearForLevel(lvl);
+                    int xp = int.Parse(item.ExperienceGained.Split(':')[1]);
+                    double xpHr = (double)xp / (item.GatherSpeed * Player.Instance.GetLevelMultiplier(item) * Player.Instance.GetGearMultiplier(item)) * 5 * 60 * 60;
+                    BestRatesAtLevel.Add(new KeyValuePair<GameItem, double>(item, xpHr));
+                }
+            }
+
+        }
+
+        foreach (Recipe r in ItemManager.Instance.Recipes)
+        {
+            bool sameSkill = false;
+            int lvl = 1;
+            foreach (Requirement req in r.Requirements)
+            {
+                if (req.Skill == SkillString)
+                {
+                    sameSkill = true;
+                    if (req.SkillLevel != 0)
+                    {
+                        lvl = req.SkillLevel;
+                    }
+                }
+            }
+            if (sameSkill)
+            {
+                if (r.ExperienceGained.Contains(':'))
+                {
+                    int xp = int.Parse(r.ExperienceGained.Split(':')[1]);
+                    double xpHr = ((double)xp / (r.CraftingSpeed)) * 5 * 60 * 60;
+                    BestRecipeRatesAtLevel.Add(new KeyValuePair<Recipe, double>(r, xpHr));
+                    Console.WriteLine("Adding recipe:" + r.Output.Name);
+                }
+            }
+        }
+        BestRatesAtLevel = BestRatesAtLevel.OrderBy(x => x.Value).Reverse().ToList();
+        BestRecipeRatesAtLevel = BestRecipeRatesAtLevel.OrderBy(x => x.Value).Reverse().ToList();
+        TimeToMax = 0;
+        Player.Instance.Skills.Find(x => x.Name == SkillString).Experience = 0;
+        Player.Instance.Skills.Find(x => x.Name == SkillString).SetSkillLevel(1);
+        for (int i = 1; i < 99; i++)
+        {
+            bool metReq = false;
+            if (metReq)
+            {
+                continue;
+            }
+            Player.Instance.GainExperience(SkillString, (long)Skill.GetExperienceRequired(i) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience);
+            foreach(KeyValuePair<GameItem, double> pair in BestRatesAtLevel)
+            {
+                if (metReq)
+                {
+                    continue;
+                }
+                foreach (Requirement req in pair.Key.Requirements)
+                {
+                    if (metReq)
+                    {
+                        continue;
+                    }
+                    if (req.SkillLevel <= Player.Instance.Skills.Find(x => x.Name == SkillString).GetSkillLevel() && req.SkillLevel > 0)
+                    {
+                        TimeToMax += (Skill.GetExperienceRequired(i + 1) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience) / (pair.Value);
+                        Console.WriteLine("Adding Time:" + (Skill.GetExperienceRequired(i + 1) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience) + " / " + pair.Value + "(" + ((Skill.GetExperienceRequired(i + 1) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience) / pair.Value) + " hours) for item:" + pair.Key.Name + " at level:" + i);
+                        metReq = true;
+                        continue;
+                    }
+                }
+            }
+            foreach (KeyValuePair<Recipe, double> pair in BestRecipeRatesAtLevel)
+            {
+                if (metReq)
+                {
+                    continue;
+                }
+                foreach (Requirement req in pair.Key.Requirements)
+                {
+                    if (metReq)
+                    {
+                        continue;
+                    }
+                    if (req.SkillLevel <= Player.Instance.Skills.Find(x => x.Name == SkillString).GetSkillLevel() && req.SkillLevel > 0)
+                    {
+                        TimeToMax += (Skill.GetExperienceRequired(i + 1) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience) / (pair.Value);
+                        Console.WriteLine("Adding Time:" + (Skill.GetExperienceRequired(i + 1) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience) + " / " + pair.Value + "(" + ((Skill.GetExperienceRequired(i + 1) - Player.Instance.Skills.Find(x => x.Name == SkillString).Experience) / pair.Value) + " hours) for item:" + pair.Key.Output.Name + " at level:" + i);
+                        metReq = true;
+                        continue;
+                    }
+
+                }
+
+            }
+
+        }
+    }
+    private void GetRelevantGear()
+    {
+        foreach (GameItem i in ItemManager.Instance.Items)
+        {
+            if (i.GatherSpeedBonus > 0 && i.EnabledActions != null && i.EnabledActions.Contains(SkillString))
+            {
+                RelevantGear.Add(i);
+            }
+        }
+    }
+    private void GetBestGearForLevel(int lvl)
+    {
+        Skill.SetSkillLevel(lvl);
+        foreach(GameItem i in RelevantGear)
+        {
+            if(i.HasRequirements() && Player.Instance.GetWeapon() == null)
+            {
+                Player.Instance.Equip(i);
+            }
+            else if(i.HasRequirements() && i.GatherSpeedBonus > Player.Instance.GetWeapon().GatherSpeedBonus)
+            {
+                Player.Instance.Equip(i);
+            }
+        }
+    }
+
+    private void Rates()
+    {
+        UriHelper.NavigateTo("/Rates/");
+    }
+    private void Charts()
+    {
+        UriHelper.NavigateTo("/Rates/Charts/");
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.HideTooltip();
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

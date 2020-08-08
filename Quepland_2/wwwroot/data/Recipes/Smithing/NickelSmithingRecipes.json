@@ -1,0 +1,68 @@
+[
+  {
+    "outputItemName": "Molten Nickel Bar",
+    "ingredients": [
+      {
+        "itemName": "Pentlandite"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Nickel Bar",
+    "ingredients": [
+      {
+        "itemName": "Nickel Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Nickel Knife",
+    "ingredients": [
+      {
+        "itemName": "Molten Nickel Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Nickel Sword",
+    "ingredients": [
+      {
+        "itemName": "Molten Nickel Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Nickel Axe",
+    "ingredients": [
+      {
+        "itemName": "Molten Nickel Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Nickel Hammer",
+    "ingredients": [
+      {
+        "itemName": "Molten Nickel Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Nickel Bar",
+    "ingredients": [
+      {
+        "itemName": "Molten Nickel Bar"
+      }
+    ]
+  },
+  {
+    "outputItemName": "Nickel Arrowtips",
+    "ingredients": [
+      {
+        "itemName": "Molten Nickel Bar"
+      }
+    ],
+    "outputAmount": 10
+  }
+
+]

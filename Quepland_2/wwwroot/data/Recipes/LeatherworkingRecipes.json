@@ -1,0 +1,727 @@
+[
+  {
+    "outputItemName": "Rabbit Gloves",
+    "ingredients": [
+      {
+        "itemName": "Rabbit Leather",
+        "amount": 1
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Rabbit Hat",
+    "ingredients": [
+      {
+        "itemName": "Rabbit Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 2
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Rabbit Boots",
+    "ingredients": [
+      {
+        "itemName": "Rabbit Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 3
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Rabbit Pants",
+    "ingredients": [
+      {
+        "itemName": "Rabbit Leather",
+        "amount": 3
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 4
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Rabbit Shirt",
+    "ingredients": [
+      {
+        "itemName": "Rabbit Leather",
+        "amount": 4
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Deer Gloves",
+    "ingredients": [
+      {
+        "itemName": "Deer Leather",
+        "amount": 1
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 5
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Deer Hat",
+    "ingredients": [
+      {
+        "itemName": "Deer Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 7
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Deer Boots",
+    "ingredients": [
+      {
+        "itemName": "Deer Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Deer Pants",
+    "ingredients": [
+      {
+        "itemName": "Deer Leather",
+        "amount": 3
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 11
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Deer Shirt",
+    "ingredients": [
+      {
+        "itemName": "Deer Leather",
+        "amount": 4
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 13
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Wild Boar Gloves",
+    "ingredients": [
+      {
+        "itemName": "Wild Boar Leather",
+        "amount": 1
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 43
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Wild Boar Hat",
+    "ingredients": [
+      {
+        "itemName": "Wild Boar Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 45
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Wild Boar Boots",
+    "ingredients": [
+      {
+        "itemName": "Wild Boar Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 47
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Wild Boar Pants",
+    "ingredients": [
+      {
+        "itemName": "Wild Boar Leather",
+        "amount": 3
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 49
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Wild Boar Shirt",
+    "ingredients": [
+      {
+        "itemName": "Wild Boar Leather",
+        "amount": 4
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 51
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Black Bear Gloves",
+    "ingredients": [
+      {
+        "itemName": "Black Bear Leather",
+        "amount": 1
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 55
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Black Bear Hat",
+    "ingredients": [
+      {
+        "itemName": "Black Bear Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 57
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Black Bear Boots",
+    "ingredients": [
+      {
+        "itemName": "Black Bear Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 59
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Black Bear Pants",
+    "ingredients": [
+      {
+        "itemName": "Black Bear Leather",
+        "amount": 3
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 61
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Black Bear Shirt",
+    "ingredients": [
+      {
+        "itemName": "Black Bear Leather",
+        "amount": 4
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 64
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Grizzly Bear Gloves",
+    "ingredients": [
+      {
+        "itemName": "Grizzly Bear Leather",
+        "amount": 1
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 80
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Grizzly Bear Hat",
+    "ingredients": [
+      {
+        "itemName": "Grizzly Bear Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 82
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Grizzly Bear Boots",
+    "ingredients": [
+      {
+        "itemName": "Grizzly Bear Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 83
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Grizzly Bear Pants",
+    "ingredients": [
+      {
+        "itemName": "Grizzly Bear Leather",
+        "amount": 3
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 84
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Grizzly Bear Shirt",
+    "ingredients": [
+      {
+        "itemName": "Grizzly Bear Leather",
+        "amount": 4
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 88
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Moose Gloves",
+    "ingredients": [
+      {
+        "itemName": "Moose Leather",
+        "amount": 1
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 65
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Moose Hat",
+    "ingredients": [
+      {
+        "itemName": "Moose Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 67
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Moose Hat(Antlered)",
+    "ingredients": [
+      {
+        "itemName": "Moose Hat",
+        "amount": 1
+      },
+      {
+        "itemName": "Moose Antlers",
+        "amount": 1
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 70
+
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Moose Boots",
+    "ingredients": [
+      {
+        "itemName": "Moose Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 69
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Moose Pants",
+    "ingredients": [
+      {
+        "itemName": "Moose Leather",
+        "amount": 3
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 71
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Moose Shirt",
+    "ingredients": [
+      {
+        "itemName": "Moose Leather",
+        "amount": 4
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 74
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Bison Gloves",
+    "ingredients": [
+      {
+        "itemName": "Bison Leather",
+        "amount": 1
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 91
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Bison Hat",
+    "ingredients": [
+      {
+        "itemName": "Bison Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 92
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Bison Boots",
+    "ingredients": [
+      {
+        "itemName": "Bison Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 93
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Bison Pants",
+    "ingredients": [
+      {
+        "itemName": "Bison Leather",
+        "amount": 3
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 94
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Bison Shirt",
+    "ingredients": [
+      {
+        "itemName": "Bison Leather",
+        "amount": 4
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 95
+      }
+    ],
+    "maxOutputsPerAction": 1
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Quepland",
+    "regionNames": [
+      "Mount Queple",
+      "Queple Cave",
+      "Sawabe Swamp",
+      "Cantila Coast",
+      "Higashi Woods",
+      "Sabbach Waste",
+      "Hojkma Isles",
+      "Togaru Hills",
+      "Hoin River Valley"
+
+    ]
+  },
+  {
+    "name": "Caligin Commonwealth",
+    "regionNames": [
+      "Sahota Tir",
+      "Koncave Caverns"
+    ],
+    "topColor": "#BCE4FF",
+    "bottomColor": "#56788F"
+  },
+  {
+    "name": "Arawasago Archipelago",
+    "regionNames": [
+      "Tackure Islet",
+      "Ufagari Islands"
+    ],
+    "topColor": "#28daf7",
+    "bottomColor": "#00dbcb"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "name": "Doctor Squid",
+  "id": 15,
+  "dialogs": [
+    {
+      "buttonText": "Where were you last night?",
+      "responseText": "I was... preoccupied with some business in the store room.",
+      "quest": "Case of the Dead Pirate",
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 6
+        }
+      ]
+    },
+    {
+      "buttonText": "Did you see anything?",
+      "responseText": "No, I had had a bit to drink by then, so seeing anything at all was quite difficult.",
+      "quest": "Case of the Dead Pirate",
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 6
+        }
+      ]
+    },
+    {
+      "buttonText": "Who would want to kill the captain?",
+      "responseText": "I'm not sure, most of us voted for him, but First Mate Fremp and Two Legs Jack didn't.",
+      "quest": "Case of the Dead Pirate",
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 5,
+          "maximumQuestProgress": 6
+        }
+      ]
+    }
+  ]
+}

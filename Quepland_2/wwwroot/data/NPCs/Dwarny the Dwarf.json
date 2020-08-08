@@ -1,0 +1,64 @@
+{
+  "name": "Dwarny the Dwarf",
+  "id": 29,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi. Need something?",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Dwarny the Dwarf"
+        }
+      ]
+    },
+    {
+      "buttonText": "Can I hire you?",
+      "responseText": "Of course. That'll be 1,000,000 coins.",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Dwarny the Dwarf"
+        }
+      ]
+    },
+    {
+      "buttonText": "What can you do?",
+      "responseText": "I'm a dwarf. I can help you transport your mined materials to your bank, so you can keep mining. I'm pretty good at it, all things considered.",
+      "depth": 1,
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Dwarny the Dwarf"
+        }
+      ]
+    },
+    {
+      "buttonText": "1,000,000?? That's too much!",
+      "responseText": "You may think it's too much, but I've been hired by plenty of adventurers before you for the same price.",
+      "depth": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Dwarny the Dwarf"
+        }
+      ]
+    },
+    {
+      "buttonText": "Here you go",
+      "responseText": "Thanks! I'll follow you now.",
+      "depth": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Dwarny the Dwarf"
+        },
+        {
+          "item": "Coins",
+          "itemAmount": 1000000
+        }
+      ],
+      "unlockedFollower": "Dwarny the Dwarf",
+      "ConsumeRequiredItems": true
+    }
+  ]
+}

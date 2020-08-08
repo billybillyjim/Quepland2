@@ -1,0 +1,58 @@
+{
+  "name": "Pirate Crewman",
+  "id": 16,
+  "dialogs": [
+    {
+      "buttonText": "Where were you last night?",
+      "responseText": "I was on deck playing cello in our string quartet.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 12,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 11,
+          "maximumQuestProgress": 11
+        }
+      ]
+    },
+    {
+      "buttonText": "Did you see anything?",
+      "responseText": "No, I was with my band the whole time.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 13,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 12,
+          "maximumQuestProgress": 12
+        }
+      ]
+    },
+    {
+      "buttonText": "Who is in your band?",
+      "responseText": "Well there's me, then Baskin over there is our bassist, Jack does the violin, and Nobeard had been our violist, but now we are going to have to find a new one.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 14,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 13,
+          "maximumQuestProgress": 13
+        }
+      ]
+    },
+    {
+      "buttonText": "So Jack was with you the whole time?",
+      "responseText": "That's right, we can survive without a viola, but our band needs a violin to carry the melody. The thing about four string quartets is... \nYou walk away disinterested before he can finish.",
+      "quest": "Case of the Dead Pirate",
+      "newQuestProgressValue": 15,
+      "requirements": [
+        {
+          "quest": "Case of the Dead Pirate",
+          "minimumQuestProgress": 14,
+          "maximumQuestProgress": 14
+        }
+      ]
+    }
+  ]
+}

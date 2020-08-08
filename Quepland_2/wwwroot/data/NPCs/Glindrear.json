@@ -1,0 +1,76 @@
+{
+  "name": "Glindrear",
+  "id": 34,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Greetings, traveller.",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Glindrear"
+        }
+      ]
+    },
+    {
+      "buttonText": "Would you work for me?",
+      "responseText": "I'm well beyond the pay-grade of most adventurers, but if you have the coins I can work for you.",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "lockedFollower": "Glindrear"
+        }
+      ]
+    },
+    {
+      "buttonText": "What can you do?",
+      "responseText": "I'm a friendly Kushtaka, not like those folk you'll meet out in the wild. I can haul fish to your bank for you so you can keep on fishing. I'm very good at what I do.",
+      "depth": 1,
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "lockedFollower": "Glindrear"
+        }
+      ]
+    },
+    {
+      "buttonText": "How much?",
+      "responseText": "I wouldn't work for less than 4 million.",
+      "depth": 2,
+      "newDepthOnTalk": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Glindrear"
+        }
+      ]
+    },
+    {
+      "buttonText": "Deal",
+      "responseText": "Well, you've surprise me, traveller. Let me know when you need my help.",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Glindrear"
+        },
+        {
+          "item": "Coins",
+          "itemAmount": 4000000
+        }
+      ],
+      "unlockedFollower": "Glindrear",
+      "ConsumeRequiredItems": true
+    },
+    {
+      "buttonText": "I don't have that much",
+      "responseText": "Most adventurers don't. Maybe someday you'll happen upon some treasure somewhere and you'll be able to afford me.",
+      "depth": 3,
+      "requirements": [
+        {
+          "lockedFollower": "Glindrear"
+        }
+      ]
+
+    }
+  ]
+}

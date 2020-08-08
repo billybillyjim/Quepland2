@@ -1,0 +1,185 @@
+﻿@page "/World/Smithy/{Location}"
+@inject GameState GameState
+@using Quepland_2.Components
+@implements IDisposable
+
+@if (Location != null)
+{
+    <h3>Smithy</h3>
+
+    <CustomDropdownComponent BoxText="Select an Ore or Bar" EmptyText="You don't have any ores or bars." @bind-Value="Source" DropdownItems="@GetSmeltables()"></CustomDropdownComponent>
+    <CustomDropdownComponent BoxText="Select a Product" EmptyText="Please select a source." @bind-Value="Product" DropdownItems="@GetSmithables()"></CustomDropdownComponent>
+
+
+    <br />
+
+    @if (Product != "" && Source != "")
+    {
+        @if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
+        {
+            <button class="btn btn-primary" @onclick="@(() => Smith())">Auto Smith @Product</button>
+
+        }
+        else
+        {
+            <button class="btn btn-primary" @onclick="@(() => Smith())">Smith @Product</button>
+
+        }
+    }
+    <br />
+    <br />
+    <div>
+        <div class="progress" style="width:300px;">
+            <div class="progress-bar" style="@GetProgress()"></div>
+        </div>
+    </div>
+}
+
+@code {
+
+    [Parameter]
+    public string Location { get; set; }
+    private string s = "";
+    string Source
+    {
+        get { return s; }
+        set
+        {
+            s = value;
+            UpdateSmithables();
+        }
+    }
+    string Product = "";
+    int amount = 1;
+    private List<Recipe> smeltables = new List<Recipe>();
+    private List<Recipe> smithables = new List<Recipe>();
+
+    public List<string> GetSmithables()
+    {
+        if (smithables.Count > 0)
+        {
+            return smithables.Select(x => x.OutputItemName).ToList();
+        }
+        return new List<string>();
+    }
+    public List<string> GetSmeltables()
+    {
+        if (smeltables.Count > 0)
+        {
+            return smeltables.Select(x => x.GetShortIngredientsString()).ToList();
+        }
+        return new List<string>();
+    }
+    public void Smith()
+    {
+
+        Recipe source = ItemManager.Instance.GetSmithingRecipeByIngredients(Source);
+        Recipe product = ItemManager.Instance.GetSmithingRecipeByOutput(Product);
+        if (Player.Instance.CurrentFollower != null &&
+            Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing" &&
+            source.CanCreateFromInventory(Bank.Instance.Inventory))
+        {
+
+            GameState.StopActions();
+            GameState.SmithingStage = 0;
+            GameState.NewSmeltingRecipe = source;
+            GameState.NewSmithingRecipe = product;
+            Player.Instance.CurrentFollower.BankItems();
+            MessageManager.AddMessage("You and " + Player.Instance.CurrentFollower.Name + " begin smithing " + Source + " into a " + Product);
+            GameState.TicksToNextAction = 0;
+            Player.Instance.CurrentFollower.TicksToNextAction = Player.Instance.CurrentFollower.AutoCollectSpeed;
+        }
+        else if (source.CanCreate())
+        {
+            GameState.StopActions();
+            GameState.SmithingStage = 0;
+            GameState.NewSmeltingRecipe = source;
+            GameState.NewSmithingRecipe = product;
+            MessageManager.AddMessage("You begin smithing " + Source + " into a " + Product);
+            GameState.TicksToNextAction = source.CraftingSpeed;
+        }
+        GameState.UpdateState();
+    }
+    private string GetProgress()
+    {
+        if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
+        {
+            return "width:" + (100 - ((double)Player.Instance.CurrentFollower.TicksToNextAction / Player.Instance.CurrentFollower.AutoCollectSpeed) * 100d) + "%";
+        }
+        if (GameState.CurrentSmeltingRecipe != null)
+        {
+            if (GameState.SmithingStage == 0)
+            {
+                return "width:" + (100 - ((double)GameState.TicksToNextAction / GameState.CurrentSmeltingRecipe.CraftingSpeed) * 100d) + "%";
+            }
+            else
+            {
+                return "width:" + (100 - ((double)GameState.TicksToNextAction / GameState.CurrentSmeltingRecipe.CraftingSpeed) * 100d) + "%";
+            }
+        }
+        return "width:0%";
+    }
+    public void UpdateSmithables()
+    {
+        smithables.Clear();
+        foreach (Recipe recipe in ItemManager.Instance.SmithingRecipes)
+        {
+            if (recipe.Ingredients.Count == 1 && ItemManager.Instance.GetSmithingRecipeByIngredients(Source).OutputItemName == recipe.Ingredients[0].ItemName)
+            {
+                smithables.Add(recipe);
+            }
+        }
+    }
+    public void UpdateSmeltables()
+    {
+        Smithy s = AreaManager.Instance.Smithies.FirstOrDefault(x => x.Location == Location);
+        smeltables.Clear();
+        foreach (Recipe recipe in ItemManager.Instance.SmithingRecipes)
+        {
+            if (recipe != null && recipe.Output != null)
+            {
+                if (s.SmeltableMetals.Contains(recipe.Output) && recipe.CanCreate())
+                {
+                    smeltables.Add(recipe);
+                }
+            }
+
+        }
+    }
+    public void UpdateBankSmeltables()
+    {
+        Smithy s = AreaManager.Instance.Smithies.FirstOrDefault(x => x.Location == Location);
+        smeltables.Clear();
+        foreach (Recipe recipe in ItemManager.Instance.SmithingRecipes)
+        {
+            if (recipe != null && recipe.Output != null)
+            {
+                if (s.SmeltableMetals.Contains(recipe.Output) && recipe.CanCreateFromInventory(Bank.Instance.Inventory))
+                {
+                    smeltables.Add(recipe);
+                }
+            }
+
+        }
+    }
+    protected override void OnInitialized()
+    {
+        GameState.SmithingComponent = this;
+        if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
+        {
+            UpdateBankSmeltables();
+        }
+        else
+        {
+            UpdateSmeltables();
+        }
+
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.SmithingComponent = null;
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

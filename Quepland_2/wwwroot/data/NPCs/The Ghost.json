@@ -1,0 +1,10 @@
+{
+  "name": "The Ghost",
+  "id": -1,
+  "dialogs": [
+    {
+      "buttonText": "Who are you?",
+      "responseText": "I'm a ghost! Tell the dev where you found me. Boo!"
+    }
+  ]
+}

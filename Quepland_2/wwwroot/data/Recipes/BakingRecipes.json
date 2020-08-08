@@ -1,0 +1,130 @@
+[
+  {
+    "outputItemName": "Bread (Unleavened)",
+    "ingredients": [
+      {
+        "itemName": "Dough (Unleavened)"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Rye Bread (Unleavened)",
+    "ingredients": [
+      {
+        "itemName": "Rye Dough (Unleavened)"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Durum Bread (Unleavened)",
+    "ingredients": [
+      {
+        "itemName": "Durum Dough (Unleavened)"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Bread",
+    "ingredients": [
+      {
+        "itemName": "Dough"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Rye Bread",
+    "ingredients": [
+      {
+        "itemName": "Rye Dough"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Durum Bread",
+    "ingredients": [
+      {
+        "itemName": "Durum Dough"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Sweet Bread",
+    "ingredients": [
+      {
+        "itemName": "Sweet Dough"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Milk Bread",
+    "ingredients": [
+      {
+        "itemName": "Milk Dough"
+      }
+    ],
+    "experienceGained": "Culinary Arts:50",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 9
+      }
+    ],
+    "maxOutputsPerAction": 1
+  }
+]

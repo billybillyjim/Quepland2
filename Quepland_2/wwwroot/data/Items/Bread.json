@@ -1,0 +1,376 @@
+[
+  {
+    "name": "Wheat",
+    "description": "A few steps away from bread.",
+    "gatherString": "You harvest some wheat.",
+    "value": 5,
+    "gatherSpeed": 8,
+    "icon": "Rice",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    }
+  },
+  {
+    "name": "Rye",
+    "description": "You could use this to make rye bread.",
+    "gatherString": "You harvest some rye.",
+    "value": 10,
+    "gatherSpeed": 8,
+    "icon": "Rice",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    }
+  },
+  {
+    "name": "Durum",
+    "description": "It's wheat, but harder.",
+    "gatherString": "You harvest some durum.",
+    "value": 15,
+    "gatherSpeed": 15,
+    "icon": "Rice",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    }
+  },
+  {
+    "name": "Flour",
+    "description": "Ground up wheat. It just needs water to become dough.",
+    "gatherString": "You grind up the wheat.",
+    "value": 20,
+    "gatherSpeed": 5,
+    "icon": "PowderBag",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    },
+    "isStackable": true
+  },
+  {
+    "name": "Rye Flour",
+    "description": "Ground up rye. It just needs water to become dough.",
+    "gatherString": "You grind up the rye.",
+    "value": 25,
+    "gatherSpeed": 5,
+    "icon": "PowderBag",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    },
+    "isStackable": true
+  },
+  {
+    "name": "Durum Flour",
+    "description": "Ground up durum. It just needs water to become dough.",
+    "gatherString": "You grind up the durum.",
+    "value": 30,
+    "gatherSpeed": 5,
+    "icon": "PowderBag",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    },
+    "isStackable": true
+  },
+  {
+    "name": "Dough (Unleavened)",
+    "description": "A dough made from water and flour.",
+    "gatherString": "You mix the water and flour and knead it into a dough.",
+    "value": 20,
+    "gatherSpeed": 5,
+    "icon": "Dough",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    }
+  },
+  {
+    "name": "Rye Dough (Unleavened)",
+    "description": "A dough made from water and rye flour.",
+    "gatherString": "You mix the water and flour and knead it into a dough.",
+    "value": 25,
+    "gatherSpeed": 5,
+    "icon": "Dough",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    }
+  },
+  {
+    "name": "Durum Dough (Unleavened)",
+    "description": "A dough made from water and durum flour.",
+    "gatherString": "You mix the water and flour and knead it into a dough.",
+    "value": 30,
+    "gatherSpeed": 5,
+    "icon": "Dough",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    }
+  },
+  {
+    "name": "Dough",
+    "description": "A dough made from water, flour and yeast.",
+    "gatherString": "You mix the water, yeast and flour and knead it into a dough.",
+    "value": 20,
+    "gatherSpeed": 5,
+    "icon": "Dough",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    }
+  },
+  {
+    "name": "Rye Dough",
+    "description": "A dough made from water, rye flour and yeast.",
+    "gatherString": "You mix the water, yeast and flour and knead it into a dough.",
+    "value": 25,
+    "gatherSpeed": 5,
+    "icon": "Dough",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    }
+  },
+  {
+    "name": "Durum Dough",
+    "description": "A dough made from water, durum flour and yeast.",
+    "gatherString": "You mix the water, yeast and flour and knead it into a dough.",
+    "value": 30,
+    "gatherSpeed": 5,
+    "icon": "Dough",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    }
+  },
+  {
+    "name": "Sweet Dough",
+    "description": "A dough made from water, flour, sugar and yeast.",
+    "gatherString": "You mix the ingredients and knead it into a dough.",
+    "value": 25,
+    "gatherSpeed": 5,
+    "icon": "Dough",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    }
+  },
+  {
+    "name": "Milk Dough",
+    "description": "A dough made from water, flour, milk and yeast.",
+    "gatherString": "You mix the ingredients and knead it into a dough.",
+    "value": 30,
+    "gatherSpeed": 5,
+    "icon": "Dough",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    }
+  },
+  {
+    "name": "Bread (Unleavened)",
+    "description": "A bread made from regular wheat.",
+    "gatherString": "You bake the dough into bread.",
+    "value": 50,
+    "gatherSpeed": 5,
+    "icon": "UnleavenedBread",
+    "foodInfo": {
+      "healDuration": 1,
+      "healSpeed": 1,
+      "healAmount": 30
+    }
+  },
+  {
+    "name": "Rye Bread (Unleavened)",
+    "description": "A bread made from rye.",
+    "gatherString": "You bake the dough into bread.",
+    "value": 75,
+    "gatherSpeed": 5,
+    "icon": "UnleavenedBread",
+    "foodInfo": {
+      "healDuration": 1,
+      "healSpeed": 1,
+      "healAmount": 70
+    }
+  },
+  {
+    "name": "Durum Bread (Unleavened)",
+    "description": "A bread made from durum.",
+    "gatherString": "You bake the dough into bread.",
+    "value": 90,
+    "gatherSpeed": 5,
+    "icon": "UnleavenedBread",
+    "foodInfo": {
+      "healDuration": 1,
+      "healSpeed": 1,
+      "healAmount": 105
+    }
+  },
+  {
+    "name": "Bread",
+    "description": "A bread made from regular wheat. Yeast helped it rise into a delicious loaf.",
+    "gatherString": "You bake the dough into bread.",
+    "value": 50,
+    "gatherSpeed": 5,
+    "icon": "Bread",
+    "foodInfo": {
+      "healDuration": 1,
+      "healSpeed": 1,
+      "healAmount": 45
+    }
+  },
+  {
+    "name": "Rye Bread",
+    "description": "A bread made from rye.",
+    "gatherString": "You bake the dough into bread. Yeast helped it rise into a delicious loaf.",
+    "value": 75,
+    "gatherSpeed": 5,
+    "icon": "Bread",
+    "foodInfo": {
+      "healDuration": 1,
+      "healSpeed": 1,
+      "healAmount": 105
+    }
+  },
+  {
+    "name": "Durum Bread",
+    "description": "A bread made from durum.",
+    "gatherString": "You bake the dough into bread. Yeast helped it rise into a delicious loaf.",
+    "value": 90,
+    "gatherSpeed": 5,
+    "icon": "Bread",
+    "foodInfo": {
+      "healDuration": 1,
+      "healSpeed": 1,
+      "healAmount": 160
+    }
+  },
+  {
+    "name": "Sweet Bread",
+    "description": "A bread made from regular wheat. It's got added sugar to make it tasty.",
+    "gatherString": "You bake the dough into bread. Yeast helped it rise into a delicious loaf.",
+    "value": 150,
+    "gatherSpeed": 5,
+    "icon": "Bread",
+    "foodInfo": {
+      "healDuration": 1,
+      "healSpeed": 1,
+      "healAmount": 75
+    }
+  },
+  {
+    "name": "Milk Bread",
+    "description": "A soft bread made with milk.",
+    "gatherString": "You bake the dough into bread. Yeast helped it rise into a delicious loaf.",
+    "value": 170,
+    "gatherSpeed": 5,
+    "icon": "Bread",
+    "foodInfo": {
+      "healDuration": 1,
+      "healSpeed": 1,
+      "healAmount": 120
+    }
+  },
+  {
+    "name": "Advanced Dough",
+    "description": "A complex dough made from a variety of ingredients.",
+    "gatherString": "You mix together all the ingredients and knead it into a dough.",
+    "value": 200,
+    "gatherSpeed": 10,
+    "icon": "Dough",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 30
+    }
+  },
+  {
+    "name": "Advanced Bread",
+    "description": "A complex bread made from many ingredients.",
+    "gatherString": "You bake the dough into bread.",
+    "value": 250,
+    "gatherSpeed": 10,
+    "icon": "Bread",
+    "foodInfo": {
+      "healDuration": 1,
+      "healSpeed": 1,
+      "healAmount": 200
+    }
+  },
+  {
+    "name": "Empty Bucket",
+    "description": "A bucket.",
+    "value": 2,
+    "gatherSpeed": 10,
+    "icon": "Bucket"
+  },
+  {
+    "name": "Bucket of Water",
+    "description": "A bucket. It's got water in it.",
+    "gatherString": "You fill the bucket with water.",
+    "value": 5,
+    "gatherSpeed": 3,
+    "icon": "BucketFull"
+  },
+  {
+    "name": "Quern Stone",
+    "description": "A heavy rock on another heavy rock with a handle. You can mindlessly grind grain with one.",
+    "value": 500,
+    "gatherSpeed": 3,
+    "icon": "StoneWheel"
+  },
+  {
+    "name": "Yeast",
+    "description": "An amazing creature that makes bread taste good.",
+    "value": 50,
+    "gatherSpeed": 3,
+    "icon": "PowderBag",
+    "isStackable": true
+  },
+  {
+    "name": "Milk",
+    "description": "Delicious milk.",
+    "value": 80,
+    "gatherSpeed": 3,
+    "icon": "Milk"
+  },
+  {
+    "name": "Sugar",
+    "description": "Sweet sugar.",
+    "value": 100,
+    "gatherSpeed": 3,
+    "icon": "PowderBag"
+  },
+  {
+    "name": "Salt",
+    "description": "Salty.",
+    "value": 120,
+    "gatherSpeed": 3,
+    "icon": "PowderBag",
+    "isStackable": true
+  },
+  {
+    "name": "Oil",
+    "description": "Good in small doses.",
+    "value": 150,
+    "gatherSpeed": 3,
+    "icon": "Oil"
+  }
+]

@@ -1,0 +1,487 @@
+[
+  {
+    "name": "Seaweed",
+    "description": "A long chewy plant. Tastes like the ocean.",
+    "gatherString": "You harvest some seaweed.",
+    "value": 10,
+    "gatherSpeed": 5,
+    "icon": "Seaweed",
+    "foodInfo": {
+      "healDuration": 2,
+      "healSpeed": 2,
+      "healAmount": 5
+    }
+  },
+  {
+    "name": "Rice",
+    "description": "Raw, crunchy rice. You could make sushi with it.",
+    "gatherString": "You harvest some rice.",
+    "value": 5,
+    "gatherSpeed": 8,
+    "icon": "Rice",
+    "foodInfo": {
+      "healDuration": 3,
+      "healSpeed": 3,
+      "healAmount": 3
+    }
+  },
+  {
+    "name": "Rice Roll",
+    "description": "Rice rolled up with some seaweed.",
+    "gatherString": "You make a rice roll.",
+    "value": 20,
+    "gatherSpeed": 5,
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 10,
+      "healSpeed": 5,
+      "healAmount": 1
+    }
+  },
+  {
+    "name": "Minnow Roll",
+    "description": "A tiny sushi roll with a tiny fish on top.",
+    "gatherString": "You make a minnow roll.",
+    "value": 10,
+    "secondaryColor": "#dedfa4",
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 15,
+      "healAmount": 1,
+      "healSpeed": 10
+    }
+  },
+  {
+    "name": "Sunfish Roll",
+    "description": "A small sushi roll with a small sunfish on top.",
+    "gatherString": "You make a sunfish roll.",
+    "secondaryColor": "#95a282",
+    "value": 35,
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 2,
+      "healSpeed": 10,
+      "buffedSkill": "Deftness",
+      "buffAmount": 2
+    }
+  },
+  {
+    "name": "Manta Ray Roll",
+    "description": "A ray roll.",
+    "gatherString": "You make a manta roll.",
+    "value": 250,
+    "secondaryColor": "#a5e6ef",
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 90,
+      "healAmount": 15,
+      "healSpeed": 2,
+      "buffedSkill": "Fishing",
+      "buffAmount": 5
+    }
+  },
+  {
+    "name": "Crab Roll",
+    "description": "A roll made with delicious crab.",
+    "gatherString": "You make a crab roll.",
+    "value": 146,
+    "secondaryColor": "#eb6337",
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 11,
+      "healAmount": 11,
+      "healSpeed": 11,
+      "buffedSkill": "Knifesmanship",
+      "buffAmount": 3
+    }
+  },
+  {
+    "name": "Angry Crab Roll",
+    "description": "A roll made with angry crab.",
+    "gatherString": "You make an angry crab roll.",
+    "secondaryColor": "#e22f2f",
+    "value": 146,
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 11,
+      "healAmount": 11,
+      "healSpeed": 11,
+      "buffedSkill": "Knifesmanship",
+      "buffAmount": 6
+    }
+  },
+  {
+    "name": "Puffer Fish Roll",
+    "description": "A sushi roll made from a very poisonous fish. Hopefully this was prepared properly!",
+    "gatherString": "You make a puffer fish roll.",
+    "value": 70,
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "secondaryColor": "#F5C242",
+    "foodInfo": {
+      "healDuration": 60,
+      "healAmount": 4,
+      "healSpeed": 5,
+      "buffedSkill": "HP",
+      "buffAmount": 8
+    }
+  },
+  {
+    "name": "Carp Roll",
+    "description": "A roll made with delicious carp. Tastes terrible.",
+    "gatherString": "You make a carp roll.",
+    "value": 90,
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "secondaryColor": "#E0D7AB",
+    "foodInfo": {
+      "healDuration": 60,
+      "healAmount": 5,
+      "healSpeed": 5,
+      "buffedSkill": "Lapidary",
+      "buffAmount": 4
+    }
+  },
+  {
+    "name": "Giant Carp Roll",
+    "description": "A roll made with delicious carp. It's huge but it also tastes terrible.",
+    "gatherString": "You make a giant carp roll.",
+    "value": 490,
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "secondaryColor": "#E0D7AB",
+    "foodInfo": {
+      "healDuration": 90,
+      "healAmount": 40,
+      "healSpeed": 10,
+      "buffedSkill": "Lapidary",
+      "buffAmount": 8
+    }
+  },
+  {
+    "name": "Icefish Roll",
+    "description": "A tiny sushi roll with a tiny icefish on top.",
+    "gatherString": "You make an icefish roll.",
+    "value": 25,
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "secondaryColor": "#BFF9FF",
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 3,
+      "healSpeed": 5,
+      "buffedSkill": "Knifesmanship",
+      "buffAmount": 2
+    }
+  },
+  {
+    "name": "Shrimp Roll",
+    "description": "An eldritch horror on rice.",
+    "gatherString": "You make a shrimp roll.",
+    "value": 35,
+    "gatherSpeed": 15,
+    "secondaryColor": "#FFC1BF",
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": 3,
+      "healSpeed": 4,
+      "buffedSkill": "Swordsmanship",
+      "buffAmount": 2
+    }
+  },
+  {
+    "name": "Scallop Roll",
+    "description": "A spicy sushi roll.",
+    "gatherString": "You make a scallop roll.",
+    "value": 45,
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "secondaryColor": "#EB9875",
+    "foodInfo": {
+      "healDuration": 60,
+      "healAmount": 6,
+      "healSpeed": 5,
+      "buffedSkill": "Deftness",
+      "buffAmount": 2
+    }
+  },
+  {
+    "name": "Sardine Roll",
+    "description": "A small fish on a small roll.",
+    "gatherString": "You make a sardine roll.",
+    "value": 60,
+    "gatherSpeed": 12,
+    "secondaryColor": "#C9C8C5",
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 60,
+      "healAmount": 7,
+      "healSpeed": 5,
+      "buffedSkill": "Hammermanship",
+      "buffAmount": 2
+    }
+  },
+  {
+    "name": "Abalone Roll",
+    "description": "Tastes better without the shell.",
+    "gatherString": "You make an abalone roll.",
+    "value": 120,
+    "secondaryColor": "#66B4DE",
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 60,
+      "healAmount": 9,
+      "healSpeed": 5,
+      "buffedSkill": "Axemanship",
+      "buffAmount": 3
+    }
+  },
+  {
+    "name": "Saury Roll",
+    "description": "A long silver fish on a roll.",
+    "gatherString": "You make a saury roll.",
+    "value": 100,
+    "gatherSpeed": 15,
+    "secondaryColor": "#A6A6A6",
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 90,
+      "healAmount": 10,
+      "healSpeed": 5,
+      "buffedSkill": "Archery",
+      "buffAmount": 3
+    }
+  },
+  {
+    "name": "Butterfish Roll",
+    "description": "The name is two-thirds accurate.",
+    "gatherString": "You make a butterfish roll.",
+    "value": 150,
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "secondaryColor": "#D6FFDC",
+    "foodInfo": {
+      "healDuration": 90,
+      "healAmount": 13,
+      "healSpeed": 4,
+      "buffedSkill": "Culinary Arts",
+      "buffAmount": 3
+    }
+  },
+  {
+    "name": "Shad Roll",
+    "description": "A sushi roll with a fish on it.",
+    "gatherString": "You make a shad roll.",
+    "value": 180,
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "secondaryColor": "#FDF0FF",
+    "foodInfo": {
+      "healDuration": 120,
+      "healAmount": 14,
+      "healSpeed": 5,
+      "buffedSkill": "Alchemy",
+      "buffAmount": 3
+    }
+  },
+  {
+    "name": "Squid Roll",
+    "description": "A very white and chewy sushi roll.",
+    "gatherString": "You make a squid roll.",
+    "value": 180,
+    "gatherSpeed": 15,
+    "secondaryColor": "#D9D9D9",
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 120,
+      "healAmount": 15,
+      "healSpeed": 5,
+      "buffedSkill": "Strength",
+      "buffAmount": 3
+    }
+  },
+  {
+    "name": "Salmon Roll",
+    "description": "A standard sushi roll. Delicious.",
+    "gatherString": "You make a salmon roll.",
+    "value": 210,
+    "secondaryColor": "#FFBABA",
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 150,
+      "healAmount": 18,
+      "healSpeed": 5,
+      "buffedSkill": "Mining",
+      "buffAmount": 3
+    }
+  },
+  {
+    "name": "Tuna Roll",
+    "description": "The iconic sushi roll.",
+    "gatherString": "You make a tuna roll.",
+    "value": 400,
+    "secondaryColor": "#3A63A6",
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 120,
+      "healAmount": 20,
+      "healSpeed": 4,
+      "buffedSkill": "Smithing",
+      "buffAmount": 4
+    }
+  },
+  {
+    "name": "Yellowtail Roll",
+    "description": "Tail not included",
+    "gatherString": "You make a yellowtail roll.",
+    "value": 350,
+    "gatherSpeed": 15,
+    "secondaryColor": "#FFC95E",
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 150,
+      "healAmount": 21,
+      "healSpeed": 5,
+      "buffedSkill": "Woodcutting",
+      "buffAmount": 4
+    }
+  },
+  {
+    "name": "Giant Clam Roll",
+    "description": "A giant clam stuffed into a sushi roll.",
+    "gatherString": "You make a giant clam roll.",
+    "value": 600,
+    "gatherSpeed": 15,
+    "secondaryColor": "#459CED",
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 240,
+      "healAmount": 22,
+      "healSpeed": 5,
+      "buffedSkill": "Woodworking",
+      "buffAmount": 4
+    }
+  },
+  {
+    "name": "Big Tuna Roll",
+    "description": "The fattiest of all the rolls.",
+    "gatherString": "You make a big tuna roll.",
+    "value": 900,
+    "gatherSpeed": 15,
+    "secondaryColor": "#3A63A6",
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 240,
+      "healAmount": 25,
+      "healSpeed": 5,
+      "buffedSkill": "Axemanship",
+      "buffAmount": 5
+    }
+  },
+  {
+    "name": "Swordfish Roll",
+    "description": "Just eating it will make you a better swordsman.",
+    "gatherString": "You make a swordfish roll.",
+    "value": 1300,
+    "gatherSpeed": 15,
+    "secondaryColor": "#9C6DED",
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 300,
+      "healAmount": 28,
+      "healSpeed": 5,
+      "buffedSkill": "Swordsmanship",
+      "buffAmount": 7
+    }
+  },
+  {
+    "name": "Flounder Roll",
+    "description": "A dumb looking fish converted into a tasty snack.",
+    "gatherString": "You make a flounder roll.",
+    "value": 400,
+    "gatherSpeed": 15,
+    "secondaryColor": "#D48A4E",
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 300,
+      "healAmount": 33,
+      "healSpeed": 5,
+      "buffedSkill": "Hammermanship",
+      "buffAmount": 7
+    }
+  },
+  {
+    "name": "Sleeper Shark Roll",
+    "description": "A roll full of nutritious teeth.",
+    "gatherString": "You make a shark roll.",
+    "value": 1600,
+    "gatherSpeed": 15,
+    "secondaryColor": "#C7AE97",
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 360,
+      "healAmount": 35,
+      "healSpeed": 5,
+      "buffedSkill": "Hunting",
+      "buffAmount": 7
+    }
+  },
+  {
+    "name": "Halibut Roll",
+    "description": "A sushi roll made with halibut.",
+    "gatherString": "You make a halibut roll.",
+    "value": 1800,
+    "gatherSpeed": 15,
+    "secondaryColor": "#B97D42",
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 360,
+      "healAmount": 38,
+      "healSpeed": 5,
+      "buffedSkill": "Leatherworking",
+      "buffAmount": 7
+    }
+  },
+  {
+    "name": "Octopus Roll",
+    "description": "A roll with eight limbs.",
+    "gatherString": "You make a giant octopus roll.",
+    "value": 2200,
+    "gatherSpeed": 15,
+    "secondaryColor": "#ed8e00",
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 360,
+      "healAmount": 40,
+      "healSpeed": 5,
+      "buffedSkill": "Mining",
+      "buffAmount": 8
+    }
+  },
+  {
+    "name": "Eqalussuaq Roll",
+    "description": "This is definitely poisonous...",
+    "gatherString": "You make an eqalussaq roll.",
+    "value": 2600,
+    "gatherSpeed": 15,
+    "icon": "Sushi",
+    "secondaryColor": "#B5B7BA",
+    "foodInfo": {
+      "healDuration": 30,
+      "healAmount": -10,
+      "healSpeed": 10,
+      "buffedSkill": "Hunting",
+      "buffAmount": 10
+    }
+  }
+]

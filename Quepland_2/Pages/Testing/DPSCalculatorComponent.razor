@@ -1,0 +1,154 @@
+﻿@page "/Rates/DPSCalc"
+@inject GameState GameState
+@implements IDisposable
+
+<h3>DPS Calculator</h3>
+
+<div>
+    <button @onclick="@(() => CalculateDPS())">Calculate</button>
+    <div>
+        Average Ticks Per Kill:@Calculator.AverageKillTime
+    </div>
+    <div>
+        Total Ticks Taken:@Calculator.TotalTicksTaken
+    </div>
+    <div>
+        Kills/Hour:@(3600d / (Calculator.AverageKillTime / 5d))
+    </div>
+    <div>
+        Total Kills:@Calculator.TotalKills
+    </div>
+    <div>
+        Total Deaths:@Calculator.TotalDeaths
+    </div>
+</div>
+
+<div>
+    <Quepland_2.Components.CustomDropdownComponent @bind-Value="@SelectedMonsterName" DropdownItems="@BattleManager.Instance.Monsters.Select(x=> x.Name).ToList()"></Quepland_2.Components.CustomDropdownComponent>
+</div>
+<div>
+    @SelectedMonsterName
+    <button @onclick="@(() => AddOpponent(SelectedMonsterName))">Add</button>
+    <br />
+    <button @onclick="@(() => ClearOpponents())">Clear</button>
+</div>
+<div>
+    Opponents:
+    @foreach (Monster opponent in Calculator.Opponents)
+    {
+        <div>
+            @opponent.Name
+        </div>
+    }
+</div>
+<div style="position:absolute;right:0px;display:flex;width:400px;flex-wrap:wrap;background-color:lightgray;">
+    @if (window == "Skills")
+    {
+        <button @onclick="@(() => SetWindow("Loot"))">Loot</button>
+        <button @onclick="@(() => SetWindow("Equipment"))">Equipment</button>
+        <br />
+        <div style="position:relative;width:400px;height:200px">
+            <div>
+                Strength:<input @bind-value="@Player.Instance.Skills.Find(x => x.Name == "Strength").Level" />
+            </div>
+            <div>
+                Knife:<input @bind-value="@Player.Instance.Skills.Find(x => x.Name == "Knifesmanship").Level" />
+            </div>
+            <div>
+                Sword:<input @bind-value="@Player.Instance.Skills.Find(x => x.Name == "Swordsmanship").Level" />
+            </div>
+            <div>
+                Axe:<input @bind-value="@Player.Instance.Skills.Find(x => x.Name == "Axemanship").Level" />
+            </div>
+            <div>
+                Hammer:<input @bind-value="@Player.Instance.Skills.Find(x => x.Name == "Hammermanship").Level" />
+            </div>
+            <div>
+                Deftness:<input @bind-value="@Player.Instance.Skills.Find(x => x.Name == "Deftness").Level" />
+            </div>
+        </div>
+    }
+    else if (window == "Equipment")
+    {
+        <button @onclick="@(() => SetWindow("Loot"))">Loot</button>
+        <button @onclick="@(() => SetWindow("Skills"))">Skills</button>
+        <br />
+        @foreach (GameItem item in ItemManager.Instance.Items)
+        {
+            @if (item.ArmorInfo != null || item.WeaponInfo != null)
+            {
+                <div @onclick="@(() => Player.Instance.Equip(item))">
+                    <Quepland_2.Components.ItemBoxComponent Item="@item"></Quepland_2.Components.ItemBoxComponent>
+
+                </div>
+            }
+        }
+    }
+    else if (window == "Loot")
+    {
+        <button @onclick="@(() => SetWindow("Equipment"))">Equipment</button>
+        <button @onclick="@(() => SetWindow("Skills"))">Skills</button>
+        <br />
+        <div>Total Value:@LootTracker.Instance.Inventory.GetTotalValue()</div>
+        <div>
+            <button @onclick="@(() => LootTracker.Instance.Inventory.Clear())">Clear</button>
+        </div>
+        @foreach (KeyValuePair<GameItem, int> item in LootTracker.Instance.Inventory.GetItems())
+        {
+
+            <div>
+                <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="true" Inventory="@LootTracker.Instance.Inventory"></Quepland_2.Components.ItemBoxComponent>
+
+            </div>
+
+        }
+    }
+
+</div>
+
+@code {
+
+    public string SelectedMonsterName = "Select a Monster";
+    public DPSCalc Calculator = new DPSCalc();
+    private string window = "Equipment";
+
+    public void CalculateDPS()
+    {
+        Calculator.CalculateDPS();
+        GameState.UpdateState();
+    }
+    public void ClearOpponents()
+    {
+        Calculator.Opponents.Clear();
+        GameState.UpdateState();
+    }
+    public void SetWindow(string s)
+    {
+        window = s;
+        GameState.UpdateState();
+    }
+    public void AddOpponent(string monsterName)
+    {
+        Monster m = BattleManager.Instance.GetMonsterByName(monsterName);
+        if(m != null)
+        {
+            Calculator.Opponents.Add(m);
+        }
+        GameState.UpdateState();
+    }
+    public void SetPlayerStat(string stat, int level)
+    {
+        Player.Instance.Skills.Find(x => x.Name == stat).SetSkillLevel(level);
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        LootTracker.Instance.Inventory.AllItemsStack = true;
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

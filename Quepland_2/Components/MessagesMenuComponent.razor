@@ -1,0 +1,48 @@
+@inject GameState GameState
+@implements IDisposable
+
+<div class="modal-footer" style="display:contents;">
+    <table>
+        @foreach (Message message in MessageManager.GetReversedMessages())
+        {
+            <tr>
+                <td>
+                    <pre style="        display: grid;
+        margin: 0;
+        width: 520px;
+        font-style: normal;
+        font-variant-ligatures: normal;
+        font-variant-caps: normal;
+        font-variant-numeric: normal;
+        font-variant-east-asian: normal;
+        font-weight: 400;
+        font-stretch: normal;
+        font-size: 16px;
+        line-height: 18px;
+        font-family: Arial;
+        white-space: pre-line;
+        margin-bottom: -5px;
+        padding:3px;
+        color: @(message.Color); @(message.Style)">
+                        @message.Text
+                    </pre>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+
+@functions{
+
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

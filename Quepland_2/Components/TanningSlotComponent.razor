@@ -1,0 +1,111 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (Slot.TannedItem == null)
+{
+    <div style="margin:10px;">
+        <CustomDropdownComponent EmptyText="You have no tannable items" DropdownItems="@GetDropdownItems()"  @bind-Value="@tanningItem" BoxText="@tanningItem"></CustomDropdownComponent>
+
+        @if (tanningItem != null)
+        {
+            <button class="btn btn-primary" @onclick="@(() => StartTanning())">Confirm Tanning @tanningItem (@GetMax())</button>
+
+        }
+        else
+        {
+            <button class="btn btn-primary" disabled>Confirm</button>
+
+        }
+    </div>
+}
+else
+{
+    <div style="margin:10px;">
+        @if (Slot.FinishTime.CompareTo(DateTime.UtcNow) <= 0)
+        {
+            <button class="btn btn-primary" @onclick="@(() => Collect())">Collect @Slot.TannedItem.Name (@Slot.Amount)</button>
+
+        }
+        else
+        {
+            <button class="btn btn-primary" disabled>Collect @Slot.TannedItem.Name (@Slot.Amount) in @Slot.FinishTime.Subtract(DateTime.UtcNow).ToString(@"hh\:mm\:ss")</button>
+
+        }
+    </div>
+}
+
+
+@code
+{
+    [Parameter]
+    public TanningSlot Slot { get; set; }
+    private string tanningItem;
+    private List<GameItem> Tannables = new List<GameItem>();
+
+
+    public void StartTanning()
+    {
+        if (Player.Instance.Inventory.HasItem(ItemManager.Instance.GetItemByName(tanningItem)))
+        {
+            Slot.TannedItem = ItemManager.Instance.GetItemByName(tanningItem);
+            Slot.Amount = Player.Instance.Inventory.GetNumberOfItem(Slot.TannedItem);
+            Player.Instance.Inventory.RemoveItems(Slot.TannedItem, Slot.Amount);
+            Slot.FinishTime = DateTime.UtcNow.AddSeconds(6);
+
+        }
+        LoadTannables();
+    }
+    public int GetMax()
+    {
+        if(tanningItem != null)
+        {
+            return Math.Min(Player.Instance.Inventory.GetAvailableSpaces(), Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(tanningItem)));
+        }
+        return 0;
+    }
+    public void Collect()
+    {
+        if(Player.Instance.Inventory.GetAvailableSpaces() >= Slot.Amount)
+        {
+            Player.Instance.Inventory.AddMultipleOfItem(Slot.TannedItem.TanningInfo.TansInto, Slot.Amount);
+            MessageManager.AddMessage("You withdraw " + Slot.Amount + " " + Slot.TannedItem.TanningInfo.TansInto.Name + ".");
+            Slot.TannedItem = null;
+            Slot.Amount = 0;
+            tanningItem = null;
+        }
+        else
+        {
+            int amt = Player.Instance.Inventory.GetAvailableSpaces();
+            Player.Instance.Inventory.AddMultipleOfItem(Slot.TannedItem.TanningInfo.TansInto, amt);
+            Slot.Amount -= amt;
+            MessageManager.AddMessage("You withdraw " + amt + " " + Slot.TannedItem.Name + ". There are still " + Slot.Amount + " remaining in the tanning slot.");
+        }
+        LoadTannables();
+    }
+    public void LoadTannables()
+    {
+        Tannables.Clear();
+        foreach (KeyValuePair<GameItem, int> pair in Player.Instance.Inventory.GetItems())
+        {
+            if (pair.Key.TanningInfo != null && Tannables.Contains(pair.Key) == false)
+            {
+                    Tannables.Add(pair.Key);              
+            }
+        }
+    }
+    public List<string> GetDropdownItems()
+    {
+        LoadTannables();
+        return Tannables.Select(x => x.Name).Distinct().ToList();
+    }
+    protected override void OnInitialized()
+    {
+        LoadTannables();
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

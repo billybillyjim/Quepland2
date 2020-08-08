@@ -1,0 +1,218 @@
+﻿@page "/World/HigashiBridge/"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+@if (startedBattle == false)
+{
+    if ((QuestManager.Instance.GetQuestByName("Mound Is Missing").Progress >= 15 || QuestManager.Instance.GetQuestByName("Mound Is Missing").IsComplete))
+    {
+        <h1>Higashi Bridge</h1>
+        <div>Halfway across the bridge you are thrown to your feet as the whole structure begins shaking violently. Massive skeletal hands have grasped either side of the bridge as a towering skull and ribcage rise above your head.</div>
+        <button class="btn btn-danger" @onclick="@(() => StartBattle())">Fight</button>
+
+        <br />
+        if (QuestManager.Instance.GetQuestByName("Mound Is Missing").IsComplete)
+        {
+            @foreach (AreaUnlock a in AreaManager.Instance.GetAreaByURL("HigashiBridge").UnlockableAreas)
+            {
+                if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false)
+                {
+                    <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@a"></Quepland_2.Components.AreaUnlockComponent>
+                    <br />
+                }
+            }
+            <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@CanyonFloor"></Quepland_2.Components.AreaUnlockComponent>
+        }
+
+    }
+    else
+    {
+        <AreaComponent areaURL="HigashiBridge"></AreaComponent>
+    }
+
+}
+else
+{
+    @if (BossDefeated())
+    {
+        <button class="btn btn-danger" style="position:relative;top:380px;" @onclick="@(() => StartBattle())">Fight Again</button>
+
+        <div style="position:relative;top:440px;">
+            @foreach (AreaUnlock a in AreaManager.Instance.GetAreaByURL("HigashiBridge").UnlockableAreas)
+            {
+                if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false)
+                {
+                    <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@a"></Quepland_2.Components.AreaUnlockComponent>
+                    <br />
+                }
+            }
+            <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@CanyonFloor"></Quepland_2.Components.AreaUnlockComponent>
+        </div>
+
+    }
+    else if (BattleManager.Instance.BattleHasEnded)
+    {
+        <button class="btn btn-danger" style="position:relative;top:380px;" @onclick="@(() => StartBattle())">Fight Again</button>
+    }
+    else
+    {
+        <div style="position:relative">
+            <div style="position:absolute;border-radius:0.5rem;padding:5px;top:0px;left:35%;@GetStyle(GashaHead)">
+                Gashadokuro Head
+                <button @onclick="@(() => Target(GashaHead))">Target</button>
+                <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
+                    <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+                    <div class="progress-bar" style="width:@(GetOpponentAttackProgress(GashaHead));background-color:mediumpurple">
+
+                    </div>
+                </div>
+                <div class="progress" style="width:100px;margin-top:10px;">
+                    <div class="progress-bar" style="width:@(GashaHead.GetRemainingHPPercent())%;background-color:forestgreen">
+
+                    </div>
+                </div>
+            </div>
+            <div style="position:absolute;border-radius:0.5rem;padding:5px;right:10px;top:150px;@GetStyle(GashaRightHand)">
+                R Hand
+                <button @onclick="@(() => Target(GashaRightHand))">Target</button>
+                <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
+                    <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+                    <div class="progress-bar" style="width:@(GetOpponentAttackProgress(GashaRightHand));background-color:mediumpurple">
+
+                    </div>
+                </div>
+                <div class="progress" style="width:100px;margin-top:10px;">
+                    <div class="progress-bar" style="width:@(GashaRightHand.GetRemainingHPPercent())%;background-color:forestgreen">
+
+                    </div>
+                </div>
+            </div>
+            <div style="position:absolute;border-radius:0.5rem;padding:5px;left:10px;top:150px;@GetStyle(GashaLeftHand)">
+                Left Hand
+                <button @onclick="@(() => Target(GashaLeftHand))">Target</button>
+                <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
+                    <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+                    <div class="progress-bar" style="width:@(GetOpponentAttackProgress(GashaLeftHand));background-color:mediumpurple">
+
+                    </div>
+                </div>
+                <div class="progress" style="width:100px;margin-top:10px;">
+                    <div class="progress-bar" style="width:@(GashaLeftHand.GetRemainingHPPercent())%;background-color:forestgreen">
+
+                    </div>
+                </div>
+            </div>
+            <div style="position:absolute;border-radius:0.5rem;padding:5px;top:250px;left:35%;@GetStyle(GashaSpine)">
+                Spine
+                <button @onclick="@(() => Target(GashaSpine))">Target</button>
+                <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
+                    <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+                    <div class="progress-bar" style="width:@(GetOpponentAttackProgress(GashaSpine));background-color:mediumpurple">
+
+                    </div>
+                </div>
+                <div class="progress" style="width:100px;margin-top:10px;">
+                    <div class="progress-bar" style="width:@(GashaSpine.GetRemainingHPPercent())%;background-color:forestgreen">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="position:relative;top:350px;">
+            You
+            <div>
+                @Player.Instance.CurrentHP / @Player.Instance.MaxHP
+            </div>
+            <div class="progress" style="width:550px;margin-top:10px;">
+                <div class="progress-bar" style="width:@(GetPlayerHPPercent());background-color:forestgreen;">
+
+                </div>
+            </div>
+            <div class="progress" style="width:120px;height:40px;font-size:large;position:relative;margin-top:10px;">
+
+                <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+
+
+                <div class="progress-bar" style="width:@(GetPlayerAttackProgress());background-color:mediumpurple">
+                </div>
+            </div>
+        </div>
+    }
+}
+
+
+
+@code {
+    private bool startedBattle;
+    public Monster GashaHead;
+    public Monster GashaRightHand;
+    public Monster GashaLeftHand;
+    public Monster GashaSpine;
+    private AreaUnlock CanyonFloor;
+
+    public void Target(Monster monster)
+    {
+        BattleManager.Instance.Target = monster;
+    }
+    private string GetPlayerHPPercent()
+    {
+        return (((double)Player.Instance.CurrentHP / Player.Instance.MaxHP) * 100d) + "%";
+    }
+    private string GetOpponentAttackProgress(Monster opponent)
+    {
+        return (100 - (((double)opponent.TicksToNextAttack / opponent.AttackSpeed) * 100d)) + "%";
+    }
+    private string GetPlayerAttackProgress()
+    {
+        return (100 - (((double)Player.Instance.TicksToNextAttack / Player.Instance.GetWeaponAttackSpeed()) * 100d)) + "%";
+    }
+    protected override void OnInitialized()
+    {
+
+        CanyonFloor = new AreaUnlock();
+        CanyonFloor.AreaURL = "HigashiCanyon";
+        CanyonFloor.ButtonText = "Climb Down the Skeletal Remains";
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void StartBattle()
+    {
+        if (GameState.IsStoppingNextTick == false)
+        {
+            GashaHead = BattleManager.Instance.GetMonsterByName("Gashadokuro Head");
+            GashaRightHand = BattleManager.Instance.GetMonsterByName("Gashadokuro R Hand");
+            GashaLeftHand = BattleManager.Instance.GetMonsterByName("Gashadokuro Left Hand");
+            GashaSpine = BattleManager.Instance.GetMonsterByName("Gashadokuro Spine");
+            GashaSpine.Armor = 140;
+            BattleManager.Instance.CurrentOpponents.Clear();
+            BattleManager.Instance.CurrentOpponents.Add(GashaHead);
+            BattleManager.Instance.CurrentOpponents.Add(GashaRightHand);
+            BattleManager.Instance.CurrentOpponents.Add(GashaLeftHand);
+            BattleManager.Instance.CurrentOpponents.Add(GashaSpine);
+            BattleManager.Instance.SetBoss(new Quepland_2.Bosses.Gashadokuro());
+
+            BattleManager.Instance.StartBattle();
+            startedBattle = true;
+            Console.WriteLine("Initialized Battle");
+        }
+
+    }
+    public bool BossDefeated()
+    {
+        return GashaHead.CurrentHP <= 0 && GashaRightHand.CurrentHP <= 0 && GashaLeftHand.CurrentHP <= 0 && GashaSpine.CurrentHP <= 0;
+    }
+    public string GetStyle(Monster monster)
+    {
+        if (monster == BattleManager.Instance.Target)
+        {
+            return "background-color:darksalmon;";
+        }
+        return "background-color:lightgray";
+    }
+    public void Dispose()
+    {
+        startedBattle = false;
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}
