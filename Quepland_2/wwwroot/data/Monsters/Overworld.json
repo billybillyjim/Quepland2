@@ -253,7 +253,7 @@
         },
         {
           "itemName": "Copper Axe",
-          "weight": 2
+          "weight": 1
         },
         {
           "itemName": "Copper Sword",
@@ -299,6 +299,14 @@
           "itemName": "Coins",
           "weight": 4,
           "amount": 300
+        },
+        {
+          "itemName": "Tin Axe",
+          "weight": 1
+        },
+        {
+          "itemName": "Tin Sword",
+          "weight": 1
         }
       ]
     }
@@ -313,7 +321,7 @@
       "drops": [
         {
           "itemName": "Coins",
-          "weight": 50,
+          "weight": 40,
           "amount": 15
         },
         {
@@ -332,12 +340,12 @@
         {
           "itemName": "Coins",
           "weight": 50,
-          "amount": 20
+          "amount": 40
         },
         {
           "itemName": "Coins",
           "weight": 20,
-          "amount": 70
+          "amount": 80
         },
         {
           "itemName": "Coins",
@@ -377,8 +385,32 @@
     "dropTable": {
       "drops": [
         {
+          "itemName": "Bandit's Blade",
+          "weight": 5
+        },
+        {
+          "itemName": "Iron Knife",
+          "weight": 10
+        },
+        {
           "itemName": "Coins",
-          "weight": 20
+          "weight": 70,
+          "amount": 40
+        },
+        {
+          "itemName": "Coins",
+          "weight": 50,
+          "amount": 80
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 300
+        },
+        {
+          "itemName": "Coins",
+          "weight": 1,
+          "amount": 1000
         }
       ]
     }
@@ -1060,7 +1092,7 @@
           "amount": 50
         },
         {
-          "itemName": "Spine Club(Empty)",
+          "itemName": "Cactus Club (Empty)",
           "weight": 2
         },
         {
@@ -1137,7 +1169,7 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Pufferfish",
+          "itemName": "Puffer Fish",
           "weight": 20
         },
         {
@@ -1184,7 +1216,7 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Pufferfish",
+          "itemName": "Puffer Fish",
           "weight": 10
         },
         {
@@ -1231,7 +1263,7 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Pufferfish",
+          "itemName": "Puffer Fish",
           "weight": 30
         },
         {
@@ -1280,6 +1312,38 @@
         {
           "itemName": "Salt",
           "weight": 20
+        },
+        {
+          "itemName": "Advanced Dough",
+          "weight": 5
+        },
+        {
+          "itemName": "Rabbit Jerky",
+          "weight": 10
+        },
+        {
+          "itemName": "Deer Jerky",
+          "weight": 10
+        },
+        {
+          "itemName": "Bear Jerky",
+          "weight": 10
+        },
+        {
+          "itemName": "Moose Jerky",
+          "weight": 10
+        },
+        {
+          "itemName": "Boar Jerky",
+          "weight": 10
+        },
+        {
+          "itemName": "Pigeon Jerky",
+          "weight": 10
+        },
+        {
+          "itemName": "Turkey Jerky",
+          "weight": 10
         }
       ]
     }
@@ -1294,7 +1358,26 @@
       "drops": [
         {
           "itemName": "Sugar",
-          "weight": 20
+          "weight": 50
+        },
+        {
+          "itemName": "Sweet Berries",
+          "weight": 30
+        },
+        {
+          "itemName": "Coins",
+          "weight": 20,
+          "amount": 100
+        },
+        {
+          "itemName": "Coins",
+          "weight": 20,
+          "amount": 200
+        },
+        {
+          "itemName": "Coins",
+          "weight": 10,
+          "amount": 500
         }
       ]
     }
@@ -1349,6 +1432,18 @@
         {
           "itemName": "Flour",
           "weight": 20
+        },
+        {
+          "itemName": "Yeast",
+          "weight": 20
+        },
+        {
+          "itemName": "Shuniku Berries",
+          "weight": 20
+        },
+        {
+          "itemName": "Hemp",
+          "weight": 20
         }
       ]
     }
@@ -1399,6 +1494,24 @@
         {
           "itemName": "Coins",
           "weight": 20
+        },
+        {
+          "itemName": "Tuna Roll",
+          "weight": 5
+        },
+        {
+          "itemName": "Salmon Roll",
+          "weight": 5
+        },
+        {
+          "itemName": "Cactus Spines",
+          "weight": 15,
+          "amount": 3
+        },
+        {
+          "itemName": "Cheese",
+          "weight": 15,
+          "amount": 2
         }
       ]
     }
@@ -1412,7 +1525,27 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Rabbit",
+          "weight": 5
+        },
+        {
+          "itemName": "Deer",
+          "weight": 8
+        },
+        {
+          "itemName": "Buck",
+          "weight": 3
+        },
+        {
+          "itemName": "Black Bear Hide",
+          "weight": 5
+        },
+        {
+          "itemName": "Deer Hide",
+          "weight": 10
+        },
+        {
+          "itemName": "Rabbit Hide",
           "weight": 20
         }
       ]
@@ -1427,154 +1560,27 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
-          "weight": 20
-        }
-      ]
-    }
-  },
-  {
-    "name": "Giant Jelly Zombie",
-    "hp": 8000,
-    "attackSpeed": 30,
-    "armor": 55,
-    "damage": 210,
-    "dropTable": {
-      "drops": [
-        {
-          "itemName": "Coins",
-          "weight": 20
-        }
-      ]
-    }
-  },
-  {
-    "name": "Frost Fighter",
-    "hp": 2800,
-    "attackSpeed": 20,
-    "armor": 80,
-    "damage": 35,
-    "dropTable": {
-      "drops": [
-        {
-          "itemName": "Ice",
-          "weight": 20
-        }
-      ]
-    }
-  },
-  {
-    "name": "Chenoo",
-    "hp": 3300,
-    "attackSpeed": 25,
-    "armor": 90,
-    "damage": 75,
-    "dropTable": {
-      "drops": [
-        {
-          "itemName": "Buck",
-          "weight": 20
-        },
-        {
-          "itemName": "Deer",
-          "weight": 20
-        },
-        {
-          "itemName": "Black Bear",
-          "weight": 20
-        },
-        {
-          "itemName": "Rabbit",
-          "weight": 20
-        },
-        {
           "itemName": "Pigeon",
-          "weight": 20
-        },
-        {
-          "itemName": "Turkey",
-          "weight": 20
+          "weight": 5
         },
         {
           "itemName": "Pheasant",
-          "weight": 20
-        }
-      ]
-    }
-  },
-  {
-    "name": "Akhlut",
-    "hp": 3500,
-    "attackSpeed": 25,
-    "armor": 110,
-    "damage": 155,
-    "dropTable": {
-      "drops": [
-        {
-          "itemName": "Yellowtail",
-          "weight": 2
+          "weight": 8
         },
         {
-          "itemName": "Giant Clam",
-          "weight": 2
+          "itemName": "Turkey",
+          "weight": 3
         },
         {
-          "itemName": "Big Tuna",
-          "weight": 2
+          "itemName": "Turkey Meat",
+          "weight": 5
         },
         {
-          "itemName": "Swordfish",
-          "weight": 2
+          "itemName": "Pheasant Meat",
+          "weight": 10
         },
         {
-          "itemName": "Shrimp",
-          "weight": 20
-        },
-        {
-          "itemName": "Scallop",
-          "weight": 20
-        },
-        {
-          "itemName": "Icefish",
-          "weight": 20
-        },
-        {
-          "itemName": "Shad",
-          "weight": 20
-        }
-      ]
-    }
-  },
-  {
-    "name": "Italian Christmas Tree",
-    "hp": 1500,
-    "attackSpeed": 20,
-    "armor": 20,
-    "damage": 35,
-    "dropTable": {
-      "drops": [
-        {
-          "itemName": "White Pine Logs",
-          "weight": 20
-        },
-        {
-          "itemName": "Great Tree Logs",
-          "weight": 20
-        },
-        {
-          "itemName": "Ice Logs",
-          "weight": 20
-        },
-        {
-          "itemName": "Buloke Logs",
-          "weight": 20
-        },
-        {
-          "itemName": "Poplar Logs",
-          "weight": 20
-        },
-        {
-          "itemName": "Oak Logs",
+          "itemName": "Pigeon Meat",
           "weight": 20
         }
       ]
@@ -1634,66 +1640,6 @@
     }
   },
   {
-    "name": "Root Dweller",
-    "hp": 5000,
-    "attackSpeed": 10,
-    "armor": 65,
-    "damage": 155,
-    "dropTable": {
-      "drops": [
-        {
-          "itemName": "Coins",
-          "weight": 20
-        }
-      ]
-    }
-  },
-  {
-    "name": "Stealthy Root Dweller",
-    "hp": 4000,
-    "attackSpeed": 10,
-    "armor": 80,
-    "damage": 155,
-    "dropTable": {
-      "drops": [
-        {
-          "itemName": "Coins",
-          "weight": 20
-        }
-      ]
-    }
-  },
-  {
-    "name": "Strong Root Dweller",
-    "hp": 7000,
-    "attackSpeed": 12,
-    "armor": 70,
-    "damage": 195,
-    "dropTable": {
-      "drops": [
-        {
-          "itemName": "Coins",
-          "weight": 20
-        }
-      ]
-    }
-  },
-  {
-    "name": "Ravenous Root Dweller",
-    "hp": 3000,
-    "attackSpeed": 5,
-    "armor": 50,
-    "damage": 95,
-    "dropTable": {
-      "drops": [
-        {
-          "itemName": "Coins",
-          "weight": 20
-        }
-      ]
-    }
-  },
-  {
     "name": "Amphisbaena",
     "hp": 2000,
     "attackSpeed": 8,
@@ -1732,84 +1678,6 @@
         "procOdds": 0.1
       }
     ]
-  },
-  {
-    "name": "Ice Spider",
-    "hp": 1000,
-    "weaknesses": "Hammermanship",
-    "strengths": "Swordsmanship",
-    "attackSpeed": 12,
-    "armor": 10,
-    "damage": 22,
-    "dropTable": {
-      "drops": [
-        {
-          "itemName": "Feather",
-          "weight": 50
-        }
-      ]
-    }
-  },
-  {
-    "name": "Frost Bat",
-    "hp": 600,
-    "weaknesses": "Archery",
-    "strengths": "Knifesmanship",
-    "attackSpeed": 8,
-    "armor": 5,
-    "damage": 35,
-    "dropTable": {
-      "drops": [
-        {
-          "itemName": "Feather",
-          "weight": 50
-        }
-      ]
-    }
-  },
-  {
-    "name": "Chill Egg",
-    "hp": 1800,
-    "weaknesses": "Hammermanship",
-    "strengths": "Knifesmanship",
-    "attackSpeed": 35,
-    "armor": 90,
-    "damage": 15,
-    "dropTable": {
-      "drops": [
-        {
-          "itemName": "Feather",
-          "weight": 50
-        }
-      ]
-    },
-    "statusEffectData": [
-      {
-        "name": "Chicken",
-        "power": 100,
-        "speed": 5,
-        "duration": 5,
-        "message": "A Chill Chicken has come to protect its egg!",
-        "procOdds": 0.3
-      }
-    ]
-  },
-  {
-    "name": "Chill Chicken",
-    "hp": 2200,
-    "weaknesses": "Swordsmanship",
-    "strengths": "Hammermanship",
-    "attackSpeed": 15,
-    "armor": 10,
-    "damage": 55,
-    "dropTable": {
-      "drops": [
-        {
-          "itemName": "Feather",
-          "weight": 50
-        }
-      ]
-    }
   },
   {
     "name": "Sand Ray",

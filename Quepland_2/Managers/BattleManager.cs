@@ -30,6 +30,7 @@ public class BattleManager
     public async Task LoadMonsters(HttpClient Http)
     {
         Monsters.AddRange(await Http.GetFromJsonAsync<Monster[]>("data/Monsters/Overworld.json"));
+        Monsters.AddRange(await Http.GetFromJsonAsync<Monster[]>("data/Monsters/Underworld.json"));
         Monsters.AddRange(await Http.GetFromJsonAsync<Monster[]>("data/Monsters/Bosses.json"));
         Monsters.AddRange(await Http.GetFromJsonAsync<Monster[]>("data/Monsters/DojoOpponents.json"));
         foreach(Monster m in Monsters)

@@ -5,6 +5,13 @@
       {
         "itemName": "Bauxite"
       }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
+      }
     ]
   },
   {
@@ -12,6 +19,12 @@
     "ingredients": [
       {
         "itemName": "Aluminum Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
       }
     ]
   },
@@ -21,6 +34,13 @@
       {
         "itemName": "Molten Aluminum Bar"
       }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
+      }
     ]
   },
   {
@@ -28,6 +48,13 @@
     "ingredients": [
       {
         "itemName": "Molten Aluminum Bar"
+      }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
       }
     ]
   },
@@ -37,6 +64,13 @@
       {
         "itemName": "Molten Aluminum Bar"
       }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
+      }
     ]
   },
   {
@@ -44,6 +78,13 @@
     "ingredients": [
       {
         "itemName": "Molten Aluminum Bar"
+      }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
       }
     ]
   },
@@ -53,6 +94,13 @@
       {
         "itemName": "Molten Aluminum Bar"
       }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
+      }
     ]
   },
   {
@@ -60,6 +108,13 @@
     "ingredients": [
       {
         "itemName": "Molten Aluminum Bar"
+      }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 75
       }
     ],
     "outputAmount": 10

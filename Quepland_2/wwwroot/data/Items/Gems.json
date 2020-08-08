@@ -105,7 +105,7 @@
   },
   {
     "Name": "Rough Amberite",
-    "value": 600,
+    "value": 100,
     "Description": "An orange, uncut gemstone.",
     "icon": "UncutGem",
     "gatherString": "You found a rough amberite!",
@@ -113,7 +113,7 @@
   },
   {
     "Name": "Rough Lizardite",
-    "value": 600,
+    "value": 200,
     "Description": "A pale green, uncut gemstone.",
     "icon": "UncutGem",
     "gatherString": "You found a rough lizardite!",
@@ -121,7 +121,7 @@
   },
   {
     "Name": "Rough Purpurite",
-    "value": 600,
+    "value": 250,
     "Description": "A purple, uncut gemstone.",
     "icon": "UncutGem",
     "gatherString": "You found a rough purpurite!",
@@ -129,7 +129,7 @@
   },
   {
     "Name": "Rough Opal",
-    "value": 600,
+    "value": 300,
     "Description": "A flourescent, uncut gemstone.",
     "icon": "UncutGem",
     "gatherString": "You found a rough opal!",
@@ -137,7 +137,7 @@
   },
   {
     "Name": "Rough Garnet",
-    "value": 600,
+    "value": 350,
     "Description": "A deep red, uncut gemstone.",
     "icon": "UncutGem",
     "gatherString": "You found a rough garnet!",
@@ -145,7 +145,7 @@
   },
   {
     "Name": "Rough Amethyst",
-    "value": 600,
+    "value": 400,
     "Description": "A purple, uncut gemstone.",
     "icon": "UncutGem",
     "gatherString": "You found a rough amethyst!",
@@ -153,7 +153,7 @@
   },
   {
     "Name": "Rough Emerald",
-    "value": 500,
+    "value": 450,
     "Description": "A green, uncut gemstone.",
     "icon": "UncutGem",
     "gatherString": "You found a rough emerald!",
@@ -162,7 +162,7 @@
 
   {
     "Name": "Rough Aquamarine",
-    "value": 1100,
+    "value": 700,
     "Description": "A red, uncut gemstone.",
     "icon": "UncutGem",
     "gatherString": "You found a rough ruby!",
@@ -170,7 +170,7 @@
   },
   {
     "Name": "Rough Topaz",
-    "value": 600,
+    "value": 750,
     "Description": "A brown, uncut gemstone.",
     "icon": "UncutGem",
     "gatherString": "You found a rough topaz!",
@@ -178,7 +178,7 @@
   },
   {
     "Name": "Rough Chrysoberyl",
-    "value": 700,
+    "value": 800,
     "Description": "A golden, uncut gemstone.",
     "icon": "UncutGem",
     "gatherString": "You found a rough chrysoberyl!",
@@ -211,7 +211,7 @@
   },
   {
     "Name": "Tumbled Amberite",
-    "value": 600,
+    "value": 200,
     "Description": "An orange gemstone tumbled to produce a smooth surface.",
     "icon": "TumbledGem",
     "gatherString": "You tumble the amberite until it's completely smooth.",
@@ -219,7 +219,7 @@
   },
   {
     "Name": "Tumbled Lizardite",
-    "value": 600,
+    "value": 400,
     "Description": "A pale green gemstone tumbled to produce a smooth surface.",
     "icon": "TumbledGem",
     "gatherString": "You tumble the lizardite until it's completely smooth.",
@@ -227,7 +227,7 @@
   },
   {
     "Name": "Tumbled Purpurite",
-    "value": 600,
+    "value": 500,
     "Description": "A purple gemstone tumbled to produce a smooth surface.",
     "icon": "TumbledGem",
     "gatherString": "You tumble the purpurite until it's completely smooth.",
@@ -243,7 +243,7 @@
   },
   {
     "Name": "Tumbled Garnet",
-    "value": 600,
+    "value": 700,
     "Description": "A deep red gemstone tumbled to produce a smooth surface.",
     "icon": "TumbledGem",
     "gatherString": "You tumble the garnet until it's completely smooth.",
@@ -251,7 +251,7 @@
   },
   {
     "Name": "Tumbled Amethyst",
-    "value": 600,
+    "value": 800,
     "Description": "A purple gemstone tumbled to produce a smooth surface.",
     "icon": "TumbledGem",
     "gatherString": "You tumble the amethyst until it's completely smooth.",
@@ -259,7 +259,7 @@
   },
   {
     "Name": "Tumbled Emerald",
-    "value": 500,
+    "value": 900,
     "Description": "A green gemstone tumbled to produce a smooth surface.",
     "icon": "TumbledGem",
     "gatherString": "You tumble the emerald until it's completely smooth.",
@@ -268,7 +268,7 @@
 
   {
     "Name": "Tumbled Aquamarine",
-    "value": 1100,
+    "value": 1000,
     "Description": "A red gemstone tumbled to produce a smooth surface.",
     "icon": "TumbledGem",
     "gatherString": "You tumble the ruby until it's completely smooth.",
@@ -276,7 +276,7 @@
   },
   {
     "Name": "Tumbled Topaz",
-    "value": 600,
+    "value": 1100,
     "Description": "A brown gemstone tumbled to produce a smooth surface.",
     "icon": "TumbledGem",
     "gatherString": "You tumble the topaz until it's completely smooth.",
@@ -284,7 +284,7 @@
   },
   {
     "Name": "Tumbled Chrysoberyl",
-    "value": 700,
+    "value": 1200,
     "Description": "A golden gemstone tumbled to produce a smooth surface.",
     "icon": "TumbledGem",
     "gatherString": "You tumble the chrysoberyl until it's completely smooth.",
@@ -293,7 +293,7 @@
 
   {
     "Name": "Tumbled Sapphire",
-    "value": 900,
+    "value": 1300,
     "Description": "A blue gemstone tumbled to produce a smooth surface.",
     "icon": "TumbledGem",
     "gatherString": "You tumble the sapphire until it's completely smooth.",
@@ -301,7 +301,7 @@
   },
   {
     "Name": "Tumbled Ruby",
-    "value": 1100,
+    "value": 1400,
     "Description": "A red gemstone tumbled to produce a smooth surface.",
     "icon": "TumbledGem",
     "gatherString": "You tumble the ruby until it's completely smooth.",
@@ -317,7 +317,7 @@
   },
   {
     "Name": "Amberite Cabochon",
-    "value": 600,
+    "value": 500,
     "Description": "An orange gemstone manually cut to produce a smooth surface on one side.",
     "icon": "CabochonGem",
     "gatherString": "You cut the amberite until it's completely smooth.",
@@ -333,7 +333,7 @@
   },
   {
     "Name": "Purpurite Cabochon",
-    "value": 600,
+    "value": 700,
     "Description": "A purple gemstone manually cut to produce a smooth surface on one side.",
     "icon": "CabochonGem",
     "gatherString": "You cut the purpurite until it's completely smooth.",
@@ -341,7 +341,7 @@
   },
   {
     "Name": "Opal Cabochon",
-    "value": 600,
+    "value": 800,
     "Description": "A flourescent gemstone manually cut to produce a smooth surface on one side.",
     "icon": "CabochonGem",
     "gatherString": "You cut the opal until it's completely smooth.",
@@ -349,7 +349,7 @@
   },
   {
     "Name": "Garnet Cabochon",
-    "value": 600,
+    "value": 900,
     "Description": "A deep red gemstone manually cut to produce a smooth surface on one side.",
     "icon": "CabochonGem",
     "gatherString": "You cut the garnet until it's completely smooth.",
@@ -357,7 +357,7 @@
   },
   {
     "Name": "Amethyst Cabochon",
-    "value": 600,
+    "value": 1000,
     "Description": "A purple gemstone manually cut to produce a smooth surface on one side.",
     "icon": "CabochonGem",
     "gatherString": "You cut the amethyst until it's completely smooth.",
@@ -365,7 +365,7 @@
   },
   {
     "Name": "Emerald Cabochon",
-    "value": 500,
+    "value": 1100,
     "Description": "A green gemstone manually cut to produce a smooth surface on one side.",
     "icon": "CabochonGem",
     "gatherString": "You cut the emerald until it's completely smooth.",
@@ -374,7 +374,7 @@
 
   {
     "Name": "Aquamarine Cabochon",
-    "value": 1100,
+    "value": 1200,
     "Description": "A red gemstone manually cut to produce a smooth surface on one side.",
     "icon": "CabochonGem",
     "gatherString": "You cut the ruby until it's completely smooth.",
@@ -382,7 +382,7 @@
   },
   {
     "Name": "Topaz Cabochon",
-    "value": 600,
+    "value": 1300,
     "Description": "A brown gemstone manually cut to produce a smooth surface on one side.",
     "icon": "CabochonGem",
     "gatherString": "You cut the topaz until it's completely smooth.",
@@ -390,7 +390,7 @@
   },
   {
     "Name": "Chrysoberyl Cabochon",
-    "value": 700,
+    "value": 1400,
     "Description": "A golden gemstone manually cut to produce a smooth surface on one side.",
     "icon": "CabochonGem",
     "gatherString": "You cut the chrysoberyl until it's completely smooth.",
@@ -399,7 +399,7 @@
 
   {
     "Name": "Sapphire Cabochon",
-    "value": 900,
+    "value": 1500,
     "Description": "A blue gemstone manually cut to produce a smooth surface on one side.",
     "icon": "CabochonGem",
     "gatherString": "You cut the sapphire until it's completely smooth.",
@@ -407,7 +407,7 @@
   },
   {
     "Name": "Ruby Cabochon",
-    "value": 1100,
+    "value": 1600,
     "Description": "A red gemstone manually cut to produce a smooth surface on one side.",
     "icon": "CabochonGem",
     "gatherString": "You cut the ruby until it's completely smooth.",
@@ -415,7 +415,7 @@
   },
   {
     "Name": "Diamond Cabochon",
-    "value": 1500,
+    "value": 1700,
     "Description": "A white gemstone manually cut to produce a smooth surface on one side.",
     "icon": "CabochonGem",
     "gatherString": "You cut the diamond until it's completely smooth.",
@@ -431,7 +431,7 @@
   },
   {
     "Name": "Cut Lizardite",
-    "value": 600,
+    "value": 700,
     "Description": "A pale green gemstone cut to produce beautifully ordered facets.",
     "icon": "CutGem",
     "gatherString": "You cut the lizardite until it's completely smooth.",
@@ -439,7 +439,7 @@
   },
   {
     "Name": "Cut Purpurite",
-    "value": 600,
+    "value": 900,
     "Description": "A purple gemstone cut to produce beautifully ordered facets.",
     "icon": "CutGem",
     "gatherString": "You cut the purpurite until it's completely smooth.",
@@ -447,7 +447,7 @@
   },
   {
     "Name": "Cut Opal",
-    "value": 600,
+    "value": 1100,
     "Description": "A flourescent gemstone cut to produce beautifully ordered facets.",
     "icon": "CutGem",
     "gatherString": "You cut the opal until it's completely smooth.",
@@ -455,7 +455,7 @@
   },
   {
     "Name": "Cut Garnet",
-    "value": 600,
+    "value": 1200,
     "Description": "A deep red gemstone cut to produce beautifully ordered facets.",
     "icon": "CutGem",
     "gatherString": "You cut the garnet until it's completely smooth.",
@@ -463,7 +463,7 @@
   },
   {
     "Name": "Cut Amethyst",
-    "value": 600,
+    "value": 1300,
     "Description": "A purple gemstone cut to produce beautifully ordered facets.",
     "icon": "CutGem",
     "gatherString": "You cut the amethyst until it's completely smooth.",
@@ -471,7 +471,7 @@
   },
   {
     "Name": "Cut Emerald",
-    "value": 500,
+    "value": 1500,
     "Description": "A green gemstone cut to produce beautifully ordered facets.",
     "icon": "CutGem",
     "gatherString": "You cut the emerald until it's completely smooth.",
@@ -480,7 +480,7 @@
 
   {
     "Name": "Cut Aquamarine",
-    "value": 1100,
+    "value": 1600,
     "Description": "A red gemstone cut to produce beautifully ordered facets.",
     "icon": "CutGem",
     "gatherString": "You cut the ruby until it's completely smooth.",
@@ -488,7 +488,7 @@
   },
   {
     "Name": "Cut Topaz",
-    "value": 600,
+    "value": 1700,
     "Description": "A brown gemstone cut to produce beautifully ordered facets.",
     "icon": "CutGem",
     "gatherString": "You cut the topaz until it's completely smooth.",
@@ -496,7 +496,7 @@
   },
   {
     "Name": "Cut Chrysoberyl",
-    "value": 700,
+    "value": 1800,
     "Description": "A golden gemstone cut to produce beautifully ordered facets.",
     "icon": "CutGem",
     "gatherString": "You cut the chrysoberyl until it's completely smooth.",
@@ -505,7 +505,7 @@
 
   {
     "Name": "Cut Sapphire",
-    "value": 900,
+    "value": 1900,
     "Description": "A blue gemstone cut to produce beautifully ordered facets.",
     "icon": "CutGem",
     "gatherString": "You cut the sapphire until it's completely smooth.",
@@ -513,7 +513,7 @@
   },
   {
     "Name": "Cut Ruby",
-    "value": 1100,
+    "value": 2100,
     "Description": "A red gemstone cut to produc beautifully ordered facets.",
     "icon": "CutGem",
     "gatherString": "You cut the ruby until it's completely smooth.",
@@ -521,7 +521,7 @@
   },
   {
     "Name": "Cut Diamond",
-    "value": 1500,
+    "value": 2500,
     "Description": "A white gemstone cut to produce beautifully ordered facets.",
     "icon": "CutDiamond",
     "gatherString": "You cut the diamond until it's completely smooth.",

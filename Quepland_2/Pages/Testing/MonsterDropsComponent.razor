@@ -7,28 +7,32 @@
 <button @onclick="@(() => UriHelper.NavigateTo("/Rates/Max/"))">Max</button>
 <button @onclick="@(() => UriHelper.NavigateTo("/WorldCheck/"))">World</button>
 
-<div style="overflow-y:scroll">
-    @foreach (Monster m in BattleManager.Instance.Monsters)
+<div style="display:flex;">
+
+
+    <div style="overflow-y:scroll;width:500px;height:80vh;">
+        @foreach (Monster m in BattleManager.Instance.Monsters)
+        {
+            if (m == Monster)
+            {
+                <div style="font-weight:bold">
+                    @m.Name
+                </div>
+            }
+            else
+            {
+                <div @onclick="@(() => SetMonster(m))">
+                    @m.Name
+                </div>
+            }
+
+        }
+
+    </div>
+
+    @if (Monster != null)
     {
-        if (m == Monster)
-        {
-            <div style="font-weight:bold">
-                @m.Name
-            </div>
-        }
-        else
-        {
-            <div @onclick="@(() => SetMonster(m))">
-                @m.Name
-            </div>
-        }
-
-    }
-
-</div>
-
-@if (Monster != null)
-{
+<div style="width:600px;">
     <div>
         Average Drop Value:@AverageDropValue
     </div>
@@ -82,9 +86,11 @@
                 </tr>
             }
         </table>
-        </div>
-}
-
+    </div>
+</div>
+       
+    }
+</div>
 <div style="height:300px;width:1000px">
 
 </div>

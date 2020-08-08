@@ -5,6 +5,13 @@
       {
         "itemName": "Pentlandite"
       }
+    ],
+    "experienceGained": "Smithing:60",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 35
+      }
     ]
   },
   {
@@ -12,6 +19,12 @@
     "ingredients": [
       {
         "itemName": "Nickel Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 35
       }
     ]
   },
@@ -21,6 +34,13 @@
       {
         "itemName": "Molten Nickel Bar"
       }
+    ],
+    "experienceGained": "Smithing:60",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 35
+      }
     ]
   },
   {
@@ -28,6 +48,13 @@
     "ingredients": [
       {
         "itemName": "Molten Nickel Bar"
+      }
+    ],
+    "experienceGained": "Smithing:60",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 35
       }
     ]
   },
@@ -37,6 +64,13 @@
       {
         "itemName": "Molten Nickel Bar"
       }
+    ],
+    "experienceGained": "Smithing:60",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 35
+      }
     ]
   },
   {
@@ -45,6 +79,13 @@
       {
         "itemName": "Molten Nickel Bar"
       }
+    ],
+    "experienceGained": "Smithing:60",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 35
+      }
     ]
   },
   {
@@ -52,6 +93,13 @@
     "ingredients": [
       {
         "itemName": "Molten Nickel Bar"
+      }
+    ],
+    "experienceGained": "Smithing:60",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 35
       }
     ]
   },
@@ -62,7 +110,14 @@
         "itemName": "Molten Nickel Bar"
       }
     ],
-    "outputAmount": 10
+    "outputAmount": 10,
+    "experienceGained": "Smithing:60",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 35
+      }
+    ]
   }
 
 ]

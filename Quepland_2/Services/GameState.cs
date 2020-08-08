@@ -679,6 +679,31 @@ using System.Threading.Tasks;
             Console.WriteLine("Shop was null");
         }
     }
+    public void SellItemFromBank(GameItem item)
+    {
+        if (item.IsSellable == false)
+        {
+            MessageManager.AddMessage("You can't seem to sell this...");
+            return;
+        }
+        if (item.IsEquipped)
+        {
+            MessageManager.AddMessage("You need to unequip this item before selling it.");
+            return;
+        }
+        if (Bank.Instance.IsBanking && Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Banking")
+        {
+            int sellAmt = Math.Min(Bank.Instance.Amount, Bank.Instance.Inventory.GetNumberOfItem(item));
+
+                Bank.Instance.Inventory.RemoveItems(item, sellAmt);
+                Bank.Instance.Inventory.AddMultipleOfItem("Coins", (sellAmt * item.Value / 2));
+                MessageManager.AddMessage(Player.Instance.CurrentFollower.Name + " sold " + sellAmt + " " + item.Name + " for " + (sellAmt * item.Value / 2) + " Coins and deposited them into your bank.");
+        }
+        else
+        {
+            Console.WriteLine("Shop was null");
+        }
+    }
     private void AlchItem()
     {
         if(AlchemyStage == 0)

@@ -5,6 +5,13 @@
       {
         "itemName": "Copper Ore"
       }
+    ],
+    "experienceGained": "Smithing:25",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 1
+      }
     ]
   },
   {
@@ -12,6 +19,12 @@
     "ingredients": [
       {
         "itemName": "Copper Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 1
       }
     ]
   },
@@ -21,6 +34,13 @@
       {
         "itemName": "Molten Copper Bar"
       }
+    ],
+    "experienceGained": "Smithing:25",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 1
+      }
     ]
   },
   {
@@ -28,6 +48,13 @@
     "ingredients": [
       {
         "itemName": "Molten Copper Bar"
+      }
+    ],
+    "experienceGained": "Smithing:25",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 1
       }
     ]
   },
@@ -37,6 +64,13 @@
       {
         "itemName": "Molten Copper Bar"
       }
+    ],
+    "experienceGained": "Smithing:25",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 1
+      }
     ]
   },
   {
@@ -45,6 +79,13 @@
       {
         "itemName": "Molten Copper Bar"
       }
+    ],
+    "experienceGained": "Smithing:25",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 1
+      }
     ]
   },
   {
@@ -52,6 +93,13 @@
     "ingredients": [
       {
         "itemName": "Molten Copper Bar"
+      }
+    ],
+    "experienceGained": "Smithing:25",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 1
       }
     ]
   },
@@ -62,7 +110,14 @@
         "itemName": "Molten Copper Bar"
       }
     ],
-    "outputAmount": 10
+    "outputAmount": 10,
+    "experienceGained": "Smithing:25",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 1
+      }
+    ]
   }
 
 ]

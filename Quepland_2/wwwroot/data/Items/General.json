@@ -11,6 +11,7 @@
     "Name": "Shuniku Berries",
     "Description": "Disgusting tasting berries that will stain your mouth red.",
     "gatherString": "You gather some berries.",
+    "secondaryColor": "red",
     "value": 2,
     "gatherSpeed": 15,
     "icon": "Berries"
@@ -32,6 +33,15 @@
     "description": "Soft, fluffy, and useful for making arrows with.",
     "gatherString": "You separate the feathers into a pile.",
     "value": 1,
+    "icon": "Feather",
+    "isStackable": true
+  },
+  {
+    "name": "Ice Feather",
+    "description": "Soft, fluffy, cold, and useful for making arrows with.",
+    "gatherString": "You separate the feathers into a pile.",
+    "value": 8,
+    "secondaryColor": "#D2FFF5",
     "icon": "Feather",
     "isStackable": true
   },
@@ -145,6 +155,7 @@
     "Name": "Ice",
     "Description": "It's cold water.",
     "value": 5,
+    "secondaryColor": "#D2FFF5",
     "icon": "Ice"
   },
   {
@@ -237,5 +248,21 @@
     "value": 1,
     "icon": "Token",
     "isStackable": true
+  },
+  {
+    "Name": "Sweet Berries",
+    "Description": "Delicious berries.",
+    "gatherString": "You gather some berries.",
+    "value": 5,
+    "secondaryColor": "paleblue",
+    "gatherSpeed": 15,
+    "icon": "Berries",
+    "foodInfo": {
+      "healDuration": 10,
+      "healAmount": 1,
+      "healSpeed": 10,
+      "buffedSkill": "Deftness",
+      "buffAmount": 1
+    }
   }
 ]

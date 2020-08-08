@@ -1,5 +1,65 @@
 [
   {
+    "Name": "Stone Pickaxe",
+    "Description": "A pickaxe made of solid stone. It's not very effective.",
+    "value": 15,
+    "enabledActions": "Mining",
+    "secondaryColor": "#454545",
+    "equipSlot": "R Hand",
+    "gatherSpeedBonus": 0.1,
+    "icon": "Pickaxe",
+    "weaponInfo": {
+      "attackSpeed": 20,
+      "damage": 25,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Bronze Pickaxe",
+    "Description": "A pickaxe made of solid bronze. It's a hair more useful than a stone one.",
+    "value": 90,
+    "enabledActions": "Mining",
+    "secondaryColor": "#CD7F32",
+    "equipSlot": "R Hand",
+    "gatherSpeedBonus": 0.15,
+    "icon": "Pickaxe",
+    "weaponInfo": {
+      "attackSpeed": 20,
+      "damage": 25,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 20
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Iron Pickaxe",
+    "Description": "A pickaxe made of solid iron. It's quite sturdy.",
+    "value": 180,
+    "enabledActions": "Mining",
+    "secondaryColor": "#434341",
+    "equipSlot": "R Hand",
+    "gatherSpeedBonus": 0.25,
+    "icon": "Pickaxe",
+    "weaponInfo": {
+      "attackSpeed": 22,
+      "damage": 50,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 40
+        }
+      ]
+    }
+  },
+  {
     "Name": "Copper Ore",
     "Description": "It's a very soft, green ore.",
     "gatherString": "You mine some copper ore.",
@@ -327,45 +387,5 @@
         "action": "Mining"
       }
     ]
-  },
-  {
-    "Name": "Stone Pickaxe",
-    "Description": "A pickaxe made of solid stone. It's not very effective.",
-    "value": 15,
-    "enabledActions": "Mining",
-    "secondaryColor": "#454545",
-    "equipSlot": "R Hand",
-    "gatherSpeedBonus": 0.1,
-    "icon": "Pickaxe",
-    "weaponInfo": {
-      "attackSpeed": 20,
-      "damage": 25,
-      "wearRequirements": [
-        {
-          "skill": "Hammermanship",
-          "skillLevel": 1
-        }
-      ]
-    }
-  },
-  {
-    "Name": "Bronze Pickaxe",
-    "Description": "A pickaxe made of solid Bronze. It's a hair more useful than a stone one.",
-    "value": 90,
-    "enabledActions": "Mining",
-    "secondaryColor": "#454545",
-    "equipSlot": "R Hand",
-    "gatherSpeedBonus": 0.15,
-    "icon": "Pickaxe",
-    "weaponInfo": {
-      "attackSpeed": 20,
-      "damage": 25,
-      "wearRequirements": [
-        {
-          "skill": "Hammermanship",
-          "skillLevel": 20
-        }
-      ]
-    }
   }
 ]

@@ -8,6 +8,13 @@
       {
         "itemName": "Coal"
       }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 65
+      }
     ]
   },
   {
@@ -19,6 +26,13 @@
       {
         "itemName": "Coal"
       }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 65
+      }
     ]
   },
   {
@@ -26,6 +40,12 @@
     "ingredients": [
       {
         "itemName": "Steel Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 65
       }
     ]
   },
@@ -35,6 +55,13 @@
       {
         "itemName": "Molten Steel Bar"
       }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 65
+      }
     ]
   },
   {
@@ -42,6 +69,13 @@
     "ingredients": [
       {
         "itemName": "Molten Steel Bar"
+      }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 65
       }
     ]
   },
@@ -51,6 +85,13 @@
       {
         "itemName": "Molten Steel Bar"
       }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 65
+      }
     ]
   },
   {
@@ -58,6 +99,13 @@
     "ingredients": [
       {
         "itemName": "Molten Steel Bar"
+      }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 65
       }
     ]
   },
@@ -68,7 +116,14 @@
         "itemName": "Molten Steel Bar"
       }
     ],
-    "outputAmount": 10
+    "outputAmount": 10,
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 65
+      }
+    ]
   }
 
 ]

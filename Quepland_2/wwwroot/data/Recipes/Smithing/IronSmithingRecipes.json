@@ -5,6 +5,13 @@
       {
         "itemName": "Iron Ore"
       }
+    ],
+    "experienceGained": "Smithing:95",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 45
+      }
     ]
   },
   {
@@ -12,6 +19,12 @@
     "ingredients": [
       {
         "itemName": "Iron Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 45
       }
     ]
   },
@@ -21,6 +34,13 @@
       {
         "itemName": "Molten Iron Bar"
       }
+    ],
+    "experienceGained": "Smithing:95",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 45
+      }
     ]
   },
   {
@@ -28,6 +48,13 @@
     "ingredients": [
       {
         "itemName": "Molten Iron Bar"
+      }
+    ],
+    "experienceGained": "Smithing:95",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 45
       }
     ]
   },
@@ -37,6 +64,13 @@
       {
         "itemName": "Molten Iron Bar"
       }
+    ],
+    "experienceGained": "Smithing:95",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 45
+      }
     ]
   },
   {
@@ -45,6 +79,13 @@
       {
         "itemName": "Molten Iron Bar"
       }
+    ],
+    "experienceGained": "Smithing:95",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 45
+      }
     ]
   },
   {
@@ -52,6 +93,13 @@
     "ingredients": [
       {
         "itemName": "Molten Iron Bar"
+      }
+    ],
+    "experienceGained": "Smithing:95",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 45
       }
     ]
   },
@@ -62,7 +110,14 @@
         "itemName": "Molten Iron Bar"
       }
     ],
-    "outputAmount": 10
+    "outputAmount": 10,
+    "experienceGained": "Smithing:95",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 45
+      }
+    ]
   }
 
 ]

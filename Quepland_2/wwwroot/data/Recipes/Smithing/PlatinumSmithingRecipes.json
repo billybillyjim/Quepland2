@@ -5,6 +5,13 @@
       {
         "itemName": "Platinum Ore"
       }
+    ],
+    "experienceGained": "Smithing:600",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 93
+      }
     ]
   },
   {
@@ -12,6 +19,12 @@
     "ingredients": [
       {
         "itemName": "Platinum Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 93
       }
     ]
   },
@@ -21,6 +34,13 @@
       {
         "itemName": "Molten Platinum Bar"
       }
+    ],
+    "experienceGained": "Smithing:600",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 93
+      }
     ]
   },
   {
@@ -28,6 +48,13 @@
     "ingredients": [
       {
         "itemName": "Molten Platinum Bar"
+      }
+    ],
+    "experienceGained": "Smithing:600",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 93
       }
     ]
   },
@@ -37,6 +64,13 @@
       {
         "itemName": "Molten Platinum Bar"
       }
+    ],
+    "experienceGained": "Smithing:600",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 93
+      }
     ]
   },
   {
@@ -45,6 +79,13 @@
       {
         "itemName": "Molten Platinum Bar"
       }
+    ],
+    "experienceGained": "Smithing:600",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 93
+      }
     ]
   },
   {
@@ -52,6 +93,13 @@
     "ingredients": [
       {
         "itemName": "Molten Platinum Bar"
+      }
+    ],
+    "experienceGained": "Smithing:600",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 93
       }
     ]
   },
@@ -62,7 +110,14 @@
         "itemName": "Molten Platinum Bar"
       }
     ],
-    "outputAmount": 10
+    "outputAmount": 10,
+    "experienceGained": "Smithing:600",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 93
+      }
+    ]
   }
 
 ]

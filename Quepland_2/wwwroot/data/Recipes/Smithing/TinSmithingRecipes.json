@@ -5,6 +5,13 @@
       {
         "itemName": "Tin Ore"
       }
+    ],
+    "experienceGained": "Smithing:35",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 5
+      }
     ]
   },
   {
@@ -12,6 +19,12 @@
     "ingredients": [
       {
         "itemName": "Tin Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 5
       }
     ]
   },
@@ -21,6 +34,13 @@
       {
         "itemName": "Molten Tin Bar"
       }
+    ],
+    "experienceGained": "Smithing:35",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 5
+      }
     ]
   },
   {
@@ -28,6 +48,13 @@
     "ingredients": [
       {
         "itemName": "Molten Tin Bar"
+      }
+    ],
+    "experienceGained": "Smithing:35",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 5
       }
     ]
   },
@@ -37,6 +64,13 @@
       {
         "itemName": "Molten Tin Bar"
       }
+    ],
+    "experienceGained": "Smithing:35",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 5
+      }
     ]
   },
   {
@@ -45,6 +79,13 @@
       {
         "itemName": "Molten Tin Bar"
       }
+    ],
+    "experienceGained": "Smithing:35",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 5
+      }
     ]
   },
   {
@@ -52,6 +93,13 @@
     "ingredients": [
       {
         "itemName": "Molten Tin Bar"
+      }
+    ],
+    "experienceGained": "Smithing:35",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 5
       }
     ]
   },
@@ -62,7 +110,14 @@
         "itemName": "Molten Tin Bar"
       }
     ],
-    "outputAmount": 10
+    "outputAmount": 10,
+    "experienceGained": "Smithing:35",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 5
+      }
+    ]
   }
 
 ]

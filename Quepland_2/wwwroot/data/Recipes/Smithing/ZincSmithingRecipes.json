@@ -5,6 +5,13 @@
       {
         "itemName": "Calamine"
       }
+    ],
+    "experienceGained": "Smithing:50",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 15
+      }
     ]
   },
   {
@@ -12,6 +19,12 @@
     "ingredients": [
       {
         "itemName": "Zinc Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 15
       }
     ]
   },
@@ -21,6 +34,13 @@
       {
         "itemName": "Molten Zinc Bar"
       }
+    ],
+    "experienceGained": "Smithing:50",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 15
+      }
     ]
   },
   {
@@ -28,6 +48,13 @@
     "ingredients": [
       {
         "itemName": "Molten Zinc Bar"
+      }
+    ],
+    "experienceGained": "Smithing:50",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 15
       }
     ]
   },
@@ -37,6 +64,13 @@
       {
         "itemName": "Molten Zinc Bar"
       }
+    ],
+    "experienceGained": "Smithing:50",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 15
+      }
     ]
   },
   {
@@ -45,6 +79,13 @@
       {
         "itemName": "Molten Zinc Bar"
       }
+    ],
+    "experienceGained": "Smithing:50",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 15
+      }
     ]
   },
   {
@@ -52,6 +93,13 @@
     "ingredients": [
       {
         "itemName": "Molten Zinc Bar"
+      }
+    ],
+    "experienceGained": "Smithing:50",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 15
       }
     ]
   },
@@ -62,7 +110,14 @@
         "itemName": "Molten Zinc Bar"
       }
     ],
-    "outputAmount": 10
+    "outputAmount": 10,
+    "experienceGained": "Smithing:50",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 15
+      }
+    ]
   }
 
 ]

@@ -1,0 +1,364 @@
+[
+  {
+    "name": "Frost Fighter",
+    "hp": 2800,
+    "attackSpeed": 20,
+    "armor": 80,
+    "damage": 35,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Ice",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Chenoo",
+    "hp": 3300,
+    "attackSpeed": 25,
+    "armor": 90,
+    "damage": 75,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Buck",
+          "weight": 20
+        },
+        {
+          "itemName": "Deer",
+          "weight": 20
+        },
+        {
+          "itemName": "Black Bear",
+          "weight": 20
+        },
+        {
+          "itemName": "Rabbit",
+          "weight": 20
+        },
+        {
+          "itemName": "Pigeon",
+          "weight": 20
+        },
+        {
+          "itemName": "Turkey",
+          "weight": 20
+        },
+        {
+          "itemName": "Pheasant",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Akhlut",
+    "hp": 3500,
+    "attackSpeed": 25,
+    "armor": 110,
+    "damage": 155,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Yellowtail",
+          "weight": 2
+        },
+        {
+          "itemName": "Giant Clam",
+          "weight": 2
+        },
+        {
+          "itemName": "Big Tuna",
+          "weight": 2
+        },
+        {
+          "itemName": "Swordfish",
+          "weight": 2
+        },
+        {
+          "itemName": "Shrimp",
+          "weight": 20
+        },
+        {
+          "itemName": "Scallop",
+          "weight": 20
+        },
+        {
+          "itemName": "Icefish",
+          "weight": 20
+        },
+        {
+          "itemName": "Shad",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Italian Christmas Tree",
+    "hp": 1500,
+    "attackSpeed": 20,
+    "armor": 20,
+    "damage": 35,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "White Pine Logs",
+          "weight": 20
+        },
+        {
+          "itemName": "Great Tree Logs",
+          "weight": 20
+        },
+        {
+          "itemName": "Ice Logs",
+          "weight": 20
+        },
+        {
+          "itemName": "Buloke Logs",
+          "weight": 20
+        },
+        {
+          "itemName": "Poplar Logs",
+          "weight": 20
+        },
+        {
+          "itemName": "Oak Logs",
+          "weight": 20
+        }
+      ]
+    }
+  },
+  {
+    "name": "Root Dweller",
+    "hp": 5000,
+    "attackSpeed": 10,
+    "armor": 65,
+    "damage": 155,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Great Tree Logs",
+          "weight": 140
+        },
+        {
+          "itemName": "Quelfur",
+          "weight": 20
+        },
+        {
+          "itemName": "Bariquem",
+          "weight": 20
+        },
+        {
+          "itemName": "Uraniquep",
+          "weight": 10
+        },
+        {
+          "itemName": "Queplonium",
+          "weight": 8
+        },
+        {
+          "itemName": "Great Tree Seed",
+          "weight": 2
+        }
+      ]
+    }
+  },
+  {
+    "name": "Stealthy Root Dweller",
+    "hp": 4000,
+    "attackSpeed": 10,
+    "armor": 80,
+    "damage": 155,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Great Tree Logs",
+          "weight": 120
+        },
+        {
+          "itemName": "Quelfur",
+          "weight": 20
+        },
+        {
+          "itemName": "Bariquem",
+          "weight": 20
+        },
+        {
+          "itemName": "Uraniquep",
+          "weight": 10
+        },
+        {
+          "itemName": "Queplonium",
+          "weight": 7
+        },
+        {
+          "itemName": "Steelflame Axe Head",
+          "weight": 1
+        },
+        {
+          "itemName": "Great Tree Seed",
+          "weight": 2
+        }
+      ]
+    }
+  },
+  {
+    "name": "Strong Root Dweller",
+    "hp": 7000,
+    "attackSpeed": 12,
+    "armor": 70,
+    "damage": 195,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Great Tree Logs",
+          "weight": 120
+        },
+        {
+          "itemName": "Quelfur",
+          "weight": 20
+        },
+        {
+          "itemName": "Bariquem",
+          "weight": 20
+        },
+        {
+          "itemName": "Uraniquep",
+          "weight": 10
+        },
+        {
+          "itemName": "Queplonium",
+          "weight": 7
+        },
+        {
+          "itemName": "Steelflame Axe Handle",
+          "weight": 1
+        },
+        {
+          "itemName": "Great Tree Seed",
+          "weight": 2
+        }
+      ]
+    }
+  },
+  {
+    "name": "Ravenous Root Dweller",
+    "hp": 3000,
+    "attackSpeed": 5,
+    "armor": 50,
+    "damage": 95,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Great Tree Logs",
+          "weight": 120
+        },
+        {
+          "itemName": "Quelfur",
+          "weight": 20
+        },
+        {
+          "itemName": "Bariquem",
+          "weight": 20
+        },
+        {
+          "itemName": "Uraniquep",
+          "weight": 10
+        },
+        {
+          "itemName": "Queplonium",
+          "weight": 7
+        },
+        {
+          "itemName": "Steelflame Axe Head",
+          "weight": 1
+        },
+        {
+          "itemName": "Great Tree Seed",
+          "weight": 2
+        }
+      ]
+    }
+  },
+  {
+    "name": "Ice Spider",
+    "hp": 1000,
+    "weaknesses": "Hammermanship",
+    "strengths": "Swordsmanship",
+    "attackSpeed": 12,
+    "armor": 10,
+    "damage": 22,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    }
+  },
+  {
+    "name": "Frost Bat",
+    "hp": 600,
+    "weaknesses": "Archery",
+    "strengths": "Knifesmanship",
+    "attackSpeed": 8,
+    "armor": 5,
+    "damage": 35,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    }
+  },
+  {
+    "name": "Chill Egg",
+    "hp": 1800,
+    "weaknesses": "Hammermanship",
+    "strengths": "Knifesmanship",
+    "attackSpeed": 35,
+    "armor": 90,
+    "damage": 15,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    },
+    "statusEffectData": [
+      {
+        "name": "Chicken",
+        "power": 100,
+        "speed": 5,
+        "duration": 5,
+        "message": "A Chill Chicken has come to protect its egg!",
+        "procOdds": 0.3
+      }
+    ]
+  },
+  {
+    "name": "Chill Chicken",
+    "hp": 2200,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship",
+    "attackSpeed": 15,
+    "armor": 10,
+    "damage": 55,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50
+        }
+      ]
+    }
+  }
+]

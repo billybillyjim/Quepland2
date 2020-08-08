@@ -5,6 +5,13 @@
       {
         "itemName": "Gold Ore"
       }
+    ],
+    "experienceGained": "Smithing:420",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 85
+      }
     ]
   },
   {
@@ -12,6 +19,12 @@
     "ingredients": [
       {
         "itemName": "Gold Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 85
       }
     ]
   },
@@ -21,6 +34,13 @@
       {
         "itemName": "Molten Gold Bar"
       }
+    ],
+    "experienceGained": "Smithing:420",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 85
+      }
     ]
   },
   {
@@ -28,6 +48,13 @@
     "ingredients": [
       {
         "itemName": "Molten Gold Bar"
+      }
+    ],
+    "experienceGained": "Smithing:420",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 85
       }
     ]
   },
@@ -37,6 +64,13 @@
       {
         "itemName": "Molten Gold Bar"
       }
+    ],
+    "experienceGained": "Smithing:420",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 85
+      }
     ]
   },
   {
@@ -45,6 +79,13 @@
       {
         "itemName": "Molten Gold Bar"
       }
+    ],
+    "experienceGained": "Smithing:420",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 85
+      }
     ]
   },
   {
@@ -52,6 +93,13 @@
     "ingredients": [
       {
         "itemName": "Molten Gold Bar"
+      }
+    ],
+    "experienceGained": "Smithing:420",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 85
       }
     ]
   },
@@ -62,7 +110,14 @@
         "itemName": "Molten Gold Bar"
       }
     ],
-    "outputAmount": 10
+    "outputAmount": 10,
+    "experienceGained": "Smithing:420",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 85
+      }
+    ]
   }
 
 ]

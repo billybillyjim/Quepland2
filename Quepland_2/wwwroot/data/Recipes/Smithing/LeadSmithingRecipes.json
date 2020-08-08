@@ -5,6 +5,13 @@
       {
         "itemName": "Galena"
       }
+    ],
+    "experienceGained": "Smithing:120",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 55
+      }
     ]
   },
   {
@@ -12,6 +19,12 @@
     "ingredients": [
       {
         "itemName": "Lead Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 55
       }
     ]
   },
@@ -21,6 +34,13 @@
       {
         "itemName": "Molten Lead Bar"
       }
+    ],
+    "experienceGained": "Smithing:120",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 55
+      }
     ]
   },
   {
@@ -28,6 +48,13 @@
     "ingredients": [
       {
         "itemName": "Molten Lead Bar"
+      }
+    ],
+    "experienceGained": "Smithing:120",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 55
       }
     ]
   },
@@ -37,6 +64,13 @@
       {
         "itemName": "Molten Lead Bar"
       }
+    ],
+    "experienceGained": "Smithing:120",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 55
+      }
     ]
   },
   {
@@ -44,6 +78,13 @@
     "ingredients": [
       {
         "itemName": "Molten Lead Bar"
+      }
+    ],
+    "experienceGained": "Smithing:120",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 55
       }
     ]
   },
@@ -56,6 +97,13 @@
       {
         "itemName": "Molten Lead Bar"
       }
+    ],
+    "experienceGained": "Smithing:120",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 55
+      }
     ]
   },
   {
@@ -63,6 +111,13 @@
     "ingredients": [
       {
         "itemName": "Molten Lead Bar"
+      }
+    ],
+    "experienceGained": "Smithing:120",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 55
       }
     ]
   },
@@ -73,7 +128,14 @@
         "itemName": "Molten Lead Bar"
       }
     ],
-    "outputAmount": 10
+    "outputAmount": 10,
+    "experienceGained": "Smithing:120",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 55
+      }
+    ]
   }
 
 ]

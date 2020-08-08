@@ -19,6 +19,13 @@
       {
         "itemName": "Tin Bar"
       }
+    ],
+    "experienceGained": "Smithing:23",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 30
+      }
     ]
   },
   {
@@ -29,6 +36,13 @@
       },
       {
         "itemName": "Tin Ore"
+      }
+    ],
+    "experienceGained": "Smithing:23",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 30
       }
     ]
   },
@@ -41,6 +55,13 @@
       {
         "itemName": "Tin Ore"
       }
+    ],
+    "experienceGained": "Smithing:45",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 30
+      }
     ]
   },
   {
@@ -48,6 +69,12 @@
     "ingredients": [
       {
         "itemName": "Brass Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 30
       }
     ]
   },
@@ -57,6 +84,13 @@
       {
         "itemName": "Molten Bronze Bar"
       }
+    ],
+    "experienceGained": "Smithing:45",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 30
+      }
     ]
   },
   {
@@ -64,6 +98,13 @@
     "ingredients": [
       {
         "itemName": "Molten Bronze Bar"
+      }
+    ],
+    "experienceGained": "Smithing:45",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 30
       }
     ]
   },
@@ -73,6 +114,13 @@
       {
         "itemName": "Molten Bronze Bar"
       }
+    ],
+    "experienceGained": "Smithing:45",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 30
+      }
     ]
   },
   {
@@ -80,6 +128,13 @@
     "ingredients": [
       {
         "itemName": "Molten Bronze Bar"
+      }
+    ],
+    "experienceGained": "Smithing:45",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 30
       }
     ]
   },
@@ -90,7 +145,14 @@
         "itemName": "Molten Bronze Bar"
       }
     ],
-    "outputAmount": 10
+    "outputAmount": 10,
+    "experienceGained": "Smithing:45",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 30
+      }
+    ]
   }
 
 ]
