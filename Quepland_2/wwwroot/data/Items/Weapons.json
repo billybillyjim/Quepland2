@@ -1139,7 +1139,7 @@
     "value": 5000,
     "enabledActions": "Axemanship",
     "equipSlot": "R Hand",
-    "icon": "CactusClub",
+    "icon": "CactusClubFull",
     "weaponInfo": {
       "attackSpeed": 15,
       "damage": 60,
@@ -1177,7 +1177,7 @@
     "enabledActions": "Axemanship",
     "secondaryColor": "#red",
     "equipSlot": "R Hand",
-    "icon": "FlameAxe",
+    "icon": "SteelflameAxe",
     "gatherSpeedBonus": 0.8,
     "weaponInfo": {
       "attackSpeed": 14,

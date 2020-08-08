@@ -169,14 +169,14 @@
     "description": "Pokey spines from a cactus.",
     "gatherString": "You get some cactus spines.",
     "value": 2,
-    "icon": "Spine",
+    "icon": "Spike",
     "isStackable": true
   },
   {
     "name": "Cactus Club (Empty)",
     "description": "A club made from a special living cactus. If you covered it in spines, it would really do some damage.",
     "value": 50,
-    "icon": "CactusClub"
+    "icon": "CactusClubEmpty"
   },
   {
     "name": "Sand",
@@ -191,7 +191,7 @@
     "description": "Is it stone? Is it sand?",
     "gatherString": "You get some sandstone.",
     "value": 20,
-    "icon": "Brick",
+    "icon": "Sandstone",
     "isStackable": true
   },
   {
@@ -222,7 +222,7 @@
     "name": "Great Tree Seed",
     "description": "A seed from the Great Tree. It's a prized possesion among the citizens of Koncave.",
     "value": 5000,
-    "icon": "Seed"
+    "icon": "Seeds"
   },
   {
     "name": "Steelflame Axe Handle",

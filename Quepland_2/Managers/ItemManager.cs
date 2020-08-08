@@ -103,6 +103,7 @@ public class ItemManager
             baseID += MaxItemsPerFile;
             colorIter++;
         }
+        Console.WriteLine("Total Items:" + Items.Count);
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/WoodworkingRecipes.json"));
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/UnpackingRecipes.json"));
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/SushiRecipes.json"));
