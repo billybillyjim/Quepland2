@@ -1,52 +1,112 @@
 ﻿@inject GameState GameState
 @inject NavigationManager UriHelper
 
-    <div style="position:relative">
-        <h1>Welcome to Quepland</h1>
-        <p>Quepland 2 is a semi-idle adventure game set in the world of Quepland.</p>
+<div style="position:relative">
+    <h1>Welcome to Quepland</h1>
+    <p>Quepland 2 is a semi-idle adventure game set in the world of Quepland. It is heavily inspired by the developer's childhood addiction to Runescape.</p>
 
-        @if (GameState.InitCompleted)
-        {
-            if (hasSave)
+    @if (GameState.InitCompleted)
+    {
+        <div>
+            @if (hasSave)
             {
-                <button class="btn btn-primary" @onclick="@(() => LoadGame())">
-                    Load Game
-                </button>
+                <div>
+                    <button class="btn btn-primary" @onclick="@(() => LoadGame("Normal"))">
+                        Load Game (Normal)
+                    </button>
+                </div>
+                <br />
             }
-            else
+            @if (hasHardcore)
             {
-                if (GameState.CurrentGameMode == GameState.GameType.Hardcore && Player.Instance.JustDied)
+                <div>
+                    <button class="btn btn-primary" @onclick="@(() => LoadGame("Hardcore"))">
+                        Load Game (Hardcore)
+                    </button>
+                </div>
+                <br />
+            }
+            @if (hasUltimate)
+            {
+                <div>
+                    <button class="btn btn-primary" @onclick="@(() => LoadGame("Ultimate"))">
+                        Load Game (Ultimate)
+                    </button>
+                </div>
+                <br />
+            }
+        </div>
+        @if (GameState.CurrentGameMode == GameState.GameType.Hardcore && Player.Instance.JustDied)
+        {
+            <button class="btn btn-primary" onclick="@(new Action(() => ResetGame()))">Begin New Game</button>
+        }
+        else
+        {
+            @if (selectedMode == "Normal" && hasSave ||
+             selectedMode == "Hardcore" && hasHardcore ||
+             selectedMode == "Ultimate" && hasUltimate)
+            {
+                if (hasShownWarning == false)
                 {
-                    <button class="btn btn-primary" onclick="@(new Action(() => ResetGame()))">Begin New Game</button>
+                    <button class="btn btn-primary" onclick="@(new Action(() => ShowWarning()))">Begin New Game</button>
+
                 }
                 else
                 {
                     <button class="btn btn-primary" onclick="@(new Action(() => StartGame()))">Begin New Game</button>
-                    <button onclick="@(new Action(() => TestAlch()))">Test Alchemy</button>
+                    <div style="color:red">Warning:Creating a new game will override your current save with this game type.(@selectedMode)</div>
                 }
-
-                <br />
-                <div style="margin-left:-10px;">
-                    <Quepland_2.Components.CustomDropdownComponent DropdownItems="@GetGameModes()" @bind-Value="@selectedMode" BoxText="Game Mode(Normal)"></Quepland_2.Components.CustomDropdownComponent>
-
-                </div>
             }
-
-
+            else
+            {
+                <button class="btn btn-primary" onclick="@(new Action(() => StartGame()))">Begin New Game</button>
+            }
         }
-        else
-        {
-            <button class="btn btn-primary" disabled>Begin New Game</button>
-        }
+    }
+    else
+    {
+        <button class="btn btn-primary" disabled>Begin New Game</button>
+    }
 
-
+    <div>
+        Note:For best results, Quepland needs to be played in a separate window. Most browsers will pause the game after a few minutes in a background tab.
     </div>
+</div>
+        <!--
+            <br />
+            <div style="margin-left:-10px;">
+                <Quepland_2.Components.CustomDropdownComponent DropdownItems="@GetGameModes()" @bind-Value="@selectedMode" BoxText="Game Mode(Normal)"></Quepland_2.Components.CustomDropdownComponent>
+
+            </div>
+        }
+        <div>
+            @if (hasSave == false)
+            {
+                if (selectedMode == "Normal")
+                {
+                    <div>Normal mode is the normal way to play the game. It's highly recommended you start out playing in this game mode.</div>
+                }
+                else if (selectedMode == "Hardcore")
+                {
+                    <div>Hardcore mode gives the player a single life to live. If you die, the game will delete your save and bring you back to the start menu.</div>
+                }
+                else if (selectedMode == "Ultimate")
+                {
+                    <div>Ultimate mode is an extreme version of the game where the player is not allowed to use the bank.</div>
+                }
+            }
+        </div>
+        -->
+
 
 
 @code {
 
     public string selectedMode = "Normal";
     bool hasSave = false;
+    bool hasHardcore = false;
+    bool hasUltimate = false;
+    bool hasShownWarning = false;
     public List<string> GetGameModes()
     {
         List<string> modes = new List<string>();
@@ -80,10 +140,18 @@
         GameState.ShowStartMenu = false;
         UriHelper.NavigateTo("/World/QueplandFields");
     }
-    public async Task LoadGame()
+    public async Task LoadGame(string mode)
     {
         GameState.ShowStartMenu = false;
-        await SaveManager.LoadSaveGame();
+        await SaveManager.LoadSaveGame(mode);
+    }
+    public async Task ShowWarning()
+    {
+        if (await SaveManager.HasSaveFile(selectedMode))
+        {
+            hasShownWarning = true;
+            GameState.UpdateState();
+        }
     }
     public void StartGame()
     {
@@ -119,7 +187,9 @@
     }
     protected override async Task OnInitializedAsync()
     {
-        hasSave = await SaveManager.HasSaveFile();
+        hasSave = await SaveManager.HasSaveFile("Normal");
+        hasHardcore = await SaveManager.HasSaveFile("Hardcore");
+        hasUltimate = await SaveManager.HasSaveFile("Ultimate");
         GameState.StateChanged += OnGameStateChanged;
 
     }

@@ -184,7 +184,7 @@
     ],
     "unlockableAreas": [
       {
-        "areaURL": "UpperMtLevelMine",
+        "areaURL": "UpperMtYamaMine",
         "buttonText": "Build a Ladder",
         "requirements": [
           {
