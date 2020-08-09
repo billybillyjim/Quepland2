@@ -15,7 +15,7 @@ public class Building
 	public List<Shop> Shops { get; set; } = new List<Shop>();
 	public List<TanningSlot> TanningSlots { get; set; } = new List<TanningSlot>();
     public List<Requirement> Requirements { get; set; } = new List<Requirement>();
-    private int loadedTanningSlotsIterator;
+    public int LoadedTanningSlotsIterator;
 
     public bool HasRequirements()
     {
@@ -53,8 +53,8 @@ public class Building
     }
     public void LoadTanningData(TanningSaveData data)
     {
-        TanningSlots[loadedTanningSlotsIterator].LoadData(data);
-        loadedTanningSlotsIterator++;
+        TanningSlots[LoadedTanningSlotsIterator].LoadData(data);
+        LoadedTanningSlotsIterator++;
         
     }
 }

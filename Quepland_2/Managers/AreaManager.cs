@@ -165,6 +165,10 @@ public class AreaManager
     }
     public void LoadTanningSave(List<TanningSaveData> data)
     {
+        foreach(Building b in Buildings)
+        {
+            b.LoadedTanningSlotsIterator = 0;
+        }
         foreach(TanningSaveData d in data)
         {
             Buildings.Find(x => x.Name == d.BuildingName).LoadTanningData(d);

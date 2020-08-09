@@ -114,10 +114,6 @@
       {
         "areaURL": "EastTsuCity",
         "buttonText": "Continue on the main road east"
-      },
-      {
-        "areaURL": "TsuCastle",
-        "buttonText": "Head to the castle"
       }
     ],
     "buildings": [

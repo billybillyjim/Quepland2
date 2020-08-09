@@ -22,15 +22,28 @@
         <div>
             You can export your save to keep a backup somewhere. You can load an exported save from the main menu.
             <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => ExportSave())">Export Save</button>
-            <input />
+            @if (exportedSave != "")
+            {
+                <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => ImportSave())">Import Save</button>
+            }
+            else
+            {
+                <button class="btn btn-primary" style="margin:10px;padding:10px;opacity:0.5"> Export Save</button>
+            }
+            <input @bind-value="@exportedSave"/>
         </div>
     </div>
 
     @code {
+        private string exportedSave = "";
 
         public void ExportSave()
         {
-
+            exportedSave = SaveManager.GetSaveExport();
+        }
+        public void ImportSave()
+        {
+            SaveManager.ImportSave(exportedSave);
         }
         public void ResizeWindow(int w)
         {

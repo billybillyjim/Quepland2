@@ -68,10 +68,13 @@ public class Skill
     }
     public void LoadExperience(long amount)
     {
-        if (amount <= 0)
+        Console.WriteLine("Loading EXP for " + Name + ":" + amount);
+        if (amount < 0)
         {
             return;
         }
+        Level = 1;
+        Experience = 0;
         Experience += amount;
 
         while(Experience >= (long)Skill.GetExperienceRequired(GetSkillLevelUnboosted()))
