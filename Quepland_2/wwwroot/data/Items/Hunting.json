@@ -404,16 +404,6 @@
     }
   },
   {
-    "Name": "Chicken Meat",
-    "Description": "Taste's like chicken. You might want to prepare it first, though.",
-    "value": 6,
-    "secondaryColor": "#f7ab3e",
-    "icon": "PreppedBird",
-    "tanningInfo": {
-      "tansIntoString": "Chicken Jerky"
-    }
-  },
-  {
     "Name": "Turkey Meat",
     "Description": "The meat off a turkey.",
     "value": 15,

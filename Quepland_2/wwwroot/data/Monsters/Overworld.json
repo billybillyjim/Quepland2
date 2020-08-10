@@ -1648,7 +1648,21 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Sand",
+          "weight": 20
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 5
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 15
+        },
+        {
+          "itemName": "Sandstone",
           "weight": 20
         }
       ]
@@ -1663,7 +1677,21 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Coins",
+          "itemName": "Sand",
+          "weight": 20
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 5
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 15
+        },
+        {
+          "itemName": "Sandstone",
           "weight": 20
         }
       ]
@@ -1690,8 +1718,22 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Feather",
-          "weight": 50
+          "itemName": "Sand",
+          "weight": 20
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 5
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 15
+        },
+        {
+          "itemName": "Manta Ray",
+          "weight": 20
         }
       ]
     }
@@ -1707,8 +1749,22 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Feather",
-          "weight": 50
+          "itemName": "Sand",
+          "weight": 20
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 5
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 15
+        },
+        {
+          "itemName": "Sandstone",
+          "weight": 20
         }
       ]
     },
@@ -1734,8 +1790,22 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Feather",
-          "weight": 50
+          "itemName": "Sand",
+          "weight": 20
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 5
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 15
+        },
+        {
+          "itemName": "Sandstone",
+          "weight": 20
         }
       ]
     },
@@ -1761,8 +1831,22 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Feather",
-          "weight": 50
+          "itemName": "Sand",
+          "weight": 20
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 5
+        },
+        {
+          "itemName": "Sand",
+          "weight": 20,
+          "amount": 15
+        },
+        {
+          "itemName": "Sandstone",
+          "weight": 20
         }
       ]
     },
@@ -1788,8 +1872,130 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Feather",
-          "weight": 50
+          "itemName": "White Pine Arrow",
+          "weight": 5,
+          "amount": 10
+        },
+        {
+          "itemName": "Poplar Arrow",
+          "weight": 5,
+          "amount": 10
+        },
+        {
+          "itemName": "Oak Arrow",
+          "weight": 5,
+          "amount": 10
+        },
+        {
+          "itemName": "Maple Arrow",
+          "weight": 5,
+          "amount": 10
+        },
+        {
+          "itemName": "Birch Arrow",
+          "weight": 5,
+          "amount": 10
+        },
+        {
+          "itemName": "Mesquite Arrow",
+          "weight": 5,
+          "amount": 10
+        },
+        {
+          "itemName": "Copper Ore",
+          "weight": 5
+        },
+        {
+          "itemName": "Tin Ore",
+          "weight": 5
+        },
+        {
+          "itemName": "Calamine",
+          "weight": 5
+        },
+        {
+          "itemName": "Iron Ore",
+          "weight": 5
+        },
+        {
+          "itemName": "Rabbit Gloves",
+          "weight": 5
+        },
+        {
+          "itemName": "Rabbit Hat",
+          "weight": 5
+        },
+        {
+          "itemName": "Rabbit Boots",
+          "weight": 5
+        },
+        {
+          "itemName": "Rabbit Shirt",
+          "weight": 5
+        },
+        {
+          "itemName": "Rabbit Pants",
+          "weight": 5
+        },
+        {
+          "itemName": "Deer Gloves",
+          "weight": 5
+        },
+        {
+          "itemName": "Deer Hat",
+          "weight": 5
+        },
+        {
+          "itemName": "Deer Boots",
+          "weight": 5
+        },
+        {
+          "itemName": "Deer Shirt",
+          "weight": 5
+        },
+        {
+          "itemName": "Deer Pants",
+          "weight": 5
+        },
+        {
+          "itemName": "Wild Boar Gloves",
+          "weight": 1
+        },
+        {
+          "itemName": "Wild Boar Hat",
+          "weight": 1
+        },
+        {
+          "itemName": "Wild Boar Boots",
+          "weight": 1
+        },
+        {
+          "itemName": "Wild Boar Shirt",
+          "weight": 1
+        },
+        {
+          "itemName": "Wild Boar Pants",
+          "weight": 1
+        },
+        {
+          "itemName": "Black Bear Gloves",
+          "weight": 1
+        },
+        {
+          "itemName": "Black Bear Hat",
+          "weight": 1
+        },
+        {
+          "itemName": "Black Bear Boots",
+          "weight": 1
+        },
+        {
+          "itemName": "Black Bear Shirt",
+          "weight": 1
+        },
+        {
+          "itemName": "Black Bear Pants",
+          "weight": 1
         }
       ]
     }
@@ -1805,8 +2011,56 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Feather",
-          "weight": 50
+          "itemName": "Ebisian Fishing Rod",
+          "weight": 1
+        },
+        {
+          "itemName": "Manta Ray",
+          "weight": 5
+        },
+        {
+          "itemName": "Salmon",
+          "weight": 5
+        },
+        {
+          "itemName": "Tuna",
+          "weight": 5
+        },
+        {
+          "itemName": "Butterfish",
+          "weight": 15
+        },
+        {
+          "itemName": "Puffer Fish",
+          "weight": 15
+        },
+        {
+          "itemName": "Angry Crab",
+          "weight": 15
+        },
+        {
+          "itemName": "Shad",
+          "weight": 25
+        },
+        {
+          "itemName": "Carp",
+          "weight": 25
+        },
+        {
+          "itemName": "Caiman",
+          "weight": 25
+        },
+        {
+          "itemName": "Abalone",
+          "weight": 35
+        },
+        {
+          "itemName": "Saury",
+          "weight": 35
+        },
+        {
+          "itemName": "Scallop",
+          "weight": 35
         }
       ]
     },
@@ -1832,7 +2086,19 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Feather",
+          "itemName": "Rough Amberite",
+          "weight": 20
+        },
+        {
+          "itemName": "Rough Lizardite",
+          "weight": 20
+        },
+        {
+          "itemName": "White Pine Logs",
+          "weight": 50
+        },
+        {
+          "itemName": "Oak Logs",
           "weight": 50
         }
       ]
@@ -1849,7 +2115,7 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Feather",
+          "itemName": "Cheese",
           "weight": 50
         }
       ]
@@ -1876,7 +2142,15 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Feather",
+          "itemName": "Wheat",
+          "weight": 50
+        },
+        {
+          "itemName": "Rye",
+          "weight": 50
+        },
+        {
+          "itemName": "Durum",
           "weight": 50
         }
       ]
@@ -1893,7 +2167,27 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Feather",
+          "itemName": "Black Bear",
+          "weight": 50
+        },
+        {
+          "itemName": "Grizzly Bear",
+          "weight": 5
+        },
+        {
+          "itemName": "Moose",
+          "weight": 5
+        },
+        {
+          "itemName": "Chicken",
+          "weight": 50
+        },
+        {
+          "itemName": "Pheasant",
+          "weight": 50
+        },
+        {
+          "itemName": "Turkey",
           "weight": 50
         }
       ]
@@ -1912,6 +2206,14 @@
         {
           "itemName": "Black Bear",
           "weight": 50
+        },
+        {
+          "itemName": "Black Bear Hide",
+          "weight": 10
+        },
+        {
+          "itemName": "Bear Meat",
+          "weight": 5
         }
       ]
     }
@@ -1944,7 +2246,15 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Large Stone",
+          "itemName": "Rough Purpurite",
+          "weight": 5
+        },
+        {
+          "itemName": "Rough Opal",
+          "weight": 5
+        },
+        {
+          "itemName": "Caiman Jerky",
           "weight": 50
         }
       ]

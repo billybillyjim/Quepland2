@@ -79,13 +79,6 @@
     "icon": "Bone Shard"
   },
   {
-    "name": "Treasure Map",
-    "description": "A map leading to an island north of Quepland. Mound gave it to you.",
-    "value": 0,
-    "icon": "Map",
-    "isSellable": false
-  },
-  {
     "name": "Hemp",
     "description": "A fast-growing weed useful for turning into fiber.",
     "value": 10,

@@ -126,6 +126,69 @@
     ]
   },
   {
+    "name": "Medium Fishing Rod",
+    "description": "A fishing rod.",
+    "value": 300,
+    "enabledActions": "Bait Fishing",
+    "isEquipable": true,
+    "equipSlot": "R Hand",
+    "secondaryColor": "#66B4DE",
+    "weaponInfo": {
+      "attackSpeed": 25,
+      "damage": 18
+    },
+    "gatherSpeedBonus": 0.3,
+    "icon": "Rod",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 35
+      }
+    ]
+  },
+  {
+    "name": "Large Fishing Rod",
+    "description": "A large fishing rod.",
+    "value": 900,
+    "enabledActions": "Bait Fishing",
+    "isEquipable": true,
+    "equipSlot": "R Hand",
+    "secondaryColor": "#FFBABA",
+    "weaponInfo": {
+      "attackSpeed": 25,
+      "damage": 58
+    },
+    "gatherSpeedBonus": 0.5,
+    "icon": "Rod",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 55
+      }
+    ]
+  },
+  {
+    "name": "Ebisian Fishing Rod",
+    "description": "An uncomfortably attractive fishing rod.",
+    "value": 3000,
+    "enabledActions": "Bait Fishing",
+    "isEquipable": true,
+    "equipSlot": "R Hand",
+    "secondaryColor": "#459CED",
+    "weaponInfo": {
+      "attackSpeed": 30,
+      "damage": 150
+    },
+    "gatherSpeedBonus": 0.6,
+    "icon": "Rod",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 75
+      }
+    ]
+  },
+  {
     "name": "Minnows",
     "description": "The tiniest fish you can catch.",
     "gatherString": "You catch some minnows.",

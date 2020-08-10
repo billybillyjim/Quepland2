@@ -294,7 +294,7 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Feather",
+          "itemName": "Ice",
           "weight": 50
         }
       ]
@@ -311,7 +311,7 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Feather",
+          "itemName": "Ice",
           "weight": 50
         }
       ]
@@ -329,7 +329,23 @@
       "drops": [
         {
           "itemName": "Ice Feather",
-          "weight": 50
+          "weight": 50,
+          "amount": 5
+        },
+        {
+          "itemName": "Ice Feather",
+          "weight": 40,
+          "amount": 10
+        },
+        {
+          "itemName": "Ice Feather",
+          "weight": 30,
+          "amount": 15
+        },
+        {
+          "itemName": "Ice Feather",
+          "weight": 20,
+          "amount": 25
         },
         {
           "itemName": "Ice",
@@ -360,7 +376,23 @@
       "drops": [
         {
           "itemName": "Ice Feather",
-          "weight": 50
+          "weight": 50,
+          "amount": 10
+        },
+        {
+          "itemName": "Ice Feather",
+          "weight": 40,
+          "amount": 15
+        },
+        {
+          "itemName": "Ice Feather",
+          "weight": 30,
+          "amount": 25
+        },
+        {
+          "itemName": "Ice Feather",
+          "weight": 20,
+          "amount": 35
         },
         {
           "itemName": "Ice",

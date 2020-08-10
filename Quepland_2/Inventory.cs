@@ -143,6 +143,20 @@ public class Inventory
         return false;
         //return (items.FirstOrDefault(x => x.Key.Name == itemName).Equals(default(KeyValuePair<GameItem, int>)) == false);
     }
+    public GameItem FindItemCapableOfAction(string action)
+    {
+        foreach (KeyValuePair<GameItem, int> item in items)
+        {
+            if (item.Key.EnabledActions != null)
+            {
+                if (item.Key.EnabledActions.Contains(action))
+                {
+                    return item.Key;
+                }
+            }
+        }
+        return null;
+    }
     public bool HasArrows()
     {
         foreach (KeyValuePair<GameItem, int> item in items)

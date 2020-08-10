@@ -16,6 +16,13 @@
     }
   },
   {
+    "name": "Treasure Map",
+    "description": "A map leading to an island north of Quepland. Mound gave it to you.",
+    "value": 0,
+    "icon": "Map",
+    "isSellable": false
+  },
+  {
     "name": "Mound's Map",
     "description": "A map that shows the location of a secret island to the west. You'll have to find someone to sail you there.",
     "value": 0,

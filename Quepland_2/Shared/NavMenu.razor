@@ -39,7 +39,9 @@
                         {
                             if (a.IsUnlocked && a.IsHidden == false && a.HasRequirements())
                             {
-                                <li class="nav-item px-3" style="position:relative;padding-bottom:0px;">
+                                <li class="nav-item px-3" style="position:relative;padding-bottom:0px;"
+                                    oncontextmenu="return false;" draggable="false"
+                                            onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, a)))">
 
                                     <div style="@GetStyle(a.AreaURL)" @onclick="@(() => GoToArea(a.AreaURL))">
                                         <img style="height:45px;width:45px;padding:5px;margin-right:10px;border-radius:0.25rem;background-color:white;"
@@ -56,13 +58,15 @@
                             }
                             else if (a.IsUnlocked && a.IsHidden == false)
                             {
-                                <li class="nav-item px-3" style="position:relative;padding-bottom:0px;">
+                                <li class="nav-item px-3" style="position:relative;padding-bottom:0px;"
+                                    oncontextmenu="return false;" draggable="false"
+                                            onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, a)))">
 
-                                    <div style="@GetStyle(a.AreaURL);background-color:#FF000055">
+                                    <div style="@GetStyle(a.AreaURL);background-color:#FF000055" 
+                                         onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, a.Name, a.GetRequirementTooltip())))"
+                                             onmouseout="@(new Action(() => GameState.HideTooltip()))">                                         
                                         <img style="height:45px;width:45px;padding:5px;margin-right:10px;border-radius:0.25rem;background-color:white;"
-                                             src="@("data/Images/" + a.Image + ".png")"
-                                             onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, a.Name, a.GetRequirementTooltip())))"
-                                             onmouseout="@(new Action(() => GameState.HideTooltip()))" />
+                                             src="@("data/Images/" + a.Image + ".png")"/>
                                         @a.Name
                                     </div>
                                 </li>
@@ -189,6 +193,34 @@
 
         }
         return info;
+    }
+    private void ShowMenu(MouseEventArgs args, Area area)
+    {
+        if (args.Button == 2)
+        {
+            GameState.CurrentContextMenu = new ContextMenu();
+            if(area.IsUnlocked && area.IsHidden == false && area.HasRequirements() == false)
+            {
+                foreach(Requirement r in area.Requirements)
+                {
+                    if(r.Action != "None")
+                    {
+                        GameItem i = Bank.Instance.Inventory.FindItemCapableOfAction(r.Action);
+                        if (i != null)
+                        {
+                            GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Withdraw " + i.Name + " from bank", new Action(() => Bank.Instance.Withdraw(i, 1))));
+                        }
+                    }
+                }
+            }
+            if (area.HasRequirements())
+            {
+                GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Go to " + area.Name, new Action(() => GoToArea(area.AreaURL))));
+            }
+
+
+            GameState.ShowContextMenu(args);
+        }
     }
     private string GetStyle(string loc)
     {

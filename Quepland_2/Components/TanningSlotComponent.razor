@@ -50,7 +50,7 @@ else
             Slot.TannedItem = ItemManager.Instance.GetItemByName(tanningItem);
             Slot.Amount = Player.Instance.Inventory.GetNumberOfItem(Slot.TannedItem);
             Player.Instance.Inventory.RemoveItems(Slot.TannedItem, Slot.Amount);
-            Slot.FinishTime = DateTime.UtcNow.AddSeconds(6);
+            Slot.FinishTime = DateTime.UtcNow.AddHours(6);
 
         }
         LoadTannables();
