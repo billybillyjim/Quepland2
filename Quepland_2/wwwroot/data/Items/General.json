@@ -159,6 +159,13 @@
     "icon": "Ice"
   },
   {
+    "Name": "Ice Essence",
+    "Description": "It's the essence of cold.",
+    "value": 1000,
+    "secondaryColor": "#D2FFF5",
+    "icon": "Essence"
+  },
+  {
     "Name": "Bandit's Blade",
     "Description": "The sharp part of a sword. You could probably reattach it to a hilt and make a working weapon with it.",
     "value": 5,

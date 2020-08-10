@@ -34,7 +34,7 @@
     }
     public void LevelSkill(Skill s)
     {
-        Player.Instance.GainExperience(s, (long)Skill.GetExperienceRequired(s.Level) - s.Experience);
+        Player.Instance.GainExperience(s, (long)Skill.GetExperienceRequired(s.GetSkillLevelUnboosted()) - s.Experience);
     }
     public void LevelSkill(Skill s, int amt)
     {

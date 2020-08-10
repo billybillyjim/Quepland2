@@ -126,6 +126,27 @@
     }
   },
   {
+    "Name": "Chicken Jerky",
+    "Description": "Tastes like chicken.",
+    "value": 15,
+    "secondaryColor": "#f7ab3e",
+    "icon": "Jerky",
+    "experienceGained": "Culinary Arts:10",
+    "requirements": [
+      {
+        "skill": "Culinary Arts",
+        "skillLevel": 1
+      }
+    ],
+    "foodInfo": {
+      "healDuration": 300,
+      "healAmount": 1,
+      "healSpeed": 10,
+      "buffedSkill": "Swordsmanship",
+      "buffAmount": 5
+    }
+  },
+  {
     "Name": "Turkey Jerky",
     "Description": "It took a lot of work-y to get this turkey jerky.",
     "value": 30,

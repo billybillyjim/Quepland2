@@ -328,8 +328,12 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Feather",
+          "itemName": "Ice Feather",
           "weight": 50
+        },
+        {
+          "itemName": "Ice",
+          "weight": 30
         }
       ]
     },
@@ -355,8 +359,16 @@
     "dropTable": {
       "drops": [
         {
-          "itemName": "Feather",
+          "itemName": "Ice Feather",
           "weight": 50
+        },
+        {
+          "itemName": "Ice",
+          "weight": 30
+        },
+        {
+          "itemName": "Chicken",
+          "weight": 30
         }
       ]
     }

@@ -144,6 +144,10 @@
     public void ToggleSettings()
     {
         GameState.ShowSettings = !GameState.ShowSettings;
+        if (GameState.ShowSettings)
+        {
+            GameState.ShowExpTrackerSettings = false;
+        }
         GameState.UpdateState();
     }
 

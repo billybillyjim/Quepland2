@@ -8,7 +8,9 @@
         {
             @if (Player.Instance.LastGainedExp != null && IsBeingTracked(Player.Instance.LastGainedExp.Name))
             {
-                <div>@Player.Instance.LastGainedExp.Name Exp/Hr:@GetRate(Player.Instance.LastGainedExp)</div>
+                <div @onclick="@(() => ToggleSettings())" style="cursor:pointer;">
+                    @Player.Instance.LastGainedExp.Name Exp/Hr:@GetRate(Player.Instance.LastGainedExp)
+                </div>
                 <div>Total Gained:@(Player.Instance.LastGainedExp.Experience - GetTracker(Player.Instance.LastGainedExp.Name).StartExperience)</div>
                 <div>Time:@GetTracker(Player.Instance.LastGainedExp.Name).TimeSinceTrackerStarted.ToString()</div>
             }
@@ -29,20 +31,17 @@
     {
         @if (Player.Instance.LastGainedExp != null)
         {
-            <div>
+            <div @onclick="@(() => ToggleSettings())" style="cursor:pointer;">
                 @Player.Instance.LastGainedExp.Name (@Player.Instance.LastGainedExp.GetSkillLevelUnboosted())
             </div>
             <div>
                 @Player.Instance.LastGainedExp.Experience
             </div>
-            <div class="progress" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowItemTooltip(e, "To Level " + (Player.Instance.LastGainedExp.GetSkillLevelUnboosted() + 1), "" + Player.Instance.LastGainedExp.Experience + "/" + (long)Skill.GetExperienceRequired(Player.Instance.LastGainedExp.GetSkillLevelUnboosted()))))"
-             onmouseout="@(new Action(() => GameState.HideTooltip()))" >
+            <div class="progress" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, (Player.Instance.LastGainedExp.Progress) + "% to level " + (Player.Instance.LastGainedExp.GetSkillLevelUnboosted() + 1), "" + Player.Instance.LastGainedExp.Experience + "/" + (long)Skill.GetExperienceRequired(Player.Instance.LastGainedExp.GetSkillLevelUnboosted()))))"
+            @onmouseout="@(new Action(() => GameState.HideTooltip()))" >
                 <div class="progress-bar" style="background-color:#51d051;width:@(Player.Instance.LastGainedExp.Progress)%">
 
                 </div>
-            </div>
-            <div @onclick="@(() => ToggleSettings())" style="position:absolute;top:0;right:-25px;">
-                <img style="height:20px;width:20px;cursor:pointer;opacity:0.8" src="data/Images/Settings.png" />
             </div>
         }
     }
@@ -54,28 +53,41 @@
         <div>
             @Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience
         </div>
-        <div class="progress">
+        <div class="progress"   @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, (Player.Instance.Skills.Find(x => x.Name == SetSkill).Progress) + "% to level " + (Player.Instance.Skills.Find(x => x.Name == SetSkill).GetSkillLevelUnboosted() + 1), "" + Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience + "/" + (long)Skill.GetExperienceRequired(Player.Instance.Skills.Find(x => x.Name == SetSkill).GetSkillLevelUnboosted()))))"
+            @onmouseout="@(new Action(() => GameState.HideTooltip()))">
             <div class="progress-bar" style="background-color: #51d051; width: @(Player.Instance.Skills.Find(x => x.Name == SetSkill).Progress) %">
 
             </div>
         </div>
-        <div @onclick="@(() => ToggleSettings())" style="position:absolute;top:0;right:-25px;">
-            <img style="height:20px;width:20px;cursor:pointer;opacity:0.8" src="data/Images/Settings.png" />
-        </div>
     }
 
 </div>
-@if (ShowSettings)
+@if (GameState.ShowExpTrackerSettings)
 {
-    <div style="position:absolute;top:55px;right:0px;width:100%;height:300px;z-index:50;background-color:white;border:solid dimgray 1px;">
-        <CustomDropdownComponent DropdownItems="@skills" @bind-Value="@SetSkill" BoxText="@SetSkill"></CustomDropdownComponent>
+<div style="position:absolute;top:55px;right:0px;width:100%;height:300px;z-index:50;background-color:black;border:solid dimgray 1px;">
+    <div style="margin:5px;">
+        @if (ShowRate)
+        {
+            <button style="margin:5px;" class="btn btn-primary" @onclick="@(() => ShowRate = !ShowRate)">
+                Turn Rate Tracker Off
+            </button>
+        }
+        else
+        { <button style="margin:5px;" class="btn btn-primary" @onclick="@(() => ShowRate = !ShowRate)">
+                Turn Rate Tracker On
+            </button>
+        }
+
+    </div>
+    @if (ShowRate)
+    {
         <div style="display:flex;margin:5px;">
             @if (IsBeingTracked(SetSkill) == false)
             {
                 <button class="btn btn-primary" style="margin:5px;" @onclick="@(() => SetTracker(SetSkill))">
                     Track @SetSkill Exp Rate
                 </button>
-                @if(SetSkill == "Most Recent" && Player.Instance.LastGainedExp != null)
+                @if (SetSkill == "Most Recent" && Player.Instance.LastGainedExp != null)
                 {
                     <div style="margin:5px;line-height: 40px; font-size: large;">(@Player.Instance.LastGainedExp.Name)</div>
                 }
@@ -86,32 +98,23 @@
                     Reset @SetSkill  Exp Rate
                 </button>
                 <button style="margin:5px;" class="btn btn-primary" @onclick="@(() => PauseTracker(SetSkill))">
-                    Pause Tracking
+                    Cancel Tracking
                 </button>
             }
         </div>
-        <div style="margin:5px;">
-            @if (ShowRate)
-            {
-                <button style="margin:5px;" class="btn btn-primary" @onclick="@(() => ShowRate = !ShowRate)">
-                    Turn Rate Tracker Off
-                </button>
-            }
-            else
-            { <button style="margin:5px;" class="btn btn-primary" @onclick="@(() => ShowRate = !ShowRate)">
-                    Turn Rate Tracker On
-                </button>
-            }
+        <div >
+            <CustomDropdownComponent DropdownItems="@skills" @bind-Value="@SetSkill" BoxText="@SetSkill"></CustomDropdownComponent>
+        </div>
+    }
 
-        </div>
-    </div>
+
+</div>
 
 }
 
 
 @code {
 
-    private bool ShowSettings = false;
     private bool ShowRate = false;
     private List<string> skills = new List<string>();
     private string SetSkill = "Most Recent";
@@ -184,7 +187,11 @@
     }
     public void ToggleSettings()
     {
-        ShowSettings = !ShowSettings;
+        GameState.ShowExpTrackerSettings = !GameState.ShowExpTrackerSettings;
+        if (GameState.ShowExpTrackerSettings)
+        {
+            GameState.ShowSettings = false;
+        }
         GameState.UpdateState();
     }
     protected override void OnInitialized()

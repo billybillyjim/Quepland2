@@ -104,21 +104,21 @@ public class Player
             return 1;
         }
         double multi = 1;
-        if(s.Level < 100)
+        if(s.GetSkillLevel() < 100)
         {
-            multi = 1 - (s.Level * 0.005);
+            multi = 1 - (s.GetSkillLevel() * 0.005);
         }
-        else if(s.Level < 200)
+        else if(s.GetSkillLevel() < 200)
         {
-            multi = 1 - (0.5 + ((s.Level - 100) * 0.002));
+            multi = 1 - (0.5 + ((s.GetSkillLevel() - 100) * 0.002));
         }
-        else if(s.Level < 300)
+        else if(s.GetSkillLevel() < 300)
         {
-            multi = 1 - (0.7 + ((s.Level - 200) * 0.001));
+            multi = 1 - (0.7 + ((s.GetSkillLevel() - 200) * 0.001));
         }
         else
         {
-            multi = 1 - (0.8 + ((s.Level - 300) * 0.0005));
+            multi = 1 - (0.8 + ((s.GetSkillLevel() - 300) * 0.0005));
         }
         return Math.Max(multi, 0.01);
     }
@@ -431,7 +431,7 @@ public class Player
             Console.WriteLine("Failed to find skill:" + skill);
             return false;
         }
-        return s.Level >= lvl;
+        return s.GetSkillLevel() >= lvl;
     }
     public bool HasToolRequirement(GameItem item)
     {
@@ -470,7 +470,7 @@ public class Player
     {
         foreach(Skill s in Skills)
         {
-            s.Level = 0;
+            s.SetSkillLevel(0);
             s.Experience = 0;
         }
     }

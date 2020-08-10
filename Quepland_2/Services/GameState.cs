@@ -30,6 +30,7 @@ using System.Threading.Tasks;
     public static bool InitCompleted { get; set; } = false;
     public static bool ShowStartMenu { get; set; } = true;
     public static bool ShowSettings { get; set; }
+    public static bool ShowExpTrackerSettings { get; set; }
     private bool stopActions = false;
     private bool stopNoncombatActions = false;
     public bool IsStoppingNextTick { get; set; }
