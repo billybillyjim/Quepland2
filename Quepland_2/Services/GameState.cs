@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -24,7 +25,8 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "0.0.9";
+    public static string Version { get; set; } = "0.0.10";
+    public static List<Update> Updates { get; set; } = new List<Update>();
 
     public static string Location { get; set; } = "";
     public static bool InitCompleted { get; set; } = false;
@@ -802,6 +804,7 @@ using System.Threading.Tasks;
         await AreaManager.Instance.LoadAreas(Http);
         CurrentLand = AreaManager.Instance.GetLandByName("Quepland");
         UriHelper = URIHelper;
+        Updates = await Http.GetFromJsonAsync<List<Update>>("data/Updates.json");
         await ItemManager.Instance.LoadItems(Http);
         await Player.Instance.LoadSkills(Http);
         await NPCManager.Instance.LoadNPCs(Http);

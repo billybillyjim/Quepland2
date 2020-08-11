@@ -66,9 +66,25 @@ public static class SwampMaze
         set
         {
             currentMessage = value;
-            if(currentMessage > OpenMessages.Count)
+            if(currentMessage >= OpenMessages.Count)
             {
                 currentMessage = 0;
+            }
+        }
+    }
+    private static int currentTeleportMessage;
+    public static int CurrentTeleportMessage
+    {
+        get
+        {
+            return currentTeleportMessage;
+        }
+        set
+        {
+            currentTeleportMessage = value;
+            if (currentTeleportMessage >= TeleportMessages.Count)
+            {
+                currentTeleportMessage = 0;
             }
         }
     }

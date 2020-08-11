@@ -1,0 +1,18 @@
+[
+  {
+    "versionNumber": "0.0.10",
+    "updates": [
+      "Added update list to start menu.",
+      "Filled out remaining monster drop tables.",
+      "Players can now right click a blocked area to withdraw the requirement from the bank if they have it.",
+      "Improved shop UI so players won't accidentally buy anything anymore.",
+      "Buy X is now available in shops.",
+      "Added Discord and Patreon links to start menu.",
+      "Added more fishing rods.",
+      "Removed duplicate items.",
+      "Completed the Swampwood maze.",
+      "Removed a number of debugging buttons from the game.",
+      "Completed more of the Togaru Hills region."
+    ]
+  }
+]

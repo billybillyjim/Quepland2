@@ -43,8 +43,8 @@
         else
         {
             @if (selectedMode == "Normal" && hasSave ||
-            selectedMode == "Hardcore" && hasHardcore ||
-            selectedMode == "Ultimate" && hasUltimate)
+         selectedMode == "Hardcore" && hasHardcore ||
+         selectedMode == "Ultimate" && hasUltimate)
             {
                 if (hasShownWarning == false)
                 {
@@ -67,6 +67,32 @@
     {
         <button class="btn btn-primary" disabled>Begin New Game</button>
     }
+
+    @if (GameState.Updates.Count > 0 && showAllUpdates)
+    {
+        <div style="margin-top:10px;">
+            <button class="btn btn-primary" onclick="@(new Action(() => showAllUpdates = false))">Hide Updates</button>
+        </div>
+        <div style="height:200px;width:800px;overflow-y:scroll;background-color:dimgray;margin-top:10px;margin-bottom:10px;">
+            @foreach (Update update in GameState.Updates)
+            {
+                <div>
+                    <h2>Version @update.VersionNumber</h2>
+                    @foreach (string u in update.Updates)
+                    {
+                        <div>@u</div>
+                    }
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div style="margin-top:10px;">
+            <button class="btn btn-primary" onclick="@(new Action(() => showAllUpdates = true))">See Updates</button>
+        </div>
+    }
+
     <div style="text-align: center;">
         <a target="_blank" href="https://www.patreon.com/billybillyjim"><img style="height:50px;width:50px;background-color:white;border-radius:5px;padding:5px;cursor:pointer;" src="/data/Images/PatreonMark.png" /></a> Please consider supporting development on <a target="_blank" href="https://www.patreon.com/billybillyjim">Patreon</a>
     </div>
@@ -78,6 +104,7 @@
         Note:For best results, Quepland needs to be played in a separate window. Most browsers will pause the game after a few minutes in a background tab.
     </div>
 </div>
+
         <!--
             <br />
             <div style="margin-left:-10px;">
@@ -113,6 +140,7 @@
     bool hasHardcore = false;
     bool hasUltimate = false;
     bool hasShownWarning = false;
+    bool showAllUpdates = false;
     public List<string> GetGameModes()
     {
         List<string> modes = new List<string>();

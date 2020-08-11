@@ -6,7 +6,7 @@
     "description": "You reach the foot of a pointed mountain range. A trail continues up into the hills. It curves along a large oblong lake. Here and there the water bubbles violently before returning to silence.",
     "areaURL": "GreatShoeLake",
     "actions": [
-      "Go Fishing:Crab,Angry Crab,Giant Carp"
+      "Go Fishing:Crab,Angry Crab,Giant Carp,Carp"
     ],
     "unlockableAreas": [
       {
@@ -16,8 +16,11 @@
 
     ],
     "monsters": [
-      "Bandit",
-      "Big Bandit"
+      "Kappa",
+      "Small Kappa",
+      "Fishman",
+      "Manfish",
+      "Baobhan Sith"
     ]
   },
   {
@@ -78,9 +81,6 @@
     "image": "Forest",
     "description": "You enter the tree nursery. There are many trees perfect for chopping all around you, though it appears as though they are owned by someone else.",
     "areaURL": "TreeNursery",
-    "actions": [
-      "Go Fishing:Crab,Angry Crab"
-    ],
     "npcs": [
       "Tree Guard"
     ]
@@ -89,7 +89,7 @@
     "name": "West Tsu City",
     "id": 93,
     "image": "City",
-    "description": "As you enter the city you find a large temple complex covers the western region. The main road leads directly to the center of town, where a massive castle towers over the little houses.",
+    "description": "The city is surrounded by a great wall. The only entrance is a massive gate, colored bright red. As you enter you find a large temple complex covers the western region. The main road leads directly to the center of town, where a massive castle towers over the little houses.",
     "areaURL": "WestTsuCity",
     "unlockableAreas": [
       {
@@ -103,9 +103,8 @@
     "name": "Central Tsu City",
     "id": 94,
     "image": "City",
-    "description": "",
+    "description": "The center of the city is bustling with activity. There are a number of businesses along the sides of the road.",
     "areaURL": "CentralTsuCity",
-    "dojoURL": "ZuchiDojo",
     "unlockableAreas": [
       {
         "areaURL": "NorthTsuCity",
@@ -121,13 +120,18 @@
         "name": "Tsu Castle",
         "buttonText": "Visit the castle",
         "url": "TsuCastle",
-        "description": "This is the castle."
+        "description": "The castle towers over the city below. The guards here are willing to train anyone in the art of archery."
       },
       {
-        "name": "Archery Shop",
-        "buttonText": "Archery Shop",
-        "url": "ArcheryShop",
-        "description": "This is the archery shop."
+        "name": "Tawaya's Tannery",
+        "buttonText": "Tannery",
+        "url": "TawayasTannery",
+        "description": "This large tannery has a public use area. You can tan hides and make jerky here.",
+        "tanningSlots": [
+          {},
+          {},
+          {}
+        ]
       }
 
     ]
@@ -136,7 +140,7 @@
     "name": "North Tsu City",
     "id": 95,
     "image": "City",
-    "description": "",
+    "description": "The north of the city is mostly residential, but it is also home to the Alchemist's Guild, the only place where alchemy is studied in the whole land.",
     "areaURL": "NorthTsuCity",
     "unlockableAreas": [
       {
@@ -149,14 +153,9 @@
         "name": "Alchemy Guild",
         "buttonText": "Enter the Alchemy Guild",
         "url": "AlchemyGuild",
-        "description": "This is the alchemy guild."
-      },
-      {
-        "name": "Archery Shop",
-        "buttonText": "Archery Shop",
-        "url": "ArcheryShop",
-        "description": "This is the archery shop."
+        "description": "As you approach the entrance you find a large sign posted on the door. \"CLOSED FOR RENOVATIONS\""
       }
+
       
     ]
   },
@@ -164,14 +163,59 @@
     "name": "East Tsu City",
     "id": 96,
     "image": "City",
-    "description": "",
+    "description": "The eastern wing of the city is the market district. All sorts of useless bobbles and toys are for sale for the many tourists who pass by here every year on their way to one of the great cities to the east.",
     "areaURL": "EastTsuCity",
     "buildings": [
       {
         "name": "Elemental Emporium",
         "buttonText": "Elemential Emporium",
         "url": "ElementalEmporium",
-        "description": "It's the elemental emporium!"
+        "description": "The shop is dark. Its only light source comes from colored torches on each wall. It's clearly for show, as the shop owner seems to have no idea about alchemy at all.",
+        "shops": [
+          {
+            "name": "Elemental Emporium",
+            "limitBoughtItemsToSoldItems": true,
+            "costMultiplier": 10,
+            "itemNames": [
+              "Carquen",
+              "Quencium",
+              "Oxyquen",
+              "Nitroquen",
+              "Siliquen",
+              "Quephorus",
+              "Quelfur",
+              "Bariquem"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Archery Shop",
+        "buttonText": "Archery Shop",
+        "url": "ArcheryShop",
+        "description": "The shop is full of archery equipment, no surprises there. The only thing out of place is the extraordinarily large teddy bear lofted behind the counter with two arrows sticking out from its chest.",
+        "shops": [
+          {
+            "name": "Andy's Archery Supplies and Such",
+            "limitBoughtItemsToSoldItems": true,
+            "costMultiplier": 3,
+            "itemNames": [
+              "Oak Bow",
+              "Sugar Maple Bow",
+              "Mesquite Bow",
+              "Ironwood Bow",
+              "White Pine Arrow",
+              "Poplar Arrow",
+              "Oak Arrow",
+              "Maple Arrow",
+              "Birch Arrow",
+              "Mesquite Arrow",
+              "Wood Carving Knife",
+              "Bowstring"
+            ]
+
+          }
+        ]
       }
     ]
   },
@@ -179,7 +223,7 @@
     "name": "Tangei Gardens",
     "id": 97,
     "image": "Garden",
-    "description": "A garden",
+    "description": "The gardens are ancient, and have been used as a place of quiet relaxation and meditation for as long as people have lived in Tsu. You can practice yoga here as well.",
     "areaURL": "TangeiGardens"
   }
 ]

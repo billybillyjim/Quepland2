@@ -28,47 +28,7 @@ else
             await GameState.LoadData(Http, UriHelper, JSRuntime);
 
         }
-        //Player.Instance.GainExperience("Strength:1000000000");
-        //Player.Instance.GainExperience("Woodcutting:1000");
-        //Player.Instance.Inventory.AddItem("Shuniku Berries");
-        //Player.Instance.Inventory.AddItem("Wood Carving Knife");
-        //Player.Instance.Inventory.AddMultipleOfItem("Coins", 1500000);
-        //Player.Instance.Inventory.AddItem("Rabbit Pants");
-        //Player.Instance.Inventory.AddItem("Mound's Map");
-        //Player.Instance.Inventory.AddItem("Buck");
-        //Player.Instance.Inventory.AddItem("Small Fishing Rod");
-        Player.Instance.Inventory.AddItem("Mound's Map");
-        Player.Instance.Inventory.AddMultipleOfItem(ItemManager.Instance.GetItem("Unidentified Gem", 0, "Rough Emerald"), 3);
-        Player.Instance.Inventory.AddMultipleOfItem(ItemManager.Instance.GetItem("Coins", 0, ""), 1000);
-        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItem("Unidentified Gem", 0, "Rough Ruby"));
-        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItem("Unidentified Gem", 0, "Rough Sapphire"));
-        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItem("Unidentified Gem", 0, "Rough Lizardite"));
-        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItem("Unidentified Gem", 0, "Rough Amberite"));
-        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItem("Unidentified Gem", 0, "Rough Diamond"));
-        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItem("Unidentified Gem", 0, "Rough Amethyst"));
-        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItem("Unidentified Gem", 0, "Rough Topaz"));
-        Bank.Instance.Inventory.AddMultipleOfItem("White Pine Logs", 3000);
-        Bank.Instance.Inventory.AddMultipleOfItem("Feather", 3000);
-        Bank.Instance.Inventory.AddMultipleOfItem("Wood Carving Knife", 3000);
-        Bank.Instance.Inventory.AddMultipleOfItem("White Pine Arrow Shafts", 3000);
-        Bank.Instance.Inventory.AddMultipleOfItem("Copper Hammer", 3000);
-        //Player.Instance.Inventory.AddItem("Ultimate Test Weapon Two, Electric Boogaloo");
-        //Player.Instance.Inventory.AddItem("Rice");
-        //Player.Instance.Inventory.AddItem("Ultimate Test Weapon");
-        //AreaManager.Instance.GetAreaByName("Queple Cave Smithy").Unlock();
-        //Player.Instance.CurrentFollower = FollowerManager.Instance.Followers[0];
-        Bank.Instance.Inventory.IsLoadingSave = true;
-        foreach (GameItem item in ItemManager.Instance.Items)
-        {
 
-            Bank.Instance.Inventory.AddItem(item);
-
-        }
-        Bank.Instance.Inventory.IsLoadingSave = false;
-        foreach (Follower f in FollowerManager.Instance.Followers)
-        {
-            f.IsUnlocked = true;
-        }
         Player.Instance.CurrentHP = 50;
         Bank.Instance.Inventory.AddItem("Stone Axe");
 
