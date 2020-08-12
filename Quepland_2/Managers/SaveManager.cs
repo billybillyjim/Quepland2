@@ -36,7 +36,7 @@ public static class SaveManager
             await SetItemAsync("Followers:" + mode, Compress(FollowerManager.Instance.GetSaveData()));
             await SetItemAsync("TanningInfo:" + mode, Compress(GetTanningSave()));
             await SetItemAsync("Dojos:" + mode, GetSaveString(AreaManager.Instance.GetDojoSaveData()));
-
+            await SetItemAsync("AFKAction:" + mode, GetSaveString(GameState.CurrentAFKAction));
 
             LastSave = DateTime.UtcNow;
             GameState.IsSaving = false;
@@ -127,6 +127,10 @@ public static class SaveManager
         if(await ContainsKeyAsync("Dojos:" + mode))
         {
             AreaManager.Instance.LoadDojoSaveData(JsonConvert.DeserializeObject<List<DojoSaveData>>(Decompress(await GetItemAsync<string>("Dojos:" + mode))));
+        }
+        if(await ContainsKeyAsync("AFKAction:" + mode))
+        {
+            GameState.CurrentAFKAction = (JsonConvert.DeserializeObject<AFKAction>(Decompress(await GetItemAsync<string>("AFKAction:" + mode))));
         }
         Console.WriteLine(Compress("This is a test of what I can do"));
     }

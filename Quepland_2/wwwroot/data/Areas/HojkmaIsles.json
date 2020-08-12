@@ -53,6 +53,30 @@
             ]
 
           }
+        ],
+        "afkActions": [
+          {
+            "buttonText": "Lift Weights",
+            "expPerHour": 10000,
+            "skillTrained": "Strength",
+            "bonusExp": 3000,
+            "requirements": [
+              {
+                "itemName": "Gym Membership Card"
+              }
+            ]
+          },
+          {
+            "buttonText": "Run Laps",
+            "expPerHour": 10000,
+            "skillTrained": "Deftness",
+            "bonusExp": 3000,
+            "requirements": [
+              {
+                "itemName": "Gym Membership Card"
+              }
+            ]
+          }
         ]
       }
     ]

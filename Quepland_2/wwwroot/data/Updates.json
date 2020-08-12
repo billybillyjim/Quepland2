@@ -12,7 +12,14 @@
       "Removed duplicate items.",
       "Completed the Swampwood maze.",
       "Removed a number of debugging buttons from the game.",
-      "Completed more of the Togaru Hills region."
+      "Completed more of the Togaru Hills region.",
+      "Follower inventories are now hidden on the equipment screen.",
+      "Didn't fix a bug with autosmithing, but now it's far less obvious that it's happening. Maybe someday I'll figure out what's happening...",
+      "Fixed a typo with bronze smithing recipes.",
+      "Improved the mayor's assistant quest.",
+      "Added a notification for when an area's traps are ready.",
+      "Improved the shop UI a bit.",
+      "Added more afk actions to make training without the game open more possible."
     ]
   }
 ]

@@ -6,7 +6,7 @@
     <ItemViewerComponent Item="@SelectedItem"></ItemViewerComponent>
 
 }
-<div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:3px;margin:2px;border-radius:0.25rem;max-height:600px;overflow-y:auto" class="custom-scroll">
+<div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:3px;margin:2px;border-radius:0.25rem;max-height:@(GetMaxHeight())px;overflow-y:auto" class="custom-scroll">
     @foreach (KeyValuePair<GameItem, int> item in Player.Instance.Inventory.GetItems().OrderBy(x => x.Key.ID))
     {
         if (item.Key != null)
@@ -33,7 +33,7 @@
         <div onclick="@(new Action<MouseEventArgs>((args) => DeselectItem()))"><ItemBoxComponent Item="@null"></ItemBoxComponent></div>
     }
 </div>
-@if (Player.Instance.CurrentFollower != null)
+@if (Player.Instance.CurrentFollower != null && HideFollowerView == false)
 {
 <div style="margin-left:5px;">
 
@@ -71,14 +71,14 @@
 </div>
     <div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:8px;margin:5px;border-radius:0.25rem">
 
-        @foreach (KeyValuePair<GameItem, int> item in Player.Instance.CurrentFollower.Inventory.GetItems().OrderBy(x => x.Key.ID))
+        @foreach (KeyValuePair<GameItem, int> item in GetFollowerInventory())
         {
             if (item.Key != null)
             {
                 <ItemBoxComponent Item="@item.Key" ShowAmount="@false" shouldRender="@item.Key.Rerender" Inventory="@Player.Instance.CurrentFollower.Inventory"></ItemBoxComponent>
             }
         }
-        @for (int i = 0; i < Player.Instance.CurrentFollower.Inventory.GetSize() - Player.Instance.CurrentFollower.Inventory.GetItems().Count; i++)
+        @for (int i = 0; i < GetEmptyFollowerInventorySpaces(); i++)
         {
             <ItemBoxComponent Item="@null"></ItemBoxComponent>
         }
@@ -95,6 +95,8 @@
     public string CustomAction { get; set; }
     [Parameter]
     public bool HideItemViewer { get; set; }
+    [Parameter]
+    public bool HideFollowerView { get; set; }
 
     private void BankItem(GameItem item, int amount)
     {
@@ -190,6 +192,22 @@
             }
             GameState.ShowContextMenu(args);
         }
+    }
+    private int GetMaxHeight()
+    {
+        if(Player.Instance.CurrentFollower == null)
+        {
+            return 600;
+        }
+        return 490;
+    }
+    public List<KeyValuePair<GameItem, int>> GetFollowerInventory()
+    {
+        return Player.Instance.CurrentFollower.Inventory.GetItems().OrderBy(x => x.Key.ID).ToList();
+    }
+    public int GetEmptyFollowerInventorySpaces()
+    {
+        return Player.Instance.CurrentFollower.Inventory.GetSize() - Player.Instance.CurrentFollower.Inventory.GetItems().Count;
     }
     protected override void OnInitialized()
     {

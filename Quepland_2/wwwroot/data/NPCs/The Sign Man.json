@@ -9,12 +9,25 @@
     },
     {
       "buttonText": "Can you teach me to make a sign?",
-      "responseText": "Ooh, sorry 'bout this mister but I can't go throwin' away my livelihood by tellin' everybody who walks in that I can make sign ink with shuniku berries.",
+      "responseText": "Ooh, sorry 'bout this mister but I can't go throwin' away my livelihood by tellin' everybody who walks in that I can make sign ink with shuniku berries or that I carve white pine logs with my trusty wood carvin' knife.",
       "depth": 1
     },
     {
       "buttonText": "Can you help me make a sign?",
       "responseText": "I sure can! I love makin' signs, just bring me the materials and I'd be happy to help you.",
+      "quest": "Mayor's Assistant",
+      "newQuestProgressValue": 3,
+      "requirements": [
+        {
+          "quest": "Mayor's Assistant",
+          "minimumQuestProgress": 2,
+          "maximumQuestProgress": 4
+        }
+      ]
+    },
+    {
+      "buttonText": "What do you need to make a sign?",
+      "responseText": "I'll need a few things. First; It'll take three logs, white pine is best for seein' what's written on it. And I'll need some berries to make my special ink for writin' the words for the sign. I usually grab my berries from the woods down before the village. It takes a skilled woodworker to make a sign, ya know.",
       "quest": "Mayor's Assistant",
       "newQuestProgressValue": 4,
       "requirements": [
@@ -26,23 +39,12 @@
       ]
     },
     {
-      "buttonText": "What do you need to make a sign?",
-      "responseText": "I'll need a few things. First; It'll take three logs, white pine is best for seein' what's written on it. And I'll need some berries to make my special ink for writin' the words for the sign. I usually grab my berries from the woods down before the village.",
-      "requirements": [
-        {
-          "quest": "Mayor's Assistant",
-          "minimumQuestProgress": 2,
-          "maximumQuestProgress": 4
-        }
-      ]
-    },
-    {
       "buttonText": "I've got the things to make a sign.",
-      "responseText": "Great! Here ya are, one \"No Suliciters\" sign. Sorry 'bout the spellin', never learned how.",
+      "responseText": "Great! Here ya are, one \"No Sulicitin\" sign. Sorry 'bout the spellin', never learned how.",
       "quest": "Mayor's Assistant",
       "newQuestProgressValue": 5,
       "consumeRequiredItems": true,
-      "itemOnTalk": "No Solicitin Sign",
+      "itemOnTalk": "No Sulicitin Sign",
       "requirements": [
         {
           "quest": "Mayor's Assistant",

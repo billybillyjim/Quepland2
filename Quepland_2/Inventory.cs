@@ -1,11 +1,7 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
+
 
 
 public class Inventory
@@ -346,7 +342,7 @@ public class Inventory
     /// <returns></returns>
     public int RemoveItems(GameItem item, int amount)
     {
-        if(amount <= 0)
+        if(amount <= 0 || item == null)
         {
             return 0;
         }
@@ -401,7 +397,7 @@ public class Inventory
     }
     public bool RemoveRecipeItemsFromFollower(Recipe recipe)
     {
-        if (recipe.CanCreateFromInventory(Player.Instance.CurrentFollower.Inventory) == false)
+        if (recipe.CanCreateFromInventory(this) == false)
         {
             return false;
         }

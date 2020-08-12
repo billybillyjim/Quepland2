@@ -1,25 +1,37 @@
 ﻿@inject GameState GameState
 @implements IDisposable
 
-    <div>
-        @foreach (Skill s in Player.Instance.Skills)
-        {
+<div>
+    @foreach (Skill s in Player.Instance.Skills)
+    {
         <div>
             <button @onclick="@(() => LevelSkill(s))">@s.Name</button>
             <button @onclick="@(() => LevelSkill(s, 5))">5</button>
             <button @onclick="@(() => LevelSkill(s, 10))">10</button>
         </div>
-        <br/>
-        }
+    }
+    <div>
         <button @onclick="@(() => UnlockWorld())">
             Unlock World
         </button>
     </div>
+    <div>
+        <button @onclick="@(() => UnlockFollowers())">
+            Unlock Followers
+        </button>
+    </div>
+    <button @onclick="@(() => GetMoney())">
+        Get 1M
+    </button>
+</div>
 
 
 
 @code {
-
+    public void GetMoney()
+    {
+        Player.Instance.Inventory.AddMultipleOfItem(ItemManager.Instance.GetItemByName("Coins"), 1000000);
+    }
     public void UnlockWorld()
     {
         foreach(Region r in AreaManager.Instance.Regions)
@@ -30,6 +42,13 @@
         {
             a.IsUnlocked = true;
             a.IsHidden = false;
+        }
+    }
+    public void UnlockFollowers()
+    {
+        foreach(Follower f in FollowerManager.Instance.Followers)
+        {
+            f.IsUnlocked = true;
         }
     }
     public void LevelSkill(Skill s)

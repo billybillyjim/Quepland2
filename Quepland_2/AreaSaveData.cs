@@ -9,4 +9,5 @@ public class AreaSaveData
 	public bool TripIsActive { get; set; }
 	public DateTime TripStartTime { get; set; }
 	public DateTime TripReturnTime { get; set; }
+ 
 }

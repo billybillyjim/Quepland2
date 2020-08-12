@@ -100,7 +100,7 @@ public class Dialog
 			if (NewQuestProgressValue == 1 && QuestManager.Instance.GetQuestByName(Quest).Progress == 0 && HasStartedQuest == false)
 			{
 				HasStartedQuest = true;
-				MessageManager.AddMessage("You've started the quest " + Quest + ".", "#00f00");
+				MessageManager.AddMessage("You've started the quest " + Quest + ".", "#00ff00");
 			}
 			QuestManager.Instance.GetQuestByName(Quest).Progress = NewQuestProgressValue;
             if (CompleteQuest)

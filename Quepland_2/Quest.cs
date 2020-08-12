@@ -10,7 +10,7 @@ public class Quest
 	public int Progress { get { return _progress; } 
 		set {
 			_progress = value;
-			if (_progress == ProgressToComplete) { Complete(); } 
+			if (_progress >= ProgressToComplete && IsComplete == false) { Complete(); } 
 		} 
 	}
 	public int ProgressToComplete { get; set; }

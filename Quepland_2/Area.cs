@@ -74,6 +74,7 @@ public class Area
     public List<Shop> Shops { get; set; } = new List<Shop>();
     [JsonIgnore]
     public List<Requirement> Requirements { get; set; } = new List<Requirement>();
+    public List<AFKAction> AFKActions { get; set; } = new List<AFKAction>();
 
     public bool HasRequirements()
     {
@@ -85,6 +86,14 @@ public class Area
             }
         }
         return true;
+    }
+    public bool TrapSlotIsReady()
+    {
+        if(TrapSlot == null)
+        {
+            return false;
+        }
+        return TrapSlot.HarvestTime.CompareTo(DateTime.UtcNow) >= 0;
     }
     public string GetRequirementTooltip()
     {
@@ -159,6 +168,7 @@ public class Area
         {
             HuntingTripInfo.LoadSaveData(data.TripIsActive, data.TripReturnTime, data.TripStartTime);
         }
+        
     }
 }
 

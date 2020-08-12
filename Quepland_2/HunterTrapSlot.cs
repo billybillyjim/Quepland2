@@ -23,7 +23,6 @@ public class HunterTrapSlot
             Drop drop = DropTable.GetDrop();
             double chance = 1;
             GameItem dropItem = ItemManager.Instance.GetItemByName(drop.ItemName);
-            Console.WriteLine("Got a " + drop.ItemName);
             foreach (Requirement req in dropItem.Requirements)
             {
                 if(req.Skill == "Hunting")

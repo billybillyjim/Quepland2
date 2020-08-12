@@ -229,11 +229,16 @@ public class BattleManager
                 Player.Instance.GainExperience("Strength", total);
                 MessageManager.AddMessage("You whack the " + Target.Name + " with your bow for " + total + " damage!");
             }
-            else
+            else if(Player.Instance.GetWeapon().EnabledActions == "Archery")
             {
                 Player.Instance.GainExperienceFromWeapon(Player.Instance.GetWeapon(), total);
                 MessageManager.AddMessage("You hit the " + Target.Name + " for " + total + " damage!");
                 Player.Instance.Inventory.RemoveItems(Player.Instance.Inventory.GetStrongestArrow(), 1);
+            }
+            else
+            {
+                Player.Instance.GainExperienceFromWeapon(Player.Instance.GetWeapon(), total);
+                MessageManager.AddMessage("You hit the " + Target.Name + " for " + total + " damage!");
             }
             
         }

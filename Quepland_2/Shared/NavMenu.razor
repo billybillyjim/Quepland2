@@ -14,7 +14,7 @@
 </div>
 
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu" style="width:300px!important">
-    @if (GameState.IsOnHuntingTrip == false)
+    @if (GameState.IsOnHuntingTrip == false && GameState.CurrentAFKAction == null)
     {
 
         <ul class="nav flex-column">
@@ -52,6 +52,10 @@
                                         @if (a.HasUnlockableAreas())
                                         {
                                             <div style="margin:5px;background-color:sandybrown;border-radius:0.5rem;height:12px;width:12px;position:absolute;top:15px;right:10px;"></div>
+                                        }
+                                        @if (a.TrapSlotIsReady())
+                                        {
+                                            <div style="margin:5px;background-color:white;border-radius:0.5rem;height:12px;width:12px;position:absolute;top:0px;right:10px;"><img src="data/Images/Carcass.png" style="height:12px;width:12px;margin-top:-14px;"/></div>
                                         }
                                     </div>
                                 </li>
@@ -92,8 +96,9 @@
             {
                 <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, SaveManager.LastSave.ToLocalTime().ToLongTimeString() + "\n" + SaveManager.LastSave.ToLocalTime().ToLongDateString(), false, true)))"
                      onmouseout="@(new Action(() => GameState.HideTooltip()))">
+
                     Last Save:@SaveManager.LastSave.ToLocalTime().ToShortTimeString()
-                </div>
+                    </div>
             }
             else
             {

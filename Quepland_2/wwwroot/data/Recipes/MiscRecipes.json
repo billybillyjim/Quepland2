@@ -99,5 +99,35 @@
       }
     ],
     "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "No Soliciting Sign",
+    "ingredients": [
+      {
+        "itemName": "White Pine Logs",
+        "amount": 3
+      },
+      {
+        "itemName": "Shuniku Berries",
+        "amount": 3
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "amount": 1,
+        "destroyOnUse": false
+      }
+    ],
+    "recipeActionString": "You start fashioning a small wooden sign...",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 10
+      },
+      {
+        "quest": "Mayor's Assistant",
+        "minimumQuestProgress": 4    
+      }
+    ],
+    "maxOutputsPerAction": 1
   }
 ]

@@ -23,6 +23,14 @@
     "icon": "Knife"
   },
   {
+    "Name": "No Soliciting Sign",
+    "Description": "A nicely written sign.",
+    "gatherString": "You paint letters neatly onto the sign.",
+    "value": 2,
+    "gatherSpeed": 8,
+    "icon": "Sign"
+  },
+  {
     "Name": "Rock Tumbler",
     "Description": "A round box full of hard rocks. You can smooth gemstones down with it.",
     "value": 5000,

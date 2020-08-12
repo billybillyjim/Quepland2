@@ -68,7 +68,7 @@
     "outputItemName": "Molten Bronze Bar",
     "ingredients": [
       {
-        "itemName": "Brass Bar"
+        "itemName": "Bronze Bar"
       }
     ],
     "requirements": [

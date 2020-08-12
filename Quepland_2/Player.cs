@@ -412,6 +412,7 @@ public class Player
         {
             GainExperience(item.ExperienceGained);
             MessageManager.AddMessage(item.GatherString);
+            
         }
         return true;
     }

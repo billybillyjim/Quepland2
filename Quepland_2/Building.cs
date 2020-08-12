@@ -15,6 +15,7 @@ public class Building
 	public List<Shop> Shops { get; set; } = new List<Shop>();
 	public List<TanningSlot> TanningSlots { get; set; } = new List<TanningSlot>();
     public List<Requirement> Requirements { get; set; } = new List<Requirement>();
+    public List<AFKAction> AFKActions { get; set; } = new List<AFKAction>();
     public int LoadedTanningSlotsIterator;
 
     public bool HasRequirements()

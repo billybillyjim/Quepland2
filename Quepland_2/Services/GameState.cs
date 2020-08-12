@@ -37,6 +37,7 @@ using System.Threading.Tasks;
     private bool stopNoncombatActions = false;
     public bool IsStoppingNextTick { get; set; }
     public static bool IsOnHuntingTrip { get; set; } 
+    public static AFKAction CurrentAFKAction { get; set; }
     private Timer GameTimer { get; set; }
     public int testInt = 0;
     private static Guid _guid;
@@ -94,7 +95,7 @@ using System.Threading.Tasks;
     public int MinWindowWidth { get; set; } = 600;
     public int SmithingStage;
     public int AlchemyStage;
-    private int AutoSmithedItemCount { get; set; } = 0;
+    public int AutoSmithedItemCount { get; set; } = 0;
 
     private QuestTester QuestTester = new QuestTester();
     private RecipeTester RecipeTester = new RecipeTester();
@@ -123,7 +124,7 @@ using System.Threading.Tasks;
 
     private async Task Tick()
     {
-        if (IsOnHuntingTrip)
+        if (IsOnHuntingTrip || CurrentAFKAction != null)
         {
             CurrentTick++;
             StateHasChanged();
@@ -135,7 +136,7 @@ using System.Threading.Tasks;
         }
         else if (stopNoncombatActions)
         {
-            ClearNonCombatActions();
+            ClearNonCombatActions(); 
         }
         if (TicksToNextAction <= 0 && CurrentGatherItem != null)
         {
@@ -319,6 +320,10 @@ using System.Threading.Tasks;
                 }
             }
 
+        }
+        if(Player.Instance.Inventory.GetAvailableSpaces() == 0)
+        {
+            CurrentGatherItem = null;
         }
         return true;
         
@@ -572,7 +577,7 @@ using System.Threading.Tasks;
         }
         return false;
     }
-    private bool DoAutoSmithing()
+    private void DoAutoSmithing()
     {
         if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
         {
@@ -580,24 +585,27 @@ using System.Threading.Tasks;
             {
                 if (Player.Instance.CurrentFollower.Inventory.RemoveRecipeItemsFromFollower(CurrentSmithingRecipe))
                 {
-                    MessageManager.AddMessage(Player.Instance.CurrentFollower.Name + " helps hammer the heated bar into shape.");
-                    Player.Instance.CurrentFollower.TicksToNextAction = Player.Instance.CurrentFollower.AutoCollectSpeed;               
-                    return true;
+                    MessageManager.AddMessage(Player.Instance.CurrentFollower.Name + " helps hammer the heated bars into shape.");
+                    Player.Instance.CurrentFollower.TicksToNextAction = Player.Instance.CurrentFollower.AutoCollectSpeed * AutoSmithedItemCount;
+                    return;
                 }
                 else
                 {
                     MessageManager.AddMessage("Together you finish hammering out the last " + CurrentSmithingRecipe.Output + ".");
                     SmithingStage++;
-                    return true;
+                    return;
                 }
             }
             else
             {
+                if(Player.Instance.CurrentFollower.TicksToNextAction % Player.Instance.CurrentFollower.AutoCollectSpeed == 0)
+                {
+                    MessageManager.AddMessage(Player.Instance.CurrentFollower.Name + " helps hammer another bar into shape.");
+                }
                 Player.Instance.CurrentFollower.TicksToNextAction--;
-                return true;
+                return;
             }
         }
-        return false;
     }
     private void DoAutoWithdrawal()
     {

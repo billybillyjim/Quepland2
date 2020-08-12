@@ -46,6 +46,7 @@
         set
         {
             s = value;
+            Product = "";
             UpdateSmithables();
         }
     }
@@ -104,6 +105,10 @@
     {
         if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
         {
+            if (GameState.SmithingStage == 2)
+            {
+                return "width:" + (100 - ((double)Player.Instance.CurrentFollower.TicksToNextAction / (Player.Instance.CurrentFollower.AutoCollectSpeed * GameState.AutoSmithedItemCount)) * 100d) + "%";
+            }
             return "width:" + (100 - ((double)Player.Instance.CurrentFollower.TicksToNextAction / Player.Instance.CurrentFollower.AutoCollectSpeed) * 100d) + "%";
         }
         if (GameState.CurrentSmeltingRecipe != null)

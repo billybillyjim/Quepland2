@@ -37,7 +37,7 @@
     "isSellable": false
   },
   {
-    "Name": "No Solicitin Sign",
+    "Name": "No Sulicitin Sign",
     "Description": "A poorly written sign.",
     "gatherString": "You get an ugly sign.",
     "value": 0,

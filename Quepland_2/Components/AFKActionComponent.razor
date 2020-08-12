@@ -1,0 +1,104 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (AFKAction != null)
+{
+<div style="display:flex;">
+    @if (GameState.CurrentAFKAction == AFKAction)
+    {
+        if (AFKAction.IsReady())
+        {
+            <div>
+                <button class="btn btn-primary" @onclick="@(() => CompleteAFKing())">Reflect on your experiences</button>
+            </div>
+        }
+        else if (AFKAction.IsActive)
+        {
+            <div>
+                <button class="btn btn-primary" @onclick="@(() => CancelAFKing())">Cancel training</button>
+            </div>
+        }
+    }
+    else
+    {
+        @if (AFKAction.HasRequirements())
+        {
+            @if (showHours)
+            {
+                <div style="margin:3px;">
+                    <button class="btn btn-primary" @onclick="@(() => ToggleHours())">@AFKAction.ButtonText</button>
+                </div>
+                <div style="margin:3px;">
+                    <button class="btn btn-primary" @onclick="@(() => StartAFKing(1))">1 Hour</button>
+                </div>
+                <div style="margin:3px;">
+                    <button class="btn btn-primary" @onclick="@(() => StartAFKing(4))">4</button>
+                </div>
+                <div style="margin:3px;">
+                    <button class="btn btn-primary" @onclick="@(() => StartAFKing(8))">8</button>
+                </div>
+            }
+            else
+            {
+                <div style="margin:3px;">
+                    <button class="btn btn-primary" @onclick="@(() => ToggleHours())">@AFKAction.ButtonText</button>
+                </div>
+            }
+        }
+else
+       {
+        <div style="margin:3px;">
+            <button class="btn btn-primary" style="opacity:0.5" @onmouseover= "@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, AFKAction.GetRequirementTooltip())))"
+            @onmouseout = "@(new Action(() => GameState.HideTooltip()))">@AFKAction.ButtonText</button>
+        </div>
+    }
+}
+</div>
+}
+
+@code {
+    [Parameter]
+    public AFKAction AFKAction { get; set; }
+    private bool showHours;
+
+    private void ToggleHours()
+    {
+        showHours = !showHours;
+        GameState.UpdateState();
+    }
+    public void StartAFKing(int hours)
+    {
+        AFKAction.IsActive = true;
+        AFKAction.StartTime = DateTime.UtcNow;
+        AFKAction.ReturnTime = DateTime.UtcNow.AddHours(hours);
+        GameState.CurrentAFKAction = AFKAction;
+    }
+    public void CompleteAFKing()
+    {
+        int hours = (int)Math.Round(AFKAction.ReturnTime.Subtract(AFKAction.StartTime).TotalHours);
+        Player.Instance.GainExperience(AFKAction.SkillTrained, hours * AFKAction.ExpPerHour + AFKAction.BonusExp);
+        MessageManager.AddMessage("You feel much more knowledgable about " + AFKAction.SkillTrained + " after spending time here.");
+        AFKAction.IsActive = false;
+        GameState.CurrentAFKAction = null;
+        GameState.UpdateState();
+    }
+    public void CancelAFKing()
+    {
+        int hours = (int)Math.Round(Math.Min(DateTime.Now.Subtract(AFKAction.StartTime).TotalHours, 8));
+        Player.Instance.GainExperience(AFKAction.SkillTrained, hours * AFKAction.ExpPerHour);
+        MessageManager.AddMessage("You cut your training short, but still feel somewhat more knowledgable about " + AFKAction.SkillTrained + " after spending time here.");
+        AFKAction.IsActive = false;
+        GameState.CurrentAFKAction = null;
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

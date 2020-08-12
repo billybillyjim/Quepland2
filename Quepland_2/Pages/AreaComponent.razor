@@ -44,13 +44,16 @@
                             onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, b.Name, b.GetRequirementTooltip())))"
                             onmouseout="@(new Action(() => GameState.HideTooltip()))">
                         @b.ButtonText
-                        </button>
-                    </div>
-                }
-
-
-                <br />
+                    </button>
+                </div>
             }
+            <br />
+        }
+        @foreach (AFKAction afkAction in thisArea.AFKActions)
+        {
+            <Quepland_2.Components.AFKActionComponent AFKAction="@afkAction"></Quepland_2.Components.AFKActionComponent>
+
+        }
         @if (thisArea.DojoURL != null)
         {
             <div>
