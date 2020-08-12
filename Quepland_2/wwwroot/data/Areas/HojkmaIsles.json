@@ -62,7 +62,8 @@
             "bonusExp": 3000,
             "requirements": [
               {
-                "itemName": "Gym Membership Card"
+                "item": "Gym Membership Card",
+                "itemAmount": 1
               }
             ]
           },
@@ -73,7 +74,8 @@
             "bonusExp": 3000,
             "requirements": [
               {
-                "itemName": "Gym Membership Card"
+                "item": "Gym Membership Card",
+                "itemAmount": 1
               }
             ]
           }

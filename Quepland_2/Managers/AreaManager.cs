@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -22,16 +20,12 @@ public class AreaManager
     }
     public List<Area> Areas = new List<Area>();
     public List<Building> Buildings = new List<Building>();
-    [JsonIgnore]
     public List<Region> Regions = new List<Region>();
-    [JsonIgnore]
     public List<Land> Lands = new List<Land>();
-    [JsonIgnore]
     public List<Dungeon> Dungeons = new List<Dungeon>();
-    [JsonIgnore]
     public List<Smithy> Smithies = new List<Smithy>();
-    [JsonIgnore]
     public List<Dojo> Dojos = new List<Dojo>();
+    public List<AFKAction> AFKActions = new List<AFKAction>();
     public async Task LoadAreas(HttpClient Http)
     {
         Regions.AddRange(await Http.GetFromJsonAsync<Region[]>("data/Regions.json"));
@@ -44,6 +38,14 @@ public class AreaManager
             foreach(Building b in a.Buildings)
             {
                 Buildings.Add(b);
+                if(b.AFKActions.Count > 0)
+                {
+                    AFKActions.AddRange(b.AFKActions);
+                }
+            }
+            if(a.AFKActions.Count > 0)
+            {
+                AFKActions.AddRange(a.AFKActions);
             }
         }
         var query = Areas.GroupBy(x => x.ID).Where(g => g.Count() > 1).Select(y => y.Key).ToList();
@@ -57,7 +59,7 @@ public class AreaManager
         Dungeons.AddRange(await Http.GetFromJsonAsync<Dungeon[]>("data/Dungeons/QueplandDungeons.json"));
         Smithies.AddRange(await Http.GetFromJsonAsync<Smithy[]>("data/Smithies.json"));
         Dojos.AddRange(await Http.GetFromJsonAsync<Dojo[]>("data/Dojos.json"));
-        Console.WriteLine("Quepland consists of " + Areas.Count + " areas, " + Regions.Count + " regions, " + Lands.Count + " lands, with " + Dungeons.Count + " dungeons.");
+        //Console.WriteLine("Quepland consists of " + Areas.Count + " areas, " + Regions.Count + " regions, " + Lands.Count + " lands, with " + Dungeons.Count + " dungeons.");
     }
 
     public Area GetAreaByName(string name)
@@ -189,6 +191,10 @@ public class AreaManager
         {
             Dojos.Find(x => x.Name == d.Name).LastWinTime = d.LastWin;
         }
+    }
+    public AFKAction GetAFKActionByUniqueID(string id)
+    {
+        return AFKActions.FirstOrDefault(x => x.UniqueID == id);
     }
 }
 

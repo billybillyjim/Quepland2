@@ -47,12 +47,13 @@
         TripInfo.StartTime = DateTime.UtcNow;
         TripInfo.ReturnTime = DateTime.UtcNow.AddHours(hours);
         GameState.IsOnHuntingTrip = true;
+        SaveManager.SaveGame();
     }
     public void CancelHuntingTrip()
     {
         double amountCompleted = DateTime.UtcNow.Subtract(TripInfo.StartTime).TotalHours / TripInfo.ReturnTime.Subtract(TripInfo.StartTime).TotalHours;
         EndHunt(amountCompleted * TripInfo.ReturnTime.Subtract(TripInfo.StartTime).TotalSeconds, false);
-        
+
 
     }
 

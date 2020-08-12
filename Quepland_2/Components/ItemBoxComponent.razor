@@ -106,42 +106,48 @@ else
     }
     public string GetTooltipTitle()
     {
+        System.Text.StringBuilder builder = new System.Text.StringBuilder();
         string tip = "";
 
         if (Bank.Instance.IsBanking && Inventory == Bank.Instance.Inventory)
         {
             if (Bank.Instance.Amount == int.MaxValue)
             {
-                tip = "Withdraw All " + Item.Name;
+                builder.Append("Withdraw All ");
+                builder.Append(Item.Name);
             }
             else
             {
-                tip = "Withdraw " + Bank.Instance.Amount + " " + Item.Name;
+                builder.Append("Withdraw ");
+                builder.Append(Bank.Instance.Amount);
+                builder.Append(" ");
+                builder.Append(Item.Name);
             }
-        }       
+        }
         else
         {
             if (Item.IsStackable)
             {
                 if(Inventory == null)
                 {
-                    tip = Player.Instance.Inventory.GetNumberOfItem(Item) + " " + Item.Name;
+                    builder.Append(Player.Instance.Inventory.GetNumberOfItem(Item));
+                    builder.Append(" ");
+                    builder.Append(Item.Name);
 
                 }
                 else
                 {
-                    tip = Inventory.GetNumberOfItem(Item) + " " + Item.Name;
-
+                    builder.Append(Inventory.GetNumberOfItem(Item));
+                    builder.Append(" ");
+                    builder.Append(Item.Name);
                 }
             }
             else
             {
-                tip = Item.Name;
+                builder.Append(Item.Name);
             }
-
         }
-
-        return tip;
+        return builder.ToString();
     }
 
     protected override void OnInitialized()

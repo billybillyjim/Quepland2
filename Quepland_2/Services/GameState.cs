@@ -894,6 +894,13 @@ using System.Threading.Tasks;
         CurrentLand = AreaManager.Instance.GetLandByName(data.CurrentLand);
         GoTo("/World/" + data.Location);
     }
+    public static void LoadAFKActionData(AFKAction action)
+    {       
+        AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID).ReturnTime = action.ReturnTime;
+        AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID).StartTime = action.StartTime;
+        AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID).IsActive = action.IsActive;
+        CurrentAFKAction = AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID);
+    }
     private void StateHasChanged()
     {
         StateChanged?.Invoke(this, EventArgs.Empty);

@@ -66,11 +66,12 @@
     protected override void OnParametersSet()
     {
         thisBuilding = AreaManager.Instance.GetAreaByURL(areaURL).GetBuildingByURL(buildingURL);
-
+        Console.WriteLine("This building has " + thisBuilding.AFKActions.Count);
         GameState.UpdateState();
     }
     protected override void OnInitialized()
     {
+
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()

@@ -130,7 +130,8 @@ public static class SaveManager
         }
         if(await ContainsKeyAsync("AFKAction:" + mode))
         {
-            GameState.CurrentAFKAction = (JsonConvert.DeserializeObject<AFKAction>(Decompress(await GetItemAsync<string>("AFKAction:" + mode))));
+            Console.WriteLine(Decompress(await GetItemAsync<string>("AFKAction:" + mode)));
+            GameState.LoadAFKActionData(JsonConvert.DeserializeObject<AFKAction>(Decompress(await GetItemAsync<string>("AFKAction:" + mode))));
         }
         Console.WriteLine(Compress("This is a test of what I can do"));
     }

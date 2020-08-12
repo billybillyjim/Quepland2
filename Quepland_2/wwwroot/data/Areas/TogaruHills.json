@@ -120,7 +120,15 @@
         "name": "Tsu Castle",
         "buttonText": "Visit the castle",
         "url": "TsuCastle",
-        "description": "The castle towers over the city below. The guards here are willing to train anyone in the art of archery."
+        "description": "The castle towers over the city below. The guards here are willing to train anyone in the art of archery.",
+        "afkActions": [
+          {
+            "buttonText": "Train with Guards",
+            "expPerHour": 10000,
+            "skillTrained": "Archery",
+            "bonusExp": 3000
+          }
+        ]
       },
       {
         "name": "Tawaya's Tannery",
@@ -224,6 +232,20 @@
     "id": 97,
     "image": "Garden",
     "description": "The gardens are ancient, and have been used as a place of quiet relaxation and meditation for as long as people have lived in Tsu. You can practice yoga here as well.",
-    "areaURL": "TangeiGardens"
+    "areaURL": "TangeiGardens",
+    "afkActions": [
+      {
+        "buttonText": "Do Yoga",
+        "expPerHour": 10000,
+        "skillTrained": "HP",
+        "bonusExp": 3000,
+        "requirements": [
+          {
+            "item": "Yoga Mat",
+            "itemAmount": 1
+          }
+        ]
+      }
+    ]
   }
 ]

@@ -12,7 +12,16 @@ public class AFKAction
 	public bool IsActive { get; set; }
 	public DateTime ReturnTime { get; set; }
 	public DateTime StartTime { get; set; }
+    public string UniqueID { get
+        {
+            return SkillTrained + ButtonText + ExpPerHour + BonusExp;
+        } 
+    }
 
+    public TimeSpan GetRemainingTime()
+    {
+        return ReturnTime.Subtract(DateTime.UtcNow);
+    }
     public bool HasRequirements()
     {
         foreach (Requirement r in Requirements)
@@ -47,13 +56,4 @@ public class AFKAction
     {
 		return DateTime.UtcNow.CompareTo(ReturnTime) > 0;
     }
-    public override bool Equals(object obj)
-    {
-        if(obj is AFKAction == false)
-        {
-			return false;
-        }
-		return ((AFKAction)obj).ExpPerHour == ExpPerHour && ((AFKAction)obj).SkillTrained == SkillTrained && ((AFKAction)obj).ButtonText == ButtonText;
-
-	}
 }
