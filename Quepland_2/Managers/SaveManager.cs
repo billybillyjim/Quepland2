@@ -30,6 +30,7 @@ public static class SaveManager
             await SetItemAsync("Bank:" + mode, Compress(GetItemSave(Bank.Instance.Inventory)));
             await SetItemAsync("Areas:" + mode, Compress(GetAreaSave()));
             await SetItemAsync("Regions:" + mode, Compress(GetRegionSave()));
+            await SetItemAsync("Dungeons:" + mode, GetSaveString(AreaManager.Instance.GetDungeonSaveData()));
             await SetItemAsync("Quests:" + mode, Compress(GetQuestSave()));
             await SetItemAsync("GameState:" + mode, GetSaveString(GameState.GetSaveData()));
             await SetItemAsync("Player:" + mode, GetSaveString(Player.Instance.GetSaveData()));
@@ -103,6 +104,10 @@ public static class SaveManager
         if (await ContainsKeyAsync("Regions:" + mode))
         {
             AreaManager.Instance.LoadRegionSave(JsonConvert.DeserializeObject<List<RegionSaveData>>(Decompress(await GetItemAsync<string>("Regions:" + mode))));
+        }
+        if (await ContainsKeyAsync("Dungeons:" + mode))
+        {
+            AreaManager.Instance.LoadDungeonSaveData(JsonConvert.DeserializeObject<List<DungeonSaveData>>(Decompress(await GetItemAsync<string>("Dungeons:" + mode))));
         }
         if (await ContainsKeyAsync("Quests:" + mode))
         {

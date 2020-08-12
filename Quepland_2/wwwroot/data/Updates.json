@@ -20,7 +20,8 @@
       "Added a notification for when an area's traps are ready.",
       "Improved the shop UI a bit.",
       "Added more afk actions to make training without the game open more possible.",
-      "Fixed some bugs with saving afk actions."
+      "Fixed some bugs with saving afk actions.",
+      "Fixed a host of bugs involved with saving and loading."
     ]
   }
 ]

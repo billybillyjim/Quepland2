@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 
@@ -71,6 +72,11 @@ public class AreaManager
         Area a = Areas.FirstOrDefault(x => x.AreaURL == url);
         if(a == null)
         {
+            Dungeon d = Dungeons.FirstOrDefault(x => x.URL == url);
+            if(d != null)
+            {
+                return Areas.FirstOrDefault(x => x.DungeonName == d.Name);
+            }
             Console.WriteLine("No area " + url + " found. Have you addded it to Regions.json? Otherwise the URL is incorrect.");
         }
         return a;
@@ -190,6 +196,22 @@ public class AreaManager
         foreach(DojoSaveData d in data)
         {
             Dojos.Find(x => x.Name == d.Name).LastWinTime = d.LastWin;
+        }
+    }
+    public List<DungeonSaveData> GetDungeonSaveData()
+    {
+        List<DungeonSaveData> data = new List<DungeonSaveData>();
+        foreach(Dungeon d in Dungeons)
+        {
+            data.Add(d.GetSaveData());
+        }
+        return data;
+    }
+    public void LoadDungeonSaveData(List<DungeonSaveData> data)
+    {
+        foreach(DungeonSaveData save in data)
+        {
+            Dungeons.FirstOrDefault(x => x.Name == save.Name).LoadSaveData(save);
         }
     }
     public AFKAction GetAFKActionByUniqueID(string id)

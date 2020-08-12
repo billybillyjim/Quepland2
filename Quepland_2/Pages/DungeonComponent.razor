@@ -98,6 +98,8 @@
     {
         Dungeon = AreaManager.Instance.Dungeons.FirstOrDefault(x => x.URL == DungeonURL);
         BattleManager.Instance.CurrentArea = null;
+        BattleManager.Instance.BattleHasEnded = true;
+        BattleManager.Instance.CurrentOpponents.Clear();
         GameState.UpdateState();
     }
     protected override void OnInitialized()

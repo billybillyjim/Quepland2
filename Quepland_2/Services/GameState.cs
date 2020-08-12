@@ -472,6 +472,7 @@ using System.Threading.Tasks;
             else if (Player.Instance.Inventory.AddMultipleOfItem(CurrentSmithingRecipe.Output, CurrentSmithingRecipe.OutputAmount))
             {
                 MessageManager.AddMessage("You withdraw " + CurrentSmithingRecipe.OutputAmount + " " + CurrentSmithingRecipe.Output.Name);
+                Player.Instance.GainExperience(CurrentSmithingRecipe.Output.ExperienceGained);
                 TicksToNextAction = 12;
                 SmithingStage = 0;
             }
@@ -616,6 +617,7 @@ using System.Threading.Tasks;
                 Player.Instance.CurrentFollower.Inventory.AddMultipleOfItem(CurrentSmithingRecipe.Output, CurrentSmithingRecipe.OutputAmount);
                 AutoSmithedItemCount -= CurrentSmithingRecipe.OutputAmount;
                 MessageManager.AddMessage(Player.Instance.CurrentFollower.Name + " gathers up a cooled " + CurrentSmithingRecipe.OutputItemName + ".");
+                Player.Instance.GainExperience(CurrentSmithingRecipe.Output.ExperienceGained);
                 Player.Instance.CurrentFollower.TicksToNextAction = Player.Instance.CurrentFollower.AutoCollectSpeed;
                 if(AutoSmithedItemCount <= 0)
                 {
@@ -896,10 +898,14 @@ using System.Threading.Tasks;
     }
     public static void LoadAFKActionData(AFKAction action)
     {       
-        AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID).ReturnTime = action.ReturnTime;
-        AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID).StartTime = action.StartTime;
-        AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID).IsActive = action.IsActive;
-        CurrentAFKAction = AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID);
+        if(action != null)
+        {
+            AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID).ReturnTime = action.ReturnTime;
+            AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID).StartTime = action.StartTime;
+            AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID).IsActive = action.IsActive;
+            CurrentAFKAction = AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID);
+        }
+
     }
     private void StateHasChanged()
     {

@@ -105,4 +105,12 @@ public class Dungeon
         }
 		return ButtonText;
     }
+	public DungeonSaveData GetSaveData()
+    {
+		return new DungeonSaveData() { Progress = Progress, Name = Name };
+    }
+	public void LoadSaveData(DungeonSaveData data)
+    {
+		Progress = data.Progress;
+    }
 }
