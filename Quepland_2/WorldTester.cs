@@ -11,14 +11,21 @@ public class WorldTester
         {
             foreach (Drop d in m.DropTable.Drops)
             {
-                GameItem item = ItemManager.Instance.GetItemByName(d.ItemName);
-                if (IncludedItems.Contains(item) == false && item != null)
+                try
                 {
-                    IncludedItems.Add(item);
+                    GameItem item = ItemManager.Instance.GetItemByName(d.ItemName);
+                    if (IncludedItems.Contains(item) == false && item != null)
+                    {
+                        IncludedItems.Add(item);
+                    }
+                    if (item == null)
+                    {
+                        Console.WriteLine("Monster:" + m.Name + " drops unfound item:" + d.ItemName + " in database.");
+                    }
                 }
-                if(item == null)
+                catch(Exception e)
                 {
-                    Console.WriteLine("Monster:" + m.Name + " drops unfound item:" + d.ItemName + " in database.");
+                    Console.WriteLine(e);
                 }
             }
         }
@@ -34,14 +41,21 @@ public class WorldTester
                 {
                     foreach (string i in a.Split(':')[1].Split(','))
                     {
-                        GameItem it = ItemManager.Instance.GetItemByName(i);
-                        if (it != null && IncludedItems.Contains(it) == false)
+                        try
                         {
-                            IncludedItems.Add(it);
+                            GameItem it = ItemManager.Instance.GetItemByName(i);
+                            if (it != null && IncludedItems.Contains(it) == false)
+                            {
+                                IncludedItems.Add(it);
+                            }
+                            else if (it == null)
+                            {
+                                Console.WriteLine("Item not found:" + i);
+                            }
                         }
-                        else if(it == null)
+                        catch(Exception e)
                         {
-                            Console.WriteLine("Item not found:" + i);
+                            Console.WriteLine(e);
                         }
                     }
                 }
@@ -50,11 +64,19 @@ public class WorldTester
             {
                 foreach (Drop d in area.HuntingTripInfo.DropTable.Drops)
                 {
-                    GameItem it = ItemManager.Instance.GetItemByName(d.ItemName);
-                    if (it != null && IncludedItems.Contains(it) == false)
+                    try
                     {
-                        IncludedItems.Add(it);
+                        GameItem it = ItemManager.Instance.GetItemByName(d.ItemName);
+                        if (it != null && IncludedItems.Contains(it) == false)
+                        {
+                            IncludedItems.Add(it);
+                        }
                     }
+                    catch(Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
+
                 }
             }
             foreach (Building b in area.Buildings)
@@ -63,10 +85,18 @@ public class WorldTester
                 {
                     foreach(GameItem i in s.Items)
                     {
-                        if(i != null && IncludedItems.Contains(i) == false)
+                        try
                         {
-                            IncludedItems.Add(i);
+                            if (i != null && IncludedItems.Contains(i) == false)
+                            {
+                                IncludedItems.Add(i);
+                            }
                         }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e);
+                        }
+
                     }
                 }
 
@@ -78,12 +108,18 @@ public class WorldTester
         {
             if (i.TanningInfo != null)
             {
-                Console.WriteLine("1st Checking " + i);
-                if (IncludedItems.Contains(i) == true && IncludedItems.Contains(i.TanningInfo.TansInto) == false)
+                try
                 {
-                    Console.WriteLine("1st Adding " + i.TanningInfo.TansInto);
-                    newItems.Add(i.TanningInfo.TansInto);
+                    if (IncludedItems.Contains(i) == true && IncludedItems.Contains(i.TanningInfo.TansInto) == false)
+                    {
+                        newItems.Add(i.TanningInfo.TansInto);
+                    }
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+
 
             }
         }
@@ -93,32 +129,49 @@ public class WorldTester
             bool IngredientsIncluded = true;
             foreach(Ingredient i in r.Ingredients)
             {
-                GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
-                if (IncludedItems.Contains(item) == false)
+                try
                 {
-                    if(item == null)
+                    GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
+                    if (IncludedItems.Contains(item) == false)
                     {
-                        Console.WriteLine("Item was null (not in database):" + i.Item);
+                        if (item == null)
+                        {
+                            Console.WriteLine("Item was null (not in database):" + i.Item);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Included items does not contain " + i.Item);
+                        }
+
+                        IngredientsIncluded = false;
                     }
-                    else
-                    {
-                        Console.WriteLine("Included items does not contain " + i.Item);
-                    }
-                    
-                    IngredientsIncluded = false;
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+
             }
             if (IngredientsIncluded && IncludedItems.Contains(r.Output) == false)
             {
-                IncludedItems.Add(r.Output);
-                if(r.SecondaryOutput != null)
+                try
                 {
-                    IncludedItems.Add(r.SecondaryOutput);
+                    IncludedItems.Add(r.Output);
+                    if (r.SecondaryOutput != null)
+                    {
+                        IncludedItems.Add(r.SecondaryOutput);
+                    }
+                    if (r.TertiaryOutput != null)
+                    {
+                        IncludedItems.Add(r.TertiaryOutput);
+                    }
                 }
-                if(r.TertiaryOutput != null)
+                catch (Exception e)
                 {
-                    IncludedItems.Add(r.TertiaryOutput);
+                    Console.WriteLine("Failed to add recipe:" + r.OutputItemName);
+                    Console.WriteLine(e);
                 }
+
             }
             else
             {
@@ -130,36 +183,61 @@ public class WorldTester
         {
             if (i != null && i.TanningInfo != null)
             {
-                if (IncludedItems.Contains(i) == true && IncludedItems.Contains(i.TanningInfo.TansInto) == false)
+                try
                 {
-                    newItems.Add(i.TanningInfo.TansInto);
+                    if (IncludedItems.Contains(i) == true && IncludedItems.Contains(i.TanningInfo.TansInto) == false)
+                    {
+                        newItems.Add(i.TanningInfo.TansInto);
+                    }
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+
 
             }
         }
         IncludedItems.AddRange(newItems);
         foreach (Recipe r in ItemManager.Instance.Recipes)
         {
+
             bool IngredientsIncluded = true;
             foreach (Ingredient i in r.Ingredients)
             {
-                GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
-                if (IncludedItems.Contains(item) == false)
+                try
                 {
-                    IngredientsIncluded = false;
+                    GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
+                    if (IncludedItems.Contains(item) == false)
+                    {
+                        IngredientsIncluded = false;
+                    }
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+
             }
             if (IngredientsIncluded && IncludedItems.Contains(r.Output) == false)
             {
-                IncludedItems.Add(r.Output);
-                if (r.SecondaryOutput != null)
+                try
                 {
-                    IncludedItems.Add(r.SecondaryOutput);
+                    IncludedItems.Add(r.Output);
+                    if (r.SecondaryOutput != null)
+                    {
+                        IncludedItems.Add(r.SecondaryOutput);
+                    }
+                    if (r.TertiaryOutput != null)
+                    {
+                        IncludedItems.Add(r.TertiaryOutput);
+                    }
                 }
-                if (r.TertiaryOutput != null)
+                catch (Exception e)
                 {
-                    IncludedItems.Add(r.TertiaryOutput);
+                    Console.WriteLine(e);
                 }
+
             }
         }
         foreach (Recipe r in ItemManager.Instance.SmithingRecipes)
@@ -167,19 +245,35 @@ public class WorldTester
             bool IngredientsIncluded = true;
             foreach (Ingredient i in r.Ingredients)
             {
-                GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
-                if (IncludedItems.Contains(item) == false)
+                try
                 {
-                    IngredientsIncluded = false;
+                    GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
+                    if (IncludedItems.Contains(item) == false)
+                    {
+                        IngredientsIncluded = false;
+                    }
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+
             }
             if (IngredientsIncluded && IncludedItems.Contains(r.Output) == false)
             {
-                if(r.Output == null)
+                try
                 {
-                    Console.WriteLine("Recipe has null output:" + r.OutputItemName);
+                    if (r.Output == null)
+                    {
+                        Console.WriteLine("Recipe has null output:" + r.OutputItemName);
+                    }
+                    IncludedItems.Add(r.Output);
                 }
-                IncludedItems.Add(r.Output);
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+
             }
         }
         //A second time for recipes that require recipe outputs
@@ -188,12 +282,20 @@ public class WorldTester
             bool IngredientsIncluded = true;
             foreach (Ingredient i in r.Ingredients)
             {
-                GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
-                if (IncludedItems.Contains(item) == false)
+                try
                 {
-                    Console.WriteLine("Didn't add " + item + ". It lacked ingredient:" + i.Item);
-                    IngredientsIncluded = false;
+                    GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
+                    if (IncludedItems.Contains(item) == false)
+                    {
+                        Console.WriteLine("Didn't add " + item + ". It lacked ingredient:" + i.Item);
+                        IngredientsIncluded = false;
+                    }
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+
             }
             if (IngredientsIncluded && IncludedItems.Contains(r.Output) == false)
             {
@@ -206,11 +308,19 @@ public class WorldTester
             bool IngredientsIncluded = true;
             foreach (Ingredient i in r.Ingredients)
             {
-                GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
-                if (IncludedItems.Contains(item) == false)
+                try
                 {
-                    IngredientsIncluded = false;
+                    GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
+                    if (IncludedItems.Contains(item) == false)
+                    {
+                        IngredientsIncluded = false;
+                    }
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+
             }
             if (IngredientsIncluded && IncludedItems.Contains(r.Output) == false)
             {

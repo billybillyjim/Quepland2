@@ -1,5 +1,13 @@
 [
   {
+    "versionNumber": "0.0.11",
+    "updates": [
+      "Updated the version number to motivate me further.",
+      "Fixed a typo in the Mayor's Assistant quest.",
+      "Added quest progress logs for mayor's assistant."
+    ]
+  },
+  {
     "versionNumber": "0.0.10",
     "updates": [
       "Added update list to start menu.",

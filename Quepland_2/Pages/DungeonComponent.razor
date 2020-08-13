@@ -6,17 +6,16 @@
 
 @if (Dungeon != null)
 {
-    <div style="margin-top:20px;">
-        @if (Dungeon.Progress < 100)
-        {
-            <div style="margin-bottom:5px;">
-                Progress
-                <div class="progress" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Progress", "You've explored " + Dungeon.GetPercentProgress() + "% of this dungeon.")))"
-                     onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                    <div class="progress-bar" style="width:@(Dungeon.GetPercentProgress())%"></div>
-                </div>
+<div style="margin-top:20px;">
+    @if (Dungeon.GetPercentProgress() < 100)
+    {
+        <div style="margin-bottom:5px;">
+            Progress
+            <div class="progress" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Progress", "You've explored " + Dungeon.GetPercentProgress() + "% of this dungeon.")))"
+                 onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                <div class="progress-bar" style="width:@(Dungeon.GetPercentProgress())%"></div>
             </div>
-        }
+        </div>
         @if (BattleManager.Instance.BattleHasEnded == false)
         {
             <CombatComponent></CombatComponent>
@@ -34,7 +33,29 @@
                 <button class="btn btn-success" @onclick="@(() => RetrySpelunk())">Retry Spelunk</button>
             </div>
         }
-    </div>
+    }
+    else if (Dungeon.IsComplete)
+    {
+        <div>You've explored this whole dungeon! You can keep spelunking, but you won't unlock any new areas.</div>
+        <div style="margin-bottom:5px;">
+            Progress
+            <div class="progress" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Progress", "You've explored this whole dungeon.")))"
+                 onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                <div class="progress-bar" style="width:@(Dungeon.GetPercentProgress())%"></div>
+            </div>
+        </div>
+        @if (BattleManager.Instance.BattleHasEnded == false)
+        {
+            <CombatComponent></CombatComponent>
+        }
+        else
+        {
+            <div>
+                <button class="btn btn-success" @onclick="@(() => Spelunk())">Spelunk</button>
+            </div>
+        }
+    }
+</div>
 }
 
 

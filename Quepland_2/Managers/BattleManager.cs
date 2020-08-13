@@ -53,6 +53,7 @@ public class BattleManager
             }
             BattleHasEnded = false;
         }
+        Player.Instance.TicksToNextAttack = Player.Instance.GetWeaponAttackSpeed();
         WaitedAutoBattleGameTick = false;
         Target = GetNextTarget();
     }

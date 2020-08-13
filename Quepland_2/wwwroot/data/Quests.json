@@ -19,6 +19,16 @@
         "item": "Copper Axe",
         "itemAmount": 1
       }
+    ],
+    "progressStrings": [
+      "You haven't started this quest yet. Talk to the mayor in Teppas to begin.",
+      "The mayor has asked you for a favor.",
+      "The mayor has asked you to make a no soliciting sign for him. ",
+      "You've agreed to help the mayor make a sign.",
+      "The sign man has told you what you need to make a sign: 3 white pine logs and some shuniku berries.",
+      "The sign man has given you the sign you asked for. It's not very good.",
+      "You gave the sign man's awful sign to the mayor. You completed the quest! The mayor doesn't seem too pleased, though.",
+      "You made the sign yourself and gave it to the mayor! He was quite pleased. You've completed the quest!"
     ]
   },
   {
@@ -31,6 +41,9 @@
         "skill": "Woodcutting",
         "experienceGain": 50
       }
+    ],
+    "progressStrings": [
+      "You haven't started this quest yet. Talk Tuto in Quepland Fields to begin."
     ]
   },
   {
@@ -43,6 +56,9 @@
         "skill": "Fishing",
         "experienceGain": 1000
       }
+    ],
+    "progressStrings": [
+      "You haven't started this quest yet. Go to Mound's Boats at the Uragota docks to begin."
     ]
   },
   {
@@ -67,6 +83,9 @@
         "skill": "Woodworking",
         "experienceGain": 5000
       }
+    ],
+    "progressStrings": [
+      "You haven't started this quest yet. You'll need to complete Mound is Missing before starting this quest on the pirate ship in Uragota Town."
     ]
   },
   {
@@ -83,18 +102,27 @@
         "skill": "Knifesmanship",
         "experienceGain": 2000
       }
+    ],
+    "progressStrings": [
+      "You haven't started this quest yet."
     ]
   },
   {
     "name": "Grand Theft Camel",
     "id": 5,
     "completionText": "Congratulations! You can now purchase camels from Camelpalooza!",
-    "progressToComplete": 24
+    "progressToComplete": 24,
+    "progressStrings": [
+      "You haven't started this quest yet. Talk Camel Carl at the Desert's Mouth to begin."
+    ]
   },
   {
     "name": "Queple's Sword",
     "id": 6,
     "completionText": "Congratulations! You solved the mystery of Queple's Sword!",
-    "progressToComplete": 10000
+    "progressToComplete": 10000,
+    "progressStrings": [
+      "You haven't started this quest yet. You'll need to find Queple's grave to begin."
+    ]
   }
 ]

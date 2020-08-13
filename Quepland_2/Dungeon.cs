@@ -6,7 +6,17 @@ using System.Linq;
 public class Dungeon
 {
 	private double _progress;
-	public double Progress { get { return _progress; } set{ _progress = Math.Min(value, Size); } }
+	public double Progress 
+	{ get { return _progress; } 
+		set{ 
+			_progress = Math.Min(value, Size); 
+			if(_progress == Size)
+            {
+				IsComplete = true;
+            }
+		} 
+	}
+	public bool IsComplete { get; set; }
 	public double Size { get; set; }
 	public string Name { get; set; }
 	public string URL { get; set; }
@@ -107,10 +117,11 @@ public class Dungeon
     }
 	public DungeonSaveData GetSaveData()
     {
-		return new DungeonSaveData() { Progress = Progress, Name = Name };
+		return new DungeonSaveData() { Progress = Progress, Name = Name, IsComplete = IsComplete };
     }
 	public void LoadSaveData(DungeonSaveData data)
     {
 		Progress = data.Progress;
+		IsComplete = data.IsComplete;
     }
 }

@@ -10,6 +10,9 @@
         "areaURL": "KogoeTown",
         "buttonText": "Enter Town"
       }
+    ],
+    "actions": [
+      "Fish off the docks:Icefish,Abalone,Saury"
     ]
   },
   {
@@ -34,7 +37,9 @@
           {
             "name": "House of Fish",
             "itemNames": [
-              "Fishing Bait"
+              "Fishing Bait",
+              "Small Fishing Rod",
+              "Small Net"
             ]
 
           }
@@ -115,8 +120,8 @@
       }
     ],
     "actions": [
-      "Mine Iron:Iron Ore",
-      "Chop Maple Trees:Sugar Maple Logs"
+      "Mine iron:Iron Ore",
+      "Chop maple trees:Sugar Maple Logs"
     ],
     "monsters": [
       "Ice Spider",
@@ -139,7 +144,7 @@
       }
     ],
     "actions": [
-      "Mine Calamine:Calamine"
+      "Mine calamine:Calamine"
     ],
     "huntingTripInfo": {
       "dropTable": {
@@ -181,7 +186,7 @@
     "unlockableAreas": [
       {
         "areaURL": "MtYamaCave",
-        "buttonText": "Enter the Cave"
+        "buttonText": "Enter the cave"
       }
     ]
   },
@@ -194,7 +199,7 @@
     "unlockableAreas": [
       {
         "areaURL": "SahotaIceFields",
-        "buttonText": "Enter the Underworld",
+        "buttonText": "Enter the underworld",
         "connectsLands": true
       }
     ]
@@ -206,12 +211,12 @@
     "description": "Through the gap you find a few large ore veins. There appears to be gold and bauxite higher up, but you'll need a way to reach them.",
     "areaURL": "MtYamaMine",
     "actions": [
-      "Mine for ores:Galena,Cinnabar,Penlandite"
+      "Mine for ores:Galena,Cinnabar,Pentlandite"
     ],
     "unlockableAreas": [
       {
         "areaURL": "UpperMtYamaMine",
-        "buttonText": "Build a Ladder",
+        "buttonText": "Build a ladder",
         "requirements": [
           {
             "skill": "Woodworking",
@@ -232,8 +237,8 @@
     "description": "The upper level of the mine contains large gold and bauxite deposits. You can mine either here.",
     "areaURL": "UpperMtYamaMine",
     "actions": [
-      "Mine Gold:Gold Ore",
-      "Mine Bauxite:Bauxite"
+      "Mine gold:Gold Ore",
+      "Mine bauxite:Bauxite"
     ]
   }
 ]

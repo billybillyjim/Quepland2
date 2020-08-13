@@ -29,6 +29,10 @@ public class Recipe
     {
         get
         {
+            if(SecondaryOutputItemName == null)
+            {
+                return null;
+            }
             if (secondaryOutput == null)
             {
                 secondaryOutput = ItemManager.Instance.GetItemByName(SecondaryOutputItemName);
@@ -42,6 +46,10 @@ public class Recipe
     {
         get
         {
+            if(TertiaryOutputItemName == null)
+            {
+                return null;
+            }
             if (tertiaryOutput == null)
             {
                 tertiaryOutput = ItemManager.Instance.GetItemByName(TertiaryOutputItemName);

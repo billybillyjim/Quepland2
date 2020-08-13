@@ -10,7 +10,7 @@ public class Quest
 	public int Progress { get { return _progress; } 
 		set {
 			_progress = value;
-			if (_progress >= ProgressToComplete && IsComplete == false) { Complete(); } 
+			if (_progress >= ProgressToComplete) { Complete(); } 
 		} 
 	}
 	public int ProgressToComplete { get; set; }
@@ -19,6 +19,7 @@ public class Quest
 	public string CompletionText { get; set; } = "Unset";
 	public bool IsComplete { get; set; }
 	public int ID { get; set; }
+	public List<string> ProgressStrings { get; set; } = new List<string>();
 
 	public void Complete()
     {
@@ -45,5 +46,17 @@ public class Quest
     {
 		IsComplete = data.IsCompleted;
 		_progress = data.Progress;
+    }
+	public string GetProgressString()
+    {
+		if(ProgressStrings.Count == 0)
+        {
+			return "The progress log for this quest hasn't been completed yet.";
+        }
+		if(Progress >= ProgressStrings.Count)
+        {
+			return ProgressStrings[ProgressStrings.Count - 1];
+        }
+		return ProgressStrings[Progress];
     }
 }

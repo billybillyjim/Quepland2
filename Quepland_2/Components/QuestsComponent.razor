@@ -1,22 +1,55 @@
 ﻿@inject GameState GameState
-@implements IDisposable 
-<h3>Quests</h3>
+@implements IDisposable
 
-@foreach(Quest q in QuestManager.Instance.Quests)
-{
-    <div style="margin:5px;">
-        <div style="padding-left:5px;background-color:#b9b9b9;cursor:pointer;@GetStyle(q)">@q.Name</div>
-    </div>
-}
+<div style="margin:5px;">
+    <h3>Quests</h3>
+    @if (SelectedQuest != "")
+    {
+        <button class="btn btn-primary" style="margin-bottom:5px;" @onclick="@(() => SelectQuest(""))">Back</button>
+
+        @if (QuestToShow != null)
+        {
+            <div>
+                @QuestToShow.GetProgressString()
+            </div>
+        }
+
+    }
+    else
+    {
+        @foreach (Quest q in QuestManager.Instance.Quests)
+        {
+            <div style="margin:5px;">
+                <div style="padding-left:5px;background-color:#b9b9b9;cursor:pointer;@GetStyle(q)" @onclick="@(() => SelectQuest(q.Name))">@q.Name</div>
+            </div>
+        }
+    }
+</div>
+
+
+
+
 @code {
 
+    public string SelectedQuest = "";
+    public Quest QuestToShow;
+
+    public void SelectQuest(string quest)
+    {
+        SelectedQuest = quest;
+        if (quest != "")
+        {
+            QuestToShow = QuestManager.Instance.GetQuestByName(quest);
+        }
+        GameState.UpdateState();
+    }
 
     public string GetStyle(Quest q)
     {
         string color = "";
-        if(q.Progress == 0)
+        if (q.Progress == 0)
         {
-            color =  "color:black;";
+            color = "color:black;";
         }
         else if (q.IsComplete)
         {

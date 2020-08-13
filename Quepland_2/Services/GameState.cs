@@ -25,7 +25,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "0.0.10";
+    public static string Version { get; set; } = "0.0.11";
     public static List<Update> Updates { get; set; } = new List<Update>();
 
     public static string Location { get; set; } = "";
@@ -343,7 +343,7 @@ using System.Threading.Tasks;
         if (CurrentRecipe.Create(out int created))
         {
             TicksToNextAction = CurrentRecipe.CraftingSpeed;
-            MessageManager.AddMessage(CurrentRecipe.GetOutputsString().Replace("$", created.ToString()));
+            MessageManager.AddMessage(CurrentRecipe.GetOutputsString().Replace("$", (created * CurrentRecipe.OutputAmount).ToString()));
             if(CurrentRecipe.CanCreate() == false)
             {
                 

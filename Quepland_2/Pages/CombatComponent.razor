@@ -36,8 +36,8 @@
                     }
                 </div>
 
-                <div class="progress" style="width:550px;margin-top:10px;">
-                    <div class="progress-bar" style="width:@(opponent.GetRemainingHPPercent())%;background-color:forestgreen">
+                <div class="progress" style="width:550px;margin-top:10px;background-color:darkred">
+                    <div class="progress-bar" style="width:@(opponent.GetRemainingHPPercent())%;background-color:#51d051">
 
                     </div>
                 </div>
@@ -49,8 +49,8 @@
             <div>
                 @Player.Instance.CurrentHP / @Player.Instance.MaxHP
             </div>
-            <div class="progress" style="width:550px;margin-top:10px;">
-                <div class="progress-bar" style="width:@(GetPlayerHPPercent());background-color:forestgreen;">
+            <div class="progress" style="width:550px;margin-top:10px;background-color:darkred">
+                <div class="progress-bar" style="width:@(GetPlayerHPPercent());background-color:#51d051;">
 
                 </div>
             </div>
