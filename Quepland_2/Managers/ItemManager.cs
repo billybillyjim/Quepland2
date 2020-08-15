@@ -51,6 +51,7 @@ public class ItemManager
     public bool IsSelling = false;
     public int SellAmount = 1;
     public Shop CurrentShop;
+    private static Random random = new Random();
     public async Task LoadItems(HttpClient Http)
     {
         int colorIter = 0;
@@ -237,24 +238,31 @@ public class ItemManager
     }
     public List<Recipe> GetCraftableRecipes()
     {
-        List<Recipe> recipes = new List<Recipe>();
-        foreach(Recipe r in Recipes)
-        {
-            if (r.CanCreate())
-            {
-                recipes.Add(r);
-            }
-            else if (r.HasSomeIngredients())
-            {
-                recipes.Add(r);
-            }
-        }
-        return recipes;
+        return Recipes.Where(x => x.HasSomeIngredients()).ToList();
     }
 
     public MinigameDropTable GetMinigameDropTable(string areaName)
     {
         return MinigameDropTables.FirstOrDefault(x => x.AreaName == areaName);
+    }
+    public string GetBookCover(Skill s)
+    {   
+        if(s != null)
+        {
+            foreach (GameItem item in Items)
+            {
+                if (item.GetRequiredSkills().Contains(s.Name) && random.Next(0, 10) > 8)
+                {
+                    if (item.Name.EndsWith('s'))
+                    {
+                        return item.Name;
+                    }
+                    return "a " + item.Name;
+                }
+            }
+        }
+
+        return "some kind of " + s.Name + " thing";
     }
 }
 

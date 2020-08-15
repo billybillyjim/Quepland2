@@ -17,9 +17,21 @@
 }
 else
 {
+    @if (QuestManager.Instance.GetQuestByName("Grand Theft Camel").Progress == 23 &&
+    Player.Instance.Inventory.HasItem("A lot of Camels") == false &&
+    Bank.Instance.Inventory.HasItem("A lot of Camels") == false)
+    {
+        <div style="margin:5px;">
+            <button class="btn btn-primary" @onclick="@(() => TakeCamels())">Take Camels Back</button>
+        </div>
+        
+    }
     @if (allWavesDefeated)
     {
-        <button class="btn btn-primary" style="position:relative;top:30px;" @onclick="@(() => Return())">Return to Uragota</button>
+        <div style="margin:5px;">
+            <button class="btn btn-primary" style="position:relative;top:30px;" @onclick="@(() => Return())">Return to Uragota</button>
+
+        </div>
 
     }
     else if (BattleManager.Instance.BattleHasEnded)
@@ -51,7 +63,7 @@ else
 
 @code {
     private bool startedBattle;
-    private List<string> Opponents = new List<string>() { "Bandit", "Bandit", "Big Bandit", "Two Bandits", "Bandit,Big Bandit", "Two Bandits,Big Bandit", "Bandit Lord" };
+    private List<string> Opponents = new List<string>() { "Bandit", "Bandit", "Big Bandit", "Two Bandits", "Bandit,Big Bandit", "Two Bandits,Big Bandit", "Bandit Lord", "Ion the Island Bandit King" };
     private int currentWave = -1;
     private bool allWavesDefeated;
 
@@ -63,6 +75,19 @@ else
     {
         currentWave = -1;
         GameState.StateChanged += OnGameStateChanged;
+    }
+    public void TakeCamels()
+    {
+        if (Player.Instance.Inventory.GetAvailableSpaces() == 0)
+        {
+            MessageManager.AddMessage("You don't have enough inventory space for all those camels!");
+        }
+        else
+        {
+            MessageManager.AddMessage("You take all the camels.");
+            Player.Instance.Inventory.AddItem("A lot of Camels");
+        }
+
     }
     public int GetRemainingBandits()
     {

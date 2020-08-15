@@ -21,6 +21,10 @@ public static class SaveManager
     {
         try
         {
+            if(GameState.ShowStartMenu || GameState.InitCompleted == false)
+            {
+                return;
+            }
             string mode = GameState.CurrentGameMode.ToString();
             await SetItemAsync("Version:" + mode, Compress(GameState.Version));
             await SetItemAsync("Playtime:" + mode, GetSaveString(GameState.CurrentTick));

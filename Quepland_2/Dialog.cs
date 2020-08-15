@@ -28,6 +28,10 @@ public class Dialog
 
 	public bool HasRequirements()
 	{
+		if(Requirements.Count == 0)
+        {
+			return true;
+        }
 		foreach (Requirement r in Requirements)
 		{
 			if (r.IsMet() == false)

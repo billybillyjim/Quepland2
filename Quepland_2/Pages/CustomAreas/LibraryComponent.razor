@@ -1,0 +1,102 @@
+﻿@page "/World/SawokaLibrary"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+<div>
+    <h1>Library</h1>
+    @if (GameState.BGColor == "#2d2d2d" )
+    {
+        <p>You find a library among the tunnels in the mine. The torches on the wall are still lit. You spot a book on the top of one of the shelves with a picture of a man with long hair and a beard sitting on another book.</p>
+
+        <Quepland_2.Components.NPCDialogComponent npc="The Book of Lost Things"></Quepland_2.Components.NPCDialogComponent>
+    }
+    else
+    {
+        @if (IsReading)
+        {
+            @if (GameState.CurrentBook != null)
+            {
+                <p>You are reading @GameState.CurrentBook.Description</p>
+                <button class="btn btn-primary" @onclick="@(() => StopReading())">Stop Reading</button>
+                <div style="margin-top:5px;">
+                    <div class="progress" style="width:300px;">
+                        <div class="progress-bar" style="@GetProgress()"></div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <button class="btn btn-primary" @onclick="@(() => GenerateBooks())">Browse Again</button>
+            }
+        }
+        else
+        {
+            <p>With the man gone, you can now browse the library.</p>
+            <button class="btn btn-primary" @onclick="@(() => GenerateBooks())">Browse</button>
+            @foreach (Book b in FoundBooks)
+            {
+                <div>
+                    <p>
+                    You found @b.Description
+                        <div>
+                            <button class="btn btn-primary" style="margin-bottom:5px;" @onclick="@(() => Read(b))">Read</button>
+                        </div>
+                    </p>
+                    
+                </div>
+            }
+        }
+
+    }
+</div>
+
+
+
+
+@code {
+
+    private Random random = new Random();
+    private List<Book> FoundBooks = new List<Book>();
+    private bool IsReading;
+
+    private void GenerateBooks()
+    {
+        FoundBooks.Clear();
+        for (int i = 0; i < 3; i++)
+        {
+            FoundBooks.Add(new Book(Player.Instance.Skills[random.Next(0, Player.Instance.Skills.Count)], random.Next(0,5), random.Next(-50,50)));
+        }
+    }
+    private void Read(Book book)
+    {
+        GameState.CurrentBook = book;
+        IsReading = true;
+        GameState.TicksToNextAction = 60;
+        GameState.UpdateState();
+    }
+    private void StopReading()
+    {
+        GameState.CurrentBook = null;
+        GameState.UpdateState();
+    }
+    private string GetProgress()
+    {
+        return "width:" + (100 - ((double)GameState.TicksToNextAction / 60d) * 100d) + "%";
+    }
+    protected override void OnInitialized()
+    {
+        NPCManager.Instance.GetNPCByName("The Book of Lost Things").ConversationDepth = 0;
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    protected override void OnParametersSet()
+    {
+        GameState.UpdateState();
+    }
+    public void Dispose()
+    {
+        GameState.BGColor = "#2d2d2d";
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

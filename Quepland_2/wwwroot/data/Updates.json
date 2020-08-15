@@ -4,7 +4,12 @@
     "updates": [
       "Updated the version number to motivate me further.",
       "Fixed a typo in the Mayor's Assistant quest.",
-      "Added quest progress logs for mayor's assistant."
+      "Added quest progress logs for mayor's assistant.",
+      "Added the library",
+      "Fixed some bugs with Grand Theft Camel",
+      "Fixed an issue with crafting after fleeing battles.",
+      "Added support for changing the game background.",
+      "Fixed typos in recipe descriptions."
     ]
   },
   {

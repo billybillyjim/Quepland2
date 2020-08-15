@@ -88,6 +88,10 @@
                 BattleManager.Instance.CurrentOpponents.Add(monsterToFight);
                 BattleManager.Instance.StartBattle();
             }
+            else
+            {
+                Console.WriteLine("Monster was null");
+            }
         }
         if(firstTimeIsCompleted == false)
         {

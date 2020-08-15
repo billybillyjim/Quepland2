@@ -37,6 +37,12 @@
     "icon": "Tumbler"
   },
   {
+    "Name": "Small Library Key",
+    "Description": "A small key from the Sawoka dungeon library. It looks very fragile, but maybe it can open something.",
+    "value": 10,
+    "icon": "Key"
+  },
+  {
     "name": "Feather",
     "description": "Soft, fluffy, and useful for making arrows with.",
     "gatherString": "You separate the feathers into a pile.",

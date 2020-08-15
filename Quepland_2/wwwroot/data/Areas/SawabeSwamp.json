@@ -23,10 +23,6 @@
     "image": "Forest",
     "areaURL": "Swampwood",
     "description": "The swamp grows dark under the tree canopy. The sound of bugs and swamp creatures is disorienting. You'd need to be a skilled pathfinder to make it any deeper.",
-    "monsters": [
-      "Chicken",
-      "Rooster"
-    ],
     "unlockableAreas": [
       {
         "AreaURL": "Sawoka",
@@ -38,46 +34,7 @@
           }
         ]
       }
-
-    ],
-    "huntingTripInfo": {
-      "dropTable": {
-        "drops": [
-          {
-            "itemName": "Rabbit",
-            "weight": 15
-          },
-          {
-            "itemName": "Buck",
-            "weight": 10
-          },
-          {
-            "itemName": "Deer",
-            "weight": 15
-          },
-          {
-            "itemName": "Wild Boar",
-            "weight": 8
-          },
-          {
-            "itemName": "Black Bear",
-            "weight": 2
-          },
-          {
-            "itemName": "Grizzly Bear",
-            "weight": 1
-          },
-          {
-            "itemName": "Turkey",
-            "weight": 5
-          },
-          {
-            "itemName": "Pheasant",
-            "weight": 5
-          }
-        ]
-      }
-    }
+    ]
   },
   {
     "name": "Sawoka",
@@ -90,5 +47,12 @@
       "Cabochon"
     ],
     "dungeonName": "Sawoka Dungeon"
+  },
+  {
+    "name": "Sawoka Library",
+    "id": 23,
+    "image": "Book",
+    "areaURL": "SawokaLibrary",
+    "description": "This is the library."
   }
 ]

@@ -23,13 +23,13 @@
     "url": "SawokaDungeon",
     "size": 250,
     "areaURLs": [
-      "Sawoka"
+      "SawokaLibrary"
     ],
     "monsterNames": [
       "Ground Grupper",
       "Sawabe Swiper",
       "Mapinguari",
-      "Tokeloshe",
+      "Tokoloshe",
       "Kappa"
     ]
   },
@@ -44,7 +44,10 @@
       "Frost Fighter",
       "Chenoo",
       "Akhlut",
-      "Italian Christmas Tree"
+      "Italian Christmas Tree",
+      "Ice Spider",
+      "Frost Egg",
+      "Frost Chicken"
     ]
   }
 ]

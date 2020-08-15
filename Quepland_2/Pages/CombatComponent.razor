@@ -29,7 +29,7 @@
                     }
                     else
                     {
-                        <div class="btn btn primary" style="width:120px;height:40px;font-size:large;position:relative;margin-left:10px;background-color:black" @onclick="@(() => SwitchTargets(opponent))">
+                        <div class="btn btn primary" style="width:120px;height:40px;font-size:large;position:relative;margin-left:10px;background-color:black;cursor:pointer" @onclick="@(() => SwitchTargets(opponent))">
                             <div style="color:white">Target</div>
 
                         </div>
@@ -186,6 +186,7 @@
     }
     public void Dispose()
     {
+        BattleManager.Instance.BattleHasEnded = true;
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();

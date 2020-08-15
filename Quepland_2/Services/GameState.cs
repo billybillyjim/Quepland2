@@ -29,6 +29,7 @@ using System.Threading.Tasks;
     public static List<Update> Updates { get; set; } = new List<Update>();
 
     public static string Location { get; set; } = "";
+    public static string BGColor { get; set; } = "#2d2d2d";
     public static bool InitCompleted { get; set; } = false;
     public static bool ShowStartMenu { get; set; } = true;
     public static bool ShowSettings { get; set; }
@@ -65,6 +66,7 @@ using System.Threading.Tasks;
     public Recipe NewCraftingRecipe;
     public Recipe NewSmeltingRecipe;
     public Recipe NewSmithingRecipe;
+    public Book CurrentBook;
 
     public GameItem CurrentGatherItem;
     public List<GameItem> PossibleGatherItems = new List<GameItem>();
@@ -80,6 +82,7 @@ using System.Threading.Tasks;
     public InventoryViewerComponent inventoryViewer;
     public SmithyComponent SmithingComponent;
     public OvenComponent OvenComponent;
+    public CraftingComponent CraftingComponent;
     public NavMenu NavMenu;
     public ContextMenu CurrentContextMenu;
     public ExperienceTrackerComponent EXPTrackerComponent;
@@ -89,7 +92,7 @@ using System.Threading.Tasks;
     public int TicksToNextHeal;
     public int HealingTicks;
     public static int CurrentTick { get; set; }
-    public static int AutoSaveInterval { get; set; } = 9000;
+    public static int AutoSaveInterval { get; set; } = 4500;
     public static int GameWindowWidth { get; set; }
     public static int GameWindowHeight { get; set; }
     public int MinWindowWidth { get; set; } = 600;
@@ -172,6 +175,10 @@ using System.Threading.Tasks;
                 BattleManager.Instance.DoBattle();
             }
             
+        }
+        else if(TicksToNextAction <= 0 && CurrentBook != null)
+        {
+            ReadBook();
         }
         if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking)
         {
@@ -328,6 +335,27 @@ using System.Threading.Tasks;
         return true;
         
     }
+    private void ReadBook()
+    {
+        if(CurrentBook != null)
+        {
+            Player.Instance.GainExperience(CurrentBook.Skill, (long)((Player.Instance.GetLevel(CurrentBook.Skill.Name) / 60d) * 1000));
+            MessageManager.AddMessage("You read another page of the book. You feel more knowledgable about " + CurrentBook.Skill.Name + ".");
+            CurrentBook.Progress++;
+            TicksToNextAction = 60;
+            if(Random.Next(0, CurrentBook.Length) == CurrentBook.Progress)
+            {
+                MessageManager.AddMessage("A small key falls out of the book as you turn the page.");
+                Player.Instance.Inventory.AddItem("Small Library Key");
+            }
+            if(CurrentBook.Progress >= CurrentBook.Length)
+            {
+                MessageManager.AddMessage("You finish reading the book and return it to the shelf.");
+                CurrentBook = null;
+
+            }
+        }
+    }
     private void CraftItem()
     {
         if (CurrentRecipe == null)
@@ -367,18 +395,25 @@ using System.Threading.Tasks;
         {
             if(CurrentRecipe.Ingredients.Count == 1 && CurrentRecipe.Ingredients[0].Item.Name == itemViewer.Item.Name && CurrentRecipe.HasSpace())
             {
-                itemViewer.ClearItem();
+                itemViewer.ClearItem();                
                 MessageManager.AddMessage("You have run out of materials.");
                 if (OvenComponent != null)
                 {
                     OvenComponent.Source = "";
                 }
             }
-           
+            foreach(Ingredient i in CurrentRecipe.Ingredients)
+            {
+                i.Item.Rerender = true;
+            }
             CurrentRecipe = null;
         }
-
+        if(CraftingComponent != null)
+        {
+            CraftingComponent.ReloadRecipes();
+        }
         
+
     }
     public void Eat(GameItem item)
     {

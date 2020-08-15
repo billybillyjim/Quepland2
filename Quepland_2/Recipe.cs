@@ -212,7 +212,7 @@ public class Recipe
         {
                 ing += i.Amount + " " + i.Item + "\n";           
         }
-        ing = ing.Substring(0, ing.Length - 2);
+        ing = ing.Trim();
         return ing;
     }
     public string GetShortIngredientsString()

@@ -51,9 +51,18 @@ public class NPCManager
                 {
                     CustomDialogFunctions.TryAdd("DieAndGotoArea" + d.Parameter, new Action(() => DieAndGotoArea(d.Parameter)));
                 }
+                else if (d.ResponseWithParameter == "ChangeWorldColor" + d.Parameter)
+                {
+                    CustomDialogFunctions.TryAdd("ChangeWorldColor" + d.Parameter, new Action(() => ChangeWorldColor(d.Parameter)));
+                }
             }
         }
         
+    }
+    public void ChangeWorldColor(string color)
+    {
+        GameState.BGColor = color;
+        MessageManager.AddMessage("The world changes colors as the man disappears in a puff of smoke.");
     }
     public void GetPlaytime()
     {
@@ -112,6 +121,10 @@ public class NPCManager
         {
             Console.WriteLine("No NPC of name " + name + " was found. Did you add it to NPCs.json?");
             return NPCs[0];
+        }
+        else
+        {
+            Console.WriteLine("Found NPC:" + npc.Name);
         }
         return npc;
     }

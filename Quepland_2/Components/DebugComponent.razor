@@ -23,11 +23,46 @@
     <button @onclick="@(() => GetMoney())">
         Get 1M
     </button>
+    <button @onclick="@(() => GetWeakWeapons())">
+        Get Weak Weapons
+    </button>
+    <button @onclick="@(() => GetMaxGear())">
+        Get Max Gear
+    </button>
+    <button @onclick="@(() => GetUltimateWeapons())">
+        Get Ultimate Weapons
+    </button>
 </div>
 
 
 
 @code {
+
+    public void GetUltimateWeapons()
+    {
+        Player.Instance.Inventory.AddItem("Ultimate Test Weapon");
+
+    }
+    public void GetMaxGear()
+    {
+        Player.Instance.Inventory.AddItem("Strongtium Knife");
+        Player.Instance.Inventory.AddItem("Strongtium Sword");
+        Player.Instance.Inventory.AddItem("Strongtium Axe");
+        Player.Instance.Inventory.AddItem("Strongtium Hammer");
+        Player.Instance.Inventory.AddItem("Golden Belt");
+        Player.Instance.Inventory.AddItem("Grizzly Bear Gloves");
+        Player.Instance.Inventory.AddItem("Grizzly Bear Hat");
+        Player.Instance.Inventory.AddItem("Grizzly Bear Pants");
+        Player.Instance.Inventory.AddItem("Grizzly Bear Shirt");
+        Player.Instance.Inventory.AddItem("Grizzly Bear Boots");
+    }
+    public void GetWeakWeapons()
+    {
+        Player.Instance.Inventory.AddItem("Copper Knife");
+        Player.Instance.Inventory.AddItem("Copper Sword");
+        Player.Instance.Inventory.AddItem("Copper Axe");
+        Player.Instance.Inventory.AddItem("Copper Hammer");
+    }
     public void GetMoney()
     {
         Player.Instance.Inventory.AddMultipleOfItem(ItemManager.Instance.GetItemByName("Coins"), 1000000);

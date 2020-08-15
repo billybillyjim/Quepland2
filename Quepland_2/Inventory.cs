@@ -124,7 +124,6 @@ public class Inventory
             return false;
         }
         return itemLookupDic.TryGetValue(ItemManager.Instance.GetItemByName(itemName).UniqueID, out _);
-        //return (items.FirstOrDefault(x => x.Key.Name == itemName).Equals(default(KeyValuePair<GameItem, int>)) == false);
     }
     public bool HasItem(string uniqueID, bool empty)
     {
@@ -137,7 +136,6 @@ public class Inventory
             return true;
         }
         return false;
-        //return (items.FirstOrDefault(x => x.Key.Name == itemName).Equals(default(KeyValuePair<GameItem, int>)) == false);
     }
     public GameItem FindItemCapableOfAction(string action)
     {

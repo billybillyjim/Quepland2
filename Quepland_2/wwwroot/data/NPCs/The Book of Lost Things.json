@@ -1,0 +1,45 @@
+{
+  "name": "The Book of Lost Things",
+  "id": 39,
+  "dialogs": [
+    {
+      "buttonText": "Look at the book",
+      "responseText": "The man on the book turns and points his finger at you. \"What's this? This is your last chance!\"",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "What?",
+      "responseText": "You have three options. Red, orange, or green.",
+      "newDepthOnTalk": 2,
+      "depth": 1
+    },
+    {
+      "buttonText": "What?",
+      "responseText": "I said, You have three options! Red, orange, or green!",
+      "newDepthOnTalk": 2,
+      "depth": 2
+    },
+    {
+      "buttonText": "Red",
+      "responseText": "ChangeWorldColor",
+      "parameter": "#2e1b1b",
+      "newDepthOnTalk": 3,
+      "depth": 2
+    },
+    {
+      "buttonText": "Orange",
+      "responseText": "ChangeWorldColor",
+      "parameter": "#2d271b",
+      "newDepthOnTalk": 4,
+      "depth": 2
+    },
+    {
+      "buttonText": "Green",
+      "responseText": "ChangeWorldColor",
+      "parameter": "#1b2d23",
+      "newDepthOnTalk": 5,
+      "depth": 2
+    }
+
+  ]
+}
