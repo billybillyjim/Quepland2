@@ -1,0 +1,112 @@
+{
+  "name": "Wakanidsko",
+  "id": 40,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello. You found some keys, I see.",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "areaUnlocked": "Sawoka Vault",
+          "requireAreaLocked": true
+        }
+      ]
+    },
+    {
+      "buttonText": "Hello",
+      "responseText": "I'm sure you're a very interesting individual but I've already shown you my library and vault and I would appreciate it if you could leave me to my work now.",
+      "requirements": [
+        {
+          "areaUnlocked": "Sawoka Vault"
+        }
+      ]
+    },
+    {
+      "buttonText": "Who are you?",
+      "responseText": "I'm the great wizard Wakanidsko! And who are you, coming into my home uninvited?",
+      "newDepthOnTalk": 2,
+      "depth": 1
+    },
+    {
+      "buttonText": "I'm an adventurer",
+      "responseText": "That much is clear. How did you get through the swamp? I thought I made it impenetrable!",
+      "newDepthOnTalk": 3,
+      "depth": 2
+    },
+    {
+      "buttonText": "I followed a voice",
+      "responseText": "A voice! Of course. It was probably my brother. He's an idiot and it's exactly the kind of prank he would pull. Well, in the end it doesn't matter. You're here now, and presumably you have some questions.",
+      "newDepthOnTalk": 4,
+      "depth": 3
+    },
+    {
+      "buttonText": "I read a guide",
+      "responseText": "A guide? As in, someone else has made it though the swamp and written down its secrets? That is quite frustrating. Well, in the end it doesn't matter. You're here now, and presumably you have some questions.",
+      "newDepthOnTalk": 4,
+      "depth": 3
+    },
+    {
+      "buttonText": "I made a map",
+      "responseText": "Impressive! I don't really believe you, but in the end it doesn't matter. You're here now, and presumably you have some questions.",
+      "newDepthOnTalk": 4,
+      "depth": 3
+    },
+    {
+      "buttonText": "What is this place?",
+      "responseText": "This is my home. It may be dark and full of monsters, but I prefer it that way.",
+      "newDepthOnTalk": 4,
+      "depth": 4
+    },
+    {
+      "buttonText": "Can you teach me magic?",
+      "responseText": "Hah, no. As the only wizard in Quepland who maintains a decent relationship with those in Hiskaten, I'd rather not have them discover I taught another the secret magical arts.",
+      "newDepthOnTalk": 4,
+      "depth": 4
+    },
+    {
+      "buttonText": "Who is the man on the book?",
+      "responseText": "You could consider him a caretaker of the library. I created both him and the library by my own magic but he is able to keep its true inner workings mysterious even to me.",
+      "newDepthOnTalk": 4,
+      "depth": 4
+    },
+    {
+      "buttonText": "Why are there so many keys?",
+      "responseText": "As a magician I have always been interested in the mysterious. Much of mystery comes from what grows out from within. Created things by nature are known by their creator, but a thing that grows from itself can be truly unknown. I have used magic to produce a variety of things, including my library, which grows its own books. The other side of the library is a safe room, which grows its own safes. The safes in that room are connected to the books in the library, and the keys in one can open the safes in the other.",
+      "newDepthOnTalk": 5,
+      "depth": 4,
+      "requirements": [
+        {
+          "areaUnlocked": "Sawoka Vault",
+          "requireAreaLocked": true
+        }
+      ]
+    },
+    {
+      "buttonText": "Where is the safe room?",
+      "responseText": "I will take you there. I have no need for what it contains, but perhaps you will enjoy the mystery as much as I did when I first discovered what these rooms began to produce.",
+      "newDepthOnTalk": 6,
+      "depth": 5,
+      "requirements": [
+        {
+          "areaUnlocked": "Sawoka Vault",
+          "requireAreaLocked": true
+        }
+      ]
+    },
+    {
+      "buttonText": "I am ready.",
+      "newDepthOnTalk": 7,
+      "depth": 6,
+      "responseText": "UnlockAndGotoArea",
+      "parameter": "SawokaVault",
+      "requirements": [
+        {
+          "areaUnlocked": "Sawoka Vault",
+          "requireAreaLocked": true
+        }
+      ]
+    }
+
+  ]
+}

@@ -71,7 +71,7 @@
       ]
     },
     {
-      "buttonText": "Now what?",
+      "buttonText": "I have my axe, now what?",
       "responseText": "Just click to chop some White Pine trees and you'll gain experience in Woodcutting. You can see your experience by clicking Skills at the top of the right sidebar.",
       "quest": "Oriole Ornithology",
       "newQuestprogressValue": 5,

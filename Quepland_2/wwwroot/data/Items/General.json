@@ -37,9 +37,24 @@
     "icon": "Tumbler"
   },
   {
-    "Name": "Small Library Key",
+    "Name": "Small Red Library Key",
     "Description": "A small key from the Sawoka dungeon library. It looks very fragile, but maybe it can open something.",
     "value": 10,
+    "secondaryColor": "#cf5353",
+    "icon": "Key"
+  },
+  {
+    "Name": "Small Orange Library Key",
+    "Description": "A small key from the Sawoka dungeon library. It looks very fragile, but maybe it can open something.",
+    "value": 10,
+    "secondaryColor": "#d9a668",
+    "icon": "Key"
+  },
+  {
+    "Name": "Small Green Library Key",
+    "Description": "A small key from the Sawoka dungeon library. It looks very fragile, but maybe it can open something.",
+    "value": 10,
+    "secondaryColor": "#6cd665",
     "icon": "Key"
   },
   {

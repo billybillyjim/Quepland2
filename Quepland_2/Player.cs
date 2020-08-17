@@ -83,11 +83,18 @@ public class Player
         {
             return 1;
         }
-        string skill = item.Requirements.FirstOrDefault(x => x.Skill != "None").Skill;
+        string skill = item.Requirements.FirstOrDefault(x => x.Skill != "None")?.Skill ?? "None";
+        if(skill == "None")
+        {
+            return 1;
+        }
         double multi = 1;
         foreach(GameItem i in equippedItems)
         {
-            multi -= i.GatherSpeedBonus;
+            if (i.EnabledActions.Contains(skill))
+            {
+                multi -= i.GatherSpeedBonus;
+            }         
         }
         return Math.Max(multi, 0.01);
     }

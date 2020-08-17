@@ -54,5 +54,44 @@
     "image": "Book",
     "areaURL": "SawokaLibrary",
     "description": "This is the library."
+  },
+  {
+    "name": "Sawoka Vault",
+    "id": 24,
+    "image": "Safe",
+    "areaURL": "SawokaVault",
+    "description": "This is the vault."
+  },
+  {
+    "name": "Strange Wall",
+    "id": 25,
+    "image": "Wall",
+    "areaURL": "StrangeWall",
+    "description": "The wall here is carved into a huge art piece. The art is covered in small holes that seem like they might fit a small key.",
+    "buildings": [
+      {
+        "name": "Wakanidsko's Room",
+        "buttonText": "Use keys on holes",
+        "description": "You enter a large, well lit space littered with papers and books. A large bed sits in one corner and a kitchen space sits in the other. A very strange looking man is sitting at a desk writing something.",
+        "URL": "WakanidskosRoom",
+        "requirements": [
+          {
+            "item": "Small Red Library Key",
+            "itemAmount": 3
+          },
+          {
+            "item": "Small Orange Library Key",
+            "itemAmount": 3
+          },
+          {
+            "item": "Small Green Library Key",
+            "itemAmount": 3
+          }
+        ],
+        "npcs": [
+          "Wakanidsko"
+        ]
+      }
+    ]
   }
 ]

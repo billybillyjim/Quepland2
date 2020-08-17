@@ -1199,5 +1199,44 @@
         }
       ]
     }
+  },
+  {
+    "Name": "Iron Knuckles",
+    "Description": "They're like metal gloves for your knuckles. ",
+    "value": 350,
+    "secondaryColor": "#434341",
+    "equipSlot": "R Hand",
+    "icon": "Knuckles",
+    "weaponInfo": {
+      "attackSpeed": 7,
+      "damage": 55,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 45
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Magic Iron Sword",
+    "Description": "A sharp metal sword, but magical. It mostly swings itself.",
+    "secondaryColor": "#434341",
+    "value": 1280,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "R Hand",
+    "experienceGainBonus": -0.25,
+    "experienceBonusSkill": "Swordsmanship",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 8,
+      "damage": 90,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 55
+        }
+      ]
+    }
   }
 ]

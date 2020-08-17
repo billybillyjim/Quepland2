@@ -1,0 +1,110 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+<div style="margin-top:-10px;margin-bottom:10px;background-color:#03a58c;padding:10px;border-radius:0.5rem;">
+
+    <div @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GetTooltip())))"
+         @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+        Gem Cutting Station
+    </div>
+    @if (Player.Instance.GetLevel("Lapidary") >= 30)
+    {
+        <div style="margin-left:-10px;">
+            <CustomDropdownComponent BoxText="Select a gem to cut" EmptyText="You don't have any gems that you have the level to cut." @bind-Value="Source" DropdownItems="@GetAvailableGems()"></CustomDropdownComponent>
+        </div>
+        @if (Source != "")
+        {
+            <div>
+                <button class="btn btn-primary" @onclick="@(() => Shape())">Cut Gem</button>
+            </div>
+        }
+        else
+        {
+            <div @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need to select a gem first.")))"
+                 @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                <button class="btn btn-primary" style="opacity:0.5">Cut Gem</button>
+            </div>
+        }
+
+    }
+
+</div>
+
+@code {
+
+    private List<Recipe> cuttableGems = new List<Recipe>();
+    private string s = "";
+    string Source
+    {
+        get { return s; }
+        set
+        {
+            s = value;
+            UpdateList();
+        }
+    }
+
+    public string GetTooltip()
+    {
+        if (Player.Instance.GetLevel("Lapidary") >= 30)
+        {
+            return "You've found a gem cutting table. You can use it to cut gems at angles into beautiful forms.";
+        }
+        else
+        {
+            return "You've found a complicated machine. It looks like you could maybe cut gems with it, if you had the skill.";
+        }
+    }
+    public void Shape()
+    {
+        if (Source != "")
+        {
+            Recipe output = ItemManager.Instance.GetCuttingRecipeByIngredients("1 " + Source);
+            output.Create(out _);
+            if (Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(Source)) == 0)
+            {
+                Source = "";
+            }
+        }
+
+        GameState.UpdateState();
+    }
+    public List<string> GetAvailableGems()
+    {
+        if (cuttableGems.Count > 0)
+        {
+            return cuttableGems.Select(x => x.Ingredients[0].ItemName).ToList();
+        }
+        return new List<string>();
+    }
+    public void UpdateList()
+    {
+        cuttableGems.Clear();
+        foreach (Recipe recipe in ItemManager.Instance.GemCuttingRecipes)
+        {
+            if (recipe != null && recipe.Output != null)
+            {
+                if (recipe.CanCreate())
+                {
+                    cuttableGems.Add(recipe);
+                }
+            }
+
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        UpdateList();
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e)
+    {
+        UpdateList();
+        StateHasChanged();
+    }
+}

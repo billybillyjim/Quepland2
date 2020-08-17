@@ -145,10 +145,14 @@
 
     public void GoToArea(string name)
     {
-        GameState.StopActions();
-        GameState.Location = name;
-        UriHelper.NavigateTo("World/" + name + "/");
-        GameState.UpdateState();
+        if(GameState.Location != name)
+        {
+            GameState.StopActions();
+            GameState.Location = name;
+            UriHelper.NavigateTo("World/" + name + "/");
+            GameState.UpdateState();
+        }
+
     }
     public void ToggleSettings()
     {

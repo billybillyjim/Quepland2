@@ -32,7 +32,9 @@ else
 
         Player.Instance.CurrentHP = 50;
         Bank.Instance.Inventory.AddItem("Stone Axe");
-
+        Player.Instance.Inventory.AddMultipleOfItem("Small Red Library Key", 5);
+        Player.Instance.Inventory.AddMultipleOfItem("Small Orange Library Key", 5);
+        Player.Instance.Inventory.AddMultipleOfItem("Small Green Library Key", 5);
         GameState.StateChanged += OnGameStateChanged;
     }
     private void Rates()

@@ -29,7 +29,7 @@
     {
       "buttonText": "Orange",
       "responseText": "ChangeWorldColor",
-      "parameter": "#2d271b",
+      "parameter": "#463513",
       "newDepthOnTalk": 4,
       "depth": 2
     },

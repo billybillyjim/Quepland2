@@ -32,11 +32,27 @@
     <button @onclick="@(() => GetUltimateWeapons())">
         Get Ultimate Weapons
     </button>
+    <div>
+        <input @bind-value="itemName"/>
+        <button @onclick="@GetItem">Get @itemName</button>
+    </div>
+
 </div>
 
 
 
 @code {
+
+    private string itemName = "";
+
+    public void GetItem()
+    {
+        GameItem i = ItemManager.Instance.GetItemByName(itemName);
+        if(i != null)
+        {
+            Player.Instance.Inventory.AddItem(i);
+        }
+    }
 
     public void GetUltimateWeapons()
     {

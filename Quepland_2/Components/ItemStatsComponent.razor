@@ -5,27 +5,34 @@
 {
     @if (ItemHasCombatStats())
     {
-    <div style="width:350px;height:28px;border:solid black 1px;position:relative;background-color:gray;display:flex;">
-        <div style="margin-right:10px;line-height:28px;flex:1;"
-             @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Damage", "This is a measure of how much this item boosts your damage. Higher numbers are better!")))"
-             @onmouseout="@(new Action(() => GameState.HideTooltip()))">
-            <img src="data/Images/Attack.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetAttack() <span style="@GetColor(GetAttackDifference(), false)">(@GetAttackDifference())</span>
-        </div>
-        @if (Item.EquipSlot != "None")
-        {
-            <div style="margin-right:10px;line-height:28px;flex:1;"
-                 @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Armor", "This is a measure of how much this item boosts your armor. Higher numbers are better!")))"
-                 @onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                <img src="data/Images/Armor.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetArmor() <span style="@GetColor(GetArmorDifference(), false)">(@GetArmorDifference())</span>
-            </div>
-            <div style="margin-right:10px;line-height:28px;flex:1;"
-                 @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Speed", "This is a measure of how many game ticks this weapon attacks at. Lower is faster!")))"
-                 @onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                <img src="data/Images/Speed.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetSpeed() <span style="@GetColor(GetSpeedDifference(), true)">(@GetSpeedDifference())</span>
-            </div>
-        }
-
+<div style="width:350px;height:28px;border:solid black 1px;position:relative;background-color:gray;display:flex;">
+    <div style="margin-right:10px;line-height:28px;flex:1;"
+         @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Damage", "This is a measure of how much this item boosts your damage. Higher numbers are better!")))"
+         @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+        <img src="data/Images/Attack.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetAttack() <span style="@GetColor(GetAttackDifference(), false)">(@GetAttackDifference())</span>
     </div>
+    @if (Item.EquipSlot != "None")
+    {
+        <div style="margin-right:10px;line-height:28px;flex:1;"
+             @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Armor", "This is a measure of how much this item boosts your armor. Higher numbers are better!")))"
+             @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            <img src="data/Images/Armor.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetArmor() <span style="@GetColor(GetArmorDifference(), false)">(@GetArmorDifference())</span>
+        </div>
+        <div style="margin-right:10px;line-height:28px;flex:1;"
+             @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Speed", "This is a measure of how many game ticks this weapon attacks at. Lower is faster!")))"
+             @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            <img src="data/Images/Speed.png" style="height:26px;width:26px;margin-top:-3px;" /> @GetSpeed() <span style="@GetColor(GetSpeedDifference(), true)">(@GetSpeedDifference())</span>
+        </div>
+    }
+    @if (GetGatherBonus() > 0)
+    {
+        <div style="margin-right:10px;line-height:28px;flex:1;"
+             @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Gather Speed Bonus", "This is how much this item improves gathering speed when equipped.")))"
+             @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            <img src="data/Images/Bonus.png" style="height:26px;width:26px;margin-top:-3px;" /> @(GetGatherBonus() * 100d)%
+        </div>
+    }
+</div>
     }
     else if (Item.FoodInfo != null)
     {
@@ -118,6 +125,10 @@
     public string GetBoostedStat()
     {
         return Item.FoodInfo?.BuffedSkill ?? "None";
+    }
+    public double GetGatherBonus()
+    {
+        return Item.GatherSpeedBonus;
     }
     public int GetBoostedAmount()
     {

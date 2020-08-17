@@ -68,7 +68,7 @@ public class Skill
     }
     public void LoadExperience(long amount)
     {
-        Console.WriteLine("Loading EXP for " + Name + ":" + amount);
+        //Console.WriteLine("Loading EXP for " + Name + ":" + amount);
         if (amount < 0)
         {
             return;

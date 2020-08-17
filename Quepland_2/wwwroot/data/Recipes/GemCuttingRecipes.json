@@ -7,11 +7,11 @@
         "amount": 1
       }
     ],
-    "experienceGained": "Lapidary:15",
+    "experienceGained": "Lapidary:50",
     "requirements": [
       {
         "skill": "Lapidary",
-        "skillLevel": 1
+        "skillLevel": 30
       }
     ],
     "maxOutputsPerAction": 1
@@ -24,11 +24,11 @@
         "amount": 1
       }
     ],
-    "experienceGained": "Lapidary:25",
+    "experienceGained": "Lapidary:75",
     "requirements": [
       {
         "skill": "Lapidary",
-        "skillLevel": 5
+        "skillLevel": 35
       }
     ],
     "maxOutputsPerAction": 1
@@ -41,11 +41,11 @@
         "amount": 1
       }
     ],
-    "experienceGained": "Lapidary:25",
+    "experienceGained": "Lapidary:100",
     "requirements": [
       {
         "skill": "Lapidary",
-        "skillLevel": 5
+        "skillLevel": 41
       }
     ],
     "maxOutputsPerAction": 1
@@ -58,11 +58,11 @@
         "amount": 1
       }
     ],
-    "experienceGained": "Lapidary:25",
+    "experienceGained": "Lapidary:125",
     "requirements": [
       {
         "skill": "Lapidary",
-        "skillLevel": 5
+        "skillLevel": 46
       }
     ],
     "maxOutputsPerAction": 1
@@ -75,11 +75,11 @@
         "amount": 1
       }
     ],
-    "experienceGained": "Lapidary:25",
+    "experienceGained": "Lapidary:150",
     "requirements": [
       {
         "skill": "Lapidary",
-        "skillLevel": 5
+        "skillLevel": 51
       }
     ],
     "maxOutputsPerAction": 1
@@ -92,11 +92,11 @@
         "amount": 1
       }
     ],
-    "experienceGained": "Lapidary:25",
+    "experienceGained": "Lapidary:175",
     "requirements": [
       {
         "skill": "Lapidary",
-        "skillLevel": 5
+        "skillLevel": 56
       }
     ],
     "maxOutputsPerAction": 1
@@ -109,11 +109,11 @@
         "amount": 1
       }
     ],
-    "experienceGained": "Lapidary:25",
+    "experienceGained": "Lapidary:200",
     "requirements": [
       {
         "skill": "Lapidary",
-        "skillLevel": 5
+        "skillLevel": 61
       }
     ],
     "maxOutputsPerAction": 1
@@ -126,11 +126,11 @@
         "amount": 1
       }
     ],
-    "experienceGained": "Lapidary:25",
+    "experienceGained": "Lapidary:250",
     "requirements": [
       {
         "skill": "Lapidary",
-        "skillLevel": 5
+        "skillLevel": 66
       }
     ],
     "maxOutputsPerAction": 1
@@ -143,11 +143,11 @@
         "amount": 1
       }
     ],
-    "experienceGained": "Lapidary:25",
+    "experienceGained": "Lapidary:275",
     "requirements": [
       {
         "skill": "Lapidary",
-        "skillLevel": 5
+        "skillLevel": 71
       }
     ],
     "maxOutputsPerAction": 1
@@ -160,11 +160,11 @@
         "amount": 1
       }
     ],
-    "experienceGained": "Lapidary:25",
+    "experienceGained": "Lapidary:300",
     "requirements": [
       {
         "skill": "Lapidary",
-        "skillLevel": 5
+        "skillLevel": 76
       }
     ],
     "maxOutputsPerAction": 1
@@ -177,11 +177,11 @@
         "amount": 1
       }
     ],
-    "experienceGained": "Lapidary:25",
+    "experienceGained": "Lapidary:325",
     "requirements": [
       {
         "skill": "Lapidary",
-        "skillLevel": 5
+        "skillLevel": 81
       }
     ],
     "maxOutputsPerAction": 1
@@ -194,11 +194,11 @@
         "amount": 1
       }
     ],
-    "experienceGained": "Lapidary:25",
+    "experienceGained": "Lapidary:350",
     "requirements": [
       {
         "skill": "Lapidary",
-        "skillLevel": 5
+        "skillLevel": 86
       }
     ],
     "maxOutputsPerAction": 1
@@ -211,11 +211,11 @@
         "amount": 1
       }
     ],
-    "experienceGained": "Lapidary:25",
+    "experienceGained": "Lapidary:400",
     "requirements": [
       {
         "skill": "Lapidary",
-        "skillLevel": 5
+        "skillLevel": 91
       }
     ],
     "maxOutputsPerAction": 1

@@ -36,13 +36,13 @@
             <button class="btn btn-primary" @onclick="@(() => GenerateBooks())">Browse</button>
             @foreach (Book b in FoundBooks)
             {
-                <div>
-                    <p>
-                    You found @b.Description
-                        <div>
-                            <button class="btn btn-primary" style="margin-bottom:5px;" @onclick="@(() => Read(b))">Read</button>
-                        </div>
-                    </p>
+                <div style="margin-top:10px;">
+               
+                    <div>
+                        <button class="btn btn-primary" style="margin-bottom:5px;" @onclick="@(() => Read(b))">Read</button>
+                        You found @b.Description
+                    </div>
+
                     
                 </div>
             }
@@ -62,6 +62,7 @@
 
     private void GenerateBooks()
     {
+        StopReading();
         FoundBooks.Clear();
         for (int i = 0; i < 3; i++)
         {
@@ -70,18 +71,26 @@
     }
     private void Read(Book book)
     {
-        GameState.CurrentBook = book;
+        StopReading();
+        GameState.StopActions();
+        GameState.NewBook = book;
         IsReading = true;
-        GameState.TicksToNextAction = 60;
+        GameState.TicksToNextAction = (int)Math.Max(60, ((1 + book.Difficulty * 5d) / (Player.Instance.GetLevel(book.Skill.Name)) * 60));
         GameState.UpdateState();
     }
     private void StopReading()
     {
         GameState.CurrentBook = null;
+        IsReading = false;
         GameState.UpdateState();
     }
     private string GetProgress()
     {
+        if(GameState.CurrentBook != null)
+        {
+            return "width:" + (100 - ((double)GameState.TicksToNextAction / Math.Max(60, ((1 + GameState.CurrentBook.Difficulty * 5d) / (Player.Instance.GetLevel(GameState.CurrentBook.Skill.Name)) * 60))) * 100d) + "%";
+            
+        }
         return "width:" + (100 - ((double)GameState.TicksToNextAction / 60d) * 100d) + "%";
     }
     protected override void OnInitialized()
@@ -96,6 +105,7 @@
     public void Dispose()
     {
         GameState.BGColor = "#2d2d2d";
+        GameState.CurrentBook = null;
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();

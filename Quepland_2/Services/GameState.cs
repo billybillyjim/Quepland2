@@ -66,12 +66,13 @@ using System.Threading.Tasks;
     public Recipe NewCraftingRecipe;
     public Recipe NewSmeltingRecipe;
     public Recipe NewSmithingRecipe;
-    public Book CurrentBook;
+    public Book NewBook;
 
     public GameItem CurrentGatherItem;
     public List<GameItem> PossibleGatherItems = new List<GameItem>();
     public Recipe CurrentSmeltingRecipe;
     public Recipe CurrentSmithingRecipe;
+    public Book CurrentBook;
 
     public AlchemicalFormula CurrentAlchemyFormula;
     
@@ -246,6 +247,7 @@ using System.Threading.Tasks;
         BattleManager.Instance.CurrentOpponents.Clear();
         CurrentSmithingRecipe = null;
         CurrentSmeltingRecipe = null;
+        CurrentBook = null;
         stopActions = false;
         IsStoppingNextTick = false;
         if(NewGatherItem != null)
@@ -269,6 +271,11 @@ using System.Threading.Tasks;
             CurrentRecipe = NewCraftingRecipe;
             NewCraftingRecipe = null;
         }
+        if (NewBook != null)
+        {
+            CurrentBook = NewBook;
+            NewBook = null;
+        }    
     }
     private void ClearNonCombatActions()
     {
@@ -342,8 +349,8 @@ using System.Threading.Tasks;
             Player.Instance.GainExperience(CurrentBook.Skill, (long)((Player.Instance.GetLevel(CurrentBook.Skill.Name) / 60d) * 1000));
             MessageManager.AddMessage("You read another page of the book. You feel more knowledgable about " + CurrentBook.Skill.Name + ".");
             CurrentBook.Progress++;
-            TicksToNextAction = 60;
-            if(Random.Next(0, CurrentBook.Length) == CurrentBook.Progress)
+            TicksToNextAction = (int)Math.Max(60, ((1 + CurrentBook.Difficulty * 5d) / (Player.Instance.GetLevel(CurrentBook.Skill.Name)) * 60));
+            if (Random.Next(0, CurrentBook.Length) == CurrentBook.Progress)
             {
                 MessageManager.AddMessage("A small key falls out of the book as you turn the page.");
                 Player.Instance.Inventory.AddItem("Small Library Key");

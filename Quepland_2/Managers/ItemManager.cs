@@ -97,14 +97,14 @@ public class ItemManager
             }
             else
             {
-                Console.WriteLine(file + " has " + count + " items.");
+                //Console.WriteLine(file + " has " + count + " items.");
 
             }
             Items.AddRange(addedItems);
             baseID += MaxItemsPerFile;
             colorIter++;
         }
-        Console.WriteLine("Total Items:" + Items.Count);
+        //Console.WriteLine("Total Items:" + Items.Count);
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/WoodworkingRecipes.json"));
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/UnpackingRecipes.json"));
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/SushiRecipes.json"));
@@ -143,7 +143,15 @@ public class ItemManager
     public GameItem GetItemByUniqueID(string uniqueID)
     {
         //Console.WriteLine("Looking for item with ID:" + uniqueID);
-        return UniqueIDLookupDic[uniqueID];
+        if(UniqueIDLookupDic.TryGetValue(uniqueID, out GameItem i))
+        {
+            return i;
+        }
+        else
+        {
+            Console.WriteLine("UniqueID not found in dictionary:" + uniqueID);
+        }
+        return null;
     }
     public GameItem GetItem(string name, int charges, string parameter)
     {
@@ -197,6 +205,18 @@ public class ItemManager
     public Recipe GetCabochonRecipeByIngredients(string ingredients)
     {
         foreach (Recipe recipe in GemCabochonRecipes)
+        {
+            if (recipe.GetShortIngredientsString() == ingredients)
+            {
+                return recipe;
+            }
+        }
+        Console.WriteLine("Failed to find recipe with ingredients:" + ingredients);
+        return null;
+    }
+    public Recipe GetCuttingRecipeByIngredients(string ingredients)
+    {
+        foreach (Recipe recipe in GemCuttingRecipes)
         {
             if (recipe.GetShortIngredientsString() == ingredients)
             {
