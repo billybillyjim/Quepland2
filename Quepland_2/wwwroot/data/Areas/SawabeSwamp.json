@@ -14,7 +14,9 @@
         "AreaURL": "Swampwood",
         "ButtonText": "Enter the Woods"
       }
-
+    ],
+    "npcs": [
+      "Tired Traveller"
     ]
   },
   {

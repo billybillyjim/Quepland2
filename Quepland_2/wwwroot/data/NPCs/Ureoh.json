@@ -1,0 +1,22 @@
+{
+  "name": "Ureoh",
+  "id": 41,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "What!? Don't be so LOUD! We are right next to eachother! My ears!!",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Are you okay?",
+      "responseText": "Am I okay? Am I okay? Of course I'm okay. Of course I'm okay. I can hear. I can hear it all, you know!",
+      "newDepthOnTalk": 2,
+      "depth": 1
+    },
+    {
+      "buttonText": "What do you hear?",
+      "responseText": "The voice! HIS voice. In the darkness of that bog. He led me where I needed to be! Hehe! All I had to do was listen. I can still hear it. I can still hear. And you, I hear you, too.",
+      "depth": 2
+    }
+  ]
+}

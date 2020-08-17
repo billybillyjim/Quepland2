@@ -1,0 +1,21 @@
+{
+  "name": "Tired Traveller",
+  "id": 42,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello. You're not headed into that swamp, are you?",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Yes, I am",
+      "responseText": "Well, good luck. I spent all day trying and ended up back at the start over and over. I've heard someone up north made it though, so I might try to find him and see if he can help.",
+      "depth": 1
+    },
+    {
+      "buttonText": "No, I'm not",
+      "responseText": "That's smart. It's a waste of time. I spent all day trying and ended up back at the start over and over. I've heard someone up north made it though, so I might try to find him and see if he can help.",
+      "depth": 1
+    }
+  ]
+}

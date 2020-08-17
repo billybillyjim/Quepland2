@@ -181,12 +181,23 @@
     "name": "Mt Yama",
     "id": 74,
     "image": "Mountain",
-    "description": "The path ends at the mouth of a large cave. You can hear footsteps echoing inside.",
+    "description": "The path ends at the mouth of a large cave. You can hear footsteps echoing inside. Just before the entrance is a small shack. Smoke is pouring out of its small chimney.",
     "areaURL": "MtYama",
     "unlockableAreas": [
       {
         "areaURL": "MtYamaCave",
         "buttonText": "Enter the cave"
+      }
+    ],
+    "buildings": [
+      {
+        "name": "Sturdy Shack",
+        "buttonText": "Enter shack",
+        "url": "SturdyShack",
+        "description": "The shack is quite warm. A strange man sits by the fire, though it's not apparent if he noticed you enter.",
+        "npcs": [
+          "Ureoh"
+        ]
       }
     ]
   },
