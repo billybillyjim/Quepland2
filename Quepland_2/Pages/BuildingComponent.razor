@@ -55,7 +55,7 @@
 
     private void Exit()
     {
-        UriHelper.NavigateTo("/World/" + areaURL);
+        GameState.GoTo("/World/" + areaURL + "/");
         GameState.UpdateState();
     }
     private void Talk(Dialog d)
@@ -66,7 +66,6 @@
     protected override void OnParametersSet()
     {
         thisBuilding = AreaManager.Instance.GetAreaByURL(areaURL).GetBuildingByURL(buildingURL);
-        Console.WriteLine("This building has " + thisBuilding.AFKActions.Count);
         GameState.UpdateState();
     }
     protected override void OnInitialized()

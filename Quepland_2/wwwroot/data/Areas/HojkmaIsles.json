@@ -3,12 +3,23 @@
     "name": "Kogoe Docks",
     "id": 70,
     "image": "Docks",
-    "description": "You step onto the dock of a small, chilly village. Ice floes surround this snowy wasteland, the whole island is covered in a frosty shroud.",
+    "description": "You step onto the dock of a small, chilly village. Ice floes surround this snowy wasteland, the whole island is covered in a frosty shroud.  Just at the edge of the docks is a little shack. Smoke is pouring out of its small chimney.",
     "areaURL": "KogoeDocks",
     "unlockableAreas": [
       {
         "areaURL": "KogoeTown",
         "buttonText": "Enter Town"
+      }
+    ],
+    "buildings": [
+      {
+        "name": "Sturdy Shack",
+        "buttonText": "Enter shack",
+        "url": "SturdyShack",
+        "description": "The shack is quite warm. A strange man sits by the fire, though it's not apparent if he noticed you enter.",
+        "npcs": [
+          "Ureoh"
+        ]
       }
     ],
     "actions": [
@@ -181,23 +192,12 @@
     "name": "Mt Yama",
     "id": 74,
     "image": "Mountain",
-    "description": "The path ends at the mouth of a large cave. You can hear footsteps echoing inside. Just before the entrance is a small shack. Smoke is pouring out of its small chimney.",
+    "description": "The path ends at the mouth of a large cave. You can hear footsteps echoing inside.",
     "areaURL": "MtYama",
     "unlockableAreas": [
       {
         "areaURL": "MtYamaCave",
         "buttonText": "Enter the cave"
-      }
-    ],
-    "buildings": [
-      {
-        "name": "Sturdy Shack",
-        "buttonText": "Enter shack",
-        "url": "SturdyShack",
-        "description": "The shack is quite warm. A strange man sits by the fire, though it's not apparent if he noticed you enter.",
-        "npcs": [
-          "Ureoh"
-        ]
       }
     ]
   },

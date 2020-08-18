@@ -9,14 +9,14 @@
     "dungeonName": "Queple Cave"
   },
   {
-    "name": "Copper Mine",
+    "name": "Pentlandite Mine",
     "id": 11,
     "isUnlocked": false,
-    "description": "You find a large opening in the cave, the walls glitter with a bright metallic brown. It seems to be a motherlode of copper!",
-    "areaURL": "CopperMine",
+    "description": "You find a large opening in the cave, the walls glitter with a bright metallic yellow-brown. It seems to be a motherlode of pentlandite!",
+    "areaURL": "PentlanditeMine",
     "image": "Mine",
     "actions": [
-      "Mine Copper:Copper Ore"
+      "Mine Pentlandite:Pentlandite"
     ]
   },
   {
@@ -87,7 +87,7 @@
         "url": "QueplesTomb",
         "description": "The walls of the room are lit with a iridescent purple glow. A massive sarcophagus runs along the length of the room. A very large sword sits leaning against the side closest to you.",
         "npcs": [
-          "Queple's Sarcophagus"
+          "Queple's Tomb"
         ],
         "requirements": [
           {

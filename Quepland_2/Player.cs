@@ -300,6 +300,12 @@ public class Player
         {
             GainExperience("Fishing", (int)(damageDealt * 0.1));
         }
+        else if (weapon.EnabledActions.Contains("Mining"))
+        {
+            GainExperience("Hammermanship", (int)(damageDealt * 0.1));
+            GainExperience("Strength", (int)(damageDealt * 0.5));
+            GainExperience("Mining", (int)(damageDealt * 0.08));
+        }
     }
     public void LevelUp(Skill skill)
     {

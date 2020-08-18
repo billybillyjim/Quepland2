@@ -37,7 +37,7 @@
             <div>
                 @Player.Instance.LastGainedExp.Experience
             </div>
-            <div class="progress" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, (Player.Instance.LastGainedExp.Progress) + "% to level " + (Player.Instance.LastGainedExp.GetSkillLevelUnboosted() + 1), "" + Player.Instance.LastGainedExp.Experience + "/" + (long)Skill.GetExperienceRequired(Player.Instance.LastGainedExp.GetSkillLevelUnboosted()))))"
+            <div class="progress" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, (Math.Round(Player.Instance.LastGainedExp.Progress, 2)) + "% to level " + (Player.Instance.LastGainedExp.GetSkillLevelUnboosted() + 1), "" + Player.Instance.LastGainedExp.Experience + "/" + (long)Skill.GetExperienceRequired(Player.Instance.LastGainedExp.GetSkillLevelUnboosted()))))"
             @onmouseout="@(new Action(() => GameState.HideTooltip()))" >
                 <div class="progress-bar" style="background-color:#51d051;width:@(Player.Instance.LastGainedExp.Progress)%">
 
@@ -154,6 +154,10 @@
     }
     public void PauseTracker(string skill)
     {
+        if (skill == "Most Recent" && Player.Instance.LastGainedExp != null)
+        {
+            skill = Player.Instance.LastGainedExp.Name;
+        }
         ExperienceTracker tracker = TrackedExperinceRates.FirstOrDefault(x => x.Skill.Name == skill);
         if (tracker != null)
         {
@@ -170,6 +174,10 @@
         if (skill == null)
         {
             return false;
+        }
+        if (skill == "Most Recent" && Player.Instance.LastGainedExp != null)
+        {
+            skill = Player.Instance.LastGainedExp.Name;
         }
         ExperienceTracker t = TrackedExperinceRates.FirstOrDefault(x => x.Skill.Name == skill);
         return (t != null && t.IsPaused == false);

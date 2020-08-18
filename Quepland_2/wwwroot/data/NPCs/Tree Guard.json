@@ -1,0 +1,26 @@
+{
+  "name": "Tree Guard",
+  "id": 43,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello, traveller."
+    },
+    {
+      "buttonText": "Can I cut these trees down?",
+      "responseText": "No. These trees are the property of Tsu City. You can't cut them down without permission!",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "How do I get permission?",
+      "responseText": "You can't. Well, at least you can't right now. Maybe that will change if things go according to plan.",
+      "depth": 1,
+      "newDepthOnTalk": 2
+    },
+    {
+      "buttonText": "According to plan?",
+      "responseText": "Look, I don't think I need to spell it out for you, I'm just a tree guard. Maybe try coming back in the future and things will have changed.",
+      "depth": 2
+    }
+  ]
+}

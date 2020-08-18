@@ -1,5 +1,13 @@
 [
   {
+    "versionNumber": "0.0.12",
+    "updates": [
+      "Added some missing NPCs",
+      "Renamed some NPCs to fix some typos.",
+      "Added some missing items."
+    ]
+  },
+  {
     "versionNumber": "0.0.11",
     "updates": [
       "Updated the version number to motivate me further.",
@@ -11,7 +19,13 @@
       "Added support for changing the game background.",
       "Fixed typos in recipe descriptions.",
       "Added the Sawoka Library and Vault.",
-      "Added some NPCs to explain how to navigate the swamp."
+      "Added some NPCs to explain how to navigate the swamp.",
+      "Moved some ores around to make early smithing and mining more accessible.",
+      "Fixed a bug that made pickaxes not grant combat experience.",
+      "Fixed a number of bugs with NPCs not being properly set up.",
+      "Made tooltips much more consistent in staying up while gathering and crafting.",
+      "Improved readability of skills menus.",
+      "Improved Exp. Tracker to work with most recent skills more clearly."
     ]
   },
   {

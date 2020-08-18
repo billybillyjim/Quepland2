@@ -14,13 +14,14 @@ else
     {
         if (recipe.CanCreate())
         {
-            <div onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowItemTooltip(e, recipe.OutputAmount + " " + recipe.Output.Name, recipe.GetIngredientsString())))"
-                 @onclick="@(() => GameState.SetCraftingItem(recipe))"><ItemBoxComponent Item="@recipe.Output" shouldRender="@ShouldRender()"></ItemBoxComponent></div>
+            <div @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowCraftingTooltip(e, recipe.OutputAmount + " " + recipe.Output.Name, recipe.GetIngredientsString())))"
+                 @onmouseout="@(new Action(() => GameState.HideTooltip()))"
+                 @onclick="@(() => GameState.SetCraftingItem(recipe))"><ItemBoxComponent Item="@recipe.Output" shouldRender="@ShouldRender()" HideTooltip="true"></ItemBoxComponent></div>
         }
         else if(recipe.HasSomeIngredients())
         {
-            <div style="opacity:0.5" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowItemTooltip(e, recipe.Output.Name, GetTooltip(recipe))))"
-                 onmouseout="@(new Action(() => GameState.HideTooltip()))"><ItemBoxComponent Item="@recipe.Output" shouldRender="@ShouldRender()"></ItemBoxComponent></div>
+            <div style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowCraftingTooltip(e, recipe.Output.Name, GetTooltip(recipe))))"
+                 @onmouseout="@(new Action(() => GameState.HideTooltip()))"><ItemBoxComponent Item="@recipe.Output" shouldRender="@ShouldRender()" HideTooltip="true"></ItemBoxComponent></div>
         }
 
 
@@ -84,11 +85,8 @@ else
     }
     public void ReloadRecipes()
     {
-        var watch = System.Diagnostics.Stopwatch.StartNew();
         Recipes = new List<Recipe>();
         Recipes.AddRange(ItemManager.Instance.GetCraftableRecipes());
-        watch.Stop();
-        Console.WriteLine("List Time:" + watch.ElapsedMilliseconds);
     }
     public void Dispose()
     {

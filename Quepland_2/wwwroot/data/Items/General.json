@@ -58,6 +58,12 @@
     "icon": "Key"
   },
   {
+    "Name": "Yoga Mat",
+    "Description": "A soft mat to do yoga on. You wouldn't want to have to just use the ground, would you?",
+    "value": 1000,
+    "icon": "Mat"
+  },
+  {
     "name": "Feather",
     "description": "Soft, fluffy, and useful for making arrows with.",
     "gatherString": "You separate the feathers into a pile.",

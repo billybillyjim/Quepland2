@@ -135,7 +135,7 @@ public class Recipe
     {
         if (Output.IsStackable)
         {
-            if(Player.Instance.Inventory.GetAvailableSpaces() == 0 && Player.Instance.Inventory.HasItem(Output) == false)
+            if(Player.Instance.Inventory.GetAvailableSpaces() == 0 && Player.Instance.Inventory.HasItem(Output) == false && HasOnlyStackableIngredients())
             {
                 return false;
             }
@@ -258,6 +258,17 @@ public class Recipe
             return ing;
         }
 
+    }
+    public bool HasOnlyStackableIngredients()
+    {
+        foreach(Ingredient i in Ingredients)
+        {
+            if(i.Item.IsStackable == false)
+            {
+                return false;
+            }
+        }
+        return true;
     }
     public int GetMaxOutput()
     {

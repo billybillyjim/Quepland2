@@ -11,7 +11,7 @@
         background: #b0daff;
         color:black;
         border-radius: 0.5rem;">
-        @npc
+        @NPC.Name
         @foreach (Dialog d in NPC.GetDialogsAtDepth(NPC.ConversationDepth))
         {
             @if (d.HasRequirements())

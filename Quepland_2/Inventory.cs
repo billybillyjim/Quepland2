@@ -290,7 +290,9 @@ public class Inventory
                 KeyValuePair<GameItem, int> pair = items.FirstOrDefault(x => x.Key.UniqueID == item.UniqueID);
                 int oldAmt = pair.Value;
                 items.Remove(pair);
+                pair.Key.Rerender = true;
                 items.Add(new KeyValuePair<GameItem, int>(pair.Key, oldAmt + amount));
+                
 
             }
             else
@@ -303,8 +305,10 @@ public class Inventory
         {
             if (item.IsStackable || AllItemsStack)
             {
+                item.Rerender = true;
                 //item.itemPos = inventorySlotPos;
                 items.Add(new KeyValuePair<GameItem, int>(item, amount));
+                
             }
             else
             {

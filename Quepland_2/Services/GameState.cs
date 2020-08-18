@@ -25,7 +25,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "0.0.11";
+    public static string Version { get; set; } = "0.0.12";
     public static List<Update> Updates { get; set; } = new List<Update>();
 
     public static string Location { get; set; } = "";
@@ -393,7 +393,7 @@ using System.Threading.Tasks;
                 else
                 {
                     MessageManager.AddMessage("You don't have enough inventory space to do it again.");
-                }
+                }            
                 CurrentRecipe = null;
                 itemViewer.ClearItem();
             }
@@ -886,6 +886,11 @@ using System.Threading.Tasks;
     public void ShowItemTooltip(MouseEventArgs args, string itemName, string itemDesc)
     {
         TooltipManager.ShowItemTip(args, itemName, itemDesc);
+        UpdateState();
+    }
+    public void ShowCraftingTooltip(MouseEventArgs args, string itemName, string itemDesc)
+    {
+        TooltipManager.ShowCraftingTip(args, itemName, itemDesc);
         UpdateState();
     }
     public void ShowContextMenu(MouseEventArgs args)

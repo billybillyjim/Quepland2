@@ -69,11 +69,11 @@ public class NPCManager
         TimeSpan time = TimeSpan.FromMilliseconds(GameState.CurrentTick * GameState.GameSpeed);
         if(time.TotalHours > 1)
         {
-            MessageManager.AddMessage("You've been in this world for " + time.TotalHours + " hours.");
+            MessageManager.AddMessage("You've been in this world for " + Math.Round(time.TotalHours, 2) + " hours.");
         }
         else if(time.TotalMinutes > 1)
         {
-            MessageManager.AddMessage("You've been in this world for " + time.TotalMinutes + " minutes.");
+            MessageManager.AddMessage("You've been in this world for " + Math.Round(time.TotalMinutes, 2) + " minutes.");
         }
         else if(time.TotalSeconds > 1)
         {

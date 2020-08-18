@@ -156,7 +156,11 @@ else
     }
     public void Dispose()
     {
-        GameState.HideTooltip();
+        if(Item != null && Item.Rerender == true && TooltipManager.CurrentTip != null && Item.Name == TooltipManager.CurrentTip.Title)
+        {
+            GameState.HideTooltip();
+        }
+
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();

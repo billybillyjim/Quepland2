@@ -92,6 +92,35 @@ public static class TooltipManager
         }
         currentDelay = 0;
     }
+    public static void ShowCraftingTip(MouseEventArgs args, string name, string desc)
+    {
+        bool isShowing = false;
+        if (!ShowContext)
+        {
+            Show = true;
+            xPos = args.ClientX;
+            yPos = args.ClientY;
+           
+            if (CurrentTip != null)
+            {
+                if(CurrentTip.Name == name)
+                {
+                    isShowing = true;
+                }
+                CurrentTip.Title = name;
+                CurrentTip.Text = desc;
+            }
+            else
+            {
+                CurrentTip = new Tooltip(name, name, desc);
+            }
+            ShowContext = false;
+        }
+        if(isShowing == false)
+        {
+            currentDelay = 0;
+        }
+    }
     public static void ShowContextMenu(MouseEventArgs args)
     {
         Show = false;

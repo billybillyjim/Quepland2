@@ -113,7 +113,7 @@
     "areaURL": "LowerMtQuepleTrail",
     "image": "Mountain",
     "actions": [
-      "Mine Pentlandite:Pentlandite:You start mining."
+      "Mine Copper:Copper Ore:You start mining."
     ],
     "buildings": [
       {

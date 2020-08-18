@@ -218,6 +218,7 @@ public class BattleManager
         if(Player.Instance.GetWeapon() == null)
         {
             Player.Instance.GainExperience("Strength", total);
+            Player.Instance.GainExperience("Deftness", total / 3);
             MessageManager.AddMessage("You punch the " + Target.Name + " for " + total + " damage!");
         }
         else
