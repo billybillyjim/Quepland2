@@ -43,7 +43,13 @@
       }
     ],
     "progressStrings": [
-      "You haven't started this quest yet. Talk Tuto in Quepland Fields to begin."
+      "You haven't started this quest yet. Talk Tuto in Quepland Fields to begin.",
+      "You met Tuto the Oriole.",
+      "Tuto told you to visit your bank and withdraw your axe.",
+      "Tuto told you the bank is at the top left corner of the screen.",
+      "Tuto told you to click the axe in your bank.",
+      "Tuto told you to return to Quepland Fields and click Chop White Pine. You'll gain woodcutting experience.",
+      "You've completed the tutorial!"
     ]
   },
   {
@@ -85,7 +91,9 @@
       }
     ],
     "progressStrings": [
-      "You haven't started this quest yet. You'll need to complete Mound is Missing before starting this quest on the pirate ship in Uragota Town."
+      "You haven't started this quest yet. You'll need to complete Mound is Missing before starting this quest on the pirate ship in Uragota Town.",
+      "You've been invited to ride on the pirate ship, for a price.",
+      "You've boarded the pirate ship."
     ]
   },
   {
@@ -113,7 +121,34 @@
     "completionText": "Congratulations! You can now purchase camels from Camelpalooza!",
     "progressToComplete": 24,
     "progressStrings": [
-      "You haven't started this quest yet. Talk Camel Carl at the Desert's Mouth to begin."
+      "You haven't started this quest yet. Talk Camel Carl at the Desert's Mouth to begin.",
+      "Carl has revealed to you that his camels were stolen.",
+      "You offered to help Carl with his camels.",
+      "You have convinced Carl you are willing to help him.",
+      "Carl has explained that some pirates have stolen his camels.",
+      "He thinks they may have already sailed away from a port town.",
+      "You have told Carl to try and figure out his own problems.",
+      "Carl has gone off to see if he can find the pirates on his own. He probably went to Uragota Town.",
+      "Carl has found the pirates, but he's too afraid to fight them himself.",
+      "You've encouraged Carl to fight his own battles, but he doesn't have a weapon! He needs an iron sword.",
+      "You've gotten Carl his sword, but now he wants armor. A wild boar shirt, specifically.",
+      "You got Carl an iron sword and armor, but now he's demanding food. You need to bring him 5 Abalone Rolls. Maybe you should have just gone yourself...",
+      "You got Carl everything he asked for, but he's still too scared to fight.",
+      "You tried to convince Carl death isn't so bad after all.",
+      "You convinced Carl to go get his camels back, and he has! Just talk to him in Uragota Town.",
+      "",
+      "You've offered to get Carl's camels back for him. You'll want to look at a nearby port town for more info.",
+      "Kai has revealed the camels were transported out to sea already.",
+      "Kai is willing to take you to the thieves' hideout whenever you are ready. Just talk to him at the Uragota docks.",
+      "Kai is willing to take you to the thieves' hideout whenever you are ready. Just talk to him at the Uragota docks.",
+      "Kai is willing to take you to the thieves' hideout whenever you are ready. Just talk to him at the Uragota docks.",
+      "Kai is willing to take you to the thieves' hideout whenever you are ready. Just talk to him at the Uragota docks.",
+      "You've made it to the thieve's hideout. Now you just need to kill them all!",
+      "You killed all the thieves! Collect the camels and return to Carl.",
+      "",
+      "You saved the camels!",
+      "Speak to Carl to finish the quest.",
+      "Speak to Carl to finish the quest."
     ]
   },
   {

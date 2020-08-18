@@ -226,7 +226,8 @@
           "location": "UragotaTown"
         },
         {
-          "item": "Iron Sword"
+          "item": "Iron Sword",
+          "itemAmount": 1
         }
       ],
       "consumeRequiredItems": true
@@ -247,7 +248,7 @@
       ]
     },
     {
-      "buttonText": "Here's an boar shirt",
+      "buttonText": "Here's a boar shirt",
       "responseText": "Oh this is perfect! Though... I don't think I can fight the pirates on my own without any food to heal myself with...",
       "quest": "Grand Theft Camel",
       "newQuestProgressValue": 11,
@@ -261,7 +262,8 @@
           "location": "UragotaTown"
         },
         {
-          "item": "Wild Boar Shirt"
+          "item": "Wild Boar Shirt",
+          "itemAmount": 1
         }
       ],
       "consumeRequiredItems": true
@@ -296,7 +298,7 @@
           "location": "UragotaTown"
         },
         {
-          "item": "Abalone Sushi",
+          "item": "Abalone Roll",
           "itemAmount": 5
         }
       ],
@@ -304,7 +306,7 @@
     },
     {
       "buttonText": "You can do it!",
-      "responseText": "You really think so? I guess I am pretty well kitted out now... And I do have food... I'll give it a try...",
+      "responseText": "You really think so? I guess I am pretty well kitted out now... And I do have food... I'll give it a try... Carl heads off to the boat and sails away. A few hours later you find he has returned, covered in blood, with his camels in tow.",
       "quest": "Grand Theft Camel",
       "newQuestProgressValue": 14,
       "requirements": [
@@ -336,7 +338,7 @@
     },
     {
       "buttonText": "I have, it's no big deal",
-      "responseText": "Okay, I don't believe you but somehow your calm response to death has given me courage. I guess I am pretty well kitted out now... And I do have food... I'll give it a try...",
+      "responseText": "Okay, I don't believe you but somehow your calm response to death has given me courage. I guess I am pretty well kitted out now... And I do have food... I'll give it a try... Carl heads off to the boat and sails away. A few hours later you find he has returned, covered in blood, with his camels in tow.",
       "quest": "Grand Theft Camel",
       "newQuestProgressValue": 14,
       "requirements": [
@@ -352,7 +354,7 @@
     },
     {
       "buttonText": "Don't worry, you won't die anyways",
-      "responseText": "You really think so? I guess I am pretty well kitted out now... And I do have food... I'll give it a try...",
+      "responseText": "You really think so? I guess I am pretty well kitted out now... And I do have food... I'll give it a try... Carl heads off to the boat and sails away. A few hours later you find he has returned, covered in blood, with his camels in tow.",
       "quest": "Grand Theft Camel",
       "newQuestProgressValue": 14,
       "requirements": [

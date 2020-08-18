@@ -1,0 +1,10 @@
+{
+  "name": "Old Woman",
+  "id": 45,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello. If you're hoping for training, I'm afraid you're out of luck. My husband is retired now, but he used to be one of the greatest sushi chefs in the world."
+    }
+  ]
+}

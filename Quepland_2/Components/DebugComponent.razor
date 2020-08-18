@@ -51,6 +51,7 @@
         if(i != null)
         {
             Player.Instance.Inventory.AddItem(i);
+            MessageManager.AddMessage("You get 1 " + i.Name);
         }
     }
 
