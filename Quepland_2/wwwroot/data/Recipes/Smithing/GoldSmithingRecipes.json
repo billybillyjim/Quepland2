@@ -104,6 +104,21 @@
     ]
   },
   {
+    "outputItemName": "Gold Necklace",
+    "ingredients": [
+      {
+        "itemName": "Molten Gold Bar"
+      }
+    ],
+    "experienceGained": "Smithing:420",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 85
+      }
+    ]
+  },
+  {
     "outputItemName": "Golden Arrowtips",
     "ingredients": [
       {

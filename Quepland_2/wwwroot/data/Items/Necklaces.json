@@ -1,0 +1,210 @@
+[
+  {
+    "name": "Silver Necklace",
+    "value": 400,
+    "description": "A cheaper necklace. You could add a cheaper gemstone to it.",
+    "gatherString": "You make a silver necklace.",
+    "gatherSpeed": 15,
+    "icon": "EmptyNecklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 1
+    },
+    "secondaryColor": "#999999"
+  },
+  {
+    "name": "Gold Necklace",
+    "value": 1500,
+    "description": "A valuable necklace. You could add a valuable gemstone to it.",
+    "gatherString": "You make a gold necklace.",
+    "gatherSpeed": 15,
+    "icon": "EmptyNecklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 5
+    },
+    "secondaryColor": "#FFD700"
+  },
+  {
+    "name": "Platinum Necklace",
+    "value": 2300,
+    "description": "An extremely valuable necklace. You could add a beautiful gemstone to it.",
+    "gatherString": "You make a platinum necklace.",
+    "gatherSpeed": 15,
+    "icon": "EmptyNecklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 10
+    },
+    "secondaryColor": "#E5E4E2"
+  },
+  {
+    "name": "Amberite Necklace",
+    "value": 520,
+    "description": "An amberite necklace. It's pretty.",
+    "gatherString": "You make an amberite necklace.",
+    "gatherSpeed": 15,
+    "icon": "Necklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 2
+    },
+    "secondaryColor": "#d87e04"
+  },
+  {
+    "name": "Lizardite Necklace",
+    "value": 620,
+    "description": "A lizardite necklace. It's pretty.",
+    "gatherString": "You make a lizardite necklace.",
+    "gatherSpeed": 15,
+    "icon": "Necklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 3
+    },
+    "secondaryColor": "#78a872"
+  },
+  {
+    "name": "Purpurite Necklace",
+    "value": 620,
+    "description": "A purpurite necklace. It's pretty.",
+    "gatherString": "You make a purpurite necklace.",
+    "gatherSpeed": 15,
+    "icon": "Necklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 4
+    },
+    "secondaryColor": "#3f073c"
+  },
+  {
+    "name": "Opal Necklace",
+    "value": 620,
+    "description": "An opal necklace. It's pretty.",
+    "gatherString": "You make an opal necklace.",
+    "gatherSpeed": 15,
+    "icon": "Necklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 5
+    },
+    "secondaryColor": "#b3a56c"
+  },
+  {
+    "name": "Garnet Necklace",
+    "value": 620,
+    "description": "A garnet necklace. It's pretty.",
+    "gatherString": "You make a garnet necklace.",
+    "gatherSpeed": 15,
+    "icon": "Necklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 6
+    },
+    "secondaryColor": "#a50d2b"
+  },
+  {
+    "name": "Amethyst Necklace",
+    "value": 620,
+    "description": "An amethyst necklace. It's pretty.",
+    "gatherString": "You make an amethyst necklace.",
+    "gatherSpeed": 15,
+    "icon": "Necklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 7
+    },
+    "secondaryColor": "#ab2996"
+  },
+  {
+    "name": "Emerald Necklace",
+    "value": 620,
+    "description": "An emerald necklace. It's pretty.",
+    "gatherString": "You make an emerald necklace.",
+    "gatherSpeed": 15,
+    "icon": "Necklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 8
+    },
+    "secondaryColor": "#45be7e"
+  },
+  {
+    "name": "Aquamarine Necklace",
+    "value": 620,
+    "description": "An aquamarine necklace. It's pretty.",
+    "gatherString": "You make an aquamarine necklace.",
+    "gatherSpeed": 15,
+    "icon": "Necklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 9
+    },
+    "secondaryColor": "#45c3e2"
+  },
+  {
+    "name": "Topaz Necklace",
+    "value": 620,
+    "description": "A topaz necklace. It's pretty.",
+    "gatherString": "You make a topaz necklace.",
+    "gatherSpeed": 15,
+    "icon": "Necklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 10
+    },
+    "secondaryColor": "#c57621"
+  },
+  {
+    "name": "Chrysoberyl Necklace",
+    "value": 620,
+    "description": "A chrysoberyl necklace. It's pretty.",
+    "gatherString": "You make a chrysoberyl necklace.",
+    "gatherSpeed": 15,
+    "icon": "Necklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 11
+    },
+    "secondaryColor": "#d3b31a"
+  },
+  {
+    "name": "Sapphire Necklace",
+    "value": 620,
+    "description": "A sapphire necklace. It's pretty.",
+    "gatherString": "You make a sapphire necklace.",
+    "gatherSpeed": 15,
+    "icon": "Necklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 12
+    },
+    "secondaryColor": "#203bd2"
+  },
+  {
+    "name": "Ruby Necklace",
+    "value": 620,
+    "description": "A ruby necklace. It's pretty.",
+    "gatherString": "You make a ruby necklace.",
+    "gatherSpeed": 15,
+    "icon": "Necklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 13
+    },
+    "secondaryColor": "#f4093a"
+  },
+  {
+    "name": "Diamond Necklace",
+    "value": 620,
+    "description": "A diamond necklace. It's pretty.",
+    "gatherString": "You make a diamond necklace.",
+    "gatherSpeed": 15,
+    "icon": "Necklace",
+    "equipSlot": "Neck",
+    "armorInfo": {
+      "armorBonus": 15
+    },
+    "secondaryColor": "#DFDFDF"
+  }
+]

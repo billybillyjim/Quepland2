@@ -61,7 +61,7 @@
     "buildings": [
       {
         "name": "Mayor's House",
-        "buttonText": "Visit the Mansion",
+        "buttonText": "Visit the mansion",
         "url": "MayorsHouse",
         "description": "You enter a lavish mansion. A large chandelier hangs over a magnificent curved staircase to the second floor. The carpet near the entrance is faded and worn.",
         "npcs": [
@@ -96,7 +96,7 @@
     "unlockableAreas": [
       {
         "AreaURL": "LowerMtQuepleTrail",
-        "ButtonText": "Continue Through Town"
+        "ButtonText": "Continue through town"
       }
 
     ],
@@ -118,7 +118,7 @@
     "buildings": [
       {
         "name": "Sign Man's Signs",
-        "buttonText": "Enter the Sign Shop",
+        "buttonText": "Enter the sign shop",
         "url": "SignMansSigns",
         "description": "You enter the dimly lit shack to find a thin, gray-bearded man sitting behind a desk with the words \"Sign Man\" drawn in large red letters across it. ",
         "npcs": [
@@ -129,11 +129,11 @@
     "unlockableAreas": [
       {
         "AreaURL": "QuepleCaveEntrance",
-        "ButtonText": "Enter the Cave"
+        "ButtonText": "Enter the cave"
       },
       {
         "areaURL": "UpperMtQuepleTrail",
-        "buttonText": "Continue Up the Trail"
+        "buttonText": "Continue up the trail"
       }
 
     ]
@@ -150,7 +150,11 @@
     "unlockableAreas": [
       {
         "areaURL": "EasternTrail",
-        "buttonText": "Continue Down into the Valley"
+        "buttonText": "Continue down into the valley"
+      },
+      {
+        "areaURL": "MtQueplePeak",
+        "buttonText": "Continue up the mountain"
       }
 
     ],
@@ -168,9 +172,11 @@
     "buildings": [
       {
         "name": "Wind Hall",
-        "buttonText": "Enter the Building",
+        "buttonText": "Enter the building",
         "url": "WindHall",
         "description": "The roaring wind grows stronger as you approach the innermost room of the building. Inside you find a pool, swirling with air.",
+        "alchemicalHall": "Wind Hall",
+        "queplarMultiplier": 1,
         "npcs": [
           "Oikaaz"
         ]
@@ -189,11 +195,11 @@
     "unlockableAreas": [
       {
         "AreaURL": "Swampedge",
-        "ButtonText": "Enter the Swamp"
+        "ButtonText": "Enter the swamp"
       },
       {
         "areaURL": "NorthernTrail",
-        "buttonText": "Follow the Trail North"
+        "buttonText": "Follow the trail north"
       }
 
     ],
@@ -212,7 +218,7 @@
     "unlockableAreas": [
       {
         "areaURL": "CantilaBeach",
-        "buttonText": "Jump the Gap",
+        "buttonText": "Jump the gap",
         "requirements": [
           {
             "skill": "Deftness",
@@ -222,7 +228,7 @@
       },
       {
         "areaURL": "CantilaBeach",
-        "buttonText": "Fix the Bridge",
+        "buttonText": "Fix the bridge",
         "requirements": [
           {
             "skill": "Woodworking",

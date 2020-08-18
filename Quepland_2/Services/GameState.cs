@@ -84,6 +84,7 @@ using System.Threading.Tasks;
     public SmithyComponent SmithingComponent;
     public OvenComponent OvenComponent;
     public CraftingComponent CraftingComponent;
+    public AlchemicalHallComponent AlchemicalHallComponent;
     public NavMenu NavMenu;
     public ContextMenu CurrentContextMenu;
     public ExperienceTrackerComponent EXPTrackerComponent;
@@ -772,8 +773,11 @@ using System.Threading.Tasks;
             }
             else
             {
-
-                MessageManager.AddMessage("You don't have any " + CurrentAlchemyFormula.InputMetal.Name + ".");
+                if(AlchemicalHallComponent != null)
+                {
+                    AlchemicalHallComponent.UpdateLists();
+                }
+                MessageManager.AddMessage("You don't have any " + CurrentAlchemyFormula.InputMetal.Name + "s.");
                 CurrentAlchemyFormula = null;
                 AlchemyStage = 0;
             }
@@ -789,7 +793,10 @@ using System.Threading.Tasks;
             }
             else
             {
-
+                if (AlchemicalHallComponent != null)
+                {
+                    AlchemicalHallComponent.UpdateLists();
+                }
                 MessageManager.AddMessage("You don't have any " + CurrentAlchemyFormula.Element.Name + ".");
                 CurrentAlchemyFormula = null;
                 AlchemyStage = 0;
@@ -800,6 +807,10 @@ using System.Threading.Tasks;
             MessageManager.AddMessage("You " + CurrentAlchemyFormula.ActionString + " the combined element and metal.");
             AlchemyStage = 3;
             TicksToNextAction = 10;
+            if (AlchemicalHallComponent != null)
+            {
+                AlchemicalHallComponent.UpdateLists();
+            }
         }
         else if(AlchemyStage == 3)
         {
@@ -808,6 +819,10 @@ using System.Threading.Tasks;
             Player.Instance.Inventory.AddItem(reward);
             AlchemyStage = 0;
             TicksToNextAction = 10;
+            if (AlchemicalHallComponent != null)
+            {
+                AlchemicalHallComponent.UpdateLists();
+            }
         }
     }
     public void SetCraftingItem(Recipe recipe)

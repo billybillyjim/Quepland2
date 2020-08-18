@@ -129,6 +129,28 @@
     ]
   },
   {
+    "Name": "Pentlandite",
+    "Description": "There's nickel in there.",
+    "gatherString": "You mine some pentlandite.",
+    "value": 20,
+    "gatherSpeed": 20,
+    "secondaryColor": "#A9A69B",
+    "experienceGained": "Mining:90",
+    "icon": "Ore",
+    "smithingInfo": {
+      "smeltingExperience": 60
+    },
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 22
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
     "Name": "Iron Ore",
     "Description": "A rusty rock with goodies inside.",
     "gatherString": "You mine some iron ore.",
@@ -151,26 +173,42 @@
     ]
   },
   {
-    "Name": "Pentlandite",
-    "Description": "There's nickel in there.",
-    "gatherString": "You mine some pentlandite.",
-    "value": 20,
-    "gatherSpeed": 20,
-    "secondaryColor": "#A9A69B",
-    "experienceGained": "Mining:90",
-    "icon": "Ore",
-    "smithingInfo": {
-      "smeltingExperience": 60
-    },
+    "Name": "Coal",
+    "Description": "A black rock that tastes bad but burns good.",
+    "value": 55,
     "requirements": [
       {
         "skill": "Mining",
-        "skillLevel": 22
+        "skillLevel": 30
       },
       {
         "action": "Mining"
       }
-    ]
+    ],
+    "gatherSpeed": 15,
+    "experienceGained": "Mining:80",
+    "secondaryColor": "#202020",
+    "gatherString": "You mine some coal.",
+    "icon": "Coal"
+  },
+  {
+    "Name": "Silver Ore",
+    "Description": "A silvery rock with silver in it.",
+    "value": 70,
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 40
+      },
+      {
+        "action": "Mining"
+      }
+    ],
+    "gatherSpeed": 30,
+    "experienceGained": "Mining:130",
+    "secondaryColor": "#999999",
+    "gatherString": "You mine some silver ore.",
+    "icon": "Ore"
   },
   {
     "Name": "Galena",
@@ -280,25 +318,6 @@
         "action": "Mining"
       }
     ]
-  },
-  {
-    "Name": "Coal",
-    "Description": "A black rock that tastes bad but burns good.",
-    "value": 55,
-    "requirements": [
-      {
-        "skill": "Mining",
-        "skillLevel": 30
-      },
-      {
-        "action": "Mining"
-      }
-    ],
-    "gatherSpeed": 3000,
-    "experienceGained": "Mining:80",
-    "secondaryColor": "#202020",
-    "gatherString": "You mine some coal.",
-    "icon": "Coal"
   },
   {
     "Name": "Strongtium Ore",

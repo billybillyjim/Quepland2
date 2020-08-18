@@ -1,62 +1,77 @@
-﻿@page "/World/AlchemicalHall/{HallName}/"
-@inject GameState GameState
+﻿@inject GameState GameState
 @inject NavigationManager UriHelper
 @implements IDisposable
 
-@if (GameState.AlchemyStage == 0)
+@if (ShowAlchemyOptions)
 {
-    <div>
-        <Quepland_2.Components.CustomDropdownComponent EmptyText="Select Metal" BoxText="@metal" DropdownItems="@Metals" @bind-Value="@metal"></Quepland_2.Components.CustomDropdownComponent>
-    </div>
-
-    <div>
-        <Quepland_2.Components.CustomDropdownComponent EmptyText="Select Element" BoxText="@element" DropdownItems="@Elements" @bind-Value="@element"></Quepland_2.Components.CustomDropdownComponent>
-
-    </div>
-
-    <div>
-        <Quepland_2.Components.CustomDropdownComponent EmptyText="Select Action" BoxText="@action" DropdownItems="@Actions" @bind-Value="@action"></Quepland_2.Components.CustomDropdownComponent>
-
-    </div>
-    @if(metal != null && element != null && action != null)
+    @if (GameState.AlchemyStage == 0)
     {
-        <button class="btn btn-primary" @onclick="@(() => BeginAlchemy())">
-            Attempt Alchemy
-        </button>
-    }
-}
-@if (GameState.AlchemyStage == 1)
-{
-    <div>
-        Adding Metal...
-        <div class="progress">
-            <div class="progress-bar" style="width:@GetWidth()">
+        <div>
+            <Quepland_2.Components.CustomDropdownComponent EmptyText="You have no metal bars" BoxText="@metal" DropdownItems="@Metals" @bind-Value="@metal"></Quepland_2.Components.CustomDropdownComponent>
+        </div>
 
+        <div>
+            <Quepland_2.Components.CustomDropdownComponent EmptyText="You have no base elements" BoxText="@element" DropdownItems="@Elements" @bind-Value="@element"></Quepland_2.Components.CustomDropdownComponent>
+
+        </div>
+
+        <div>
+            <Quepland_2.Components.CustomDropdownComponent EmptyText="Select Action" BoxText="Select Action" DropdownItems="@Actions" @bind-Value="@action"></Quepland_2.Components.CustomDropdownComponent>
+
+        </div>
+        @if (metal != null && element != null && action != null)
+        {
+            <button class="btn btn-primary" @onclick="@(() => BeginAlchemy())">
+                Attempt Alchemy
+            </button>
+        }
+        else
+        {
+            <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need an element, metal, and action selected to continue.")))"
+             @onmouseout="@(new Action(() => GameState.HideTooltip()))" >
+                Attempt Alchemy
+            </button>
+        }
+    }
+    @if (GameState.AlchemyStage == 1)
+    {
+        <div>
+            Adding Metal...
+            <div class="progress">
+                <div class="progress-bar" style="width:@GetWidth()">
+
+                </div>
             </div>
         </div>
-    </div>
-}
-@if (GameState.AlchemyStage == 2)
-{
-<div>
-    Applying Element...
-    <div class="progress">
-        <div class="progress-bar" style="width:@GetWidth()">
+    }
+    @if (GameState.AlchemyStage == 2)
+    {
+        <div>
+            Applying Element...
+            <div class="progress">
+                <div class="progress-bar" style="width:@GetWidth()">
 
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-}
-@if (GameState.AlchemyStage == 3)
-{
-<div>
-    Doing Action...
-    <div class="progress">
-        <div class="progress-bar" style="width:@GetWidth()">
+    }
+    @if (GameState.AlchemyStage == 3)
+    {
+        <div>
+            Doing Action...
+            <div class="progress">
+                <div class="progress-bar" style="width:@GetWidth()">
 
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    }
+
+}
+else
+{
+
+    <button class="btn btn-primary" @onclick="ShowOptions">Start Alchemy</button>
 }
 
 
@@ -64,19 +79,27 @@
 
 @code {
 
+    public bool ShowAlchemyOptions;
     [Parameter]
     public double QueplarMultiplier { get; set; } = 1;
     [Parameter]
     public string HallName { get; set; }
-    private string stage = "Start";
-    private string metal = "Select a Metal";
-    private string element = "Select an Element";
-    private string action = "Select an Action";
+
+    private string metal;
+    private string element;
+    private string action;
+
     private double ticksToComplete;
+
     private List<string> Metals = new List<string>();
     private List<string> Elements = new List<string>();
     private List<string> Actions = new List<string>() { "Calcinate", "Dissolve", "Fermentate", "Sublimate", "Project", "Cibate" };
 
+    public void ShowOptions()
+    {
+        ShowAlchemyOptions = true;
+        GameState.UpdateState();
+    }
     private void LoadMetals()
     {
         Metals.Clear();
@@ -101,6 +124,11 @@
     }
     public void BeginAlchemy()
     {
+        if (metal == null || element == null)
+        {
+            MessageManager.AddMessage("You need to select a metal and an element.");
+            return;
+        }
         AlchemicalFormula formula = new AlchemicalFormula();
         formula.InputMetal = ItemManager.Instance.GetItemByName(metal);
         formula.Element = ItemManager.Instance.GetItemByName(element);
@@ -113,27 +141,27 @@
     }
     private double GetActionMultiplier()
     {
-        if(action == "Calcinate")
+        if (action == "Calcinate")
         {
             return 0.1;
         }
-        else if(action == "Dissolve")
+        else if (action == "Dissolve")
         {
             return 0.2;
         }
-        else if(action == "Fermentate")
+        else if (action == "Fermentate")
         {
             return 0.4;
         }
-        else if(action == "Sublimate")
+        else if (action == "Sublimate")
         {
             return 0.5;
         }
-        else if(action == "Project")
+        else if (action == "Project")
         {
             return 0.8;
         }
-        else if(action == "Cibate")
+        else if (action == "Cibate")
         {
             return 0.9;
         }
@@ -145,16 +173,23 @@
     }
     public string GetWidth()
     {
-        return (100 - ((GameState.TicksToNextAction / ticksToComplete) * 100)) + "px;";
+        return (100 - ((GameState.TicksToNextAction / ticksToComplete) * 100)) + "%;";
     }
-    protected override void OnInitialized()
+    public void UpdateLists()
     {
         LoadMetals();
         LoadElements();
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+        UpdateLists();
+        GameState.AlchemicalHallComponent = this;
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()
     {
+        GameState.AlchemicalHallComponent = null;
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();

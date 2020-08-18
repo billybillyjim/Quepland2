@@ -134,6 +134,28 @@
     ]
   },
   {
+    "Name": "Silver Bar",
+    "Description": "A very shiny metal bar.",
+    "gatherString": "You smelt a silver bar.",
+    "secondaryColor": "#999999",
+    "value": 250,
+    "gatherSpeed": 40,
+    "experienceGained": "Smithing:80",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 80
+    },
+    "alchemyInfo": {
+      "queplarValue": 90
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 40
+      }
+    ]
+  },
+  {
     "Name": "Iron Bar",
     "Description": "A very strong metal bar.",
     "gatherString": "You smelt an iron bar.",
@@ -487,6 +509,25 @@
       {
         "skill": "Smithing",
         "skillLevel": 35
+      }
+    ]
+  },
+  {
+    "Name": "Molten Silver Bar",
+    "Description": "A very shiny metal liquid.",
+    "gatherString": "You smelt a silver bar.",
+    "secondaryColor": "#999999",
+    "value": 250,
+    "gatherSpeed": 40,
+    "experienceGained": "Smithing:80",
+    "icon": "Bar",
+    "smithingInfo": {
+      "smithingExperience": 80
+    },
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 40
       }
     ]
   },

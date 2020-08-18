@@ -1,0 +1,46 @@
+[
+  {
+    "outputItemName": "Molten Silver Bar",
+    "ingredients": [
+      {
+        "itemName": "Silver Ore"
+      }
+    ],
+    "experienceGained": "Smithing:80",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 40
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Silver Bar",
+    "ingredients": [
+      {
+        "itemName": "Silver Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 40
+      }
+    ]
+  },
+  {
+    "outputItemName": "Silver Necklace",
+    "ingredients": [
+      {
+        "itemName": "Molten Silver Bar"
+      }
+    ],
+    "experienceGained": "Smithing:80",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 40
+      }
+    ]
+  }
+]

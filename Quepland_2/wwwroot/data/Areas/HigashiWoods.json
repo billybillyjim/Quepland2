@@ -8,7 +8,7 @@
     "areaURL": "CocheeClearing",
     "trappingLocation": true,
     "actions": [
-      "Chop Birch Trees:Birch Logs"
+      "Chop Birch Trees:Birch Logs:You start chopping."
     ],
     "unlockableAreas": [
       {
@@ -46,8 +46,8 @@
     "description": "Trees blanket the hilly terrain, as you make your way further into the woods you find ample supplies for building traps. Large stones and sturdy sticks lie along the path.",
     "areaURL": "HigashiWoods",
     "actions": [
-      "Gather Stones:Large Stone",
-      "Gather Sticks:Sticks"
+      "Gather Stones:Large Stone:You look around for large stones.",
+      "Gather Sticks:Sticks:You start gathering sticks."
     ],
     "unlockableAreas": [
       {
@@ -85,7 +85,7 @@
     "description": "As you continue along the path the forest grows dark and musty. There are piles of cheese lying along the path, some have transformed into mossy mounds, while others seem quite fresh. The road continues up a steep hill ahead.",
     "areaURL": "DeepHigashiWoods",
     "actions": [
-      "Get Some Cheese:Cheese"
+      "Get Some Cheese:Cheese:You start gathering from the least smelly piles of cheese."
     ],
     "unlockableAreas": [
       {
@@ -123,8 +123,8 @@
       "Hooded Traveller"
     ],
     "actions": [
-      "Harvest Hemp:Hemp",
-      "Chop Mesquite Trees:Mesquite Logs"
+      "Harvest Hemp:Hemp:You begin picking hemp plants.",
+      "Chop Mesquite Trees:Mesquite Logs:You start chopping."
     ],
     "unlockableAreas": [
       {
@@ -168,6 +168,9 @@
     "areaURL": "HigashiCanyon",
     "npcs": [
       "Mound"
+    ],
+    "actions": [
+      "Mine Silver Ore:Silver Ore:You begin mining silver ore."
     ]
   }
 ]

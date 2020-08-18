@@ -104,6 +104,21 @@
     ]
   },
   {
+    "outputItemName": "Platinum Necklace",
+    "ingredients": [
+      {
+        "itemName": "Molten Platinum Bar"
+      }
+    ],
+    "experienceGained": "Smithing:600",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 93
+      }
+    ]
+  },
+  {
     "outputItemName": "Platinum Arrowtips",
     "ingredients": [
       {

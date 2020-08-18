@@ -21,6 +21,10 @@
     <br />
     <div>@thisBuilding.Name</div>
     <div>@thisBuilding.Description</div>
+    @if(thisBuilding.AlchemicalHall != "None")
+    {
+        <AlchemicalHallComponent QueplarMultiplier="@thisBuilding.QueplarMultiplier" HallName="@thisBuilding.AlchemicalHall"></AlchemicalHallComponent>
+    }
     @foreach (AFKAction afkAction in thisBuilding.AFKActions)
     {
         <Quepland_2.Components.AFKActionComponent AFKAction="@afkAction"></Quepland_2.Components.AFKActionComponent>

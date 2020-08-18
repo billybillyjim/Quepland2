@@ -2,7 +2,7 @@
   {
     "Name": "Unidentified Gem",
     "value": 10,
-    "Description": "A gemstone, you're not sure what it is though.Amber",
+    "Description": "A gemstone, you're not sure what it is though.",
     "icon": "UncutGem",
     "gatherString": "You found a gemstone!",
     "parameter": "Rough Amberite"
@@ -10,7 +10,7 @@
   {
     "Name": "Unidentified Gem",
     "value": 10,
-    "Description": "A gemstone, you're not sure what it is though.Lizard",
+    "Description": "A gemstone, you're not sure what it is though.",
     "icon": "UncutGem",
     "gatherString": "You found a gemstone!",
     "parameter": "Rough Lizardite"
@@ -18,7 +18,7 @@
   {
     "Name": "Unidentified Gem",
     "value": 10,
-    "Description": "A gemstone, you're not sure what it is though.Purpur",
+    "Description": "A gemstone, you're not sure what it is though.",
     "icon": "UncutGem",
     "gatherString": "You found a gemstone!",
     "parameter": "Rough Purpurite"
@@ -26,7 +26,7 @@
   {
     "Name": "Unidentified Gem",
     "value": 10,
-    "Description": "A gemstone, you're not sure what it is though.Opal",
+    "Description": "A gemstone, you're not sure what it is though.",
     "icon": "UncutGem",
     "gatherString": "You found a gemstone!",
     "parameter": "Rough Opal"
@@ -34,7 +34,7 @@
   {
     "Name": "Unidentified Gem",
     "value": 10,
-    "Description": "A gemstone, you're not sure what it is though.Garn",
+    "Description": "A gemstone, you're not sure what it is though.",
     "icon": "UncutGem",
     "gatherString": "You found a gemstone!",
     "parameter": "Rough Garnet"
@@ -42,7 +42,7 @@
   {
     "Name": "Unidentified Gem",
     "value": 10,
-    "Description": "A gemstone, you're not sure what it is though.Amet",
+    "Description": "A gemstone, you're not sure what it is though.",
     "icon": "UncutGem",
     "gatherString": "You found a gemstone!",
     "parameter": "Rough Amethyst"
@@ -50,7 +50,7 @@
   {
     "Name": "Unidentified Gem",
     "value": 10,
-    "Description": "A gemstone, you're not sure what it is though.Emer",
+    "Description": "A gemstone, you're not sure what it is though.",
     "icon": "UncutGem",
     "gatherString": "You found a gemstone!",
     "parameter": "Rough Emerald"
@@ -58,7 +58,7 @@
   {
     "Name": "Unidentified Gem",
     "value": 10,
-    "Description": "A gemstone, you're not sure what it is though.Top",
+    "Description": "A gemstone, you're not sure what it is though.",
     "icon": "UncutGem",
     "gatherString": "You found a gemstone!",
     "parameter": "Rough Topaz"
@@ -66,7 +66,7 @@
   {
     "Name": "Unidentified Gem",
     "value": 10,
-    "Description": "A gemstone, you're not sure what it is thoughSapph.",
+    "Description": "A gemstone, you're not sure what it is though.",
     "icon": "UncutGem",
     "gatherString": "You found a gemstone!",
     "parameter": "Rough Sapphire"
@@ -74,7 +74,7 @@
   {
     "Name": "Unidentified Gem",
     "value": 10,
-    "Description": "A gemstone, you're not sure what it is though.Ruby",
+    "Description": "A gemstone, you're not sure what it is though",
     "icon": "UncutGem",
     "gatherString": "You found a gemstone!",
     "parameter": "Rough Ruby"
@@ -82,7 +82,7 @@
   {
     "Name": "Unidentified Gem",
     "value": 10,
-    "Description": "A gemstone, you're not sure what it is though.Diamo",
+    "Description": "A gemstone, you're not sure what it is though",
     "icon": "UncutGem",
     "gatherString": "You found a gemstone!",
     "parameter": "Rough Diamond"
@@ -90,7 +90,7 @@
   {
     "Name": "Unidentified Gem",
     "value": 10,
-    "Description": "A gemstone, you're not sure what it is though.Chryso",
+    "Description": "A gemstone, you're not sure what it is though",
     "icon": "UncutGem",
     "gatherString": "You found a gemstone!",
     "parameter": "Rough Chrysoberyl"
@@ -98,7 +98,7 @@
   {
     "Name": "Unidentified Gem",
     "value": 10,
-    "Description": "A gemstone, you're not sure what it is though.Aqua",
+    "Description": "A gemstone, you're not sure what it is though",
     "icon": "UncutGem",
     "gatherString": "You found a gemstone!",
     "parameter": "Rough Aquamarine"
@@ -163,9 +163,9 @@
   {
     "Name": "Rough Aquamarine",
     "value": 700,
-    "Description": "A red, uncut gemstone.",
+    "Description": "A light blue, uncut gemstone.",
     "icon": "UncutGem",
-    "gatherString": "You found a rough ruby!",
+    "gatherString": "You found a rough aquamarine!",
     "secondaryColor": "#45c3e2"
   },
   {
