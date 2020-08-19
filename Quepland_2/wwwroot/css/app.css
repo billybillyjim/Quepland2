@@ -59,9 +59,9 @@ app {
     color: white;
     width: 200px;
     height: 35px;
-    padding: 5px;
+    padding: 5px 12px 5px 12px;
     position: relative;
-    margin: 10px;
+    margin: 10px 0px 10px 0px;
 }
 
 .custom-dropdown-item {

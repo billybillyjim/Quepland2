@@ -53,14 +53,14 @@
   {
     "name": "Sawoka Library",
     "id": 23,
-    "image": "Book",
+    "image": "Books",
     "areaURL": "SawokaLibrary",
     "description": "This is the library."
   },
   {
     "name": "Sawoka Vault",
     "id": 24,
-    "image": "Safe",
+    "image": "Chest",
     "areaURL": "SawokaVault",
     "description": "This is the vault."
   },

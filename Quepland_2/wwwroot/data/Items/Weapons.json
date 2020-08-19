@@ -1175,7 +1175,7 @@
     "Description": "A flaming axe. You can use it to chop down trees or enemies very quickly.",
     "value": 32800,
     "enabledActions": "Axemanship",
-    "secondaryColor": "#red",
+    "secondaryColor": "#a51414",
     "equipSlot": "R Hand",
     "icon": "SteelflameAxe",
     "gatherSpeedBonus": 0.8,

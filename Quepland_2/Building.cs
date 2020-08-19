@@ -12,7 +12,7 @@ public class Building
 	public string URL { get; set; }
     public bool HasOven { get; set; }
     public string AlchemicalHall { get; set; } = "None";
-    public int QueplarMultiplier { get; set; } = 1;
+    public double QueplarMultiplier { get; set; } = 1;
 	public List<string> NPCs { get; set; } = new List<string>();
 	public List<Shop> Shops { get; set; } = new List<Shop>();
 	public List<TanningSlot> TanningSlots { get; set; } = new List<TanningSlot>();

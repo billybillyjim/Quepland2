@@ -103,7 +103,7 @@
     "name": "Wana Tona Lake",
     "id": 83,
     "image": "Lake",
-    "description": "The lake is dark and deep. Here and there bubbles emerge from the waters. Something very large lives under here. A wall of unreasonably tall reeds blocks off the northern part of the lake.",
+    "description": "The lake is dark and deep. Here and there bubbles emerge from the waters. Something very large lives under here. A wall of unreasonably tall reeds blocks off the northern part of the lake. At the southern shore, a lone hut sits a few feet into the water.",
     "areaURL": "WanaTonaLake",
     "actions": [
       "Go fishing:Carp,Giant Carp"
@@ -123,6 +123,16 @@
         ]
       }
 
+    ],
+    "buildings": [
+      {
+        "name": "Water Hall",
+        "buttonText": "Enter the hut",
+        "url": "WaterHall",
+        "description": "The hut seems somehow larger on the inside. The main room leads into a gushing fountain, flowing out of the floor and into a drain at the back of the room. There's an alchemical pool here.",
+        "alchemicalHall": "Water Hall",
+        "queplarMultiplier": 2
+      }
     ]
   },
   {

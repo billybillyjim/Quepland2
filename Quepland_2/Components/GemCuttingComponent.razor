@@ -9,7 +9,7 @@
     </div>
     @if (Player.Instance.GetLevel("Lapidary") >= 30)
     {
-        <div style="margin-left:-10px;">
+        <div>
             <CustomDropdownComponent BoxText="Select a gem to cut" EmptyText="You don't have any gems that you have the level to cut." @bind-Value="Source" DropdownItems="@GetAvailableGems()"></CustomDropdownComponent>
         </div>
         @if (Source != "")

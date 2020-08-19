@@ -306,6 +306,11 @@ public class Player
             GainExperience("Strength", (int)(damageDealt * 0.5));
             GainExperience("Mining", (int)(damageDealt * 0.08));
         }
+        else
+        {
+            GainExperience("Strength", (int)(damageDealt * 0.5));
+            GainExperience("Deftness", (int)(damageDealt * 0.5));
+        }
     }
     public void LevelUp(Skill skill)
     {

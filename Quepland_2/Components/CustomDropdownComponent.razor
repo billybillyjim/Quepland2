@@ -2,7 +2,7 @@
 @implements IDisposable 
 
 
-        <div class="custom-dropdown" style="cursor:pointer;width:fit-content;min-width:200px" onmouseleave="@(new Action(() => Close()))" @onclick="@(() => Select())">
+        <div class="custom-dropdown" style="cursor:pointer;width:fit-content;min-width:200px;" onmouseleave="@(new Action(() => Close()))" @onclick="@(() => Select())">
             @if(DropdownItems == null || DropdownItems.Count == 0)
             {
                 @EmptyText

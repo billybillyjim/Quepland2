@@ -3,7 +3,7 @@
     "name": "Southern Trail",
     "id": 60,
     "image": "MountainPath",
-    "description": "The path leads out of the woods into an open plain. The road continues uphill, winding up out of sight. A solitary knight guards the way forward.",
+    "description": "The path leads out of the woods into an open plain. The road continues uphill, winding up out of sight. An earthen fort guards the eastern side of the path.",
     "areaURL": "SouthernTrail",
     "actions": [
       "Harvest Wheat:Wheat"
@@ -13,7 +13,16 @@
         "areaURL": "Route7",
         "buttonText": "Continue South"
       }
-
+    ],
+    "buildings": [
+      {
+        "name": "Earth Hall",
+        "buttonText": "Enter the hut",
+        "url": "EarthHall",
+        "description": "The fort is confusing, full of dead ends and short staircases that lead back to where they begin. At the very center is a massive sphere of dirt, floating above an alchemical pool.",
+        "alchemicalHall": "Earth Hall",
+        "queplarMultiplier": 1.5
+      }
     ]
   },
   {
@@ -27,7 +36,6 @@
         "areaURL": "DesertsMouth",
         "buttonText": "Go to the Desert"
       }
-
     ]
   },
   {
@@ -111,6 +119,16 @@
     "requirements": [
       {
         "action": "Desert Travel"
+      }
+    ],
+    "buildings": [
+      {
+        "name": "Fire Hall",
+        "buttonText": "Enter the shack",
+        "url": "FireHall",
+        "description": "The shack houses a set of stairs to an underground bunker. The bunker is very warm for being so deep below the surface. A bright flame illuminates the path forward. The central room of the complex houses a pillar of fire, in front of which is an alchemical pool.",
+        "alchemicalHall": "Fire Hall",
+        "queplarMultiplier": 2.5
       }
     ]
   },
