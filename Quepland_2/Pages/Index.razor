@@ -11,8 +11,7 @@
     {
         <div>Loading Data...</div>
     }
-    <StartMenuComponent></StartMenuComponent>
-    <button @onclick="@(() => Rates())">Rates</button>
+    <StartMenuComponent></StartMenuComponent>  
 }
 else
 {
@@ -32,15 +31,15 @@ else
 
         Player.Instance.CurrentHP = 50;
         Bank.Instance.Inventory.AddItem("Stone Axe");
-        Player.Instance.Inventory.AddMultipleOfItem("Small Red Library Key", 5);
-        Player.Instance.Inventory.AddMultipleOfItem("Small Orange Library Key", 5);
-        Player.Instance.Inventory.AddMultipleOfItem("Small Green Library Key", 5);
-        Bank.Instance.Inventory.IsLoadingSave = true;
-        foreach(GameItem i in ItemManager.Instance.Items)
-        {
-            Bank.Instance.Inventory.AddItem(i);
-        }
-        Bank.Instance.Inventory.IsLoadingSave = false;
+        //Player.Instance.Inventory.AddMultipleOfItem("Small Red Library Key", 5);
+        //Player.Instance.Inventory.AddMultipleOfItem("Small Orange Library Key", 5);
+        //Player.Instance.Inventory.AddMultipleOfItem("Small Green Library Key", 5);
+        //Bank.Instance.Inventory.IsLoadingSave = true;
+        //foreach(GameItem i in ItemManager.Instance.Items)
+        //{
+        //    Bank.Instance.Inventory.AddItem(i);
+        //}
+        //Bank.Instance.Inventory.IsLoadingSave = false;
         GameState.StateChanged += OnGameStateChanged;
     }
     private void Rates()

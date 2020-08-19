@@ -46,6 +46,7 @@ public class Area
     }
     [JsonIgnore]
     public List<string> Actions { get; set; } = new List<string>();
+    public List<string> ConversionActions { get; set; } = new List<string>();
     [JsonIgnore]
     public List<string> Monsters { get; set; } = new List<string>();
     [JsonIgnore]

@@ -63,12 +63,14 @@ using System.Threading.Tasks;
     }
 
     public GameItem NewGatherItem;
+    public GameItem NewRequiredItem;
     public Recipe NewCraftingRecipe;
     public Recipe NewSmeltingRecipe;
     public Recipe NewSmithingRecipe;
     public Book NewBook;
 
     public GameItem CurrentGatherItem;
+    public GameItem RequiredForGatherItem;
     public List<GameItem> PossibleGatherItems = new List<GameItem>();
     public Recipe CurrentSmeltingRecipe;
     public Recipe CurrentSmithingRecipe;
@@ -244,6 +246,7 @@ using System.Threading.Tasks;
     private void ClearActions()
     {
         CurrentGatherItem = null;
+        RequiredForGatherItem = null;
         CurrentRecipe = null;
         BattleManager.Instance.CurrentOpponents.Clear();
         CurrentSmithingRecipe = null;
@@ -255,6 +258,11 @@ using System.Threading.Tasks;
         {
             CurrentGatherItem = NewGatherItem;
             NewGatherItem = null;
+        }
+        if(NewRequiredItem != null)
+        {
+            RequiredForGatherItem = NewRequiredItem;
+            NewRequiredItem = null;
         }
         if(NewSmithingRecipe != null)
         {
@@ -295,6 +303,28 @@ using System.Threading.Tasks;
 
     private void GatherItem()
     {
+        if (RequiredForGatherItem != null)
+        {
+            bool hasReq = false;
+            if (Player.Instance.CurrentFollower != null)
+            {
+                hasReq = Player.Instance.CurrentFollower.Inventory.HasItem(RequiredForGatherItem);
+            }
+            if (hasReq == false)
+            {
+                hasReq = Player.Instance.Inventory.HasItem(RequiredForGatherItem);
+            }
+            if (hasReq == false)
+            {
+                CurrentGatherItem = null;
+                MessageManager.AddMessage("You have run out of " + RequiredForGatherItem);
+                RequiredForGatherItem = null;
+            }
+            else
+            {
+                Player.Instance.Inventory.RemoveItems(RequiredForGatherItem, 1);
+            }
+        }
         if (Player.Instance.FollowerGatherItem(CurrentGatherItem) == false)
         {
             PlayerGatherItem();
@@ -314,12 +344,25 @@ using System.Threading.Tasks;
                 }
                 TicksToNextAction = GetTicksToNextGather();
             }
-
         }
 
     }
     private bool PlayerGatherItem()
     {
+        //if(RequiredForGatherItem != null)
+        //{
+        //    if(Player.Instance.Inventory.HasItem(RequiredForGatherItem) == false)
+        //    {
+        //        CurrentGatherItem = null;
+        //        MessageManager.AddMessage("You have run out of " + RequiredForGatherItem);
+        //        RequiredForGatherItem = null;
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        Player.Instance.Inventory.RemoveItems(RequiredForGatherItem, 1);
+        //    }
+        //}
         if (Player.Instance.PlayerGatherItem(CurrentGatherItem) == false)
         {
             if(Player.Instance.CurrentFollower != null)
@@ -336,7 +379,7 @@ using System.Threading.Tasks;
             }
 
         }
-        if(Player.Instance.Inventory.GetAvailableSpaces() == 0)
+        if(Player.Instance.Inventory.GetAvailableSpaces() == 0 && RequiredForGatherItem == null)
         {
             CurrentGatherItem = null;
         }

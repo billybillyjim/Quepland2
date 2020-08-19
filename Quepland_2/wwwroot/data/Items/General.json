@@ -90,7 +90,10 @@
     "name": "Chicken Meat",
     "description": "The meat of a chicken.",
     "value": 10,
-    "icon": "PreppedBird"
+    "icon": "PreppedBird",
+    "tanningInfo": {
+      "tansIntoString": "Chicken Jerky"
+    }
   },
   {
     "name": "Rooster Plumage",
@@ -172,6 +175,13 @@
     "value": 50000,
     "icon": "Raft",
     "enabledActions": "River Travel"
+  },
+  {
+    "Name": "Tiny Rowboat",
+    "Description": "A small boat you can take out to sea. You can't go out of sight of land with it, though.",
+    "value": 80000,
+    "icon": "Boat",
+    "enabledActions": "Shallow Ocean Travel"
   },
   {
     "Name": "Gym Membership Card",

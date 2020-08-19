@@ -112,6 +112,7 @@ public class ItemManager
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/LeatherworkingRecipes.json"));
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/GemRecipes.json"));
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/BreadRecipes.json"));
+        Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/NecklaceRecipes.json"));
 
         MinigameDropTables.AddRange(await Http.GetFromJsonAsync<MinigameDropTable[]>("data/MinigameDropTables.json"));
 

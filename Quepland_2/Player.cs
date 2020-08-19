@@ -414,6 +414,10 @@ public class Player
     }
     public bool PlayerGatherItem(GameItem item)
     {
+        if(item == null)
+        {
+            return false;
+        }
         if (Inventory.AddItem(item.Copy()) == false)
         {
             if (CurrentFollower != null && CurrentFollower.IsBanking)

@@ -66,7 +66,7 @@
   },
   {
     "name": "Purpurite Necklace",
-    "value": 620,
+    "value": 670,
     "description": "A purpurite necklace. It's pretty.",
     "gatherString": "You make a purpurite necklace.",
     "gatherSpeed": 15,
@@ -79,7 +79,7 @@
   },
   {
     "name": "Opal Necklace",
-    "value": 620,
+    "value": 720,
     "description": "An opal necklace. It's pretty.",
     "gatherString": "You make an opal necklace.",
     "gatherSpeed": 15,
@@ -92,7 +92,7 @@
   },
   {
     "name": "Garnet Necklace",
-    "value": 620,
+    "value": 770,
     "description": "A garnet necklace. It's pretty.",
     "gatherString": "You make a garnet necklace.",
     "gatherSpeed": 15,
@@ -105,7 +105,7 @@
   },
   {
     "name": "Amethyst Necklace",
-    "value": 620,
+    "value": 1920,
     "description": "An amethyst necklace. It's pretty.",
     "gatherString": "You make an amethyst necklace.",
     "gatherSpeed": 15,
@@ -118,7 +118,7 @@
   },
   {
     "name": "Emerald Necklace",
-    "value": 620,
+    "value": 2050,
     "description": "An emerald necklace. It's pretty.",
     "gatherString": "You make an emerald necklace.",
     "gatherSpeed": 15,
@@ -131,7 +131,7 @@
   },
   {
     "name": "Aquamarine Necklace",
-    "value": 620,
+    "value": 2250,
     "description": "An aquamarine necklace. It's pretty.",
     "gatherString": "You make an aquamarine necklace.",
     "gatherSpeed": 15,
@@ -144,7 +144,7 @@
   },
   {
     "name": "Topaz Necklace",
-    "value": 620,
+    "value": 2350,
     "description": "A topaz necklace. It's pretty.",
     "gatherString": "You make a topaz necklace.",
     "gatherSpeed": 15,
@@ -157,7 +157,7 @@
   },
   {
     "name": "Chrysoberyl Necklace",
-    "value": 620,
+    "value": 3200,
     "description": "A chrysoberyl necklace. It's pretty.",
     "gatherString": "You make a chrysoberyl necklace.",
     "gatherSpeed": 15,
@@ -170,7 +170,7 @@
   },
   {
     "name": "Sapphire Necklace",
-    "value": 620,
+    "value": 3500,
     "description": "A sapphire necklace. It's pretty.",
     "gatherString": "You make a sapphire necklace.",
     "gatherSpeed": 15,
@@ -183,7 +183,7 @@
   },
   {
     "name": "Ruby Necklace",
-    "value": 620,
+    "value": 3800,
     "description": "A ruby necklace. It's pretty.",
     "gatherString": "You make a ruby necklace.",
     "gatherSpeed": 15,
@@ -196,7 +196,7 @@
   },
   {
     "name": "Diamond Necklace",
-    "value": 620,
+    "value": 5000,
     "description": "A diamond necklace. It's pretty.",
     "gatherString": "You make a diamond necklace.",
     "gatherSpeed": 15,

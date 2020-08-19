@@ -79,7 +79,11 @@
     "unlockableAreas": [
       {
         "areaURL": "EastUragotaDocks",
-        "buttonText": "Visit the Eastern Docks"
+        "buttonText": "Visit the eastern docks"
+      },
+      {
+        "areaURL": "OceanFishingPlatform",
+        "buttonText": "Sail out to sea"
       }
 
     ],
@@ -91,6 +95,15 @@
         "description": "The kiosk is run by a man named Gordo, who greets you nervously as you approach him. It appears to be selling both large and small fishing vessels.",
         "npcs": [
           "Gordo"
+        ],
+        "shops": [
+          {
+            "name": "Mound's Boats",
+            "itemNames": [
+              "Tiny Rowboat"
+            ]
+
+          }
         ]
       }
     ],

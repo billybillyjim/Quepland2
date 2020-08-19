@@ -1,0 +1,326 @@
+[
+  {
+    "outputItemName": "Amberite Necklace",
+    "ingredients": [
+      {
+        "itemName": "Cut Amberite",
+        "amount": 1
+      },
+      {
+        "itemName": "Silver Necklace",
+        "amount": 1
+      },
+      {
+        "itemName": "Lapidary Toolkit",
+        "amount": 1,
+        "consumeOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:50",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 32
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start setting the stone in the necklace..."
+  },
+  {
+    "outputItemName": "Lizardite Necklace",
+    "ingredients": [
+      {
+        "itemName": "Cut Lizardite",
+        "amount": 1
+      },
+      {
+        "itemName": "Silver Necklace",
+        "amount": 1
+      },
+      {
+        "itemName": "Lapidary Toolkit",
+        "amount": 1,
+        "consumeOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:75",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 37
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start setting the stone in the necklace..."
+  },
+  {
+    "outputItemName": "Purpurite Necklace",
+    "ingredients": [
+      {
+        "itemName": "Cut Purpurite",
+        "amount": 1
+      },
+      {
+        "itemName": "Silver Necklace",
+        "amount": 1
+      },
+      {
+        "itemName": "Lapidary Toolkit",
+        "amount": 1,
+        "consumeOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:100",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 43
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start setting the stone in the necklace..."
+  },
+  {
+    "outputItemName": "Opal Necklace",
+    "ingredients": [
+      {
+        "itemName": "Cut Opal",
+        "amount": 1
+      },
+      {
+        "itemName": "Silver Necklace",
+        "amount": 1
+      },
+      {
+        "itemName": "Lapidary Toolkit",
+        "amount": 1,
+        "consumeOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:125",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 52
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start setting the stone in the necklace..."
+  },
+  {
+    "outputItemName": "Garnet Necklace",
+    "ingredients": [
+      {
+        "itemName": "Cut Garnet",
+        "amount": 1
+      },
+      {
+        "itemName": "Silver Necklace",
+        "amount": 1
+      },
+      {
+        "itemName": "Lapidary Toolkit",
+        "amount": 1,
+        "consumeOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:150",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 55
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start setting the stone in the necklace..."
+  },
+  {
+    "outputItemName": "Amethyst Necklace",
+    "ingredients": [
+      {
+        "itemName": "Cut Amethyst",
+        "amount": 1
+      },
+      {
+        "itemName": "Gold Necklace",
+        "amount": 1
+      },
+      {
+        "itemName": "Lapidary Toolkit",
+        "amount": 1,
+        "consumeOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:175",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 62
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start setting the stone in the necklace..."
+  },
+  {
+    "outputItemName": "Emerald Necklace",
+    "ingredients": [
+      {
+        "itemName": "Cut Emerald",
+        "amount": 1
+      },
+      {
+        "itemName": "Gold Necklace",
+        "amount": 1
+      },
+      {
+        "itemName": "Lapidary Toolkit",
+        "amount": 1,
+        "consumeOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:200",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 66
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start setting the stone in the necklace..."
+  },
+  {
+    "outputItemName": "Aquamarine Necklace",
+    "ingredients": [
+      {
+        "itemName": "Cut Aquamarine",
+        "amount": 1
+      },
+      {
+        "itemName": "Gold Necklace",
+        "amount": 1
+      },
+      {
+        "itemName": "Lapidary Toolkit",
+        "amount": 1,
+        "consumeOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:250",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 71
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start setting the stone in the necklace..."
+  },
+  {
+    "outputItemName": "Chrysoberyl Necklace",
+    "ingredients": [
+      {
+        "itemName": "Cut Chrysoberyl",
+        "amount": 1
+      },
+      {
+        "itemName": "Gold Necklace",
+        "amount": 1
+      },
+      {
+        "itemName": "Lapidary Toolkit",
+        "amount": 1,
+        "consumeOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:300",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 81
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start setting the stone in the necklace..."
+  },
+  {
+    "outputItemName": "Sapphire Necklace",
+    "ingredients": [
+      {
+        "itemName": "Cut Sapphire",
+        "amount": 1
+      },
+      {
+        "itemName": "Platinum Necklace",
+        "amount": 1
+      },
+      {
+        "itemName": "Lapidary Toolkit",
+        "amount": 1,
+        "consumeOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:325",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 86
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start setting the stone in the necklace..."
+  },
+  {
+    "outputItemName": "Ruby Necklace",
+    "ingredients": [
+      {
+        "itemName": "Cut Ruby",
+        "amount": 1
+      },
+      {
+        "itemName": "Platinum Necklace",
+        "amount": 1
+      },
+      {
+        "itemName": "Lapidary Toolkit",
+        "amount": 1,
+        "consumeOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:350",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 90
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start setting the stone in the necklace..."
+  },
+  {
+    "outputItemName": "Diamond Necklace",
+    "ingredients": [
+      {
+        "itemName": "Cut Diamond",
+        "amount": 1
+      },
+      {
+        "itemName": "Platinum Necklace",
+        "amount": 1
+      },
+      {
+        "itemName": "Lapidary Toolkit",
+        "amount": 1,
+        "consumeOnUse": false
+      }
+    ],
+    "experienceGained": "Lapidary:400",
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 96
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "recipeActionString": "You start setting the stone in the necklace..."
+  }
+]

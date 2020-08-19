@@ -139,7 +139,10 @@
     "description": "A large pool of water supports a number of trees here. To the south you see another mountain range.",
     "areaURL": "Oasis",
     "actions": [
-      "Chop Trees:Lignum Vitae Logs,Mesquite Logs,Birch Logs"
+      "Chop trees:Lignum Vitae Logs,Mesquite Logs,Birch Logs"
+    ],
+    "conversionActions": [
+      "Draw water:Bucket of Water:Empty Bucket:You begin drawing water from the oasis."
     ],
     "unlockableAreas": [
       {

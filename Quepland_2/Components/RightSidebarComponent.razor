@@ -1,16 +1,16 @@
 ﻿@inject GameState GameState
 @implements IDisposable
 
-    <div style="display:flex;">
-        <button class="sidebar-buttons" style="@GetBGColor("Inventory")" onclick="@(new Action(() => ChangeView("Inventory")))"><img src="/data/Images/WhiteInventory.png" style="height:42px;width:42px;">Inv</button>
-        <button class="sidebar-buttons" style="@GetBGColor("Equipment")" onclick="@(new Action(() => ChangeView("Equipment")))"><img src="/data/Images/WhiteEquipment.png" style="height:42px;width:42px;">Equip</button>
-        <button class="sidebar-buttons" style="@GetBGColor("Skills")" onclick="@(new Action(() => ChangeView("Skills")))"><img src="/data/Images/WhiteSkills.png" style="height:42px;width:42px;">Skills</button>
-        <button class="sidebar-buttons" style="@GetBGColor("Quests")" onclick="@(new Action(() => ChangeView("Quests")))"><img src="/data/Images/WhiteQuests.png" style="height:42px;width:42px;">Quests</button>
-        <button class="sidebar-buttons" style="@GetBGColor("Crafting")" onclick="@(new Action(() => ChangeView("Crafting")))"><img src="/data/Images/WhiteCraft.png" style="height:42px;width:42px;">Craft</button>
-        <button class="sidebar-buttons" style="@GetBGColor("Followers")" onclick="@(new Action(() => ChangeView("Followers")))"><img src="/data/Images/WhiteFollowers.png" style="height:42px;width:42px;">Team</button>
-        <button class="sidebar-buttons" style="" onclick="@(new Action(() => ChangeView("Debug")))"><img src="/data/Images/NoImage.png" style="height:45px;width:45px;border:solid black 4px;">Debug</button>
-
-    </div>
+<div style="display:flex;">
+    <button class="sidebar-buttons" style="@GetBGColor("Inventory")" onclick="@(new Action(() => ChangeView("Inventory")))"><img src="/data/Images/WhiteInventory.png" style="height:42px;width:42px;">Inv</button>
+    <button class="sidebar-buttons" style="@GetBGColor("Equipment")" onclick="@(new Action(() => ChangeView("Equipment")))"><img src="/data/Images/WhiteEquipment.png" style="height:42px;width:42px;">Equip</button>
+    <button class="sidebar-buttons" style="@GetBGColor("Skills")" onclick="@(new Action(() => ChangeView("Skills")))"><img src="/data/Images/WhiteSkills.png" style="height:42px;width:42px;">Skills</button>
+    <button class="sidebar-buttons" style="@GetBGColor("Quests")" onclick="@(new Action(() => ChangeView("Quests")))"><img src="/data/Images/WhiteQuests.png" style="height:42px;width:42px;">Quests</button>
+    <button class="sidebar-buttons" style="@GetBGColor("Crafting")" onclick="@(new Action(() => ChangeView("Crafting")))"><img src="/data/Images/WhiteCraft.png" style="height:42px;width:42px;">Craft</button>
+    <button class="sidebar-buttons" style="@GetBGColor("Followers")" onclick="@(new Action(() => ChangeView("Followers")))"><img src="/data/Images/WhiteFollowers.png" style="height:42px;width:42px;">Team</button>
+    <!--<button class="sidebar-buttons" style="" onclick="@(new Action(() => ChangeView("Debug")))"><img src="/data/Images/NoImage.png" style="height:45px;width:45px;border:solid black 4px;">Debug</button>
+    -->
+</div>
     <div>
 
         <div class="progress" style="width:100%;border-radius:0px;position:relative;background-color:darkred;">

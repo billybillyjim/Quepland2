@@ -29,6 +29,11 @@
             }
 
         }
+        @foreach (string a in thisArea.ConversionActions ?? Enumerable.Empty<string>())
+        {
+            <Quepland_2.Components.ConvertItemsComponent ActionText="@a"></Quepland_2.Components.ConvertItemsComponent>
+            <br />
+        }
         @foreach (Building b in thisArea.Buildings)
         {
             if (b.HasRequirements())

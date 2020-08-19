@@ -246,6 +246,9 @@
           }
         ]
       }
+    ],
+    "conversionActions": [
+      "Draw water:Bucket of Water:Empty Bucket:You begin drawing water from the garden lake."
     ]
   }
 ]

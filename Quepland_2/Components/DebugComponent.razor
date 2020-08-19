@@ -36,7 +36,11 @@
         <input @bind-value="itemName"/>
         <button @onclick="@GetItem">Get @itemName</button>
     </div>
-
+    <div>
+        <button @onclick="@(() => GetOneOfAllItems())">
+            Get One of All Items
+        </button>
+    </div>
 </div>
 
 
@@ -45,12 +49,21 @@
 
     private string itemName = "";
 
+    public void GetOneOfAllItems()
+    {
+        Bank.Instance.Inventory.IsLoadingSave = true;
+        foreach(GameItem i in ItemManager.Instance.Items)
+        {
+            Bank.Instance.Inventory.AddItem(i.Copy());
+        }
+        Bank.Instance.Inventory.IsLoadingSave = false;
+    }
     public void GetItem()
     {
         GameItem i = ItemManager.Instance.GetItemByName(itemName);
         if(i != null)
         {
-            Player.Instance.Inventory.AddItem(i);
+            Player.Instance.Inventory.AddItem(i.Copy());
             MessageManager.AddMessage("You get 1 " + i.Name);
         }
     }

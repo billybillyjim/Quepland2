@@ -318,7 +318,7 @@
     "name": "Empty Bucket",
     "description": "A bucket.",
     "value": 2,
-    "gatherSpeed": 10,
+    "gatherSpeed": 8,
     "icon": "Bucket"
   },
   {
@@ -326,7 +326,7 @@
     "description": "A bucket. It's got water in it.",
     "gatherString": "You fill the bucket with water.",
     "value": 5,
-    "gatherSpeed": 3,
+    "gatherSpeed": 8,
     "icon": "BucketFull"
   },
   {
