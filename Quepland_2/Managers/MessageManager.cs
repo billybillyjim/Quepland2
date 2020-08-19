@@ -21,6 +21,7 @@ public static class MessageManager
         if(Messages.Count > 0)
         {
             Messages.Last().Style = "";
+            Messages.Last().Style += "opacity:0.9;";
         }
         
         newMessage.Style = "font-weight:bold;";

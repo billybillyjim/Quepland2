@@ -1,5 +1,15 @@
 [
   {
+    "versionNumber": "0.0.13",
+    "updates": [
+      "Fixed a typo in Queple Cave.",
+      "Fixed a bug that didn't let you buy items with exact change.",
+      "Added version number to start screen.",
+      "Fixed a bug that made the crafting menu crash.",
+      "Made messages a bit more distinct."
+    ]
+  },
+  {
     "versionNumber": "0.0.12",
     "updates": [
       "Added some missing NPCs",

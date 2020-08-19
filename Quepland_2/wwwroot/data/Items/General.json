@@ -132,6 +132,13 @@
     "icon": "Tools"
   },
   {
+    "name": "Lapidary Toolkit",
+    "description": "A set of tools to work gems into prettier gems.",
+    "value": 1000,
+    "secondaryColor": "#A2FFF5",
+    "icon": "Tools"
+  },
+  {
     "name": "Mercurial Shard",
     "description": "A smooth shard from the corpse of a mercurial being. With enough of them you could fashion some kind of weapon...",
     "value": 30,

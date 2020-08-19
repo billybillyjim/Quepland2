@@ -162,7 +162,7 @@
     }
     private bool CanAfford(GameItem item)
     {
-        return item.Value * Shop.CostMultiplier < Player.Instance.Inventory.GetNumberOfItem(Shop.Currency);
+        return Player.Instance.Inventory.GetNumberOfItem(Shop.Currency) >= item.Value * Shop.CostMultiplier;
     }
     public void UpdateAmount(int amt)
     {
