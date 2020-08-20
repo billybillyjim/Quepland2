@@ -1,0 +1,246 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (items != null && items.Count > 0)
+{
+    @if (items.Contains(GameState.CurrentGatherItem))
+    {
+        <div style="position:relative">
+            <button class="btn btn-primary" onclick="@(new Action(() => GatherItem(null)))">Stop Fishing</button>
+        </div>
+        <div>
+            The hole is freezing...
+            <div class="progress" style="width:300px;">
+                <div class="progress-bar" style="@GetFreezeProgress()"></div>
+            </div>
+        </div>
+    }
+    else
+    {
+        if (CanGatherAny())
+        {
+            @if (HasHole && GameState.CurrentTick < HoleCloseTick)
+            {
+                <div style="position:relative">
+                    <button class="btn btn-primary" onclick="@(new Action(() => GatherItem(GetRandomItem())))">Ice Fish</button>
+                    <div>
+                        The hole is freezing...
+                        <div class="progress" style="width:300px;">
+                            <div class="progress-bar" style="@GetFreezeProgress()"></div>
+                        </div>
+                    </div>
+                </div>
+            }
+            else if (IsCuttingHole && GameState.CurrentTick >= FinishGameTick)
+            {
+                <div style="position:relative">
+                    <button class="btn btn-primary" onclick="@(new Action(() => RemoveIce()))">Remove Ice</button>
+                </div>
+            }
+            else if (IsCuttingHole)
+            {
+                <div style="position:relative">
+                    <button class="btn btn-primary" style="opacity:0.5">Cutting Hole...</button>
+                </div>
+                <div>
+                    <div class="progress" style="width:300px;">
+                        <div class="progress-bar" style="@GetProgress()"></div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div style="position:relative">
+                    <button class="btn btn-primary" onclick="@(new Action(() => CutHole()))">Cut Hole</button>
+                </div>
+            }
+
+        }
+        else
+        {
+            <div style="position:relative">
+                <button class="btn btn-primary" style="position:relative" disabled>
+                    @gatherText
+                    <div style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;"
+                         onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GetLowestReqTooltip())))"
+                         onmouseout="@(new Action(() => GameState.HideTooltip()))"></div>
+                </button>
+
+            </div>
+
+        }
+
+    }
+}
+
+@code {
+    [Parameter]
+    public string ActionText { get; set; }
+    private List<GameItem> items = new List<GameItem>();
+    private string gatherText = "";
+    private string tooltip = "";
+    private string beginText = "";
+    private Random rand = new Random();
+    private bool IsCuttingHole;
+    private bool HasHole;
+    private int FinishGameTick;
+    private int HoleCloseTick;
+
+    public void CutHole()
+    {
+        FinishGameTick = GameState.CurrentTick + 20;
+        IsCuttingHole = true;
+        MessageManager.AddMessage("You start cutting into the ice.");
+        GameState.UpdateState();
+    }
+    public void RemoveIce()
+    {
+        HasHole = true;
+        IsCuttingHole = false;
+        MessageManager.AddMessage("You remove the cut up ice.");
+        HoleCloseTick = GameState.CurrentTick + 200;
+        GameState.UpdateState();
+    }
+    public void GatherItem(GameItem i)
+    {
+        if (i == null)
+        {
+            Console.WriteLine("Item was null");
+            GameState.CurrentGatherItem = null;
+            GameState.UpdateState();
+            return;
+        }
+        if (beginText != "")
+        {
+            MessageManager.AddMessage(beginText);
+        }
+        GameState.CurrentGatherItem = i;
+        GameState.TicksToNextAction = GameState.CurrentGatherItem.GatherSpeed.ToGaussianRandom();
+        GameState.UpdateState();
+    }
+    private GameItem GetRandomItem()
+    {
+        GameState.PossibleGatherItems.Clear();
+        foreach (GameItem i in items)
+        {
+            if (i.HasRequirements())
+            {
+                GameState.PossibleGatherItems.Add(i);
+            }
+        }
+        if (GameState.PossibleGatherItems.Count == 0)
+        {
+            return items[0];
+        }
+        return GameState.PossibleGatherItems[rand.Next(0, GameState.PossibleGatherItems.Count - 1)];
+    }
+    private bool CanGatherAny()
+    {
+        foreach (GameItem item in items)
+        {
+            if (item.HasRequirements())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    protected override void OnParametersSet()
+    {
+        items.Clear();
+        if (ActionText == null || ActionText.Contains(':') == false)
+        {
+            Console.WriteLine("Action Text was null or contained no colon.");
+            if (ActionText == null)
+            {
+                Console.WriteLine("ActionText null:" + (ActionText == null));
+            }
+            else
+            {
+                Console.WriteLine("ActionText:" + ActionText);
+            }
+
+        }
+        else
+        {
+            foreach (string i in ActionText.Split(':')[1].Split(','))
+            {
+                GameItem item = ItemManager.Instance.GetItemByName(i);
+                if (item != null)
+                {
+                    items.Add(item);
+                }
+                else
+                {
+                    Console.WriteLine("Item not found:" + i);
+                }
+            }
+            gatherText = ActionText.Split(':')[0];
+            if (ActionText.Split(':').Length > 2)
+            {
+                beginText = ActionText.Split(':')[2];
+            }
+            else
+            {
+                beginText = "";
+            }
+
+        }
+
+        GameState.UpdateState();
+    }
+    private string GetProgress()
+    {
+        int ticks = GameState.CurrentTick - (FinishGameTick - 20);
+        return "width:" + (100 - ((double)ticks / 20) * 100d) + "%";
+    }
+    private string GetFreezeProgress()
+    {
+        int ticks = GameState.CurrentTick - (HoleCloseTick - 200);
+        return "width:" + (100 - ((double)ticks / 200) * 100d) + "%";
+    }
+    public string GetLowestReqTooltip()
+    {
+        if (items != null)
+        {
+            GameItem lowest = items[0];
+            int lowestReq = int.MaxValue;
+            foreach (GameItem i in items)
+            {
+                foreach (Requirement r in i.Requirements)
+                {
+                    if (r.Skill != "None")
+                    {
+                        if (r.SkillLevel < lowestReq)
+                        {
+                            lowest = i;
+                        }
+                        lowestReq = Math.Min(r.SkillLevel, lowestReq);
+
+                    }
+                }
+            }
+            return lowest.GetRequirementTooltip();
+
+        }
+        return "";
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e)
+    {
+        if (HoleCloseTick < GameState.CurrentTick && HasHole)
+        {
+            HasHole = false;
+            MessageManager.AddMessage("The hole you were fishing with froze back up! You'll have to cut another.");
+            GameState.StopActions();
+        }
+        StateHasChanged();
+    }
+}

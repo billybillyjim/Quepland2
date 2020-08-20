@@ -55,8 +55,23 @@ public class NPCManager
                 {
                     CustomDialogFunctions.TryAdd("ChangeWorldColor" + d.Parameter, new Action(() => ChangeWorldColor(d.Parameter)));
                 }
+                else if (d.ResponseWithParameter == "GoHunting" + d.Parameter)
+                {
+                    CustomDialogFunctions.TryAdd("GoHunting" + d.Parameter, new Action(() => GoHunting(d.Parameter)));
+                }
             }
         }
+        
+    }
+    public void GoHunting(string huntingInfo)
+    {
+        HuntingTripInfo info = new HuntingTripInfo();
+        Area a = AreaManager.Instance.GetAreaByURL(huntingInfo.Split(':')[0]);
+        info.DropTable = ItemManager.Instance.GetMinigameDropTable(huntingInfo.Split(':')[1]).DropTable;
+        a.HuntingTripInfo = info;
+        int hours = int.Parse(huntingInfo.Split(':')[2]);
+        MessageManager.AddMessage("The hunters take you along on a " + hours + " hour hunt.");
+        HuntingManager.StartHuntingTrip(info, hours);
         
     }
     public void ChangeWorldColor(string color)

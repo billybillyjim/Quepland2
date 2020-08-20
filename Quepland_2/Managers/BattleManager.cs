@@ -122,27 +122,43 @@ public class BattleManager
             {
                 if (opponent.CurrentHP <= 0 && opponent.IsDefeated == false)
                 {
-                    opponent.CurrentHP = 0;                   
-                    Drop drop = opponent.DropTable.GetDrop();
+                    opponent.CurrentHP = 0;
+                    if (opponent.DropTable != null && (opponent.DropTable.Drops.Count > 0 || opponent.DropTable.AlwaysDrops.Count > 0))
+                    {
+                        Drop drop = opponent.DropTable.GetDrop();
+                        if(drop != null)
+                        {
+                            if (LootTracker.Instance.TrackLoot)
+                            {
+                                foreach (Drop d in opponent.DropTable.AlwaysDrops)
+                                {
+                                    LootTracker.Instance.Inventory.AddDrop(d);
+                                }
+                                LootTracker.Instance.Inventory.AddDrop(drop);
+                            }
+                            else
+                            {
+                                MessageManager.AddMessage("You defeated the " + opponent.Name + ".");
+                                foreach (Drop d in opponent.DropTable.AlwaysDrops)
+                                {
+                                    Player.Instance.Inventory.AddDrop(d);
+                                }
+                                if (drop.Item != null && drop.Item.Category == "QuestItems" && (Player.Instance.Inventory.HasItem(drop.Item) || Bank.Instance.Inventory.HasItem(drop.Item)))
+                                {
 
-                    if (LootTracker.Instance.TrackLoot)
-                    {
-                        foreach(Drop d in opponent.DropTable.AlwaysDrops)
-                        {
-                            LootTracker.Instance.Inventory.AddDrop(d);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Item Category:" + drop.Item.Category);
+                                    Console.WriteLine("Player has item:" + Player.Instance.Inventory.HasItem(drop.Item));
+
+                                    Player.Instance.Inventory.AddDrop(drop);
+
+                                }
+                            }
                         }
-                        LootTracker.Instance.Inventory.AddDrop(drop);
+
                     }
-                    else
-                    {
-                        MessageManager.AddMessage("You defeated the " + opponent.Name + ".");
-                        foreach (Drop d in opponent.DropTable.AlwaysDrops)
-                        {
-                            Player.Instance.Inventory.AddDrop(d);
-                        }
-                        Player.Instance.Inventory.AddDrop(drop);
-                    }
-                    
                     opponent.IsDefeated = true;
                     if(CurrentBoss != null)
                     {

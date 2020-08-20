@@ -9,11 +9,12 @@ public class Drop
         {
             if(item == null)
             {
-                item = ItemManager.Instance.GetCopyOfItem(ItemName);
+                item = ItemManager.Instance.GetCopyOfItem(ItemName, ItemParameter);
             }
             return item;
         } 
     }
+    public string ItemParameter { get; set; } = "";
 	public int Weight { get; set; } = 1;
 	public int Amount { get; set; } = 1;
 

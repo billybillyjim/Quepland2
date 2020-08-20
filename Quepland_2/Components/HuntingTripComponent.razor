@@ -43,10 +43,7 @@
 
     public void StartHuntingTrip(int hours)
     {
-        TripInfo.IsActive = true;
-        TripInfo.StartTime = DateTime.UtcNow;
-        TripInfo.ReturnTime = DateTime.UtcNow.AddHours(hours);
-        GameState.IsOnHuntingTrip = true;
+        HuntingManager.StartHuntingTrip(TripInfo, hours);
         SaveManager.SaveGame();
     }
     public void CancelHuntingTrip()
@@ -54,50 +51,11 @@
         double amountCompleted = DateTime.UtcNow.Subtract(TripInfo.StartTime).TotalHours / TripInfo.ReturnTime.Subtract(TripInfo.StartTime).TotalHours;
         EndHunt(amountCompleted * TripInfo.ReturnTime.Subtract(TripInfo.StartTime).TotalSeconds, false);
 
-
     }
 
     public void EndHunt(double totalTimeHunting, bool useFloor)
     {
-        if(totalTimeHunting < 600)
-        {
-            MessageManager.AddMessage("You decide against going on a hunt before you catch anything.");
-            TripInfo.IsActive = false;
-            TripInfo.StartTime = DateTime.MinValue;
-            TripInfo.ReturnTime = DateTime.MinValue;
-            GameState.IsOnHuntingTrip = false;
-            return;
-        }
-        double caughtBase = totalTimeHunting * (1 / 3600d) * (double)((Player.Instance.GetLevel("Hunting") + 4) / 4d);
-        double caught = caughtBase.ToGaussianRandom();
-        int catchFloor = 0;
-        if (useFloor)
-        {
-            catchFloor = ((Player.Instance.GetLevel("Archery") / 10) + 1) * Math.Max((int)(totalTimeHunting / 3600), 1);
-        }
-        if (caught < catchFloor)
-        {
-            caught = catchFloor;
-        }
-
-        for (int i = 0; i < caught; i++)
-        {
-            Drop d = TripInfo.DropTable.GetDrop();
-            if (ItemManager.Instance.GetItemByName(d.ItemName).HasRequirements())
-            {
-                Player.Instance.Inventory.AddDrop(d);
-                Player.Instance.GainExperience(ItemManager.Instance.GetItemByName(d.ItemName).ExperienceGained);
-                MessageManager.AddMessage("You hunted a " + d + " on your trip.");
-            }
-            else
-            {
-                MessageManager.AddMessage("You hunted a " + d + " on your trip, but it got away.");
-            }
-        }
-        TripInfo.IsActive = false;
-        TripInfo.StartTime = DateTime.MinValue;
-        TripInfo.ReturnTime = DateTime.MinValue;
-        GameState.IsOnHuntingTrip = false;
+        HuntingManager.EndHunt(TripInfo, totalTimeHunting, useFloor);
         GameState.UpdateState();
     }
     private void OpenMenu()

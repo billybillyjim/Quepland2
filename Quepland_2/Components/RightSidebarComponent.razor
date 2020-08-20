@@ -1,4 +1,5 @@
 ﻿@inject GameState GameState
+@inject NavigationManager NavMan
 @implements IDisposable
 
 <div style="display:flex;">
@@ -8,8 +9,12 @@
     <button class="sidebar-buttons" style="@GetBGColor("Quests")" onclick="@(new Action(() => ChangeView("Quests")))"><img src="/data/Images/WhiteQuests.png" style="height:42px;width:42px;">Quests</button>
     <button class="sidebar-buttons" style="@GetBGColor("Crafting")" onclick="@(new Action(() => ChangeView("Crafting")))"><img src="/data/Images/WhiteCraft.png" style="height:42px;width:42px;">Craft</button>
     <button class="sidebar-buttons" style="@GetBGColor("Followers")" onclick="@(new Action(() => ChangeView("Followers")))"><img src="/data/Images/WhiteFollowers.png" style="height:42px;width:42px;">Team</button>
-    <button class="sidebar-buttons" style="" onclick="@(new Action(() => ChangeView("Debug")))"><img src="/data/Images/NoImage.png" style="height:45px;width:45px;border:solid black 4px;">Debug</button>
-    
+    @if (IsTesting())
+    {
+        <button class="sidebar-buttons" style="" onclick="@(new Action(() => ChangeView("Debug")))"><img src="/data/Images/NoImage.png" style="height:45px;width:45px;border:solid black 4px;">Debug</button>
+
+    }
+
 </div>
     <div>
 
@@ -70,6 +75,11 @@ else if(activeWindow == "Debug")
     {
         activeWindow = view;
         GameState.UpdateState();
+    }
+    public bool IsTesting()
+    {
+        return NavMan.BaseUri.Contains("localhost");
+        
     }
     protected override void OnInitialized()
     {

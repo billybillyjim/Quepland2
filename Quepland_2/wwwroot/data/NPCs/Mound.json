@@ -7,6 +7,17 @@
       "responseText": "Hello."
     },
     {
+      "buttonText": "I found your house key.",
+      "responseText": "Oh, thanks. I'll take that off your hands.",
+      "consumeRequiredItems": true,
+      "requirements": [
+        {
+          "item": "Mound's House Key",
+          "itemAmount": 1
+        }
+      ]
+    },
+    {
       "buttonText": "I found you!",
       "responseText": "Who? Me? Why were you looking for me?",
       "newQuestprogressValue": 19,

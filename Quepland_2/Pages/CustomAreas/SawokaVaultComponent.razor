@@ -18,7 +18,7 @@
         @if (GameState.TicksToNextAction <= 0 && IsSearching)
         {
             <div>
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" @onclick="@(() => UnlockSafe())">
                     Unlock Safe
                 </button>
             </div>
@@ -57,7 +57,14 @@
         MessageManager.AddMessage("You walk around the room with a key in your hand. It begins to vibrate as you get nearer its partner safe.");
         GameState.TicksToNextAction = 50;
     }
+    private void UnlockSafe()
+    {
+        IsSearching = false;
+        Drop d = ItemManager.Instance.GetMinigameDropTable("Sawoka Vault").DropTable.GetDrop();
+        Player.Instance.Inventory.AddDrop(d);
+        MessageManager.AddMessage("You insert the key into the safe and it disolves. You open the door to find " + d.ItemName);
 
+    }
     private string GetProgress()
     {
         @if (IsSearching)

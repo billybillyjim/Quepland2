@@ -23,6 +23,13 @@
     "icon": "Knife"
   },
   {
+    "Name": "Magic Wood Carving Knife",
+    "Description": "A specially designed knife for carving wood. This one's magical.",
+    "value": 600,
+    "secondaryColor": "#d9a668",
+    "icon": "Knife"
+  },
+  {
     "Name": "No Soliciting Sign",
     "Description": "A nicely written sign.",
     "gatherString": "You paint letters neatly onto the sign.",

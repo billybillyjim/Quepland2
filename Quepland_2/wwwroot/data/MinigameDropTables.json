@@ -144,5 +144,339 @@
         }
       ]
     }
+  },
+  {
+    "areaName": "Sawoka Vault Red",
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 7000
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 10000
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 25000
+        },
+        {
+          "itemName": "Magic Iron Sword",
+          "weight": 20,
+          "amount": 1
+        },
+        {
+          "itemName": "Iron Knuckles",
+          "weight": 20,
+          "amount": 1
+        },
+        {
+          "itemName": "Iron Sword",
+          "weight": 20,
+          "amount": 1
+        },
+        {
+          "itemName": "Iron Knife",
+          "weight": 20,
+          "amount": 1
+        },
+        {
+          "itemName": "Iron Axe",
+          "weight": 20,
+          "amount": 1
+        },
+        {
+          "itemName": "Iron Hammer",
+          "weight": 20,
+          "amount": 1
+        },
+        {
+          "itemName": "Iron Pickaxe",
+          "weight": 20,
+          "amount": 1
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Lizardite",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Purpurite",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Garnet",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Topaz",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Aquamarine",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Diamond",
+          "weight": 10,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Ruby",
+          "weight": 10,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Sapphire",
+          "weight": 10,
+          "amount": 2
+        }
+      ]
+    }
+  },
+  {
+    "areaName": "Sawoka Vault Orange",
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 7000
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 10000
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 25000
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Lizardite",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Purpurite",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Garnet",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Topaz",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Aquamarine",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Diamond",
+          "weight": 10,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Ruby",
+          "weight": 10,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Sapphire",
+          "weight": 10,
+          "amount": 2
+        }
+      ]
+    }
+  },
+  {
+    "areaName": "Sawoka Vault Green",
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 7000
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 10000
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 25000
+        },
+        {
+          "itemName": "Large Fishing Rod",
+          "weight": 10,
+          "amount": 1
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Lizardite",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Purpurite",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Garnet",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Topaz",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Aquamarine",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Diamond",
+          "weight": 10,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Ruby",
+          "weight": 10,
+          "amount": 2
+        },
+        {
+          "itemName": "Unidentified Gem",
+          "itemParameter": " Rough Sapphire",
+          "weight": 10,
+          "amount": 2
+        }
+      ]
+    }
+  },
+  {
+    "areaName": "Full Sahota Hunting",
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Woolly Mammoth",
+          "weight": 2,
+          "amount": 1
+        },
+        {
+          "itemName": "Woolly Mammoth Meat",
+          "weight": 25,
+          "amount": 1
+        },
+        {
+          "itemName": "Woolly Mammoth Hide",
+          "weight": 25,
+          "amount": 1
+        },
+        {
+          "itemName": "Polar Bear",
+          "weight": 30,
+          "amount": 1
+        },
+        {
+          "itemName": "Polar Bear Hide",
+          "weight": 30,
+          "amount": 1
+        },
+        {
+          "itemName": "Bear Claws",
+          "weight": 5,
+          "amount": 1
+        },
+        {
+          "itemName": "Mammoth Tusk",
+          "weight": 5,
+          "amount": 1
+        }
+      ]
+    }
+  },
+  {
+    "areaName": "Half Sahota Hunting",
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Polar Bear",
+          "weight": 10,
+          "amount": 1
+        },
+        {
+          "itemName": "Polar Bear Hide",
+          "weight": 20,
+          "amount": 1
+        },
+        {
+          "itemName": "Bear Claws",
+          "weight": 1,
+          "amount": 1
+        },
+        {
+          "itemName": "Grizzly Bear",
+          "weight": 30,
+          "amount": 1
+        },
+        {
+          "itemName": "Grizzly Bear Hide",
+          "weight": 30,
+          "amount": 1
+        },
+        {
+          "itemName": "Moose",
+          "weight": 30,
+          "amount": 1
+        },
+        {
+          "itemName": "Moose Antlers",
+          "weight": 10,
+          "amount": 1
+        }
+      ]
+    }
   }
 ]

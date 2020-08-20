@@ -331,7 +331,7 @@ using System.Threading.Tasks;
         }
         if(CurrentGatherItem != null)
         {
-            if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking)
+            if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking && Player.Instance.CurrentFollower.InventorySize > 0)
             {
                     TicksToNextAction = Player.Instance.CurrentFollower.TicksToNextAction;               
             }
@@ -365,7 +365,7 @@ using System.Threading.Tasks;
         //}
         if (Player.Instance.PlayerGatherItem(CurrentGatherItem) == false)
         {
-            if(Player.Instance.CurrentFollower != null)
+            if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.InventorySize > 0)
             {
                 if (Player.Instance.CurrentFollower.IsBanking == false)
                 {
@@ -397,7 +397,19 @@ using System.Threading.Tasks;
             if (Random.Next(0, CurrentBook.Length) == CurrentBook.Progress)
             {
                 MessageManager.AddMessage("A small key falls out of the book as you turn the page.");
-                Player.Instance.Inventory.AddItem("Small Library Key");
+                if(BGColor == "#2e1b1b")
+                {
+                    Player.Instance.Inventory.AddItem("Small Red Library Key");
+                }
+                else if(BGColor == "#463513")
+                {
+                    Player.Instance.Inventory.AddItem("Small Orange Library Key");
+                }
+                else
+                {
+                    Player.Instance.Inventory.AddItem("Small Green Library Key");
+                }
+                
             }
             if(CurrentBook.Progress >= CurrentBook.Length)
             {

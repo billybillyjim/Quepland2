@@ -164,6 +164,10 @@ public class ItemManager
     {
         return GetItemByName(name).Copy();
     }
+    public GameItem GetCopyOfItem(string name, string parameter)
+    {
+        return GetItemByUniqueID(name + "0" + parameter).Copy();
+    }
 
     public Recipe GetUnpackingRecipe(GameItem item)
     {

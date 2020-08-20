@@ -386,6 +386,10 @@ public class Player
     {
         if (CurrentFollower != null && CurrentFollower.IsBanking == false)
         {
+            if(CurrentFollower.InventorySize == 0)
+            {
+                return false;
+            }
             if (CurrentFollower.Inventory.GetAvailableSpaces() <= 0)
             {
                 CurrentFollower.SendToBank();

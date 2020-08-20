@@ -1,0 +1,112 @@
+{
+  "name": "Hunter",
+  "id": 43,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello. We're kind of busy right now, I'm sorry, but unless you're a very skilled hunter we don't have time to talk.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "I'm a skilled hunter! (Lie)",
+      "responseText": "Right. Please leave us be.",
+      "depth": 1
+    },
+    {
+      "buttonText": "I'm a skilled hunter! (Truth)",
+      "responseText": "Oh. I'm sorry, I didn't realize you were so skilled. You might be of some use to us after all.",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "skill": "Hunting",
+          "skillLevel": 90
+        }
+      ]
+    },
+    {
+      "buttonText": "I'm a very skilled hunter! (Very Truth)",
+      "responseText": "Oh. I'm sorry, I didn't realize you were so skilled. You might be the best hunter of our group!",
+      "depth": 1,
+      "newDepthOnTalk": 3,
+      "requirements": [
+        {
+          "skill": "Hunting",
+          "skillLevel": 103
+        }
+      ]
+    },
+    {
+      "buttonText": "Let's do an easy hunt for 1 hour",
+      "responseText": "GoHunting",
+      "parameter": "SahotaClearing:Half Sahota Hunting:1",
+      "depth": 2,
+      "requirements": [
+        {
+          "skill": "Hunting",
+          "skillLevel": 90
+        }
+      ]
+    },
+    {
+      "buttonText": "Let's do an easy hunt for 4 hours",
+      "responseText": "GoHunting",
+      "parameter": "SahotaClearing:Half Sahota Hunting:4",
+      "depth": 2,
+      "requirements": [
+        {
+          "skill": "Hunting",
+          "skillLevel": 90
+        }
+      ]
+    },
+    {
+      "buttonText": "Let's do an easy hunt for 8 hours",
+      "responseText": "GoHunting",
+      "parameter": "SahotaClearing:Half Sahota Hunting:8",
+      "depth": 2,
+      "requirements": [
+        {
+          "skill": "Hunting",
+          "skillLevel": 90
+        }
+      ]
+    },
+    {
+      "buttonText": "Let's do a difficult hunt for 1 hour",
+      "responseText": "GoHunting",
+      "parameter": "SahotaClearing:Full Sahota Hunting:1",
+      "depth": 3,
+      "requirements": [
+        {
+          "skill": "Hunting",
+          "skillLevel": 103
+        }
+      ]
+    },
+    {
+      "buttonText": "Let's do a difficult hunt for 4 hours",
+      "responseText": "GoHunting",
+      "parameter": "SahotaClearing:Full Sahota Hunting:4",
+      "depth": 3,
+      "requirements": [
+        {
+          "skill": "Hunting",
+          "skillLevel": 103
+        }
+      ]
+    },
+    {
+      "buttonText": "Let's do a difficult hunt for 8 hours",
+      "responseText": "GoHunting",
+      "parameter": "SahotaClearing:Full Sahota Hunting:8",
+      "depth": 3,
+      "requirements": [
+        {
+          "skill": "Hunting",
+          "skillLevel": 103
+        }
+      ]
+    }
+  ]
+}

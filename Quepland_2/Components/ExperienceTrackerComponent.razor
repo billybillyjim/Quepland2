@@ -19,7 +19,7 @@
         {
             if (IsBeingTracked(SetSkill))
             {
-                <div>@SetSkill Exp/Hr:@GetRate(Player.Instance.Skills.Find(x => x.Name == SetSkill))</div>
+                <div @onclick="@(() => ToggleSettings())"  style="cursor:pointer;">@SetSkill Exp/Hr:@GetRate(Player.Instance.Skills.Find(x => x.Name == SetSkill))</div>
                 <div>Total Gained:@(Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience - GetTracker(Player.Instance.Skills.Find(x => x.Name == SetSkill).Name).StartExperience)</div>
                 <div>Time:@GetTracker(Player.Instance.Skills.Find(x => x.Name == SetSkill).Name).TimeSinceTrackerStarted.ToString(@"dd\:hh\:mm\:ss")</div>
             }
@@ -47,7 +47,7 @@
     }
     else
     {
-        <div>
+        <div @onclick="@(() => ToggleSettings())" style="cursor:pointer;">
             @Player.Instance.Skills.Find(x => x.Name == SetSkill).Name
         </div>
         <div>
@@ -106,7 +106,9 @@
             <CustomDropdownComponent DropdownItems="@skills" @bind-Value="@SetSkill" BoxText="@SetSkill"></CustomDropdownComponent>
         </div>
     }
-
+    <div style="position:absolute;right:5px;top:5px;">
+        <img src="/data/Images/NoImage.png" style="height:30px;width:30px;cursor:pointer;"  @onclick="@(() => ToggleSettings())"/>
+    </div>
 
 </div>
 
