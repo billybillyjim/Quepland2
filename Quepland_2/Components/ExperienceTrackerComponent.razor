@@ -38,10 +38,16 @@
                 @Player.Instance.LastGainedExp.Experience
             </div>
             <div class="progress" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, (Math.Round(Player.Instance.LastGainedExp.Progress, 2)) + "% to level " + (Player.Instance.LastGainedExp.GetSkillLevelUnboosted() + 1), "" + Player.Instance.LastGainedExp.Experience + "/" + (long)Skill.GetExperienceRequired(Player.Instance.LastGainedExp.GetSkillLevelUnboosted()))))"
-            @onmouseout="@(new Action(() => GameState.HideTooltip()))" >
+                 @onmouseout="@(new Action(() => GameState.HideTooltip()))">
                 <div class="progress-bar" style="background-color:#51d051;width:@(Player.Instance.LastGainedExp.Progress)%">
 
                 </div>
+            </div>
+        }
+        else
+        {
+            <div @onclick="@(() => ToggleSettings())" style="cursor:pointer;">
+                Open Experience Tracker
             </div>
         }
     }
@@ -53,8 +59,8 @@
         <div>
             @Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience
         </div>
-        <div class="progress"   @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, (Player.Instance.Skills.Find(x => x.Name == SetSkill).Progress) + "% to level " + (Player.Instance.Skills.Find(x => x.Name == SetSkill).GetSkillLevelUnboosted() + 1), "" + Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience + "/" + (long)Skill.GetExperienceRequired(Player.Instance.Skills.Find(x => x.Name == SetSkill).GetSkillLevelUnboosted()))))"
-            @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+        <div class="progress" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, (Player.Instance.Skills.Find(x => x.Name == SetSkill).Progress) + "% to level " + (Player.Instance.Skills.Find(x => x.Name == SetSkill).GetSkillLevelUnboosted() + 1), "" + Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience + "/" + (long)Skill.GetExperienceRequired(Player.Instance.Skills.Find(x => x.Name == SetSkill).GetSkillLevelUnboosted()))))"
+             @onmouseout="@(new Action(() => GameState.HideTooltip()))">
             <div class="progress-bar" style="background-color: #51d051; width: @(Player.Instance.Skills.Find(x => x.Name == SetSkill).Progress) %">
 
             </div>
