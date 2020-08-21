@@ -95,7 +95,6 @@
         "itemName": "Molten Aluminum Bar"
       }
     ],
-    "experienceGained": "Smithing:200",
     "requirements": [
       {
         "skill": "Smithing",

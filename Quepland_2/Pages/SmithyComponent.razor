@@ -82,7 +82,7 @@
         {
 
             GameState.StopActions();
-            GameState.SmithingStage = 0;
+            SmithingManager.SmithingStage = 0;
             GameState.NewSmeltingRecipe = source;
             GameState.NewSmithingRecipe = product;
             Player.Instance.CurrentFollower.BankItems();
@@ -93,7 +93,7 @@
         else if (source.CanCreate())
         {
             GameState.StopActions();
-            GameState.SmithingStage = 0;
+            SmithingManager.SmithingStage = 0;
             GameState.NewSmeltingRecipe = source;
             GameState.NewSmithingRecipe = product;
             MessageManager.AddMessage("You begin smithing " + Source + " into a " + Product);
@@ -105,7 +105,7 @@
     {
         if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
         {
-            if (GameState.SmithingStage == 2)
+            if (SmithingManager.SmithingStage == 2)
             {
                 return "width:" + (100 - ((double)Player.Instance.CurrentFollower.TicksToNextAction / (Player.Instance.CurrentFollower.AutoCollectSpeed * GameState.AutoSmithedItemCount)) * 100d) + "%";
             }
@@ -113,7 +113,7 @@
         }
         if (GameState.CurrentSmeltingRecipe != null)
         {
-            if (GameState.SmithingStage == 0)
+            if (SmithingManager.SmithingStage == 0)
             {
                 return "width:" + (100 - ((double)GameState.TicksToNextAction / GameState.CurrentSmeltingRecipe.CraftingSpeed) * 100d) + "%";
             }

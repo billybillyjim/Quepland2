@@ -7,7 +7,12 @@
       "Added item locks. Not sold on the design, let me know if you have a better idea!",
       "Adjusted inventory growth rate.",
       "Added a third line of info the tooltip for skills in the skills tab.",
-      "Added more commas."
+      "Added more commas.",
+      "Fixed a bug that broke idle gathering with followers.",
+      "Fixed issues with smithing experience being given at the wrong times from the wrong places.",
+      "Reworked the smithing and autosmithing functions, hopefully didn't break anything.",
+      "Reworked gathering to hopefully work as intented.",
+      "Fixed a bug that caused the first gather to not include gathering speed bonuses in calculating gather time."
     ]
   },
   {

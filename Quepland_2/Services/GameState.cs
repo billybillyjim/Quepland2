@@ -101,7 +101,6 @@ using System.Threading.Tasks;
     public static int GameWindowWidth { get; set; }
     public static int GameWindowHeight { get; set; }
     public int MinWindowWidth { get; set; } = 600;
-    public int SmithingStage;
     public int AlchemyStage;
     public int AutoSmithedItemCount { get; set; } = 0;
 
@@ -304,6 +303,69 @@ using System.Threading.Tasks;
 
     private void GatherItem()
     {
+        if (HasRequiredItemForGather())
+        {
+            if (Player.Instance.FollowerGatherItem(CurrentGatherItem) == false)
+            {
+                PlayerGatherItem();
+            }
+            if (CurrentGatherItem != null)
+            {
+                if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking && Player.Instance.CurrentFollower.InventorySize > 0 && Player.Instance.Inventory.GetAvailableSpaces() == 0)
+                {
+
+                    TicksToNextAction = Player.Instance.CurrentFollower.TicksToNextAction;
+
+                }
+                else
+                {
+                    if (PossibleGatherItems.Count > 1)
+                    {
+                        int roll = Random.Next(0, PossibleGatherItems.Count);
+                        CurrentGatherItem = PossibleGatherItems[roll];
+                    }
+                    TicksToNextAction = GetTicksToNextGather();
+                }
+            }
+        }
+
+
+    }
+    private bool PlayerGatherItem()
+    {
+
+        if (Player.Instance.PlayerGatherItem(CurrentGatherItem) == false)
+        {
+            if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.InventorySize > 0)
+            {
+                if (Player.Instance.CurrentFollower.IsBanking == false)
+                {
+                    CurrentGatherItem = null;
+                    return false;
+                }
+            }
+
+        }
+        if(Player.Instance.Inventory.GetAvailableSpaces() == 0 && RequiredForGatherItem == null)
+        {
+            if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking == false)
+            {
+                CurrentGatherItem = null;
+            }
+            else if(Player.Instance.CurrentFollower != null)
+            {
+                TicksToNextAction = Player.Instance.CurrentFollower.TicksToNextAction;
+            }
+            else
+            {
+                CurrentGatherItem = null;
+            }
+        }
+        return true;
+        
+    }
+    private bool HasRequiredItemForGather()
+    {
         if (RequiredForGatherItem != null)
         {
             bool hasReq = false;
@@ -320,72 +382,14 @@ using System.Threading.Tasks;
                 CurrentGatherItem = null;
                 MessageManager.AddMessage("You have run out of " + RequiredForGatherItem);
                 RequiredForGatherItem = null;
+                return false;
             }
             else
             {
                 Player.Instance.Inventory.RemoveItems(RequiredForGatherItem, 1);
             }
         }
-        if (Player.Instance.FollowerGatherItem(CurrentGatherItem) == false)
-        {
-            PlayerGatherItem();
-        }
-        if(CurrentGatherItem != null)
-        {
-            if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking && Player.Instance.CurrentFollower.InventorySize > 0)
-            {
-                    TicksToNextAction = Player.Instance.CurrentFollower.TicksToNextAction;               
-            }
-            else
-            {
-                if (PossibleGatherItems.Count > 1)
-                {
-                    int roll = Random.Next(0, PossibleGatherItems.Count);
-                    CurrentGatherItem = PossibleGatherItems[roll];
-                }
-                TicksToNextAction = GetTicksToNextGather();
-            }
-        }
-
-    }
-    private bool PlayerGatherItem()
-    {
-        //if(RequiredForGatherItem != null)
-        //{
-        //    if(Player.Instance.Inventory.HasItem(RequiredForGatherItem) == false)
-        //    {
-        //        CurrentGatherItem = null;
-        //        MessageManager.AddMessage("You have run out of " + RequiredForGatherItem);
-        //        RequiredForGatherItem = null;
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        Player.Instance.Inventory.RemoveItems(RequiredForGatherItem, 1);
-        //    }
-        //}
-        if (Player.Instance.PlayerGatherItem(CurrentGatherItem) == false)
-        {
-            if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.InventorySize > 0)
-            {
-                if (Player.Instance.CurrentFollower.IsBanking == false)
-                {
-                    CurrentGatherItem = null;
-                    return false;
-                }
-                else
-                {
-                    TicksToNextAction = Player.Instance.CurrentFollower.TicksToNextAction;
-                }
-            }
-
-        }
-        if(Player.Instance.Inventory.GetAvailableSpaces() == 0 && RequiredForGatherItem == null)
-        {
-            CurrentGatherItem = null;
-        }
         return true;
-        
     }
     private void ReadBook()
     {
@@ -531,29 +535,39 @@ using System.Threading.Tasks;
             Console.WriteLine("Failed to start smithing, Smelting Item is null:" + (CurrentSmeltingRecipe == null) + " and Smithing Item is null:" + (CurrentSmithingRecipe == null));
             return;
         }
-        if(SmithingStage == 0)
+        if(SmithingManager.SmithingStage == 0)
         {
-            if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
+            if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
             {
-                GetAutoSmeltingMaterials();
+                SmithingManager.AutoSmithedItemCount = 0;
+                SmithingManager.GetAutoSmeltingMaterials(CurrentSmeltingRecipe);
             }
-            else if(DoSmelting() == false)
+            else if (SmithingManager.DoSmelting(CurrentSmeltingRecipe))
+            {
+                TicksToNextAction = CurrentSmeltingRecipe.CraftingSpeed;
+            }
+            else
             {
                 if (SmithingComponent != null)
                 {
                     SmithingComponent.UpdateSmeltables();
                 }
                 MessageManager.AddMessage("You have run out of ores.");
-                StopActions();               
+                StopActions();
+                SmithingManager.SmithingStage = 0;
             }
         }
-        else if(SmithingStage == 1)
+        else if(SmithingManager.SmithingStage == 1)
         {
             if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
             {
-                DoAutoSmelting();
+                SmithingManager.DoAutoSmelting(CurrentSmeltingRecipe, CurrentSmithingRecipe);
             }
-            else if (DoSmithing() == false)
+            else if (SmithingManager.DoSmithing(CurrentSmeltingRecipe, CurrentSmithingRecipe))
+            {
+                TicksToNextAction = CurrentSmithingRecipe.CraftingSpeed;
+            }
+            else
             {
                 if (SmithingComponent != null)
                 {
@@ -562,190 +576,37 @@ using System.Threading.Tasks;
                 StopActions();
             }
         }
-        else if(SmithingStage == 2)
+        else if(SmithingManager.SmithingStage == 2)
         {
             if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
             {
-                DoAutoSmithing();
+                SmithingManager.DoAutoSmithing(CurrentSmithingRecipe);
             }
             else if (Player.Instance.Inventory.AddMultipleOfItem(CurrentSmithingRecipe.Output, CurrentSmithingRecipe.OutputAmount))
             {
                 MessageManager.AddMessage("You withdraw " + CurrentSmithingRecipe.OutputAmount + " " + CurrentSmithingRecipe.Output.Name);
                 Player.Instance.GainExperience(CurrentSmithingRecipe.Output.ExperienceGained);
                 TicksToNextAction = 12;
-                SmithingStage = 0;
+                SmithingManager.SmithingStage = 0;
             }
         }
-        else if(SmithingStage == 3)
+        else if(SmithingManager.SmithingStage == 3)
         {
             if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
             {
-                DoAutoWithdrawal();
+                SmithingManager.DoAutoWithdrawal(CurrentSmithingRecipe);
             }
         }
-        else if(SmithingStage == 4)
+        else if(SmithingManager.SmithingStage == 4)
         {
             if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
             {
-                DepositOutputs();
+                SmithingManager.DepositOutputs();
             }
         }
 
     }
-    private bool DoSmelting()
-    {
-        if (Player.Instance.Inventory.RemoveRecipeItems(CurrentSmeltingRecipe))
-        {
-            MessageManager.AddMessage("You smelt the " + CurrentSmeltingRecipe.GetIngredientsOnlyString() + " into a " + CurrentSmeltingRecipe.OutputItemName);
-            Player.Instance.Inventory.AddItem(CurrentSmeltingRecipe.Output);
-            //Player.Instance.GainExperience("Smithing", CurrentSmeltingItem.SmithingInfo.SmeltingExperience);
-            TicksToNextAction = CurrentSmeltingRecipe.CraftingSpeed;
-            SmithingStage = 1;
-            return true;
-        }
-        return false;
-    }
-    private bool GetAutoSmeltingMaterials()
-    {
-        if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
-        {
-            if(Player.Instance.CurrentFollower.TicksToNextAction <= 0)
-            {
-                if (Player.Instance.CurrentFollower.Inventory.GetUsedSpaces() == 0)
-                {
-                    int amtToWithdraw = Player.Instance.CurrentFollower.InventorySize / CurrentSmeltingRecipe.GetNumberOfIngredients();
-                    foreach (Ingredient i in CurrentSmeltingRecipe.Ingredients)
-                    {
-                        int actualAmt = Math.Min(amtToWithdraw, Bank.Instance.Inventory.GetNumberOfItem(i.Item));
-                        if (actualAmt == 0)
-                        {
-                            
-                            return false;
-                        }
-                        Bank.Instance.Inventory.RemoveItems(i.Item, actualAmt);
-                        Player.Instance.CurrentFollower.Inventory.AddMultipleOfItem(i.Item, actualAmt);
-                        Player.Instance.CurrentFollower.TicksToNextAction = Player.Instance.CurrentFollower.AutoCollectSpeed;
-                    }
-                    MessageManager.AddMessage(Player.Instance.CurrentFollower.Name + " goes to the bank and gathers the resources to smith.");
-                    SmithingStage++;
-                    return true;
-                }
-            }
-            else
-            {
-                Player.Instance.CurrentFollower.TicksToNextAction--;
-                return true;
-            }
-        }
-        return false;
-    }
-    private void DoAutoSmelting()
-    {
-        if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
-        {
-            if (Player.Instance.CurrentFollower.TicksToNextAction <= 0)
-            {
-                if (Player.Instance.CurrentFollower.Inventory.RemoveRecipeItemsFromFollower(CurrentSmeltingRecipe))
-                {
-                    MessageManager.AddMessage(Player.Instance.CurrentFollower.Name + " helps smelt the " + CurrentSmeltingRecipe.Output + ".");
-                    Player.Instance.CurrentFollower.Inventory.AddItem(CurrentSmeltingRecipe.Output);
-                    Player.Instance.CurrentFollower.TicksToNextAction = Player.Instance.CurrentFollower.AutoCollectSpeed;
-                    AutoSmithedItemCount += CurrentSmithingRecipe.OutputAmount;
-                }
-                else
-                {
-                    MessageManager.AddMessage("Everything is ready, so you prepare to hammer the metal.");
-                    SmithingStage++;
-                    return;
-                }
-            }
-            else
-            {
-                Player.Instance.CurrentFollower.TicksToNextAction--;
-            }
-        }
-    }
-    private bool DoSmithing()
-    {
-        if (Player.Instance.Inventory.RemoveRecipeItems(CurrentSmithingRecipe))
-        {
-            MessageManager.AddMessage("You hammer the " + CurrentSmeltingRecipe.OutputItemName + " into a " + CurrentSmithingRecipe.OutputItemName + " and place it in water to cool.");
-            //Player.Instance.GainExperience("Smithing", CurrentSmeltingItem.SmithingInfo.SmeltingExperience);
-            TicksToNextAction = CurrentSmithingRecipe.CraftingSpeed;
-            SmithingStage = 2;
-            return true;
-        }
-        return false;
-    }
-    private void DoAutoSmithing()
-    {
-        if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
-        {
-            if (Player.Instance.CurrentFollower.TicksToNextAction <= 0)
-            {
-                if (Player.Instance.CurrentFollower.Inventory.RemoveRecipeItemsFromFollower(CurrentSmithingRecipe))
-                {
-                    MessageManager.AddMessage(Player.Instance.CurrentFollower.Name + " helps hammer the heated bars into shape.");
-                    Player.Instance.CurrentFollower.TicksToNextAction = Player.Instance.CurrentFollower.AutoCollectSpeed * AutoSmithedItemCount;
-                    return;
-                }
-                else
-                {
-                    MessageManager.AddMessage("Together you finish hammering out the last " + CurrentSmithingRecipe.Output + ".");
-                    SmithingStage++;
-                    return;
-                }
-            }
-            else
-            {
-                if(Player.Instance.CurrentFollower.TicksToNextAction % Player.Instance.CurrentFollower.AutoCollectSpeed == 0)
-                {
-                    MessageManager.AddMessage(Player.Instance.CurrentFollower.Name + " helps hammer another bar into shape.");
-                }
-                Player.Instance.CurrentFollower.TicksToNextAction--;
-                return;
-            }
-        }
-    }
-    private void DoAutoWithdrawal()
-    {
-        if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
-        {
-            if (Player.Instance.CurrentFollower.TicksToNextAction <= 0)
-            {
-                Player.Instance.CurrentFollower.Inventory.AddMultipleOfItem(CurrentSmithingRecipe.Output, CurrentSmithingRecipe.OutputAmount);
-                AutoSmithedItemCount -= CurrentSmithingRecipe.OutputAmount;
-                MessageManager.AddMessage(Player.Instance.CurrentFollower.Name + " gathers up a cooled " + CurrentSmithingRecipe.OutputItemName + ".");
-                Player.Instance.GainExperience(CurrentSmithingRecipe.Output.ExperienceGained);
-                Player.Instance.CurrentFollower.TicksToNextAction = Player.Instance.CurrentFollower.AutoCollectSpeed;
-                if(AutoSmithedItemCount <= 0)
-                {
-                    SmithingStage = 4;
-                }
-            }
-            else
-            {
-                Player.Instance.CurrentFollower.TicksToNextAction--;
-            }
-        }
-    }
-    private void DepositOutputs()
-    {
-        if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
-        {
-            if (Player.Instance.CurrentFollower.TicksToNextAction <= 0)
-            {
-                Bank.Instance.DepositAll(Player.Instance.CurrentFollower.Inventory);
-                MessageManager.AddMessage(Player.Instance.CurrentFollower.Name + " returns to the bank and deposits everything.");
-                Player.Instance.CurrentFollower.TicksToNextAction = Player.Instance.CurrentFollower.AutoCollectSpeed;
-                SmithingStage = 0;
-            }
-            else
-            {
-                Player.Instance.CurrentFollower.TicksToNextAction--;
-            }
-        }
-    }
+
     public void SellItem(GameItem item)
     {
         if (item.IsSellable == false)
@@ -889,7 +750,7 @@ using System.Threading.Tasks;
         MessageManager.AddMessage(recipe.RecipeActionString);
         UpdateState();
     }
-    private int GetTicksToNextGather()
+    public int GetTicksToNextGather()
     {
         if(CurrentGatherItem != null)
         {
@@ -901,7 +762,6 @@ using System.Threading.Tasks;
             //Console.WriteLine("Ticks to next gather with gear and level:" + baseValue);
             return baseValue;
         }
-        Console.WriteLine("Current Gather Item Was null.");
         return int.MaxValue;
        
     }
