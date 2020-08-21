@@ -4,10 +4,15 @@
 @if (GameState.CurrentRecipe != null)
 {
     <div style="height:60px;margin:10px;"><button class="btn btn-primary" @onclick="@(() => Stop())">Stop Crafting @GameState.CurrentRecipe.OutputItemName</button></div>
+    <div>
+        <div class="progress" style="width:340px;margin:-23px 10px 10px 10px;">
+            <div class="progress-bar" style="@GetProgress()"></div>
+        </div>
+    </div>
 }
 else
 {
-    <div style="height:60px;margin:10px;">Select an item to craft.</div>
+    <div style="height:63px;margin:10px;">Select an item to craft.</div>
 }
 <div style="display:flex;flex-wrap:wrap;width:340px;border:solid black 1px;border-radius:0.25rem;background-color:dimgray;min-height:50px;margin-left:10px;">
     @foreach (Recipe recipe in Recipes)
@@ -18,7 +23,7 @@ else
                  @onmouseout="@(new Action(() => GameState.HideTooltip()))"
                  @onclick="@(() => GameState.SetCraftingItem(recipe))"><ItemBoxComponent Item="@recipe.Output" shouldRender="@ShouldRender()" HideTooltip="true"></ItemBoxComponent></div>
         }
-        else if(recipe.HasSomeIngredients())
+        else if (recipe.HasSomeIngredients())
         {
             <div style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowCraftingTooltip(e, recipe.Output.Name, GetTooltip(recipe))))"
                  @onmouseout="@(new Action(() => GameState.HideTooltip()))"><ItemBoxComponent Item="@recipe.Output" shouldRender="@ShouldRender()" HideTooltip="true"></ItemBoxComponent></div>
@@ -26,7 +31,7 @@ else
 
 
     }
-    @if(Recipes.Count == 0)
+    @if (Recipes.Count == 0)
     {
         <div style="margin:5px;color:white;">You don't have the materials to craft anything.</div>
     }
@@ -39,7 +44,7 @@ else
 
     private bool ShouldRender()
     {
-        if(GameState.CurrentRecipe == null)
+        if (GameState.CurrentRecipe == null)
         {
             return true;
         }
@@ -49,11 +54,11 @@ else
     private string GetTooltip(Recipe r)
     {
         string tip = "";
-        if(r.HasRequirements() == false)
+        if (r.HasRequirements() == false)
         {
             tip += r.GetRequirementTooltip() + "\n";
         }
-        if(r.HasSpace() == false)
+        if (r.HasSpace() == false)
         {
             tip += "You don't have the inventory space to make this." + "\n";
         }
@@ -61,7 +66,7 @@ else
         {
             tip += r.GetMissingIngredients() + "\n";
         }
-        if(tip.Length > 0)
+        if (tip.Length > 0)
         {
             tip = tip.Trim();
         }
@@ -75,7 +80,7 @@ else
     protected override void OnInitialized()
     {
 
-        if(GameState.CraftingComponent == null)
+        if (GameState.CraftingComponent == null)
         {
             GameState.CraftingComponent = this;
         }
@@ -87,6 +92,14 @@ else
     {
         Recipes = new List<Recipe>();
         Recipes.AddRange(ItemManager.Instance.GetCraftableRecipes());
+    }
+    private string GetProgress()
+    {
+        if (GameState.CurrentRecipe != null)
+        {
+            return "width:" + (100 - ((double)GameState.TicksToNextAction / (GameState.CurrentRecipe.CraftingSpeed) * 100d)) + "%";
+        }
+        return "width:0%";
     }
     public void Dispose()
     {

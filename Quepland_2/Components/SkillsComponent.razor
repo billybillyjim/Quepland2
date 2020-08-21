@@ -140,7 +140,8 @@
     }
     private string GetSkillTooltip(Skill s)
     {
-        return "Exp:" + s.Experience + "\nTo Level:" + Math.Round(Skill.GetExperienceRequired(s.GetSkillLevelUnboosted()));
+        return "Exp:" + String.Format("{0:n0}", s.Experience) + "\nFor Level:" + String.Format("{0:n0}", Math.Round(Skill.GetExperienceRequired(s.GetSkillLevelUnboosted()))) +
+                "\nRemaining:" + String.Format("{0:n0}", (Math.Round(Skill.GetExperienceRequired(s.GetSkillLevelUnboosted())) - s.Experience));
 
     }
     protected override void OnInitialized()

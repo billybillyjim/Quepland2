@@ -149,7 +149,14 @@
             GameState.CurrentContextMenu = new ContextMenu();
             if (Bank.Instance.IsBanking)
             {
-                GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit " + Bank.Instance.Amount + " " + item, new Action(() => BankItem(item, Bank.Instance.Amount))));
+                if(Bank.Instance.Amount == int.MaxValue)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit All " + item, new Action(() => BankItem(item, Bank.Instance.Amount))));
+                }
+                else
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit " + Bank.Instance.Amount + " " + item, new Action(() => BankItem(item, Bank.Instance.Amount))));
+                }
                 if (Bank.Instance.Amount != 1)
                 {
                     GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit 1 " + item, new Action(() => BankItem(item, 1))));

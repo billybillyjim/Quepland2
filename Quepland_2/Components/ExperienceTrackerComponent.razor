@@ -9,9 +9,9 @@
             @if (Player.Instance.LastGainedExp != null && IsBeingTracked(Player.Instance.LastGainedExp.Name))
             {
                 <div @onclick="@(() => ToggleSettings())" style="cursor:pointer;">
-                    @Player.Instance.LastGainedExp.Name Exp/Hr:@GetRate(Player.Instance.LastGainedExp)
+                    @Player.Instance.LastGainedExp.Name Exp/Hr:@String.Format("{0:n0}", GetRate(Player.Instance.LastGainedExp))
                 </div>
-                <div>Total Gained:@(Player.Instance.LastGainedExp.Experience - GetTracker(Player.Instance.LastGainedExp.Name).StartExperience)</div>
+                <div>Total Gained:@(String.Format("{0:n0}", Player.Instance.LastGainedExp.Experience - GetTracker(Player.Instance.LastGainedExp.Name).StartExperience))</div>
                 <div>Time:@GetTracker(Player.Instance.LastGainedExp.Name).TimeSinceTrackerStarted.ToString()</div>
             }
         }
@@ -19,8 +19,8 @@
         {
             if (IsBeingTracked(SetSkill))
             {
-                <div @onclick="@(() => ToggleSettings())"  style="cursor:pointer;">@SetSkill Exp/Hr:@GetRate(Player.Instance.Skills.Find(x => x.Name == SetSkill))</div>
-                <div>Total Gained:@(Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience - GetTracker(Player.Instance.Skills.Find(x => x.Name == SetSkill).Name).StartExperience)</div>
+                <div @onclick="@(() => ToggleSettings())"  style="cursor:pointer;">@SetSkill Exp/Hr:@String.Format("{0:n0}", GetRate(Player.Instance.Skills.Find(x => x.Name == SetSkill)))</div>
+                <div>Total Gained:@(String.Format("{0:n0}", Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience - GetTracker(Player.Instance.Skills.Find(x => x.Name == SetSkill).Name).StartExperience))</div>
                 <div>Time:@GetTracker(Player.Instance.Skills.Find(x => x.Name == SetSkill).Name).TimeSinceTrackerStarted.ToString(@"dd\:hh\:mm\:ss")</div>
             }
         }
@@ -35,7 +35,7 @@
                 @Player.Instance.LastGainedExp.Name (@Player.Instance.LastGainedExp.GetSkillLevelUnboosted())
             </div>
             <div>
-                @Player.Instance.LastGainedExp.Experience
+                @String.Format("{0:n0}", Player.Instance.LastGainedExp.Experience)
             </div>
             <div class="progress" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, (Math.Round(Player.Instance.LastGainedExp.Progress, 2)) + "% to level " + (Player.Instance.LastGainedExp.GetSkillLevelUnboosted() + 1), "" + Player.Instance.LastGainedExp.Experience + "/" + (long)Skill.GetExperienceRequired(Player.Instance.LastGainedExp.GetSkillLevelUnboosted()))))"
                  @onmouseout="@(new Action(() => GameState.HideTooltip()))">
@@ -57,7 +57,7 @@
             @Player.Instance.Skills.Find(x => x.Name == SetSkill).Name
         </div>
         <div>
-            @Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience
+            @String.Format("{0:n0}", Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience)
         </div>
         <div class="progress" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, (Player.Instance.Skills.Find(x => x.Name == SetSkill).Progress) + "% to level " + (Player.Instance.Skills.Find(x => x.Name == SetSkill).GetSkillLevelUnboosted() + 1), "" + Player.Instance.Skills.Find(x => x.Name == SetSkill).Experience + "/" + (long)Skill.GetExperienceRequired(Player.Instance.Skills.Find(x => x.Name == SetSkill).GetSkillLevelUnboosted()))))"
              @onmouseout="@(new Action(() => GameState.HideTooltip()))">

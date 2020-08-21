@@ -12,6 +12,7 @@ public class GameItem
 	public string EnabledActions { get; set; } = "None";
 	public string Category { get; set; } = "Unset";
 	public string OpenCraftingMenuText { get; set; } = "None";
+	public bool IsLocked { get; set; } = false;
 
 	public List<string> Tabs { get; set; } = new List<string>();
 

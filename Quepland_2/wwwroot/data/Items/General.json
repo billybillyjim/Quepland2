@@ -19,7 +19,7 @@
   {
     "Name": "Wood Carving Knife",
     "Description": "A specially designed knife for carving wood.",
-    "value": 60,
+    "value": 40,
     "icon": "Knife",
     "openCraftingMenuText": "Carve"
   },

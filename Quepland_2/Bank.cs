@@ -25,18 +25,42 @@ public class Bank
 
 	public void DepositAll(Inventory inv)
     {
-		foreach(KeyValuePair<GameItem, int> pair in inv.GetItems())
+        List<GameItem> lockedItems = new List<GameItem>();
+
+        foreach (KeyValuePair<GameItem, int> pair in inv.GetItems())
         {
-            pair.Key.IsEquipped = false;
-			Inventory.AddMultipleOfItem(pair.Key, pair.Value);
+            if (pair.Key.IsLocked)
+            {
+                lockedItems.Add(pair.Key);
+            }
+            else
+            {
+                pair.Key.IsEquipped = false;
+                Inventory.AddMultipleOfItem(pair.Key, pair.Value);
+            }
+
         }
         if(inv == Player.Instance.Inventory)
         {
+            List<GameItem> lockedEquippedItems = new List<GameItem>();
+            foreach(GameItem i in Player.Instance.GetEquippedItems())
+            {
+                if(i.IsLocked)
+                {
+                    lockedEquippedItems.Add(i);
+                }
+            }
             Player.Instance.GetEquippedItems().Clear();
+            foreach(GameItem i in lockedEquippedItems)
+            {
+                Player.Instance.Equip(i);
+            }
         }
-
-
 		inv.Clear();
+        foreach(GameItem i in lockedItems)
+        {
+            inv.AddItem(i);
+        }
     }
 	public void Deposit(GameItem item)
     {

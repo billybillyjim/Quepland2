@@ -1,5 +1,16 @@
 [
   {
+    "versionNumber": "0.0.15",
+    "updates": [
+      "Added progress bar to crafting menu.",
+      "Made it possible to open crafting menu with crafting items.",
+      "Added item locks. Not sold on the design, let me know if you have a better idea!",
+      "Adjusted inventory growth rate.",
+      "Added a third line of info the tooltip for skills in the skills tab.",
+      "Added more commas."
+    ]
+  },
+  {
     "versionNumber": "0.0.14",
     "updates": [
       "Added drops to the sawoka vault.",
