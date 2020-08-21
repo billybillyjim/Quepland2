@@ -26,6 +26,14 @@
     }
   },
   {
+    "name": "Big Rice Bag",
+    "description": "A big ol' bag of rice. Yum.",
+    "gatherString": "You get a bag of rice.",
+    "value": 5,
+    "gatherSpeed": 8,
+    "icon": "PowderBag"
+  },
+  {
     "name": "Rice Roll",
     "description": "Rice rolled up with some seaweed.",
     "gatherString": "You make a rice roll.",

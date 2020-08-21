@@ -6,7 +6,10 @@
     "description": "You climb through the opening of the cave to find a twisting series of paths to take. You can hear creatures scuttling along the walls and the sound of rushing water echoing in the distance.",
     "areaURL": "QuepleCaveEntrance",
     "image": "Cave",
-    "dungeonName": "Queple Cave"
+    "dungeonName": "Queple Cave",
+    "npcs": [
+      "Lazy Traveller"
+    ]
   },
   {
     "name": "Pentlandite Mine",

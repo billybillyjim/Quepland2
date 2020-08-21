@@ -27,6 +27,7 @@ public class AreaManager
     public List<Smithy> Smithies = new List<Smithy>();
     public List<Dojo> Dojos = new List<Dojo>();
     public List<AFKAction> AFKActions = new List<AFKAction>();
+    public static bool LoadedHuntingInfo = false;
     public async Task LoadAreas(HttpClient Http)
     {
         Regions.AddRange(await Http.GetFromJsonAsync<Region[]>("data/Regions.json"));
@@ -135,8 +136,13 @@ public class AreaManager
     {
         foreach(AreaSaveData d in data)
         {
+            if (d.TripIsActive)
+            {
+                LoadedHuntingInfo = true;
+            }
             Areas.Find(x => x.ID == d.ID).LoadSaveData(d);
         }
+        
     }
     public List<RegionSaveData> GetRegionSaveData()
     {

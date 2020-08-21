@@ -10,4 +10,5 @@ public class AreaSaveData
 	public DateTime TripStartTime { get; set; }
 	public DateTime TripReturnTime { get; set; }
 	public int HuntingBoost { get; set; }
+	public string dtLocation { get; set; }
 }

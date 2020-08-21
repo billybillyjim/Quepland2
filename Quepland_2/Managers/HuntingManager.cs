@@ -38,16 +38,28 @@ public static class HuntingManager
 
         for (int i = 0; i < caught; i++)
         {
-            Drop d = TripInfo.DropTable.GetDrop();
-            if (ItemManager.Instance.GetItemByName(d.ItemName).HasRequirements())
+            if(TripInfo.DropTable == null && string.IsNullOrEmpty(TripInfo.DropTableLocation) == false)
             {
-                Player.Instance.Inventory.AddDrop(d);
-                Player.Instance.GainExperience(ItemManager.Instance.GetItemByName(d.ItemName).ExperienceGained);
-                MessageManager.AddMessage("You hunted a " + d + " on your trip.");
+                TripInfo.DropTable = ItemManager.Instance.GetMinigameDropTable(TripInfo.DropTableLocation).DropTable;
+            }
+            if(TripInfo.DropTable != null)
+            {
+                Drop d = TripInfo.DropTable.GetDrop();
+                if (ItemManager.Instance.GetItemByName(d.ItemName).HasRequirements())
+                {
+                    Player.Instance.Inventory.AddDrop(d);
+                    Player.Instance.GainExperience(ItemManager.Instance.GetItemByName(d.ItemName).ExperienceGained);
+                    MessageManager.AddMessage("You hunted a " + d + " on your trip.");
+                }
+                else
+                {
+                    MessageManager.AddMessage("You hunted a " + d + " on your trip, but it got away.");
+                }
             }
             else
             {
-                MessageManager.AddMessage("You hunted a " + d + " on your trip, but it got away.");
+                MessageManager.AddMessage("Something went horribly wrong on your hunting trip! You didn't catch a thing.");
+                break;
             }
         }
         TripInfo.IsActive = false;

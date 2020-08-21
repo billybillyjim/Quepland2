@@ -167,7 +167,12 @@ public class Area
         }
         if(HuntingTripInfo != null)
         {
-            HuntingTripInfo.LoadSaveData(data.TripIsActive, data.TripReturnTime, data.TripStartTime, data.HuntingBoost);
+            HuntingTripInfo.LoadSaveData(data.TripIsActive, data.TripReturnTime, data.TripStartTime, data.HuntingBoost, "");
+        }
+        else if (data.TripIsActive)
+        {
+            HuntingTripInfo = new HuntingTripInfo();
+            HuntingTripInfo.LoadSaveData(data.TripIsActive, data.TripReturnTime, data.TripStartTime, data.HuntingBoost, data.dtLocation);
         }
         
     }

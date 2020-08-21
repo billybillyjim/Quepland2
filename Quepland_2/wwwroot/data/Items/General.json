@@ -20,14 +20,16 @@
     "Name": "Wood Carving Knife",
     "Description": "A specially designed knife for carving wood.",
     "value": 60,
-    "icon": "Knife"
+    "icon": "Knife",
+    "openCraftingMenuText": "Carve"
   },
   {
     "Name": "Magic Wood Carving Knife",
     "Description": "A specially designed knife for carving wood. This one's magical.",
     "value": 600,
     "secondaryColor": "#d9a668",
-    "icon": "Knife"
+    "icon": "Knife",
+    "openCraftingMenuText": "Carve"
   },
   {
     "Name": "No Soliciting Sign",

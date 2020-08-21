@@ -11,6 +11,7 @@ public class GameItem
 	public string ExperienceGained { get; set; } = "None";
 	public string EnabledActions { get; set; } = "None";
 	public string Category { get; set; } = "Unset";
+	public string OpenCraftingMenuText { get; set; } = "None";
 
 	public List<string> Tabs { get; set; } = new List<string>();
 
@@ -246,6 +247,7 @@ public class GameItem
 		copy.Tabs = Tabs;
 		copy.Parameter = Parameter;
 		copy.Charges = Charges;
+		copy.OpenCraftingMenuText = OpenCraftingMenuText;
 
 		copy.Icon = Icon;
 		copy.EquipSlot = EquipSlot;

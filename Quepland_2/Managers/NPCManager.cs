@@ -68,9 +68,11 @@ public class NPCManager
         HuntingTripInfo info = new HuntingTripInfo();
         Area a = AreaManager.Instance.GetAreaByURL(huntingInfo.Split(':')[0]);
         info.DropTable = ItemManager.Instance.GetMinigameDropTable(huntingInfo.Split(':')[1]).DropTable;
+        info.DropTableLocation = huntingInfo.Split(':')[1];
         a.HuntingTripInfo = info;
         int hours = int.Parse(huntingInfo.Split(':')[2]);
         MessageManager.AddMessage("The hunters take you along on a " + hours + " hour hunt.");
+        GameState.GoTo("World/SahotaClearing/");
         HuntingManager.StartHuntingTrip(info, hours);
         
     }

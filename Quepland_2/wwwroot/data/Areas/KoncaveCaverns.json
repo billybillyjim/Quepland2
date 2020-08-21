@@ -45,16 +45,15 @@
     "name": "Koncave City Gate",
     "id": 112,
     "image": "Gate",
-    "description": "Two guards stand watch at the front of a massive gate.",
+    "description": "Two guards stand watch at the front of a massive gate. You'll have to pass through to continue.",
     "areaURL": "KoncaveCityGate",
-    "dojoURL": "TsuyoDojo",
     "unlockableAreas": [
       {
         "areaURL": "KoncaveCitySquare",
         "buttonText": "Enter the city",
         "requirements": [
           {
-            "item": "Caligin Passport",
+            "item": "Koncave City Passport",
             "itemAmount": 1
           }
         ]
@@ -71,12 +70,19 @@
     "image": "Fountain",
     "description": "A large fountain fuelled by a waterfall coming out of the roof of the cavern stands in the middle of the square. Shops surround the perimeter, and a castle resides on the far side.",
     "areaURL": "KoncaveCitySquare",
+    "dojoURL": "TsuyoDojo",
     "buildings": [
       {
-        "name": "Tsuyo Dojo",
-        "buttonText": "Enter the dojo",
-        "url": "TsuyoDojo"      
-
+        "name": "Jason's Jewelry",
+        "buttonText": "Jason's Jewelry",
+        "url": "JasonsJewelry",
+        "description": ""
+      },
+      {
+        "name": "Alchemicellanea",
+        "buttonText": "Alchemicellanea",
+        "url": "Alchemicellanea",
+        "description": ""
       }
     ]
   }

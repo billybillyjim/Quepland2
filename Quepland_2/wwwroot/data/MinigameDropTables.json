@@ -262,12 +262,17 @@
         {
           "itemName": "Coins",
           "weight": 30,
-          "amount": 10000
+          "amount": 1000
         },
         {
           "itemName": "Coins",
           "weight": 30,
           "amount": 25000
+        },
+        {
+          "itemName": "Big Rice Bag",
+          "weight": 30,
+          "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
@@ -332,16 +337,21 @@
         {
           "itemName": "Coins",
           "weight": 30,
-          "amount": 10000
+          "amount": 3000
         },
         {
           "itemName": "Coins",
           "weight": 30,
-          "amount": 25000
+          "amount": 5000
         },
         {
           "itemName": "Large Fishing Rod",
           "weight": 10,
+          "amount": 1
+        },
+        {
+          "itemName": "Ebisian Fishing Rod",
+          "weight": 3,
           "amount": 1
         },
         {

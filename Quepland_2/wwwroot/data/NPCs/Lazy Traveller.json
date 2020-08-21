@@ -1,0 +1,28 @@
+{
+  "name": "Lazy Traveller",
+  "id": 44,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi. Going spelunking? I would, but I can't be bothered, to be honest.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "What's in this cave?",
+      "responseText": "All sorts of things. The main thing is the smithy. If you can find it, you can make yourself some weapons with it.",
+      "newDepthOnTalk": 2
+    },
+    {
+      "buttonText": "Spelunking?",
+      "responseText": "Yeah, spelunking. It's what you do in caves, if you can find the motivation. This cave is supposed to have a smithy somewhere inside. Adventurers use it to make weapons. I would too, if I could be bothered trying to find it.",
+      "newDepthOnTalk": 1,
+      "depth": 1
+    },
+    {
+      "buttonText": "How do I make weapons?",
+      "responseText": "Oh, it's not hard. Take some copper ore to the smithy and it's mostly self-explanitory. As you improve at it, you'll figure out how to do it with other metals. To be clear, this is all hearsay, I'm too lazy to do it myself.",
+      "depth": 2,
+      "newDepthOnTalk": 2
+    }
+  ]
+}

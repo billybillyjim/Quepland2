@@ -11,6 +11,17 @@
     "recipeButtonString": "Pluck"
   },
   {
+    "outputItemName": "Rice",
+    "ingredients": [
+      {
+        "itemName": "Big Rice Bag"
+      }
+    ],
+    "outputAmount": 15,
+    "recipeActionString": "You begin emptying the bag...",
+    "recipeButtonString": "Empty"
+  },
+  {
     "outputItemName": "Rabbit Hide",
     "secondaryOutputItemName": "Rabbit Meat",
     "ingredients": [

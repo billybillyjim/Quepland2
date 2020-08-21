@@ -25,7 +25,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "0.0.13";
+    public static string Version { get; set; } = "0.0.14";
     public static List<Update> Updates { get; set; } = new List<Update>();
 
     public static string Location { get; set; } = "";
@@ -89,6 +89,7 @@ using System.Threading.Tasks;
     public AlchemicalHallComponent AlchemicalHallComponent;
     public NavMenu NavMenu;
     public ContextMenu CurrentContextMenu;
+    public RightSidebarComponent RightSidebarComponent;
     public ExperienceTrackerComponent EXPTrackerComponent;
     public static NavigationManager UriHelper;
     public static int TicksToNextAction;
@@ -1001,7 +1002,7 @@ using System.Threading.Tasks;
     }
     public static void LoadSaveData(GameStateSaveData data)
     {
-        IsOnHuntingTrip = data.IsHunting;
+        IsOnHuntingTrip = AreaManager.LoadedHuntingInfo;
         if (data.Location == "Battle")
         {
             data.Location = "QueplandFields";

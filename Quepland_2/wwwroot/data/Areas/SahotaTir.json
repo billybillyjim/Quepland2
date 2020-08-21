@@ -49,10 +49,6 @@
     "image": "FrozenFloor",
     "description": "The tunnel opens up into a bright clearing. A mysterious orb lights the whole area, making it almost indistinguishable from being out on the surface. You spot a small camp a little ways ahead.",
     "areaURL": "SahotaClearing",
-    "actions": [
-      "Mine Ice:Ice",
-      "Chop Ice Trees:Ice Logs"
-    ],
     "unlockableAreas": [
       {
         "areaURL": "KoncaveCityGate",
@@ -84,6 +80,14 @@
     "image": "Stalactites2",
     "id": 103,
     "description": "The path leads into an ancient fortress. It seems to span for miles, and is full of the same mercurial creatures that also guard the surface of Mt. Yama cave.",
-    "areaURL": "SahotaDungeon"
+    "areaURL": "SahotaDungeon",
+    "dungeonName": "Sahota Dungeon"
+  },
+  {
+    "name": "Sahota Castle",
+    "image": "Castle",
+    "id": 104,
+    "description": "You happen upon a part of the dungeon made entirely from ice. The castle here is filled with mercurial creatures.",
+    "areaURL": "SahotaCastle"
   }
 ]

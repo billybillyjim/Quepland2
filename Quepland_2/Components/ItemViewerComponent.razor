@@ -2,8 +2,8 @@
 @implements IDisposable
 @inject NavigationManager UriHelper
 
-    <div class="unselectable"
-         style="        height: 130px;
+<div class="unselectable"
+     style="        height: 130px;
         min-height:130px;
         width: 350px;
         border: solid black 1px;
@@ -13,145 +13,150 @@
         margin-top:30px;
         position:relative;
 ">
-        @if (Item != null && !HideValue)
+    @if (Item != null && !HideValue)
+    {
+        <div style="font-weight:bold;">@Item.Name</div>
+        <div style="position:relative;line-height:18px;margin-top:-2px;margin-right:80px;">@Item.Description</div>
+        @if ((Item.WeaponInfo != null || Item.ArmorInfo != null) && Item.EquipSlot != "None")
         {
-            <div style="font-weight:bold;">@Item.Name</div>
-            <div style="position:relative;line-height:18px;margin-top:-2px;margin-right:80px;">@Item.Description</div>
-            @if ((Item.WeaponInfo != null || Item.ArmorInfo != null) && Item.EquipSlot != "None")
+            if (Item.IsEquipped)
             {
-                if (Item.IsEquipped)
-                {
-                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Unequip())">Unequip</button></div>
+                <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Unequip())">Unequip</button></div>
 
-                }
-                else if (Item.ArmorInfo != null && Item.HasArmorRequirements())
-                {
-                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Equip())">Equip</button></div>
-                }
-                else if (Item.WeaponInfo != null && Item.HasWeaponRequirements())
-                {
-                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Equip())">Equip</button></div>
-                }
-                else if (Item.HasRequirements() && Item.HasArmorRequirements() == false && Item.HasWeaponRequirements() == false)
-                {
-                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Equip())">Equip</button></div>
+            }
+            else if (Item.ArmorInfo != null && Item.HasArmorRequirements())
+            {
+                <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Equip())">Equip</button></div>
+            }
+            else if (Item.WeaponInfo != null && Item.HasWeaponRequirements())
+            {
+                <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Equip())">Equip</button></div>
+            }
+            else if (Item.HasRequirements() && Item.HasArmorRequirements() == false && Item.HasWeaponRequirements() == false)
+            {
+                <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Equip())">Equip</button></div>
 
-                }
-                else
-                {
-                    <div class="item-view-button">
-                        <button class="btn btn-light" style="opacity:0.5"
-                                onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.GetRequirementTooltip())))"
-                                onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                            Equip
-                        </button>
-                    </div>
+            }
+            else
+            {
+                <div class="item-view-button">
+                    <button class="btn btn-light" style="opacity:0.5"
+                            onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.GetRequirementTooltip())))"
+                            onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                        Equip
+                    </button>
+                </div>
 
-                }
-                <div style="position:absolute;top:-28px;left:-1px;">
-                    <ItemStatsComponent Item="@Item"></ItemStatsComponent>
+            }
+            <div style="position:absolute;top:-28px;left:-1px;">
+                <ItemStatsComponent Item="@Item"></ItemStatsComponent>
+            </div>
+        }
+        else if (Item.WeaponInfo != null)
+        {
+            <div style="position:absolute;top:-28px;left:-1px;">
+                <ItemStatsComponent Item="@Item"></ItemStatsComponent>
+            </div>
+        }
+        @if (Item.Name == "Unidentified Gem")
+        {
+            if (Item.HasRequirements())
+            {
+                <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Identify())">Identify</button></div>
+            }
+            else
+            {
+                <div class="item-view-button">
+                    <button class="btn btn-light" style="opacity:0.5"
+                            onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.GetRequirementTooltip())))"
+                            onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                        Identify
+                    </button>
                 </div>
             }
-            else if (Item.WeaponInfo != null)
+
+
+        }
+        @if (Item.FoodInfo != null)
+        {
+            <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => EatItem())">Eat</button></div>
+            <div style="position:absolute;top:-28px;left:-1px;">
+                <ItemStatsComponent Item="@Item"></ItemStatsComponent>
+            </div>
+        }
+        @if (ItemManager.Instance.GetUnpackingRecipe(Item) != null)
+        {
+            if (ItemManager.Instance.GetUnpackingRecipe(Item).HasSpace())
             {
-                <div style="position:absolute;top:-28px;left:-1px;">
-                    <ItemStatsComponent Item="@Item"></ItemStatsComponent>
+                <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => GameState.SetCraftingItem(ItemManager.Instance.GetUnpackingRecipe(Item)))">@ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString</button></div>
+
+            }
+            else
+            {
+                <div class="item-view-button">
+                    <button class="btn btn-light" style="opacity:0.7" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have enough inventory space.")))"
+                            @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                        @ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString
+                    </button>
                 </div>
-            }
-            @if (Item.Name == "Unidentified Gem")
-            {
-                if (Item.HasRequirements())
-                {
-                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Identify())">Identify</button></div>
-                }
-                else
-                {
-                    <div class="item-view-button">
-                        <button class="btn btn-light" style="opacity:0.5"
-                                onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.GetRequirementTooltip())))"
-                                onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                            Identify
-                        </button>
-                    </div>
-                }
-
-
-            }
-            @if (Item.FoodInfo != null)
-            {
-                <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => EatItem())">Eat</button></div>
-                <div style="position:absolute;top:-28px;left:-1px;">
-                    <ItemStatsComponent Item="@Item"></ItemStatsComponent>
-                </div>
-            }
-            @if (ItemManager.Instance.GetUnpackingRecipe(Item) != null)
-            {
-                if (ItemManager.Instance.GetUnpackingRecipe(Item).HasSpace())
-                {
-                    <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => GameState.SetCraftingItem(ItemManager.Instance.GetUnpackingRecipe(Item)))">@ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString</button></div>
-
-                }
-                else
-                {
-                    <div class="item-view-button">
-                        <button class="btn btn-light" style="opacity:0.7" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have enough inventory space.")))"
-                                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                            @ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString
-                        </button>
-                    </div>
-
-                }
-            }
-            if (ItemManager.Instance.CurrentShop != null)
-            {
-                @if (Item.IsSellable)
-                {
-                    @if (ItemManager.Instance.CurrentShop.LimitBoughtItemsToSoldItems && ItemManager.Instance.CurrentShop.HasItem(Item) == false)
-                    {
-                        <button style="position:absolute;left:5px;bottom:5px;" class="btn btn-light"
-                                @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You can't sell that here.")))"
-                                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                            Sell
-                        </button>
-                    }
-                    else
-                    {
-                        {
-                            <button style="position:absolute;left:5px;bottom:5px;" class="btn btn-light" @onclick="@(() => SellItem())">Sell @(Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item)))</button>
-                            <div style="position:absolute;left:100px;bottom:5px;">@(GetValue())</div>
-                        }
-                    }
-
-                }
-            }
-            @if (Bank.Instance.IsBanking)
-            {
-                if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Banking")
-                {
-                    @if (SaleValueOverZero())
-                    {
-                        <button style="position:absolute;right:5px;top:5px;padding:6px;" class="btn btn-light" @onclick="@(() => SellItemFromBank())">Sell @(Math.Min(Bank.Instance.Amount, Bank.Instance.Inventory.GetNumberOfItem(Item)).CustomFormat())</button>
-
-                    }
-                    else
-                    {
-                        <button style="position:absolute;right:5px;top:5px;opacity:0.5;padding:6px;" class="btn btn-light"
-                                @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Selling this would give you nothing in return!")))"
-                                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                            Sell @(Math.Min(Bank.Instance.Amount, Bank.Instance.Inventory.GetNumberOfItem(Item)).CustomFormat())
-                        </button>
-
-                    }
-                    <div style="position:absolute;right:5px;top:45px">
-                        @(GetBankSaleValue())
-                    </div>
-
-                }
-                <button class="btn btn-light" style="position:absolute;left:5px;bottom:5px;" onclick="@(new Action<MouseEventArgs>((args) => BankItem()))">Deposit @Bank.Instance.GetAmountString()</button>
 
             }
         }
-    </div>
+        @if (Item.OpenCraftingMenuText != "None")
+        {
+            <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => GameState.RightSidebarComponent.ChangeView("Crafting"))">@Item.OpenCraftingMenuText</button></div>
+
+        }
+        @if (ItemManager.Instance.CurrentShop != null)
+        {
+            @if (Item.IsSellable)
+            {
+                @if (ItemManager.Instance.CurrentShop.LimitBoughtItemsToSoldItems && ItemManager.Instance.CurrentShop.HasItem(Item) == false)
+                {
+                    <button style="position:absolute;left:5px;bottom:5px;" class="btn btn-light"
+                            @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You can't sell that here.")))"
+                            @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                        Sell
+                    </button>
+                }
+                else
+                {
+                    {
+                        <button style="position:absolute;left:5px;bottom:5px;" class="btn btn-light" @onclick="@(() => SellItem())">Sell @(Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item)))</button>
+                        <div style="position:absolute;left:100px;bottom:5px;">@(GetValue())</div>
+                    }
+                }
+
+            }
+        }
+        @if (Bank.Instance.IsBanking)
+        {
+            if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Banking")
+            {
+                @if (SaleValueOverZero())
+                {
+                    <button style="position:absolute;right:5px;top:5px;padding:6px;" class="btn btn-light" @onclick="@(() => SellItemFromBank())">Sell @(Math.Min(Bank.Instance.Amount, Bank.Instance.Inventory.GetNumberOfItem(Item)).CustomFormat())</button>
+
+                }
+                else
+                {
+                    <button style="position:absolute;right:5px;top:5px;opacity:0.5;padding:6px;" class="btn btn-light"
+                            @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Selling this would give you nothing in return!")))"
+                            @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                        Sell @(Math.Min(Bank.Instance.Amount, Bank.Instance.Inventory.GetNumberOfItem(Item)).CustomFormat())
+                    </button>
+
+                }
+                <div style="position:absolute;right:5px;top:45px">
+                    @(GetBankSaleValue())
+                </div>
+
+            }
+            <button class="btn btn-light" style="position:absolute;left:5px;bottom:5px;" onclick="@(new Action<MouseEventArgs>((args) => BankItem()))">Deposit @Bank.Instance.GetAmountString()</button>
+
+        }
+    }
+</div>
 
 
 @code {

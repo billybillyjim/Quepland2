@@ -12,7 +12,10 @@
       "Added ice fishing.",
       "Added missing images to Sahota.",
       "Added hunting camp.",
-      "Added ability to hunt polar bears and mammoths."
+      "Added ability to hunt polar bears and mammoths.",
+      "Fixed a bug that broke saves when hunting polar bears and mammoths.",
+      "Made a backup for if you somehow load a save that was on a schrodinger's hunting trip.",
+      "Added an NPC to explain how to upgrade gear."
 
     ]
   },

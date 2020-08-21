@@ -11,12 +11,14 @@ public class HuntingTripInfo
 	public DateTime ReturnTime { get; set; }
 	public DateTime StartTime { get; set; }
 	public int LevelBoost { get; set; }
+	public string DropTableLocation { get; set; } = "";
 
-	public void LoadSaveData(bool isActive, DateTime rTime, DateTime sTime, int boost)
+	public void LoadSaveData(bool isActive, DateTime rTime, DateTime sTime, int boost, string dtLocation)
     {
 		IsActive = isActive;
 		ReturnTime = rTime;
 		StartTime = sTime;
 		LevelBoost = boost;
+		DropTableLocation = dtLocation;
     }
 }
