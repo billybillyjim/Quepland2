@@ -97,7 +97,10 @@
         "buttonText": "Continue to the city center"
       }
     ],
-    "dojoURL": "ZuchiDojo"
+    "dojoURL": "ZuchiDojo",
+    "npcs": [
+      "Skia the Monopod"
+    ]
   },
   {
     "name": "Central Tsu City",
@@ -225,6 +228,9 @@
           }
         ]
       }
+    ],
+    "npcs": [
+      "Snibbap"
     ]
   },
   {

@@ -36,7 +36,10 @@
           }
         ]
       }
-    }
+    },
+    "npcs": [
+      "Resting Hunter"
+    ]
   },
   {
     "name": "Higashi Woods",

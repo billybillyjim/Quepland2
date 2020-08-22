@@ -1,0 +1,16 @@
+{
+  "name": "Resting Hunter",
+  "id": 45,
+  "dialogs": [
+    {
+      "buttonText": "What are you doing?",
+      "responseText": "I'm waiting for my traps to catch something.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Where did you get your hunting traps?",
+      "responseText": "I just make them myself. This woods has plenty of sticks and stones to build them with.",
+      "depth": 1
+    }
+  ]
+}

@@ -22,7 +22,14 @@
                     <br />
                 }
             }
-            <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@CanyonFloor"></Quepland_2.Components.AreaUnlockComponent>
+            @if (AreaManager.Instance.GetAreaByURL("HigashiCanyon").IsUnlocked == false)
+            {
+                <div style="margin-top:10px;">
+                    <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@CanyonFloor"></Quepland_2.Components.AreaUnlockComponent>
+
+                </div>
+
+            }
         }
 
     }

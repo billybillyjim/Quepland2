@@ -3,19 +3,6 @@
   "id": 8,
   "dialogs": [
     {
-      "buttonText": "Can you help me?",
-      "responseText": "That depends. What do you need?",
-      "newQuestprogressValue": 4,
-      "quest": "Mound Is Missing",
-      "requirements": [
-        {
-          "quest": "Mound Is Missing",
-          "minimumQuestProgress": 1,
-          "maximumQuestProgress": 1
-        }
-      ]
-    },
-    {
       "buttonText": "Hello",
       "responseText": "Greetings, I am Kazkagrin, the fortune teller. I can help you find anything you are looking for. Also I can tell you how long you've been in this realm.",
       "newDepthOnTalk": 1
@@ -34,7 +21,7 @@
       "requirements": [
         {
           "quest": "Mound Is Missing",
-          "minimumQuestProgress": 2,
+          "minimumQuestProgress": 1,
           "maximumQuestProgress": 4
         }
       ]

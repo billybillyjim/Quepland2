@@ -4,7 +4,7 @@
   "dialogs": [
     {
       "buttonText": "Hello",
-      "responseText": "Yarr, what do ye need with me? Begone lest you have some sort of business."
+      "responseText": "Yarr, what do ye need with me? Begone lest ye have some sort of business."
     },
     {
       "buttonText": "Can you take me to the island on this map?",

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
@@ -35,6 +37,7 @@ public class AreaManager
         {
             Areas.AddRange(await Http.GetFromJsonAsync<Area[]>("data/Areas/" + region.Name.RemoveWhitespace() + ".json"));
         }
+        List<string> UsedNPCs = new List<string>();
         foreach(Area a in Areas)
         {
             foreach(Building b in a.Buildings)
@@ -44,12 +47,33 @@ public class AreaManager
                 {
                     AFKActions.AddRange(b.AFKActions);
                 }
+                foreach (string npc in b.NPCs)
+                {
+                    if (UsedNPCs.Contains(npc) == false)
+                    {
+                        UsedNPCs.Add(npc);
+
+                    }
+                }
             }
             if(a.AFKActions.Count > 0)
             {
                 AFKActions.AddRange(a.AFKActions);
             }
+            foreach (string npc in a.NPCs)
+            {
+                if (UsedNPCs.Contains(npc) == false)
+                {
+                    UsedNPCs.Add(npc);
+
+                }
+            }
         }
+        foreach(string s in UsedNPCs)
+        {
+            Console.WriteLine("NPC included:" + s);
+        }
+        Console.WriteLine("Used NPC Count:" + UsedNPCs.Count);
         var query = Areas.GroupBy(x => x.ID).Where(g => g.Count() > 1).Select(y => y.Key).ToList();
         foreach(int val in query)
         {

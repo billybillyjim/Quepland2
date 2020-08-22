@@ -88,6 +88,7 @@
       "responseText": "Okay. Take this map, it will lead you to an island I visited in my younger days. Now please leave me be.",
       "newQuestprogressValue": 29,
       "quest": "Mound Is Missing",
+      "itemOnTalk": "Mound's Map",
       "requirements": [
         {
           "quest": "Mound Is Missing",

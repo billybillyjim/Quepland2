@@ -30,6 +30,28 @@ public class NPCManager
         {
             NPCs.Add(await Http.GetFromJsonAsync<NPC>("data/NPCs/" + s + ".json"));
         }
+        Console.WriteLine("Total NPCs:" + npcs.Count);
+        List<string> npcCheck = new List<string>();
+        npcCheck.AddRange(npcs);
+        foreach(Area a in AreaManager.Instance.Areas)
+        {
+            foreach(Building b in a.Buildings)
+            {
+                foreach(string s in b.NPCs)
+                {
+                    npcCheck.Remove(s);
+                }
+            }
+            foreach (string s in a.NPCs)
+            {
+                npcCheck.Remove(s);
+            }
+        }
+        Console.WriteLine("Total Missing NPCs:" + npcCheck.Count);
+        foreach(string n in npcCheck)
+        {
+            Console.WriteLine("Missing:" + n);
+        }
         CustomDialogFunctions.Add("GetPlaytime", new Action(() => GetPlaytime()));
         foreach(NPC npc in NPCs)
         {

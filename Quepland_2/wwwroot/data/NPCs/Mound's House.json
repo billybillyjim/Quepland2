@@ -14,7 +14,7 @@
     },
     {
       "buttonText": "Knock",
-      "responseText": "There's no answer. You'll have to find another way in. You could probably kick this door down if you were strong enough. Otherwise the chimney looks accessible if you were good enough at climbing.",
+      "responseText": "There's no answer. You'll have to find another way in. You could probably kick this door down if you were strong enough. Otherwise the chimney looks accessible if you were good enough at climbing. Alternatively, maybe you can find a key...",
       "requirements": [
         {
           "quest": "Mound Is Missing",

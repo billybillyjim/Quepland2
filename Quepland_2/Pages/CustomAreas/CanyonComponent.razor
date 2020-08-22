@@ -1,0 +1,59 @@
+﻿@page "/World/HigashiCanyon"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+
+@if (thisArea != null)
+{
+    <h1>@thisArea.Name</h1>
+    <p>@thisArea.Description</p>
+
+    @foreach (string a in thisArea.Actions ?? Enumerable.Empty<string>())
+    {
+
+        <Quepland_2.Components.GatherButtonComponent ActionText="@a"></Quepland_2.Components.GatherButtonComponent>
+        <br />
+
+
+    }
+    <br />
+    @if (thisArea.NPCs.Count > 0)
+    {
+        @foreach (string npc in thisArea.NPCs)
+        {
+            <Quepland_2.Components.NPCDialogComponent npc="@npc"></Quepland_2.Components.NPCDialogComponent>
+
+        }
+
+    }
+    @if(QuestManager.Instance.GetQuestByName("Mound Is Missing").IsComplete && Player.Instance.Inventory.HasItem("Mound's Map") == false && Bank.Instance.Inventory.HasItem("Mound's Map") == false)
+    {
+        <button class="btn btn-primary" @onclick="@(() => GiveMap())">Request another map</button>
+    }
+}
+@code {
+
+    public Area thisArea { get; set; }
+
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    protected override void OnParametersSet()
+    {
+        thisArea = AreaManager.Instance.GetAreaByURL("HigashiCanyon");
+        GameState.NavMenu.ChangeOpenRegion(AreaManager.Instance.GetRegionForArea(thisArea), false);
+        GameState.UpdateState();
+
+    }
+    public void GiveMap()
+    {
+        Player.Instance.Inventory.AddItem(ItemManager.Instance.GetCopyOfItem("Mound's Map"));
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

@@ -55,7 +55,7 @@ public class Dialog
 			a.Invoke();
 			return;
 		}
-			if (ItemOnTalk != "None")
+		if (ItemOnTalk != "None")
 		{
 			if (Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItemByName(ItemOnTalk)) == false)
 			{

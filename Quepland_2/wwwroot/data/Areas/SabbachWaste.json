@@ -58,7 +58,8 @@
         "url": "Camelpalooza",
         "description": "You enter building to find a number of camels for sale. You can buy one and ride it to cross the desert.",
         "npcs": [
-          "Camel Carl"
+          "Camel Carl",
+          "Tolani Seba"
         ],
         "requirements": [
           {

@@ -26,6 +26,9 @@
     "monsters": [
       "Bandit",
       "Big Bandit"
+    ],
+    "npcs": [
+      "Raka"
     ]
   },
   {
@@ -141,7 +144,8 @@
       }
     ],
     "npcs": [
-      "Kai"
+      "Kai",
+      "Sloodle"
     ]
   },
   {
@@ -189,6 +193,9 @@
       {
         "action": "Shallow Ocean Travel"
       }
+    ],
+    "npcs": [
+      "Glindrear"
     ]
   }
 ]

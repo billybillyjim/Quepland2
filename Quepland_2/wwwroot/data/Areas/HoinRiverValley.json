@@ -145,6 +145,9 @@
       {
         "action": "River Travel"
       }
+    ],
+    "npcs": [
+      "Dwarny the Dwarf"
     ]
   },
   {
@@ -181,6 +184,9 @@
           }
         ]
       }
+    ],
+    "npcs": [
+      "Anthretagro"
     ]
   }
 ]

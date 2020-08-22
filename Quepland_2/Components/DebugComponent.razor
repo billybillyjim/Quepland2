@@ -33,12 +33,17 @@
         Get Ultimate Weapons
     </button>
     <div>
-        <input @bind-value="itemName"/>
+        <input @bind-value="itemName" />
         <button @onclick="@GetItem">Get @itemName</button>
     </div>
     <div>
         <button @onclick="@(() => GetOneOfAllItems())">
             Get One of All Items
+        </button>
+    </div>
+    <div>
+        <button @onclick="@(() => CompleteAllQuests())">
+            Complete Quests
         </button>
     </div>
 </div>
@@ -49,6 +54,14 @@
 
     private string itemName = "";
 
+    public void CompleteAllQuests()
+    {
+        foreach(Quest q in QuestManager.Instance.Quests)
+        {
+            q.IsComplete = true;
+            q.Progress = q.ProgressToComplete;
+        }
+    }
     public void GetOneOfAllItems()
     {
         Bank.Instance.Inventory.IsLoadingSave = true;

@@ -1,5 +1,16 @@
 [
   {
+    "versionNumber": "0.0.16",
+    "updates": [
+      "Added many more followers to the game.",
+      "Added quest guide text for Mound is Missing.",
+      "Fixed a bug where you might not get a map from Mound after talking to him.",
+      "Made it possible to get another map from Mound if you don't have one.",
+      "Rebalanced inventory growth rate.",
+      "Added an NPC to explain laying hunting traps."
+    ]
+  },
+  {
     "versionNumber": "0.0.15",
     "updates": [
       "Added progress bar to crafting menu.",

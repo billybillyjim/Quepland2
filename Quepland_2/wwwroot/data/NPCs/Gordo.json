@@ -4,7 +4,7 @@
   "dialogs": [
     {
       "buttonText": "Hello",
-      "responseText": "He-h-hello there. W-w-would you like to buy a boat? I-i promise y-you won't be dis-a-apointed!"
+      "responseText": "He-h-hello there. W-w-would you like to buy a boat? I-I promise y-you won't be dis-a-apointed!"
     },
     {
       "buttonText": "Why's this called Mound's Boats if you're named Gordo?",

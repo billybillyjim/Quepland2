@@ -322,8 +322,8 @@ public class Player
 
             if (skill.GetSkillLevelUnboosted() % 10 == 0)
             {
-                Inventory.IncreaseMaxSizeBy(2);
-                MessageManager.AddMessage("You feel stronger. You can now carry 3 more items in your inventory.");
+                Inventory.IncreaseMaxSizeBy(1);
+                MessageManager.AddMessage("You feel much stronger. You can now carry 2 more items in your inventory.");
             }
             else
             {

@@ -140,6 +140,9 @@
       "Chill Chicken",
       "Frost Bat",
       "Hydral Wolf"
+    ],
+    "npcs": [
+      "Thurgood the Dwarf"
     ]
   },
   {
@@ -213,6 +216,9 @@
         "buttonText": "Enter the underworld",
         "connectsLands": true
       }
+    ],
+    "npcs": [
+      "Rumpy the Gnome"
     ]
   },
   {
