@@ -1,5 +1,11 @@
 [
   {
+    "versionNumber": "0.0.17",
+    "updates": [
+      "Fixed some bugs with the Pirate Ship and dialogues."
+    ]
+  },
+  {
     "versionNumber": "0.0.16",
     "updates": [
       "Added many more followers to the game.",

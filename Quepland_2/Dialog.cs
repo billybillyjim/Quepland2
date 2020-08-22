@@ -53,6 +53,21 @@ public class Dialog
 		if (NPCManager.Instance.CustomDialogFunctions.TryGetValue(ResponseWithParameter, out Action a))
 		{
 			a.Invoke();
+			if (Quest != "None" && NewQuestProgressValue != -1)
+			{
+				if (NewQuestProgressValue == 1 && QuestManager.Instance.GetQuestByName(Quest).Progress == 0 && HasStartedQuest == false)
+				{
+					HasStartedQuest = true;
+					MessageManager.AddMessage("You've started the quest " + Quest + ".", "#00ff00");
+				}
+				QuestManager.Instance.GetQuestByName(Quest).Progress = NewQuestProgressValue;
+				if (CompleteQuest)
+				{
+					QuestManager.Instance.GetQuestByName(Quest).Complete();
+
+				}
+
+			}
 			return;
 		}
 		if (ItemOnTalk != "None")
@@ -107,8 +122,8 @@ public class Dialog
 				MessageManager.AddMessage("You've started the quest " + Quest + ".", "#00ff00");
 			}
 			QuestManager.Instance.GetQuestByName(Quest).Progress = NewQuestProgressValue;
-            if (CompleteQuest)
-            {
+			if (CompleteQuest)
+			{
 				QuestManager.Instance.GetQuestByName(Quest).Complete();
 
 			}

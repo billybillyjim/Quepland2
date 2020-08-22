@@ -61,7 +61,16 @@ else
 
     @if (GetProgress() >= 100 && QuestManager.Instance.GetQuestByName("Case of the Dead Pirate").IsComplete)
     {
-        <button class="btn btn-warning" @onclick="@(() => GoAshore())">Sail to Tackure</button>
+        if (GetProgress() == 104)
+        {
+            <button class="btn btn-warning" @onclick="@(() => NPCManager.Instance.DieAndGotoArea("Koya Hasa"))">Convince pirates to throw you overboard again</button>
+
+        }
+        else
+        {
+            <button class="btn btn-warning" @onclick="@(() => GoAshore())">Sail to Tackure</button>
+
+        }
     }
     else if (GetProgress() >= 100)
     {
