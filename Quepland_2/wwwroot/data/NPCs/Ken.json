@@ -1,4 +1,5 @@
 {
+  "$schema": "npc-schema.json#",
   "name": "Ken",
   "id": 26,
   "dialogs": [

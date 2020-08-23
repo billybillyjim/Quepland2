@@ -1,4 +1,5 @@
 {
+  "$schema": "npc-schema.json#",
   "name": "Queple's Tomb",
   "id": 25,
   "dialogs": [

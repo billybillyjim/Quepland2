@@ -570,16 +570,12 @@
     ]
   },
   {
-    "Name": "Molten Bucket of Mercury",
-    "Description": "A heavy metal bucket.",
-    "gatherString": "You smelt a lead bar.",
+    "Name": "Frozen Bar of Mercury",
+    "Description": "A bar of mercury, frozen solid.",
+    "gatherString": "You cool the mercury into a bar.",
     "value": 240,
     "gatherSpeed": 55,
-    "experienceGained": "Smithing:100",
-    "icon": "Bucket",
-    "smithingInfo": {
-      "smithingExperience": 100
-    },
+    "icon": "Bar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -683,8 +679,8 @@
     ]
   },
   {
-    "Name": "Molten Sahotite Bar",
-    "Description": "A molten bar of Sahotite. Somehow, it saps the heat from your hand when you touch it, even when molten.",
+    "Name": "Frozen Sahotite Bar",
+    "Description": "A frozen bar of Sahotite. It saps the heat from your hand when you touch it.",
     "gatherString": "You smelt a sahotite bar.",
     "value": 3000,
     "gatherSpeed": 70,

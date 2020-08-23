@@ -1,4 +1,5 @@
 {
+  "$schema": "npc-schema.json#",
   "name": "Pirate Crewman",
   "id": 16,
   "dialogs": [

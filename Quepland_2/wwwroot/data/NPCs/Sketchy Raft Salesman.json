@@ -1,4 +1,5 @@
 {
+  "$schema": "npc-schema.json#",
   "name": "Sketchy Raft Salesman",
   "id": 25,
   "dialogs": [

@@ -1,0 +1,36 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Naganidsko",
+  "id": 46,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello! What brings you to my beautiful home? The gem mine? The magical smithy? Have you come to admire the main gate? You passed it on the way in and I'm sure you were impressed. Don't hesitate to go back and admire it again!",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Who are you?",
+      "responseText": "I'm the wonderful wizard Naganidsko! I'm a wizard! Isn't that amazing? I love being a wizard. I used magic to create this castle, and much of what it contains.",
+      "newDepthOnTalk": 2,
+      "depth": 1
+    },
+    {
+      "buttonText": "Are there other wizards?",
+      "responseText": "Of course there are! Surely I'm not the only one! There's my brother, Wakanidsko. He lives in a swamp. It's supposed to be impossible to navigate but I cast a spell on it. If you listen carefully a voice will guide you through. I'm sure he'd love to meet you!",
+      "newDepthOnTalk": 2,
+      "depth": 2
+    },
+    {
+      "buttonText": "Can you teach me magic?",
+      "responseText": "Haha! I would if I could, traveller. Unfortunately that would greatly upset the wizards at Hiskaten and I rather like being on their good side. Maybe you could convince them to teach you.",
+      "newDepthOnTalk": 2,
+      "depth": 2
+    },
+    {
+      "buttonText": "Your smithy doesn't seem to work.",
+      "responseText": "It's no ordinary smithy! It's magic. It's designed to work the cold metals, mainly mercury and sahotite. If you've seen any of my mercurial creatures wandering around, they all were forged from that smithy, by me. Impressed?",
+      "newDepthOnTalk": 1,
+      "depth": 1
+    }
+  ]
+}

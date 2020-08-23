@@ -31,7 +31,11 @@
     "unlockableAreas": [
       {
         "areaURL": "WanaTonaLake",
-        "buttonText": "Take a Tour Ride"
+        "buttonText": "Take a tour ride"
+      },
+      {
+        "areaURL": "KoyaHasa",
+        "buttonText": "Head to the docks"
       },
       {
         "areaURL": "LaauKaila",

@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for npcs",
+
+  "type": "object",
+
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The NPC's name."
+    },
+    "id": {
+      "type": "integer",
+      "description": "The npc's ID. Required."
+    },
+    "dialogs": {
+      "type": "array",
+      "description": "The possible dialogues with the npc.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "buttonText": {
+            "type": "string",
+            "description": "The text of the button to initiate the dialogue."
+          },
+          "responseText": {
+            "type": "string",
+            "description": "The response text given when buttonText is clicked. Can be a variable to run code with a parameter."
+          },
+          "newDepthOnTalk": {
+            "type": "integer",
+            "description": "The new conversation depth after talking."
+          },
+          "depth": {
+            "type": "integer",
+            "description": "The required conversation depth."
+          },
+          "quest": {
+            "type": "string",
+            "description": "The quest to modify progress of."
+          },
+          "newQuestProgressValue": {
+            "type": "integer",
+            "description": "The new progress value of the quest after choosing this dialogue option."
+          },
+          "requirements": {
+            "type": "array",
+            "description": "The requirements to use this dialogue option.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "skill": {
+                  "type": "string",
+                  "description": "The required skill. Goes with SkillLevel or defaults to 0."
+                },
+                "skillLevel": {
+                  "type": "integer",
+                  "description": "The skill level required. Goes with skill."
+                },
+                "item": {
+                  "type": "string",
+                  "description": "The name of the item required. Needs an itemAmount or defaults to 0."
+                },
+                "itemAmount": {
+                  "type": "integer",
+                  "description": "The amount of item required. Defaults to 0."
+                },
+                "action": {
+                  "type": "string",
+                  "description": "The action required. Actions are enabled from items' ActionEnabled attribute."
+                },
+                "location": {
+                  "type": "string",
+                  "description": "The location requirement. Uses GameState.Location as a check."
+                },
+                "quest": {
+                  "type": "string",
+                  "description": "The name of the quest required. Goes with minimumQuestProgress and maximumQuestProgress, which default to 0 and int.MaxValue respectively."
+                },
+                "areaUnlocked": {
+                  "type": "string",
+                  "description": "The area that must be unlocked. If RequireAreaLocked is set to true, then it defines the area that must be locked instead."
+                },
+                "lockedFollower": {
+                  "type": "string",
+                  "description": "The name of the follower that must be locked."
+                },
+                "requireAreaLocked": {
+                  "type": "boolean",
+                  "description": "If set to true, this changes areaUnlocked to check for the opposite, if the area is locked."
+                },
+                "minimumQuestProgress": {
+                  "type": "integer",
+                  "description": "The minimum progress that the quest must be. Defaults to 0."
+                },
+                "maximumQuestProgress": {
+                  "type": "integer",
+                  "description": "The maximum progress that the quest must be. Defaults to int.maxValue."
+                }
+              }
+            }
+          },
+          "itemOnTalk": {
+            "type": "string",
+            "description": "The item given when this dialgoue option is used."
+          },
+          "consumeRequiredItems": {
+            "type": "boolean",
+            "description": "If true, this will remove the required items from the player's inventory after using the dialogue option."
+          },
+          "parameter": {
+            "type": "string",
+            "description": "Used as the parameter when a dialogue responseText is one of the specific ones that fires a method from the NPCManager."
+          }
+        }
+        
+      }
+      }
+}

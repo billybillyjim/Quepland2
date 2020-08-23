@@ -1,4 +1,5 @@
 {
+  "$schema": "npc-schema.json#",
   "name": "Glindrear",
   "id": 34,
   "dialogs": [

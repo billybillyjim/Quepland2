@@ -1,1 +1,106 @@
-{}
+[
+  {
+    "outputItemName": "Frozen Mercury Bar",
+    "ingredients": [
+      {
+        "itemName": "Bucket of Mercury"
+      }
+    ],
+    "experienceGained": "Smithing:125",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 60
+      }
+    ]
+  },
+  {
+    "outputItemName": "Mercurice Knife",
+    "ingredients": [
+      {
+        "itemName": "Frozen Mercury Bar"
+      },
+      {
+        "itemName": "Ice",
+        "amount": 3
+      },
+      {
+        "itemName": "Frost Seed"
+      }
+    ],
+    "experienceGained": "Smithing:125",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 60
+      }
+    ]
+  },
+  {
+    "outputItemName": "Mercurice Sword",
+    "ingredients": [
+      {
+        "itemName": "Frozen Mercury Bar"
+      },
+      {
+        "itemName": "Ice",
+        "amount": 3
+      },
+      {
+        "itemName": "Frost Seed"
+      }
+    ],
+    "experienceGained": "Smithing:125",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 60
+      }
+    ]
+  },
+  {
+    "outputItemName": "Mercurice Axe",
+    "ingredients": [
+      {
+        "itemName": "Frozen Mercury Bar"
+      },
+      {
+        "itemName": "Ice",
+        "amount": 3
+      },
+      {
+        "itemName": "Frost Seed"
+      }
+    ],
+    "experienceGained": "Smithing:125",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 60
+      }
+    ]
+  },
+  {
+    "outputItemName": "Mercurice Hammer",
+    "ingredients": [
+      {
+        "itemName": "Frozen Mercury Bar"
+      },
+      {
+        "itemName": "Ice",
+        "amount": 3
+      },
+      {
+        "itemName": "Frost Seed"
+      }
+    ],
+    "experienceGained": "Smithing:125",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 60
+      }
+    ]
+  }
+
+]

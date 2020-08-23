@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Frost Seed",
+    "description": "The essence of cold, extracted from something. Now it's all that remains.",
+    "gatherString": "You get a frost seed.",
+    "value": 35,
+    "secondaryColor": "#D2FFF5",
+    "icon": "Seed",
+    "isStackable": true
+  }
+]

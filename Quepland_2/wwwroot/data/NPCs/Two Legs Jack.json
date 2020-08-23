@@ -1,4 +1,5 @@
 {
+  "$schema": "npc-schema.json#",
   "name": "Two Legs Jack",
   "id": 14,
   "dialogs": [

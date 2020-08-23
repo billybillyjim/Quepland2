@@ -2,7 +2,11 @@
   {
     "versionNumber": "0.0.17",
     "updates": [
-      "Fixed some bugs with the Pirate Ship and dialogues."
+      "Fixed some bugs with the Pirate Ship and dialogues.",
+      "Fixed an issue that could softlock an account to the Arawasago Archipelago.",
+      "Actually fixed the softlock.",
+      "Added the gem mine.",
+      "Added the remaining smithies."
     ]
   },
   {

@@ -1,4 +1,5 @@
 {
+  "$schema": "npc-schema.json#",
   "name": "Lazy Traveller",
   "id": 44,
   "dialogs": [

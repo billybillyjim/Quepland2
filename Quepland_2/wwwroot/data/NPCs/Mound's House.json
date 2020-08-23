@@ -1,4 +1,5 @@
 {
+  "$schema": "npc-schema.json#",
   "name": "Mound's House",
   "id": 8,
   "dialogs": [
@@ -8,7 +9,7 @@
       "requirements": [
         {
           "quest": "Mound Is Missing",
-          "maximumQuestProgress":0
+          "maximumQuestProgress": 0
         }
       ]
     },

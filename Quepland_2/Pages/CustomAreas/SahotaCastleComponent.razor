@@ -1,0 +1,65 @@
+﻿@page "/World/SahotaCastle"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+
+@if (thisArea != null)
+{
+    <h1>@thisArea.Name</h1>
+    <h3>@location</h3>
+    <p>@Descriptions[Locations.IndexOf(location)]</p>
+    @foreach (string loc in Locations)
+    {
+        <div>
+            <button class="btn btn-primary" @onclick="@(() => GoTo(loc))">@loc</button>
+        </div>
+    }
+
+    @if(location == "Main Gate")
+    {
+
+    }
+    else if(location == "Throne Room")
+    {
+        <Quepland_2.Components.NPCDialogComponent npc="Naganidsko"></Quepland_2.Components.NPCDialogComponent>
+    }
+    else if(location == "Ice Smithy")
+    {
+        <SmithyComponent Location="SahotaCastleSmithy"></SmithyComponent>
+    }
+    else if(location == "Gem Mine")
+    {
+        <Quepland_2.Components.GemMineComponent></Quepland_2.Components.GemMineComponent>
+    }
+
+
+}
+@code {
+
+    public Area thisArea { get; set; }
+    private List<string> Locations = new List<string>() { "Main Gate", "Throne Room", "Ice Smithy", "Gem Mine" };
+    private List<string> Descriptions = new List<string>() { "The main gate.", "The throne room.", "The ice smithy", "The gem mine." };
+    private string location = "Main Gate";
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    private void GoTo(string newLoc)
+    {
+        location = newLoc;
+        GameState.UpdateState();
+    }
+    protected override void OnParametersSet()
+    {
+        thisArea = AreaManager.Instance.GetAreaByURL("SahotaCastle");
+        GameState.NavMenu.ChangeOpenRegion(AreaManager.Instance.GetRegionForArea(thisArea), false);
+        GameState.UpdateState();
+
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

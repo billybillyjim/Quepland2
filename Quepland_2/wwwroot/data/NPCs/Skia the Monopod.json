@@ -1,4 +1,5 @@
 {
+  "$schema": "npc-schema.json#",
   "name": "Skia the Monopod",
   "id": 37,
   "dialogs": [

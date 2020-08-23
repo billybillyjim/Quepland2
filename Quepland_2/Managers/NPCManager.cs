@@ -30,6 +30,8 @@ public class NPCManager
         {
             NPCs.Add(await Http.GetFromJsonAsync<NPC>("data/NPCs/" + s + ".json"));
         }
+        /*
+        //For checking for missing npcs
         Console.WriteLine("Total NPCs:" + npcs.Count);
         List<string> npcCheck = new List<string>();
         npcCheck.AddRange(npcs);
@@ -52,6 +54,7 @@ public class NPCManager
         {
             Console.WriteLine("Missing:" + n);
         }
+        */
         CustomDialogFunctions.Add("GetPlaytime", new Action(() => GetPlaytime()));
         foreach(NPC npc in NPCs)
         {
@@ -125,11 +128,16 @@ public class NPCManager
     }
     public void UnlockArea(string name)
     {
-        AreaManager.Instance.GetAreaByName(name).IsUnlocked = true;
+        AreaManager.Instance.GetAreaByName(name).Unlock();
     }
     public void UnlockAndGotoArea(string name)
     {
         Area a = AreaManager.Instance.GetAreaByName(name);
+        Land l = AreaManager.Instance.GetLandForArea(a);
+        if (l != null && l != GameState.CurrentLand)
+        {
+            GameState.CurrentLand = l;
+        }
         a.Unlock();
         GameState.GoTo("World/" + a.AreaURL);
         

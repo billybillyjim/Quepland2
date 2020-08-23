@@ -46,6 +46,26 @@
             Complete Quests
         </button>
     </div>
+    <div>
+        <button @onclick="@(() => LockAllAreas())">
+            Lock Areas
+        </button>
+    </div>
+    <div>
+        <button @onclick="@(() => UnlockAllAreas())">
+            Unlock Areas
+        </button>
+    </div>
+    <div>
+        <button @onclick="@(() => LockAllRegions())">
+            Lock Regions
+        </button>
+    </div>
+    <div>
+        <button @onclick="@(() => UnlockAllRegions())">
+            Unlock Regions
+        </button>
+    </div>
 </div>
 
 
@@ -53,7 +73,36 @@
 @code {
 
     private string itemName = "";
+    public void UnlockAllRegions()
+    {
+        foreach(Region r in AreaManager.Instance.Regions)
+        {
+            r.IsUnlocked = true;
+        }
+    }
+    public void LockAllRegions()
+    {
+        foreach (Region r in AreaManager.Instance.Regions)
+        {
+            r.IsUnlocked = false;
+        }
+    }
+    public void LockAllAreas()
+    {
+        foreach(Area a in AreaManager.Instance.Areas)
+        {
+            a.IsUnlocked = false;
+        }
 
+    }
+    public void UnlockAllAreas()
+    {
+        foreach (Area a in AreaManager.Instance.Areas)
+        {
+            a.Unlock();
+        }
+
+    }
     public void CompleteAllQuests()
     {
         foreach(Quest q in QuestManager.Instance.Quests)

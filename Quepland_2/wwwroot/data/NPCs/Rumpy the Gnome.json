@@ -1,4 +1,5 @@
 {
+  "$schema": "npc-schema.json#",
   "name": "Rumpy the Gnome",
   "id": 26,
   "dialogs": [

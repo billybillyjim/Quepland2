@@ -1,4 +1,5 @@
 {
+  "$schema": "npc-schema.json#",
   "name": "Threnden the Dwarf",
   "id": 30,
   "dialogs": [
