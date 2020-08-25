@@ -37,16 +37,16 @@
     "isSellable": false
   },
   {
-    "Name": "No Sulicitin Sign",
-    "Description": "A poorly written sign.",
+    "name": "No Sulicitin Sign",
+    "description": "A poorly written sign.",
     "gatherString": "You get an ugly sign.",
     "value": 0,
     "gatherSpeed": 8,
     "icon": "Sign"
   },
   {
-    "Name": "A lot of Camels",
-    "Description": "A huge number of dromedaries owned by Carl, the camel salesman at Desert's Mouth.",
+    "name": "A lot of Camels",
+    "description": "A huge number of dromedaries owned by Carl, the camel salesman at Desert's Mouth.",
     "value": 0,
     "icon": "Camels"
   },

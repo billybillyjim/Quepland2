@@ -1,7 +1,7 @@
 [
   {
-    "Name": "White Pine Arrow Shafts",
-    "Description": "They're like skinny, baby logs. Feathers can be attached to the end.",
+    "name": "White Pine Arrow Shafts",
+    "description": "They're like skinny, baby logs. Feathers can be attached to the end.",
     "gatherString": "You make $ arrow shafts from the white pine wood.",
     "value": 1,
     "icon": "ArrowShafts",
@@ -15,8 +15,8 @@
     "secondaryColor": "#FFE5C4"
   },
   {
-    "Name": "Headless White Pine Arrows",
-    "Description": "Skinny, wobbly sticks with feathers on the end. Add some arrow heads to make arrows.",
+    "name": "Headless White Pine Arrows",
+    "description": "Skinny, wobbly sticks with feathers on the end. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless arrows.",
     "value": 2,
     "icon": "HeadlessArrows",
@@ -30,8 +30,8 @@
     "secondaryColor": "#FFE5C4"
   },
   {
-    "Name": "Poplar Arrow Shafts",
-    "Description": "They're like skinny, baby logs. Feathers can be attached to the end.",
+    "name": "Poplar Arrow Shafts",
+    "description": "They're like skinny, baby logs. Feathers can be attached to the end.",
     "gatherString": "You make $ arrow shafts from the poplar wood.",
     "value": 2,
     "icon": "ArrowShafts",
@@ -45,8 +45,8 @@
     "isStackable": true
   },
   {
-    "Name": "Headless Poplar Arrows",
-    "Description": "Skinny, wobbly sticks with feathers on the end. Add some arrow heads to make arrows.",
+    "name": "Headless Poplar Arrows",
+    "description": "Skinny, wobbly sticks with feathers on the end. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless poplar arrows.",
     "value": 4,
     "icon": "HeadlessArrows",
@@ -60,8 +60,8 @@
     "isStackable": true
   },
   {
-    "Name": "Oak Arrow Shafts",
-    "Description": "Thin bits of wood from oak logs. Feathers can be attached to the end.",
+    "name": "Oak Arrow Shafts",
+    "description": "Thin bits of wood from oak logs. Feathers can be attached to the end.",
     "gatherString": "You make $ arrow shafts from the oak wood.",
     "value": 6,
     "icon": "ArrowShafts",
@@ -75,8 +75,8 @@
     "isStackable": true
   },
   {
-    "Name": "Headless Oak Arrows",
-    "Description": "Skinny sticks with feathers on the end. Add some arrow heads to make arrows.",
+    "name": "Headless Oak Arrows",
+    "description": "Skinny sticks with feathers on the end. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless oak arrows.",
     "value": 8,
     "icon": "HeadlessArrows",
@@ -90,8 +90,8 @@
     "isStackable": true
   },
   {
-    "Name": "Maple Arrow Shafts",
-    "Description": "Thin bits of wood from maple logs. Feathers can be attached to the end.",
+    "name": "Maple Arrow Shafts",
+    "description": "Thin bits of wood from maple logs. Feathers can be attached to the end.",
     "gatherString": "You make $ arrow shafts from the maple wood.",
     "value": 10,
     "icon": "ArrowShafts",
@@ -105,8 +105,8 @@
     "isStackable": true
   },
   {
-    "Name": "Headless Maple Arrows",
-    "Description": "Skinny sticks with feathers on the end. Add some arrow heads to make arrows.",
+    "name": "Headless Maple Arrows",
+    "description": "Skinny sticks with feathers on the end. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless maple arrows.",
     "value": 12,
     "icon": "HeadlessArrows",
@@ -120,8 +120,8 @@
     "isStackable": true
   },
   {
-    "Name": "Birch Arrow Shafts",
-    "Description": "Thin bits of wood from birch logs. Feathers can be attached to the end.",
+    "name": "Birch Arrow Shafts",
+    "description": "Thin bits of wood from birch logs. Feathers can be attached to the end.",
     "gatherString": "You make $ arrow shafts from the birch wood.",
     "value": 7,
     "secondaryColor": "#FFF6E0",
@@ -135,8 +135,8 @@
     "isStackable": true
   },
   {
-    "Name": "Headless Birch Arrows",
-    "Description": "Skinny sticks with feathers on the end. Add some arrow heads to make arrows.",
+    "name": "Headless Birch Arrows",
+    "description": "Skinny sticks with feathers on the end. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless birch arrows.",
     "value": 10,
     "secondaryColor": "#FFF6E0",
@@ -150,8 +150,8 @@
     "isStackable": true
   },
   {
-    "Name": "Mesquite Arrow Shafts",
-    "Description": "Sturdy arrow shafts. Feathers can be attached to the end.",
+    "name": "Mesquite Arrow Shafts",
+    "description": "Sturdy arrow shafts. Feathers can be attached to the end.",
     "gatherString": "You make $ arrow shafts from the mesquite wood.",
     "value": 15,
     "secondaryColor": "#BD8F57",
@@ -165,8 +165,8 @@
     "isStackable": true
   },
   {
-    "Name": "Headless Mesquite Arrows",
-    "Description": "Sturdy sticks with feathers on the end. Add some arrow heads to make arrows.",
+    "name": "Headless Mesquite Arrows",
+    "description": "Sturdy sticks with feathers on the end. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless mesquite arrows.",
     "value": 18,
     "secondaryColor": "#BD8F57",
@@ -180,8 +180,8 @@
     "isStackable": true
   },
   {
-    "Name": "Mahogany Arrow Shafts",
-    "Description": "You could have made furniture out of these. Add some arrow heads to make arrows.",
+    "name": "Mahogany Arrow Shafts",
+    "description": "You could have made furniture out of these. Add some arrow heads to make arrows.",
     "gatherString": "You make $ arrow shafts out of the mahogany wood.",
     "value": 30,
     "icon": "ArrowShafts",
@@ -195,8 +195,8 @@
     "isStackable": true
   },
   {
-    "Name": "Headless Mahogany Arrows",
-    "Description": "Wasted potential with feathers attached. Add some arrow heads to make arrows.",
+    "name": "Headless Mahogany Arrows",
+    "description": "Wasted potential with feathers attached. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless mahogany arrows.",
     "value": 35,
     "icon": "HeadlessArrows",
@@ -210,8 +210,8 @@
     "isStackable": true
   },
   {
-    "Name": "Ironwood Arrow Shafts",
-    "Description": "Arrow shafts as hard as iron, supposedly. Add some arrow heads to make arrows.",
+    "name": "Ironwood Arrow Shafts",
+    "description": "Arrow shafts as hard as iron, supposedly. Add some arrow heads to make arrows.",
     "gatherString": "You make $ arrow shafts out of the ironwood.",
     "value": 21,
     "secondaryColor": "#9C491F",
@@ -225,8 +225,8 @@
     "isStackable": true
   },
   {
-    "Name": "Headless Ironwood Arrows",
-    "Description": "Hard, sturdy arrow shafts with feathers attached. Add some arrow heads to make arrows.",
+    "name": "Headless Ironwood Arrows",
+    "description": "Hard, sturdy arrow shafts with feathers attached. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless ironwood arrows.",
     "value": 23,
     "secondaryColor": "#9C491F",
@@ -240,8 +240,8 @@
     "isStackable": true
   },
   {
-    "Name": "Snakewood Arrow Shafts",
-    "Description": "Wibbly wobbly snakewood arrow shafts. Add some arrow heads to make arrows.",
+    "name": "Snakewood Arrow Shafts",
+    "description": "Wibbly wobbly snakewood arrow shafts. Add some arrow heads to make arrows.",
     "gatherString": "You struggle with the snakewood to produce $ somewhat straight arrow shafts.",
     "value": 28,
     "icon": "ArrowShafts",
@@ -255,8 +255,8 @@
     "isStackable": true
   },
   {
-    "Name": "Headless Snakewood Arrows",
-    "Description": "Wibbly wobbly wood with feathers attached. Add some arrow heads to make arrows.",
+    "name": "Headless Snakewood Arrows",
+    "description": "Wibbly wobbly wood with feathers attached. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless snakewood arrows.",
     "value": 30,
     "icon": "HeadlessArrows",
@@ -270,8 +270,8 @@
     "isStackable": true
   },
   {
-    "Name": "Lignum Vitae Arrow Shafts",
-    "Description": "Heavy, desnse arrow shafts. Add some arrow heads to make arrows.",
+    "name": "Lignum Vitae Arrow Shafts",
+    "description": "Heavy, desnse arrow shafts. Add some arrow heads to make arrows.",
     "gatherString": "You make $ arrow shafts out of the lignum vitae.",
     "value": 35,
     "icon": "ArrowShafts",
@@ -285,8 +285,8 @@
     "isStackable": true
   },
   {
-    "Name": "Headless Lignum Vitae Arrows",
-    "Description": "Extremely heavy arrow shafts with feathers attached. Add some arrow heads to make arrows.",
+    "name": "Headless Lignum Vitae Arrows",
+    "description": "Extremely heavy arrow shafts with feathers attached. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless lignum vitae arrows.",
     "value": 38,
     "icon": "HeadlessArrows",
@@ -300,8 +300,8 @@
     "isStackable": true
   },
   {
-    "Name": "Buloke Arrow Shafts",
-    "Description": "The hardest naturally occuring wood, cut into sticks. Add some arrow heads to make arrows.",
+    "name": "Buloke Arrow Shafts",
+    "description": "The hardest naturally occuring wood, cut into sticks. Add some arrow heads to make arrows.",
     "gatherString": "You make $ arrow shafts out of the buloke wood.",
     "value": 50,
     "icon": "ArrowShafts",
@@ -315,8 +315,8 @@
     "isStackable": true
   },
   {
-    "Name": "Headless Buloke Arrows",
-    "Description": "Very dense arrow shafts with feathers attached. Add some arrow heads to make arrows.",
+    "name": "Headless Buloke Arrows",
+    "description": "Very dense arrow shafts with feathers attached. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless buloke arrows.",
     "value": 53,
     "icon": "HeadlessArrows",
@@ -330,8 +330,8 @@
     "isStackable": true
   },
   {
-    "Name": "Ice Arrow Shafts",
-    "Description": "Arrow shafts made from ice wood. Add some arrow heads to make arrows.",
+    "name": "Ice Arrow Shafts",
+    "description": "Arrow shafts made from ice wood. Add some arrow heads to make arrows.",
     "gatherString": "You quickly make $ arrow shafts out of the ice logs before your fingers freeze.",
     "value": 45,
     "icon": "ArrowShafts",
@@ -345,8 +345,8 @@
     "isStackable": true
   },
   {
-    "Name": "Headless Ice Arrows",
-    "Description": "Frozen ice wood with feathers attached. Add some arrow heads to make arrows.",
+    "name": "Headless Ice Arrows",
+    "description": "Frozen ice wood with feathers attached. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless ice arrows.",
     "value": 48,
     "icon": "HeadlessArrows",
@@ -360,8 +360,8 @@
     "isStackable": true
   },
   {
-    "Name": "Great Arrow Shafts",
-    "Description": "These are magical arrow shafts crafted from wood from the Great Tree. Add some arrow heads to make arrows.",
+    "name": "Great Arrow Shafts",
+    "description": "These are magical arrow shafts crafted from wood from the Great Tree. Add some arrow heads to make arrows.",
     "gatherString": "You make $ arrow shafts out of the Great Tree wood.",
     "value": 90,
     "secondaryColor": "#9F6F4F",
@@ -375,8 +375,8 @@
     "isStackable": true
   },
   {
-    "Name": "Headless Great Arrows",
-    "Description": "Magical arrow shafts from the Great Tree with feathers attached. Add some arrow heads to make arrows.",
+    "name": "Headless Great Arrows",
+    "description": "Magical arrow shafts from the Great Tree with feathers attached. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless Great arrows.",
     "value": 93,
     "secondaryColor": "#9F6F4F",

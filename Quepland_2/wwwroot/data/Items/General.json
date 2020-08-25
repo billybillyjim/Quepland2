@@ -1,15 +1,15 @@
 [
   {
-    "Name": "Coins",
-    "Description": "Cash Money.",
+    "name": "Coins",
+    "description": "Cash Money.",
     "value": 1,
     "isStackable": true,
     "icon": "Coins",
     "isSellable": false
   },
   {
-    "Name": "Shuniku Berries",
-    "Description": "Disgusting tasting berries that will stain your mouth red.",
+    "name": "Shuniku Berries",
+    "description": "Disgusting tasting berries that will stain your mouth red.",
     "gatherString": "You gather some berries.",
     "secondaryColor": "red",
     "value": 2,
@@ -17,58 +17,58 @@
     "icon": "Berries"
   },
   {
-    "Name": "Wood Carving Knife",
-    "Description": "A specially designed knife for carving wood.",
+    "name": "Wood Carving Knife",
+    "description": "A specially designed knife for carving wood.",
     "value": 40,
     "icon": "Knife",
     "openCraftingMenuText": "Carve"
   },
   {
-    "Name": "Magic Wood Carving Knife",
-    "Description": "A specially designed knife for carving wood. This one's magical.",
+    "name": "Magic Wood Carving Knife",
+    "description": "A specially designed knife for carving wood. This one's magical.",
     "value": 600,
     "secondaryColor": "#d9a668",
     "icon": "Knife",
     "openCraftingMenuText": "Carve"
   },
   {
-    "Name": "No Soliciting Sign",
-    "Description": "A nicely written sign.",
+    "name": "No Soliciting Sign",
+    "description": "A nicely written sign.",
     "gatherString": "You paint letters neatly onto the sign.",
     "value": 2,
     "gatherSpeed": 8,
     "icon": "Sign"
   },
   {
-    "Name": "Rock Tumbler",
-    "Description": "A round box full of hard rocks. You can smooth gemstones down with it.",
+    "name": "Rock Tumbler",
+    "description": "A round box full of hard rocks. You can smooth gemstones down with it.",
     "value": 5000,
     "icon": "Tumbler"
   },
   {
-    "Name": "Small Red Library Key",
-    "Description": "A small key from the Sawoka dungeon library. It looks very fragile, but maybe it can open something.",
+    "name": "Small Red Library Key",
+    "description": "A small key from the Sawoka dungeon library. It looks very fragile, but maybe it can open something.",
     "value": 10,
     "secondaryColor": "#cf5353",
     "icon": "Key"
   },
   {
-    "Name": "Small Orange Library Key",
-    "Description": "A small key from the Sawoka dungeon library. It looks very fragile, but maybe it can open something.",
+    "name": "Small Orange Library Key",
+    "description": "A small key from the Sawoka dungeon library. It looks very fragile, but maybe it can open something.",
     "value": 10,
     "secondaryColor": "#d9a668",
     "icon": "Key"
   },
   {
-    "Name": "Small Green Library Key",
-    "Description": "A small key from the Sawoka dungeon library. It looks very fragile, but maybe it can open something.",
+    "name": "Small Green Library Key",
+    "description": "A small key from the Sawoka dungeon library. It looks very fragile, but maybe it can open something.",
     "value": 10,
     "secondaryColor": "#6cd665",
     "icon": "Key"
   },
   {
-    "Name": "Yoga Mat",
-    "Description": "A soft mat to do yoga on. You wouldn't want to have to just use the ground, would you?",
+    "name": "Yoga Mat",
+    "description": "A soft mat to do yoga on. You wouldn't want to have to just use the ground, would you?",
     "value": 1000,
     "icon": "Mat"
   },
@@ -179,49 +179,49 @@
     "icon": "Passport"
   },
   {
-    "Name": "Camel",
-    "Description": "A dromedary exceptionally capable of desert travel.",
+    "name": "Camel",
+    "description": "A dromedary exceptionally capable of desert travel.",
     "value": 60000,
     "icon": "Camel",
     "enabledActions": "Desert Travel"
   },
   {
-    "Name": "River Raft",
-    "Description": "It's a shame you can't swim, or you wouldn't have needed to waste money on this.",
+    "name": "River Raft",
+    "description": "It's a shame you can't swim, or you wouldn't have needed to waste money on this.",
     "value": 50000,
     "icon": "Raft",
     "enabledActions": "River Travel"
   },
   {
-    "Name": "Tiny Rowboat",
-    "Description": "A small boat you can take out to sea. You can't go out of sight of land with it, though.",
+    "name": "Tiny Rowboat",
+    "description": "A small boat you can take out to sea. You can't go out of sight of land with it, though.",
     "value": 80000,
     "icon": "Boat",
     "enabledActions": "Shallow Ocean Travel"
   },
   {
-    "Name": "Gym Membership Card",
-    "Description": "This card will let you into the gym in Kogoe.",
+    "name": "Gym Membership Card",
+    "description": "This card will let you into the gym in Kogoe.",
     "value": 500,
     "icon": "Card"
   },
   {
-    "Name": "Ice",
-    "Description": "It's cold water.",
+    "name": "Ice",
+    "description": "It's cold water.",
     "value": 5,
     "secondaryColor": "#D2FFF5",
     "icon": "Ice"
   },
   {
-    "Name": "Ice Essence",
-    "Description": "It's the essence of cold.",
+    "name": "Ice Essence",
+    "description": "It's the essence of cold.",
     "value": 1000,
     "secondaryColor": "#D2FFF5",
     "icon": "Essence"
   },
   {
-    "Name": "Bandit's Blade",
-    "Description": "The sharp part of a sword. You could probably reattach it to a hilt and make a working weapon with it.",
+    "name": "Bandit's Blade",
+    "description": "The sharp part of a sword. You could probably reattach it to a hilt and make a working weapon with it.",
     "value": 5,
     "icon": "Blade"
   },
@@ -311,8 +311,8 @@
     "isStackable": true
   },
   {
-    "Name": "Sweet Berries",
-    "Description": "Delicious berries.",
+    "name": "Sweet Berries",
+    "description": "Delicious berries.",
     "gatherString": "You gather some berries.",
     "value": 5,
     "secondaryColor": "paleblue",

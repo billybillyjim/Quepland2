@@ -1,7 +1,7 @@
 [
   {
-    "Name": "Copper Knife",
-    "Description": "Maybe the softest knife you've ever seen.",
+    "name": "Copper Knife",
+    "description": "Maybe the softest knife you've ever seen.",
     "value": 150,
     "enabledActions": "Knifesmanship",
     "equipSlot": "R Hand",
@@ -20,8 +20,8 @@
 
   },
   {
-    "Name": "Stone Axe",
-    "Description": "It's an axe made of stone.",
+    "name": "Stone Axe",
+    "description": "It's an axe made of stone.",
     "value": 25,
     "enabledActions": "Axemanship Woodcutting",
     "equipSlot": "R Hand",
@@ -39,8 +39,8 @@
     }
   },
   {
-    "Name": "Copper Axe",
-    "Description": "It's an axe made of a soft metal copper.",
+    "name": "Copper Axe",
+    "description": "It's an axe made of a soft metal copper.",
     "value": 150,
     "enabledActions": "Axemanship Woodcutting",
     "secondaryColor": "#B87333",
@@ -60,8 +60,8 @@
   },
 
   {
-    "Name": "Copper Sword",
-    "Description": "A soft metal sword for swinging.",
+    "name": "Copper Sword",
+    "description": "A soft metal sword for swinging.",
     "secondaryColor": "#B87333",
     "value": 150,
     "enabledActions": "Swordsmanship",
@@ -79,8 +79,8 @@
     }
   },
   {
-    "Name": "Copper Hammer",
-    "Description": "It's a hammer made of a soft metal copper.",
+    "name": "Copper Hammer",
+    "description": "It's a hammer made of a soft metal copper.",
     "secondaryColor": "#B87333",
     "value": 150,
     "enabledActions": "Hammermanship",
@@ -189,8 +189,8 @@
     }
   },
   {
-    "Name": "Brass Knife",
-    "Description": "A soft but sturdy knife.",
+    "name": "Brass Knife",
+    "description": "A soft but sturdy knife.",
     "value": 240,
     "enabledActions": "Knifesmanship",
     "equipSlot": "R Hand",
@@ -208,8 +208,8 @@
     }
   },
   {
-    "Name": "Brass Sword",
-    "Description": "A shiny metal sword for swinging.",
+    "name": "Brass Sword",
+    "description": "A shiny metal sword for swinging.",
     "value": 240,
     "secondaryColor": "#B5A642",
     "enabledActions": "Swordsmanship",
@@ -228,8 +228,8 @@
     }
   },
   {
-    "Name": "Brass Axe",
-    "Description": "It's an axe made of brass. Shiny.",
+    "name": "Brass Axe",
+    "description": "It's an axe made of brass. Shiny.",
     "value": 240,
     "secondaryColor": "#B5A642",
     "enabledActions": "Axemanship Woodcutting",
@@ -248,8 +248,8 @@
     }
   },
   {
-    "Name": "Brass Hammer",
-    "Description": "It's a hammer made of brass. It shimmers when you smash things.",
+    "name": "Brass Hammer",
+    "description": "It's a hammer made of brass. It shimmers when you smash things.",
     "value": 240,
     "secondaryColor": "#B5A642",
     "enabledActions": "Hammermanship",
@@ -267,8 +267,8 @@
     }
   },
   {
-    "Name": "Tin Knife",
-    "Description": "A small slice of tin metal with a handle attached.",
+    "name": "Tin Knife",
+    "description": "A small slice of tin metal with a handle attached.",
     "value": 70,
     "secondaryColor": "#D3D4D5",
     "enabledActions": "Knifesmanship",
@@ -286,8 +286,8 @@
     }
   },
   {
-    "Name": "Tin Sword",
-    "Description": "A flimsy tin sword.",
+    "name": "Tin Sword",
+    "description": "A flimsy tin sword.",
     "value": 70,
     "enabledActions": "Swordsmanship",
     "secondaryColor": "#D3D4D5",
@@ -305,8 +305,8 @@
     }
   },
   {
-    "Name": "Tin Axe",
-    "Description": "It's an axe made of tin. Flimsy.",
+    "name": "Tin Axe",
+    "description": "It's an axe made of tin. Flimsy.",
     "value": 70,
     "enabledActions": "Axemanship Woodcutting",
     "secondaryColor": "#D3D4D5",
@@ -325,8 +325,8 @@
     }
   },
   {
-    "Name": "Tin Hammer",
-    "Description": "It's a hammer made of tin. It flattens a little whenever you smash things.",
+    "name": "Tin Hammer",
+    "description": "It's a hammer made of tin. It flattens a little whenever you smash things.",
     "value": 70,
     "enabledActions": "Hammermanship",
     "secondaryColor": "#D3D4D5",
@@ -344,8 +344,8 @@
     }
   },
   {
-    "Name": "Zinc Knife",
-    "Description": "A small knife made out of a soft metal.",
+    "name": "Zinc Knife",
+    "description": "A small knife made out of a soft metal.",
     "value": 90,
     "enabledActions": "Knifesmanship",
     "secondaryColor": "#9E9EA0",
@@ -363,8 +363,8 @@
     }
   },
   {
-    "Name": "Zinc Sword",
-    "Description": "A soft zinc sword.",
+    "name": "Zinc Sword",
+    "description": "A soft zinc sword.",
     "secondaryColor": "#9E9EA0",
     "value": 90,
     "enabledActions": "Swordsmanship",
@@ -382,8 +382,8 @@
     }
   },
   {
-    "Name": "Zinc Axe",
-    "Description": "A soft axe for soft woodcutting.",
+    "name": "Zinc Axe",
+    "description": "A soft axe for soft woodcutting.",
     "secondaryColor": "#9E9EA0",
     "value": 90,
     "enabledActions": "Axemanship Woodcutting",
@@ -402,8 +402,8 @@
     }
   },
   {
-    "Name": "Zinc Hammer",
-    "Description": "It's a hammer made of zinc.",
+    "name": "Zinc Hammer",
+    "description": "It's a hammer made of zinc.",
     "secondaryColor": "#9E9EA0",
     "value": 90,
     "enabledActions": "Hammermanship",
@@ -421,8 +421,8 @@
     }
   },
   {
-    "Name": "Bronze Knife",
-    "Description": "A sturdy knife made from cast bronze.",
+    "name": "Bronze Knife",
+    "description": "A sturdy knife made from cast bronze.",
     "value": 150,
     "enabledActions": "Knifesmanship",
     "secondaryColor": "#CD7F32",
@@ -440,8 +440,8 @@
     }
   },
   {
-    "Name": "Bronze Sword",
-    "Description": "A sturdy bronze sword.",
+    "name": "Bronze Sword",
+    "description": "A sturdy bronze sword.",
     "secondaryColor": "#CD7F32",
     "value": 150,
     "enabledActions": "Swordsmanship",
@@ -459,8 +459,8 @@
     }
   },
   {
-    "Name": "Bronze Axe",
-    "Description": "A sturdy axe for woodcutting.",
+    "name": "Bronze Axe",
+    "description": "A sturdy axe for woodcutting.",
     "secondaryColor": "#CD7F32",
     "value": 150,
     "enabledActions": "Axemanship Woodcutting",
@@ -480,8 +480,8 @@
 
   },
   {
-    "Name": "Bronze Hammer",
-    "Description": "A big hammer to smash things with.",
+    "name": "Bronze Hammer",
+    "description": "A big hammer to smash things with.",
     "secondaryColor": "#CD7F32",
     "value": 150,
     "enabledActions": "Hammermanship",
@@ -499,8 +499,8 @@
     }
   },
   {
-    "Name": "Nickel Knife",
-    "Description": "A sharp knife.",
+    "name": "Nickel Knife",
+    "description": "A sharp knife.",
     "value": 210,
     "enabledActions": "Knifesmanship",
     "equipSlot": "R Hand",
@@ -518,8 +518,8 @@
     }
   },
   {
-    "Name": "Nickel Sword",
-    "Description": "A nickel sword.",
+    "name": "Nickel Sword",
+    "description": "A nickel sword.",
     "secondaryColor": "#A9A69B",
     "value": 210,
     "enabledActions": "Swordsmanship",
@@ -537,8 +537,8 @@
     }
   },
   {
-    "Name": "Nickel Axe",
-    "Description": "An axe made out of nickel.",
+    "name": "Nickel Axe",
+    "description": "An axe made out of nickel.",
     "secondaryColor": "#A9A69B",
     "value": 210,
     "enabledActions": "Axemanship Woodcutting",
@@ -557,8 +557,8 @@
     }
   },
   {
-    "Name": "Nickel Hammer",
-    "Description": "A big hammer made of solid nickel.",
+    "name": "Nickel Hammer",
+    "description": "A big hammer made of solid nickel.",
     "secondaryColor": "#A9A69B",
     "value": 210,
     "enabledActions": "Hammermanship",
@@ -576,8 +576,8 @@
     }
   },
   {
-    "Name": "Iron Knife",
-    "Description": "A strong metal knife.",
+    "name": "Iron Knife",
+    "description": "A strong metal knife.",
     "value": 280,
     "enabledActions": "Knifesmanship",
     "secondaryColor": "#434341",
@@ -595,8 +595,8 @@
     }
   },
   {
-    "Name": "Iron Sword",
-    "Description": "A sharp metal sword.",
+    "name": "Iron Sword",
+    "description": "A sharp metal sword.",
     "secondaryColor": "#434341",
     "value": 280,
     "enabledActions": "Swordsmanship",
@@ -614,8 +614,8 @@
     }
   },
   {
-    "Name": "Iron Axe",
-    "Description": "A sturdy axe to chop things with.",
+    "name": "Iron Axe",
+    "description": "A sturdy axe to chop things with.",
     "secondaryColor": "#434341",
     "value": 280,
     "enabledActions": "Axemanship Woodcutting",
@@ -634,8 +634,8 @@
     }
   },
   {
-    "Name": "Iron Hammer",
-    "Description": "A heavy hammer.",
+    "name": "Iron Hammer",
+    "description": "A heavy hammer.",
     "secondaryColor": "#434341",
     "value": 280,
     "enabledActions": "Hammermanship",
@@ -653,8 +653,8 @@
     }
   },
   {
-    "Name": "Lead Knife",
-    "Description": "A heavy knife. Don't lick it!",
+    "name": "Lead Knife",
+    "description": "A heavy knife. Don't lick it!",
     "secondaryColor": "#C0C0C0",
     "value": 260,
     "enabledActions": "Knifesmanship",
@@ -672,8 +672,8 @@
     }
   },
   {
-    "Name": "Lead Sword",
-    "Description": "A very heavy sword.",
+    "name": "Lead Sword",
+    "description": "A very heavy sword.",
     "secondaryColor": "#C0C0C0",
     "value": 260,
     "enabledActions": "Swordsmanship",
@@ -691,8 +691,8 @@
     }
   },
   {
-    "Name": "Lead Axe",
-    "Description": "A solid lead axe. Maybe not the best for chopping trees with.",
+    "name": "Lead Axe",
+    "description": "A solid lead axe. Maybe not the best for chopping trees with.",
     "secondaryColor": "#C0C0C0",
     "value": 260,
     "enabledActions": "Axemanship Woodcutting",
@@ -711,8 +711,8 @@
     }
   },
   {
-    "Name": "Lesser Lead Hammer",
-    "Description": "A smaller lead hammer. It still weighs a ton.",
+    "name": "Lesser Lead Hammer",
+    "description": "A smaller lead hammer. It still weighs a ton.",
     "secondaryColor": "#C0C0C0",
     "value": 260,
     "enabledActions": "Hammermanship",
@@ -730,8 +730,8 @@
     }
   },
   {
-    "Name": "Greater Lead Hammer",
-    "Description": "A giant lead hammer. Quite good for smashing things.",
+    "name": "Greater Lead Hammer",
+    "description": "A giant lead hammer. Quite good for smashing things.",
     "secondaryColor": "#C0C0C0",
     "value": 520,
     "enabledActions": "Hammermanship",
@@ -749,8 +749,8 @@
     }
   },
   {
-    "Name": "Aluminum Knife",
-    "Description": "A lightweight knife. It almost feels like air in your hand.",
+    "name": "Aluminum Knife",
+    "description": "A lightweight knife. It almost feels like air in your hand.",
     "value": 350,
     "enabledActions": "Knifesmanship",
     "secondaryColor": "#F1F3F0",
@@ -768,8 +768,8 @@
     }
   },
   {
-    "Name": "Aluminum Sword",
-    "Description": "A lightweight sword. You can swing it really fast! Be careful, though.",
+    "name": "Aluminum Sword",
+    "description": "A lightweight sword. You can swing it really fast! Be careful, though.",
     "value": 350,
     "enabledActions": "Swordsmanship",
     "secondaryColor": "#F1F3F0",
@@ -787,8 +787,8 @@
     }
   },
   {
-    "Name": "Aluminum Axe",
-    "Description": "A lightweight axe. You can really chop some trees with this baby.",
+    "name": "Aluminum Axe",
+    "description": "A lightweight axe. You can really chop some trees with this baby.",
     "value": 350,
     "enabledActions": "Axemanship Woodcutting",
     "secondaryColor": "#F1F3F0",
@@ -807,8 +807,8 @@
     }
   },
   {
-    "Name": "Aluminum Hammer",
-    "Description": "A lightweight hammer. Good for smashing things quickly.",
+    "name": "Aluminum Hammer",
+    "description": "A lightweight hammer. Good for smashing things quickly.",
     "value": 350,
     "enabledActions": "Hammermanship",
     "secondaryColor": "#F1F3F0",
@@ -827,8 +827,8 @@
   },
 
   {
-    "Name": "Mercurice Knife",
-    "Description": "A magically crafted knife that is made of frozen mercury.",
+    "name": "Mercurice Knife",
+    "description": "A magically crafted knife that is made of frozen mercury.",
     "value": 880,
     "secondaryColor": "#D2FFF5",
     "enabledActions": "Knifesmanship",
@@ -855,9 +855,9 @@
     }
   },
   {
-    "Name": "Mercurice Sword",
+    "name": "Mercurice Sword",
     "secondaryColor": "#D2FFF5",
-    "Description": "A magically crafted sword that is made of frozen mercury.",
+    "description": "A magically crafted sword that is made of frozen mercury.",
     "value": 880,
     "enabledActions": "Swordsmanship",
     "equipSlot": "R Hand",
@@ -883,9 +883,9 @@
     }
   },
   {
-    "Name": "Mercurice Axe",
+    "name": "Mercurice Axe",
     "secondaryColor": "#D2FFF5",
-    "Description": "A magically crafted axe that is made of frozen mercury.",
+    "description": "A magically crafted axe that is made of frozen mercury.",
     "value": 880,
     "enabledActions": "Axemanship Woodcutting",
     "equipSlot": "R Hand",
@@ -912,9 +912,9 @@
     }
   },
   {
-    "Name": "Mercurice Hammer",
+    "name": "Mercurice Hammer",
     "secondaryColor": "#D2FFF5",
-    "Description": "A magically crafted hammer that is made of frozen mercury.",
+    "description": "A magically crafted hammer that is made of frozen mercury.",
     "value": 880,
     "enabledActions": "Hammermanship",
     "equipSlot": "R Hand",
@@ -940,8 +940,8 @@
     }
   },
   {
-    "Name": "Golden Knife",
-    "Description": "A heavy knife. It's quite soft, and probably best used for decoration.",
+    "name": "Golden Knife",
+    "description": "A heavy knife. It's quite soft, and probably best used for decoration.",
     "value": 1450,
     "enabledActions": "Knifesmanship",
     "secondaryColor": "#FFD700",
@@ -959,8 +959,8 @@
     }
   },
   {
-    "Name": "Golden Sword",
-    "Description": "A very heavy sword. Probably too soft to be good in combat. It's quite shiny, though.",
+    "name": "Golden Sword",
+    "description": "A very heavy sword. Probably too soft to be good in combat. It's quite shiny, though.",
     "value": 1450,
     "enabledActions": "Swordsmanship",
     "secondaryColor": "#FFD700",
@@ -978,8 +978,8 @@
     }
   },
   {
-    "Name": "Golden Axe",
-    "Description": "A solid gold axe. It's a good thing it can't degrade from use...",
+    "name": "Golden Axe",
+    "description": "A solid gold axe. It's a good thing it can't degrade from use...",
     "value": 1450,
     "enabledActions": "Axemanship Woodcutting",
     "secondaryColor": "#FFD700",
@@ -998,8 +998,8 @@
     }
   },
   {
-    "Name": "Golden Hammer",
-    "Description": "A solid gold hammer. It flattens a bit every time you smash something with it.",
+    "name": "Golden Hammer",
+    "description": "A solid gold hammer. It flattens a bit every time you smash something with it.",
     "value": 1450,
     "enabledActions": "Hammermanship",
     "secondaryColor": "#FFD700",
@@ -1017,8 +1017,8 @@
     }
   },
   {
-    "Name": "Platinum Knife",
-    "Description": "A heavy, sharp knife. It's very valuable.",
+    "name": "Platinum Knife",
+    "description": "A heavy, sharp knife. It's very valuable.",
     "value": 2250,
     "enabledActions": "Knifesmanship",
     "secondaryColor": "#E5E4E2",
@@ -1036,8 +1036,8 @@
     }
   },
   {
-    "Name": "Platinum Sword",
-    "Description": "A very heavy sword. It shines brightly in the sunlight.",
+    "name": "Platinum Sword",
+    "description": "A very heavy sword. It shines brightly in the sunlight.",
     "value": 2250,
     "enabledActions": "Swordsmanship",
     "secondaryColor": "#E5E4E2",
@@ -1055,8 +1055,8 @@
     }
   },
   {
-    "Name": "Platinum Axe",
-    "Description": "A shiny, metal axe. It's quite heavy.",
+    "name": "Platinum Axe",
+    "description": "A shiny, metal axe. It's quite heavy.",
     "value": 2250,
     "enabledActions": "Axemanship Woodcutting",
     "equipSlot": "R Hand",
@@ -1075,8 +1075,8 @@
     }
   },
   {
-    "Name": "Platinum Hammer",
-    "Description": "A platinum hammer. It shimmers in the light as you smash things with it.",
+    "name": "Platinum Hammer",
+    "description": "A platinum hammer. It shimmers in the light as you smash things with it.",
     "value": 2250,
     "enabledActions": "Hammermanship",
     "secondaryColor": "#E5E4E2",
@@ -1094,8 +1094,8 @@
     }
   },
   {
-    "Name": "Steel Knife",
-    "Description": "A powerful and lightweight metal knife.",
+    "name": "Steel Knife",
+    "description": "A powerful and lightweight metal knife.",
     "value": 680,
     "secondaryColor": "#9DC6E8",
     "enabledActions": "Knifesmanship",
@@ -1113,9 +1113,9 @@
     }
   },
   {
-    "Name": "Steel Sword",
+    "name": "Steel Sword",
     "secondaryColor": "#9DC6E8",
-    "Description": "A sharp and lightweight metal sword.",
+    "description": "A sharp and lightweight metal sword.",
     "value": 680,
     "enabledActions": "Swordsmanship",
     "equipSlot": "R Hand",
@@ -1132,9 +1132,9 @@
     }
   },
   {
-    "Name": "Steel Axe",
+    "name": "Steel Axe",
     "secondaryColor": "#9DC6E8",
-    "Description": "A sturdy and lightweight axe to chop things with.",
+    "description": "A sturdy and lightweight axe to chop things with.",
     "value": 680,
     "enabledActions": "Axemanship Woodcutting",
     "equipSlot": "R Hand",
@@ -1152,9 +1152,9 @@
     }
   },
   {
-    "Name": "Steel Hammer",
+    "name": "Steel Hammer",
     "secondaryColor": "#9DC6E8",
-    "Description": "A solid and strong hammer.",
+    "description": "A solid and strong hammer.",
     "value": 680,
     "enabledActions": "Hammermanship",
     "equipSlot": "R Hand",
@@ -1171,8 +1171,8 @@
     }
   },
   {
-    "Name": "Sahotite Knife",
-    "Description": "A a powerful knife that saps the heat out of whatever it touches.",
+    "name": "Sahotite Knife",
+    "description": "A a powerful knife that saps the heat out of whatever it touches.",
     "value": 1280,
     "secondaryColor": "#C3D3F3",
     "enabledActions": "Knifesmanship",
@@ -1199,9 +1199,9 @@
     }
   },
   {
-    "Name": "Sahotite Sword",
+    "name": "Sahotite Sword",
     "secondaryColor": "#C3D3F3",
-    "Description": "A sharp sword that saps heat from its victims.",
+    "description": "A sharp sword that saps heat from its victims.",
     "value": 1280,
     "enabledActions": "Swordsmanship",
     "equipSlot": "R Hand",
@@ -1227,9 +1227,9 @@
     }
   },
   {
-    "Name": "Sahotite Axe",
+    "name": "Sahotite Axe",
     "secondaryColor": "#C3D3F3",
-    "Description": "A sturdy axe that saps heat from whatever it hits.",
+    "description": "A sturdy axe that saps heat from whatever it hits.",
     "value": 1280,
     "enabledActions": "Axemanship Woodcutting",
     "equipSlot": "R Hand",
@@ -1256,9 +1256,9 @@
     }
   },
   {
-    "Name": "Sahotite Hammer",
+    "name": "Sahotite Hammer",
     "secondaryColor": "#C3D3F3",
-    "Description": "A powerful hammer that saps heat from its targets.",
+    "description": "A powerful hammer that saps heat from its targets.",
     "value": 1280,
     "enabledActions": "Hammermanship",
     "equipSlot": "R Hand",
@@ -1284,8 +1284,8 @@
     }
   },
   {
-    "Name": "Strongtium Knife",
-    "Description": "A knife made from the rare metal strongtium",
+    "name": "Strongtium Knife",
+    "description": "A knife made from the rare metal strongtium",
     "value": 2880,
     "enabledActions": "Knifesmanship",
     "secondaryColor": "#AF7979",
@@ -1303,8 +1303,8 @@
     }
   },
   {
-    "Name": "Strongtium Sword",
-    "Description": "An extremely sharp sword.",
+    "name": "Strongtium Sword",
+    "description": "An extremely sharp sword.",
     "value": 2880,
     "enabledActions": "Swordsmanship",
     "secondaryColor": "#AF7979",
@@ -1322,8 +1322,8 @@
     }
   },
   {
-    "Name": "Strongtium Axe",
-    "Description": "An extremely sharp axe.",
+    "name": "Strongtium Axe",
+    "description": "An extremely sharp axe.",
     "value": 2880,
     "enabledActions": "Axemanship Woodcutting",
     "secondaryColor": "#AF7979",
@@ -1342,8 +1342,8 @@
     }
   },
   {
-    "Name": "Strongtium Hammer",
-    "Description": "An extremely dense hammer.",
+    "name": "Strongtium Hammer",
+    "description": "An extremely dense hammer.",
     "value": 2880,
     "enabledActions": "Hammermanship",
     "secondaryColor": "#AF7979",
@@ -1379,8 +1379,8 @@
     }
   },
   {
-    "Name": "Zombisword",
-    "Description": "A sword of the undead. It's quite large and feels much heavier than it looks.",
+    "name": "Zombisword",
+    "description": "A sword of the undead. It's quite large and feels much heavier than it looks.",
     "value": 3280,
     "enabledActions": "Swordsmanship",
     "secondaryColor": "#999999",
@@ -1398,8 +1398,8 @@
     }
   },
   {
-    "Name": "Steelflame Axe",
-    "Description": "A flaming axe. You can use it to chop down trees or enemies very quickly.",
+    "name": "Steelflame Axe",
+    "description": "A flaming axe. You can use it to chop down trees or enemies very quickly.",
     "value": 32800,
     "enabledActions": "Axemanship",
     "secondaryColor": "#a51414",
@@ -1428,8 +1428,8 @@
     }
   },
   {
-    "Name": "Iron Knuckles",
-    "Description": "They're like metal gloves for your knuckles. ",
+    "name": "Iron Knuckles",
+    "description": "They're like metal gloves for your knuckles. ",
     "value": 350,
     "secondaryColor": "#434341",
     "equipSlot": "R Hand",
@@ -1446,8 +1446,8 @@
     }
   },
   {
-    "Name": "Magic Iron Sword",
-    "Description": "A sharp metal sword, but magical. It mostly swings itself.",
+    "name": "Magic Iron Sword",
+    "description": "A sharp metal sword, but magical. It mostly swings itself.",
     "secondaryColor": "#434341",
     "value": 1280,
     "enabledActions": "Swordsmanship",

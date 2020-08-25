@@ -1,8 +1,8 @@
 [
   {
-    "Name": "White Belt",
+    "name": "White Belt",
     "value": 500,
-    "Description": "A white belt that proves you don't know anything yet.",
+    "description": "A white belt that proves you don't know anything yet.",
     "icon": "Belt",
     "secondaryColor": "#e6e6e6",
     "equipSlot": "Waist",
@@ -12,9 +12,9 @@
     }
   },
   {
-    "Name": "Yellow Belt",
+    "name": "Yellow Belt",
     "value": 2500,
-    "Description": "A yellow belt proves you are a beginner at martial arts.",
+    "description": "A yellow belt proves you are a beginner at martial arts.",
     "icon": "Belt",
     "secondaryColor": "#fff896",
     "equipSlot": "Waist",
@@ -24,9 +24,9 @@
     }
   },
   {
-    "Name": "Orange Belt",
+    "name": "Orange Belt",
     "value": 7000,
-    "Description": "An orange belt proves you are a novice at martial arts.",
+    "description": "An orange belt proves you are a novice at martial arts.",
     "icon": "Belt",
     "secondaryColor": "#f5d576",
     "equipSlot": "Waist",
@@ -36,9 +36,9 @@
     }
   },
   {
-    "Name": "Green Belt",
+    "name": "Green Belt",
     "value": 15000,
-    "Description": "A green belt proves you are competent at martial arts.",
+    "description": "A green belt proves you are competent at martial arts.",
     "icon": "Belt",
     "secondaryColor": "#71f268",
     "equipSlot": "Waist",
@@ -48,9 +48,9 @@
     }
   },
   {
-    "Name": "Blue Belt",
+    "name": "Blue Belt",
     "value": 25000,
-    "Description": "A blue belt proves you are knowledgeable at martial arts.",
+    "description": "A blue belt proves you are knowledgeable at martial arts.",
     "icon": "Belt",
     "equipSlot": "Waist",
     "secondaryColor": "#61b1f2",
@@ -60,9 +60,9 @@
     }
   },
   {
-    "Name": "Purple Belt",
+    "name": "Purple Belt",
     "value": 45000,
-    "Description": "A purple belt proves you are skilled at martial arts.",
+    "description": "A purple belt proves you are skilled at martial arts.",
     "icon": "Belt",
     "secondaryColor": "#9a52de",
     "equipSlot": "Waist",
@@ -72,9 +72,9 @@
     }
   },
   {
-    "Name": "Brown Belt",
+    "name": "Brown Belt",
     "value": 80000,
-    "Description": "A brown belt proves you are an expert at martial arts.",
+    "description": "A brown belt proves you are an expert at martial arts.",
     "icon": "Belt",
     "secondaryColor": "#a37d2a",
     "equipSlot": "Waist",
@@ -84,9 +84,9 @@
     }
   },
   {
-    "Name": "Black Belt",
+    "name": "Black Belt",
     "value": 125000,
-    "Description": "A black belt proves you are a master at martial arts.",
+    "description": "A black belt proves you are a master at martial arts.",
     "icon": "Belt",
     "secondaryColor": "#474747",
     "equipSlot": "Waist",
@@ -96,10 +96,10 @@
     }
   },
   {
-    "Name": "Golden Belt",
+    "name": "Golden Belt",
     "value": 250000,
     "secondaryColor": "#cfb221",
-    "Description": "A golden belt proves you are a master at fighting in style.",
+    "description": "A golden belt proves you are a master at fighting in style.",
     "icon": "Belt",
     "equipSlot": "Waist",
     "armorInfo": {

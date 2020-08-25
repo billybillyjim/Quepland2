@@ -1,7 +1,7 @@
 [
   {
-    "Name": "White Pine Arrow",
-    "Description": "A flimsy stick you can shoot things with.",
+    "name": "White Pine Arrow",
+    "description": "A flimsy stick you can shoot things with.",
     "value": 3,
     "icon": "Arrows",
     "isStackable": true,
@@ -18,8 +18,8 @@
     "secondaryColor": "#FFE5C4"
   },
   {
-    "Name": "Poplar Arrow",
-    "Description": "A cheap and flimsy arrow.",
+    "name": "Poplar Arrow",
+    "description": "A cheap and flimsy arrow.",
     "value": 8,
     "icon": "Arrows",
     "isStackable": true,
@@ -36,8 +36,8 @@
     "secondaryColor": "#FFDA8A"
   },
   {
-    "Name": "Oak Arrow",
-    "Description": "A commonly used weapon for shooting things with.",
+    "name": "Oak Arrow",
+    "description": "A commonly used weapon for shooting things with.",
     "value": 12,
     "icon": "Arrows",
     "isStackable": true,
@@ -54,8 +54,8 @@
     "secondaryColor": "#FFD5B0"
   },
   {
-    "Name": "Maple Arrow",
-    "Description": "An average, cheap arrow.",
+    "name": "Maple Arrow",
+    "description": "An average, cheap arrow.",
     "value": 18,
     "icon": "Arrows",
     "isStackable": true,
@@ -72,8 +72,8 @@
     "secondaryColor": "#FFBD96"
   },
   {
-    "Name": "Birch Arrow",
-    "Description": "Bright, thin arrows, usable but flimsy.",
+    "name": "Birch Arrow",
+    "description": "Bright, thin arrows, usable but flimsy.",
     "value": 22,
     "icon": "Arrows",
     "isStackable": true,
@@ -90,8 +90,8 @@
     "secondaryColor": "#FFF6E0"
   },
   {
-    "Name": "Mesquite Arrow",
-    "Description": "Run of the mill arrows for the average adventurer's bow.",
+    "name": "Mesquite Arrow",
+    "description": "Run of the mill arrows for the average adventurer's bow.",
     "value": 29,
     "icon": "Arrows",
     "isStackable": true,
@@ -108,8 +108,8 @@
     ]
   },
   {
-    "Name": "Heavy Mesquite Arrow",
-    "Description": "An extra heavy arrow made with lead arrowtips.",
+    "name": "Heavy Mesquite Arrow",
+    "description": "An extra heavy arrow made with lead arrowtips.",
     "value": 29,
     "icon": "HeavyArrows",
     "isStackable": true,
@@ -126,8 +126,8 @@
     ]
   },
   {
-    "Name": "Mahogany Arrow",
-    "Description": "Essentially weaponized furniture, extremely expensive arrows.",
+    "name": "Mahogany Arrow",
+    "description": "Essentially weaponized furniture, extremely expensive arrows.",
     "value": 65,
     "icon": "Arrows",
     "isStackable": true,
@@ -144,8 +144,8 @@
     "secondaryColor": "#AB5F29"
   },
   {
-    "Name": "Ironwood Arrow",
-    "Description": "Sturdy arrows, good for shooting things with.",
+    "name": "Ironwood Arrow",
+    "description": "Sturdy arrows, good for shooting things with.",
     "value": 38,
     "icon": "Arrows",
     "isStackable": true,
@@ -162,8 +162,8 @@
     ]
   },
   {
-    "Name": "Heavy Ironwood Arrow",
-    "Description": "Heavy, sturdy arrows, good for shooting things with.",
+    "name": "Heavy Ironwood Arrow",
+    "description": "Heavy, sturdy arrows, good for shooting things with.",
     "value": 38,
     "icon": "HeavyArrows",
     "isStackable": true,
@@ -180,8 +180,8 @@
     ]
   },
   {
-    "Name": "Snakewood Arrow",
-    "Description": "Wibbly wobbly arrows that somehow still fly straight.",
+    "name": "Snakewood Arrow",
+    "description": "Wibbly wobbly arrows that somehow still fly straight.",
     "value": 48,
     "icon": "Arrows",
     "isStackable": true,
@@ -198,8 +198,8 @@
     "secondaryColor": "#824121"
   },
   {
-    "Name": "Strong Snakewood Arrow",
-    "Description": "Wibbly wobbly arrows that somehow still fly straight.",
+    "name": "Strong Snakewood Arrow",
+    "description": "Wibbly wobbly arrows that somehow still fly straight.",
     "value": 51,
     "icon": "HeavyArrows",
     "isStackable": true,
@@ -216,8 +216,8 @@
     "secondaryColor": "#824121"
   },
   {
-    "Name": "Lignum Vitae Arrow",
-    "Description": "A very heavy arrow that packs a punch.",
+    "name": "Lignum Vitae Arrow",
+    "description": "A very heavy arrow that packs a punch.",
     "value": 55,
     "icon": "Arrows",
     "isStackable": true,
@@ -234,8 +234,8 @@
     "secondaryColor": "#612901"
   },
   {
-    "Name": "Strong Lignum Vitae Arrow",
-    "Description": "A very heavy arrow that packs a punch.",
+    "name": "Strong Lignum Vitae Arrow",
+    "description": "A very heavy arrow that packs a punch.",
     "value": 59,
     "icon": "HeavyArrows",
     "isStackable": true,
@@ -252,8 +252,8 @@
     "secondaryColor": "#612901"
   },
   {
-    "Name": "Buloke Arrow",
-    "Description": "An arrow made from the strongest wood in Quepland.",
+    "name": "Buloke Arrow",
+    "description": "An arrow made from the strongest wood in Quepland.",
     "value": 73,
     "icon": "Arrows",
     "isStackable": true,
@@ -270,8 +270,8 @@
     ]
   },
   {
-    "Name": "Strong Buloke Arrow",
-    "Description": "An arrow made from the strongest wood in Quepland.",
+    "name": "Strong Buloke Arrow",
+    "description": "An arrow made from the strongest wood in Quepland.",
     "value": 79,
     "icon": "HeavyArrows",
     "isStackable": true,
@@ -288,8 +288,8 @@
     ]
   },
   {
-    "Name": "Ice Arrow",
-    "Description": "An icy arrow made from ice wood. It may freeze an opponent for a short while.",
+    "name": "Ice Arrow",
+    "description": "An icy arrow made from ice wood. It may freeze an opponent for a short while.",
     "value": 59,
     "icon": "Arrows",
     "isStackable": true,
@@ -306,8 +306,8 @@
     "secondaryColor": "#D2FFF5"
   },
   {
-    "Name": "Great Arrow",
-    "Description": "A magically imbued arrow made from wood from the Great Tree.",
+    "name": "Great Arrow",
+    "description": "A magically imbued arrow made from wood from the Great Tree.",
     "value": 135,
     "secondaryColor": "#9F6F4F",
     "isStackable": true,

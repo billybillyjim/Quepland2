@@ -1,8 +1,8 @@
 [
 
   {
-    "Name": "White Pine Logs",
-    "Description": "It's a very soft wood.",
+    "name": "White Pine Logs",
+    "description": "It's a very soft wood.",
     "gatherString": "You chop some white pine logs.",
     "value": 3,
     "gatherSpeed": 15,
@@ -20,8 +20,8 @@
     ]
   },
   {
-    "Name": "Poplar Logs",
-    "Description": "It's a less soft wood.",
+    "name": "Poplar Logs",
+    "description": "It's a less soft wood.",
     "gatherString": "You chop some poplar logs.",
     "value": 9,
     "gatherSpeed": 25,

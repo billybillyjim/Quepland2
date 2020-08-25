@@ -1,7 +1,7 @@
 [
   {
-    "Name": "Copper Bar",
-    "Description": "The squishiest metal bar.",
+    "name": "Copper Bar",
+    "description": "The squishiest metal bar.",
     "gatherString": "You smelt a copper bar.",
     "value": 50,
     "gatherSpeed": 15,
@@ -19,8 +19,8 @@
     ]
   },
   {
-    "Name": "Tin Bar",
-    "Description": "A beautiful, soft metal bar.",
+    "name": "Tin Bar",
+    "description": "A beautiful, soft metal bar.",
     "gatherString": "You smelt a tin bar.",
     "value": 50,
     "gatherSpeed": 15,
@@ -40,8 +40,8 @@
     ]
   },
   {
-    "Name": "Zinc Bar",
-    "Description": "This would be more useful combined with another metal.",
+    "name": "Zinc Bar",
+    "description": "This would be more useful combined with another metal.",
     "gatherString": "You smelt a zinc bar.",
     "value": 70,
     "gatherSpeed": 20,
@@ -59,8 +59,8 @@
     ]
   },
   {
-    "Name": "Brass Bar",
-    "Description": "A sturdy metal made from copper and zinc.",
+    "name": "Brass Bar",
+    "description": "A sturdy metal made from copper and zinc.",
     "gatherString": "You smelt a brass bar.",
     "secondaryColor": "#B5A642",
     "value": 90,
@@ -78,8 +78,8 @@
     ]
   },
   {
-    "Name": "Bronze Bar",
-    "Description": "A strong metal made from copper and tin.",
+    "name": "Bronze Bar",
+    "description": "A strong metal made from copper and tin.",
     "gatherString": "You smelt a bronze bar.",
     "secondaryColor": "#CD7F32",
     "value": 110,
@@ -97,8 +97,8 @@
     ]
   },
   {
-    "Name": "Nickel Bar",
-    "Description": "A metal made from nickel ore.",
+    "name": "Nickel Bar",
+    "description": "A metal made from nickel ore.",
     "gatherString": "You smelt a nickel bar.",
     "value": 150,
     "secondaryColor": "#838381",
@@ -116,8 +116,8 @@
     ]
   },
   {
-    "Name": "Silver Bar",
-    "Description": "A very shiny metal bar.",
+    "name": "Silver Bar",
+    "description": "A very shiny metal bar.",
     "gatherString": "You smelt a silver bar.",
     "secondaryColor": "#999999",
     "value": 250,
@@ -135,8 +135,8 @@
     ]
   },
   {
-    "Name": "Iron Bar",
-    "Description": "A very strong metal bar.",
+    "name": "Iron Bar",
+    "description": "A very strong metal bar.",
     "gatherString": "You smelt an iron bar.",
     "secondaryColor": "#434341",
     "value": 190,
@@ -154,8 +154,8 @@
     ]
   },
   {
-    "Name": "Lead Bar",
-    "Description": "A heavy metal bar.",
+    "name": "Lead Bar",
+    "description": "A heavy metal bar.",
     "gatherString": "You smelt a lead bar.",
     "secondaryColor": "#C0C0C0",
     "value": 190,
@@ -173,8 +173,8 @@
     ]
   },
   {
-    "Name": "Bucket of Mercury",
-    "Description": "A heavy metal bar.",
+    "name": "Bucket of Mercury",
+    "description": "A heavy metal bar.",
     "gatherString": "You smelt a lead bar.",
     "value": 240,
     "gatherSpeed": 55,
@@ -191,8 +191,8 @@
     ]
   },
   {
-    "Name": "Aluminum Bar",
-    "Description": "A lightweight metal bar.",
+    "name": "Aluminum Bar",
+    "description": "A lightweight metal bar.",
     "gatherString": "You smelt an aluminum bar.",
     "secondaryColor": "#F1F3F0",
     "value": 270,
@@ -210,8 +210,8 @@
     ]
   },
   {
-    "Name": "Gold Bar",
-    "Description": "A bar of solid gold.",
+    "name": "Gold Bar",
+    "description": "A bar of solid gold.",
     "gatherString": "You smelt a gold bar.",
     "secondaryColor": "#FFD700",
     "value": 1000,
@@ -229,8 +229,8 @@
     ]
   },
   {
-    "Name": "Steel Bar",
-    "Description": "An extremely hard metal bar.",
+    "name": "Steel Bar",
+    "description": "An extremely hard metal bar.",
     "secondaryColor": "#9DC6E8",
     "gatherString": "You smelt a steel bar.",
     "value": 400,
@@ -248,8 +248,8 @@
     ]
   },
   {
-    "Name": "Platinum Bar",
-    "Description": "A solid platinum bar.",
+    "name": "Platinum Bar",
+    "description": "A solid platinum bar.",
     "gatherString": "You smelt a platinum bar.",
     "secondaryColor": "#E5E4E2",
     "value": 1800,
@@ -267,8 +267,8 @@
     ]
   },
   {
-    "Name": "Strongtium Bar",
-    "Description": "A solid strongtium bar. Unsurprisingly, It looks very strong.",
+    "name": "Strongtium Bar",
+    "description": "A solid strongtium bar. Unsurprisingly, It looks very strong.",
     "gatherString": "You smelt a strongtium bar.",
     "value": 2500,
     "gatherSpeed": 50,
@@ -286,8 +286,8 @@
     ]
   },
   {
-    "Name": "Sahotite Bar",
-    "Description": "A solid bar of Sahotite. It saps the heat from your hand when you touch it.",
+    "name": "Sahotite Bar",
+    "description": "A solid bar of Sahotite. It saps the heat from your hand when you touch it.",
     "gatherString": "You smelt a sahotite bar.",
     "value": 3000,
     "gatherSpeed": 70,
@@ -305,8 +305,8 @@
     ]
   },
   {
-    "Name": "Plastinium Bar",
-    "Description": "A solid bar of Plastinium. You can bend it with your bare hands, but you can't break it.",
+    "name": "Plastinium Bar",
+    "description": "A solid bar of Plastinium. You can bend it with your bare hands, but you can't break it.",
     "gatherString": "You smelt a plastinium bar.",
     "value": 5000,
     "gatherSpeed": 90,
@@ -324,8 +324,8 @@
     ]
   },
   {
-    "Name": "Queplinium Bar",
-    "Description": "A solid bar of Queplinium. It glows brightly.",
+    "name": "Queplinium Bar",
+    "description": "A solid bar of Queplinium. It glows brightly.",
     "gatherString": "You smelt a queplinium bar.",
     "value": 8000,
     "gatherSpeed": 110,
@@ -343,8 +343,8 @@
     ]
   },
   {
-    "Name": "Molten Copper Bar",
-    "Description": "The squishiest molten metal bar.",
+    "name": "Molten Copper Bar",
+    "description": "The squishiest molten metal bar.",
     "gatherString": "You smelt a copper bar.",
     "value": 50,
     "gatherSpeed": 15,
@@ -359,8 +359,8 @@
     ]
   },
   {
-    "Name": "Molten Tin Bar",
-    "Description": "A beautiful, soft, liquid metal bar.",
+    "name": "Molten Tin Bar",
+    "description": "A beautiful, soft, liquid metal bar.",
     "gatherString": "You smelt a tin bar.",
     "value": 50,
     "gatherSpeed": 15,
@@ -377,8 +377,8 @@
     ]
   },
   {
-    "Name": "Molten Zinc Bar",
-    "Description": "This would be more useful combined with another metal.",
+    "name": "Molten Zinc Bar",
+    "description": "This would be more useful combined with another metal.",
     "gatherString": "You smelt a zinc bar.",
     "secondaryColor": "#9E9EA0",
     "value": 70,
@@ -393,8 +393,8 @@
     ]
   },
   {
-    "Name": "Molten Brass Bar",
-    "Description": "A sturdy melted metal made from copper and zinc.",
+    "name": "Molten Brass Bar",
+    "description": "A sturdy melted metal made from copper and zinc.",
     "gatherString": "You smelt a brass bar.",
     "value": 90,
     "gatherSpeed": 25,
@@ -409,8 +409,8 @@
     ]
   },
   {
-    "Name": "Molten Bronze Bar",
-    "Description": "A strong melted metal made from copper and tin.",
+    "name": "Molten Bronze Bar",
+    "description": "A strong melted metal made from copper and tin.",
     "gatherString": "You smelt a bronze bar.",
     "value": 110,
     "gatherSpeed": 30,
@@ -425,8 +425,8 @@
     ]
   },
   {
-    "Name": "Molten Nickel Bar",
-    "Description": "A molten metal made from nickel ore.",
+    "name": "Molten Nickel Bar",
+    "description": "A molten metal made from nickel ore.",
     "gatherString": "You smelt a nickel bar.",
     "secondaryColor": "#A9A69B",
     "value": 150,
@@ -441,8 +441,8 @@
     ]
   },
   {
-    "Name": "Molten Silver Bar",
-    "Description": "A very shiny metal liquid.",
+    "name": "Molten Silver Bar",
+    "description": "A very shiny metal liquid.",
     "gatherString": "You smelt a silver bar.",
     "secondaryColor": "#999999",
     "value": 250,
@@ -457,8 +457,8 @@
     ]
   },
   {
-    "Name": "Molten Iron Bar",
-    "Description": "A very strong metal liquid.",
+    "name": "Molten Iron Bar",
+    "description": "A very strong metal liquid.",
     "gatherString": "You smelt an iron bar.",
     "secondaryColor": "#434341",
     "value": 190,
@@ -473,8 +473,8 @@
     ]
   },
   {
-    "Name": "Molten Lead Bar",
-    "Description": "A heavy metal liquid.",
+    "name": "Molten Lead Bar",
+    "description": "A heavy metal liquid.",
     "gatherString": "You smelt a lead bar.",
     "secondaryColor": "#C0C0C0",
     "value": 190,
@@ -489,8 +489,8 @@
     ]
   },
   {
-    "Name": "Frozen Mercury Bar",
-    "Description": "A bar of mercury, frozen solid.",
+    "name": "Frozen Mercury Bar",
+    "description": "A bar of mercury, frozen solid.",
     "gatherString": "You cool the mercury into a bar.",
     "value": 240,
     "gatherSpeed": 55,
@@ -503,8 +503,8 @@
     ]
   },
   {
-    "Name": "Molten Aluminum Bar",
-    "Description": "A lightweight metal bar soup.",
+    "name": "Molten Aluminum Bar",
+    "description": "A lightweight metal bar soup.",
     "gatherString": "You smelt an aluminum bar.",
     "value": 270,
     "gatherSpeed": 40,
@@ -519,8 +519,8 @@
     ]
   },
   {
-    "Name": "Molten Gold Bar",
-    "Description": "A bar of soon to be gold.",
+    "name": "Molten Gold Bar",
+    "description": "A bar of soon to be gold.",
     "gatherString": "You smelt a gold bar.",
     "secondaryColor": "#FFD700",
     "value": 1000,
@@ -535,8 +535,8 @@
     ]
   },
   {
-    "Name": "Molten Steel Bar",
-    "Description": "An extremely hard metal bar. Or, it will be when it hardens.",
+    "name": "Molten Steel Bar",
+    "description": "An extremely hard metal bar. Or, it will be when it hardens.",
     "gatherString": "You smelt a steel bar.",
     "secondaryColor": "#9DC6E8",
     "value": 400,
@@ -551,8 +551,8 @@
     ]
   },
   {
-    "Name": "Molten Platinum Bar",
-    "Description": "A liquid platinum bar.",
+    "name": "Molten Platinum Bar",
+    "description": "A liquid platinum bar.",
     "gatherString": "You smelt a platinum bar.",
     "secondaryColor": "#E5E4E2",
     "value": 1800,
@@ -567,8 +567,8 @@
     ]
   },
   {
-    "Name": "Molten Strongtium Bar",
-    "Description": "A melted strongtium bar. Unsurprisingly, It looks very strong, even as a liquid.",
+    "name": "Molten Strongtium Bar",
+    "description": "A melted strongtium bar. Unsurprisingly, It looks very strong, even as a liquid.",
     "gatherString": "You smelt a strongtium bar.",
     "value": 2500,
     "gatherSpeed": 50,
@@ -583,8 +583,8 @@
     ]
   },
   {
-    "Name": "Frozen Sahotite Bar",
-    "Description": "A frozen bar of Sahotite. It saps the heat from your hand when you touch it.",
+    "name": "Frozen Sahotite Bar",
+    "description": "A frozen bar of Sahotite. It saps the heat from your hand when you touch it.",
     "gatherString": "You smelt a sahotite bar.",
     "value": 3000,
     "gatherSpeed": 70,
@@ -599,8 +599,8 @@
     ]
   },
   {
-    "Name": "Molten Plastinium Bar",
-    "Description": "A molten bar of Plastinium. It looks like a glowing soup.",
+    "name": "Molten Plastinium Bar",
+    "description": "A molten bar of Plastinium. It looks like a glowing soup.",
     "gatherString": "You smelt a plastinium bar.",
     "value": 5000,
     "gatherSpeed": 90,
@@ -615,8 +615,8 @@
     ]
   },
   {
-    "Name": "Molten Queplinium Bar",
-    "Description": "A molten bar of Queplinium. The glow from the metal is almost blinding in its liquid state.",
+    "name": "Molten Queplinium Bar",
+    "description": "A molten bar of Queplinium. The glow from the metal is almost blinding in its liquid state.",
     "gatherString": "You smelt a queplinium bar.",
     "value": 8000,
     "gatherSpeed": 110,

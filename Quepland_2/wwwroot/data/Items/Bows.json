@@ -1,14 +1,14 @@
 [
   {
-    "Name": "White Pine Bow(Unstrung)",
-    "Description": "A flimsy bow with no string.",
+    "name": "White Pine Bow(Unstrung)",
+    "description": "A flimsy bow with no string.",
     "value": 10,
     "secondaryColor": "#FFE5C4",
     "icon": "UnstrungBow"
   },
   {
-    "Name": "White Pine Bow",
-    "Description": "A flimsy bow.",
+    "name": "White Pine Bow",
+    "description": "A flimsy bow.",
     "value": 20,
     "secondaryColor": "#FFE5C4",
     "enabledActions": "Archery",
@@ -26,15 +26,15 @@
     ]
   },
   {
-    "Name": "Poplar Bow(Unstrung)",
-    "Description": "A less flimsy bow with no string.",
+    "name": "Poplar Bow(Unstrung)",
+    "description": "A less flimsy bow with no string.",
     "value": 20,
     "secondaryColor": "#FFDA8A",
     "icon": "UnstrungBow"
   },
   {
-    "Name": "Poplar Bow",
-    "Description": "A less flimsy bow.",
+    "name": "Poplar Bow",
+    "description": "A less flimsy bow.",
     "value": 40,
     "secondaryColor": "#FFDA8A",
     "enabledActions": "Archery",
@@ -52,15 +52,15 @@
     ]
   },
   {
-    "Name": "Oak Bow(Unstrung)",
-    "Description": "A bow for shooting arrows with, if it had a string.",
+    "name": "Oak Bow(Unstrung)",
+    "description": "A bow for shooting arrows with, if it had a string.",
     "value": 35,
     "secondaryColor": "#FFD5B0",
     "icon": "UnstrungBow"
   },
   {
-    "Name": "Oak Bow",
-    "Description": "A bow for shooting arrows with.",
+    "name": "Oak Bow",
+    "description": "A bow for shooting arrows with.",
     "value": 70,
     "enabledActions": "Archery",
     "equipSlot": "R Hand",
@@ -78,15 +78,15 @@
     ]
   },
   {
-    "Name": "Sugar Maple Bow(Unstrung)",
-    "Description": "A sweet bow with no string.",
+    "name": "Sugar Maple Bow(Unstrung)",
+    "description": "A sweet bow with no string.",
     "value": 55,
     "secondaryColor": "#FFBD96",
     "icon": "UnstrungBow"
   },
   {
-    "Name": "Sugar Maple Bow",
-    "Description": "A sweet bow to shoot things with.",
+    "name": "Sugar Maple Bow",
+    "description": "A sweet bow to shoot things with.",
     "value": 90,
     "secondaryColor": "#FFBD96",
     "enabledActions": "Archery",
@@ -104,15 +104,15 @@
     ]
   },
   {
-    "Name": "Birch Bow(Unstrung)",
-    "Description": "A lightcolored bow with no string.",
+    "name": "Birch Bow(Unstrung)",
+    "description": "A lightcolored bow with no string.",
     "value": 85,
     "secondaryColor": "#FFF6E0",
     "icon": "UnstrungBow"
   },
   {
-    "Name": "Birch Bow",
-    "Description": "A light colored bow.",
+    "name": "Birch Bow",
+    "description": "A light colored bow.",
     "value": 110,
     "secondaryColor": "#FFF6E0",
     "enabledActions": "Archery",
@@ -130,15 +130,15 @@
     ]
   },
   {
-    "Name": "Mesquite Bow(Unstrung)",
-    "Description": "This would make a sturdy bow if it had a string.",
+    "name": "Mesquite Bow(Unstrung)",
+    "description": "This would make a sturdy bow if it had a string.",
     "value": 105,
     "secondaryColor": "#BD8F57",
     "icon": "UnstrungBow"
   },
   {
-    "Name": "Mesquite Bow",
-    "Description": "A sturdy bow.",
+    "name": "Mesquite Bow",
+    "description": "A sturdy bow.",
     "value": 150,
     "secondaryColor": "#BD8F57",
     "enabledActions": "Archery",
@@ -156,15 +156,15 @@
     ]
   },
   {
-    "Name": "Mahogany Bow(Unstrung)",
-    "Description": "An elegant but unfinished weapon.",
+    "name": "Mahogany Bow(Unstrung)",
+    "description": "An elegant but unfinished weapon.",
     "value": 280,
     "secondaryColor": "#AB5F29",
     "icon": "UnstrungBow"
   },
   {
-    "Name": "Mahogany Bow",
-    "Description": "An extravagant bow.",
+    "name": "Mahogany Bow",
+    "description": "An extravagant bow.",
     "value": 350,
     "enabledActions": "Archery",
     "equipSlot": "R Hand",
@@ -182,15 +182,15 @@
     ]
   },
   {
-    "Name": "Ironwood Bow(Unstrung)",
-    "Description": "A strong bow. If it had a string you could shoot with it.",
+    "name": "Ironwood Bow(Unstrung)",
+    "description": "A strong bow. If it had a string you could shoot with it.",
     "value": 205,
     "secondaryColor": "#9C491F",
     "icon": "UnstrungBow"
   },
   {
-    "Name": "Ironwood Bow",
-    "Description": "A strong bow made from a very strong wood.",
+    "name": "Ironwood Bow",
+    "description": "A strong bow made from a very strong wood.",
     "value": 250,
     "secondaryColor": "#9C491F",
     "enabledActions": "Archery",
@@ -208,15 +208,15 @@
     ]
   },
   {
-    "Name": "Snakewood Bow(Unstrung)",
-    "Description": "A twisted bow without a string.",
+    "name": "Snakewood Bow(Unstrung)",
+    "description": "A twisted bow without a string.",
     "value": 280,
     "secondaryColor": "#824121",
     "icon": "UnstrungBow"
   },
   {
-    "Name": "Root Bow",
-    "Description": "A bow dropped by a root dweller. It's extremely old, but made with such strong wood it still works just fine.",
+    "name": "Root Bow",
+    "description": "A bow dropped by a root dweller. It's extremely old, but made with such strong wood it still works just fine.",
     "value": 1320,
     "secondaryColor": "#824121",
     "enabledActions": "Archery",
@@ -234,8 +234,8 @@
     ]
   },
   {
-    "Name": "Snakewood Bow",
-    "Description": "A twisted bow, it's surprisingly effective.",
+    "name": "Snakewood Bow",
+    "description": "A twisted bow, it's surprisingly effective.",
     "value": 320,
     "secondaryColor": "#824121",
     "enabledActions": "Archery",
@@ -253,15 +253,15 @@
     ]
   },
   {
-    "Name": "Lignum Vitae Bow(Unstrung)",
-    "Description": "Essentially a heavy stick. You could add a string to make it into a weapon.",
+    "name": "Lignum Vitae Bow(Unstrung)",
+    "description": "Essentially a heavy stick. You could add a string to make it into a weapon.",
     "value": 390,
     "secondaryColor": "#612901",
     "icon": "UnstrungBow"
   },
   {
-    "Name": "Lignum Vitae Bow",
-    "Description": "A very heavy bow.",
+    "name": "Lignum Vitae Bow",
+    "description": "A very heavy bow.",
     "value": 450,
     "secondaryColor": "#612901",
     "enabledActions": "Archery",
@@ -279,15 +279,15 @@
     ]
   },
   {
-    "Name": "Buloke Bow(Unstrung)",
-    "Description": "A very strong piece of wood carved into a bow. It needs a string to complete it.",
+    "name": "Buloke Bow(Unstrung)",
+    "description": "A very strong piece of wood carved into a bow. It needs a string to complete it.",
     "value": 580,
     "secondaryColor": "#875B24",
     "icon": "UnstrungBow"
   },
   {
-    "Name": "Buloke Bow",
-    "Description": "A bow made of the strongest wood known to man.",
+    "name": "Buloke Bow",
+    "description": "A bow made of the strongest wood known to man.",
     "value": 650,
     "enabledActions": "Archery",
     "equipSlot": "R Hand",
@@ -305,15 +305,15 @@
     ]
   },
   {
-    "Name": "Great Tree Bow(Unstrung)",
-    "Description": "A bow fashioned from wood from the Great Tree. All it needs now is a string.",
+    "name": "Great Tree Bow(Unstrung)",
+    "description": "A bow fashioned from wood from the Great Tree. All it needs now is a string.",
     "value": 1350,
     "secondaryColor": "#9F6F4F",
     "icon": "UnstrungBow"
   },
   {
-    "Name": "Great Tree Bow",
-    "Description": "A bow fashioned from the wood of the Great Tree. It feels magical.",
+    "name": "Great Tree Bow",
+    "description": "A bow fashioned from the wood of the Great Tree. It feels magical.",
     "value": 1650,
     "enabledActions": "Archery",
     "equipSlot": "R Hand",
@@ -331,8 +331,8 @@
     ]
   },
   {
-    "Name": "Spine Shooter",
-    "Description": "A section of a cactus that can be used to shoot its spines.",
+    "name": "Spine Shooter",
+    "description": "A section of a cactus that can be used to shoot its spines.",
     "value": 5000,
     "secondaryColor": "green",
     "enabledActions": "Archery",

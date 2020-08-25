@@ -1,7 +1,7 @@
 [
   {
-    "Name": "Carquen",
-    "Description": "A pure elemental powder. It's black.",
+    "name": "Carquen",
+    "description": "A pure elemental powder. It's black.",
     "value": 10,
     "isStackable": true,
     "secondaryColor": "#595959",
@@ -11,8 +11,8 @@
     }
   },
   {
-    "Name": "Quencium",
-    "Description": "A pure elemental powder. It's white.",
+    "name": "Quencium",
+    "description": "A pure elemental powder. It's white.",
     "value": 25,
     "isStackable": true,
     "secondaryColor": "#ffffff",
@@ -22,8 +22,8 @@
     }
   },
   {
-    "Name": "Oxyquen",
-    "Description": "A pure elemental powder. It's a light blue.",
+    "name": "Oxyquen",
+    "description": "A pure elemental powder. It's a light blue.",
     "value": 50,
     "isStackable": true,
     "icon": "PowderBag",
@@ -33,8 +33,8 @@
     }
   },
   {
-    "Name": "Nitroquen",
-    "Description": "A pure elemental powder. It's dark red.",
+    "name": "Nitroquen",
+    "description": "A pure elemental powder. It's dark red.",
     "value": 80,
     "isStackable": true,
     "secondaryColor": "#a33e3b",
@@ -44,8 +44,8 @@
     }
   },
   {
-    "Name": "Siliquen",
-    "Description": "A pure elemental powder. It's gray.",
+    "name": "Siliquen",
+    "description": "A pure elemental powder. It's gray.",
     "value": 110,
     "secondaryColor": "#8c8c8c",
     "isStackable": true,
@@ -55,8 +55,8 @@
     }
   },
   {
-    "Name": "Quephorus",
-    "Description": "A pure elemental powder. It's violet.",
+    "name": "Quephorus",
+    "description": "A pure elemental powder. It's violet.",
     "value": 150,
     "isStackable": true,
     "secondaryColor": "#9a7cc4",
@@ -66,8 +66,8 @@
     }
   },
   {
-    "Name": "Quelfur",
-    "Description": "A pure elemental powder. It's yellow.",
+    "name": "Quelfur",
+    "description": "A pure elemental powder. It's yellow.",
     "value": 190,
     "isStackable": true,
     "secondaryColor": "#e6e360",
@@ -77,8 +77,8 @@
     }
   },
   {
-    "Name": "Bariquem",
-    "Description": "A pure elemental powder. It's dark blue.",
+    "name": "Bariquem",
+    "description": "A pure elemental powder. It's dark blue.",
     "value": 210,
     "isStackable": true,
     "secondaryColor": "#4572a8",
@@ -88,8 +88,8 @@
     }
   },
   {
-    "Name": "Uraniquep",
-    "Description": "A pure elemental powder. It glows green.",
+    "name": "Uraniquep",
+    "description": "A pure elemental powder. It glows green.",
     "value": 260,
     "isStackable": true,
     "secondaryColor": "#63d64f",
@@ -99,8 +99,8 @@
     }
   },
   {
-    "Name": "Queplonium",
-    "Description": "A pure elemental powder. It glows purple.",
+    "name": "Queplonium",
+    "description": "A pure elemental powder. It glows purple.",
     "value": 350,
     "isStackable": true,
     "icon": "PowderBag",
@@ -110,8 +110,8 @@
     }
   },
   {
-    "Name": "Alchemical Dust",
-    "Description": "A dull powder that is all that remains of a failed alchemy attempt.",
+    "name": "Alchemical Dust",
+    "description": "A dull powder that is all that remains of a failed alchemy attempt.",
     "value": 1,
     "isStackable": true,
     "secondaryColor": "",

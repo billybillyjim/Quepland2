@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
@@ -15,6 +15,6 @@
   
   </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4data_4items_4gems_1json__JsonSchema="items-schema.json#" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4data_4items_4armors_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4arrows_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4arrowtips_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4bars_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4bows_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4bread_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4elements_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4fishing_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4gems_1json__JsonSchema="items-schema.json#" wwwroot_4data_4items_4general_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4jerkies_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4logs_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4magic_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4necklaces_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4ores_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4questitems_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4sushi_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4weapons_1json__JsonSchema="item-schema.json#" wwwroot_4data_4items_4woodworkingitems_1json__JsonSchema="item-schema.json#" /></VisualStudio></ProjectExtensions>
 
 </Project>

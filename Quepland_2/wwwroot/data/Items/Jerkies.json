@@ -1,7 +1,7 @@
 [
   {
-    "Name": "Rabbit Jerky",
-    "Description": "Salted and dried rabbit meat.",
+    "name": "Rabbit Jerky",
+    "description": "Salted and dried rabbit meat.",
     "value": 18,
     "secondaryColor": "#e0aa6d",
     "icon": "Jerky",
@@ -21,8 +21,8 @@
     }
   },
   {
-    "Name": "Deer Jerky",
-    "Description": "Salted and dried deer meat.",
+    "name": "Deer Jerky",
+    "description": "Salted and dried deer meat.",
     "value": 25,
     "secondaryColor": "#b59a77",
     "icon": "Jerky",
@@ -42,8 +42,8 @@
     }
   },
   {
-    "Name": "Bear Jerky",
-    "Description": "Salted and dried bear meat.",
+    "name": "Bear Jerky",
+    "description": "Salted and dried bear meat.",
     "value": 70,
     "secondaryColor": "#423e3b",
     "icon": "Jerky",
@@ -63,9 +63,9 @@
     }
   },
   {
-    "Name": "Moose Jerky",
+    "name": "Moose Jerky",
     "secondaryColor": "#8a5730",
-    "Description": "Salted and dried moose meat.",
+    "description": "Salted and dried moose meat.",
     "value": 90,
     "icon": "Jerky",
     "experienceGained": "Culinary Arts:70",
@@ -84,8 +84,8 @@
     }
   },
   {
-    "Name": "Boar Jerky",
-    "Description": "Salted and dried boar meat. It's very tough.",
+    "name": "Boar Jerky",
+    "description": "Salted and dried boar meat. It's very tough.",
     "value": 50,
     "icon": "Jerky",
     "secondaryColor": "#d8b393",
@@ -105,8 +105,8 @@
     }
   },
   {
-    "Name": "Pigeon Jerky",
-    "Description": "It's not much, but it's also not very good.",
+    "name": "Pigeon Jerky",
+    "description": "It's not much, but it's also not very good.",
     "value": 15,
     "secondaryColor": "#8faba6",
     "icon": "Jerky",
@@ -126,8 +126,8 @@
     }
   },
   {
-    "Name": "Chicken Jerky",
-    "Description": "Tastes like chicken.",
+    "name": "Chicken Jerky",
+    "description": "Tastes like chicken.",
     "value": 15,
     "secondaryColor": "#f7ab3e",
     "icon": "Jerky",
@@ -147,8 +147,8 @@
     }
   },
   {
-    "Name": "Turkey Jerky",
-    "Description": "It took a lot of work-y to get this turkey jerky.",
+    "name": "Turkey Jerky",
+    "description": "It took a lot of work-y to get this turkey jerky.",
     "value": 30,
     "secondaryColor": "#e35577",
     "icon": "Jerky",
@@ -168,8 +168,8 @@
     }
   },
   {
-    "Name": "Pheasant Jerky",
-    "Description": "The jerky of a once beautiful bird.",
+    "name": "Pheasant Jerky",
+    "description": "The jerky of a once beautiful bird.",
     "value": 50,
     "secondaryColor": "#64c0da",
     "icon": "Jerky",
@@ -189,8 +189,8 @@
     }
   },
   {
-    "Name": "Bison Jerky",
-    "Description": "A big bite of bison meat.",
+    "name": "Bison Jerky",
+    "description": "A big bite of bison meat.",
     "value": 150,
     "secondaryColor": "#a95a1a",
     "icon": "Jerky",
@@ -210,8 +210,8 @@
     }
   },
   {
-    "Name": "Caiman Jerky",
-    "Description": "A bite of caiman meat.",
+    "name": "Caiman Jerky",
+    "description": "A bite of caiman meat.",
     "value": 150,
     "icon": "Jerky",
     "experienceGained": "Culinary Arts:120",
@@ -230,8 +230,8 @@
     }
   },
   {
-    "Name": "Mammoth Jerky",
-    "Description": "A massive jerky from a massive mammoth.",
+    "name": "Mammoth Jerky",
+    "description": "A massive jerky from a massive mammoth.",
     "value": 220,
     "secondaryColor": "#9e9589",
     "icon": "Jerky",

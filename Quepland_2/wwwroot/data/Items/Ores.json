@@ -1,7 +1,7 @@
 [
   {
-    "Name": "Stone Pickaxe",
-    "Description": "A pickaxe made of solid stone. It's not very effective.",
+    "name": "Stone Pickaxe",
+    "description": "A pickaxe made of solid stone. It's not very effective.",
     "value": 15,
     "enabledActions": "Mining",
     "secondaryColor": "#454545",
@@ -20,8 +20,8 @@
     }
   },
   {
-    "Name": "Bronze Pickaxe",
-    "Description": "A pickaxe made of solid bronze. It's a hair more useful than a stone one.",
+    "name": "Bronze Pickaxe",
+    "description": "A pickaxe made of solid bronze. It's a hair more useful than a stone one.",
     "value": 90,
     "enabledActions": "Mining",
     "secondaryColor": "#CD7F32",
@@ -40,8 +40,8 @@
     }
   },
   {
-    "Name": "Iron Pickaxe",
-    "Description": "A pickaxe made of solid iron. It's quite sturdy.",
+    "name": "Iron Pickaxe",
+    "description": "A pickaxe made of solid iron. It's quite sturdy.",
     "value": 180,
     "enabledActions": "Mining",
     "secondaryColor": "#434341",
@@ -60,8 +60,8 @@
     }
   },
   {
-    "Name": "Copper Ore",
-    "Description": "It's a very soft, green ore.",
+    "name": "Copper Ore",
+    "description": "It's a very soft, green ore.",
     "gatherString": "You mine some copper ore.",
     "value": 10,
     "gatherSpeed": 15,
@@ -80,8 +80,8 @@
     ]
   },
   {
-    "Name": "Tin Ore",
-    "Description": "A beautiful ore with ditetragonal dipramidal crystals.",
+    "name": "Tin Ore",
+    "description": "A beautiful ore with ditetragonal dipramidal crystals.",
     "gatherString": "You mine some tin ore.",
     "value": 10,
     "gatherSpeed": 15,
@@ -99,8 +99,8 @@
     ]
   },
   {
-    "Name": "Calamine",
-    "Description": "An ore with zinc in it.",
+    "name": "Calamine",
+    "description": "An ore with zinc in it.",
     "gatherString": "You mine some calamine.",
     "value": 8,
     "gatherSpeed": 15,
@@ -118,8 +118,8 @@
     ]
   },
   {
-    "Name": "Pentlandite",
-    "Description": "There's nickel in there.",
+    "name": "Pentlandite",
+    "description": "There's nickel in there.",
     "gatherString": "You mine some pentlandite.",
     "value": 20,
     "gatherSpeed": 20,
@@ -137,8 +137,8 @@
     ]
   },
   {
-    "Name": "Iron Ore",
-    "Description": "A rusty rock with goodies inside.",
+    "name": "Iron Ore",
+    "description": "A rusty rock with goodies inside.",
     "gatherString": "You mine some iron ore.",
     "value": 30,
     "gatherSpeed": 25,
@@ -156,8 +156,8 @@
     ]
   },
   {
-    "Name": "Coal",
-    "Description": "A black rock that tastes bad but burns good.",
+    "name": "Coal",
+    "description": "A black rock that tastes bad but burns good.",
     "value": 55,
     "requirements": [
       {
@@ -175,8 +175,8 @@
     "icon": "Coal"
   },
   {
-    "Name": "Silver Ore",
-    "Description": "A silvery rock with silver in it.",
+    "name": "Silver Ore",
+    "description": "A silvery rock with silver in it.",
     "value": 70,
     "requirements": [
       {
@@ -194,8 +194,8 @@
     "icon": "Ore"
   },
   {
-    "Name": "Galena",
-    "Description": "A heavy lead ore. Don't lick it!",
+    "name": "Galena",
+    "description": "A heavy lead ore. Don't lick it!",
     "secondaryColor": "#C0C0C0",
     "gatherString": "You mine some galena.",
     "value": 80,
@@ -213,8 +213,8 @@
     ]
   },
   {
-    "Name": "Cinnabar",
-    "Description": "An ore with mercury and sulfur in it.",
+    "name": "Cinnabar",
+    "description": "An ore with mercury and sulfur in it.",
     "gatherString": "You mine some cinnabar.",
     "value": 110,
     "gatherSpeed": 30,
@@ -231,8 +231,8 @@
     ]
   },
   {
-    "Name": "Bauxite",
-    "Description": "An aluminum ore with little pisolites in it.",
+    "name": "Bauxite",
+    "description": "An aluminum ore with little pisolites in it.",
     "gatherString": "You mine some bauxite.",
     "secondaryColor": "#F1F3F0",
     "value": 110,
@@ -250,8 +250,8 @@
     ]
   },
   {
-    "Name": "Gold Ore",
-    "Description": "It's got gold in it! Neat!",
+    "name": "Gold Ore",
+    "description": "It's got gold in it! Neat!",
     "gatherString": "You mine some gold ore.",
     "secondaryColor": "#FFD700",
     "value": 350,
@@ -269,8 +269,8 @@
     ]
   },
   {
-    "Name": "Platinum Ore",
-    "Description": "A very valuable ore with platinum in it.",
+    "name": "Platinum Ore",
+    "description": "A very valuable ore with platinum in it.",
     "gatherString": "You mine some platnium ore.",
     "secondaryColor": "#E5E4E2",
     "value": 530,
@@ -288,8 +288,8 @@
     ]
   },
   {
-    "Name": "Strongtium Ore",
-    "Description": "A powerful ore named after its main characteristic.",
+    "name": "Strongtium Ore",
+    "description": "A powerful ore named after its main characteristic.",
     "gatherString": "You mine some strongtium ore.",
     "value": 400,
     "gatherSpeed": 90,
@@ -307,8 +307,8 @@
     ]
   },
   {
-    "Name": "Sahotite Ore",
-    "Description": "An ore found deep in the underworld. It feels cold to the touch.",
+    "name": "Sahotite Ore",
+    "description": "An ore found deep in the underworld. It feels cold to the touch.",
     "gatherString": "You mine some sahotite ore.",
     "value": 630,
     "gatherSpeed": 100,
@@ -326,8 +326,8 @@
     ]
   },
   {
-    "Name": "Plastinium Ore",
-    "Description": "It's technically a metal, but it's very bendy.",
+    "name": "Plastinium Ore",
+    "description": "It's technically a metal, but it's very bendy.",
     "gatherString": "You mine some plastinium ore.",
     "value": 890,
     "gatherSpeed": 140,
@@ -345,8 +345,8 @@
     ]
   },
   {
-    "Name": "Queplinium Ore",
-    "Description": "An ore containing Queplinium. It emits a soft glow.",
+    "name": "Queplinium Ore",
+    "description": "An ore containing Queplinium. It emits a soft glow.",
     "gatherString": "You mine some queplinium ore.",
     "value": 1300,
     "gatherSpeed": 190,
