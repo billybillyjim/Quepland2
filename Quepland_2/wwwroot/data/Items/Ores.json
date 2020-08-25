@@ -69,10 +69,6 @@
     "experienceGained": "Mining:18",
     "icon": "Ore",
     "secondaryColor": "#B87333",
-    "smithingInfo": {
-      "smeltsIntoString": "Copper Bar",
-      "smeltingExperience": 12
-    },
     "requirements": [
       {
         "skill": "Mining",
@@ -92,10 +88,6 @@
     "experienceGained": "Mining:28",
     "icon": "Ore",
     "secondaryColor": "#D3D4D5",
-    "smithingInfo": {
-      "smeltsIntoString": "Tin Bar",
-      "smeltingExperience": 18
-    },
     "requirements": [
       {
         "skill": "Mining",
@@ -115,9 +107,6 @@
     "secondaryColor": "#9E9EA0",
     "experienceGained": "Mining:70",
     "icon": "Ore",
-    "smithingInfo": {
-      "smeltingExperience": 45
-    },
     "requirements": [
       {
         "skill": "Mining",
@@ -137,9 +126,6 @@
     "secondaryColor": "#A9A69B",
     "experienceGained": "Mining:90",
     "icon": "Ore",
-    "smithingInfo": {
-      "smeltingExperience": 60
-    },
     "requirements": [
       {
         "skill": "Mining",
@@ -159,9 +145,6 @@
     "secondaryColor": "#434341",
     "experienceGained": "Mining:110",
     "icon": "Ore",
-    "smithingInfo": {
-      "smeltingExperience": 80
-    },
     "requirements": [
       {
         "skill": "Mining",
@@ -219,9 +202,6 @@
     "gatherSpeed": 40,
     "experienceGained": "Mining:170",
     "icon": "Ore",
-    "smithingInfo": {
-      "smeltingExperience": 160
-    },
     "requirements": [
       {
         "skill": "Mining",
@@ -240,9 +220,6 @@
     "gatherSpeed": 30,
     "experienceGained": "Mining:220",
     "icon": "Ore",
-    "smithingInfo": {
-      "smeltingExperience": 90
-    },
     "requirements": [
       {
         "skill": "Mining",
@@ -262,9 +239,6 @@
     "gatherSpeed": 40,
     "experienceGained": "Mining:130",
     "icon": "Ore",
-    "smithingInfo": {
-      "smeltingExperience": 110
-    },
     "requirements": [
       {
         "skill": "Mining",
@@ -284,9 +258,6 @@
     "gatherSpeed": 50,
     "experienceGained": "Mining:150",
     "icon": "Ore",
-    "smithingInfo": {
-      "smeltingExperience": 180
-    },
     "requirements": [
       {
         "skill": "Mining",
@@ -306,9 +277,6 @@
     "gatherSpeed": 70,
     "experienceGained": "Mining:250",
     "icon": "Ore",
-    "smithingInfo": {
-      "smeltingExperience": 280
-    },
     "requirements": [
       {
         "skill": "Mining",
@@ -328,9 +296,6 @@
     "secondaryColor": "#AF7979",
     "experienceGained": "Mining:550",
     "icon": "Ore",
-    "smithingInfo": {
-      "smeltingExperience": 500
-    },
     "requirements": [
       {
         "skill": "Mining",
@@ -350,9 +315,6 @@
     "experienceGained": "Mining:850",
     "secondaryColor": "#C3D3F3",
     "icon": "Ore",
-    "smithingInfo": {
-      "smeltingExperience": 600
-    },
     "requirements": [
       {
         "skill": "Mining",
@@ -372,9 +334,6 @@
     "experienceGained": "Mining:990",
     "secondaryColor": "#718A94",
     "icon": "Ore",
-    "smithingInfo": {
-      "smeltingExperience": 800
-    },
     "requirements": [
       {
         "skill": "Mining",
@@ -394,9 +353,6 @@
     "experienceGained": "Mining:2000",
     "secondaryColor": "#B787DC",
     "icon": "Ore",
-    "smithingInfo": {
-      "smeltingExperience": 1200
-    },
     "requirements": [
       {
         "skill": "Mining",

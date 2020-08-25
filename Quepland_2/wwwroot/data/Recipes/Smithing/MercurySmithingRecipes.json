@@ -4,6 +4,13 @@
     "ingredients": [
       {
         "itemName": "Bucket of Mercury"
+      },
+      {
+        "itemName": "Ice",
+        "amount": 3
+      },
+      {
+        "itemName": "Frost Seed"
       }
     ],
     "experienceGained": "Smithing:125",
@@ -19,13 +26,6 @@
     "ingredients": [
       {
         "itemName": "Frozen Mercury Bar"
-      },
-      {
-        "itemName": "Ice",
-        "amount": 3
-      },
-      {
-        "itemName": "Frost Seed"
       }
     ],
     "experienceGained": "Smithing:125",
@@ -41,13 +41,6 @@
     "ingredients": [
       {
         "itemName": "Frozen Mercury Bar"
-      },
-      {
-        "itemName": "Ice",
-        "amount": 3
-      },
-      {
-        "itemName": "Frost Seed"
       }
     ],
     "experienceGained": "Smithing:125",
@@ -63,13 +56,6 @@
     "ingredients": [
       {
         "itemName": "Frozen Mercury Bar"
-      },
-      {
-        "itemName": "Ice",
-        "amount": 3
-      },
-      {
-        "itemName": "Frost Seed"
       }
     ],
     "experienceGained": "Smithing:125",
@@ -85,13 +71,6 @@
     "ingredients": [
       {
         "itemName": "Frozen Mercury Bar"
-      },
-      {
-        "itemName": "Ice",
-        "amount": 3
-      },
-      {
-        "itemName": "Frost Seed"
       }
     ],
     "experienceGained": "Smithing:125",

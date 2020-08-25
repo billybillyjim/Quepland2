@@ -129,10 +129,11 @@ public class ItemManager
         SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/IronSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/SilverSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/LeadSmithingRecipes.json"));
-        //SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/MercurySmithingRecipes.json"));
+        SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/MercurySmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/NickelSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/PlatinumSmithingRecipes.json"));
-        SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/SteelSmithingRecipes.json"));
+        SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/SteelSmithingRecipes.json")); 
+        SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/SahotiteSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/TinSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/ZincSmithingRecipes.json"));
     }
@@ -251,7 +252,7 @@ public class ItemManager
 
         foreach (GameItem i in Items)
         {
-            if (i.AlchemyInfo != null && i.SmithingInfo != null)
+            if (i.AlchemyInfo != null)
             {
                 if(i.AlchemyInfo.QueplarValue == totalValue)
                 {

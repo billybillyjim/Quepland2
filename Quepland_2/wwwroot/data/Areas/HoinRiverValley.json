@@ -183,6 +183,13 @@
 
           }
         ]
+      },
+      {
+        "name": "Ricechild Smithy",
+        "buttonText": "Big Smithy",
+        "url": "BigSmithy",
+        "description": "The smithy here is quite large. It can handle a good number of stronger metals, but the heat is too much for the weakest metals.",
+        "hasSmithy": true
       }
     ],
     "npcs": [

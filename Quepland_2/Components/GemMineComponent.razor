@@ -1,5 +1,77 @@
-﻿<h3>GemMineComponent</h3>
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (mineType == "")
+{
+    <div>
+        <button class="btn btn-primary" @onclick="@(() => EnterMine("Entrance"))">Enter Mine Entrance</button>
+    </div>
+    <div>
+        <button class="btn btn-primary" @onclick="@(() => EnterMine("Middle"))">Enter Main Mine</button>
+    </div>
+    <div>
+        <button class="btn btn-primary" @onclick="@(() => EnterMine("Depths"))">Enter Mine Depths</button>
+    </div>
+}
+else if (mineType == "Entrance")
+{
+    <p>The walls of the mine are still full of gems, but they've clearly been picked over for the rarest gems. You won't likely find a rare gem here, but you also won't collapse the mine here either.</p>
+}
+else if (mineType == "Middle")
+{
+    <p>The middle of the mine still has plenty of all kinds of gemstones, but there is a risk of collapse here.</p>
+}
+else if (mineType == "Depths")
+{
+    <p>The deepest part of the mine is almost untouched. You can find all sorts of rare gems here, but be careful! Mine too much and it will collapse!</p>
+}
 
 @code {
 
+    private List<GameItem> items = new List<GameItem>();
+    private string gatherText = "";
+    private string tooltip = "";
+    private string beginText = "You start mining the walls of the mine.";
+    private string mineType = "";
+    private Random rand = new Random();
+    private DropTable CurrentTable;
+
+    public void EnterMine(string loc)
+    {
+        mineType = loc;
+        GameState.UpdateState();
+    }
+    public void StartMining(string depth)
+    {
+        if (depth == null)
+        {
+            Console.WriteLine("Item was null");
+            GameState.CurrentGatherItem = null;
+            GameState.UpdateState();
+            return;
+        }
+        if (beginText != "")
+        {
+            MessageManager.AddMessage(beginText);
+        }
+        CurrentTable = ItemManager.Instance.GetMinigameDropTable(depth).DropTable;
+        GameState.CurrentGatherItem = CurrentTable.GetDrop().Item;
+        GameState.TicksToNextAction = GameState.GetTicksToNextGather(GameState.CurrentGatherItem, 50).ToGaussianRandom();
+        GameState.UpdateState();
+    }
+    public int GetMiningSpeed()
+    {
+        return 10;
+    }
+    protected override void OnInitialized()
+    {
+        mineType = "";
+        GameState.StateChanged += OnGameStateChanged;
+    }
+
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
 }

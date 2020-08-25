@@ -8,9 +8,6 @@
     "experienceGained": "Smithing:15",
     "secondaryColor": "#B87333",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 15
-    },
     "alchemyInfo": {
       "queplarValue": 5
     },
@@ -32,9 +29,6 @@
     "requiredAction": "Smithing",
     "secondaryColor": "#D3D4D5",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 20
-    },
     "alchemyInfo": {
       "queplarValue": 15
     },
@@ -54,9 +48,6 @@
     "experienceGained": "Smithing:30",
     "secondaryColor": "#9E9EA0",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 30
-    },
     "alchemyInfo": {
       "queplarValue": 25
     },
@@ -76,9 +67,6 @@
     "gatherSpeed": 25,
     "experienceGained": "Smithing:50",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 50
-    },
     "alchemyInfo": {
       "queplarValue": 35
     },
@@ -98,9 +86,6 @@
     "gatherSpeed": 30,
     "experienceGained": "Smithing:80",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 80
-    },
     "alchemyInfo": {
       "queplarValue": 45
     },
@@ -120,9 +105,6 @@
     "gatherSpeed": 35,
     "experienceGained": "Smithing:130",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 130
-    },
     "alchemyInfo": {
       "queplarValue": 65
     },
@@ -142,9 +124,6 @@
     "gatherSpeed": 40,
     "experienceGained": "Smithing:80",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 80
-    },
     "alchemyInfo": {
       "queplarValue": 90
     },
@@ -164,9 +143,6 @@
     "gatherSpeed": 45,
     "experienceGained": "Smithing:180",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 180
-    },
     "alchemyInfo": {
       "queplarValue": 55
     },
@@ -186,9 +162,6 @@
     "gatherSpeed": 55,
     "experienceGained": "Smithing:220",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 220
-    },
     "alchemyInfo": {
       "queplarValue": 75
     },
@@ -207,9 +180,6 @@
     "gatherSpeed": 55,
     "experienceGained": "Smithing:100",
     "icon": "Bucket",
-    "smithingInfo": {
-      "smithingExperience": 100
-    },
     "alchemyInfo": {
       "queplarValue": 85
     },
@@ -229,9 +199,6 @@
     "gatherSpeed": 40,
     "experienceGained": "Smithing:180",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 180
-    },
     "alchemyInfo": {
       "queplarValue": 105
     },
@@ -251,9 +218,6 @@
     "gatherSpeed": 45,
     "experienceGained": "Smithing:700",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 700
-    },
     "alchemyInfo": {
       "queplarValue": 125
     },
@@ -273,9 +237,6 @@
     "gatherSpeed": 50,
     "experienceGained": "Smithing:100",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 100
-    },
     "alchemyInfo": {
       "queplarValue": 115
     },
@@ -295,9 +256,6 @@
     "gatherSpeed": 50,
     "experienceGained": "Smithing:950",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 950
-    },
     "alchemyInfo": {
       "queplarValue": 135
     },
@@ -317,9 +275,6 @@
     "experienceGained": "Smithing:1000",
     "secondaryColor": "#AF7979",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 1000
-    },
     "alchemyInfo": {
       "queplarValue": 155
     },
@@ -339,9 +294,6 @@
     "experienceGained": "Smithing:1200",
     "secondaryColor": "#C3D3F3",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 1200
-    },
     "alchemyInfo": {
       "queplarValue": 175
     },
@@ -361,9 +313,6 @@
     "experienceGained": "Smithing:1600",
     "secondaryColor": "#718A94",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 1600
-    },
     "alchemyInfo": {
       "queplarValue": 195
     },
@@ -383,9 +332,6 @@
     "experienceGained": "Smithing:2400",
     "secondaryColor": "#B787DC",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 2400
-    },
     "alchemyInfo": {
       "queplarValue": 205
     },
@@ -405,9 +351,6 @@
     "experienceGained": "Smithing:15",
     "secondaryColor": "#B87333",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 15
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -426,9 +369,6 @@
     "experienceGained": "Smithing:18",
     "requiredAction": "Smithing",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 20
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -445,9 +385,6 @@
     "gatherSpeed": 20,
     "experienceGained": "Smithing:30",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 30
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -464,9 +401,6 @@
     "experienceGained": "Smithing:50",
     "secondaryColor": "#B5A642",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 50
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -483,9 +417,6 @@
     "secondaryColor": "#CD7F32",
     "experienceGained": "Smithing:80",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 80
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -502,9 +433,6 @@
     "gatherSpeed": 35,
     "experienceGained": "Smithing:130",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 130
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -521,9 +449,6 @@
     "gatherSpeed": 40,
     "experienceGained": "Smithing:80",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 80
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -540,9 +465,6 @@
     "gatherSpeed": 45,
     "experienceGained": "Smithing:180",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 180
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -559,9 +481,6 @@
     "gatherSpeed": 55,
     "experienceGained": "Smithing:220",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 220
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -570,7 +489,7 @@
     ]
   },
   {
-    "Name": "Frozen Bar of Mercury",
+    "Name": "Frozen Mercury Bar",
     "Description": "A bar of mercury, frozen solid.",
     "gatherString": "You cool the mercury into a bar.",
     "value": 240,
@@ -592,9 +511,6 @@
     "experienceGained": "Smithing:180",
     "secondaryColor": "#F1F3F0",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 180
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -611,9 +527,6 @@
     "gatherSpeed": 45,
     "experienceGained": "Smithing:700",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 700
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -630,9 +543,6 @@
     "gatherSpeed": 50,
     "experienceGained": "Smithing:100",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 100
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -649,9 +559,6 @@
     "gatherSpeed": 50,
     "experienceGained": "Smithing:950",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 950
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -668,9 +575,6 @@
     "experienceGained": "Smithing:1000",
     "secondaryColor": "#AF7979",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 1000
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -687,9 +591,6 @@
     "experienceGained": "Smithing:1200",
     "secondaryColor": "#C3D3F3",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 1200
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -706,9 +607,6 @@
     "experienceGained": "Smithing:1600",
     "secondaryColor": "#718A94",
     "icon": "Bar",
-    "smithingInfo": {
-      "smithingExperience": 1600
-    },
     "requirements": [
       {
         "skill": "Smithing",
@@ -725,9 +623,6 @@
     "experienceGained": "Smithing:2400",
     "icon": "Bar",
     "secondaryColor": "#B787DC",
-    "smithingInfo": {
-      "smithingExperience": 2400
-    },
     "requirements": [
       {
         "skill": "Smithing",

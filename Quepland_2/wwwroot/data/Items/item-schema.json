@@ -1,0 +1,403 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for my JSON file format",
+
+  "type": "object",
+
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The items's name. Defaults to Unset Name."
+    },
+    "description": {
+      "type": "string",
+      "description": "The item's description. Defaults to Unset Description."
+    },
+    "requirements": {
+      "type": "array",
+      "description": "The requirements to use this item.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "skill": {
+            "type": "string",
+            "description": "The required skill. Goes with SkillLevel or defaults to 0."
+          },
+          "skillLevel": {
+            "type": "integer",
+            "description": "The skill level required. Goes with skill."
+          },
+          "item": {
+            "type": "string",
+            "description": "The name of the item required. Needs an itemAmount or defaults to 0."
+          },
+          "itemAmount": {
+            "type": "integer",
+            "description": "The amount of item required. Defaults to 0."
+          },
+          "action": {
+            "type": "string",
+            "description": "The action required. Actions are enabled from items' ActionEnabled attribute."
+          },
+          "location": {
+            "type": "string",
+            "description": "The location requirement. Uses GameState.Location as a check."
+          },
+          "quest": {
+            "type": "string",
+            "description": "The name of the quest required. Goes with minimumQuestProgress and maximumQuestProgress, which default to 0 and int.MaxValue respectively."
+          },
+          "areaUnlocked": {
+            "type": "string",
+            "description": "The area that must be unlocked. If RequireAreaLocked is set to true, then it defines the area that must be locked instead."
+          },
+          "lockedFollower": {
+            "type": "string",
+            "description": "The name of the follower that must be locked."
+          },
+          "requireAreaLocked": {
+            "type": "boolean",
+            "description": "If set to true, this changes areaUnlocked to check for the opposite, if the area is locked."
+          },
+          "minimumQuestProgress": {
+            "type": "integer",
+            "description": "The minimum progress that the quest must be. Defaults to 0."
+          },
+          "maximumQuestProgress": {
+            "type": "integer",
+            "description": "The maximum progress that the quest must be. Defaults to int.maxValue."
+          }
+        }
+      }
+    },
+    "value": {
+      "type": "integer",
+      "description": "The item's value. Defaults to 0. Usually refers to coins, but it can be any currency in a shop."
+    },
+    "gatherSpeed": {
+      "type": "integer",
+      "description": "The speed in game ticks for the item to be gathered. Defaults to 10."
+    },
+    "id": {
+      "type": "integer",
+      "description": "This value is set automatically when items are loaded. Do not set manually in json."
+    },
+    "gatherSpeedBonus": {
+      "type": "number",
+      "description": "The percent decrease in game ticks that this item provides for the skills it enables."
+    },
+    "experienceGainBonus": {
+      "type": "number",
+      "description": "The percent bonus to experience gain in the skill set in experienceBonusSkill."
+    },
+    "experienceBonusSkill": {
+      "type": "string",
+      "description": "The skill this item applies experienceGainBonus to."
+    },
+    "experienceGained": {
+      "type": "string",
+      "description": "The experience gained by gathering this skill. Format is Skill:Amount"
+    },
+    "openCraftingMenuText": {
+      "type": "string",
+      "description": "Special text for a button that will take the player to the crafting menu."
+    },
+    "category": {
+      "type": "string",
+      "description": "This is set on game load and should not be set manually."
+    },
+    "enabledActions": {
+      "type": "string",
+      "description": "All the actions this item enables. Format doesn't matter, all checks use the string.Contains function."
+    },
+    "gatherString": {
+      "type": "string",
+      "description": "The string put in a message to the player when the item is gathered."
+    },
+    "icon": {
+      "type": "string",
+      "description": "The item's image in game. Defaults to Unset."
+    },
+    "equipSlot": {
+      "type": "string",
+      "description": "The slot this item can be equipped to. Defaults to None."
+    },
+    "primaryColor": {
+      "type": "string",
+      "description": "This is set per object group on load. Do not set manually."
+    },
+    "secondaryColor": {
+      "type": "string",
+      "description": "The color for the top left of the item icon. Defaults to lightgray. Can be any html color or hex value with #."
+    },
+    "parameter": {
+      "type": "string",
+      "description": "The parameter used for objects with the same name. Used in the uniqueID to make items unique."
+    },
+    "isStackable": {
+      "type": "boolean",
+      "description": "Sets the item to stackable. Defaults to false."
+    },
+    "isEquipped": {
+      "type": "boolean",
+      "description": "Don't set in json."
+    },
+    "isSellable": {
+      "type": "boolean",
+      "description": "Makes items sellable. Defaults to true, unless it's a questItem."
+    },
+    "rerender": {
+      "type": "boolean",
+      "description": "Used in rendering. Don't set in json."
+    },
+    "armorInfo": {
+      "type": "object",
+      "description": "The armor data of the item.",
+      "properties": {
+        "damage": {
+          "type": "integer",
+          "description": "The added damage of the item when worn."
+        },
+        "armorBonus": {
+          "type": "integer",
+          "description": "The added armor bonus of the item when worn."
+        },
+        "wearRequirements": {
+          "type": "array",
+          "description": "The requirements to wear this item.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "skill": {
+                "type": "string",
+                "description": "The required skill. Goes with SkillLevel or defaults to 0."
+              },
+              "skillLevel": {
+                "type": "integer",
+                "description": "The skill level required. Goes with skill."
+              },
+              "item": {
+                "type": "string",
+                "description": "The name of the item required. Needs an itemAmount or defaults to 0."
+              },
+              "itemAmount": {
+                "type": "integer",
+                "description": "The amount of item required. Defaults to 0."
+              },
+              "action": {
+                "type": "string",
+                "description": "The action required. Actions are enabled from items' ActionEnabled attribute."
+              },
+              "location": {
+                "type": "string",
+                "description": "The location requirement. Uses GameState.Location as a check."
+              },
+              "quest": {
+                "type": "string",
+                "description": "The name of the quest required. Goes with minimumQuestProgress and maximumQuestProgress, which default to 0 and int.MaxValue respectively."
+              },
+              "areaUnlocked": {
+                "type": "string",
+                "description": "The area that must be unlocked. If RequireAreaLocked is set to true, then it defines the area that must be locked instead."
+              },
+              "lockedFollower": {
+                "type": "string",
+                "description": "The name of the follower that must be locked."
+              },
+              "requireAreaLocked": {
+                "type": "boolean",
+                "description": "If set to true, this changes areaUnlocked to check for the opposite, if the area is locked."
+              },
+              "minimumQuestProgress": {
+                "type": "integer",
+                "description": "The minimum progress that the quest must be. Defaults to 0."
+              },
+              "maximumQuestProgress": {
+                "type": "integer",
+                "description": "The maximum progress that the quest must be. Defaults to int.maxValue."
+              }
+            }
+          }
+        },
+        "statusEffectData": {
+          "type": "object",
+          "description": "The status effect this armor can cause.",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "The name of the effect. Must be set up in the BattleManager to function properly."
+            },
+            "speed": {
+              "type": "integer",
+              "description": "The number of game ticks between procs of the effect. For example, poison may have a speed of 5 and hurt the opponent once every 5 game ticks."
+            },
+            "duration": {
+              "type": "integer",
+              "description": "The number of procs before the effect wears off. An effect with a duration of 10 and speed of 2 will last 20 total game ticks."
+            },
+            "message": {
+              "type": "string",
+              "description": "The message the player sees when the effect procs."
+            },
+            "procOdds": {
+              "type": "number",
+              "minimum": 0.001,
+              "maximum": 0.999,
+              "description": "The odds on being hit that the effect with occur. Range of 0.001 to 0.999."
+            },
+            "power": {
+              "type": "integer",
+              "description": "The strength of the effect. Some effects don't use Power, others do. Depends on the effect."
+            },
+            "selfInflicted": {
+              "type": "boolean",
+              "description": "Determines whether the effect happens to the user or the opponent. Defaults to false (Opponent)."
+            }
+          }
+        }
+      }
+    },
+    "weaponInfo": {
+      "type": "object",
+      "description": "The weapon data of the item.",
+      "properties": {
+        "attackSpeed": {
+          "type": "integer",
+          "description": "The speed in gameticks of the weapon."
+        },
+        "isArrow": {
+          "type": "boolean",
+          "description": "Whether or not the item is an arrow."
+        },
+        "damage": {
+          "type": "integer",
+          "description": "The added damage of the item when worn."
+        },
+        "armorBonus": {
+          "type": "integer",
+          "description": "The added armor bonus of the item when worn."
+        },
+        "wearRequirements": {
+          "type": "array",
+          "description": "The requirements to wear this item.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "skill": {
+                "type": "string",
+                "description": "The required skill. Goes with SkillLevel or defaults to 0."
+              },
+              "skillLevel": {
+                "type": "integer",
+                "description": "The skill level required. Goes with skill."
+              },
+              "item": {
+                "type": "string",
+                "description": "The name of the item required. Needs an itemAmount or defaults to 0."
+              },
+              "itemAmount": {
+                "type": "integer",
+                "description": "The amount of item required. Defaults to 0."
+              },
+              "action": {
+                "type": "string",
+                "description": "The action required. Actions are enabled from items' ActionEnabled attribute."
+              },
+              "location": {
+                "type": "string",
+                "description": "The location requirement. Uses GameState.Location as a check."
+              },
+              "quest": {
+                "type": "string",
+                "description": "The name of the quest required. Goes with minimumQuestProgress and maximumQuestProgress, which default to 0 and int.MaxValue respectively."
+              },
+              "areaUnlocked": {
+                "type": "string",
+                "description": "The area that must be unlocked. If RequireAreaLocked is set to true, then it defines the area that must be locked instead."
+              },
+              "lockedFollower": {
+                "type": "string",
+                "description": "The name of the follower that must be locked."
+              },
+              "requireAreaLocked": {
+                "type": "boolean",
+                "description": "If set to true, this changes areaUnlocked to check for the opposite, if the area is locked."
+              },
+              "minimumQuestProgress": {
+                "type": "integer",
+                "description": "The minimum progress that the quest must be. Defaults to 0."
+              },
+              "maximumQuestProgress": {
+                "type": "integer",
+                "description": "The maximum progress that the quest must be. Defaults to int.maxValue."
+              }
+            }
+          }
+        },
+        "statusEffectData": {
+          "type": "object",
+          "description": "The status effect this armor can cause.",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "The name of the effect. Must be set up in the BattleManager to function properly."
+            },
+            "speed": {
+              "type": "integer",
+              "description": "The number of game ticks between procs of the effect. For example, poison may have a speed of 5 and hurt the opponent once every 5 game ticks."
+            },
+            "duration": {
+              "type": "integer",
+              "description": "The number of procs before the effect wears off. An effect with a duration of 10 and speed of 2 will last 20 total game ticks."
+            },
+            "message": {
+              "type": "string",
+              "description": "The message the player sees when the effect procs."
+            },
+            "procOdds": {
+              "type": "number",
+              "minimum": 0.001,
+              "maximum": 0.999,
+              "description": "The odds on being hit that the effect with occur. Range of 0.001 to 0.999."
+            },
+            "power": {
+              "type": "integer",
+              "description": "The strength of the effect. Some effects don't use Power, others do. Depends on the effect."
+            },
+            "selfInflicted": {
+              "type": "boolean",
+              "description": "Determines whether the effect happens to the user or the opponent. Defaults to false (Opponent)."
+            }
+          },
+        }
+,        
+          "alchemyInfo": {
+            "type": "object",
+            "description": "The alchemy data of the item.",
+            "properties": {
+
+            }
+          },
+          "foodInfo": {
+            "type": "object",
+            "description": "The food data of the item.",
+            "properties": {
+
+            }
+          },
+          "TrapInfo": {
+            "type": "object",
+            "description": "The trap data of the item.",
+            "properties": {
+
+            }
+          },
+          "tanningInfo": {
+            "type": "object",
+            "description": "The tanning data of the item.",
+            "properties": {
+
+            }
+          }
+        }
+      }

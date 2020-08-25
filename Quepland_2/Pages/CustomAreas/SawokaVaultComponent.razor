@@ -59,8 +59,24 @@
     }
     private void UnlockSafe()
     {
+        Drop d = new Drop();
         IsSearching = false;
-        Drop d = ItemManager.Instance.GetMinigameDropTable("Sawoka Vault").DropTable.GetDrop();
+        if(Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName("Small Red Library Key"), 1) == 1)
+        {
+            d = ItemManager.Instance.GetMinigameDropTable("Sawoka Vault Red").DropTable.GetDrop();
+        }
+        else if (Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName("Small Orange Library Key"), 1) == 1)
+        {
+            d = ItemManager.Instance.GetMinigameDropTable("Sawoka Vault Orange").DropTable.GetDrop();
+        }
+        else if (Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName("Small Green Library Key"), 1) == 1)
+        {
+            d = ItemManager.Instance.GetMinigameDropTable("Sawoka Vault Green").DropTable.GetDrop();
+        }
+        else
+        {
+            return;
+        }
         Player.Instance.Inventory.AddDrop(d);
         MessageManager.AddMessage("You insert the key into the safe and it disolves. You open the door to find " + d.ItemName);
 

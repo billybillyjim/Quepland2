@@ -105,7 +105,7 @@ else
         Metals.Clear();
         foreach (KeyValuePair<GameItem, int> item in Player.Instance.Inventory.GetItems())
         {
-            if (item.Key.SmithingInfo != null)
+            if (item.Key.Category == "Bars")
             {
                 Metals.Add(item.Key.Name);
             }
@@ -116,7 +116,7 @@ else
         Elements.Clear();
         foreach (KeyValuePair<GameItem, int> item in Player.Instance.Inventory.GetItems())
         {
-            if (item.Key.AlchemyInfo != null && item.Key.SmithingInfo == null)
+            if (item.Key.AlchemyInfo != null && item.Key.Category != "Bars")
             {
                 Elements.Add(item.Key.Name);
             }

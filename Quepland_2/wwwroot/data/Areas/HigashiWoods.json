@@ -29,10 +29,16 @@
       "dropTable": {
         "drops": [
           {
-            "itemName": "Rabbit"
+            "itemName": "Rabbit",
+            "weight": 15
           },
           {
-            "itemName": "Pigeon"
+            "itemName": "Pigeon",
+            "weight": 10
+          },
+          {
+            "itemName": "Wild Boar",
+            "weight": 5
           }
         ]
       }
@@ -64,17 +70,23 @@
         "drops": [
           {
             "itemName": "Rabbit",
-            "weight": 10
+            "weight": 15
           },
           {
             "itemName": "Deer",
+            "weight": 10
+          },
+          {
+            "itemName": "Turkey",
+            "weight": 15
+          },
+          {
+            "itemName": "Pigeon",
+            "weight": 15
+          },
+          {
+            "itemName": "Wild Boar",
             "weight": 5
-          },
-          {
-            "itemName": "Turkey"
-          },
-          {
-            "itemName": "Pigeon"
           }
         ]
       }
@@ -156,6 +168,10 @@
           },
           {
             "itemName": "Pheasant",
+            "weight": 5
+          },
+          {
+            "itemName": "Wild Boar",
             "weight": 5
           }
         ]

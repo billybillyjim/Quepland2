@@ -434,6 +434,10 @@ public class BattleManager
         {
             return new StunEffect(data);
         }
+        else if(data.Name == "Freeze")
+        {
+            return new FreezeEffect(data);
+        }
         else if(data.Name == "Hypnotize")
         {
             return new HypnotizeEffect(data);

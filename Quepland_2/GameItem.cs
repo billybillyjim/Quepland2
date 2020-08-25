@@ -45,7 +45,6 @@ public class GameItem
 	public string ExperienceBonusSkill { get; set; }
 	public ArmorInfo ArmorInfo { get; set; }
 	public WeaponInfo WeaponInfo { get; set; }
-	public SmithingInfo SmithingInfo { get; set; }
 	public AlchemyInfo AlchemyInfo { get; set; }
 	public FoodInfo FoodInfo { get; set; }
 	public TrapInfo TrapInfo { get; set; }
@@ -268,7 +267,6 @@ public class GameItem
 		copy.ExperienceBonusSkill = ExperienceBonusSkill;
 		copy.ArmorInfo = ArmorInfo;
 		copy.WeaponInfo = WeaponInfo;
-		copy.SmithingInfo = SmithingInfo;
 		copy.AlchemyInfo = AlchemyInfo;
 		copy.FoodInfo = FoodInfo;
 		copy.TrapInfo = TrapInfo;

@@ -124,7 +124,8 @@
       "Sahota Ice Fields",
       "Sahota Caverns",
       "Sahota Clearing",
-      "Sahota Dungeon"
+      "Sahota Dungeon",
+      "Sahota Castle"
     ]
   },
   {
@@ -139,7 +140,8 @@
   {
     "name": "Ufagari Islands",
     "areaNames": [
-      "South Ufagari Shore"
+      "South Ufagari Shore",
+      "Ufagari Village"
     ]
   }
 ]

@@ -31,15 +31,20 @@ public static class SmithingManager
                     int amtToWithdraw = Player.Instance.CurrentFollower.InventorySize / CurrentSmeltingRecipe.GetNumberOfIngredients();
                     foreach (Ingredient i in CurrentSmeltingRecipe.Ingredients)
                     {
-                        int actualAmt = Math.Min(amtToWithdraw, Bank.Instance.Inventory.GetNumberOfItem(i.Item));
+                        int actualAmt = Math.Min(amtToWithdraw * i.Amount, Bank.Instance.Inventory.GetNumberOfItem(i.Item)); 
                         if (actualAmt == 0)
                         {
-
                             return false;
                         }
-                        Bank.Instance.Inventory.RemoveItems(i.Item, actualAmt);
-                        Player.Instance.CurrentFollower.Inventory.AddMultipleOfItem(i.Item, actualAmt);
-                        Player.Instance.CurrentFollower.TicksToNextAction = Player.Instance.CurrentFollower.AutoCollectSpeed;
+                        if(Bank.Instance.Inventory.RemoveItems(i.Item, actualAmt) == actualAmt)
+                        {
+                            Player.Instance.CurrentFollower.Inventory.AddMultipleOfItem(i.Item, actualAmt);
+                            Player.Instance.CurrentFollower.TicksToNextAction = Player.Instance.CurrentFollower.AutoCollectSpeed;
+                        }
+                        else
+                        {
+                            return false;
+                        }
                     }
                     MessageManager.AddMessage(Player.Instance.CurrentFollower.Name + " goes to the bank and gathers the resources to smith.");
                     SmithingStage++;

@@ -106,14 +106,15 @@
           },
           "consumeRequiredItems": {
             "type": "boolean",
-            "description": "If true, this will remove the required items from the player's inventory after using the dialogue option."
+            "description": "If true this will remove the required items from the player inventory after using the dialogue option."
           },
           "parameter": {
             "type": "string",
             "description": "Used as the parameter when a dialogue responseText is one of the specific ones that fires a method from the NPCManager."
           }
         }
-        
+
       }
-      }
+    }
+  }
 }

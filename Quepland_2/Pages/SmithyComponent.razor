@@ -1,5 +1,4 @@
-﻿@page "/World/Smithy/{Location}"
-@inject GameState GameState
+﻿@inject GameState GameState
 @using Quepland_2.Components
 @implements IDisposable
 
@@ -7,8 +6,8 @@
 {
     <h3>Smithy</h3>
 
-    <CustomDropdownComponent BoxText="Select an Ore or Bar" EmptyText="You don't have any ores or bars." @bind-Value="Source" DropdownItems="@GetSmeltables()"></CustomDropdownComponent>
-    <CustomDropdownComponent BoxText="Select a Product" EmptyText="Please select a source." @bind-Value="Product" DropdownItems="@GetSmithables()"></CustomDropdownComponent>
+    <CustomDropdownComponent BoxText="Select an Ore or Bar" EmptyText="You don't have any ores or bars." MinWidth="300" @bind-Value="Source" DropdownItems="@GetSmeltables()"></CustomDropdownComponent>
+    <CustomDropdownComponent BoxText="Select a Product" EmptyText="Please select a source." MinWidth="300" @bind-Value="Product" DropdownItems="@GetSmithables()"></CustomDropdownComponent>
 
 
     <br />
@@ -22,8 +21,28 @@
         }
         else
         {
-            <button class="btn btn-primary" @onclick="@(() => Smith())">Smith @Product</button>
+            @if (Product != null && ItemManager.Instance.GetSmithingRecipeByOutput(Product) != null)
+            {
+                if (ItemManager.Instance.GetSmithingRecipeByOutput(Product).CanCreate() && ItemManager.Instance.GetSmithingRecipeByIngredients(Source).CanCreate())
+                {
+                    <button class="btn btn-primary" @onclick="@(() => Smith())">Smith @Product</button>
+                }
+                else if (ItemManager.Instance.GetSmithingRecipeByIngredients(Source).CanCreate())
+                {
+                    <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, ItemManager.Instance.GetSmithingRecipeByOutput(Product).GetRequirementTooltip())))"
+                            @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                        Smith @Product
+                    </button>
+                }
+                else
+                {
+                    <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, ItemManager.Instance.GetSmithingRecipeByIngredients(Source).GetMissingIngredients())))"
+                            @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                        Smith @Product
+                    </button>
+                }
 
+            }
         }
     }
     <br />
@@ -54,6 +73,7 @@
     int amount = 1;
     private List<Recipe> smeltables = new List<Recipe>();
     private List<Recipe> smithables = new List<Recipe>();
+    private Smithy thisSmithy;
 
     public List<string> GetSmithables()
     {
@@ -103,11 +123,11 @@
     }
     private string GetProgress()
     {
-        if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
+        if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Smithing")
         {
             if (SmithingManager.SmithingStage == 2)
             {
-                return "width:" + (100 - ((double)Player.Instance.CurrentFollower.TicksToNextAction / (Player.Instance.CurrentFollower.AutoCollectSpeed * GameState.AutoSmithedItemCount)) * 100d) + "%";
+                return "width:" + (100 - ((double)Player.Instance.CurrentFollower.TicksToNextAction / (Player.Instance.CurrentFollower.AutoCollectSpeed * SmithingManager.AutoSmithedItemCount)) * 100d) + "%";
             }
             return "width:" + (100 - ((double)Player.Instance.CurrentFollower.TicksToNextAction / Player.Instance.CurrentFollower.AutoCollectSpeed) * 100d) + "%";
         }
@@ -129,7 +149,7 @@
         smithables.Clear();
         foreach (Recipe recipe in ItemManager.Instance.SmithingRecipes)
         {
-            if (recipe.Ingredients.Count == 1 && ItemManager.Instance.GetSmithingRecipeByIngredients(Source).OutputItemName == recipe.Ingredients[0].ItemName)
+            if (ItemManager.Instance.GetSmithingRecipeByIngredients(Source).OutputItemName == recipe.Ingredients[0].ItemName)
             {
                 smithables.Add(recipe);
             }
@@ -143,7 +163,7 @@
         {
             if (recipe != null && recipe.Output != null)
             {
-                if (s.SmeltableMetals.Contains(recipe.Output) && recipe.CanCreate())
+                if (s.SmeltableMetals.Contains(recipe.Output))
                 {
                     smeltables.Add(recipe);
                 }
@@ -153,13 +173,13 @@
     }
     public void UpdateBankSmeltables()
     {
-        Smithy s = AreaManager.Instance.Smithies.FirstOrDefault(x => x.Location == Location);
+        thisSmithy = AreaManager.Instance.Smithies.FirstOrDefault(x => x.Location == Location);
         smeltables.Clear();
         foreach (Recipe recipe in ItemManager.Instance.SmithingRecipes)
         {
             if (recipe != null && recipe.Output != null)
             {
-                if (s.SmeltableMetals.Contains(recipe.Output) && recipe.CanCreateFromInventory(Bank.Instance.Inventory))
+                if (thisSmithy.SmeltableMetals.Contains(recipe.Output) && recipe.CanCreateFromInventory(Bank.Instance.Inventory))
                 {
                     smeltables.Add(recipe);
                 }

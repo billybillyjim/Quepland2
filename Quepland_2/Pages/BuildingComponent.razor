@@ -46,6 +46,10 @@
     {
         <Quepland_2.Components.OvenComponent></Quepland_2.Components.OvenComponent>
     }
+    @if(thisBuilding.HasSmithy)
+    {
+        <Quepland_2.Pages.SmithyComponent Location="@buildingURL"></Quepland_2.Pages.SmithyComponent>
+    }
 }
 
 

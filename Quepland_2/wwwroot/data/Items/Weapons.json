@@ -825,6 +825,120 @@
       ]
     }
   },
+
+  {
+    "Name": "Mercurice Knife",
+    "Description": "A magically crafted knife that is made of frozen mercury.",
+    "value": 880,
+    "secondaryColor": "#D2FFF5",
+    "enabledActions": "Knifesmanship",
+    "equipSlot": "R Hand",
+    "icon": "Dagger",
+    "weaponInfo": {
+      "attackSpeed": 5,
+      "damage": 95,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 75
+        }
+      ],
+      "statusEffectData": [
+        {
+          "name": "Freeze",
+          "speed": 2,
+          "duration": 10,
+          "message": "The knife freezes your opponent!",
+          "procOdds": 0.05
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Mercurice Sword",
+    "secondaryColor": "#D2FFF5",
+    "Description": "A magically crafted sword that is made of frozen mercury.",
+    "value": 880,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "R Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 10,
+      "damage": 204,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 75
+        }
+      ],
+      "statusEffectData": [
+        {
+          "name": "Freeze",
+          "speed": 2,
+          "duration": 10,
+          "message": "The sword freezes your opponent!",
+          "procOdds": 0.1
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Mercurice Axe",
+    "secondaryColor": "#D2FFF5",
+    "Description": "A magically crafted axe that is made of frozen mercury.",
+    "value": 880,
+    "enabledActions": "Axemanship Woodcutting",
+    "equipSlot": "R Hand",
+    "gatherSpeedBonus": 0.59,
+    "icon": "Axe",
+    "weaponInfo": {
+      "attackSpeed": 15,
+      "damage": 330,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 75
+        }
+      ],
+      "statusEffectData": [
+        {
+          "name": "Freeze",
+          "speed": 2,
+          "duration": 10,
+          "message": "The axe freezes your opponent!",
+          "procOdds": 0.2
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Mercurice Hammer",
+    "secondaryColor": "#D2FFF5",
+    "Description": "A magically crafted hammer that is made of frozen mercury.",
+    "value": 880,
+    "enabledActions": "Hammermanship",
+    "equipSlot": "R Hand",
+    "icon": "Hammer",
+    "weaponInfo": {
+      "attackSpeed": 20,
+      "damage": 458,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 75
+        }
+      ],
+      "statusEffectData": [
+        {
+          "name": "Freeze",
+          "speed": 2,
+          "duration": 10,
+          "message": "The hammer freezes your opponent!",
+          "procOdds": 0.25
+        }
+      ]
+    }
+  },
   {
     "Name": "Golden Knife",
     "Description": "A heavy knife. It's quite soft, and probably best used for decoration.",
@@ -1052,6 +1166,119 @@
         {
           "skill": "Hammermanship",
           "skillLevel": 75
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Sahotite Knife",
+    "Description": "A a powerful knife that saps the heat out of whatever it touches.",
+    "value": 1280,
+    "secondaryColor": "#C3D3F3",
+    "enabledActions": "Knifesmanship",
+    "equipSlot": "R Hand",
+    "icon": "Dagger",
+    "weaponInfo": {
+      "attackSpeed": 5,
+      "damage": 95,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 82
+        }
+      ],
+      "statusEffectData": [
+        {
+          "name": "Freeze",
+          "speed": 2,
+          "duration": 10,
+          "message": "The knife freezes your opponent!",
+          "procOdds": 0.08
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Sahotite Sword",
+    "secondaryColor": "#C3D3F3",
+    "Description": "A sharp sword that saps heat from its victims.",
+    "value": 1280,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "R Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 10,
+      "damage": 204,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 82
+        }
+      ],
+      "statusEffectData": [
+        {
+          "name": "Freeze",
+          "speed": 2,
+          "duration": 10,
+          "message": "The sword freezes your opponent!",
+          "procOdds": 0.15
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Sahotite Axe",
+    "secondaryColor": "#C3D3F3",
+    "Description": "A sturdy axe that saps heat from whatever it hits.",
+    "value": 1280,
+    "enabledActions": "Axemanship Woodcutting",
+    "equipSlot": "R Hand",
+    "gatherSpeedBonus": 0.65,
+    "icon": "Axe",
+    "weaponInfo": {
+      "attackSpeed": 15,
+      "damage": 330,
+      "wearRequirements": [
+        {
+          "skill": "Axemanship",
+          "skillLevel": 82
+        }
+      ],
+      "statusEffectData": [
+        {
+          "name": "Freeze",
+          "speed": 2,
+          "duration": 10,
+          "message": "The axe freezes your opponent!",
+          "procOdds": 0.25
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Sahotite Hammer",
+    "secondaryColor": "#C3D3F3",
+    "Description": "A powerful hammer that saps heat from its targets.",
+    "value": 1280,
+    "enabledActions": "Hammermanship",
+    "equipSlot": "R Hand",
+    "icon": "Hammer",
+    "weaponInfo": {
+      "attackSpeed": 20,
+      "damage": 458,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 82
+        }
+      ],
+      "statusEffectData": [
+        {
+          "name": "Freeze",
+          "speed": 2,
+          "duration": 10,
+          "message": "The hammer freezes your opponent!",
+          "procOdds": 0.30
         }
       ]
     }

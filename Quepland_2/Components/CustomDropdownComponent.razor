@@ -19,7 +19,7 @@
             {
                 <div>Select an item</div>
             }
-            <table style="@GetStyle() left:0px; background-color: white;z-index:10;min-width:100%; position: absolute; @width">
+            <table style="@GetStyle() left:0px; background-color: white;z-index:10;min-width:100%; position: absolute; @width min-width:@(MinWidth)px;">
                 @if (selected)
                 {
                     @foreach (string item in DropdownItems)
@@ -63,6 +63,11 @@
     /// </summary>
     [Parameter]
     public string EmptyText { get; set; } = "You don't have any.";
+    /// <summary>
+    /// The minimum width of the dropdown.
+    /// </summary>
+    [Parameter]
+    public int MinWidth { get; set; } = 50;
 
     public void Refresh()
     {

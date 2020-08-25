@@ -102,6 +102,32 @@
         ]
       }
     ],
+    "huntingTripInfo": {
+      "dropTable": {
+        "drops": [
+          {
+            "itemName": "Rabbit",
+            "weight": 10
+          },
+          {
+            "itemName": "Wild Boar",
+            "weight": 15
+          },
+          {
+            "itemName": "Buck",
+            "weight": 5
+          },
+          {
+            "itemName": "Turkey",
+            "weight": 5
+          },
+          {
+            "itemName": "Pigeon",
+            "weight": 5
+          }
+        ]
+      }
+    },
     "npcs": [
       "Threnden the Dwarf"
     ]

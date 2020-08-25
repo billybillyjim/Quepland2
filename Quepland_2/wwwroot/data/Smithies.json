@@ -7,28 +7,36 @@
       "Molten Zinc Bar",
       "Molten Brass Bar",
       "Molten Bronze Bar",
-      "Molten Nickel Bar",
-      "Molten Iron Bar",
-      "Molten Lead Bar",
-      "Molten Silver Bar"
+      "Molten Nickel Bar"
     ]
   },
   {
-    "Location": "RicechildSmithy",
+    "Location": "BigSmithy",
     "smeltableMetalNames": [
-      "Molten Copper Bar",
-      "Molten Tin Bar",
-      "Molten Zinc Bar",
-      "Molten Brass Bar",
-      "Molten Bronze Bar",
       "Molten Nickel Bar",
       "Molten Iron Bar",
       "Molten Lead Bar",
       "Molten Steel Bar",
-      "Molten Gold Bar",
-      "Molten Platinum Bar",
-      "Molten Silver Bar",
       "Molten Aluminum Bar"
+    ]
+  },
+  {
+    "Location": "HugeSmithy",
+    "smeltableMetalNames": [
+      "Molten Lead Bar",
+      "Molten Steel Bar",
+      "Molten Aluminum Bar",
+      "Molten Strongtium Bar",
+      "Molten Plastinium Bar",
+      "Molten Queplinium Bar"
+    ]
+  },
+  {
+    "location": "PreciousMetalSmithy",
+    "smeltableMetalNames": [
+      "Molten Silver Bar",
+      "Molten Gold Bar",
+      "Molten Platinum Bar"
     ]
   },
   {

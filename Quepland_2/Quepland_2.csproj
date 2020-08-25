@@ -15,4 +15,6 @@
   
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4data_4items_4gems_1json__JsonSchema="items-schema.json#" /></VisualStudio></ProjectExtensions>
+
 </Project>

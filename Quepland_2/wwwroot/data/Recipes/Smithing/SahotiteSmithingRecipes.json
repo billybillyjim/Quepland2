@@ -1,0 +1,97 @@
+[
+  {
+    "outputItemName": "Frozen Sahotite Bar",
+    "ingredients": [
+      {
+        "itemName": "Sahotite Ore"
+      },
+      {
+        "itemName": "Coal"
+      }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 110
+      }
+    ]
+  },
+  {
+    "outputItemName": "Sahotite Knife",
+    "ingredients": [
+      {
+        "itemName": "Frozen Sahotite Bar"
+      }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 110
+      }
+    ]
+  },
+  {
+    "outputItemName": "Sahotite Sword",
+    "ingredients": [
+      {
+        "itemName": "Frozen Sahotite Bar"
+      }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 110
+      }
+    ]
+  },
+  {
+    "outputItemName": "Sahotite Axe",
+    "ingredients": [
+      {
+        "itemName": "Frozen Sahotite Bar"
+      }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 110
+      }
+    ]
+  },
+  {
+    "outputItemName": "Sahotite Hammer",
+    "ingredients": [
+      {
+        "itemName": "Frozen Sahotite Bar"
+      }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 110
+      }
+    ]
+  },
+  {
+    "outputItemName": "Sahotite Arrowtips",
+    "ingredients": [
+      {
+        "itemName": "Frozen Sahotite Bar"
+      }
+    ],
+    "outputAmount": 10,
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 110
+      }
+    ]
+  }
+
+]

@@ -1,12 +1,28 @@
 [
   {
+    "versionNumber": "0.0.18",
+    "updates": [
+      "Fixed some bugs with the smithing UI.",
+      "Made auto smithing work a little bit better when multiple ingredients are involved.",
+      "Made tooltips for smithing now tell your more specifically what you need.",
+      "Added more smithies with more strict metal requirements.",
+      "More changes to how smithies work.",
+      "Fixed name typos.",
+      "Increased the number of places you can find a boar.",
+      "Added Sahota Castle",
+      "Added ice smithing."
+    ]
+  },
+  {
     "versionNumber": "0.0.17",
     "updates": [
       "Fixed some bugs with the Pirate Ship and dialogues.",
       "Fixed an issue that could softlock an account to the Arawasago Archipelago.",
       "Actually fixed the softlock.",
       "Added the gem mine.",
-      "Added the remaining smithies."
+      "Added the remaining smithies.",
+      "Added sahotite weapons.",
+      "Reworked smithies to show all possible recipes."
     ]
   },
   {

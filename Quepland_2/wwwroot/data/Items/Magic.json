@@ -5,7 +5,7 @@
     "gatherString": "You get a frost seed.",
     "value": 35,
     "secondaryColor": "#D2FFF5",
-    "icon": "Seed",
+    "icon": "Seeds",
     "isStackable": true
   }
 ]

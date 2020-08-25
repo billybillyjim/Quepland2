@@ -17,42 +17,6 @@
         "itemName": "Copper Ore"
       },
       {
-        "itemName": "Tin Bar"
-      }
-    ],
-    "experienceGained": "Smithing:23",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 30
-      }
-    ]
-  },
-  {
-    "outputItemName": "Molten Bronze Bar",
-    "ingredients": [
-      {
-        "itemName": "Copper Bar"
-      },
-      {
-        "itemName": "Tin Ore"
-      }
-    ],
-    "experienceGained": "Smithing:23",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 30
-      }
-    ]
-  },
-  {
-    "outputItemName": "Molten Bronze Bar",
-    "ingredients": [
-      {
-        "itemName": "Copper Ore"
-      },
-      {
         "itemName": "Tin Ore"
       }
     ],

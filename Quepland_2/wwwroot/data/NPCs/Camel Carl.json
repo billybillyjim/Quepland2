@@ -249,6 +249,21 @@
       ]
     },
     {
+      "buttonText": "Where can I find a boar?",
+      "responseText": "Hmm... I'm not sure. I did see a few on the way here, in Higashi Woods. Maybe you can trap one there.",
+      "quest": "Grand Theft Camel",
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 10,
+          "maximumQuestProgress": 10
+        },
+        {
+          "location": "UragotaTown"
+        }
+      ]
+    },
+    {
       "buttonText": "Here's a boar shirt",
       "responseText": "Oh this is perfect! Though... I don't think I can fight the pirates on my own without any food to heal myself with...",
       "quest": "Grand Theft Camel",

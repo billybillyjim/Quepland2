@@ -23,42 +23,6 @@
         "itemName": "Copper Ore"
       },
       {
-        "itemName": "Zinc Bar"
-      }
-    ],
-    "experienceGained": "Smithing:12",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 25
-      }
-    ]
-  },
-  {
-    "outputItemName": "Molten Brass Bar",
-    "ingredients": [
-      {
-        "itemName": "Copper Bar"
-      },
-      {
-        "itemName": "Calamine"
-      }
-    ],
-    "experienceGained": "Smithing:12",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 25
-      }
-    ]
-  },
-  {
-    "outputItemName": "Molten Brass Bar",
-    "ingredients": [
-      {
-        "itemName": "Copper Ore"
-      },
-      {
         "itemName": "Calamine"
       }
     ],

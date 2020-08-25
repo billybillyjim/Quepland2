@@ -25,7 +25,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "0.0.17";
+    public static string Version { get; set; } = "0.0.18";
     public static List<Update> Updates { get; set; } = new List<Update>();
 
     public static string Location { get; set; } = "";
@@ -764,6 +764,21 @@ using System.Threading.Tasks;
         }
         return int.MaxValue;
        
+    }
+    public int GetTicksToNextGather(GameItem item, int gatherSpeed)
+    {
+        if (item != null)
+        {
+            int baseValue = gatherSpeed.ToGaussianRandom();
+            // Console.WriteLine("Ticks to next gather:" + baseValue);
+            baseValue = (int)Math.Max(1, (double)baseValue * Player.Instance.GetGearMultiplier(item));
+            //Console.WriteLine("Ticks to next gather with gear:" + baseValue);
+            baseValue = (int)Math.Max(1, (double)baseValue * Player.Instance.GetLevelMultiplier(item));
+            //Console.WriteLine("Ticks to next gather with gear and level:" + baseValue);
+            return baseValue;
+        }
+        return int.MaxValue;
+
     }
     public void ShowTooltip(MouseEventArgs args, string tipName, bool alignRight)
     {
