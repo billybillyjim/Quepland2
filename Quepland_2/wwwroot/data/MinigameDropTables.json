@@ -201,49 +201,49 @@
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Lizardite",
+          "itemParameter": "Rough Lizardite",
           "weight": 20,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Purpurite",
+          "itemParameter": "Rough Purpurite",
           "weight": 20,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Garnet",
+          "itemParameter": "Rough Garnet",
           "weight": 20,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Topaz",
+          "itemParameter": "Rough Topaz",
           "weight": 20,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Aquamarine",
+          "itemParameter": "Rough Aquamarine",
           "weight": 20,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Diamond",
+          "itemParameter": "Rough Diamond",
           "weight": 10,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Ruby",
+          "itemParameter": "Rough Ruby",
           "weight": 10,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Sapphire",
+          "itemParameter": "Rough Sapphire",
           "weight": 10,
           "amount": 2
         }
@@ -276,49 +276,49 @@
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Lizardite",
+          "itemParameter": "Rough Lizardite",
           "weight": 20,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Purpurite",
+          "itemParameter": "Rough Purpurite",
           "weight": 20,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Garnet",
+          "itemParameter": "Rough Garnet",
           "weight": 20,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Topaz",
+          "itemParameter": "Rough Topaz",
           "weight": 20,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Aquamarine",
+          "itemParameter": "Rough Aquamarine",
           "weight": 20,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Diamond",
+          "itemParameter": "Rough Diamond",
           "weight": 10,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Ruby",
+          "itemParameter": "Rough Ruby",
           "weight": 10,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Sapphire",
+          "itemParameter": "Rough Sapphire",
           "weight": 10,
           "amount": 2
         }
@@ -356,49 +356,49 @@
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Lizardite",
+          "itemParameter": "Rough Lizardite",
           "weight": 20,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Purpurite",
+          "itemParameter": "Rough Purpurite",
           "weight": 20,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Garnet",
+          "itemParameter": "Rough Garnet",
           "weight": 20,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Topaz",
+          "itemParameter": "Rough Topaz",
           "weight": 20,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Aquamarine",
+          "itemParameter": "Rough Aquamarine",
           "weight": 20,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Diamond",
+          "itemParameter": "Rough Diamond",
           "weight": 10,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Ruby",
+          "itemParameter": "Rough Ruby",
           "weight": 10,
           "amount": 2
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Sapphire",
+          "itemParameter": "Rough Sapphire",
           "weight": 10,
           "amount": 2
         }
@@ -490,84 +490,84 @@
     }
   },
   {
-    "areaName": "Gem Mine Safe",
+    "areaName": "Gem Mine Entrance",
     "dropTable": {
       "drops": [
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Amberite",
+          "itemParameter": "Rough Amberite",
           "weight": 20,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Lizardite",
+          "itemParameter": "Rough Lizardite",
           "weight": 20,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Purpurite",
+          "itemParameter": "Rough Purpurite",
           "weight": 20,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Opal",
+          "itemParameter": "Rough Opal",
           "weight": 20,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Garnet",
+          "itemParameter": "Rough Garnet",
           "weight": 10,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Amethyst",
+          "itemParameter": "Rough Amethyst",
           "weight": 10,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Emerald",
+          "itemParameter": "Rough Emerald",
           "weight": 10,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Topaz",
+          "itemParameter": "Rough Topaz",
           "weight": 10,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Aquamarine",
+          "itemParameter": "Rough Aquamarine",
           "weight": 10,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Diamond",
+          "itemParameter": "Rough Diamond",
           "weight": 3,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Ruby",
+          "itemParameter": "Rough Ruby",
           "weight": 3,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Sapphire",
+          "itemParameter": "Rough Sapphire",
           "weight": 3,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Chrysoberyl",
+          "itemParameter": "Rough Chrysoberyl",
           "weight": 3,
           "amount": 1
         }
@@ -575,84 +575,84 @@
     }
   },
   {
-    "areaName": "Gem Mine Medium",
+    "areaName": "Gem Mine Middle",
     "dropTable": {
       "drops": [
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Amberite",
+          "itemParameter": "Rough Amberite",
           "weight": 10,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Lizardite",
+          "itemParameter": "Rough Lizardite",
           "weight": 10,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Purpurite",
+          "itemParameter": "Rough Purpurite",
           "weight": 10,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Opal",
+          "itemParameter": "Rough Opal",
           "weight": 10,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Garnet",
+          "itemParameter": "Rough Garnet",
           "weight": 10,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Amethyst",
+          "itemParameter": "Rough Amethyst",
           "weight": 10,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Emerald",
+          "itemParameter": "Rough Emerald",
           "weight": 10,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Topaz",
+          "itemParameter": "Rough Topaz",
           "weight": 10,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Aquamarine",
+          "itemParameter": "Rough Aquamarine",
           "weight": 10,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Diamond",
+          "itemParameter": "Rough Diamond",
           "weight": 3,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Ruby",
+          "itemParameter": "Rough Ruby",
           "weight": 3,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Sapphire",
+          "itemParameter": "Rough Sapphire",
           "weight": 3,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Chrysoberyl",
+          "itemParameter": "Rough Chrysoberyl",
           "weight": 3,
           "amount": 1
         }
@@ -660,84 +660,84 @@
     }
   },
   {
-    "areaName": "Gem Mine Dangerous",
+    "areaName": "Gem Mine Depths",
     "dropTable": {
       "drops": [
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Amberite",
+          "itemParameter": "Rough Amberite",
           "weight": 3,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Lizardite",
+          "itemParameter": "Rough Lizardite",
           "weight": 3,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Purpurite",
+          "itemParameter": "Rough Purpurite",
           "weight": 3,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Opal",
+          "itemParameter": "Rough Opal",
           "weight": 3,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Garnet",
+          "itemParameter": "Rough Garnet",
           "weight": 5,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Amethyst",
+          "itemParameter": "Rough Amethyst",
           "weight": 5,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Emerald",
+          "itemParameter": "Rough Emerald",
           "weight": 7,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Topaz",
+          "itemParameter": "Rough Topaz",
           "weight": 7,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Aquamarine",
+          "itemParameter": "Rough Aquamarine",
           "weight": 7,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Diamond",
+          "itemParameter": "Rough Diamond",
           "weight": 3,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Ruby",
+          "itemParameter": "Rough Ruby",
           "weight": 5,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Sapphire",
+          "itemParameter": "Rough Sapphire",
           "weight": 5,
           "amount": 1
         },
         {
           "itemName": "Unidentified Gem",
-          "itemParameter": " Rough Chrysoberyl",
+          "itemParameter": "Rough Chrysoberyl",
           "weight": 5,
           "amount": 1
         }

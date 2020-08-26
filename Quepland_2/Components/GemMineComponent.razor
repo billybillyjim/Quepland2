@@ -3,28 +3,146 @@
 
 @if (mineType == "")
 {
-    <div>
+    <div style="margin-top:10px;">
         <button class="btn btn-primary" @onclick="@(() => EnterMine("Entrance"))">Enter Mine Entrance</button>
     </div>
-    <div>
+    <div style="margin-top:10px;">
         <button class="btn btn-primary" @onclick="@(() => EnterMine("Middle"))">Enter Main Mine</button>
     </div>
-    <div>
+    <div style="margin-top:10px;">
         <button class="btn btn-primary" @onclick="@(() => EnterMine("Depths"))">Enter Mine Depths</button>
     </div>
 }
 else if (mineType == "Entrance")
 {
     <p>The walls of the mine are still full of gems, but they've clearly been picked over for the rarest gems. You won't likely find a rare gem here, but you also won't collapse the mine here either.</p>
+    @if (Player.Instance.HasSkillRequirement("Mining", 70) && Player.Instance.HasToolRequirement("Mining"))
+    {
+        @if (isMining)
+        {
+            <button class="btn btn-primary" @onclick="@(() => StopMining())">Stop Mining</button>
+
+        }
+        else
+        {
+            <button class="btn btn-primary" @onclick="@(() => StartMining())">Mine for gems</button>
+
+        }
+    }
+    else if (Player.Instance.HasSkillRequirement("Mining", 70))
+    {
+        <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have anything to mine with.")))"
+                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            Mine for gems
+        </button>
+    }
+    else if (Player.Instance.HasToolRequirement("Mining"))
+    {
+        <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have the level to mine here.", "Requires 70 Mining")))"
+                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            Mine for gems
+        </button>
+    }
+    else
+    {
+        <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have the level or tool required to mine here.", "Requires 70 Mining\nRequires Pickaxe")))"
+                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            Mine for gems
+        </button>
+    }
 }
 else if (mineType == "Middle")
 {
     <p>The middle of the mine still has plenty of all kinds of gemstones, but there is a risk of collapse here.</p>
+    @if (Player.Instance.HasSkillRequirement("Mining", 80) && Player.Instance.HasToolRequirement("Mining"))
+    {
+        @if (isMining)
+        {
+            <button class="btn btn-primary" @onclick="@(() => StopMining())">Stop Mining</button>
+
+        }
+        else
+        {
+            <button class="btn btn-primary" @onclick="@(() => StartMining())">Mine for gems</button>
+
+        }
+    }
+    else if (Player.Instance.HasSkillRequirement("Mining", 80))
+    {
+        <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have anything to mine with.")))"
+                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            Mine for gems
+        </button>
+    }
+    else if (Player.Instance.HasToolRequirement("Mining"))
+    {
+        <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have the level to mine here.", "Requires 80 Mining")))"
+                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            Mine for gems
+        </button>
+    }
+    else
+    {
+        <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have the level or tool required to mine here.", "Requires 80 Mining\nRequires Pickaxe")))"
+                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            Mine for gems
+        </button>
+    }
 }
 else if (mineType == "Depths")
 {
     <p>The deepest part of the mine is almost untouched. You can find all sorts of rare gems here, but be careful! Mine too much and it will collapse!</p>
+    @if (Player.Instance.HasSkillRequirement("Mining", 90) && Player.Instance.HasToolRequirement("Mining"))
+    {
+        @if (isMining)
+        {
+            <button class="btn btn-primary" @onclick="@(() => StopMining())">Stop Mining</button>
+
+        }
+        else
+        {
+            <button class="btn btn-primary" @onclick="@(() => StartMining())">Mine for gems</button>
+
+        }
+    }
+    else if (Player.Instance.HasSkillRequirement("Mining", 90))
+    {
+        <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have anything to mine with.")))"
+                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            Mine for gems
+        </button>
+    }
+    else if (Player.Instance.HasToolRequirement("Mining"))
+    {
+        <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have the level to mine here.", "Requires 90 Mining")))"
+                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            Mine for gems
+        </button>
+    }
+    else
+    {
+        <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have the level or tool required to mine here.", "Requires 90 Mining\nRequires Pickaxe")))"
+                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            Mine for gems
+        </button>
+    }
 }
+@if (isMining)
+{
+    <div style="margin-top:10px;">
+        Integrity
+        <div class="progress" style="width:300px;">
+            <div class="progress-bar" style="@GetMineIntegrity()"></div>
+        </div>
+    </div>
+    <div style="margin-top:10px;">
+        Mining Progress
+        <div class="progress" style="width:300px;">
+            <div class="progress-bar" style="@Progress()"></div>
+        </div>
+    </div>
+}
+
 
 @code {
 
@@ -35,33 +153,106 @@ else if (mineType == "Depths")
     private string mineType = "";
     private Random rand = new Random();
     private DropTable CurrentTable;
+    private int caveDepth;
+    public bool isMining;
+    private int ticksToNextGather;
+    private int caveIntegrity;
+    private bool firstMine;
 
     public void EnterMine(string loc)
     {
         mineType = loc;
+        caveIntegrity = 100;
+        if (mineType == "Entrance")
+        {
+            caveDepth = 1;
+        }
+        else if (mineType == "Middle")
+        {
+            caveDepth = 4;
+        }
+        else if (mineType == "Depths")
+        {
+            caveDepth = 8;
+        }
+
+
         GameState.UpdateState();
     }
-    public void StartMining(string depth)
+    public void StartMining()
     {
-        if (depth == null)
-        {
-            Console.WriteLine("Item was null");
-            GameState.CurrentGatherItem = null;
-            GameState.UpdateState();
-            return;
-        }
         if (beginText != "")
         {
             MessageManager.AddMessage(beginText);
         }
-        CurrentTable = ItemManager.Instance.GetMinigameDropTable(depth).DropTable;
+        isMining = true;
+        firstMine = true;
+        GetGem();
+    }
+    public void StopMining()
+    {
+        isMining = false;
+        GameState.StopActions();
+    }
+    public void GetGem()
+    {
+        CurrentTable = ItemManager.Instance.GetMinigameDropTable("Gem Mine " + mineType).DropTable;
         GameState.CurrentGatherItem = CurrentTable.GetDrop().Item;
-        GameState.TicksToNextAction = GameState.GetTicksToNextGather(GameState.CurrentGatherItem, 50).ToGaussianRandom();
+        ticksToNextGather = GameState.GetTicksToNextGather(ItemManager.Instance.GetItemByName("Gem Mine Gem"), 50 + Math.Max(0, 105 - (Player.Instance.GetLevel("Mining")))).ToGaussianRandom();
+        GameState.TicksToNextAction = ticksToNextGather;
+        double roll = rand.NextDouble();
+        if (firstMine)
+        {
+            roll = 10;
+            firstMine = false;
+        }
+        if (mineType == "Entrance")
+        {
+            if (roll < (1 - (Player.Instance.GetLevel("Mining") / 70f)))
+            {
+                MessageManager.AddMessage("The mine trembles as you remove the gem from the wall.");
+                caveIntegrity -= caveDepth;
+            }
+        }
+        else if (mineType == "Middle")
+        {
+            if (roll < (1 - (Player.Instance.GetLevel("Mining") / 150f)))
+            {
+                MessageManager.AddMessage("The mine trembles as you remove the gem from the wall.");
+                caveIntegrity -= caveDepth;
+            }
+        }
+        else if (mineType == "Depths")
+        {
+            if (roll < (1 - (Player.Instance.GetLevel("Mining") / 200f)))
+            {
+                MessageManager.AddMessage("The mine trembles as you remove the gem from the wall.");
+                caveIntegrity -= caveDepth;
+            }
+        }
         GameState.UpdateState();
     }
     public int GetMiningSpeed()
     {
         return 10;
+    }
+    public void Collapse()
+    {
+        isMining = false;
+        MessageManager.AddMessage("The walls of the mine collapse around you!", "red");
+        Player.Instance.Die();
+        GameState.StopActions();
+        mineType = "";
+        GameState.UpdateState();
+    }
+    public string GetMineIntegrity()
+    {
+        return "width:" + (caveIntegrity) + "%";
+
+    }
+    public string Progress()
+    {
+        return "width:" + (100 - ((double)GameState.TicksToNextAction / ticksToNextGather) * 100d) + "%";
     }
     protected override void OnInitialized()
     {
@@ -73,5 +264,27 @@ else if (mineType == "Depths")
     {
         GameState.StateChanged -= OnGameStateChanged;
     }
-    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+    void OnGameStateChanged(object sender, EventArgs e)
+    {
+        if (isMining && GameState.TicksToNextAction <= 0)
+        {
+            if (caveIntegrity <= 0)
+            {
+                Collapse();
+            }
+            else
+            {
+                if (Player.Instance.Inventory.AddItem(GameState.CurrentGatherItem))
+                {
+                    Player.Instance.GainExperience("Mining", 100);
+                    GetGem();
+                }
+                else
+                {
+                    StopMining();
+                }
+            }
+        }
+        StateHasChanged();
+    }
 }

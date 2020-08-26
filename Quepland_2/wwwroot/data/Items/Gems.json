@@ -1,5 +1,22 @@
 [
   {
+    "name": "Gem Mine Gem",
+    "value": 1,
+    "description": "A gemstone, you're not sure what it is though.",
+    "icon": "UncutGem",
+    "gatherString": "You found a gemstone!",
+    "gatherSpeed": 50,
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 70
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
     "name": "Unidentified Gem",
     "value": 10,
     "description": "A gemstone, you're not sure what it is though.",
