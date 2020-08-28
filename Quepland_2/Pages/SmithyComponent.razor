@@ -45,13 +45,18 @@
             }
         }
     }
-    <br />
-    <br />
-    <div>
-        <div class="progress" style="width:300px;">
-            <div class="progress-bar" style="@GetProgress()"></div>
+
+    @if (SmithingManager.SmithingStage != 0)
+    {
+        <br />
+        <br />
+        <div>
+            <div class="progress" style="width:300px;">
+                <div class="progress-bar" style="@GetProgress()"></div>
+            </div>
         </div>
-    </div>
+    }
+
 }
 
 @code {

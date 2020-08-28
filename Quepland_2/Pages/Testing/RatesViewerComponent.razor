@@ -8,6 +8,7 @@
 <button @onclick="@(() => DPS())">DPS Calc</button>
 <button @onclick="@(() => UriHelper.NavigateTo("/WorldCheck/"))">World</button>
 <button @onclick="@(() => UriHelper.NavigateTo("/Rates/Drops/"))">Drops</button>
+<button @onclick="@(() => UriHelper.NavigateTo("/Test/NPCMaker/"))">NPCMaker</button>
 
 <div style="overflow-y:scroll">
     @foreach (string category in ItemManager.FileNames)

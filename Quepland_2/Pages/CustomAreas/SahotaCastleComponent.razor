@@ -9,26 +9,33 @@
     <h1>@thisArea.Name</h1>
     <h3>@location</h3>
     <p>@Descriptions[Locations.IndexOf(location)]</p>
-    @foreach (string loc in Locations)
-    {
-        <div>
-            <button class="btn btn-primary" @onclick="@(() => GoTo(loc))">@loc</button>
-        </div>
-    }
 
-    @if(location == "Main Gate")
-    {
 
+    @if (location == "Main Gate")
+    {
+        @foreach (string loc in Locations)
+        {
+            if (loc != "Main Gate")
+            {
+                <div style="margin-top:10px;">
+                    <button class="btn btn-primary" @onclick="@(() => GoTo(loc))">@loc</button>
+                </div>
+            }
+        }
     }
-    else if(location == "Throne Room")
+    else
+    {
+        <button class="btn btn-primary" style="margin-bottom:10px;" @onclick="@(() => GoTo("Main Gate"))">Exit</button>
+    }
+    if (location == "Throne Room")
     {
         <Quepland_2.Components.NPCDialogComponent npc="Naganidsko"></Quepland_2.Components.NPCDialogComponent>
     }
-    else if(location == "Ice Smithy")
+    else if (location == "Ice Smithy")
     {
         <SmithyComponent Location="SahotaCastleSmithy"></SmithyComponent>
     }
-    else if(location == "Gem Mine")
+    else if (location == "Gem Mine")
     {
         <Quepland_2.Components.GemMineComponent></Quepland_2.Components.GemMineComponent>
     }
@@ -39,7 +46,11 @@
 
     public Area thisArea { get; set; }
     private List<string> Locations = new List<string>() { "Main Gate", "Throne Room", "Ice Smithy", "Gem Mine" };
-    private List<string> Descriptions = new List<string>() { "The main gate.", "The throne room.", "The ice smithy", "The gem mine." };
+    private List<string> Descriptions = new List<string>() {
+        "The castle ahead is made of pure ice. There is a direct route to the throne room up the main staircase. Staircases on either side lead to underground.",
+        "The castle's throne room is a beautiful display of various forms of ice. A mirror finished floor and ceiling. Here and there massive sculptures of ice seem to be floating in the air.",
+        "An ice smithy sits just underground through the left staircase. The furnace--if you can call it that--is incredibly cold. You won't be able to smith traditional metals here.",
+        "The right staircase leads far underground. Eventually you reach the entrance to a mine. You can immediately see thousands of beautiful gems intruding into the walls of the cavern." };
     private string location = "Main Gate";
     protected override void OnInitialized()
     {

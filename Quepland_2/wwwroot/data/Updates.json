@@ -1,5 +1,18 @@
 [
   {
+    "versionNumber": "0.0.19",
+    "updates": [
+      "Fixed a crash with alchemy if using an item that shouldn't be alchemicable.",
+      "Reworked Oikaaz's dialogue to be more in line with the newer dialogue system.",
+      "Started work on Chrysopoeian Crisis quest.",
+      "Added tooltips to follower menu.",
+      "Trapping can no longer lock a player out when there is a typo.",
+      "Fixed a bug that made hunting traps show when they weren't ready, instead of when they were.",
+      "Added some NPCs to explain sushi and jerky.",
+      "Added an icon to help distinguish molten metal from metal."
+    ]
+  },
+  {
     "versionNumber": "0.0.18",
     "updates": [
       "Fixed some bugs with the smithing UI.",

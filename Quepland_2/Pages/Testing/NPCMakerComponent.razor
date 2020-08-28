@@ -1,0 +1,233 @@
+﻿@page "/Test/NPCMaker/"
+@inject GameState GameState 
+<h1>NPC Maker</h1>
+
+<div>
+    Name:
+    <input type="text" @bind-value="@npcName" />
+    @npcName
+</div>
+<div>
+    ID:
+    <input type="number" @bind-value="@ID" />
+    @ID
+</div>
+<br/>
+<button class="btn btn-primary" @onclick="@(() => AddDialogue())">
+    Add Dialogue 
+</button>
+<div>
+    @if (openDialogue == null)
+    {
+        @for (int i = 0; i < npc.Dialogs.Count; i++)
+        {
+            int temp = i;
+            <button class="btn btn-primary" @onclick="@(() => OpenDialogue(npc.Dialogs[temp]))">@npc.Dialogs[temp].ButtonText</button>
+        }
+    }
+    else
+    {
+        <button class="btn btn-primary" @onclick="@(() => OpenDialogue(null))">Close</button>
+
+        @if (!deleteConfirm)
+        {
+            <button class="btn btn-primary" @onclick="@(() => ConfirmDelete())">Delete</button>
+        }
+        else
+        {
+            <button class="btn btn-primary" @onclick="@(() => ConfirmDelete())">Really Delete?</button>
+        }
+        @if (addRequirements == false)
+        {
+            <div>
+                Depth:
+                <input type="text" @bind-value="@openDialogue.Depth" />
+                @openDialogue.Depth
+            </div>
+            <div>
+                Button Text:
+                <input type="text" @bind-value="@openDialogue.ButtonText" />
+                @openDialogue.ButtonText
+            </div>
+            <div>
+                Response:
+                <input type="text" @bind-value="@openDialogue.ResponseText" />
+                @openDialogue.ResponseText
+            </div>
+            <div>
+                New Depth On Talk:
+                <input type="text" @bind-value="@openDialogue.NewDepthOnTalk" />
+                @openDialogue.NewDepthOnTalk
+            </div>
+            <div>
+                Parameter:
+                <input type="text" @bind-value="@openDialogue.Parameter" />
+                @openDialogue.Parameter
+            </div>
+            <div>
+                Quest:
+                <Quepland_2.Components.CustomDropdownComponent DropdownItems="@QuestManager.Instance.Quests.Select(x => x.Name).ToList()" @bind-Value="@openDialogue.Quest"></Quepland_2.Components.CustomDropdownComponent>
+            </div>
+            <div>
+                New Quest Progress:
+                <input type="text" @bind-value="openDialogue.NewQuestProgressValue" />
+                @openDialogue.NewQuestProgressValue
+            </div>
+            <div>
+                <button class="btn btn-primary" @onclick="@(() => AddRequirements())">Add Requirements</button>
+            </div>
+        }
+        else
+        {
+            <div>
+                <button class="btn btn-primary" @onclick="@(() => AddRequirements())">Return</button>
+            </div>
+            <div>
+                <button class="btn btn-primary" @onclick="@(() => AddNewRequirement())">Add New</button>
+            </div>
+            @if (openRequirement != null)
+            {
+                <div>
+                    Skill:
+                    <Quepland_2.Components.CustomDropdownComponent DropdownItems="@Player.Instance.Skills.Select(x => x.Name).ToList()" @bind-Value="@openRequirement.Skill"></Quepland_2.Components.CustomDropdownComponent>
+                </div>
+                @if (openRequirement.Skill != "None")
+                {
+                    <div>
+                        Skill Level:
+                        <input type="number" @bind-value="@openRequirement.SkillLevel" />
+                        @openRequirement.SkillLevel
+                    </div>
+                }
+                <div>
+                    Item:
+                    <input type="text" @bind-value="@openRequirement.Item" />
+                    @if (openRequirement.Item != "None" && ItemManager.Instance.GetItemByName(openRequirement.Item) == null)
+                    {
+                        <div style="color:red;">@openRequirement.Item (Not in item list)</div>
+                    }
+                    else
+                    {
+                        <div>
+                            @openRequirement.Item
+                        </div>
+                    }
+
+                </div>
+                @if (openRequirement.Item != "None")
+                {
+                    <div>
+                        Item Amount:
+                        <input type="number" @bind-value="@openRequirement.ItemAmount" />
+                        @if (openRequirement.Item != "None" && openRequirement.ItemAmount == 0)
+                        {
+                            <div style="color:red;">Warning:Item is set but amount is 0</div>
+                        }
+                        else
+                        {
+                            <div>@openRequirement.ItemAmount</div>
+                        }
+                    </div>
+                }
+                <div>
+                    Quest:
+                    <Quepland_2.Components.CustomDropdownComponent DropdownItems="@QuestManager.Instance.Quests.Select(x => x.Name).ToList()" @bind-Value="@openRequirement.Quest"></Quepland_2.Components.CustomDropdownComponent>
+                </div>
+                @if (openRequirement.Quest != "None")
+                {
+                    <div>
+                        Min Progress:
+                        <input type="number" @bind-value="@openRequirement.MinimumQuestProgress" />
+                    </div>
+                    <div>
+                        Max Progress:
+                        <input type="number" @bind-value="@openRequirement.MaximumQuestProgress" />
+                    </div>
+                    @if(openRequirement.MinimumQuestProgress > openRequirement.MaximumQuestProgress)
+                    {
+                        <div style="color:red">Warning:Minimum progress is higher than maximum.</div>
+                    }
+                }
+            }
+            else
+            {
+                @for (int i = 0; i < openDialogue.Requirements.Count; i++)
+                {
+                    int temp = i;
+                    <button class="btn btn-primary" @onclick="@(() => OpenRequirement(openDialogue.Requirements[temp]))">@openDialogue.Requirements[temp].ToString()</button>
+                }
+            }
+
+        }
+    }
+
+</div>
+
+<button class="btn btn-primary" @onclick="@(() => GenerateNPC())">Generate</button>
+<textarea style="width:900px;height:900px;position:absolute;top:0px;right:0px;">
+@GenerateNPC()
+</textarea>
+
+@code {
+
+    public NPC npc = new NPC();
+    public string npcName = "";
+    public int ID = -1;
+    public Dialog openDialogue;
+    public Requirement openRequirement;
+    private bool deleteConfirm;
+    private bool addRequirements;
+
+    public void OpenRequirement(Requirement r)
+    {
+        openRequirement = r;
+        GameState.UpdateState();
+    }
+    public void AddNewRequirement()
+    {
+        openDialogue.Requirements.Add(new Requirement());
+        GameState.UpdateState();
+    }
+    public void AddRequirements()
+    {
+        addRequirements = !addRequirements;
+        GameState.UpdateState();
+    }
+    public void ConfirmDelete()
+    {
+        if (deleteConfirm)
+        {
+            DeleteDialogue();
+            deleteConfirm = false;
+        }
+        else
+        {
+            deleteConfirm = true;
+        }
+        GameState.UpdateState();
+    }
+    public void DeleteDialogue()
+    {
+        npc.Dialogs.Remove(openDialogue);
+        OpenDialogue(null);
+        GameState.UpdateState();
+    }
+    public void OpenDialogue(Dialog d)
+    {
+        openDialogue = d;
+        GameState.UpdateState();
+    }
+    public void AddDialogue()
+    {
+        npc.Dialogs.Add(new Dialog());
+        GameState.UpdateState();
+    }
+
+    public string GenerateNPC()
+    {
+        npc.Name = npcName;
+        npc.ID = ID;
+        Newtonsoft.Json.JsonSerializerSettings settings = new Newtonsoft.Json.JsonSerializerSettings() { StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeNonAscii, Formatting = Newtonsoft.Json.Formatting.Indented };
+        return Newtonsoft.Json.JsonConvert.SerializeObject(npc, settings);
+    }
+}

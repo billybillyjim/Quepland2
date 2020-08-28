@@ -1,0 +1,29 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Hoshnik",
+  "id": 47,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi. I'm eating jerky!",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "I can see that",
+      "responseText": "It's delicious! I made it myself at the tannery in the Hoin river valley. You probably could, too.",
+      "depth": 1,
+      "newDepthOnTalk": 2
+    },
+    {
+      "buttonText": "Where did you get that jerky?",
+      "responseText": "I made it myself at the tannery in the Hoin river valley. You probably could, too.",
+      "depth": 1,
+      "newDepthOnTalk": 2
+    },
+    {
+      "buttonText": "Where is the Hoin river valley?",
+      "responseText": "It's far to the west from here. There's a guy in Higashi Woods who tours people there. He's kind of creepy, but totally harmless.",
+      "depth": 2
+    }
+  ]
+}

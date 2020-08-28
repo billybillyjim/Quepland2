@@ -4,7 +4,8 @@
 @foreach (Follower follower in FollowerManager.Instance.GetUnlockedFollowers())
 {
 
-    <div style="position:relative;height:46px;line-height:46px;@GetBG(follower)">
+    <div style="position:relative;height:46px;line-height:46px;@GetBG(follower)" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Helps with " + follower.AutoCollectSkill, "Max Level:" + follower.AutoCollectLevel)))"
+             @onmouseout="@(new Action(() => GameState.HideTooltip()))" >
         @if (Player.Instance.CurrentFollower == follower)
         {
             <div style="margin-left:10px;margin-top:-2px;color:black;">@follower.Name</div>

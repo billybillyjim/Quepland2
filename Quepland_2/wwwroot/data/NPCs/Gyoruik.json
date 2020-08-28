@@ -1,0 +1,24 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Gyoruik",
+  "id": 48,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi. Welcome to my shop!",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Why can't I buy fish here?",
+      "responseText": "I mainly sell directly to an export company that offers me great prices for excluvisity, sorry.",
+      "depth": 1,
+      "newDepthOnTalk": 2
+    },
+    {
+      "buttonText": "What can I do with fish?",
+      "responseText": "The most popular thing is making sushi. Just roll some rice in some seaweed, and you can add a cut of fish on top. It's delicious and healthy, but there is a bit of a learning curve.",
+      "depth": 1,
+      "newDepthOnTalk": 2
+    }
+  ]
+}

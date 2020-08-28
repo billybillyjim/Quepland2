@@ -43,8 +43,8 @@
         else
         {
             @if (selectedMode == "Normal" && hasSave ||
-         selectedMode == "Hardcore" && hasHardcore ||
-         selectedMode == "Ultimate" && hasUltimate)
+        selectedMode == "Hardcore" && hasHardcore ||
+        selectedMode == "Ultimate" && hasUltimate)
             {
                 if (hasShownWarning == false)
                 {
@@ -106,6 +106,10 @@
     <div>
         Version:@GameState.Version
     </div>
+    @if (IsTesting())
+    {
+        <button @onclick="@(() => UriHelper.NavigateTo("/Rates/"))">Rates</button>
+    }
 </div>
 
         <!--
@@ -176,6 +180,11 @@
         AreaManager.Instance.GetAreaByName("Quepland Fields").Unlock();
         GameState.ShowStartMenu = false;
         UriHelper.NavigateTo("/World/QueplandFields");
+    }
+    public bool IsTesting()
+    {
+        return UriHelper.BaseUri.Contains("localhost");
+
     }
     public async Task LoadGame(string mode)
     {

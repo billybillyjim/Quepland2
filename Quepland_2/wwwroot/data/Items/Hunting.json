@@ -51,6 +51,18 @@
     }
   },
   {
+    "name": "Test Trap",
+    "description": "A test trap for catching wild animals.",
+    "gatherString": "You put a large trap together.",
+    "value": 1,
+    "secondaryColor": "#FFFFFF",
+    "icon": "Trap",
+    "trapInfo": {
+      "size": 4,
+      "timeToReady": 1
+    }
+  },
+  {
     "name": "Rabbit",
     "description": "The carcass of a rabbit.",
     "value": 30,

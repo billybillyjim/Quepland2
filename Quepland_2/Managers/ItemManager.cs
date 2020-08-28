@@ -141,7 +141,16 @@ public class ItemManager
 
     public GameItem GetItemByName(string name)
     {
-        return GetItemByUniqueID(ItemLookupDic[name].UniqueID);
+        try
+        {
+            return GetItemByUniqueID(ItemLookupDic[name].UniqueID);
+        }
+        catch
+        {
+            Console.WriteLine(name + " is not a valid item name.");
+            return null;
+        }
+        
     }
     public GameItem GetItemByUniqueID(string uniqueID)
     {

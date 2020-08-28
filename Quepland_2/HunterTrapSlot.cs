@@ -13,6 +13,7 @@ public class HunterTrapSlot
         if (trap.TrapInfo != null)
         {
             HarvestTime = DateTime.UtcNow + new TimeSpan(0, trap.TrapInfo.TimeToReady, 0);
+            State = "Set";
             Trap = trap;
         }
     }
@@ -20,35 +21,45 @@ public class HunterTrapSlot
     {
         for(int i = 0; i < Trap.TrapInfo.Size;i++)
         {
-            Drop drop = DropTable.GetDrop();
-            double chance = 1;
-            GameItem dropItem = ItemManager.Instance.GetItemByName(drop.ItemName);
-            foreach (Requirement req in dropItem.Requirements)
+            try
             {
-                if(req.Skill == "Hunting")
+                Drop drop = DropTable.GetDrop();
+                double chance = 1;
+                foreach (Requirement req in drop.Item.Requirements)
                 {
-                    if(Player.Instance.GetLevel("Hunting") >= req.SkillLevel)
+                    if (req.Skill == "Hunting")
                     {
-                        chance = 1;
+                        if (Player.Instance.GetLevel("Hunting") >= req.SkillLevel)
+                        {
+                            chance = 1;
+                        }
+                        else
+                        {
+                            chance = 1 / (req.SkillLevel - Player.Instance.GetLevel("Hunting"));
+                        }
+                        continue;
                     }
-                    else
-                    {
-                        chance = 1 / (req.SkillLevel - Player.Instance.GetLevel("Hunting"));
-                    }
-                    continue;
+                }
+                if (chance >= rand.NextDouble())
+                {
+                    MessageManager.AddMessage("You find a " + drop.Item + " in the trap.");
+                    Player.Instance.GainExperience(drop.Item.ExperienceGained);
+                    Player.Instance.Inventory.AddDrop(drop);
+                }
+                else
+                {
+                    MessageManager.AddMessage("You find evidence a " + drop.Item.Name + " escaped the trap.");
+
                 }
             }
-            if(chance >= rand.NextDouble())
+            catch(Exception e)
             {
-                MessageManager.AddMessage("You find a " + drop.ItemName + " in the trap.");
-                Player.Instance.GainExperience(dropItem.ExperienceGained);
-                Player.Instance.Inventory.AddDrop(drop);
+                Console.WriteLine("Drop was null.");
+                Console.WriteLine(e);
+                MessageManager.AddMessage("You find nothing in the trap. It's strange... It shouldn't be this way...");
             }
-            else
-            {
-                MessageManager.AddMessage("You find evidence a " + drop.ItemName + " escaped the trap.");
 
-            }
         }
+        State = "Unset";
     }
 }

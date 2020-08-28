@@ -94,7 +94,11 @@ public class Area
         {
             return false;
         }
-        return TrapSlot.HarvestTime.CompareTo(DateTime.UtcNow) >= 0;
+        if(TrapSlot.State != "Set")
+        {
+            return false;
+        }
+        return TrapSlot.HarvestTime.CompareTo(DateTime.UtcNow) <= 0;
     }
     public string GetRequirementTooltip()
     {

@@ -4,18 +4,18 @@
 @if (mineType == "")
 {
     <div style="margin-top:10px;">
-        <button class="btn btn-primary" @onclick="@(() => EnterMine("Entrance"))">Enter Mine Entrance</button>
+        <button class="btn btn-primary" @onclick="@(() => EnterMine("Entrance"))">Upper Vein</button>
     </div>
     <div style="margin-top:10px;">
-        <button class="btn btn-primary" @onclick="@(() => EnterMine("Middle"))">Enter Main Mine</button>
+        <button class="btn btn-primary" @onclick="@(() => EnterMine("Middle"))">Main Mine</button>
     </div>
     <div style="margin-top:10px;">
-        <button class="btn btn-primary" @onclick="@(() => EnterMine("Depths"))">Enter Mine Depths</button>
+        <button class="btn btn-primary" @onclick="@(() => EnterMine("Depths"))">The Depths</button>
     </div>
 }
 else if (mineType == "Entrance")
 {
-    <p>The walls of the mine are still full of gems, but they've clearly been picked over for the rarest gems. You won't likely find a rare gem here, but you also won't collapse the mine here either.</p>
+    <p>The walls of the mine are still full of precious stones, but they've clearly been picked over. The mine is very sturdy here, and there is little risk for collapse.</p>
     @if (Player.Instance.HasSkillRequirement("Mining", 70) && Player.Instance.HasToolRequirement("Mining"))
     {
         @if (isMining)
@@ -53,7 +53,7 @@ else if (mineType == "Entrance")
 }
 else if (mineType == "Middle")
 {
-    <p>The middle of the mine still has plenty of all kinds of gemstones, but there is a risk of collapse here.</p>
+    <p>The middle of the mine still has many rare gems, but there is a risk of collapse here.</p>
     @if (Player.Instance.HasSkillRequirement("Mining", 80) && Player.Instance.HasToolRequirement("Mining"))
     {
         @if (isMining)
@@ -198,7 +198,7 @@ else if (mineType == "Depths")
     {
         CurrentTable = ItemManager.Instance.GetMinigameDropTable("Gem Mine " + mineType).DropTable;
         GameState.CurrentGatherItem = CurrentTable.GetDrop().Item;
-        ticksToNextGather = GameState.GetTicksToNextGather(ItemManager.Instance.GetItemByName("Gem Mine Gem"), 50 + Math.Max(0, 105 - (Player.Instance.GetLevel("Mining")))).ToGaussianRandom();
+        ticksToNextGather = GameState.GetTicksToNextGather(ItemManager.Instance.GetItemByName("Gem Mine Gem"), ItemManager.Instance.GetItemByName("Gem Mine Gem").GatherSpeed + Math.Max(0, 105 - (Player.Instance.GetLevel("Mining")))).ToGaussianRandom();
         GameState.TicksToNextAction = ticksToNextGather;
         double roll = rand.NextDouble();
         if (firstMine)

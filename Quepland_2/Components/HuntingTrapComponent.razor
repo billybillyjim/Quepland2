@@ -34,6 +34,10 @@
         {
             <button class="btn btn-primary" disabled>Large Trap</button>
         }
+        @if (IsTesting())
+        {
+            <button class="btn btn-primary" @onclick="@(() => SetTrap("Test"))">Test Trap</button>
+        }
         @if (Player.Instance.Inventory.HasItem("Small Trap") == false && Player.Instance.Inventory.HasItem("Medium Trap") == false && Player.Instance.Inventory.HasItem("Large Trap") == false)
         {
             <div>You don't have any traps with you.</div>
@@ -68,15 +72,17 @@
         GameItem i = ItemManager.Instance.GetItemByName(size + " Trap");
         Player.Instance.Inventory.RemoveItems(i, 1);
         Slot.SetTrap(i);
-        Slot.State = "Set";
         GameState.UpdateState();
     }
     private void Collect()
     {
         Slot.Collect();
-        Slot.State = "Unset";
         GameState.UpdateState();
 
+    }
+    public bool IsTesting()
+    {
+        return UriHelper.BaseUri.Contains("localhost");
     }
     private string GetTime()
     {

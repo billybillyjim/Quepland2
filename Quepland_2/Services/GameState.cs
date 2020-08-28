@@ -732,8 +732,16 @@ using System.Threading.Tasks;
         else if(AlchemyStage == 3)
         {
             GameItem reward = ItemManager.Instance.GetItemFromFormula(CurrentAlchemyFormula);
+            if(reward == null)
+            {
+                reward = ItemManager.Instance.GetItemByName("Alchemical Dust");
+            }
             MessageManager.AddMessage("You withdraw the " + reward.Name + " from the release valve.");
             Player.Instance.Inventory.AddItem(reward);
+            if(reward.Name == "Alchemical Dust")
+            {
+                StopActions();
+            }
             AlchemyStage = 0;
             TicksToNextAction = 10;
             if (AlchemicalHallComponent != null)

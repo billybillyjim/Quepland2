@@ -350,7 +350,7 @@
     "gatherSpeed": 15,
     "experienceGained": "Smithing:15",
     "secondaryColor": "#B87333",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -368,7 +368,7 @@
     "requiredLevel": 4,
     "experienceGained": "Smithing:18",
     "requiredAction": "Smithing",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -384,7 +384,7 @@
     "value": 70,
     "gatherSpeed": 20,
     "experienceGained": "Smithing:30",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -400,7 +400,7 @@
     "gatherSpeed": 25,
     "experienceGained": "Smithing:50",
     "secondaryColor": "#B5A642",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -416,7 +416,7 @@
     "gatherSpeed": 30,
     "secondaryColor": "#CD7F32",
     "experienceGained": "Smithing:80",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -432,7 +432,7 @@
     "value": 150,
     "gatherSpeed": 35,
     "experienceGained": "Smithing:130",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -448,7 +448,7 @@
     "value": 250,
     "gatherSpeed": 40,
     "experienceGained": "Smithing:80",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -464,7 +464,7 @@
     "value": 190,
     "gatherSpeed": 45,
     "experienceGained": "Smithing:180",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -480,7 +480,7 @@
     "value": 190,
     "gatherSpeed": 55,
     "experienceGained": "Smithing:220",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -494,7 +494,7 @@
     "gatherString": "You cool the mercury into a bar.",
     "value": 240,
     "gatherSpeed": 55,
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -510,7 +510,7 @@
     "gatherSpeed": 40,
     "experienceGained": "Smithing:180",
     "secondaryColor": "#F1F3F0",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -526,7 +526,7 @@
     "value": 1000,
     "gatherSpeed": 45,
     "experienceGained": "Smithing:700",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -542,7 +542,7 @@
     "value": 400,
     "gatherSpeed": 50,
     "experienceGained": "Smithing:100",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -558,7 +558,7 @@
     "value": 1800,
     "gatherSpeed": 50,
     "experienceGained": "Smithing:950",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -574,7 +574,7 @@
     "gatherSpeed": 50,
     "experienceGained": "Smithing:1000",
     "secondaryColor": "#AF7979",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -590,7 +590,7 @@
     "gatherSpeed": 70,
     "experienceGained": "Smithing:1200",
     "secondaryColor": "#C3D3F3",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -606,7 +606,7 @@
     "gatherSpeed": 90,
     "experienceGained": "Smithing:1600",
     "secondaryColor": "#718A94",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "requirements": [
       {
         "skill": "Smithing",
@@ -621,7 +621,7 @@
     "value": 8000,
     "gatherSpeed": 110,
     "experienceGained": "Smithing:2400",
-    "icon": "Bar",
+    "icon": "MoltenBar",
     "secondaryColor": "#B787DC",
     "requirements": [
       {
