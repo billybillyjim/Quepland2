@@ -9,7 +9,7 @@
       "newDepthOnTalk": 1,
       "requirements": [
         {
-          "lockedFollower": "Anthretago"
+          "lockedFollower": "Anthretagro"
         }
       ]
     },
@@ -20,7 +20,7 @@
       "newDepthOnTalk": 1,
       "requirements": [
         {
-          "lockedFollower": "Anthretago"
+          "lockedFollower": "Anthretagro"
         }
       ]
     },
@@ -31,7 +31,7 @@
       "newDepthOnTalk": 2,
       "requirements": [
         {
-          "lockedFollower": "Anthretago"
+          "lockedFollower": "Anthretagro"
         }
       ]
     },
@@ -42,7 +42,7 @@
       "newDepthOnTalk": 3,
       "requirements": [
         {
-          "lockedFollower": "Anthretago"
+          "lockedFollower": "Anthretagro"
         }
       ]
     },
@@ -52,14 +52,14 @@
       "depth": 3,
       "requirements": [
         {
-          "lockedFollower": "Anthretago"
+          "lockedFollower": "Anthretagro"
         },
         {
           "item": "Dojo Tokens",
           "itemAmount": 100000
         }
       ],
-      "unlockedFollower": "Anthretago",
+      "unlockedFollower": "Anthretagro",
       "ConsumeRequiredItems": true
     },
     {
@@ -68,7 +68,7 @@
       "depth": 3,
       "requirements": [
         {
-          "lockedFollower": "Anthretago"
+          "lockedFollower": "Anthretagro"
         }
       ]
 

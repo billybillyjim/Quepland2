@@ -1,0 +1,31 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Shop Attendant",
+  "id": 50,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi. What can I get you? We've got traps for catching animals and we also sell yoga mats.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Why do you sell yoga mats?",
+      "responseText": "What? You got a problem with that?",
+      "newDepthOnTalk": 2,
+      "depth": 1
+    },
+    {
+      "buttonText": "No",
+      "responseText": "Good. Buy one or get out. Or don't, I don't care.",
+      "newDepthOnTalk": 3,
+      "depth": 2
+    },
+    {
+      "buttonText": "Yes",
+      "responseText": "FightOpponents",
+      "parameter": "Angry Hunter,Enraged Attendant",
+      "newDepthOnTalk": 3,
+      "depth": 2
+    }
+  ]
+}

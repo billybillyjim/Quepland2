@@ -23,53 +23,63 @@ public class Requirement
 
 	public bool IsMet()
 	{
-		if(Location != "None" && GameState.Location != Location)
+        try
         {
-			return false;
-        }
-		if (Skill != "None" && Player.Instance.HasSkillRequirement(Skill, SkillLevel) == false)
-        {
-			return false;
-        }
-		if(Action != "None" && Player.Instance.HasToolRequirement(Action) == false)
-        {
-			return false;
-        }
-		if(Item != "None" && Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(Item)) < ItemAmount)
-        {
-			return false;
-        }
-		if(LockedFollower != "None" && FollowerManager.Instance.GetFollowerByName(LockedFollower).IsUnlocked)
-        {
-			return false;
-        }
-		if(AreaUnlocked != "None")
-        {
-            if (RequireAreaLocked)
-            {
-                if (AreaManager.Instance.GetAreaByName(AreaUnlocked).IsUnlocked)
-                {
-					return false;
-                }
-            }
-            else
-            {
-                if (AreaManager.Instance.GetAreaByName(AreaUnlocked).IsUnlocked == false)
-                {
-					return false;
-                }
-            }
-        }
-		if(Quest != "None")
-        {
-			int progress = QuestManager.Instance.GetQuestByName(Quest).Progress;
-			if(progress < MinimumQuestProgress || progress > MaximumQuestProgress)
-            {
+			if (Location != "None" && GameState.Location != Location)
+			{
 				return false;
-            }
-        }
+			}
+			if (Skill != "None" && Player.Instance.HasSkillRequirement(Skill, SkillLevel) == false)
+			{
+				return false;
+			}
+			if (Action != "None" && Player.Instance.HasToolRequirement(Action) == false)
+			{
+				return false;
+			}
+			if (Item != "None" && Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(Item)) < ItemAmount)
+			{
+				return false;
+			}
+			if (LockedFollower != "None" && FollowerManager.Instance.GetFollowerByName(LockedFollower).IsUnlocked)
+			{
+				return false;
+			}
+			if (AreaUnlocked != "None")
+			{
+				if (RequireAreaLocked)
+				{
+					if (AreaManager.Instance.GetAreaByName(AreaUnlocked).IsUnlocked)
+					{
+						return false;
+					}
+				}
+				else
+				{
+					if (AreaManager.Instance.GetAreaByName(AreaUnlocked).IsUnlocked == false)
+					{
+						return false;
+					}
+				}
+			}
+			if (Quest != "None")
+			{
+				int progress = QuestManager.Instance.GetQuestByName(Quest).Progress;
+				if (progress < MinimumQuestProgress || progress > MaximumQuestProgress)
+				{
+					return false;
+				}
+			}
 
-		return true;
+			return true;
+		}
+        catch(Exception e)
+        {
+			Console.WriteLine(e.Message);
+			Console.WriteLine(e.StackTrace);
+			return false;
+        }
+		
     }
 
     public override string ToString()

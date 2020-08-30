@@ -60,11 +60,11 @@ public class NPCManager
         {
             foreach(Dialog d in npc.Dialogs)
             {
-                if(d.ResponseWithParameter == "UnlockArea" + d.Parameter)
+                if (d.ResponseWithParameter == "UnlockArea" + d.Parameter)
                 {
                     CustomDialogFunctions.TryAdd("UnlockArea" + d.Parameter, new Action(() => UnlockArea(d.Parameter)));
                 }
-                else if(d.ResponseWithParameter == "UnlockAndGotoArea" + d.Parameter)
+                else if (d.ResponseWithParameter == "UnlockAndGotoArea" + d.Parameter)
                 {
                     CustomDialogFunctions.TryAdd("UnlockAndGotoArea" + d.Parameter, new Action(() => UnlockAndGotoArea(d.Parameter)));
                 }
@@ -83,6 +83,10 @@ public class NPCManager
                 else if (d.ResponseWithParameter == "GoHunting" + d.Parameter)
                 {
                     CustomDialogFunctions.TryAdd("GoHunting" + d.Parameter, new Action(() => GoHunting(d.Parameter)));
+                }
+                else if(d.ResponseWithParameter == "FightOpponents" + d.Parameter)
+                {
+                    CustomDialogFunctions.TryAdd("FightOpponents" + d.Parameter, new Action(() => FightEnemies(d.Parameter)));
                 }
             }
         }
@@ -160,6 +164,18 @@ public class NPCManager
     {
         GameState.GoTo("World/" + url);
         
+    }
+    public void FightEnemies(string opponentNames)
+    {
+        string[] opponents = opponentNames.Split(',');
+        foreach(string o in opponents)
+        {
+            BattleManager.Instance.CurrentOpponents.Add(BattleManager.Instance.GetMonsterByName(o));
+            
+        }
+        BattleManager.Instance.ReturnLocation = "World/Ricechild/";
+        BattleManager.Instance.StartBattle();
+        GameState.GoTo("World/Battle");
     }
     public NPC GetNPCByName(string name)
     {

@@ -190,6 +190,29 @@
         "url": "BigSmithy",
         "description": "The smithy here is quite large. It can handle a good number of stronger metals, but the heat is too much for the weakest metals.",
         "hasSmithy": true
+      },
+      {
+        "name": "Hunter's Guild",
+        "buttonText": "Hunter's Guild",
+        "url": "HuntersGuild",
+        "description": "A handful of guild members are sitting around tables, telling stories and drinking. The one corner of the guild serves as a shop that sells even to non-members. The far wall is covered with a very detailed map.",
+        "shops": [
+          {
+            "name": "Brian's Baking Goods",
+            "itemNames": [
+              "Small Trap",
+              "Medium Trap",
+              "Large Trap",
+              "Yoga Mat"
+            ],
+            "costMultiplier": 3
+
+          }
+        ],
+        "npcs": [
+          "Shop Attendant",
+          "Hunting Map"
+        ]
       }
     ],
     "npcs": [

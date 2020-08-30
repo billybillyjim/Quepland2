@@ -6,6 +6,7 @@ public class HunterTrapSlot
 	public GameItem Trap { get; set; }
     public DropTable DropTable { get; set; }
     public string State { get; set; } = "Unset";
+    public int Size { get; set; }
     private static Random rand = new Random();
 
 	public void SetTrap(GameItem trap)
@@ -15,11 +16,12 @@ public class HunterTrapSlot
             HarvestTime = DateTime.UtcNow + new TimeSpan(0, trap.TrapInfo.TimeToReady, 0);
             State = "Set";
             Trap = trap;
+            Size = trap.TrapInfo.Size;
         }
     }
     public void Collect()
     {
-        for(int i = 0; i < Trap.TrapInfo.Size;i++)
+        for(int i = 0; i < Size;i++)
         {
             try
             {

@@ -443,6 +443,70 @@
     }
   },
   {
+    "name": "Angry Hunter",
+    "hp": 750,
+    "attackSpeed": 10,
+    "armor": 15,
+    "damage": 30,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 200,
+          "amount": 5
+        },
+        {
+          "itemName": "Wild Boar",
+          "weight": 20
+        },
+        {
+          "itemName": "Wild Boar Hide",
+          "weight": 10
+        },
+        {
+          "itemName": "Wild Boar Meat",
+          "weight": 10
+        },
+        {
+          "itemName": "Wild Boar Tusk",
+          "weight": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "Enraged Attendant",
+    "hp": 1250,
+    "attackSpeed": 5,
+    "armor": 65,
+    "damage": 120,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Coins",
+          "weight": 200,
+          "amount": 5
+        },
+        {
+          "itemName": "Yoga Mat",
+          "weight": 20
+        },
+        {
+          "itemName": "Wild Boar Hide",
+          "weight": 10
+        },
+        {
+          "itemName": "Wild Boar Meat",
+          "weight": 10
+        },
+        {
+          "itemName": "Wild Boar Tusk",
+          "weight": 1
+        }
+      ]
+    }
+  },
+  {
     "name": "Ground Grupper",
     "hp": 90,
     "attackSpeed": 14,

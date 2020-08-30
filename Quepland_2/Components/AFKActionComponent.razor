@@ -3,7 +3,7 @@
 
 @if (AFKAction != null)
 {
-<div style="display:flex;margin:5px;">
+<div style="display:flex;">
     @if (GameState.CurrentAFKAction == AFKAction)
     {
         if (AFKAction.IsReady())
@@ -21,7 +21,7 @@
     }
     else if (GameState.CurrentAFKAction != null)
     {
-        <div style="margin:3px;">
+        <div>
             <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You can't train this way while training another way.")))"
                     @onmouseout="@(new Action(() => GameState.HideTooltip()))">
                 @AFKAction.ButtonText
@@ -34,24 +34,24 @@
         {
             @if (showHours)
             {
-                <div style="margin:3px;">
+                <div style="margin:3px 3px 0px 0px;">
                     <button class="btn btn-primary" @onclick="@(() => ToggleHours())" 
                             @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "This will train your " + AFKAction.SkillTrained + ".")))"
                             @onmouseout="@(new Action(() => GameState.HideTooltip()))">@AFKAction.ButtonText</button>
                 </div>
-                <div style="margin:3px;">
+                <div style="margin:3px 3px 0px 0px;">
                     <button class="btn btn-primary" @onclick="@(() => StartAFKing(1))">1 Hour</button>
                 </div>
-                <div style="margin:3px;">
+                <div style="margin:3px 3px 0px 0px;">
                     <button class="btn btn-primary" @onclick="@(() => StartAFKing(4))">4</button>
                 </div>
-                <div style="margin:3px;">
+                <div style="margin:3px 3px 0px 0px;">
                     <button class="btn btn-primary" @onclick="@(() => StartAFKing(8))">8</button>
                 </div>
             }
             else
             {
-                <div style="margin:3px;">
+                <div style="margin:3px 3px 0px 0px;">
                     <button class="btn btn-primary" @onclick="@(() => ToggleHours())" 
                             @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "This will train your " + AFKAction.SkillTrained + ".")))"
                             @onmouseout="@(new Action(() => GameState.HideTooltip()))">@AFKAction.ButtonText</button>
@@ -60,7 +60,7 @@
         }
         else
         {
-            <div style="margin:3px;">
+            <div style="margin:3px 3px 0px 0px;">
                 <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, AFKAction.GetRequirementTooltip())))"
                         @onmouseout="@(new Action(() => GameState.HideTooltip()))">
                     @AFKAction.ButtonText

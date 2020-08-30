@@ -16,7 +16,8 @@ public class BattleManager
     public List<Monster> CurrentOpponents { get; set; } = new List<Monster>();
     public IBoss CurrentBoss { get; set; }
     public Monster Target { get; set; }
-    public Area CurrentArea;
+    public Area CurrentArea { get; set; }
+    public string ReturnLocation { get; set; }
     public Dojo CurrentDojo { get; set; }
     public bool BattleHasEnded = true;
     public bool WonLastBattle = false;
@@ -323,13 +324,20 @@ public class BattleManager
     }
     public void EndBattle()
     {
-        BattleHasEnded = true;
-        CurrentBoss = null;
-        if(Player.Instance.JustDied == false &&
-            AutoBattle &&
-            CurrentArea != null)
+        if (String.IsNullOrEmpty(ReturnLocation))
         {
-            WaitedAutoBattleGameTick = true;           
+            BattleHasEnded = true;
+            CurrentBoss = null;
+            if (Player.Instance.JustDied == false &&
+                AutoBattle &&
+                CurrentArea != null)
+            {
+                WaitedAutoBattleGameTick = true;
+            }
+        }
+        else
+        {
+            GameState.GoTo(ReturnLocation);
         }
     }
     private Monster GetNextTarget()

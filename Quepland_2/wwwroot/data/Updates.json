@@ -1,6 +1,18 @@
 [
   {
-    "versionNumber": "0.0.19",
+    "versionNumber": "0.0.20",
+    "updates": [
+      "Fixed alignment issue with AFK actions.",
+      "Made the game crash less from typos.",
+      "Fixed a bug that prevented players from accessing Ricechild.",
+      "Updated Grumpy the Gnome's dialogue.",
+      "Added a hunting map in Ricechild to show where to find some hunted animals.",
+      "Added a hunting guild to Ricechild where you can buy hunting traps.",
+      "Added more conversation functionality."
+    ]
+  },
+  {
+    "versionNumber": "0.0.19b",
     "updates": [
       "Fixed a crash with alchemy if using an item that shouldn't be alchemicable.",
       "Reworked Oikaaz's dialogue to be more in line with the newer dialogue system.",
@@ -9,7 +21,9 @@
       "Trapping can no longer lock a player out when there is a typo.",
       "Fixed a bug that made hunting traps show when they weren't ready, instead of when they were.",
       "Added some NPCs to explain sushi and jerky.",
-      "Added an icon to help distinguish molten metal from metal."
+      "Added an icon to help distinguish molten metal from metal.",
+      "Jerky now requires a culinary arts level to make.",
+      "Actually fixed trapping issues."
     ]
   },
   {

@@ -159,6 +159,7 @@ public class Area
             TripIsActive = HuntingTripInfo?.IsActive ?? false,
             TripReturnTime = HuntingTripInfo?.ReturnTime ?? DateTime.MinValue,
             TripStartTime = HuntingTripInfo?.StartTime ?? DateTime.MinValue,
+            TrapSize = TrapSlot?.Size ?? 0,
             ID = ID };
     }
     public void LoadSaveData(AreaSaveData data)
@@ -166,6 +167,7 @@ public class Area
         IsUnlocked = data.IsUnlocked;
         if(TrapSlot != null)
         {
+            TrapSlot.Size = data.TrapSize;
             TrapSlot.State = data.TrapState;
             TrapSlot.HarvestTime = data.TrapHarvestTime;
         }

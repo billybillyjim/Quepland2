@@ -93,15 +93,41 @@
     ],
     "buildings": [
       {
-        "name": "Kazkagrin's Fortunes",
-        "buttonText": "Visit Kazkagrin's Fortunes",
-        "url": "KazkagrinsFortunes",
-        "description": "A poorly lit room is surrounded on all sides by maps, clocks, and tapestries. A strange man sits hunched over a table, awaiting your arrival.",
+        "name": "Forest Hut",
+        "buttonText": "Enter hut",
+        "url": "ForestHut",
+        "description": "Inside the hut is a small, single room. An old man sits at a table reading a book.",
         "npcs": [
-          "Kazkagrin"
+          "Elderly Man"
         ]
       }
     ],
+    "trapSlot": {
+      "dropTable": {
+        "drops": [
+          {
+            "itemName": "Rabbit",
+            "weight": 10
+          },
+          {
+            "itemName": "Wild Boar",
+            "weight": 15
+          },
+          {
+            "itemName": "Buck",
+            "weight": 5
+          },
+          {
+            "itemName": "Turkey",
+            "weight": 5
+          },
+          {
+            "itemName": "Pigeon",
+            "weight": 5
+          }
+        ]
+      }
+    },
     "huntingTripInfo": {
       "dropTable": {
         "drops": [

@@ -1,0 +1,38 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Elderly Man",
+  "id": 49,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello, I see you've let yourself in.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "I'm an adventurer",
+      "responseText": "You'd have to be to find me out here. Are you looking for something?",
+      "depth": 1,
+      "newDepthOnTalk": 2
+    },
+    {
+      "buttonText": "Nothing in particular",
+      "responseText": "That's good to hear, as there's nothing here to find.",
+      "depth": 2,
+      "newDepthOnTalk": 0
+    },
+    {
+      "buttonText": "No",
+      "responseText": "That's good to hear, as there's nothing here to find.",
+      "depth": 2,
+      "newDepthOnTalk": 0,
+      "requirements": [
+        {
+          "quest": "Chrysopoeian Crisis",
+          "minimumQuestProgress": 10,
+          "maximumQuestProgress": 10
+        }
+      ]
+
+    }
+  ]
+}

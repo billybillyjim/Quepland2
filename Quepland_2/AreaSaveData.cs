@@ -6,6 +6,7 @@ public class AreaSaveData
 	public bool IsUnlocked { get; set; }
 	public DateTime TrapHarvestTime { get; set; }
 	public string TrapState { get; set; }
+	public int TrapSize { get; set; }
 	public bool TripIsActive { get; set; }
 	public DateTime TripStartTime { get; set; }
 	public DateTime TripReturnTime { get; set; }

@@ -1,0 +1,30 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Hunting Map",
+  "id": 51,
+  "dialogs": [
+    {
+      "buttonText": "Look at map",
+      "responseText": "The map displays various animals that one can find in Quepland, as well as their habitats. You can look more closely for details.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Higashi Woods",
+      "responseText": "The map shows rabbits, pigeons, and wild boars in Cochee Clearing, with deer, turkey, and pheasants roaming the rest of the forest.",
+      "newDepthOnTalk": 2,
+      "depth": 1
+    },
+    {
+      "buttonText": "Hojkma Isles",
+      "responseText": "The map shows deer, moose, and various bears all over the islands.",
+      "newDepthOnTalk": 2,
+      "depth": 1
+    },
+    {
+      "buttonText": "Togaru Hills",
+      "responseText": "The map shows rabbits, wild boar, and bison in Tsu Valley.",
+      "newDepthOnTalk": 2,
+      "depth": 1
+    }
+  ]
+}

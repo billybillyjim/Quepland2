@@ -177,8 +177,17 @@
     }
     private void Return()
     {
-        GameState.Location = BattleManager.Instance.CurrentArea.AreaURL;
-        UriHelper.NavigateTo("World/" + BattleManager.Instance.CurrentArea.AreaURL);
+        if (String.IsNullOrEmpty(BattleManager.Instance.ReturnLocation))
+        {
+            GameState.Location = BattleManager.Instance.CurrentArea.AreaURL;
+            UriHelper.NavigateTo("World/" + BattleManager.Instance.CurrentArea.AreaURL);
+        }
+        else
+        {
+            GameState.Location = BattleManager.Instance.ReturnLocation;
+            BattleManager.Instance.ReturnLocation = "";
+            UriHelper.NavigateTo(GameState.Location);
+        }
     }
     protected override void OnInitialized()
     {
