@@ -122,7 +122,7 @@
                 else
                 {
                     {
-                        <button style="position:absolute;left:5px;bottom:5px;" class="btn btn-light" @onclick="@(() => SellItem())">Sell @(Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item)))</button>
+                        <button style="position:absolute;left:5px;bottom:5px;" class="btn btn-light" @onclick="@(() => SellItem())">Sell @(Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfUnlockedItem(Item)))</button>
                         <div style="position:absolute;left:100px;bottom:5px;">@(GetValue())</div>
                     }
                 }

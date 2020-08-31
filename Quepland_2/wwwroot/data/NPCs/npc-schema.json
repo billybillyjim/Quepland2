@@ -57,6 +57,10 @@
                   "type": "integer",
                   "description": "The skill level required. Goes with skill."
                 },
+                "skillLimit": {
+                  "type": "integer",
+                  "description": "The skill's maximum level. Any higher and the requirement fails."
+                },
                 "item": {
                   "type": "string",
                   "description": "The name of the item required. Needs an itemAmount or defaults to 0."

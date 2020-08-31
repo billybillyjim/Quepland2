@@ -281,9 +281,10 @@
   },
   {
     "name": "Great Tree Seed",
-    "description": "A seed from the Great Tree. It's a prized possesion among the citizens of Koncave.",
+    "description": "A seed from the Great Tree. It's a prized possesion among the root dwellers of Koncave.",
     "value": 5000,
-    "icon": "Seeds"
+    "icon": "Seeds",
+    "isStackable": true
   },
   {
     "name": "Steelflame Axe Handle",

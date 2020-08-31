@@ -70,8 +70,27 @@ public class Inventory
         {
             return items.FirstOrDefault(x => x.Key.UniqueID == item.UniqueID).Value;
         }
-        int amt = items.Count(x => x.Key.UniqueID == item.UniqueID);
         return items.Count(x => x.Key.UniqueID == item.UniqueID);
+    }
+    public int GetNumberOfUnlockedItem(GameItem item)
+    {
+        if (item == null)
+        {
+            return 0;
+        }
+        if (!HasItem(item))
+        {
+            return 0;
+        }
+        if (item.IsStackable || AllItemsStack)
+        {
+            if (item.IsLocked)
+            {
+                return 0;
+            }
+            return items.FirstOrDefault(x => x.Key.UniqueID == item.UniqueID).Value;
+        }
+        return items.Count(x => x.Key.UniqueID == item.UniqueID && x.Key.IsLocked == false);
     }
     /// <summary>
     /// Returns the total amount of item slots used in the inventory.
@@ -123,7 +142,16 @@ public class Inventory
         {
             return false;
         }
-        return itemLookupDic.TryGetValue(ItemManager.Instance.GetItemByName(itemName).UniqueID, out _);
+        if(itemLookupDic.TryGetValue(ItemManager.Instance.GetItemByName(itemName).UniqueID, out _))
+        {
+            return true;
+        }
+        else
+        {
+            Console.WriteLine("No item " + itemName + " exists.");
+            return false;
+        }
+        
     }
     public bool HasItem(string uniqueID, bool empty)
     {
@@ -373,6 +401,47 @@ public class Inventory
                     {
                         itemLookupDic.Remove(items[i].Key.UniqueID);
                         items.RemoveAll(x => removedItems.Contains(x));                    
+                        UpdateItemCount();
+                        return removed;
+                    }
+                }
+            }
+        }
+        items.RemoveAll(x => removedItems.Contains(x));
+        UpdateItemCount();
+        return removed;
+    }
+    public int RemoveUnlockedItems(GameItem item, int amount)
+    {
+        if (amount <= 0 || item == null)
+        {
+            return 0;
+        }
+        int removed = 0;
+        var removedItems = new HashSet<KeyValuePair<GameItem, int>>();
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (items[i].Key.UniqueID == item.UniqueID && items[i].Key.IsLocked == false)
+            {
+                KeyValuePair<GameItem, int> pair = items[i];
+
+                if (items[i].Value > amount)
+                {
+                    int oldAmt = pair.Value;
+                    items.Remove(pair);
+                    items.Add(new KeyValuePair<GameItem, int>(pair.Key, oldAmt - amount));
+                    UpdateItemCount();
+                    return amount;
+                }
+                else if (items[i].Value <= amount)
+                {
+                    int val = items[i].Value;
+                    removedItems.Add(items[i]);
+                    removed += val;
+                    if (removed >= amount)
+                    {
+                        itemLookupDic.Remove(items[i].Key.UniqueID);
+                        items.RemoveAll(x => removedItems.Contains(x));
                         UpdateItemCount();
                         return removed;
                     }

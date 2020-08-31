@@ -43,8 +43,8 @@
         else
         {
             @if (selectedMode == "Normal" && hasSave ||
-        selectedMode == "Hardcore" && hasHardcore ||
-        selectedMode == "Ultimate" && hasUltimate)
+      selectedMode == "Hardcore" && hasHardcore ||
+      selectedMode == "Ultimate" && hasUltimate)
             {
                 if (hasShownWarning == false)
                 {
@@ -110,6 +110,19 @@
     {
         <button @onclick="@(() => UriHelper.NavigateTo("/Rates/"))">Rates</button>
     }
+    @if (ShowCredits)
+    {
+        <p>
+            Quepland 2 was coded entirely by billybillyjim, in Blazor. Almost all the art of the game was done by the amazingly talented people at
+            <a target="_blank" href="https://game-icons.net/">game-icons.net</a>,
+            including <a target="_blank" href="http://lorcblog.blogspot.com">Lorc</a>,
+            <a target="_blank" href="http://delapouite.com">Delapouite</a>, and <a target="_blank" href="https://game-icons.net/about.html#authors">others</a>.
+        </p>
+    }
+    else
+    {
+        <button class="btn btn-primary" @onclick="@(() => ShowCredits = !ShowCredits)">Credits</button>
+    }
 </div>
 
         <!--
@@ -148,6 +161,7 @@
     bool hasUltimate = false;
     bool hasShownWarning = false;
     bool showAllUpdates = false;
+    bool ShowCredits = false;
     public List<string> GetGameModes()
     {
         List<string> modes = new List<string>();

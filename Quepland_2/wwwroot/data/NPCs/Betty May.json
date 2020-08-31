@@ -1,0 +1,48 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Betty May",
+  "id": 52,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi. Don't mind me, I'm just a people watcher. Oh, also if you're headed to Koncave City, I have a passport I'd trade you.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "How much for the passport?",
+      "responseText": "I don't need money. I do, however, have a very specific item I am gathering. Ever heard of Great Tree seeds?",
+      "depth": 1,
+      "newDepthOnTalk": 2
+    },
+    {
+      "buttonText": "Yes",
+      "responseText": "Great, then I don't need to explain. I need 20 of them.",
+      "depth": 2,
+      "newDepthOnTalk": 4
+    },
+    {
+      "buttonText": "No",
+      "responseText": "Further down in the caves there you'll find a number of disgusting creatures called root dwellers. They collect any seeds from the tree and hold on to them as treasures. It's not common to find a root dweller with a seed, so I'm having trouble finding them.",
+      "depth": 2,
+      "newDepthOnTalk": 4
+    },
+    {
+      "buttonText": "I'll go get 20 seeds.",
+      "responseText": "Okay, let me know when you get them and we can trade.",
+      "depth": 4
+    },
+    {
+      "buttonText": "Let's trade",
+      "responseText": "Okay, let me know when you get them and we can trade.",
+      "depth": 4,
+      "requirements": [
+        {
+          "item": "Great Tree Seed",
+          "itemAmount": 20
+        }
+      ],
+      "consumeRequiredItems": true,
+      "itemOnTalk": "Koncave City Passport"
+    }
+  ]
+}

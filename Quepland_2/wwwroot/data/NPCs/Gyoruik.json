@@ -19,6 +19,18 @@
       "responseText": "The most popular thing is making sushi. Just roll some rice in some seaweed, and you can add a cut of fish on top. It's delicious and healthy, but there is a bit of a learning curve.",
       "depth": 1,
       "newDepthOnTalk": 2
+    },
+    {
+      "buttonText": "Can I sell you my fish?",
+      "responseText": "I won't buy any more fish today, maybe try a different time.",
+      "depth": 2,
+      "newDepthOnTalk": 3,
+      "requirements": [
+        {
+          "skill": "Fishing",
+          "skillLimit": 10
+        }
+      ]
     }
   ]
 }

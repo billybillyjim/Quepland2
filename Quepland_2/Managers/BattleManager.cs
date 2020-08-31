@@ -242,8 +242,19 @@ public class BattleManager
         {
             if(Player.Instance.GetWeapon().EnabledActions == "Archery" && Player.Instance.Inventory.HasArrows() == false)
             {
-                Player.Instance.GainExperience("Strength", total);
-                MessageManager.AddMessage("You whack the " + Target.Name + " with your bow for " + total + " damage!");
+
+                if (Player.Instance.GetWeapon().Name == "Spine Shooter" && Player.Instance.Inventory.HasItem("Cactus Spines"))
+                {
+                    Player.Instance.GainExperienceFromWeapon(Player.Instance.GetWeapon(), total);
+                    MessageManager.AddMessage("You shoot the " + Target.Name + " for " + total + " damage!");
+                    Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName("Cactus Spines"), 1);
+                }
+                else
+                {
+                    Player.Instance.GainExperience("Strength", total);
+                    MessageManager.AddMessage("You whack the " + Target.Name + " with your bow for " + total + " damage!");
+                }
+
             }
             else if(Player.Instance.GetWeapon().EnabledActions == "Archery")
             {

@@ -141,6 +141,32 @@
         ]
       }
     ],
+    "buildings": [
+      {
+        "name": "Woodworker's Association",
+        "buttonText": "Woodworker's Association",
+        "url": "WoodworkersAssociation",
+        "description": "The building is long and brightly lit. The chandeliers are the only things in the building not made entirely out of wood. There is a shop to buy wood working materials on the far end.",
+        "shops": [
+          {
+            "name": "Woodworking Supplies",
+            "itemNames": [
+              "Wood Carving Knife",
+              "Woodworker's Gloves",
+              "Oak Arrow Shafts",
+              "Birch Arrow Shafts",
+              "Mesquite Arrow Shafts",
+              "Ironwood Arrow Shafts",
+              "Birch Bow(Unstrung)",
+              "Mesquite Bow(Unstrung)",
+              "Ironwood Bow(Unstrung)",
+              "Snakewood Bow(Unstrung)"
+            ],
+            "costMultiplier": 3
+          }
+        ]
+      }
+    ],
     "requirements": [
       {
         "action": "River Travel"
@@ -180,7 +206,6 @@
               "Bucket of Water"
             ],
             "costMultiplier": 5
-
           }
         ]
       },

@@ -621,21 +621,31 @@ using System.Threading.Tasks;
         }
         if (ItemManager.Instance.CurrentShop != null)
         {
-            int sellAmt = Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(item));
+            int sellAmt = Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfUnlockedItem(item));
             if (Player.Instance.Inventory.GetAvailableSpaces() > 0 || Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.CurrentShop.Currency) > 0 || (item.IsStackable == false))
             {
-                Player.Instance.Inventory.RemoveItems(item, sellAmt);
-                Player.Instance.Inventory.AddMultipleOfItem(ItemManager.Instance.CurrentShop.Currency, (sellAmt * item.Value / 2));
-                MessageManager.AddMessage("You sold " + sellAmt + " " + item.Name + " for " + (sellAmt * item.Value / 2) + " " + ItemManager.Instance.CurrentShop.Currency.Name + ".");
+                int amtRemoved = Player.Instance.Inventory.RemoveUnlockedItems(item, sellAmt);
+                Player.Instance.Inventory.AddMultipleOfItem(ItemManager.Instance.CurrentShop.Currency, (amtRemoved * item.Value / 2));
+                MessageManager.AddMessage("You sold " + amtRemoved + " " + item.Name + " for " + (amtRemoved * item.Value / 2) + " " + ItemManager.Instance.CurrentShop.Currency.Name + ".");
             }
             else
             {
-                Console.WriteLine("No inventory space.");
+                if(Player.Instance.Inventory.GetNumberOfUnlockedItem(item) == 0)
+                {
+                    MessageManager.AddMessage("You dont have any unlocked " + item.Name + ".");
+
+                }
+                else
+                {
+                    MessageManager.AddMessage("You sold dont have the inventory space to sell that.");
+
+                }
             }
         }
         else if(Bank.Instance.IsBanking && Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Banking")
         {
-            int sellAmt = Math.Min(Bank.Instance.Amount, Player.Instance.Inventory.GetNumberOfItem(item));
+            Console.WriteLine("Code was run!");
+            int sellAmt = Math.Min(Bank.Instance.Amount, Player.Instance.Inventory.GetNumberOfUnlockedItem(item));
             if (Player.Instance.Inventory.GetAvailableSpaces() > 0 || Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName("Coins")) > 0 || (item.IsStackable == false))
             {
                 Player.Instance.Inventory.RemoveItems(item, sellAmt);
@@ -644,7 +654,16 @@ using System.Threading.Tasks;
             }
             else
             {
-                Console.WriteLine("No inventory space.");
+                if (Player.Instance.Inventory.GetNumberOfUnlockedItem(item) == 0)
+                {
+                    MessageManager.AddMessage("You dont have any unlocked " + item.Name + ".");
+
+                }
+                else
+                {
+                    MessageManager.AddMessage("You sold dont have the inventory space to sell that.");
+
+                }
             }
         }
         else

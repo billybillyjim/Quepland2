@@ -20,6 +20,10 @@ public class Requirement
 	public int MaximumQuestProgress { get; set; } = int.MaxValue;
 	public int ItemAmount { get; set; }
 	public int SkillLevel { get; set; }
+	/// <summary>
+	/// The maximum level a skill can be at to fulfill the requirement. Inclusive.
+	/// </summary>
+	public int SkillLimit { get; set; } = int.MaxValue - 10;
 
 	public bool IsMet()
 	{
@@ -29,10 +33,18 @@ public class Requirement
 			{
 				return false;
 			}
-			if (Skill != "None" && Player.Instance.HasSkillRequirement(Skill, SkillLevel) == false)
+			if (Skill != "None")
 			{
-				return false;
-			}
+				if (Player.Instance.HasSkillRequirement(Skill, SkillLevel) == false)
+                {
+					return false;
+				}
+				else if (Player.Instance.HasSkillRequirement(Skill, SkillLimit + 1))
+                {
+					Console.WriteLine("Player has too high of skill:" + SkillLimit);
+					return false;
+                }
+			}			
 			if (Action != "None" && Player.Instance.HasToolRequirement(Action) == false)
 			{
 				return false;

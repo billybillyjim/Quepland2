@@ -1,5 +1,21 @@
 [
   {
+    "versionNumber": "0.0.21",
+    "updates": [
+      "Fixed issue with some action tooltips.",
+      "Added woodworker's association.",
+      "The game can now check if a player's skill level is too high for a dialogue.",
+      "Made shop costs more readable.",
+      "Fixed a bug where right click menus didn't appear in the bank if you were searching.",
+      "Added a credits page.",
+      "Improved item locking to include preventing selling of items.",
+      "Fixed a bug where all items had a skill limit of -2,147,483,648 unless set otherwise.",
+      "Fixed a bug that made the game crash when using a certain weapon.",
+      "Added a way to access Koncave City.",
+      "Fixed the hunter's map to show multiple locations without disappearing."
+    ]
+  },
+  {
     "versionNumber": "0.0.20",
     "updates": [
       "Fixed alignment issue with AFK actions.",

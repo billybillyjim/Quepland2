@@ -1,5 +1,20 @@
 [
   {
+    "name": "Woodworker's Gloves",
+    "value": 150000,
+    "description": "An expertly crafted pair of leather gloves, designed with woodworkers in mind.",
+    "gatherString": "You get a pair of woodworking gloves.",
+    "gatherSpeed": 7,
+    "icon": "Glove",
+    "equipSlot": "Hands",
+    "armorInfo": {
+      "armorBonus": 2
+    },
+    "experienceBonusSkill": "Woodworking",
+    "experienceGainBonus": 0.1,
+    "secondaryColor": "#BD8F57"
+  },
+  {
     "name": "White Pine Arrow Shafts",
     "description": "They're like skinny, baby logs. Feathers can be attached to the end.",
     "gatherString": "You make $ arrow shafts from the white pine wood.",

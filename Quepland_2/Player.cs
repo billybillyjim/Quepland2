@@ -194,7 +194,7 @@ public class Player
         {
             if(GetWeapon().Name == "Spine Shooter")
             {
-                if(Inventory.HasItem("Cactus Spine"))
+                if(Inventory.HasItem("Cactus Spines"))
                 {
                     total += 10;
                 }

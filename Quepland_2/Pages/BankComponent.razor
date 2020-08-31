@@ -203,7 +203,9 @@
                 @foreach (KeyValuePair<GameItem, int> item in GetSearchItems())
                 {
 
-                    <div @onclick="@(() => Withdraw(item.Key))" style="margin-left:-3px;cursor:pointer">
+                    <div  oncontextmenu="return false;"
+                             onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item.Key)))"
+                         @onclick="@(() => Withdraw(item.Key))" style="margin-left:-3px;cursor:pointer">
                         <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
 
                     </div>
