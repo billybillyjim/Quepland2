@@ -8,12 +8,26 @@
       "responseText": "You lift the sword from its spot on the sarcophagus. It's both far too large for you to wield and far too small to have been used by the giant being inside the grave.",
       "quest": "Queple's Sword",
       "newQuestProgressValue": 1,
-      "itemOnTalk": "Queple's Sword",
+      "itemOnTalk": "Queple's Giant Sword",
       "requirements": [
         {
           "quest": "Queple's Sword",
           "minimumQuestProgress": 0,
           "maximumQuestProgress": 0
+        }
+      ]
+    },
+    {
+      "buttonText": "Place Queple's sword",
+      "responseText": "You place the sword back where you found it. It quickly begins to glow with a blinding purple light. After a short while the light recedes back into the sword and you take it back from the sarcophagus.",
+      "quest": "Queple's Sword",
+      "newQuestProgressValue": 1,
+      "itemOnTalk": "Queple's Sword",
+      "consumeRequiredItems": true,
+      "requirements": [
+        {
+          "item": "Queple's Sword(Inactive)",
+          "itemAmount": 1
         }
       ]
     }

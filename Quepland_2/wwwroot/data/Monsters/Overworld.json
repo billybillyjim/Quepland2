@@ -691,6 +691,11 @@
           "itemName": "Coins",
           "weight": 3,
           "amount": 70
+        },
+        {
+          "itemName": "Frost Seed",
+          "weight": 3,
+          "amount": 1
         }
       ]
     }
@@ -735,6 +740,11 @@
         {
           "itemName": "Mercurial Hilt",
           "weight": 1
+        },
+        {
+          "itemName": "Frost Seed",
+          "weight": 5,
+          "amount": 1
         }
       ]
     }
@@ -779,6 +789,11 @@
         {
           "itemName": "Mercurial Pommel",
           "weight": 1
+        },
+        {
+          "itemName": "Frost Seed",
+          "weight": 10,
+          "amount": 1
         }
       ]
     }
@@ -823,6 +838,11 @@
         {
           "itemName": "Mercurial Blade",
           "weight": 1
+        },
+        {
+          "itemName": "Frost Seed",
+          "weight": 10,
+          "amount": 1
         }
       ]
     }

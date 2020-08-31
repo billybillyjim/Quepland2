@@ -1,342 +1,265 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class WorldTester
 {
     public List<GameItem> IncludedItems = new List<GameItem>();
     public List<GameItem> MissingItems = new List<GameItem>();
+    public List<Recipe> RemainingRecipes = new List<Recipe>();
+    public List<Recipe> RemainingGemRecipes = new List<Recipe>();
+    public List<Recipe> RemainingCaboRecipes = new List<Recipe>();
+    public List<Recipe> RemainingBakingRecipes = new List<Recipe>();
+    public List<Recipe> RemainingSmithingRecipes = new List<Recipe>();
     public void TestWorld()
     {
+        RemainingRecipes.AddRange(ItemManager.Instance.Recipes);
+        RemainingSmithingRecipes.AddRange(ItemManager.Instance.SmithingRecipes);
+        RemainingGemRecipes.AddRange(ItemManager.Instance.GemCuttingRecipes);
+        RemainingCaboRecipes.AddRange(ItemManager.Instance.GemCabochonRecipes);
+        RemainingBakingRecipes.AddRange(ItemManager.Instance.BakingRecipes);
+        Bank.Instance.Inventory.IsLoadingSave = true;
+        foreach(Quest q in QuestManager.Instance.Quests)
+        {
+            q.IsComplete = true;
+            q.Progress = 1000;
+        }
+        foreach (Skill s in Player.Instance.Skills)
+        {
+            s.SetSkillLevel(250);
+        }
+        foreach(NPC npc in NPCManager.Instance.NPCs)
+        {
+            foreach(Dialog d in npc.Dialogs)
+            {
+                if(d.ItemOnTalk != "None")
+                {
+                    TryAddItem(d.ItemOnTalk);
+                }
+            }
+            if(npc.Shop != null)
+            {
+                foreach(GameItem i in npc.Shop.Items)
+                {
+                    TryAddItem(i);
+                }
+            }
+        }
+        UpdateItemCounts();
+
         foreach (Monster m in BattleManager.Instance.Monsters)
         {
-            foreach (Drop d in m.DropTable.Drops)
-            {
-                try
-                {
-                    GameItem item = ItemManager.Instance.GetItemByName(d.ItemName);
-                    if (IncludedItems.Contains(item) == false && item != null)
-                    {
-                        IncludedItems.Add(item);
-                    }
-                    if (item == null)
-                    {
-                        Console.WriteLine("Monster:" + m.Name + " drops unfound item:" + d.ItemName + " in database.");
-                    }
-                }
-                catch(Exception e)
-                {
-                    Console.WriteLine(e);
-                }
-            }
+            CheckMonsterDrops(m);
         }
-        foreach (Area area in AreaManager.Instance.Areas)
+        UpdateItemCounts();
+        foreach (Area a in AreaManager.Instance.Areas)
         {
-            foreach (string a in area.Actions)
-            {
-                if (a == null || a.Contains(':') == false)
-                {
-
-                }
-                else
-                {
-                    foreach (string i in a.Split(':')[1].Split(','))
-                    {
-                        try
-                        {
-                            GameItem it = ItemManager.Instance.GetItemByName(i);
-                            if (it != null && IncludedItems.Contains(it) == false)
-                            {
-                                IncludedItems.Add(it);
-                            }
-                            else if (it == null)
-                            {
-                                Console.WriteLine("Item not found:" + i);
-                            }
-                        }
-                        catch(Exception e)
-                        {
-                            Console.WriteLine(e);
-                        }
-                    }
-                }
-            }
-            if (area.HuntingTripInfo != null)
-            {
-                foreach (Drop d in area.HuntingTripInfo.DropTable.Drops)
-                {
-                    try
-                    {
-                        GameItem it = ItemManager.Instance.GetItemByName(d.ItemName);
-                        if (it != null && IncludedItems.Contains(it) == false)
-                        {
-                            IncludedItems.Add(it);
-                        }
-                    }
-                    catch(Exception e)
-                    {
-                        Console.WriteLine(e);
-                    }
-
-                }
-            }
-            foreach (Building b in area.Buildings)
-            {
-                foreach(Shop s in b.Shops)
-                {
-                    foreach(GameItem i in s.Items)
-                    {
-                        try
-                        {
-                            if (i != null && IncludedItems.Contains(i) == false)
-                            {
-                                IncludedItems.Add(i);
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(e);
-                        }
-
-                    }
-                }
-
-            }
-
+            CheckArea(a);
         }
-        List<GameItem> newItems = new List<GameItem>();
+        UpdateItemCounts();
+        foreach (GameItem i in ItemManager.Instance.Items)
+        {
+            if(i.Name == "Unidentified Gem")
+            {
+                TryAddItem(i);
+                TryAddItem(ItemManager.Instance.GetItemByName(i.Parameter));
+            }
+        }
+        UpdateItemCounts();
+        foreach (MinigameDropTable table in ItemManager.Instance.MinigameDropTables)
+        {
+            CheckMinigame(table);
+            UpdateItemCounts();
+        }
+
+        
+        CheckRecipes(ref RemainingRecipes, false);
+        UpdateItemCounts();
+        CheckTanning();
+        UpdateItemCounts();
+        CheckRecipes(ref RemainingSmithingRecipes, false);
+        UpdateItemCounts();
+        CheckRecipes(ref RemainingSmithingRecipes, false);
+        UpdateItemCounts();
+        CheckRecipes(ref RemainingRecipes, false);
+        UpdateItemCounts();
+        CheckRecipes(ref RemainingRecipes, true);
+        UpdateItemCounts();
+        CheckRecipes(ref RemainingCaboRecipes, true);
+        UpdateItemCounts();
+        CheckRecipes(ref RemainingGemRecipes, true);
+        UpdateItemCounts();
+        CheckRecipes(ref RemainingSmithingRecipes, true);
+        UpdateItemCounts();
+        CheckRecipes(ref RemainingBakingRecipes, true);
+        UpdateItemCounts();
+
+        MissingItems = ItemManager.Instance.Items.Where(x => IncludedItems.Contains(x) == false).ToList();
+    }
+    private void CheckMinigame(MinigameDropTable table)
+    {
+        foreach(Drop d in table.DropTable.Drops)
+        {
+            TryAddItem(d.Item);
+        }
+    }
+    private void CheckTanning()
+    {
+        List<GameItem> ItemsToAdd = new List<GameItem>();
         foreach (GameItem i in IncludedItems)
         {
+
             if (i.TanningInfo != null)
             {
-                try
-                {
-                    if (IncludedItems.Contains(i) == true && IncludedItems.Contains(i.TanningInfo.TansInto) == false)
-                    {
-                        newItems.Add(i.TanningInfo.TansInto);
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                }
-
+                ItemsToAdd.Add(i.TanningInfo.TansInto);
 
             }
         }
-        IncludedItems.AddRange(newItems);
-        foreach (Recipe r in ItemManager.Instance.Recipes)
+        foreach (GameItem i in ItemsToAdd)
         {
-            bool IngredientsIncluded = true;
-            foreach(Ingredient i in r.Ingredients)
+            Bank.Instance.Inventory.AddMultipleOfItem(i, 50);
+            TryAddItem(i);
+        }
+    }
+    private void CheckRecipes(ref List<Recipe> recipes, bool final)
+    {
+        List<Recipe> Successes = new List<Recipe>();
+        foreach (Recipe r in recipes)
+        {
+            try
             {
-                try
+                if (r.CanCreateFromInventory(Bank.Instance.Inventory))
                 {
-                    GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
-                    if (IncludedItems.Contains(item) == false)
-                    {
-                        if (item == null)
-                        {
-                            Console.WriteLine("Item was null (not in database):" + i.Item);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Included items does not contain " + i.Item);
-                        }
-
-                        IngredientsIncluded = false;
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                }
-
-            }
-            if (IngredientsIncluded && IncludedItems.Contains(r.Output) == false)
-            {
-                try
-                {
-                    IncludedItems.Add(r.Output);
+                    TryAddItem(r.Output);
+                    
                     if (r.SecondaryOutput != null)
                     {
-                        IncludedItems.Add(r.SecondaryOutput);
+                        TryAddItem(r.SecondaryOutput);
                     }
                     if (r.TertiaryOutput != null)
                     {
-                        IncludedItems.Add(r.TertiaryOutput);
+                        TryAddItem(r.TertiaryOutput);
                     }
                 }
-                catch (Exception e)
+                else if(final)
                 {
-                    Console.WriteLine("Failed to add recipe:" + r.OutputItemName);
-                    Console.WriteLine(e);
+                    Console.WriteLine("Cannot Create " + r.Output);
+                    foreach(Ingredient i in r.Ingredients)
+                    {
+                        Console.WriteLine(i.ItemName + ":" + i.Amount + " vs " + Bank.Instance.Inventory.GetNumberOfItem(i.Item));
+                    }
+                    Console.WriteLine(r.GetRequirementTooltip());
                 }
-
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+            }
+        }
+        foreach(Recipe r in Successes)
+        {
+            recipes.Remove(r);
+        }
+    }
+    private void CheckArea(Area a)
+    {
+        foreach(string action in a.Actions)
+        {
+            CheckActionString(action);
+        }
+        foreach(Building b in a.Buildings)
+        {
+            foreach(Shop s in b.Shops)
+            {
+                CheckShop(s);
+            }
+        }
+        if(a.HuntingTripInfo != null)
+        {
+            foreach(Drop d in a.HuntingTripInfo.DropTable.Drops)
+            {
+                TryAddItem(d.Item);
+            }
+        }
+        if(a.TrapSlot != null)
+        {
+            foreach(Drop d in a.TrapSlot.DropTable.Drops)
+            {
+                TryAddItem(d.Item);
+            }
+        }
+        foreach(Shop s in a.Shops)
+        {
+            CheckShop(s);
+        }
+    }
+    private void CheckShop(Shop s)
+    {
+        foreach (GameItem i in s.Items)
+        {
+            TryAddItem(i);
+        }
+    }
+    private void CheckActionString(string action)
+    {
+        if (action == null || action.Contains(':') == false)
+        {
+            Console.WriteLine("Action Text was null or contained no colon.");
+            if (action == null)
+            {
+                Console.WriteLine("ActionText null:" + (action == null));
             }
             else
             {
-                Console.WriteLine("Didn't add " + r.Output.Name + ". Ingredients Included:" + IngredientsIncluded + ". Included items contains output:" + IncludedItems.Contains(r.Output));
+                Console.WriteLine("ActionText:" + action);
             }
         }
-        newItems = new List<GameItem>();
-        foreach (GameItem i in IncludedItems)
+        else
         {
-            if (i != null && i.TanningInfo != null)
+            foreach (string i in action.Split(':')[1].Split(','))
             {
-                try
+                GameItem item = ItemManager.Instance.GetItemByName(i);
+                if (item != null)
                 {
-                    if (IncludedItems.Contains(i) == true && IncludedItems.Contains(i.TanningInfo.TansInto) == false)
-                    {
-                        newItems.Add(i.TanningInfo.TansInto);
-                    }
+                    TryAddItem(item);
                 }
-                catch (Exception e)
+                else
                 {
-                    Console.WriteLine(e);
+                    Console.WriteLine("Item not found:" + i);
                 }
-
-
-            }
-        }
-        IncludedItems.AddRange(newItems);
-        foreach (Recipe r in ItemManager.Instance.Recipes)
-        {
-
-            bool IngredientsIncluded = true;
-            foreach (Ingredient i in r.Ingredients)
-            {
-                try
-                {
-                    GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
-                    if (IncludedItems.Contains(item) == false)
-                    {
-                        IngredientsIncluded = false;
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                }
-
-            }
-            if (IngredientsIncluded && IncludedItems.Contains(r.Output) == false)
-            {
-                try
-                {
-                    IncludedItems.Add(r.Output);
-                    if (r.SecondaryOutput != null)
-                    {
-                        IncludedItems.Add(r.SecondaryOutput);
-                    }
-                    if (r.TertiaryOutput != null)
-                    {
-                        IncludedItems.Add(r.TertiaryOutput);
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                }
-
-            }
-        }
-        foreach (Recipe r in ItemManager.Instance.SmithingRecipes)
-        {
-            bool IngredientsIncluded = true;
-            foreach (Ingredient i in r.Ingredients)
-            {
-                try
-                {
-                    GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
-                    if (IncludedItems.Contains(item) == false)
-                    {
-                        IngredientsIncluded = false;
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                }
-
-            }
-            if (IngredientsIncluded && IncludedItems.Contains(r.Output) == false)
-            {
-                try
-                {
-                    if (r.Output == null)
-                    {
-                        Console.WriteLine("Recipe has null output:" + r.OutputItemName);
-                    }
-                    IncludedItems.Add(r.Output);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                }
-
-            }
-        }
-        //A second time for recipes that require recipe outputs
-        foreach (Recipe r in ItemManager.Instance.SmithingRecipes)
-        {
-            bool IngredientsIncluded = true;
-            foreach (Ingredient i in r.Ingredients)
-            {
-                try
-                {
-                    GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
-                    if (IncludedItems.Contains(item) == false)
-                    {
-                        Console.WriteLine("Didn't add " + item + ". It lacked ingredient:" + i.Item);
-                        IngredientsIncluded = false;
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                }
-
-            }
-            if (IngredientsIncluded && IncludedItems.Contains(r.Output) == false)
-            {
-                IncludedItems.Add(r.Output);
-            }
-        }        
-        //A third time
-        foreach (Recipe r in ItemManager.Instance.SmithingRecipes)
-        {
-            bool IngredientsIncluded = true;
-            foreach (Ingredient i in r.Ingredients)
-            {
-                try
-                {
-                    GameItem item = ItemManager.Instance.GetItemByUniqueID(i.Item.UniqueID);
-                    if (IncludedItems.Contains(item) == false)
-                    {
-                        IngredientsIncluded = false;
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                }
-
-            }
-            if (IngredientsIncluded && IncludedItems.Contains(r.Output) == false)
-            {
-                IncludedItems.Add(r.Output);
-            }
-        }
-
-
-        MissingItems = ItemManager.Instance.Items;
-        MissingItems.RemoveAll(x => IncludedItems.Contains(x));
-        foreach(GameItem i in IncludedItems)
-        {
-            if(i == null)
-            {
-                Console.WriteLine("Null Item found.");
             }
         }
     }
+    private void CheckMonsterDrops(Monster m)
+    {
+        if(m.DropTable != null)
+        {
+            foreach(Drop d in m.DropTable.Drops)
+            {
+                TryAddItem(d.Item);
+            }
+        }
+    }
+
+    private void TryAddItem(GameItem i)
+    {        
+        if (IncludedItems.Contains(ItemManager.Instance.GetItemByUniqueID(i.UniqueID)) == false)
+        {
+            IncludedItems.Add(ItemManager.Instance.GetItemByUniqueID(i.UniqueID));
+            Bank.Instance.Inventory.AddMultipleOfItem(ItemManager.Instance.GetItemByUniqueID(i.UniqueID), 10);
+        }
+    }
+    private void TryAddItem(string itemName)
+    {
+        TryAddItem(ItemManager.Instance.GetItemByName(itemName));
+    }
+    private void UpdateItemCounts()
+    {
+        Bank.Instance.Inventory.IsLoadingSave = false;
+        Bank.Instance.Inventory.UpdateItemCount();
+        Bank.Instance.Inventory.IsLoadingSave = true;
+
+    }
+
 }

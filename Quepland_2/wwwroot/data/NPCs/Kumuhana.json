@@ -21,7 +21,7 @@
       "quest": "Queple's Sword",
       "requirements": [
         {
-          "item": "Queple's Sword",
+          "item": "Queple's Giant Sword",
           "itemAmount": 1
         }
       ]
@@ -99,7 +99,7 @@
       "quest": "Queple's Sword",
       "requirements": [
         {
-          "item": "Queple's Sword",
+          "item": "Queple's Giant Sword",
           "itemAmount": 1
         }
       ]

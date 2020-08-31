@@ -486,7 +486,7 @@ public class Inventory
         itemLookupDic.Clear();
         UpdateItemCount();
     }
-    private void UpdateItemCount()
+    public void UpdateItemCount()
     {
         if (IsLoadingSave)
         {

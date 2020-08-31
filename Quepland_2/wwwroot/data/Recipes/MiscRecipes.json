@@ -125,9 +125,24 @@
       },
       {
         "quest": "Mayor's Assistant",
-        "minimumQuestProgress": 4    
+        "minimumQuestProgress": 4
       }
     ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Queple's Sword(Inactive)",
+    "ingredients": [
+      {
+        "itemName": "Queple's Giant Sword",
+        "amount": 1
+      },
+      {
+        "itemName": "Shrinking Cloth",
+        "amount": 1
+      }
+    ],
+    "recipeActionString": "You wipe the sword with the cloth...",
     "maxOutputsPerAction": 1
   }
 ]

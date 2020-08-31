@@ -1,0 +1,126 @@
+[
+  {
+    "outputItemName": "Molten Strongtium Bar",
+    "ingredients": [
+      {
+        "itemName": "Strongtium Bar"
+      }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 115
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Strongtium Bar",
+    "ingredients": [
+      {
+        "itemName": "Strongtium Ore"
+      },
+      {
+        "itemName": "Coal"
+      }
+    ],
+    "experienceGained": "Smithing:250",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 115
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Strongtium Bar",
+    "ingredients": [
+      {
+        "itemName": "Strongtium Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 115
+      }
+    ]
+  },
+  {
+    "outputItemName": "Strongtium Knife",
+    "ingredients": [
+      {
+        "itemName": "Molten Strongtium Bar"
+      }
+    ],
+    "experienceGained": "Smithing:250",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 115
+      }
+    ]
+  },
+  {
+    "outputItemName": "Strongtium Sword",
+    "ingredients": [
+      {
+        "itemName": "Molten Strongtium Bar"
+      }
+    ],
+    "experienceGained": "Smithing:250",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 115
+      }
+    ]
+  },
+  {
+    "outputItemName": "Strongtium Axe",
+    "ingredients": [
+      {
+        "itemName": "Molten Strongtium Bar"
+      }
+    ],
+    "experienceGained": "Smithing:250",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 115
+      }
+    ]
+  },
+  {
+    "outputItemName": "Strongtium Hammer",
+    "ingredients": [
+      {
+        "itemName": "Molten Strongtium Bar"
+      }
+    ],
+    "experienceGained": "Smithing:250",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 115
+      }
+    ]
+  },
+  {
+    "outputItemName": "Strongtium Arrowtips",
+    "ingredients": [
+      {
+        "itemName": "Molten Strongtium Bar"
+      }
+    ],
+    "outputAmount": 10,
+    "experienceGained": "Smithing:250",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 115
+      }
+    ]
+  }
+
+]

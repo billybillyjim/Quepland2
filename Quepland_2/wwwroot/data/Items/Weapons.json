@@ -1465,5 +1465,24 @@
         }
       ]
     }
+  },
+  {
+    "name": "Queple's Sword",
+    "description": "A magical sword that once belonged to a hero. It glows with a soft purple light.",
+    "value": 29880,
+    "enabledActions": "Swordsmanship",
+    "secondaryColor": "#B787DC",
+    "equipSlot": "R Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 9,
+      "damage": 525,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 100
+        }
+      ]
+    }
   }
 ]

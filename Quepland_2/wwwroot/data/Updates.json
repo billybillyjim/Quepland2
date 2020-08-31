@@ -1,5 +1,12 @@
 [
   {
+    "versionNumber": "0.0.22",
+    "updates": [
+      "Finished work on Queple's Sword quest.",
+      "Fixed gem cutting recipes so they actually work now."
+    ]
+  },
+  {
     "versionNumber": "0.0.21",
     "updates": [
       "Fixed issue with some action tooltips.",
@@ -12,7 +19,9 @@
       "Fixed a bug where all items had a skill limit of -2,147,483,648 unless set otherwise.",
       "Fixed a bug that made the game crash when using a certain weapon.",
       "Added a way to access Koncave City.",
-      "Fixed the hunter's map to show multiple locations without disappearing."
+      "Fixed the hunter's map to show multiple locations without disappearing.",
+      "Added items to the shops in Koncave City",
+      "Added the item's name beneath the item in the shop menu."
     ]
   },
   {

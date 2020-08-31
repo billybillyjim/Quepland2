@@ -141,6 +141,11 @@
           "itemName": "Queplinium Ore",
           "weight": 5,
           "amount": 1
+        },
+        {
+          "itemName": "Shrinking Cloth",
+          "weight": 5,
+          "amount": 1
         }
       ]
     }
@@ -415,12 +420,12 @@
           "amount": 1
         },
         {
-          "itemName": "Woolly Mammoth Meat",
+          "itemName": "Mammoth Meat",
           "weight": 25,
           "amount": 1
         },
         {
-          "itemName": "Woolly Mammoth Hide",
+          "itemName": "Mammoth Hide",
           "weight": 25,
           "amount": 1
         },

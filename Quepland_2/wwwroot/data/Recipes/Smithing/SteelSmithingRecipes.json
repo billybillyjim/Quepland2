@@ -124,6 +124,20 @@
         "skillLevel": 65
       }
     ]
+  },
+  {
+    "outputItemName": "Steel Bar",
+    "ingredients": [
+      {
+        "itemName": "Molten Steel Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 65
+      }
+    ]
   }
 
 ]

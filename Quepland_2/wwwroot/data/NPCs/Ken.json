@@ -14,7 +14,7 @@
       "quest": "Queple's Sword",
       "requirements": [
         {
-          "item": "Queple's Sword",
+          "item": "Queple's Giant Sword",
           "itemAmount": 1
         }
       ]
@@ -31,7 +31,7 @@
           "maximumQuestProgress": 2
         },
         {
-          "item": "Queple's Sword",
+          "item": "Queple's Giant Sword",
           "itemAmount": 1
         }
       ]

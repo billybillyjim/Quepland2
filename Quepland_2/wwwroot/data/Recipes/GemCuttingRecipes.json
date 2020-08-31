@@ -34,7 +34,7 @@
     "maxOutputsPerAction": 1
   },
   {
-    "outputItemName": "Purpurite",
+    "outputItemName": "Cut Purpurite",
     "ingredients": [
       {
         "itemName": "Rough Purpurite",
@@ -51,7 +51,7 @@
     "maxOutputsPerAction": 1
   },
   {
-    "outputItemName": "Opal",
+    "outputItemName": "Cut Opal",
     "ingredients": [
       {
         "itemName": "Rough Opal",
@@ -68,7 +68,7 @@
     "maxOutputsPerAction": 1
   },
   {
-    "outputItemName": "Garnet",
+    "outputItemName": "Cut Garnet",
     "ingredients": [
       {
         "itemName": "Rough Garnet",
@@ -85,7 +85,7 @@
     "maxOutputsPerAction": 1
   },
   {
-    "outputItemName": "Amethyst",
+    "outputItemName": "Cut Amethyst",
     "ingredients": [
       {
         "itemName": "Rough Amethyst",
@@ -102,7 +102,7 @@
     "maxOutputsPerAction": 1
   },
   {
-    "outputItemName": "Emerald",
+    "outputItemName": "Cut Emerald",
     "ingredients": [
       {
         "itemName": "Rough Emerald",
@@ -119,7 +119,7 @@
     "maxOutputsPerAction": 1
   },
   {
-    "outputItemName": "Aquamarine",
+    "outputItemName": "Cut Aquamarine",
     "ingredients": [
       {
         "itemName": "Rough Aquamarine",
@@ -136,7 +136,7 @@
     "maxOutputsPerAction": 1
   },
   {
-    "outputItemName": "Topaz",
+    "outputItemName": "Cut Topaz",
     "ingredients": [
       {
         "itemName": "Rough Topaz",
@@ -153,7 +153,7 @@
     "maxOutputsPerAction": 1
   },
   {
-    "outputItemName": "Chrysoberyl",
+    "outputItemName": "Cut Chrysoberyl",
     "ingredients": [
       {
         "itemName": "Rough Chrysoberyl",
@@ -170,7 +170,7 @@
     "maxOutputsPerAction": 1
   },
   {
-    "outputItemName": "Sapphire",
+    "outputItemName": "Cut Sapphire",
     "ingredients": [
       {
         "itemName": "Rough Sapphire",
@@ -187,7 +187,7 @@
     "maxOutputsPerAction": 1
   },
   {
-    "outputItemName": "Ruby",
+    "outputItemName": "Cut Ruby",
     "ingredients": [
       {
         "itemName": "Rough Ruby",
@@ -204,7 +204,7 @@
     "maxOutputsPerAction": 1
   },
   {
-    "outputItemName": "Diamond",
+    "outputItemName": "Cut Diamond",
     "ingredients": [
       {
         "itemName": "Rough Diamond",

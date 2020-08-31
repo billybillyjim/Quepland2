@@ -6,6 +6,7 @@
 
 @if(World != null)
 {
+    <button @onclick="@(() => ShowBank = !ShowBank)">Show Bank</button>
 <div style="display:flex;">
     <div>
         Included Items:@World.IncludedItems.Count
@@ -30,10 +31,17 @@
         </div>
     </div>
 </div>
+@if (ShowBank)
+{
+<div>
+    <Quepland_2.Pages.BankComponent></Quepland_2.Pages.BankComponent>
+</div>
+}
 }
 
 
 @code {
+    private bool ShowBank;
     private WorldTester World = new WorldTester();
 
     protected override void OnInitialized()

@@ -51,8 +51,15 @@
     "icon": "Camels"
   },
   {
-    "name": "Queple's Sword",
+    "name": "Queple's Giant Sword",
     "description": "A massive sword. You definitely can't use it the way it is now. Maybe there's a way to change that...",
+    "value": 0,
+    "icon": "BigSword",
+    "isSellable": false
+  },
+  {
+    "name": "Queple's Sword(Inactive)",
+    "description": "A strange sword. It doesn't seem to work quite right. Maybe you should return it...",
     "value": 0,
     "icon": "BigSword",
     "isSellable": false

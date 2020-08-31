@@ -42,5 +42,19 @@
         "skillLevel": 40
       }
     ]
+  },
+  {
+    "outputItemName": "Silver Bar",
+    "ingredients": [
+      {
+        "itemName": "Molten Silver Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 40
+      }
+    ]
   }
 ]

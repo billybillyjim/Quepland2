@@ -76,13 +76,50 @@
         "name": "Jason's Jewelry",
         "buttonText": "Jason's Jewelry",
         "url": "JasonsJewelry",
-        "description": ""
+        "description": "A rather shady individual sits at a stool in the corner of the shop, glaring at everyone who comes in. There isn't much here aside from necklaces. Everything here is very expensive.",
+        "shops": [
+          {
+            "name": "Jason's Jewelry",
+            "limitBoughtItemsToSoldItems": true,
+            "itemNames": [
+              "Lapidary Toolkit",
+              "Rock Tumbler",
+              "Silver Necklace",
+              "Gold Necklace",
+              "Platinum Necklace",
+              "Cut Amberite",
+              "Cut Lizardite",
+              "Cut Purpurite"
+            ],
+            "costMultiplier": 10
+
+          }
+        ]
       },
       {
-        "name": "Alchemicellanea",
-        "buttonText": "Alchemicellanea",
-        "url": "Alchemicellanea",
-        "description": ""
+        "name": "Alchemiscellanea",
+        "buttonText": "Alchemiscellanea",
+        "url": "Alchemiscellanea",
+        "description": "Here and there roots penetrate the roof of this incredibly old building. The walls are decorated with a strange kind of artwork you've never seen before. There is no light source in the room, but somehow you can still see everything that is for sale.",
+        "shops": [
+          {
+            "name": "Alchemiscellanea",
+            "limitBoughtItemsToSoldItems": true,
+            "itemNames": [
+              "Carquen",
+              "Quencium",
+              "Oxyquen",
+              "Nitroquen",
+              "Siliquen",
+              "Quephorus",
+              "Quelfur",
+              "Bariquem",
+              "Uraniquep"
+            ],
+            "costMultiplier": 5
+
+          }
+        ]
       }
     ],
     "npcs": [
