@@ -39,7 +39,7 @@
     "gatherString": "You make a rice roll.",
     "value": 20,
     "gatherSpeed": 5,
-    "icon": "Sushi",
+    "icon": "EmptyRoll",
     "foodInfo": {
       "healDuration": 10,
       "healSpeed": 5,

@@ -110,6 +110,21 @@
     ]
   },
   {
+    "outputItemName": "Steel Pickaxe",
+    "ingredients": [
+      {
+        "itemName": "Molten Steel Bar"
+      }
+    ],
+    "experienceGained": "Smithing:200",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 65
+      }
+    ]
+  },
+  {
     "outputItemName": "Steel Arrowtips",
     "ingredients": [
       {

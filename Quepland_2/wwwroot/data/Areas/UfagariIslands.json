@@ -26,6 +26,12 @@
         "description": "The smithy is specially designed to handle precious metals. You can make silver, gold or platinum necklaces here.",
         "hasSmithy": true
       }
+    ],
+    "monsters": [
+      "Oni",
+      "Living Rock"
+
     ]
+    
   }
 ]

@@ -122,6 +122,16 @@
       {
         "action": "River Travel"
       }
+    ],
+    "monsters": [
+      "Salty Zombie",
+      "Sweet Zombie",
+      "Sour Zombie",
+      "Bitter Zombie",
+      "Umami Zombie",
+      "Spicy Zombie",
+      "Dancing Skeleton",
+      "Writhing Skeleton"
     ]
   },
   {

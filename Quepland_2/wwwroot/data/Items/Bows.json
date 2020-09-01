@@ -334,7 +334,7 @@
     "name": "Spine Shooter",
     "description": "A section of a cactus that can be used to shoot its spines.",
     "value": 5000,
-    "secondaryColor": "green",
+    "secondaryColor": "#45bf2a",
     "enabledActions": "Archery",
     "equipSlot": "R Hand",
     "icon": "Shooter",

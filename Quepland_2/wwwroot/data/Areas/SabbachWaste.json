@@ -108,7 +108,16 @@
       }
     ],
     "monsters": [
-      "Serpopard"
+      "Serpopard",
+      "Living Cactus",
+      "Sandcrawler",
+      "Sandthrasher",
+      "Sand Ray",
+      "Sand Golem",
+      "Living Rock",
+      "Earth Golem",
+      "Amphisbaena",
+      "Behemoth Scorpion"
     ]
   },
   {

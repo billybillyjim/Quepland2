@@ -60,6 +60,66 @@
     }
   },
   {
+    "name": "Steel Pickaxe",
+    "description": "A pickaxe made of solid steel. It's extremely sturdy.",
+    "value": 680,
+    "enabledActions": "Mining",
+    "secondaryColor": "#9DC6E8",
+    "equipSlot": "R Hand",
+    "gatherSpeedBonus": 0.35,
+    "icon": "Pickaxe",
+    "weaponInfo": {
+      "attackSpeed": 22,
+      "damage": 350,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 75
+        }
+      ]
+    }
+  },
+  {
+    "name": "Strongtium Pickaxe",
+    "description": "A pickaxe made of strongtium. It's very strong.",
+    "value": 2880,
+    "enabledActions": "Mining",
+    "secondaryColor": "#AF7979",
+    "equipSlot": "R Hand",
+    "gatherSpeedBonus": 0.45,
+    "icon": "Pickaxe",
+    "weaponInfo": {
+      "attackSpeed": 22,
+      "damage": 650,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 99
+        }
+      ]
+    }
+  },
+  {
+    "name": "Ultimate Pickaxe",
+    "description": "A pickaxe made of some unknown material. Maybe it's magical?",
+    "value": 18000,
+    "enabledActions": "Mining",
+    "secondaryColor": "#ebed5a",
+    "equipSlot": "R Hand",
+    "gatherSpeedBonus": 0.55,
+    "icon": "Pickaxe",
+    "weaponInfo": {
+      "attackSpeed": 22,
+      "damage": 850,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 105
+        }
+      ]
+    }
+  },
+  {
     "name": "Copper Ore",
     "description": "It's a very soft, green ore.",
     "gatherString": "You mine some copper ore.",

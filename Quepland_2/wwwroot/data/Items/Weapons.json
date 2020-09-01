@@ -1366,6 +1366,7 @@
     "value": 5000,
     "enabledActions": "Axemanship",
     "equipSlot": "R Hand",
+    "secondaryColor": "#45bf2a",
     "icon": "CactusClubFull",
     "weaponInfo": {
       "attackSpeed": 15,

@@ -2331,15 +2331,47 @@
       "drops": [
         {
           "itemName": "Rough Purpurite",
-          "weight": 5
+          "weight": 50
         },
         {
           "itemName": "Rough Opal",
-          "weight": 5
+          "weight": 50
         },
         {
-          "itemName": "Caiman Jerky",
+          "itemName": "Caiman Meat",
           "weight": 50
+        },
+        {
+          "itemName": "Bear Meat",
+          "weight": 10
+        },
+        {
+          "itemName": "Moose Meat",
+          "weight": 10
+        },
+        {
+          "itemName": "Pigeon Meat",
+          "weight": 20
+        },
+        {
+          "itemName": "Pheasant Meat",
+          "weight": 20
+        },
+        {
+          "itemName": "Turkey Meat",
+          "weight": 20
+        },
+        {
+          "itemName": "Deer Meat",
+          "weight": 50
+        },
+        {
+          "itemName": "Rabbit Meat",
+          "weight": 10
+        },
+        {
+          "itemName": "Magic Net",
+          "weight": 1
         }
       ]
     },

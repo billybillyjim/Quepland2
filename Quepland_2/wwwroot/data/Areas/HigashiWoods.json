@@ -111,6 +111,14 @@
     ],
     "npcs": [
       "Excited Traveller"
+    ],
+    "monsters": [
+      "Black Bear",
+      "Angler Squirrel",
+      "Bat",
+      "Giant Bat",
+      "Bandit Lord",
+      "Bandit King"
     ]
   },
   {

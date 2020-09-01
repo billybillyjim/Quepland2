@@ -457,6 +457,7 @@
     "name": "Caiman Meat",
     "description": "The meat of a caiman.",
     "value": 50,
+    "secondaryColor": "#66B4DE",
     "icon": "Meat",
     "tanningInfo": {
       "tansIntoString": "Caiman Jerky"
@@ -466,13 +467,15 @@
     "name": "Caiman Skin",
     "description": "The skin of a caiman. You can tan it into leather at a tannery.",
     "value": 30,
-    "icon": "Leather",
+    "icon": "Hide",
+    "secondaryColor": "#66B4DE",
     "experienceGained": "Leatherworking:30"
   },
   {
     "name": "Caiman Leather",
     "description": "The tanned hide of a caiman. Made into armor, it might make you stronger.",
     "value": 300,
+    "secondaryColor": "#66B4DE",
     "icon": "Leather",
     "experienceGained": "Leatherworking:30"
   },

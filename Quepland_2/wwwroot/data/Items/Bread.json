@@ -5,6 +5,7 @@
     "gatherString": "You harvest some wheat.",
     "value": 5,
     "gatherSpeed": 8,
+    "secondaryColor": "#f9b319",
     "icon": "Rice",
     "foodInfo": {
       "healDuration": 3,
@@ -18,6 +19,7 @@
     "gatherString": "You harvest some rye.",
     "value": 10,
     "gatherSpeed": 8,
+    "secondaryColor": "#6d5939",
     "icon": "Rice",
     "foodInfo": {
       "healDuration": 3,
@@ -31,6 +33,7 @@
     "gatherString": "You harvest some durum.",
     "value": 15,
     "gatherSpeed": 15,
+    "secondaryColor": "#d3a87e",
     "icon": "Rice",
     "foodInfo": {
       "healDuration": 3,
@@ -44,6 +47,7 @@
     "gatherString": "You grind up the wheat.",
     "value": 20,
     "gatherSpeed": 5,
+    "secondaryColor": "#f9b319",
     "icon": "PowderBag",
     "foodInfo": {
       "healDuration": 3,
@@ -58,6 +62,7 @@
     "gatherString": "You grind up the rye.",
     "value": 25,
     "gatherSpeed": 5,
+    "secondaryColor": "#6d5939",
     "icon": "PowderBag",
     "foodInfo": {
       "healDuration": 3,
@@ -72,6 +77,7 @@
     "gatherString": "You grind up the durum.",
     "value": 30,
     "gatherSpeed": 5,
+    "secondaryColor": "#d3a87e",
     "icon": "PowderBag",
     "foodInfo": {
       "healDuration": 3,
@@ -86,6 +92,7 @@
     "gatherString": "You mix the water and flour and knead it into a dough.",
     "value": 20,
     "gatherSpeed": 5,
+    "secondaryColor": "#f9b319",
     "icon": "Dough",
     "foodInfo": {
       "healDuration": 3,
@@ -100,6 +107,7 @@
     "value": 25,
     "gatherSpeed": 5,
     "icon": "Dough",
+    "secondaryColor": "#6d5939",
     "foodInfo": {
       "healDuration": 3,
       "healSpeed": 3,
@@ -112,6 +120,7 @@
     "gatherString": "You mix the water and flour and knead it into a dough.",
     "value": 30,
     "gatherSpeed": 5,
+    "secondaryColor": "#d3a87e",
     "icon": "Dough",
     "foodInfo": {
       "healDuration": 3,
@@ -125,6 +134,7 @@
     "gatherString": "You mix the water, yeast and flour and knead it into a dough.",
     "value": 20,
     "gatherSpeed": 5,
+    "secondaryColor": "#f9b319",
     "icon": "Dough",
     "foodInfo": {
       "healDuration": 3,
@@ -139,6 +149,7 @@
     "value": 25,
     "gatherSpeed": 5,
     "icon": "Dough",
+    "secondaryColor": "#6d5939",
     "foodInfo": {
       "healDuration": 3,
       "healSpeed": 3,
@@ -151,6 +162,7 @@
     "gatherString": "You mix the water, yeast and flour and knead it into a dough.",
     "value": 30,
     "gatherSpeed": 5,
+    "secondaryColor": "#d3a87e",
     "icon": "Dough",
     "foodInfo": {
       "healDuration": 3,
@@ -163,6 +175,7 @@
     "description": "A dough made from water, flour, sugar and yeast.",
     "gatherString": "You mix the ingredients and knead it into a dough.",
     "value": 25,
+    "secondaryColor": "#ffffff",
     "gatherSpeed": 5,
     "icon": "Dough",
     "foodInfo": {
@@ -177,6 +190,7 @@
     "gatherString": "You mix the ingredients and knead it into a dough.",
     "value": 30,
     "gatherSpeed": 5,
+    "secondaryColor": "#fefff5",
     "icon": "Dough",
     "foodInfo": {
       "healDuration": 3,
@@ -190,6 +204,7 @@
     "gatherString": "You bake the dough into bread.",
     "value": 50,
     "gatherSpeed": 5,
+    "secondaryColor": "#f9b319",
     "icon": "UnleavenedBread",
     "foodInfo": {
       "healDuration": 1,
@@ -203,6 +218,7 @@
     "gatherString": "You bake the dough into bread.",
     "value": 75,
     "gatherSpeed": 5,
+    "secondaryColor": "#6d5939",
     "icon": "UnleavenedBread",
     "foodInfo": {
       "healDuration": 1,
@@ -216,6 +232,7 @@
     "gatherString": "You bake the dough into bread.",
     "value": 90,
     "gatherSpeed": 5,
+    "secondaryColor": "#d3a87e",
     "icon": "UnleavenedBread",
     "foodInfo": {
       "healDuration": 1,
@@ -229,6 +246,7 @@
     "gatherString": "You bake the dough into bread.",
     "value": 50,
     "gatherSpeed": 5,
+    "secondaryColor": "#f9b319",
     "icon": "Bread",
     "foodInfo": {
       "healDuration": 1,
@@ -242,6 +260,7 @@
     "gatherString": "You bake the dough into bread. Yeast helped it rise into a delicious loaf.",
     "value": 75,
     "gatherSpeed": 5,
+    "secondaryColor": "#6d5939",
     "icon": "Bread",
     "foodInfo": {
       "healDuration": 1,
@@ -256,6 +275,7 @@
     "value": 90,
     "gatherSpeed": 5,
     "icon": "Bread",
+    "secondaryColor": "#d3a87e",
     "foodInfo": {
       "healDuration": 1,
       "healSpeed": 1,
@@ -268,6 +288,7 @@
     "gatherString": "You bake the dough into bread. Yeast helped it rise into a delicious loaf.",
     "value": 150,
     "gatherSpeed": 5,
+    "secondaryColor": "#ffffff",
     "icon": "Bread",
     "foodInfo": {
       "healDuration": 1,
@@ -281,6 +302,7 @@
     "gatherString": "You bake the dough into bread. Yeast helped it rise into a delicious loaf.",
     "value": 170,
     "gatherSpeed": 5,
+    "secondaryColor": "#fefff5",
     "icon": "Bread",
     "foodInfo": {
       "healDuration": 1,
@@ -294,6 +316,7 @@
     "gatherString": "You mix together all the ingredients and knead it into a dough.",
     "value": 200,
     "gatherSpeed": 10,
+    "secondaryColor": "#e6a389",
     "icon": "Dough",
     "foodInfo": {
       "healDuration": 3,
@@ -306,6 +329,7 @@
     "description": "A complex bread made from many ingredients.",
     "gatherString": "You bake the dough into bread.",
     "value": 250,
+    "secondaryColor": "#e6a389",
     "gatherSpeed": 10,
     "icon": "Bread",
     "foodInfo": {
@@ -326,6 +350,7 @@
     "description": "A bucket. It's got water in it.",
     "gatherString": "You fill the bucket with water.",
     "value": 5,
+    "secondaryColor": "#6a84cc",
     "gatherSpeed": 8,
     "icon": "BucketFull"
   },
@@ -340,6 +365,7 @@
     "name": "Yeast",
     "description": "An amazing creature that makes bread taste good.",
     "value": 50,
+    "secondaryColor": "#c2a976",
     "gatherSpeed": 3,
     "icon": "PowderBag",
     "isStackable": true
@@ -348,6 +374,7 @@
     "name": "Milk",
     "description": "Delicious milk.",
     "value": 80,
+    "secondaryColor": "#fefff5",
     "gatherSpeed": 3,
     "icon": "Milk"
   },
@@ -355,6 +382,7 @@
     "name": "Sugar",
     "description": "Sweet sugar.",
     "value": 100,
+    "secondaryColor": "#ffffff",
     "gatherSpeed": 3,
     "icon": "PowderBag"
   },
@@ -363,13 +391,15 @@
     "description": "Salty.",
     "value": 120,
     "gatherSpeed": 3,
-    "icon": "PowderBag",
+    "secondaryColor": "#ffffff",
+    "icon": "Salt",
     "isStackable": true
   },
   {
     "name": "Oil",
     "description": "Good in small doses.",
     "value": 150,
+    "secondaryColor": "#bbb303",
     "gatherSpeed": 3,
     "icon": "Oil"
   }

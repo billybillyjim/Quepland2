@@ -17,6 +17,15 @@
     ],
     "npcs": [
       "Tired Traveller"
+    ],
+    "monsters": [
+      "Mapinguari",
+      "Tokoloshe",
+      "Sawabe Swiper",
+      "Wild Boar",
+      "Manananggal",
+      "Lilytrap",
+      "Wild Kushtaka"
     ]
   },
   {

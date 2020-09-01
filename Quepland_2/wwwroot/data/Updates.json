@@ -3,7 +3,14 @@
     "versionNumber": "0.0.22",
     "updates": [
       "Finished work on Queple's Sword quest.",
-      "Fixed gem cutting recipes so they actually work now."
+      "Fixed gem cutting recipes so they actually work now.",
+      "Added some missing items, fixed some item names to be more consistent.",
+      "Added a different icon for rice rolls.",
+      "Added more pickaxes.",
+      "Added missing smithing recipes.",
+      "Added the 40ish missing monsters to areas around the world.",
+      "Fixed the coloring on bread items.",
+      "Added ways to acquire more items."
     ]
   },
   {

@@ -222,6 +222,12 @@
     ],
     "npcs": [
       "Rumpy the Gnome"
+    ],
+    "monsters": [
+      "Mercurial Malformation",
+      "Mercurial Man",
+      "Mercurial Warrior",
+      "Mercurial Knight"
     ]
   },
   {

@@ -127,6 +127,10 @@
         {
           "itemName": "Oak Logs",
           "weight": 20
+        },
+        {
+          "itemName": "Woodcutter's Hat",
+          "weight": 1
         }
       ]
     }

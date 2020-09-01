@@ -265,5 +265,21 @@
         "action": "Woodcutting"
       }
     ]
+  },
+  {
+    "name": "Woodcutter's Hat",
+    "description": "A special hat for woodcutters.",
+    "gatherString": "You found a hat!",
+    "value": 2000,
+    "secondaryColor": "#9F6F4F",
+    "gatherSpeed": 220,
+    "experienceGained": "Woodcutting:2000",
+    "icon": "WoodcutterHat",
+    "experienceGainBonus": 0.025,
+    "experienceBonusSkill": "Woodcutting",
+    "equipSlot": "Head",
+    "armorInfo": {
+      "armorBonus": 3
+    }
   }
 ]

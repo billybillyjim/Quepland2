@@ -92,6 +92,21 @@
     ]
   },
   {
+    "outputItemName": "Strongtium Pickaxe",
+    "ingredients": [
+      {
+        "itemName": "Molten Strongtium Bar"
+      }
+    ],
+    "experienceGained": "Smithing:250",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 115
+      }
+    ]
+  },
+  {
     "outputItemName": "Strongtium Hammer",
     "ingredients": [
       {
@@ -115,6 +130,20 @@
     ],
     "outputAmount": 10,
     "experienceGained": "Smithing:250",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 115
+      }
+    ]
+  },
+  {
+    "outputItemName": "Strongtium Bar",
+    "ingredients": [
+      {
+        "itemName": "Molten Strongtium Bar"
+      }
+    ],
     "requirements": [
       {
         "skill": "Smithing",
