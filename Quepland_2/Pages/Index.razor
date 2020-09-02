@@ -9,7 +9,9 @@
 {
     @if (GameState.InitCompleted == false)
     {
-        <div>Loading Data...</div>
+        <div>Loading Data... <img src="/data/Images/Loading.gif" style="height:30px;width:30px;background:white;border-radius:0.25rem;"/></div>
+        
+        
     }
     <StartMenuComponent></StartMenuComponent>  
 }
@@ -19,6 +21,7 @@ else
 }
 
 @code{
+    private int loadProgress = 0;
 
     protected async override Task OnInitializedAsync()
     {
@@ -26,7 +29,7 @@ else
         if (GameState.InitCompleted == false)
         {
             await GameState.LoadData(Http, UriHelper, JSRuntime);
-
+            System.Globalization.CultureInfo.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
         }
 
         Player.Instance.CurrentHP = 50;
@@ -42,6 +45,7 @@ else
         //Bank.Instance.Inventory.IsLoadingSave = false;
         GameState.StateChanged += OnGameStateChanged;
     }
+
     private void Rates()
     {
         UriHelper.NavigateTo("/Rates/");
@@ -62,5 +66,8 @@ else
 
         GameState.StateChanged -= OnGameStateChanged;
     }
-    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+    void OnGameStateChanged(object sender, EventArgs e) {
+        loadProgress++;
+        StateHasChanged();
+            }
 }

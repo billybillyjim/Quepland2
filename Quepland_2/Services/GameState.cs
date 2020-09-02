@@ -25,7 +25,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.0";
+    public static string Version { get; set; } = "1.0.1";
     public static List<Update> Updates { get; set; } = new List<Update>();
 
     public static string Location { get; set; } = "";
@@ -100,6 +100,7 @@ using System.Threading.Tasks;
     public static int AutoSaveInterval { get; set; } = 4500;
     public static int GameWindowWidth { get; set; }
     public static int GameWindowHeight { get; set; }
+    public static int GameLoadProgress { get; set; }
     public int MinWindowWidth { get; set; } = 600;
     public int AlchemyStage;
     public int AutoSmithedItemCount { get; set; } = 0;
@@ -840,6 +841,10 @@ using System.Threading.Tasks;
         await GetDimensions();
         Start();
         InitCompleted = true;
+    }
+    public async Task<int> GetLoadingProgress()
+    {
+        return GameLoadProgress;
     }
     public void ShowTooltip(MouseEventArgs args, string tipName, string tipData)
     {

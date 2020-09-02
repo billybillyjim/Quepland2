@@ -74,16 +74,19 @@ public class Recipe
     {
         if(HasSpace() == false)
         {
+            Console.WriteLine("Not enough space");
             return false;
         }
         else if(HasRequirements() == false)
         {
+            Console.WriteLine("Failed reqs");
             return false;
         }
 		foreach(Ingredient ingredient in Ingredients)
         {
             if(Player.Instance.Inventory.GetNumberOfItem(ingredient.Item) < ingredient.Amount)
             {
+                Console.WriteLine("Player lacks ingredient:" + ingredient.Item.Name);
                 return false;
             }
         }

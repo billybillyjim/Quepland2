@@ -1,10 +1,23 @@
 [
   {
+    "versionNumber": "1.0.1",
+    "updates": [
+      "Added Discord and Patreon links to the settings menu, as well as the version number.",
+      "Added a rotating loading image to let players know the game is loading. I'd like to add a whole progress bar but apparently that is not nearly as simple as one would think.",
+      "Fixed a bug that happened with bad tannery data.",
+      "Fixed a bug that made smithing impossible.",
+      "Currently certain CultureInfos which use spaces in place of commas break most of the progress bars in the game. There may be a better solution, but for now the game will try to set the culture info to use commas and a period for decimals. Hopefully that doesn't break anything.",
+      "Added some padding to the bottom of the messages bar to make it more clear it's supposed to end there.",
+      "Added a hide button to the messages bar."
+    ]
+  },
+  {
     "versionNumber": "1.0.0",
     "updates": [
       "Release day! I'll be monitoring the discord and reddit post to make sure any bugs that pop up are fixed ASAP.",
       "Fixed a bug that let you deposit locked items.",
-      "Fixed a bug that made some effect weapons not last like they should."
+      "Fixed a bug that made some effect weapons not last like they should.",
+      "Fixed alignment issue with experience rate tracker."
     ]
   },
   {

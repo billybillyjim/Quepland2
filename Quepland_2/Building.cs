@@ -57,8 +57,15 @@ public class Building
     }
     public void LoadTanningData(TanningSaveData data)
     {
-        TanningSlots[LoadedTanningSlotsIterator].LoadData(data);
-        LoadedTanningSlotsIterator++;
+        try
+        {
+            TanningSlots[LoadedTanningSlotsIterator].LoadData(data);
+            LoadedTanningSlotsIterator++;
+        }
+        catch
+        {
+            Console.WriteLine("Failed to load tanning save data.");
+        }
         
     }
 }

@@ -23,20 +23,25 @@
         {
             @if (Product != null && ItemManager.Instance.GetSmithingRecipeByOutput(Product) != null)
             {
-                if (ItemManager.Instance.GetSmithingRecipeByOutput(Product).CanCreate() && ItemManager.Instance.GetSmithingRecipeByIngredients(Source).CanCreate())
+                if (
+                    ItemManager.Instance.GetSmithingRecipeByIngredients(Source).CanCreate())
                 {
                     <button class="btn btn-primary" @onclick="@(() => Smith())">Smith @Product</button>
                 }
                 else if (ItemManager.Instance.GetSmithingRecipeByIngredients(Source).CanCreate())
                 {
-                    <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, ItemManager.Instance.GetSmithingRecipeByOutput(Product).GetRequirementTooltip())))"
+                    <button class="btn btn-primary" style="opacity:0.5" 
+                            @onmouseover="@(new Action<MouseEventArgs>(e => 
+                                            GameState.ShowTooltip(e, ItemManager.Instance.GetSmithingRecipeByOutput(Product).GetRequirementTooltip())))"
                             @onmouseout="@(new Action(() => GameState.HideTooltip()))">
                         Smith @Product
                     </button>
                 }
                 else
                 {
-                    <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, ItemManager.Instance.GetSmithingRecipeByIngredients(Source).GetMissingIngredients())))"
+                    <button class="btn btn-primary" style="opacity:0.5" 
+                            @onmouseover="@(new Action<MouseEventArgs>(e => 
+                                            GameState.ShowTooltip(e, ItemManager.Instance.GetSmithingRecipeByIngredients(Source).GetMissingIngredients())))"
                             @onmouseout="@(new Action(() => GameState.HideTooltip()))">
                         Smith @Product
                     </button>

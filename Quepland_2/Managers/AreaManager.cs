@@ -36,8 +36,9 @@ public class AreaManager
         foreach(Region region in Regions)
         {
             Areas.AddRange(await Http.GetFromJsonAsync<Area[]>("data/Areas/" + region.Name.RemoveWhitespace() + ".json"));
+            GameState.GameLoadProgress++;
         }
-        List<string> UsedNPCs = new List<string>();
+        /*List<string> UsedNPCs = new List<string>();
         foreach(Area a in Areas)
         {
             foreach(Building b in a.Buildings)
@@ -74,6 +75,7 @@ public class AreaManager
             Console.WriteLine("NPC included:" + s);
         }
         Console.WriteLine("Used NPC Count:" + UsedNPCs.Count);
+        
         var query = Areas.GroupBy(x => x.ID).Where(g => g.Count() > 1).Select(y => y.Key).ToList();
         foreach(int val in query)
         {
@@ -81,10 +83,15 @@ public class AreaManager
             Console.WriteLine("Areas contain duplicate ID:" + val);
             Console.ForegroundColor = ConsoleColor.Black;
         }
+        */
         Lands.AddRange(await Http.GetFromJsonAsync<Land[]>("data/Lands.json"));
+        GameState.GameLoadProgress++;
         Dungeons.AddRange(await Http.GetFromJsonAsync<Dungeon[]>("data/Dungeons/QueplandDungeons.json"));
+        GameState.GameLoadProgress++;
         Smithies.AddRange(await Http.GetFromJsonAsync<Smithy[]>("data/Smithies.json"));
+        GameState.GameLoadProgress++;
         Dojos.AddRange(await Http.GetFromJsonAsync<Dojo[]>("data/Dojos.json"));
+        GameState.GameLoadProgress++;
         //Console.WriteLine("Quepland consists of " + Areas.Count + " areas, " + Regions.Count + " regions, " + Lands.Count + " lands, with " + Dungeons.Count + " dungeons.");
     }
 
@@ -209,7 +216,23 @@ public class AreaManager
         }
         foreach(TanningSaveData d in data)
         {
-            Buildings.Find(x => x.Name == d.BuildingName).LoadTanningData(d);
+            try
+            {
+                Buildings.Find(x => x.Name == d.BuildingName).LoadTanningData(d);
+
+            }
+            catch
+            {
+                if(d != null)
+                {
+                    Console.WriteLine("Failed to load tanning data for building." + d.BuildingName);
+
+                }
+                else
+                {
+                    Console.WriteLine("Data was null");
+                }
+            }
         }
     }
     public List<DojoSaveData> GetDojoSaveData()

@@ -9,35 +9,61 @@
             <NavMenu />
         </div>
     }
-    <div class="main" style="min-width:@(GameState.MinWindowWidth)px!important;">
-        @if (GameState.ShowStartMenu == false)
-        {
-            <div class="top-row px-4" style="z-index:10;background-color:dimgray;border:none;height:60px;padding: 5px !important;">
-                <Quepland_2.Components.ExperienceTrackerComponent></Quepland_2.Components.ExperienceTrackerComponent>
+<div class="main" style="min-width:@(GameState.MinWindowWidth)px!important;">
+    @if (GameState.ShowStartMenu == false)
+    {
+        <div class="top-row px-4" style="z-index:10;background-color:dimgray;border:none;height:60px;padding: 5px !important;">
+            <Quepland_2.Components.ExperienceTrackerComponent></Quepland_2.Components.ExperienceTrackerComponent>
 
-            </div>
-        }
-        <div>
-            @Body
         </div>
-        @if (GameState.ShowStartMenu == false)
+    }
+    <div>
+        @Body
+    </div>
+    @if (GameState.ShowStartMenu == false)
+    {
+        @if (showMessages)
         {
+
             <div style="position: fixed;
-                        width: @(GetMessageWidth())px;
-                        overflow-y: scroll;
-                        max-height: 200px;
-                        height: 200px;
-                        bottom: 0px;
-                        background-color: #4d4d4d;
-                        border-radius:0.5rem;
-                        padding-left:10px!important;
-                        margin-left:15px;
-                        overflow-x: hidden;" class="custom-scroll">
+                                width: @(GetMessageWidth())px;
+                                overflow-y: scroll;
+                                max-height: 200px;
+                                height: 200px;
+                                bottom: 3px;
+                                background-color: #4d4d4d;
+                                border-radius:0.5rem;
+                                padding-left:10px!important;
+                                padding-top:15px!important;
+                                margin-left:15px;
+                                overflow-x: hidden;" class="custom-scroll">
+                <button class="btn btn-outline-light" style=" margin-top: -28px; margin-left: -10px; padding: 0px 5px; border-radius: 0.5rem;"
+                        @onclick="@(() => ToggleMessageMenu())">
+                    Hide
+                </button>
                 <Quepland_2.Components.MessagesMenuComponent></Quepland_2.Components.MessagesMenuComponent>
             </div>
         }
+        else
+        {
+            <div style="position: fixed;
+                                width: @(GetMessageWidth())px;
+                                height: 30px;
+                                bottom: 3px;
+                                background-color: #4d4d4d;
+                                border-radius:0.5rem;
+                                margin-left:15px;
+                                overflow-x: hidden;" class="custom-scroll">
+                <button class="btn btn-outline-light" style="margin-left: -30px; padding: 0px 5px; border-radius: 0.5rem;"
+                        @onclick="@(() => ToggleMessageMenu())">
+                    Show Messages
+                </button>
+            </div>
+        }
 
-    </div>
+    }
+
+</div>
 
     @if (GameState.ShowStartMenu == false)
     {
@@ -65,6 +91,13 @@
 
 @code{
 
+    private bool showMessages = true;
+
+    private void ToggleMessageMenu()
+    {
+        showMessages = !showMessages;
+        GameState.UpdateState();
+    }
     private int GetMessageWidth()
     {
         return GameState.MinWindowWidth - 30;

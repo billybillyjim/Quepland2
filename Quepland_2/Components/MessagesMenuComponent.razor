@@ -2,12 +2,13 @@
 @implements IDisposable
 
 <div class="modal-footer" style="display:contents;">
-    <table>
-        @foreach (Message message in MessageManager.GetReversedMessages())
-        {
-            <tr>
-                <td>
-                    <pre style="        display: grid;
+
+        <table style="margin-top: -10px;">
+            @foreach (Message message in MessageManager.GetReversedMessages())
+            {
+                <tr>
+                    <td>
+                        <pre style="        display: grid;
         margin: 0;
         width: 520px;
         font-style: normal;
@@ -21,21 +22,23 @@
         line-height: 18px;
         font-family: Arial;
         white-space: pre-line;
-        margin-bottom: -5px;
+        margin-bottom: -5px;       
         padding:3px;
         color: @(message.Color); @(message.Style)">
                         @message.Text
                     </pre>
-                </td>
-            </tr>
-        }
+                    </td>
+                </tr>
+            }
 
-    </table>
+       </table>
+    
+
 </div>
 
 
 @functions{
-
+    private bool isHidden;
     protected override void OnInitialized()
     {
         GameState.StateChanged += OnGameStateChanged;
