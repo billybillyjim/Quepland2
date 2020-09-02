@@ -1191,7 +1191,7 @@
         {
           "name": "Freeze",
           "speed": 2,
-          "duration": 10,
+          "duration": 15,
           "message": "The knife freezes your opponent!",
           "procOdds": 0.08
         }
@@ -1219,7 +1219,7 @@
         {
           "name": "Freeze",
           "speed": 2,
-          "duration": 10,
+          "duration": 15,
           "message": "The sword freezes your opponent!",
           "procOdds": 0.15
         }
@@ -1248,7 +1248,7 @@
         {
           "name": "Freeze",
           "speed": 2,
-          "duration": 10,
+          "duration": 20,
           "message": "The axe freezes your opponent!",
           "procOdds": 0.25
         }
@@ -1276,7 +1276,7 @@
         {
           "name": "Freeze",
           "speed": 2,
-          "duration": 10,
+          "duration": 20,
           "message": "The hammer freezes your opponent!",
           "procOdds": 0.30
         }
@@ -1421,7 +1421,7 @@
           "name": "Burn",
           "power": 35,
           "speed": 2,
-          "duration": 20,
+          "duration": 60,
           "message": "The axe burns your opponent!",
           "procOdds": 0.1
         }

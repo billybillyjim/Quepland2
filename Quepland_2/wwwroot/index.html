@@ -26,6 +26,15 @@
         window.getHeight = function () {
             return window.innerHeight;
         };
+        window.getTop = function (div) {
+            return div.scrollTop;
+        };
+        window.getDivHeight = function (div) {
+            return div.clientHeight;
+        };
+        window.scrollToTop = function (div) {
+            div.scrollTop = 0;
+        }
     </script>
 </body>
 

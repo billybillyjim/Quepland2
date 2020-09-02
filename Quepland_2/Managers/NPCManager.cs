@@ -185,10 +185,6 @@ public class NPCManager
             Console.WriteLine("No NPC of name " + name + " was found. Did you add it to NPCs.json?");
             return NPCs[0];
         }
-        else
-        {
-            Console.WriteLine("Found NPC:" + npc.Name);
-        }
         return npc;
     }
 }

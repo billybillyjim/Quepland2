@@ -31,6 +31,7 @@ public class SelfHealEffect : IStatusEffect
         if (RemainingTime % Speed == 0 && RemainingTime > 0)
         {
             m.CurrentHP += Power;
+            MessageManager.AddMessage(Message);
         }
     }
     public void DoEffect(Player p)
@@ -38,6 +39,7 @@ public class SelfHealEffect : IStatusEffect
         if (RemainingTime % Speed == 0 && RemainingTime > 0)
         {
             p.CurrentHP += Power;
+            MessageManager.AddMessage("You recover " + Power + " HP!");
         }
     }
 }

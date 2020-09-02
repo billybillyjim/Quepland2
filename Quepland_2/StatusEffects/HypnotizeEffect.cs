@@ -31,6 +31,7 @@ public class HypnotizeEffect : IStatusEffect
         if (RemainingTime % Speed == 0 && RemainingTime > 0)
         {
             m.TicksToNextAttack = m.AttackSpeed;
+            MessageManager.AddMessage(Message);
         }
     }
     public void DoEffect(Player p)
@@ -38,6 +39,7 @@ public class HypnotizeEffect : IStatusEffect
         if (RemainingTime % Speed == 0 && RemainingTime > 0)
         {
             p.TicksToNextAttack = p.GetWeaponAttackSpeed();
+            MessageManager.AddMessage("You are hypnotized and cannot move!");
         }
     }
 }

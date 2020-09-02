@@ -129,7 +129,7 @@
 
             }
         }
-        @if (Bank.Instance.IsBanking)
+        @if (Bank.Instance.IsBanking && Item.IsLocked == false)
         {
             if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Banking")
             {

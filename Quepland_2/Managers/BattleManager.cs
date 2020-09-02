@@ -108,6 +108,7 @@ public class BattleManager
                 else
                 {
                     opponent.TicksToNextAttack--;
+                    opponent.TickStatusEffects();
                 }
             }
             Player.Instance.TicksToNextAttack--;
@@ -151,11 +152,7 @@ public class BattleManager
                                 }
                                 else
                                 {
-                                    Console.WriteLine("Item Category:" + drop.Item.Category);
-                                    Console.WriteLine("Player has item:" + Player.Instance.Inventory.HasItem(drop.Item));
-
                                     Player.Instance.Inventory.AddDrop(drop);
-
                                 }
                             }
                         }

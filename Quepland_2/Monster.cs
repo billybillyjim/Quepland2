@@ -37,7 +37,15 @@ public class Monster
     }
     public void AddStatusEffect(IStatusEffect effect)
     {
-        CurrentStatusEffects.Add(effect);
+        if (CurrentStatusEffects.Contains(effect))
+        {
+            CurrentStatusEffects.First(x => x == effect).RemainingTime = effect.Duration;
+        }
+        else
+        {
+            CurrentStatusEffects.Add(effect);
+        }
+        
     }
     public void TickStatusEffects()
     {

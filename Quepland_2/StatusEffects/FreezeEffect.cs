@@ -31,6 +31,7 @@ public class FreezeEffect : IStatusEffect
         if (RemainingTime % Speed == 0 && RemainingTime > 0)
         {
             m.TicksToNextAttack = m.AttackSpeed;
+            MessageManager.AddMessage(m.Name + " is frozen in its tracks!");
         }
     }
     public void DoEffect(Player p)
@@ -38,6 +39,7 @@ public class FreezeEffect : IStatusEffect
         if (RemainingTime % Speed == 0 && RemainingTime > 0)
         {
             p.TicksToNextAttack = p.GetWeaponAttackSpeed();
+            MessageManager.AddMessage("You are frozen in your tracks!");
         }
     }
 }

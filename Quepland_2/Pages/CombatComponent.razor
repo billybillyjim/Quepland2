@@ -8,40 +8,48 @@
     <div style="width:550px;height:300px;">
         @foreach (Monster opponent in BattleManager.Instance.CurrentOpponents)
         {
+        <div>
+            @opponent.Name
             <div>
-                @opponent.Name
-                <div>
-                    @opponent.CurrentHP / @opponent.HP
-                </div>
-                <div style="display:flex">
-                    <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
-                        <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
-                        <div class="progress-bar" style="width:@(GetOpponentAttackProgress(opponent));background-color:mediumpurple">
-
-                        </div>
-                    </div>
-                    @if (opponent == BattleManager.Instance.Target || opponent.IsDefeated)
-                    {
-                        <div class="btn btn primary" style="width:120px;height:40px;font-size:large;position:relative;opacity:0.5;margin-left:10px;background-color:black">
-                            <div style="color:white">Target</div>
-
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="btn btn primary" style="width:120px;height:40px;font-size:large;position:relative;margin-left:10px;background-color:black;cursor:pointer" @onclick="@(() => SwitchTargets(opponent))">
-                            <div style="color:white">Target</div>
-
-                        </div>
-                    }
-                </div>
-
-                <div class="progress" style="width:550px;margin-top:10px;background-color:darkred">
-                    <div class="progress-bar" style="width:@(opponent.GetRemainingHPPercent())%;background-color:#51d051">
+                @opponent.CurrentHP / @opponent.HP
+            </div>
+            <div style="display:flex">
+                <div class="progress" style="width:120px;height:40px;font-size:large;position:relative">
+                    <div style="position:absolute;margin-Left:35px;line-height:40px;color:black">Attack</div>
+                    <div class="progress-bar" style="width:@(GetOpponentAttackProgress(opponent));background-color:mediumpurple">
 
                     </div>
+                </div>
+                @if (opponent == BattleManager.Instance.Target || opponent.IsDefeated)
+                {
+                    <div class="btn btn primary" style="width:120px;height:40px;font-size:large;position:relative;opacity:0.5;margin-left:10px;background-color:black">
+                        <div style="color:white">Target</div>
+
+                    </div>
+                }
+                else
+                {
+                    <div class="btn btn primary" style="width:120px;height:40px;font-size:large;position:relative;margin-left:10px;background-color:black;cursor:pointer" @onclick="@(() => SwitchTargets(opponent))">
+                        <div style="color:white">Target</div>
+
+                    </div>
+                }
+                @foreach (IStatusEffect effect in opponent.CurrentStatusEffects)
+                {
+                    <div>
+                        <img style="height:30px;width:30px;margin:3px;background-color:white;border-radius:0.25rem;" src="data/Images/@(effect.Name).png"
+                             @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, effect.Name)))"
+                             @onmouseout="@(new Action(() => GameState.HideTooltip()))" />
+                    </div>
+                }
+            </div>
+
+            <div class="progress" style="width:550px;margin-top:10px;background-color:darkred">
+                <div class="progress-bar" style="width:@(opponent.GetRemainingHPPercent())%;background-color:#51d051">
+
                 </div>
             </div>
+        </div>
         }
 
         <div>
@@ -66,7 +74,7 @@
                 @foreach (IStatusEffect effect in Player.Instance.CurrentStatusEffects)
                 {
                     <div>
-                        <img style="height:30px;width:30px;margin:3px;" src="data/Images/@(effect.Name).png"
+                        <img style="height:30px;width:30px;margin:3px;background-color:white;border-radius:0.25rem;" src="data/Images/@(effect.Name).png"
                              @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, effect.Name)))"
                              @onmouseout="@(new Action(() => GameState.HideTooltip()))" />
                     </div>

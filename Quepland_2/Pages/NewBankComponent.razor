@@ -1,0 +1,405 @@
+﻿@page "/World/Bank/"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+@if (GameState.CurrentGameMode != GameState.GameType.Ultimate)
+{
+<div style="overflow-y:hidden;height:100%;">
+
+    <div style="margin-bottom:35px;">
+        Quantity:
+        <div>
+            <button class="btn btn-primary" style="@GetButtonStyle(1)" @onclick="@(() => UpdateBankAmount(1))">1</button>
+            <button class="btn btn-primary" style="@GetButtonStyle(5)" @onclick="@(() => UpdateBankAmount(5))">5</button>
+            <button class="btn btn-primary" style="@GetButtonStyle(10)" @onclick="@(() => UpdateBankAmount(10))">10</button>
+            <button class="btn btn-primary" style="@GetButtonStyle(-1)" @onclick="@(() => showInput = !showInput)">x</button>
+            <button class="btn btn-primary" style="@GetButtonStyle(int.MaxValue)" @onclick="@(() => UpdateBankAmount(int.MaxValue))">All</button>
+        </div>
+        <div style="margin-top:5px;">
+            @if (showInput)
+            {
+                <input type="number" @bind-value="Bank.Instance.Amount" />
+            }
+            else
+            {
+                <div style="height:30px;"></div>
+            }
+        </div>
+
+        <div style="float: right; margin-top: -75px;position:relative;">
+            <button style="float: right;" class="btn btn-primary" @onclick="@(() => ToggleSearch())">Search</button>
+            <div style=" margin-right: 85px; margin-top: 4px;">
+                @if (showSearch)
+                {
+                    <input style="width:150px;margin-left:40px;" type="text" @bind="searchString" @bind:event="oninput" />
+                    <div style="margin-top:-30px;">
+                        <button class="btn btn-primary" style="width:30px;height:30px;padding:0px;" @onclick="@(() => ClearSearch())">X</button>
+                    </div>
+                }
+                else
+                {
+                    <div style="height:30px;"></div>
+                }
+            </div>
+
+        </div>
+        <div>
+            <button style="float: right; margin-top: -28px;" class="btn btn-primary" @onclick="@(() => DepositAll())">Deposit All</button>
+        </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;">
+        @if (showTabs)
+        {
+            @foreach (string tab in Bank.Instance.Tabs)
+            {
+                @if (Bank.Instance.CurrentTab == tab)
+                {
+                    <div>
+                        <button style="margin:3px; background-color:gray;border-color:lightgray" class="btn btn-primary">@tab</button>
+                    </div>
+                }
+                else
+                {
+                    <div>
+                        <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => SetTab(tab))">@tab</button>
+                    </div>
+                }
+            }
+            <div style="display:flex;">
+
+                @if (showTabInput)
+                {
+                    <button class="btn btn-primary" style="width:30px;height:30px;padding:0px;margin:3px;" @onclick="@(() => ToggleTabInput())">X</button>
+                    <input style="width:150px;margin:3px;" type="text" @bind="newTabString" />
+                    <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => AddTab(newTabString))">Confirm</button>
+
+                }
+                else
+                {
+                    <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => ToggleTabInput())">Add Tab</button>
+                }
+                @if (Bank.Instance.CurrentTab != "Main")
+                {
+                    @if (addingTags)
+                    {
+                        <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => ToggleAddingTags())">End Adding Items</button>
+
+                    }
+                    else
+                    {
+                        <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => ToggleAddingTags())">Add Items to Tab</button>
+
+                    }
+                }
+            </div>
+            <div>
+                <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => ToggleShowTabs())">Hide Tabs</button>
+            </div>
+        }
+        else
+        {
+            <div>
+                <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => ToggleShowTabs())">Show Tabs</button>
+            </div>
+        }
+
+
+    </div>
+    <div @ref="@bankViewReference" style="height:500px;overflow-y:auto;" class="bank-scroll" @onscroll="@(() => UpdateVisibleItems())">
+        @if (!addingTags)
+        {
+            <div style="display: flex; flex-wrap: wrap;align-content: flex-start;padding-top:@(top)px;height:@(windowHeight)px">
+                @foreach (KeyValuePair<GameItem, int> item in GetBankItems())
+                {
+                    if (item.Key != null)
+                    {
+                        <div oncontextmenu="return false;"
+                             onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item.Key)))"
+                             @onclick="@(() => Withdraw(item.Key))" style="margin-left:-3px;cursor:pointer">
+                            <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
+                        </div>
+                    }
+                }
+                @for (int i = 0; i < GetEmptyItemsToFillRow(); i++)
+                {
+                    int temp = i;
+                    if (temp % itemsPerRow == 0)
+                    {
+                        <br />
+                    }
+                    <div style="margin-left:-3px;">
+                        <Quepland_2.Components.ItemBoxComponent></Quepland_2.Components.ItemBoxComponent>
+
+                    </div>
+                }
+            </div>
+
+        }
+        else if(addingTags)
+        {
+    <div style="display: flex; flex-wrap: wrap;align-content: flex-start;padding-top:@(top)px;height:@(windowHeight)px">
+        @foreach (KeyValuePair<GameItem, int> item in GetBankItems())
+        {
+            if (item.Key != null)
+            {
+                <div oncontextmenu="return false;"
+                     @onclick="@(() => ToggleTagOnItem(item.Key))" style="margin-left:-3px;cursor:pointer;@GetOpacity(item.Key)">
+                    <Quepland_2.Components.ItemBoxComponent @key="item" Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" HideTooltip="true" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
+
+                </div>
+            }
+        }
+        @for (int i = 0; i < GetEmptyItemsToFillRow(); i++)
+        {
+            int temp = i;
+            if (temp % itemsPerRow == 0)
+            {
+                <br />
+            }
+            <div style="margin-left:-3px;">
+                <Quepland_2.Components.ItemBoxComponent></Quepland_2.Components.ItemBoxComponent>
+
+            </div>
+        }
+    </div>
+        }
+    </div>
+    </div>
+    }
+@code {
+
+    private bool showInput;
+    private bool showSearch;
+    private bool showTabInput;
+    private bool showTabs;
+    private bool addingTags;
+    int itemsPerRow = 10;
+    int itemBoxSize = 54;
+    private string searchString = "";
+    private string newTabString = "";
+    private int take = 100;
+    private int skip = 0;
+    ElementReference bankViewReference;
+    float top = 0;
+    float windowHeight = 0;
+
+    private List<KeyValuePair<GameItem, int>> BankItems = new List<KeyValuePair<GameItem, int>>();
+
+    public async Task UpdateVisibleItems()
+    {
+        top = await GameState.JSRuntime.InvokeAsync<float>("getTop", bankViewReference);
+        windowHeight = (Bank.Instance.Inventory.GetUsedSpaces() * itemBoxSize) / itemsPerRow;
+        skip = (int)(Math.Ceiling(top / itemBoxSize * 10) / 10) * itemsPerRow;
+        BankItems = GetBankItems();
+    }
+    public List<KeyValuePair<GameItem, int>> GetBankItems()
+    {
+        if(Bank.Instance.HasChanged == false)
+        {
+            return BankItems;
+        }
+        if (Bank.Instance.CurrentTab == "Main")
+        {
+            if (searchString != "")
+            {
+                BankItems = Bank.Instance.Inventory.GetItems().Where(x => x.Key.Name.ToLower().Contains(searchString.ToLower())).ToList();
+            }
+            else
+            {
+                BankItems = Bank.Instance.Inventory.GetItems().OrderBy(x => x.Key.ID).ToList().Skip(skip).Take(take).ToList();
+            }
+        }
+        else
+        {
+            if (!addingTags)
+            {
+                if (searchString != "")
+                {
+                    BankItems = Bank.Instance.Inventory.GetItems().Where(x => x.Key.Tabs.Contains(Bank.Instance.CurrentTab)).Where(x => x.Key.Name.ToLower().Contains(searchString.ToLower())).ToList();
+                }
+                else
+                {
+                    BankItems = Bank.Instance.Inventory.GetItems().Where(x => x.Key.Tabs.Contains(Bank.Instance.CurrentTab)).OrderBy(x => x.Key.ID).ToList().Skip(skip).Take(take).ToList();
+                }
+            }
+            else
+            {
+                if (searchString != "")
+                {
+                    BankItems = Bank.Instance.Inventory.GetItems().Where(x => x.Key.Name.ToLower().Contains(searchString.ToLower())).ToList();
+                }
+                else
+                {
+                    BankItems = Bank.Instance.Inventory.GetItems().OrderBy(x => x.Key.ID).ToList().Skip(skip).Take(take).ToList();
+                }
+            }
+        }
+
+        foreach(KeyValuePair<GameItem, int> pair in BankItems)
+        {
+            pair.Key.Rerender = true;
+        }
+        return BankItems;
+    }
+    public string GetOpacity(GameItem item)
+    {
+        if (item.Tabs.Contains(Bank.Instance.CurrentTab))
+        {
+            return "opacity:1;";
+        }
+        return "opacity:0.5;";
+    }
+    private int GetEmptyItemsToFillRow()
+    {
+        return itemsPerRow - (BankItems.Count % itemsPerRow);
+    }
+    private void Withdraw(GameItem item)
+    {
+        Bank.Instance.Withdraw(item);
+        Bank.Instance.HasChanged = true;
+        GameState.UpdateState();
+    }
+    private void Withdraw(GameItem item, int amount)
+    {
+        Bank.Instance.Withdraw(item, amount);
+        Bank.Instance.HasChanged = true;
+        GameState.UpdateState();
+    }
+    public void ShowMenu(MouseEventArgs args, GameItem item)
+    {
+        if (args.Button == 2)
+        {
+            GameState.CurrentContextMenu = new ContextMenu();
+            if (Bank.Instance.IsBanking)
+            {
+                GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Withdraw " + Bank.Instance.Amount + " " + item, new Action(() => Withdraw(item))));
+                if (Bank.Instance.Amount != 1)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Withdraw 1 " + item, new Action(() => Withdraw(item, 1))));
+                }
+                if (Bank.Instance.Amount != 5)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Withdraw 5 " + item, new Action(() => Withdraw(item, 5))));
+                }
+                if (Bank.Instance.Amount != 10)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Withdraw 10 " + item, new Action(() => Withdraw(item, 10))));
+                }
+                if (Bank.Instance.Amount != int.MaxValue)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Withdraw All " + item, new Action(() => Withdraw(item, int.MaxValue))));
+                }
+
+            }
+
+            GameState.ShowContextMenu(args);
+        }
+    }
+    public void DepositAll()
+    {
+        Bank.Instance.DepositAll(Player.Instance.Inventory);
+        Bank.Instance.HasChanged = true;
+        GameState.UpdateState();
+
+    }
+    private string GetButtonStyle(int amount)
+    {
+        if (Bank.Instance.Amount == amount)
+        {
+            return "cursor:normal; background-color:gray;border-color:lightgray";
+        }
+        else if (amount == -1 && Bank.Instance.Amount != 1 && Bank.Instance.Amount != 5 && Bank.Instance.Amount != 10 && Bank.Instance.Amount != int.MaxValue)
+        {
+            return "cursor:normal; background-color:gray;border-color:lightgray";
+        }
+        else
+        {
+            return "cursor:pointer;";
+        }
+    }
+    private void UpdateBankAmount(int newAmount)
+    {
+        Bank.Instance.Amount = newAmount;
+        showInput = false;
+        GameState.UpdateState();
+    }
+    public void ClearSearch()
+    {
+        searchString = "";
+        showSearch = false;
+        GameState.UpdateState();
+    }
+    public void AddTab(string tab)
+    {
+        if (Bank.Instance.Tabs.Contains(tab) == false)
+        {
+            Bank.Instance.Tabs.Add(tab);
+            ToggleTabInput();
+            GameState.UpdateState();
+        }
+
+    }
+    public void ToggleTagOnItem(GameItem i)
+    {
+        if (i.Tabs.Contains(i.Name))
+        {
+            i.Tabs.Remove(Bank.Instance.CurrentTab);
+        }
+        else
+        {
+            i.Tabs.Add(Bank.Instance.CurrentTab);
+
+        }
+        i.Rerender = true;
+        GameState.UpdateState();
+    }
+    public void ToggleShowTabs()
+    {
+        showTabs = !showTabs;
+        GameState.UpdateState();
+    }
+    public void RemoveTagFromItem(GameItem i)
+    {
+
+        i.Rerender = true;
+        GameState.UpdateState();
+    }
+    public void SetTab(string tab)
+    {
+        Bank.Instance.CurrentTab = tab;
+        Bank.Instance.HasChanged = true;
+        GameState.UpdateState();
+    }
+    public void ToggleTabInput()
+    {
+        showTabInput = !showTabInput;
+        GameState.UpdateState();
+    }
+    public void ToggleAddingTags()
+    {
+        addingTags = !addingTags;
+        GameState.UpdateState();
+    }
+    private void ToggleSearch()
+    {
+        showSearch = !showSearch;
+        if (!showSearch)
+        {
+            searchString = "";
+        }
+    }
+    protected override void OnInitialized()
+    {
+        Bank.Instance.IsBanking = true;
+        BankItems = Bank.Instance.Inventory.GetItems();
+        UpdateVisibleItems();
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        Bank.Instance.IsBanking = false;
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

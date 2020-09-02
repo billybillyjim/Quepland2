@@ -31,6 +31,7 @@ public class PoisonEffect : IStatusEffect
         if(RemainingTime % Speed == 0 && RemainingTime > 0)
         {
             m.CurrentHP -= Power;
+            MessageManager.AddMessage(Message);
         }
     }
 	public void DoEffect(Player p)

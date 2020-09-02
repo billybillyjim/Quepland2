@@ -1,5 +1,20 @@
 [
   {
+    "versionNumber": "1.0.0",
+    "updates": [
+      "Release day! I'll be monitoring the discord and reddit post to make sure any bugs that pop up are fixed ASAP.",
+      "Fixed a bug that let you deposit locked items.",
+      "Fixed a bug that made some effect weapons not last like they should."
+    ]
+  },
+  {
+    "versionNumber": "0.0.23",
+    "updates": [
+      "Added more ways to get seaweed.",
+      "Reworked the bank to use virtualized list. This makes it far less laggy, but it's still got a long way to go. Unless I learn enough Javascript to do it all in JS, this may be the best it can be."
+    ]
+  },
+  {
     "versionNumber": "0.0.22",
     "updates": [
       "Finished work on Queple's Sword quest.",

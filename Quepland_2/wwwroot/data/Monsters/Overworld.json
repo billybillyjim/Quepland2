@@ -974,6 +974,10 @@
         {
           "itemName": "Butterfish",
           "weight": 20
+        },
+        {
+          "itemName": "Seaweed",
+          "weight": 20
         }
       ]
     }
@@ -1021,6 +1025,10 @@
         {
           "itemName": "Large Net",
           "weight": 1
+        },
+        {
+          "itemName": "Seaweed",
+          "weight": 20
         }
       ]
     }
@@ -1287,6 +1295,10 @@
         {
           "itemName": "Butterfish",
           "weight": 20
+        },
+        {
+          "itemName": "Seaweed",
+          "weight": 20
         }
       ]
     }
@@ -1334,6 +1346,10 @@
         {
           "itemName": "Butterfish",
           "weight": 30
+        },
+        {
+          "itemName": "Seaweed",
+          "weight": 20
         }
       ]
     }
@@ -1381,6 +1397,10 @@
         {
           "itemName": "Butterfish",
           "weight": 20
+        },
+        {
+          "itemName": "Seaweed",
+          "weight": 20
         }
       ]
     }
@@ -1427,6 +1447,10 @@
         },
         {
           "itemName": "Turkey Jerky",
+          "weight": 10
+        },
+        {
+          "itemName": "Seaweed",
           "weight": 10
         }
       ]
@@ -2145,6 +2169,10 @@
         {
           "itemName": "Scallop",
           "weight": 35
+        },
+        {
+          "itemName": "Seaweed",
+          "weight": 20
         }
       ]
     },

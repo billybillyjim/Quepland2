@@ -24,10 +24,6 @@ public class QuestManager
     public async Task LoadQuests(HttpClient Http)
     {
         Quests.AddRange(await Http.GetFromJsonAsync<Quest[]>("data/Quests.json"));
-        foreach(Quest q in Quests)
-        {
-            Console.WriteLine(q.Name);
-        }
     }
 
     public Quest GetQuestByName(string name)

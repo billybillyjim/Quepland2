@@ -52,7 +52,7 @@
             <div style="position:absolute; width:300px;text-align:right;right:0px;top:50px;">
                 @(SelectedItem.Name)
             </div>
-            <div style="position:absolute; width:300px;text-align:right;right:0px;top:70px;">
+            <div style="position:absolute; width:300px;text-align:right;right:0px;top:67px;">
                 @(String.Format("{0:n0}", Math.Max(GetMaxBuy(SelectedItem) * SelectedItem.Value * Shop.CostMultiplier, SelectedItem.Value * Shop.CostMultiplier))) @(Shop.Currency)
             </div>
         }

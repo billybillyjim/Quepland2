@@ -88,7 +88,7 @@
   },
   {
     "name": "Sahota Castle",
-    "image": "Castle",
+    "image": "IceCastle",
     "id": 104,
     "description": "You happen upon a part of the dungeon made entirely from ice. The castle here is filled with mercurial creatures.",
     "areaURL": "SahotaCastle"
