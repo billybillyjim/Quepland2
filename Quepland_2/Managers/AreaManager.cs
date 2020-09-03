@@ -22,7 +22,6 @@ public class AreaManager
         }
     }
     public List<Area> Areas = new List<Area>();
-    public List<Building> Buildings = new List<Building>();
     public List<Region> Regions = new List<Region>();
     public List<Land> Lands = new List<Land>();
     public List<Dungeon> Dungeons = new List<Dungeon>();
@@ -194,32 +193,49 @@ public class AreaManager
     public List<TanningSaveData> GetTanningSaveData()
     {
         List<TanningSaveData> data = new List<TanningSaveData>();
-        foreach(Building b in Buildings)
+        foreach(Area a in Areas)
         {
-            if(b.TanningSlots.Count > 0)
+            foreach (Building b in a.Buildings)
             {
-                foreach(TanningSlot slot in b.TanningSlots)
+                if (b.TanningSlots.Count > 0)
                 {
-                    TanningSaveData d = slot.GetSaveData();
-                    d.BuildingName = b.Name;
-                    data.Add(d);
+                    foreach (TanningSlot slot in b.TanningSlots)
+                    {
+                        TanningSaveData d = slot.GetSaveData();
+                        d.BuildingName = b.Name;
+                        data.Add(d);
+                    }
                 }
             }
+
         }
+
         return data;
     }
     public void LoadTanningSave(List<TanningSaveData> data)
     {
-        foreach(Building b in Buildings)
+        foreach(Area a in Areas)
         {
-            b.LoadedTanningSlotsIterator = 0;
+            foreach (Building b in a.Buildings)
+            {
+                b.LoadedTanningSlotsIterator = 0;
+            }
         }
+
         foreach(TanningSaveData d in data)
         {
             try
             {
-                Buildings.Find(x => x.Name == d.BuildingName).LoadTanningData(d);
-
+                foreach(Area a in Areas)
+                {
+                    foreach(Building b in a.Buildings)
+                    {
+                        if(d.BuildingName == b.Name)
+                        {
+                            b.LoadTanningData(d);
+                        }
+                    }
+                }
             }
             catch
             {

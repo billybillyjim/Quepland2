@@ -40,6 +40,7 @@ public static class SaveManager
             await SetItemAsync("Player:" + mode, GetSaveString(Player.Instance.GetSaveData()));
             await SetItemAsync("Followers:" + mode, Compress(FollowerManager.Instance.GetSaveData()));
             await SetItemAsync("TanningInfo:" + mode, Compress(GetTanningSave()));
+            Console.WriteLine("Finished saving Tanning data..");
             await SetItemAsync("Dojos:" + mode, GetSaveString(AreaManager.Instance.GetDojoSaveData()));
             await SetItemAsync("AFKAction:" + mode, GetSaveString(GameState.CurrentAFKAction));
 
@@ -55,7 +56,7 @@ public static class SaveManager
     }
     public static async Task LoadSaveGame(string mode)
     {
-
+        Console.WriteLine(Decompress("AgAAAB+LCAAAAAAAAAOLjgUAKbtMDQIAAAA="));
         var serializerSettings = new JsonSerializerSettings { ObjectCreationHandling = ObjectCreationHandling.Replace };
 
         if(mode == "Normal")

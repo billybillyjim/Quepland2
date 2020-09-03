@@ -88,7 +88,20 @@
         {
             if (ItemManager.Instance.GetUnpackingRecipe(Item).HasSpace())
             {
-                <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => GameState.SetCraftingItem(ItemManager.Instance.GetUnpackingRecipe(Item)))">@ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString</button></div>
+                <div class="item-view-button">
+                    @if(GameState.CurrentRecipe == ItemManager.Instance.GetUnpackingRecipe(Item))
+                    {
+                    <div style="position:relative;">
+                        <div class="progress" style="position:absolute;top:0px;width:100%;height:5px;border-radius:0.25rem;z-index:3;">
+                            <div class="progress-bar" style="@GetProgress()"></div>
+                        </div>
+                    </div>
+                    }
+                    <button class="btn btn-light"                                                    
+                     @onclick="@(() => GameState.SetCraftingItem(ItemManager.Instance.GetUnpackingRecipe(Item)))">
+                    @ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString
+                        </button>
+                </div>
 
             }
             else
@@ -285,6 +298,14 @@
             Item.IsLocked = !Item.IsLocked;
         }
         GameState.UpdateState();
+    }
+    private string GetProgress()
+    {
+        if (GameState.CurrentRecipe != null)
+        {
+            return "width:" + (100 - ((double)GameState.TicksToNextAction / (GameState.CurrentRecipe.CraftingSpeed) * 100d)) + "%";
+        }
+        return "width:0%";
     }
     protected override void OnInitialized()
     {

@@ -24,13 +24,13 @@ public static class MessageManager
             Messages.Last().Style += "opacity:0.9;";
         }
         
-        newMessage.Style = "font-weight:bold;";
+        newMessage.Style = "font-weight:bold;text-decoration:underline;";
         
         if (lastMessage == newMessageString)
         {
             repeatMessageCount++;
             Messages.Last().Text = lastMessage + "(" + repeatMessageCount + ")";
-            Messages.Last().Style = "font-weight:bold;";
+            Messages.Last().Style = "font-weight:bold;text-decoration:underline;";
         }
         else
         {

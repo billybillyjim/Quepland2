@@ -943,10 +943,18 @@ using System.Threading.Tasks;
     {       
         if(action != null)
         {
-            AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID).ReturnTime = action.ReturnTime;
-            AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID).StartTime = action.StartTime;
-            AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID).IsActive = action.IsActive;
-            CurrentAFKAction = AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID);
+            try
+            {
+                AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID).ReturnTime = action.ReturnTime;
+                AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID).StartTime = action.StartTime;
+                AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID).IsActive = action.IsActive;
+                CurrentAFKAction = AreaManager.Instance.GetAFKActionByUniqueID(action.UniqueID);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+            }
         }
 
     }

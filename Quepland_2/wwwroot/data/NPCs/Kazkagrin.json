@@ -173,7 +173,6 @@
     {
       "buttonText": "Where can I find something of Mound's?",
       "responseText": "I don't know, that's sort of the catch-22 of my abilities. My previous clients have found success breaking and entering, then stealing the possessions of their targets. Nasty stuff, really.",
-      "quest": "Mound Is Missing",
       "requirements": [
         {
           "quest": "Mound Is Missing",

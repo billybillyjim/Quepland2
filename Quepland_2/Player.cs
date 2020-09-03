@@ -140,6 +140,14 @@ public class Player
         item.Rerender = true;
         item.IsEquipped = true;
     }
+    public void Equip(string itemName)
+    {
+        GameItem match = Inventory.GetItems().FirstOrDefault(x => x.Key.Name == itemName).Key;
+        if(match != null)
+        {
+            Equip(match);
+        }
+    }
     public void Unequip(GameItem item)
     {
         if (item != null)
@@ -503,13 +511,23 @@ public class Player
     }
     public PlayerSaveData GetSaveData()
     {
+        List<string> equipped = new List<string>();
+        try
+        {
+            equipped = equippedItems.Select(x => x.Name).ToList();
+        }
+        catch(Exception e)
+        {
+            Console.WriteLine(e.Message);
+            Console.WriteLine(e.StackTrace);      
+        }
         return new PlayerSaveData {
             ActiveFollowerName = CurrentFollower?.Name ?? "None",
             CurrentHP = CurrentHP,
             MaxHP = MaxHP,
             DeathCount = Deaths,
             InventorySize = Inventory.GetSize(),
-            EquippedItems = equippedItems.Select(x => x.Name).ToList()
+            EquippedItems = equipped
         };
     }
     public void LoadSaveData(PlayerSaveData data)
@@ -522,13 +540,22 @@ public class Player
         MaxHP = data.MaxHP;
         Deaths = data.DeathCount;
         Inventory.SetSize(data.InventorySize);
-        foreach(string s in data.EquippedItems)
+        try
         {
-            if(s != null && s.Length > 1)
+            foreach (string s in data.EquippedItems)
             {
-                Equip(Inventory.GetItems().FirstOrDefault(x => x.Key.Name == s).Key);
+                if (s != null && s.Length > 1)
+                {
+                    Equip(Inventory.GetItems().FirstOrDefault(x => x.Key.Name == s).Key);
 
+                }
             }
+        }
+        catch(Exception e)
+        {
+            Console.WriteLine(e.Message);
+            Console.WriteLine(e.StackTrace);
+
         }
     }
 }

@@ -27,42 +27,48 @@ public class Bank
 	public void DepositAll(Inventory inv)
     {
         List<KeyValuePair<GameItem, int>> lockedItems = new List<KeyValuePair<GameItem, int>>();
-
+        List<GameItem> lockedEquippedItems = new List<GameItem>();
         foreach (KeyValuePair<GameItem, int> pair in inv.GetItems())
         {
             if (pair.Key.IsLocked)
             {
+                if (pair.Key.IsEquipped)
+                {
+                    pair.Key.IsEquipped = false;
+                    lockedEquippedItems.Add(pair.Key);
+                }
                 lockedItems.Add(new KeyValuePair<GameItem, int>(pair.Key, pair.Value));
             }
             else
-            {
-                pair.Key.IsEquipped = false;
+            {              
                 Inventory.AddMultipleOfItem(pair.Key, pair.Value);
             }
 
         }
-        if(inv == Player.Instance.Inventory)
-        {
-            List<GameItem> lockedEquippedItems = new List<GameItem>();
-            foreach(GameItem i in Player.Instance.GetEquippedItems())
-            {
-                if(i.IsLocked)
-                {
-                    lockedEquippedItems.Add(i);
-                }
-            }
-            Player.Instance.GetEquippedItems().Clear();
-            foreach(GameItem i in lockedEquippedItems)
-            {
-                Player.Instance.Equip(i);
-            }
-        }
-		inv.Clear();
-        foreach(KeyValuePair<GameItem, int> pair in lockedItems)
+        inv.Clear();
+        foreach (KeyValuePair<GameItem, int> pair in lockedItems)
         {
             pair.Key.IsLocked = true;
+            if (pair.Key.IsEquipped)
+            {
+                Player.Instance.Equip(pair.Key);
+            }
             inv.AddMultipleOfItem(pair.Key, pair.Value);
         }
+        foreach(GameItem i in lockedEquippedItems)
+        {
+            Player.Instance.Equip(i.Name);
+        }
+        /*if (inv == Player.Instance.Inventory)
+        {
+
+            Player.Instance.GetEquippedItems().Clear();
+            foreach (GameItem i in lockedEquippedItems)
+            {
+                
+                Player.Instance.Equip(i);
+            }
+        }*/
     }
 	public void Deposit(GameItem item)
     {

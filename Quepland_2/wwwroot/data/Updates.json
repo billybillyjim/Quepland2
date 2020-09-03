@@ -2,8 +2,14 @@
   {
     "versionNumber": "1.0.3",
     "updates": [
-      "Fixed a bug that made AFK actions exploitable for extremely fast experience."
-      
+      "Fixed a bug that made AFK actions exploitable for extremely fast experience.",
+      "Unpacking items now shows a progress bar to make it more clear that it's not an instant action.",
+      "You can now access Mound's House as long as you have the key.",
+      "Saving a game with a broken equipment list no longer breaks the save.",
+      "Failing to load equipped items no longer will give a null reference exception.",
+      "Deposit all no longer unequips your items.",
+      "The most recent text box is also underlined to make it very clear which one it is. Let me know what you think!",
+      "Tanneries now properly save and load data."
     ]
   },
   {
