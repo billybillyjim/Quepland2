@@ -204,6 +204,7 @@
     public void Dispose()
     {
         BattleManager.Instance.BattleHasEnded = true;
+        
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();

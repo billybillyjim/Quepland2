@@ -28,7 +28,6 @@ public class Monster
         foreach(StatusEffectData data in StatusEffectData)
         {
             StatusEffects.Add(BattleManager.Instance.GenerateStatusEffect(data));
-            Console.WriteLine("Adding status effect:" + data.Name + " to monster:" + Name);
         }
     }
     public bool HasStatusEffect(string name)

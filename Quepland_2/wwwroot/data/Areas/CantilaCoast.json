@@ -87,7 +87,12 @@
       },
       {
         "areaURL": "OceanFishingPlatform",
-        "buttonText": "Sail out to sea"
+        "buttonText": "Sail out to sea",
+        "requirements": [
+          {
+            "action": "Shallow Ocean Travel"
+          }
+        ]
       }
 
     ],

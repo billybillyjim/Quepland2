@@ -191,6 +191,7 @@
         top = await GameState.JSRuntime.InvokeAsync<float>("getTop", bankViewReference);
         windowHeight = (Bank.Instance.Inventory.GetUsedSpaces() * itemBoxSize) / itemsPerRow;
         skip = (int)(Math.Ceiling(top / itemBoxSize * 10) / 10) * itemsPerRow;
+        Bank.Instance.HasChanged = true;
         BankItems = GetBankItems();
     }
     public List<KeyValuePair<GameItem, int>> GetBankItems()
@@ -240,6 +241,7 @@
         {
             pair.Key.Rerender = true;
         }
+        Bank.Instance.HasChanged = false;
         return BankItems;
     }
     public string GetOpacity(GameItem item)
@@ -328,6 +330,7 @@
     {
         searchString = "";
         showSearch = false;
+        Bank.Instance.HasChanged = true;
         GameState.UpdateState();
     }
     public void AddTab(string tab)
@@ -383,7 +386,11 @@
     }
     private void ToggleSearch()
     {
-        showSearch = !showSearch;
+        if (!showSearch)
+        {
+            showSearch = true;
+        }
+        Bank.Instance.HasChanged = true;
         if (!showSearch)
         {
             searchString = "";
@@ -392,8 +399,10 @@
     protected override void OnInitialized()
     {
         Bank.Instance.IsBanking = true;
+        Bank.Instance.HasChanged = true;
         BankItems = Bank.Instance.Inventory.GetItems();
         UpdateVisibleItems();
+
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()

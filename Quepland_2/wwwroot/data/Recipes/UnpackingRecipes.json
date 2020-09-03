@@ -8,7 +8,8 @@
     ],
     "outputAmount": 15,
     "recipeActionString": "You begin plucking the feathers apart...",
-    "recipeButtonString": "Pluck"
+    "recipeButtonString": "Pluck",
+    "craftingSpeed": 3
   },
   {
     "outputItemName": "Rice",

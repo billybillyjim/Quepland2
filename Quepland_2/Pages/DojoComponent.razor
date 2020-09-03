@@ -99,10 +99,13 @@
     }
     protected override void OnInitialized()
     {
+        BattleManager.Instance.CurrentArea = null;
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()
     {
+
+        BattleManager.Instance.CurrentDojo = null;
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();

@@ -47,7 +47,12 @@
     "unlockableAreas": [
       {
         "areaURL": "BunktensCrossing",
-        "buttonText": "Enter the Desert"
+        "buttonText": "Enter the Desert",
+        "requirements": [
+          {
+            "action": "Desert Travel"
+          }
+        ]
       }
 
     ],
@@ -91,15 +96,30 @@
     "unlockableAreas": [
       {
         "areaURL": "AbandonedShack",
-        "buttonText": "Go East"
+        "buttonText": "Go East",
+        "requirements": [
+          {
+            "action": "Desert Travel"
+          }
+        ]
       },
       {
         "areaURL": "Oasis",
-        "buttonText": "Continue South"
+        "buttonText": "Continue South",
+        "requirements": [
+          {
+            "action": "Desert Travel"
+          }
+        ]
       },
       {
         "areaURL": "Leupp",
-        "buttonText": "Go West"
+        "buttonText": "Go West",
+        "requirements": [
+          {
+            "action": "Desert Travel"
+          }
+        ]
       }
     ],
     "requirements": [

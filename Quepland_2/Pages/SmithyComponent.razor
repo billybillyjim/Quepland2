@@ -28,7 +28,7 @@
                 {
                     <button class="btn btn-primary" @onclick="@(() => Smith())">Smith @Product</button>
                 }
-                else if (ItemManager.Instance.GetSmithingRecipeByIngredients(Source).CanCreate())
+                else if (ItemManager.Instance.GetSmithingRecipeByIngredients(Source).HasRequirements() == false)
                 {
                     <button class="btn btn-primary" style="opacity:0.5" 
                             @onmouseover="@(new Action<MouseEventArgs>(e => 

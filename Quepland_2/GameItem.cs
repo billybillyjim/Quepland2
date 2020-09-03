@@ -254,6 +254,7 @@ public class GameItem
 
 		copy.IsStackable = IsStackable;
 		copy.IsSellable = IsSellable;
+		copy.IsLocked = IsLocked;
 
 		copy.Value = Value;
 

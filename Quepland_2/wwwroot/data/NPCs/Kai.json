@@ -51,7 +51,7 @@
         {
           "quest": "Grand Theft Camel",
           "minimumQuestProgress": 20,
-          "maximumQuestProgress": 20
+          "maximumQuestProgress": 21
         }
       ],
       "parameter": "ThievesHideout"

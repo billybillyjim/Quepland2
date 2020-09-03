@@ -100,8 +100,12 @@
     }
     public void CancelAFKing()
     {
-        int hours = (int)Math.Round(Math.Min(DateTime.Now.Subtract(AFKAction.StartTime).TotalHours, 8));
-        Player.Instance.GainExperience(AFKAction.SkillTrained, hours * AFKAction.ExpPerHour);
+        double hours = Math.Round(Math.Min(DateTime.Now.Subtract(AFKAction.StartTime).TotalHours, 8));
+        if(hours < 0.5)
+        {
+            hours = 0;
+        }
+        Player.Instance.GainExperience(AFKAction.SkillTrained, (int)hours * AFKAction.ExpPerHour);
         MessageManager.AddMessage("You cut your training short, but still feel somewhat more knowledgable about " + AFKAction.SkillTrained + " after spending time here.");
         AFKAction.IsActive = false;
         GameState.CurrentAFKAction = null;

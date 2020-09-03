@@ -1,5 +1,28 @@
 [
   {
+    "versionNumber": "1.0.3",
+    "updates": [
+      "Fixed a bug that made AFK actions exploitable for extremely fast experience."
+      
+    ]
+  },
+  {
+    "versionNumber": "1.0.2",
+    "updates": [
+      "Changed a tile in the swamp. It should be much less confusing now.",
+      "Fixed a few dialogue typos.",
+      "Big bandits will now have the correct strengths and weaknesses.",
+      "Fixed a few bugs with the item locks. They should stay even after hitting deposit all and they should work on stacks of items.",
+      "Kai will now still be at the docks if you leave the thieve's island before defeating all the thieves.",
+      "Fixed a bug that made dojo battles show the wrong UI.",
+      "Fixed some issues with bank searching and made the banking interface slightly faster.",
+      "Fixed smithing tooltips to actually tell the player what they are missing.",
+      "The smithing sources dropdown will now properly fit the text inside it for Firefox users.",
+      "Unlocking areas now properly requires and consumes required items.",
+      "Fixed a bug that made AFK actions exploitable for extremely fast experience."
+    ]
+  },
+  {
     "versionNumber": "1.0.1",
     "updates": [
       "Added Discord and Patreon links to the settings menu, as well as the version number.",

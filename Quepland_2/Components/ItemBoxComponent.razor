@@ -10,7 +10,6 @@
 
             <div style="position:absolute;margin-left:2px;margin-top:-2px;color:white;font-size: 15px;font-weight: bold;text-shadow: 1px 1px 4px black;">@GetAmount()</div>
             
-
         }
         @if (HideTooltip == false)
         {
@@ -69,32 +68,35 @@ else
     }
     private string GetBackground()
     {
-        string style = "";
-        string border = "border:solid black 1px;";
+        System.Text.StringBuilder styleBuilder = new System.Text.StringBuilder();
+        System.Text.StringBuilder borderBuilder = new System.Text.StringBuilder();
+        //string style = "";
+        //string border = "border:solid black 1px;";
         if (IsSelected)
         {
-            border = "border:solid white 2px;";
-            style = "background-color:lightgreen;";
+            borderBuilder.Append("border:solid white 2px;");
+            styleBuilder.Append("background-color:lightgreen;");
         }
         else
         {
 
             if (Item != null)
             {
-                style = "background: linear-gradient(155deg, " + Item.SecondaryColor + " 60%, " + Item.PrimaryColor + " 50%);";
+                styleBuilder.Append("background: linear-gradient(155deg, " + Item.SecondaryColor + " 60%, " + Item.PrimaryColor + " 50%);");
 
             }
             else
             {
-                style = "background-color:darkgray;";
+                styleBuilder.Append("background-color:darkgray;");
             }
 
         }
         if (Item != null && Item.IsEquipped)
         {
-            border = "border:solid 2px lightgreen;";
+            borderBuilder.Append("border:solid 2px lightgreen;");
         }
-        return style + border;
+        styleBuilder.Append(borderBuilder.ToString());
+        return styleBuilder.ToString();
     }
     private string GetMargin()
     {

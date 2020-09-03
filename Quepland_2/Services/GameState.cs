@@ -25,7 +25,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.1";
+    public static string Version { get; set; } = "1.0.3";
     public static List<Update> Updates { get; set; } = new List<Update>();
 
     public static string Location { get; set; } = "";
@@ -446,6 +446,7 @@ using System.Threading.Tasks;
                 
                 if (CurrentRecipe.HasSpace())
                 {
+                    CurrentRecipe.Output.Rerender = true;
                     MessageManager.AddMessage("You have run out of materials.");
                     if(OvenComponent != null)
                     {
@@ -455,10 +456,25 @@ using System.Threading.Tasks;
                 else
                 {
                     MessageManager.AddMessage("You don't have enough inventory space to do it again.");
-                }            
+                }
+                if (CurrentRecipe != null)
+                {
+                    foreach (Ingredient i in CurrentRecipe.Ingredients)
+                    {
+                        i.Item.Rerender = true;
+                    }
+                }
                 CurrentRecipe = null;
                 itemViewer.ClearItem();
             }
+            if(CurrentRecipe != null)
+            {
+                foreach (Ingredient i in CurrentRecipe.Ingredients)
+                {
+                    i.Item.Rerender = true;
+                }
+            }
+
         }
         else
         {
@@ -466,6 +482,7 @@ using System.Threading.Tasks;
             {
                 itemViewer.ClearItem();                
                 MessageManager.AddMessage("You have run out of materials.");
+                CurrentRecipe.Output.Rerender = true;
                 if (OvenComponent != null)
                 {
                     OvenComponent.Source = "";

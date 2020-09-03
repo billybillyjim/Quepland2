@@ -99,7 +99,7 @@ public static class SwampMaze
             {
                 new List<string>
                 {
-                    "Open", "Open", "Open", "Blocked", "Open", "Exit", "Teleport:6,2", "Open", "Open", "Open"
+                    "Open", "Open", "Open", "Blocked", "Blocked", "Exit", "Teleport:6,2", "Open", "Open", "Open"
                 },
                 new List<string>
                 {

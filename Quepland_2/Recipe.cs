@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 public class Recipe
 {
@@ -74,19 +75,17 @@ public class Recipe
     {
         if(HasSpace() == false)
         {
-            Console.WriteLine("Not enough space");
             return false;
         }
         else if(HasRequirements() == false)
         {
-            Console.WriteLine("Failed reqs");
             return false;
         }
 		foreach(Ingredient ingredient in Ingredients)
         {
             if(Player.Instance.Inventory.GetNumberOfItem(ingredient.Item) < ingredient.Amount)
             {
-                Console.WriteLine("Player lacks ingredient:" + ingredient.Item.Name);
+                ingredient.Item.Rerender = true;
                 return false;
             }
         }
@@ -301,12 +300,15 @@ public class Recipe
             {
                 if (ingredient.DestroyOnUse)
                 {
+                    ingredient.Item.Rerender = true;
                     Player.Instance.Inventory.RemoveItems(ingredient.Item, ingredient.Amount * maxOutput);
-                    //Console.WriteLine("Removing " + (ingredient.Amount * maxOutput) + " " + ingredient.Item);
+                    
                 }
             }
             Player.Instance.GainExperienceMultipleTimes(ExperienceGained, OutputAmount *  maxOutput);
+            Output.Rerender = true;
             Player.Instance.Inventory.AddMultipleOfItem(Output, OutputAmount * maxOutput);
+            
             if(SecondaryOutputItemName != null)
             {                
                 Player.Instance.Inventory.AddMultipleOfItem(SecondaryOutput, OutputAmount * maxOutput);

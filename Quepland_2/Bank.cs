@@ -26,13 +26,13 @@ public class Bank
 
 	public void DepositAll(Inventory inv)
     {
-        List<GameItem> lockedItems = new List<GameItem>();
+        List<KeyValuePair<GameItem, int>> lockedItems = new List<KeyValuePair<GameItem, int>>();
 
         foreach (KeyValuePair<GameItem, int> pair in inv.GetItems())
         {
             if (pair.Key.IsLocked)
             {
-                lockedItems.Add(pair.Key);
+                lockedItems.Add(new KeyValuePair<GameItem, int>(pair.Key, pair.Value));
             }
             else
             {
@@ -58,9 +58,10 @@ public class Bank
             }
         }
 		inv.Clear();
-        foreach(GameItem i in lockedItems)
+        foreach(KeyValuePair<GameItem, int> pair in lockedItems)
         {
-            inv.AddItem(i);
+            pair.Key.IsLocked = true;
+            inv.AddMultipleOfItem(pair.Key, pair.Value);
         }
     }
 	public void Deposit(GameItem item)
@@ -78,8 +79,13 @@ public class Bank
             MessageManager.AddMessage("You'll need to unequip this item before banking it.");
             return;
         }
+        if (item.IsLocked)
+        {
+            MessageManager.AddMessage("You'll need to unlock this item before banking it.");
+            return;
+        }
         int amountToBank = Math.Min(Player.Instance.Inventory.GetNumberOfItem(item), amount);
-        Console.WriteLine("Amount to bank:" + amountToBank);
+        
         Inventory.AddMultipleOfItem(item.Copy(), Player.Instance.Inventory.RemoveItems(item, amountToBank));
     }
     public void Withdraw(GameItem item)

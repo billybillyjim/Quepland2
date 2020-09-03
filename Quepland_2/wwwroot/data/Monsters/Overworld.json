@@ -216,8 +216,8 @@
   {
     "name": "Two Bandits",
     "hp": 100,
-    "weakness": "Swordsmanship",
-    "strength": "Hammermanship",
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship",
     "damage": 36,
     "armor": 8,
     "attackSpeed": 7,
@@ -265,8 +265,8 @@
   {
     "name": "Big Bandit",
     "hp": 90,
-    "weakness": "Swordsmanship",
-    "strength": "Hammermanship",
+    "weaknesses": "Swordsmanship",
+    "strengths": "Hammermanship",
     "damage": 18,
     "armor": 8,
     "attackSpeed": 15,
