@@ -17,71 +17,80 @@
     @if (GameState.IsOnHuntingTrip == false && GameState.CurrentAFKAction == null)
     {
 
-        <ul class="nav flex-column">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <div style="@GetStyle("Bank")" onclick="@(new Action(() => GoToArea("Bank")))">
+                <img style="height: 45px; width: 45px; padding: 5px; margin-right: 10px; border-radius: 0.25rem; background-color: white;" src="@("data/Images/Bank.png")" />Bank
+            </div>
+
+        </li>
+        @if (HasAnyAreaUnlocked() == false && HasAnyRegionUnlocked() == false)
+        {
             <li class="nav-item px-3">
-                <div style="@GetStyle("Bank")" onclick="@(new Action(() => GoToArea("Bank")))">
-                    <img style="height: 45px; width: 45px; padding: 5px; margin-right: 10px; border-radius: 0.25rem; background-color: white;" src="@("data/Images/Bank.png")" />Bank
+                <div style="background-color:rgba(255, 255, 255, 0.2);cursor:pointer;" onclick="@(new Action(() => GoToArea("QueplandFields")))">
+                    <img style="height: 45px; width: 45px; padding: 5px; margin-right: 10px; border-radius: 0.25rem; background-color: white;" src="@("data/Images/House.png")" />Find a way home
                 </div>
 
             </li>
-            @foreach (Region region in AreaManager.Instance.GetLandByName(GameState.CurrentLand.Name).Regions)
+        }
+        @foreach (Region region in AreaManager.Instance.GetLandByName(GameState.CurrentLand.Name).Regions)
+        {
+            if (region.IsUnlocked)
             {
-                if (region.IsUnlocked)
+
+                <li class="nav-item px-3" style="background-color:rgba(255, 255, 255, 0.2);cursor:pointer;" @onclick="@(() => ChangeOpenRegion(region))">
+                    <span style="color:black;font-size:large;display:inline-block;padding-top:10px;">@region.Name  </span><img style="height:25px;width:25px;float:right;margin-top:11px;" src="data/Images/Hamburger.png" />
+                </li>
+
+                @if (region == openRegionMenu)
                 {
-
-                    <li class="nav-item px-3" style="background-color:rgba(255, 255, 255, 0.2);cursor:pointer;" @onclick="@(() => ChangeOpenRegion(region))">
-                        <span style="color:black;font-size:large;display:inline-block;padding-top:10px;">@region.Name  </span><img style="height:25px;width:25px;float:right;margin-top:11px;" src="data/Images/Hamburger.png" />
-                    </li>
-
-                    @if (region == openRegionMenu)
+                    foreach (Area a in region.Areas)
                     {
-                        foreach (Area a in region.Areas)
+                        if (a.IsUnlocked && a.IsHidden == false && a.HasRequirements())
                         {
-                            if (a.IsUnlocked && a.IsHidden == false && a.HasRequirements())
-                            {
-                                <li class="nav-item px-3" style="position:relative;padding-bottom:0px;"
-                                    oncontextmenu="return false;" draggable="false"
-                                            onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, a)))">
+                            <li class="nav-item px-3" style="position:relative;padding-bottom:0px;"
+                                oncontextmenu="return false;" draggable="false"
+                                onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, a)))">
 
-                                    <div style="@GetStyle(a.AreaURL)" @onclick="@(() => GoToArea(a.AreaURL))">
-                                        <img style="height:45px;width:45px;padding:5px;margin-right:10px;border-radius:0.25rem;background-color:white;"
-                                             src="@("data/Images/" + a.Image + ".png")"
-                                             onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, a.Name, GetAreaInfo(a))))"
-                                             onmouseout="@(new Action(() => GameState.HideTooltip()))" />
-                                        @a.Name
-                                        @if (a.HasUnlockableAreas())
-                                        {
-                                            <div style="margin:5px;background-color:sandybrown;border-radius:0.5rem;height:12px;width:12px;position:absolute;top:15px;right:10px;"></div>
-                                        }
-                                        @if (a.TrapSlotIsReady())
-                                        {
-                                            <div style="margin:5px;background-color:white;border-radius:0.5rem;height:12px;width:12px;position:absolute;top:0px;right:10px;"><img src="data/Images/Carcass.png" style="height:12px;width:12px;margin-top:-14px;"/></div>
-                                        }
-                                    </div>
-                                </li>
-                            }
-                            else if (a.IsUnlocked && a.IsHidden == false)
-                            {
-                                <li class="nav-item px-3" style="position:relative;padding-bottom:0px;"
-                                    oncontextmenu="return false;" draggable="false"
-                                            onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, a)))">
+                                <div style="@GetStyle(a.AreaURL)" @onclick="@(() => GoToArea(a.AreaURL))">
+                                    <img style="height:45px;width:45px;padding:5px;margin-right:10px;border-radius:0.25rem;background-color:white;"
+                                         src="@("data/Images/" + a.Image + ".png")"
+                                         onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, a.Name, GetAreaInfo(a))))"
+                                         onmouseout="@(new Action(() => GameState.HideTooltip()))" />
+                                    @a.Name
+                                    @if (a.HasUnlockableAreas())
+                                    {
+                                        <div style="margin:5px;background-color:sandybrown;border-radius:0.5rem;height:12px;width:12px;position:absolute;top:15px;right:10px;"></div>
+                                    }
+                                    @if (a.TrapSlotIsReady())
+                                    {
+                                        <div style="margin:5px;background-color:white;border-radius:0.5rem;height:12px;width:12px;position:absolute;top:0px;right:10px;"><img src="data/Images/Carcass.png" style="height:12px;width:12px;margin-top:-14px;" /></div>
+                                    }
+                                </div>
+                            </li>
+                        }
+                        else if (a.IsUnlocked && a.IsHidden == false)
+                        {
+                            <li class="nav-item px-3" style="position:relative;padding-bottom:0px;"
+                                oncontextmenu="return false;" draggable="false"
+                                onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, a)))">
 
-                                    <div style="@GetStyle(a.AreaURL);background-color:#FF000055" 
-                                         onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, a.Name, a.GetRequirementTooltip())))"
-                                             onmouseout="@(new Action(() => GameState.HideTooltip()))">                                         
-                                        <img style="height:45px;width:45px;padding:5px;margin-right:10px;border-radius:0.25rem;background-color:white;"
-                                             src="@("data/Images/" + a.Image + ".png")"/>
-                                        @a.Name
-                                    </div>
-                                </li>
+                                <div style="@GetStyle(a.AreaURL);background-color:#FF000055"
+                                     onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, a.Name, a.GetRequirementTooltip())))"
+                                     onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                                    <img style="height:45px;width:45px;padding:5px;margin-right:10px;border-radius:0.25rem;background-color:white;"
+                                         src="@("data/Images/" + a.Image + ".png")" />
+                                    @a.Name
+                                </div>
+                            </li>
 
-                            }
                         }
                     }
                 }
-
             }
-        </ul>
+
+        }
+    </ul>
     }
     <ul style="margin-bottom:50px;">
     </ul>
@@ -142,6 +151,31 @@
 
         GameState.UpdateState();
     }
+    public bool HasAnyAreaUnlocked()
+    {
+        foreach (Region region in AreaManager.Instance.GetLandByName(GameState.CurrentLand.Name).Regions)
+        {
+            foreach(Area area in region.Areas)
+            {
+                if (area.IsUnlocked)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public bool HasAnyRegionUnlocked()
+    {
+        foreach (Region region in AreaManager.Instance.GetLandByName(GameState.CurrentLand.Name).Regions)
+        {
+            if (region.IsUnlocked)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public void GoToArea(string name)
     {
@@ -149,6 +183,19 @@
         {
             GameState.StopActions();
             GameState.Location = name;
+            if(name != "Bank")
+            {
+                try
+                {
+                    GameState.CurrentLand = AreaManager.Instance.GetLandForArea(AreaManager.Instance.GetAreaByURL(name));
+
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine(e.StackTrace);
+                }
+            }
             UriHelper.NavigateTo("World/" + name + "/");
             GameState.UpdateState();
         }

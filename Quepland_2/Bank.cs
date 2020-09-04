@@ -33,14 +33,18 @@ public class Bank
             if (pair.Key.IsLocked)
             {
                 if (pair.Key.IsEquipped)
-                {
-                    pair.Key.IsEquipped = false;
+                {                 
                     lockedEquippedItems.Add(pair.Key);
                 }
                 lockedItems.Add(new KeyValuePair<GameItem, int>(pair.Key, pair.Value));
             }
             else
-            {              
+            {
+                if (pair.Key.IsEquipped)
+                {
+                    Player.Instance.Unequip(pair.Key);
+                }
+                
                 Inventory.AddMultipleOfItem(pair.Key, pair.Value);
             }
 
@@ -49,10 +53,6 @@ public class Bank
         foreach (KeyValuePair<GameItem, int> pair in lockedItems)
         {
             pair.Key.IsLocked = true;
-            if (pair.Key.IsEquipped)
-            {
-                Player.Instance.Equip(pair.Key);
-            }
             inv.AddMultipleOfItem(pair.Key, pair.Value);
         }
         foreach(GameItem i in lockedEquippedItems)

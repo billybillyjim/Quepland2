@@ -101,11 +101,13 @@ else
             GameState.CurrentLand = l;
         }
         GameState.Location = "KoyaHasa";
-
+        if (a.IsUnlocked == false)
+        {
+            a.Unlock();
+        }
 
         if (QuestManager.Instance.GetQuestByName("Case of the Dead Pirate").IsComplete == false)
         {
-            a.Unlock();
             QuestManager.Instance.GetQuestByName("Case of the Dead Pirate").Complete();
         }
         UriHelper.NavigateTo("World/KoyaHasa");

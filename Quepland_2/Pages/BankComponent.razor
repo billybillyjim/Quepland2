@@ -365,6 +365,12 @@ else
     public void DepositAll()
     {
         Bank.Instance.DepositAll(Player.Instance.Inventory);
+        if (GameState.inventoryViewer.SelectedItem != null &&
+            Player.Instance.Inventory.GetNumberOfItem(GameState.inventoryViewer.SelectedItem) == 0)
+        {
+            GameState.inventoryViewer.SelectedItem = null;
+            GameState.itemViewer.ClearItem();
+        }
         GameState.UpdateState();
 
     }

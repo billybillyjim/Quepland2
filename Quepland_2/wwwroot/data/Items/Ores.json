@@ -4,7 +4,7 @@
     "description": "A pickaxe made of solid stone. It's not very effective.",
     "value": 15,
     "enabledActions": "Mining",
-    "secondaryColor": "#454545",
+    "secondaryColor": "#757575",
     "equipSlot": "R Hand",
     "gatherSpeedBonus": 0.1,
     "icon": "Pickaxe",

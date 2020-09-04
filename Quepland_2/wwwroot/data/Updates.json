@@ -1,5 +1,16 @@
 [
   {
+    "versionNumber": "1.0.4",
+    "updates": [
+      "Test items will no longer appear on book covers, hopefully.",
+      "The deposit all button no longer keeps unlocked items equipped.",
+      "Fixed an issue that can softlock a player on a desert island.",
+      "Stone pickaxe now has a brighter color.",
+      "Button text to find another battle has been clarified.",
+      "The equip button now shows a tooltip of what an item requires even if you have the requirements."
+    ]
+  },
+  {
     "versionNumber": "1.0.3",
     "updates": [
       "Fixed a bug that made AFK actions exploitable for extremely fast experience.",

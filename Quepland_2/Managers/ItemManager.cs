@@ -289,6 +289,10 @@ public class ItemManager
             {
                 if (item.GetRequiredSkills().Contains(s.Name) && random.Next(0, 10) > 8)
                 {
+                    if(item.Value == 0)
+                    {
+                        return "a strange man";
+                    }
                     if (item.Name.EndsWith('s'))
                     {
                         return item.Name;
