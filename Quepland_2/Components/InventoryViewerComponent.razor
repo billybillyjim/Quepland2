@@ -6,6 +6,7 @@
     <ItemViewerComponent Item="@SelectedItem"></ItemViewerComponent>
 
 }
+<div style="margin-left:2px;">Space:@(Player.Instance.Inventory.GetUsedSpaces())/@(Player.Instance.Inventory.GetSize())</div>
 <div style="display:flex;flex-wrap:wrap;border:solid black 1px;padding:3px;margin:2px;border-radius:0.25rem;max-height:@(GetMaxHeight())px;overflow-y:auto" class="custom-scroll">
     @foreach (KeyValuePair<GameItem, int> item in Player.Instance.Inventory.GetItems().OrderBy(x => x.Key.ID))
     {

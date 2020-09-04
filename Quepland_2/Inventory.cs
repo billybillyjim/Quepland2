@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -66,9 +67,11 @@ public class Inventory
         {
             return 0;
         }
+        return itemLookupDic[item.UniqueID];
         if (item.IsStackable || AllItemsStack)
         {
-            return items.FirstOrDefault(x => x.Key.UniqueID == item.UniqueID).Value;
+            return itemLookupDic[item.UniqueID];
+            //return items.FirstOrDefault(x => x.Key.UniqueID == item.UniqueID).Value;
         }
         return items.Count(x => x.Key.UniqueID == item.UniqueID);
     }
@@ -88,7 +91,8 @@ public class Inventory
             {
                 return 0;
             }
-            return items.FirstOrDefault(x => x.Key.UniqueID == item.UniqueID).Value;
+            return itemLookupDic[item.UniqueID];
+            // items.FirstOrDefault(x => x.Key.UniqueID == item.UniqueID).Value;
         }
         return items.Count(x => x.Key.UniqueID == item.UniqueID && x.Key.IsLocked == false);
     }
@@ -320,7 +324,7 @@ public class Inventory
                 items.Remove(pair);
                 pair.Key.Rerender = true;
                 items.Add(new KeyValuePair<GameItem, int>(pair.Key, oldAmt + amount));
-                
+                UpdateItemCount();
 
             }
             else
@@ -336,7 +340,7 @@ public class Inventory
                 item.Rerender = true;
                 //item.itemPos = inventorySlotPos;
                 items.Add(new KeyValuePair<GameItem, int>(item, amount));
-                
+                UpdateItemCount();
             }
             else
             {
@@ -403,6 +407,10 @@ public class Inventory
                         items.RemoveAll(x => removedItems.Contains(x));                    
                         UpdateItemCount();
                         return removed;
+                    }
+                    else
+                    {
+                        UpdateItemCount();
                     }
                 }
             }
@@ -503,7 +511,7 @@ public class Inventory
 
                 if (itemLookupDic.TryGetValue(item.Key.UniqueID, out int v))
                 {
-                    itemLookupDic[item.Key.UniqueID] = v;
+                    itemLookupDic[item.Key.UniqueID] = item.Value;
                 }
                 else
                 {
@@ -581,19 +589,27 @@ public class Inventory
         foreach(string line in i)
         {
             string[] s = line.Split('_');
-            if(s.Length != 2)
+            if(s.Length < 2)
             {
                 continue;
             }
             string id = s[0];
-            if(int.TryParse(s[1], out int amt))
+            GameItem it = ItemManager.Instance.GetItemByUniqueID(id);
+            if (int.TryParse(s[1], out int amt))
             {
-                GameItem it = ItemManager.Instance.GetItemByUniqueID(id);
                 AddMultipleOfItem(it, amt);
             }
             else
             {
                 Console.WriteLine("Error loading item in line:" + line);
+            }
+            if(s.Length == 3)
+            {
+                List<string> tabs = JsonConvert.DeserializeObject<List<string>>(s[2]);
+                foreach(string tag in tabs)
+                {                    
+                    it.Tabs.Add(tag);
+                }
             }
         }
         IsLoadingSave = false;

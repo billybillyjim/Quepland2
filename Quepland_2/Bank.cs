@@ -93,6 +93,7 @@ public class Bank
         int amountToBank = Math.Min(Player.Instance.Inventory.GetNumberOfItem(item), amount);
         
         Inventory.AddMultipleOfItem(item.Copy(), Player.Instance.Inventory.RemoveItems(item, amountToBank));
+        HasChanged = true;
     }
     public void Withdraw(GameItem item)
     {
@@ -122,6 +123,10 @@ public class Bank
             Inventory.RemoveItems(item, maxWithdraw);
         }
 
+    }
+    public void LoadTabs(List<string> t)
+    {
+        Tabs = t;
     }
 
     public string GetAmountString()

@@ -32,6 +32,7 @@ public static class SaveManager
             await SetItemAsync("Skills:" + mode, Compress(GetSkillsSave()));
             await SetItemAsync("Inventory:" + mode, Compress(GetItemSave(Player.Instance.Inventory)));
             await SetItemAsync("Bank:" + mode, Compress(GetItemSave(Bank.Instance.Inventory)));
+            await SetItemAsync("BankTabs:" + mode, GetSaveString(Bank.Instance.Tabs));
             await SetItemAsync("Areas:" + mode, Compress(GetAreaSave()));
             await SetItemAsync("Regions:" + mode, Compress(GetRegionSave()));
             await SetItemAsync("Dungeons:" + mode, GetSaveString(AreaManager.Instance.GetDungeonSaveData()));
@@ -40,7 +41,6 @@ public static class SaveManager
             await SetItemAsync("Player:" + mode, GetSaveString(Player.Instance.GetSaveData()));
             await SetItemAsync("Followers:" + mode, Compress(FollowerManager.Instance.GetSaveData()));
             await SetItemAsync("TanningInfo:" + mode, Compress(GetTanningSave()));
-            Console.WriteLine("Finished saving Tanning data..");
             await SetItemAsync("Dojos:" + mode, GetSaveString(AreaManager.Instance.GetDojoSaveData()));
             await SetItemAsync("AFKAction:" + mode, GetSaveString(GameState.CurrentAFKAction));
 
@@ -101,6 +101,10 @@ public static class SaveManager
         {
             Bank.Instance.Inventory.Clear();
             Bank.Instance.Inventory.LoadData(Decompress(await GetItemAsync<string>("Bank:" + mode)));
+        }
+        if (await ContainsKeyAsync("BankTabs:" + mode))
+        {
+            Bank.Instance.LoadTabs(DeserializeToList(Decompress(await GetItemAsync<string>("BankTabs:" + mode))));
         }
         if (await ContainsKeyAsync("Areas:" + mode))
         {
@@ -177,7 +181,9 @@ public static class SaveManager
         //13
         file += Compress(GetTanningSave()) + ",";
         //14
-        file += Compress(JsonConvert.SerializeObject(AreaManager.Instance.GetDojoSaveData()));
+        file += Compress(JsonConvert.SerializeObject(AreaManager.Instance.GetDojoSaveData())) + ",";
+        //15
+        file += Compress(JsonConvert.SerializeObject(Bank.Instance.Tabs));
         
         return file;
     }
@@ -262,13 +268,17 @@ public static class SaveManager
         {
             AreaManager.Instance.LoadDojoSaveData(JsonConvert.DeserializeObject<List<DojoSaveData>>(Decompress(data[14])));
         }
+        if (data.Length > 15)
+        {
+            Bank.Instance.LoadTabs(DeserializeToList(Decompress(data[15])));
+        }
     }
     public static string GetItemSave(Inventory i)
     { 
         string data = "";
         foreach(KeyValuePair<GameItem, int> pair in i.GetItems())
         {
-            data += pair.Key.UniqueID + "_" + pair.Value + "/";
+            data += pair.Key.UniqueID + "_" + pair.Value + "_" + JsonConvert.SerializeObject(pair.Key.Tabs) + "/";
         }
         return data;
     }
@@ -305,6 +315,10 @@ public static class SaveManager
     public static string GetSaveString(Object o)
     {
         return Compress(JsonConvert.SerializeObject(o));
+    }
+    public static List<string> DeserializeToList(string s)
+    {
+        return JsonConvert.DeserializeObject<List<string>>(s);
     }
     public static string Compress(string s)
     {

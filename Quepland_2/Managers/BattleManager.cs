@@ -128,6 +128,10 @@ public class BattleManager
                     opponent.CurrentHP = 0;
                     if (opponent.DropTable != null && (opponent.DropTable.Drops.Count > 0 || opponent.DropTable.AlwaysDrops.Count > 0))
                     {
+                        foreach (Drop d in opponent.DropTable.AlwaysDrops)
+                        {
+                            Player.Instance.Inventory.AddDrop(d);
+                        }
                         Drop drop = opponent.DropTable.GetDrop();
                         if(drop != null)
                         {
@@ -142,10 +146,7 @@ public class BattleManager
                             else
                             {
                                 MessageManager.AddMessage("You defeated the " + opponent.Name + ".");
-                                foreach (Drop d in opponent.DropTable.AlwaysDrops)
-                                {
-                                    Player.Instance.Inventory.AddDrop(d);
-                                }
+
                                 if (drop.Item != null && drop.Item.Category == "QuestItems" && (Player.Instance.Inventory.HasItem(drop.Item) || Bank.Instance.Inventory.HasItem(drop.Item)))
                                 {
 

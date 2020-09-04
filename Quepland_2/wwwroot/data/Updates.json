@@ -1,5 +1,16 @@
 [
   {
+    "versionNumber": "1.0.5",
+    "updates": [
+      "The library is now slightly slower for experience gains.",
+      "Dojo tokens are now properly awarded for defeating dojos.",
+      "Bank tabs should now save correctly.",
+      "The inventory now tells you your used and available spaces.",
+      "Fixed a number of UI issues with bank tabs so they work a bit more as intended.",
+      "Item rendering is now quite a bit faster than it was before. Hopefully nothing broke with this change, but if it did please let me know."
+    ]
+  },
+  {
     "versionNumber": "1.0.4",
     "updates": [
       "Test items will no longer appear on book covers, hopefully.",

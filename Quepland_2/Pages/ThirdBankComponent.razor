@@ -1,41 +1,25 @@
-﻿@page "/World/Bank/"
+﻿@page "/World/ThirdBank/"
 @inject GameState GameState
 @inject NavigationManager UriHelper
 @implements IDisposable
 
 @if (GameState.CurrentGameMode != GameState.GameType.Ultimate)
 {
-<div style="overflow-y:hidden;height:100%;">
+    <div style="overflow-y:hidden;height:100%;">
 
-    <div style="margin-bottom:35px;">
-        Quantity:
-        <div>
-            <button class="btn btn-primary" style="@GetButtonStyle(1)" @onclick="@(() => UpdateBankAmount(1))">1</button>
-            <button class="btn btn-primary" style="@GetButtonStyle(5)" @onclick="@(() => UpdateBankAmount(5))">5</button>
-            <button class="btn btn-primary" style="@GetButtonStyle(10)" @onclick="@(() => UpdateBankAmount(10))">10</button>
-            <button class="btn btn-primary" style="@GetButtonStyle(-1)" @onclick="@(() => showInput = !showInput)">x</button>
-            <button class="btn btn-primary" style="@GetButtonStyle(int.MaxValue)" @onclick="@(() => UpdateBankAmount(int.MaxValue))">All</button>
-        </div>
-        <div style="margin-top:5px;">
-            @if (showInput)
-            {
-                <input type="number" @bind-value="Bank.Instance.Amount" />
-            }
-            else
-            {
-                <div style="height:30px;"></div>
-            }
-        </div>
-
-        <div style="float: right; margin-top: -75px;position:relative;">
-            <button style="float: right;" class="btn btn-primary" @onclick="@(() => ToggleSearch())">Search</button>
-            <div style=" margin-right: 85px; margin-top: 4px;">
-                @if (showSearch)
+        <div style="margin-bottom:35px;">
+            Quantity:
+            <div>
+                <button class="btn btn-primary" style="@GetButtonStyle(1)" @onclick="@(() => UpdateBankAmount(1))">1</button>
+                <button class="btn btn-primary" style="@GetButtonStyle(5)" @onclick="@(() => UpdateBankAmount(5))">5</button>
+                <button class="btn btn-primary" style="@GetButtonStyle(10)" @onclick="@(() => UpdateBankAmount(10))">10</button>
+                <button class="btn btn-primary" style="@GetButtonStyle(-1)" @onclick="@(() => showInput = !showInput)">x</button>
+                <button class="btn btn-primary" style="@GetButtonStyle(int.MaxValue)" @onclick="@(() => UpdateBankAmount(int.MaxValue))">All</button>
+            </div>
+            <div style="margin-top:5px;">
+                @if (showInput)
                 {
-                    <input style="width:150px;margin-left:40px;" type="text" @bind="searchString" @bind:event="oninput" />
-                    <div style="margin-top:-30px;">
-                        <button class="btn btn-primary" style="width:30px;height:30px;padding:0px;" @onclick="@(() => ClearSearch())">X</button>
-                    </div>
+                    <input type="number" @bind-value="Bank.Instance.Amount" />
                 }
                 else
                 {
@@ -43,130 +27,114 @@
                 }
             </div>
 
-        </div>
-        <div>
-            <button style="float: right; margin-top: -28px;" class="btn btn-primary" @onclick="@(() => DepositAll())">Deposit All</button>
-        </div>
-    </div>
-    <div style="display:flex;flex-wrap:wrap;">
-        @if (showTabs)
-        {
-            @foreach (string tab in Bank.Instance.Tabs)
-            {
-                @if (Bank.Instance.CurrentTab == tab)
-                {
-                    <div>
-                        <button style="margin:3px; background-color:gray;border-color:lightgray" class="btn btn-primary">@tab</button>
-                    </div>
-                }
-                else
-                {
-                    <div>
-                        <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => SetTab(tab))">@tab</button>
-                    </div>
-                }
-            }
-            <div style="display:flex;">
-
-                @if (showTabInput)
-                {
-                    <button class="btn btn-primary" style="width:30px;height:30px;padding:0px;margin:3px;" @onclick="@(() => ToggleTabInput())">X</button>
-                    <input style="width:150px;margin:3px;" type="text" @bind="newTabString" />
-                    <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => AddTab(newTabString))">Confirm</button>
-
-                }
-                else
-                {
-                    <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => ToggleTabInput())">Add Tab</button>
-                }
-                @if (Bank.Instance.CurrentTab != "Main")
-                {
-                    @if (addingTags)
+            <div style="float: right; margin-top: -75px;position:relative;">
+                <button style="float: right;" class="btn btn-primary" @onclick="@(() => ToggleSearch())">Search</button>
+                <div style=" margin-right: 85px; margin-top: 4px;">
+                    @if (showSearch)
                     {
-                        <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => ToggleAddingTags())">End Adding Items</button>
+                        <input style="width:150px;margin-left:40px;" type="text" @bind="searchString" @bind:event="oninput" />
+                        <div style="margin-top:-30px;">
+                            <button class="btn btn-primary" style="width:30px;height:30px;padding:0px;" @onclick="@(() => ClearSearch())">X</button>
+                        </div>
+                    }
+                    else
+                    {
+                        <div style="height:30px;"></div>
+                    }
+                </div>
+
+            </div>
+            <div>
+                <button style="float: right; margin-top: -28px;" class="btn btn-primary" @onclick="@(() => DepositAll())">Deposit All</button>
+            </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;">
+            @if (showTabs)
+            {
+                @foreach (string tab in Bank.Instance.Tabs)
+                {
+                    @if (Bank.Instance.CurrentTab == tab)
+                    {
+                        <div>
+                            <button style="margin:3px; background-color:gray;border-color:lightgray" class="btn btn-primary">@tab</button>
+                        </div>
+                    }
+                    else
+                    {
+                        <div>
+                            <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => SetTab(tab))">@tab</button>
+                        </div>
+                    }
+                }
+                <div style="display:flex;">
+
+                    @if (showTabInput)
+                    {
+                        <button class="btn btn-primary" style="width:30px;height:30px;padding:0px;margin:3px;" @onclick="@(() => ToggleTabInput())">X</button>
+                        <input style="width:150px;margin:3px;" type="text" @bind="newTabString" />
+                        <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => AddTab(newTabString))">Confirm</button>
 
                     }
                     else
                     {
-                        <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => ToggleAddingTags())">Add Items to Tab</button>
-
+                        <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => ToggleTabInput())">Add Tab</button>
                     }
-                }
-            </div>
-            <div>
-                <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => ToggleShowTabs())">Hide Tabs</button>
-            </div>
-        }
-        else
-        {
-            <div>
-                <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => ToggleShowTabs())">Show Tabs</button>
-            </div>
-        }
-
-
-    </div>
-    <div @ref="@bankViewReference" style="height:500px;overflow-y:auto;" class="bank-scroll" @onscroll="@(() => UpdateVisibleItems())">
-        @if (!addingTags)
-        {
-            <div style="display: flex; flex-wrap: wrap;align-content: flex-start;padding-top:@(top)px;height:@(windowHeight)px">
-                @foreach (KeyValuePair<GameItem, int> item in GetBankItems())
-                {
-                    if (item.Key != null)
+                    @if (Bank.Instance.CurrentTab != "Main")
                     {
-                        <div oncontextmenu="return false;"
-                             onmouseup="@(new Action<MouseEventArgs>((args) => ShowMenu(args, item.Key)))"
-                             @onclick="@(() => Withdraw(item.Key))" style="margin-left:-3px;cursor:pointer">
-                            <Quepland_2.Components.ItemBoxComponent Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
-                        </div>
+                        @if (addingTags)
+                        {
+                            <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => ToggleAddingTags())">End Adding Items</button>
+
+                        }
+                        else
+                        {
+                            <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => ToggleAddingTags())">Add Items to Tab</button>
+
+                        }
                     }
-                }
-                @for (int i = 0; i < GetEmptyItemsToFillRow(); i++)
-                {
-                    int temp = i;
-                    if (temp % itemsPerRow == 0)
-                    {
-                        <br />
-                    }
-                    <div style="margin-left:-3px;">
-                        <Quepland_2.Components.ItemBoxComponent></Quepland_2.Components.ItemBoxComponent>
-
-                    </div>
-                }
-            </div>
-
-        }
-        else if(addingTags)
-        {
-    <div style="display: flex; flex-wrap: wrap;align-content: flex-start;padding-top:@(top)px;height:@(windowHeight)px">
-        @foreach (KeyValuePair<GameItem, int> item in GetBankItems())
-        {
-            if (item.Key != null)
-            {
-                <div oncontextmenu="return false;"
-                     @onclick="@(() => ToggleTagOnItem(item.Key))" style="margin-left:-3px;cursor:pointer;@GetOpacity(item.Key)">
-                    <Quepland_2.Components.ItemBoxComponent @key="item" Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" HideTooltip="true" shouldRender="@item.Key.Rerender"></Quepland_2.Components.ItemBoxComponent>
-
+                </div>
+                <div>
+                    <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => ToggleShowTabs())">Hide Tabs</button>
                 </div>
             }
-        }
-        @for (int i = 0; i < GetEmptyItemsToFillRow(); i++)
-        {
-            int temp = i;
-            if (temp % itemsPerRow == 0)
+            else
             {
-                <br />
+                <div>
+                    <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => ToggleShowTabs())">Show Tabs</button>
+                </div>
             }
-            <div style="margin-left:-3px;">
-                <Quepland_2.Components.ItemBoxComponent></Quepland_2.Components.ItemBoxComponent>
 
-            </div>
-        }
+
+        </div>
+        <div @ref="@bankViewReference" style="height:500px;overflow-y:auto;" class="bank-scroll" @onscroll="@(() => UpdateVisibleItems())">
+
+                <div style="@GetWindowStyle()">
+                    @foreach (KeyValuePair<GameItem, int> item in GetBankItems())
+                    {
+
+                            <div oncontextmenu="return false;">
+                                <ItemBox Item="@item.Key" ShowAmount="@true" Inventory="@Bank.Instance.Inventory" shouldRender="@item.Key.Rerender"></ItemBox>
+                            </div>
+                        
+                    }
+                    @for (int i = 0; i < GetEmptyItemsToFillRow(); i++)
+                    {
+                        int temp = i;
+                        if (temp % itemsPerRow == 0)
+                        {
+                            <br />
+                        }
+                        <div style="margin-left:-3px;">
+                            <Quepland_2.Components.ItemBoxComponent></Quepland_2.Components.ItemBoxComponent>
+
+                        </div>
+                    }
+                </div>
+
+            }        
+        </div>
     </div>
-        }
-    </div>
-    </div>
-    }
+}
 @code {
 
     private bool showInput;
@@ -186,6 +154,11 @@
 
     private List<KeyValuePair<GameItem, int>> BankItems = new List<KeyValuePair<GameItem, int>>();
 
+    private string GetWindowStyle()
+    {
+        return "display: flex; flex-wrap: wrap; align-content: flex-start; padding-top:"+ top + "px; height:"+ windowHeight + "px;";
+    
+    }
     public async Task UpdateVisibleItems()
     {
         top = await GameState.JSRuntime.InvokeAsync<float>("getTop", bankViewReference);
@@ -196,7 +169,7 @@
     }
     public List<KeyValuePair<GameItem, int>> GetBankItems()
     {
-        if(Bank.Instance.HasChanged == false)
+        if (Bank.Instance.HasChanged == false)
         {
             return BankItems;
         }
@@ -237,7 +210,7 @@
             }
         }
 
-        foreach(KeyValuePair<GameItem, int> pair in BankItems)
+        foreach (KeyValuePair<GameItem, int> pair in BankItems)
         {
             pair.Key.Rerender = true;
         }
@@ -363,7 +336,7 @@
         GameState.UpdateState();
     }
     public void RemoveTagFromItem(GameItem i)
-    { 
+    {
         i.Rerender = true;
         GameState.UpdateState();
     }

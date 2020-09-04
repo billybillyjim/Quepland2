@@ -263,6 +263,7 @@ else
     public void ClearSearch()
     {
         searchString = "";
+        Bank.Instance.HasChanged = true;
         GameState.UpdateState();
     }
     public void AddTab(string tab)
@@ -290,6 +291,7 @@ else
     public void SetTab(string tab)
     {
         Bank.Instance.CurrentTab = tab;
+        Bank.Instance.HasChanged = true;
         GameState.UpdateState();
     }
     public void ToggleTabInput()
@@ -300,11 +302,13 @@ else
     public void ToggleAddingTags()
     {
         addingTags = !addingTags;
+        Bank.Instance.HasChanged = true;
         GameState.UpdateState();
     }
     public void DeleteTab(string tab)
     {
-        Bank.Instance.Tabs.Remove(tab); GameState.UpdateState();
+        Bank.Instance.Tabs.Remove(tab); 
+        GameState.UpdateState();
     }
     public void RenameTab(string tab, string newName)
     {

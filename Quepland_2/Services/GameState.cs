@@ -25,7 +25,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.4";
+    public static string Version { get; set; } = "1.0.5";
     public static List<Update> Updates { get; set; } = new List<Update>();
 
     public static string Location { get; set; } = "";
@@ -396,10 +396,10 @@ using System.Threading.Tasks;
     {
         if(CurrentBook != null)
         {
-            Player.Instance.GainExperience(CurrentBook.Skill, (long)((Player.Instance.GetLevel(CurrentBook.Skill.Name) / 60d) * 1000));
+            Player.Instance.GainExperience(CurrentBook.Skill, (long)((Player.Instance.GetLevel(CurrentBook.Skill.Name) / 80d) * 900));
             MessageManager.AddMessage("You read another page of the book. You feel more knowledgable about " + CurrentBook.Skill.Name + ".");
             CurrentBook.Progress++;
-            TicksToNextAction = (int)Math.Max(60, ((1 + CurrentBook.Difficulty * 5d) / (Player.Instance.GetLevel(CurrentBook.Skill.Name)) * 60));
+            TicksToNextAction = (int)Math.Max(60, ((2 + CurrentBook.Difficulty * 5d) / (Player.Instance.GetLevel(CurrentBook.Skill.Name)) * 60));
             if (Random.Next(0, CurrentBook.Length) == CurrentBook.Progress)
             {
                 MessageManager.AddMessage("A small key falls out of the book as you turn the page.");
