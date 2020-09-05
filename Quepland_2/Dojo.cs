@@ -36,6 +36,12 @@ public class Dojo
 	public DateTime? LastWinTime { get; set; }
 	public DateTime? LastLossTime { get; set; }
 
+	public void Reset()
+    {
+		HasBegunChallenge = false;
+		CurrentOpponent = 0;
+    }
+
 	public DojoSaveData GetSaveData()
     {
 		return new DojoSaveData { Name = Name, LastWin = LastWinTime };

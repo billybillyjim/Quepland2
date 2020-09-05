@@ -246,7 +246,17 @@
           "weight": 2
         }
       ]
-    }
+    },
+    "statusEffectData": [
+      {
+        "name": "Cleave",
+        "power": 5,
+        "speed": 3,
+        "duration": 15,
+        "message": "The root dweller gives a mighty swing and hits you as if you weren't wearing any armor!",
+        "procOdds": 0.1
+      }
+    ]
   },
   {
     "name": "Ravenous Root Dweller",
@@ -285,7 +295,17 @@
           "weight": 2
         }
       ]
-    }
+    },
+    "statusEffectData": [
+      {
+        "name": "Empty",
+        "power": 5,
+        "speed": 3,
+        "duration": 15,
+        "message": "The root dweller pulls out a strange seed. It glows blue and now you feel empty!",
+        "procOdds": 0.1
+      }
+    ]
   },
   {
     "name": "Ice Spider",

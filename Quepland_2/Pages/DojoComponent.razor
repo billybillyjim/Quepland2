@@ -93,19 +93,26 @@
     }
     protected override void OnParametersSet()
     {
-        thisDojo = AreaManager.Instance.GetDojoByURL(dojoURL);
 
+        thisDojo = AreaManager.Instance.GetDojoByURL(dojoURL);
+        if(thisDojo.HasBegunChallenge)
+        {
+            thisDojo.Reset();
+        }
         GameState.UpdateState();
     }
     protected override void OnInitialized()
     {
         BattleManager.Instance.CurrentArea = null;
+        BattleManager.Instance.EndBattle();
+
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()
     {
-
-        BattleManager.Instance.CurrentDojo = null;
+        thisDojo.HasBegunChallenge = false;
+        thisDojo.CurrentOpponent = 0;
+        BattleManager.Instance.EndBattle();
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();

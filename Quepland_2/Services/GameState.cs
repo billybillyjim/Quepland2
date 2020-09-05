@@ -25,7 +25,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.5";
+    public static string Version { get; set; } = "1.0.5b";
     public static List<Update> Updates { get; set; } = new List<Update>();
 
     public static string Location { get; set; } = "";
@@ -79,6 +79,7 @@ using System.Threading.Tasks;
     public AlchemicalFormula CurrentAlchemyFormula;
     
     public GameItem CurrentFood;
+    public static bool CancelEating;
     public Recipe CurrentRecipe;
     public static Land CurrentLand;
     public ItemViewerComponent itemViewer;
@@ -92,6 +93,7 @@ using System.Threading.Tasks;
     public RightSidebarComponent RightSidebarComponent;
     public ExperienceTrackerComponent EXPTrackerComponent;
     public static NavigationManager UriHelper;
+    public static ArtisanTask CurrentArtisanTask;
     public static int TicksToNextAction;
     public static readonly int GameSpeed = 200;
     public int TicksToNextHeal;
@@ -107,7 +109,7 @@ using System.Threading.Tasks;
 
     private QuestTester QuestTester = new QuestTester();
     private RecipeTester RecipeTester = new RecipeTester();
-    private static Random Random = new Random();
+    public static Random Random = new Random();
 
     public bool SaveGame = false;
     public static bool IsSaving = false;
@@ -195,7 +197,14 @@ using System.Threading.Tasks;
         }
         if (CurrentFood != null && CurrentTick % CurrentFood.FoodInfo.HealSpeed == 0)
         {
-            HealPlayer();
+            if (CancelEating)
+            {
+                CurrentFood = null;
+            }
+            else
+            {
+                HealPlayer();
+            }
         }
         
         if (EXPTrackerComponent != null)
@@ -251,6 +260,9 @@ using System.Threading.Tasks;
         CurrentRecipe = null;
         BattleManager.Instance.CurrentOpponents.Clear();
         CurrentSmithingRecipe = null;
+        CurrentAlchemyFormula = null;
+        AlchemyStage = 0;
+        SmithingManager.SmithingStage = 0;
         CurrentSmeltingRecipe = null;
         CurrentBook = null;
         stopActions = false;
@@ -604,6 +616,20 @@ using System.Threading.Tasks;
             {
                 MessageManager.AddMessage("You withdraw " + CurrentSmithingRecipe.OutputAmount + " " + CurrentSmithingRecipe.Output.Name);
                 Player.Instance.GainExperience(CurrentSmithingRecipe.Output.ExperienceGained);
+                if(GameState.CurrentArtisanTask != null)
+                {
+                    if(GameState.CurrentArtisanTask.ItemName == CurrentSmithingRecipe.OutputItemName)
+                    {
+                        if (long.TryParse(CurrentSmithingRecipe.Output.ExperienceGained.Split(':')[1], out long xp))
+                        {
+                            Player.Instance.GainExperience("Artisan", xp / 5);
+                        }
+                        else
+                        {
+                            Player.Instance.GainExperience("Artisan", 15);
+                        }
+                    }
+                }
                 TicksToNextAction = 12;
                 SmithingManager.SmithingStage = 0;
             }
@@ -713,6 +739,7 @@ using System.Threading.Tasks;
         {
             Console.WriteLine("Shop was null");
         }
+        Bank.Instance.HasChanged = true;
     }
     private void AlchItem()
     {
@@ -785,6 +812,23 @@ using System.Threading.Tasks;
             {
                 AlchemicalHallComponent.UpdateLists();
             }
+        }
+    }
+    public void CompleteArtisanTask()
+    {
+        try
+        {
+            Recipe r = ItemManager.Instance.GetArtisanRecipeByOutput(CurrentArtisanTask.ItemName);
+            string skill = r.ExperienceGained.Split(',')[0].Split(':')[0];
+            long xp = long.Parse(r.ExperienceGained.Split(',')[0].Split(':')[1]);
+            Player.Instance.GainExperience(skill, xp * CurrentArtisanTask.AmountRequired / 10);
+            Player.Instance.ArtisanPoints += CurrentArtisanTask.PointsToEarn;
+            MessageManager.AddMessage("You completed your artisan task! You've earned " + CurrentArtisanTask.PointsToEarn + " artisan points with the guild and now have a total of " + Player.Instance.ArtisanPoints + ". Speak to a guild member to get another task.");          
+        }
+        catch(Exception e)
+        {
+            Console.WriteLine(e.Message);
+            Console.WriteLine(e.StackTrace);
         }
     }
     public void SetCraftingItem(Recipe recipe)
@@ -923,7 +967,7 @@ using System.Threading.Tasks;
     }
     public static GameStateSaveData GetSaveData()
     {
-        return new GameStateSaveData { IsHunting = IsOnHuntingTrip, Location = Location, CurrentLand = CurrentLand.Name };
+        return new GameStateSaveData { IsHunting = IsOnHuntingTrip, Location = Location, CurrentLand = CurrentLand.Name, CurrentTask = CurrentArtisanTask };
     }
     public static void LoadSaveData(GameStateSaveData data)
     {
@@ -935,6 +979,10 @@ using System.Threading.Tasks;
         if (data.Location == null || data.Location == "")
         {
             data.Location = "QueplandFields";
+        }
+        if(data.CurrentTask != null)
+        {
+            CurrentArtisanTask = data.CurrentTask;
         }
         CurrentLand = AreaManager.Instance.GetLandByName(data.CurrentLand);
         GoTo("/World/" + data.Location);

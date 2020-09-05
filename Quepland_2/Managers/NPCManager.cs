@@ -88,6 +88,10 @@ public class NPCManager
                 {
                     CustomDialogFunctions.TryAdd("FightOpponents" + d.Parameter, new Action(() => FightEnemies(d.Parameter)));
                 }
+                else if (d.ResponseWithParameter == "AssignTask" + d.Parameter)
+                {
+                    CustomDialogFunctions.TryAdd("AssignTask" + d.Parameter, new Action(() => GetNewArtisanTask(d.Parameter)));
+                }
             }
         }
         
@@ -145,6 +149,26 @@ public class NPCManager
         a.Unlock();
         GameState.GoTo("World/" + a.AreaURL);
         
+    }
+    public void GetNewArtisanTask(string skills)
+    {
+        if(GameState.CurrentArtisanTask == null)
+        {
+            string[] s = skills.Split(',');
+            string skill = s[GameState.Random.Next(0, s.Length)];
+            GameState.CurrentArtisanTask = ItemManager.Instance.GetNewArtisanTask(skill);
+            string itemName = GameState.CurrentArtisanTask.ItemName;
+            if(itemName.EndsWith('s') == false)
+            {
+                itemName += "s";
+            }
+            MessageManager.AddMessage("You've been asked to make " + GameState.CurrentArtisanTask.AmountRequired + " " + itemName);
+            SaveManager.SaveGame();
+        }
+        else
+        {
+            MessageManager.AddMessage("You already have a task from the guild. You've been asked to make " + GameState.CurrentArtisanTask.AmountRequired + " " + GameState.CurrentArtisanTask.ItemName + ".(Progress:" + GameState.CurrentArtisanTask.AmountFulfilled + "/" + GameState.CurrentArtisanTask.AmountRequired + ")");
+        }
     }
     public void DieAndGotoArea(string area)
     {

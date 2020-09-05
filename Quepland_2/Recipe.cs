@@ -306,6 +306,20 @@ public class Recipe
                 }
             }
             Player.Instance.GainExperienceMultipleTimes(ExperienceGained, OutputAmount *  maxOutput);
+            if (GameState.CurrentArtisanTask != null)
+            {
+                if (GameState.CurrentArtisanTask.ItemName == OutputItemName)
+                {
+                    if (long.TryParse(Output.ExperienceGained.Split(':')[1], out long xp))
+                    {
+                        Player.Instance.GainExperience("Artisan", xp * OutputAmount * maxOutput / 5);
+                    }
+                    else
+                    {
+                        Player.Instance.GainExperience("Artisan", 15);
+                    }
+                }
+            }
             Output.Rerender = true;
             Player.Instance.Inventory.AddMultipleOfItem(Output, OutputAmount * maxOutput);
             
@@ -362,5 +376,16 @@ public class Recipe
             return Math.Max(0, 2 - removedOnCreation);
         }
         return Math.Max(0, 1 - removedOnCreation);
+    }
+    public int GetRequiredLevel(string skill)
+    {
+        foreach(Requirement r in Requirements)
+        {
+            if(r.Skill == skill)
+            {
+                return r.SkillLevel;
+            }
+        }
+        return 0;
     }
 }

@@ -219,6 +219,7 @@ else
     public void Dispose()
     {
         startedBattle = false;
+        BattleManager.Instance.CurrentBoss = null;
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();

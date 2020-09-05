@@ -88,5 +88,10 @@
     "name": "Lapidary",
     "level": 1,
     "description": "The ability to engrave, cut, and polish gemstones, and to apply them to weapons and armor."
+  },
+  {
+    "name": "Artisan",
+    "level": 1,
+    "description": "Artisan covers the general knowledge required to produce skill craftworks. As you improve at artisan you can take on more and larger tasks, as well as unlock access to new areas and items. Speak to a guild member at any craft guild to get started."
   }
 ]

@@ -156,6 +156,7 @@
         "name": "Woodworker's Association",
         "buttonText": "Woodworker's Association",
         "url": "WoodworkersAssociation",
+        "isGuild": true,
         "description": "The building is long and brightly lit. The chandeliers are the only things in the building not made entirely out of wood. There is a shop to buy wood working materials on the far end.",
         "shops": [
           {
@@ -174,6 +175,9 @@
             ],
             "costMultiplier": 3
           }
+        ],
+        "npcs": [
+          "Mokko"
         ]
       }
     ],

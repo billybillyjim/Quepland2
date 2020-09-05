@@ -277,8 +277,16 @@ public class BattleManager
     }
     public void BeAttacked(Monster opponent)
     {
-        int total = (int)Math.Max(1, (opponent.Damage.ToRandomDamage() * Extensions.CalculateArmorDamageReduction()));
         RollForMonsterAttackEffects(opponent);
+        int total = (int)Math.Max(1, (opponent.Damage.ToRandomDamage()));
+        if (Player.Instance.CurrentStatusEffects.OfType<CleaveEffect>().Any())
+        {
+        }
+        else
+        {
+            total = (int)Math.Max(total * Extensions.CalculateArmorDamageReduction(), 1);
+        }       
+        
         Player.Instance.CurrentHP -= total;
         Player.Instance.GainExperience("HP", total);
         MessageManager.AddMessage("The " + opponent.Name + " hit you for " + total + " damage!");
@@ -451,6 +459,14 @@ public class BattleManager
         else if(data.Name == "Stun")
         {
             return new StunEffect(data);
+        }
+        else if (data.Name == "Empty")
+        {
+            return new EmptyEffect(data);
+        }
+        else if(data.Name == "Cleave")
+        {
+            return new CleaveEffect(data);
         }
         else if(data.Name == "Freeze")
         {

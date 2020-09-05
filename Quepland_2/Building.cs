@@ -12,6 +12,7 @@ public class Building
 	public string URL { get; set; }
     public bool HasOven { get; set; }
     public bool HasSmithy { get; set; }
+    public bool IsGuild { get; set; }
     public string AlchemicalHall { get; set; } = "None";
     public double QueplarMultiplier { get; set; } = 1;
 	public List<string> NPCs { get; set; } = new List<string>();

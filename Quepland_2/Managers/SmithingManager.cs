@@ -137,6 +137,20 @@ public static class SmithingManager
                 AutoSmithedItemCount -= CurrentSmithingRecipe.OutputAmount;
                 MessageManager.AddMessage(Player.Instance.CurrentFollower.Name + " gathers up a cooled " + CurrentSmithingRecipe.OutputItemName + ".");
                 Player.Instance.GainExperience(CurrentSmithingRecipe.ExperienceGained);
+                if (GameState.CurrentArtisanTask != null)
+                {
+                    if (GameState.CurrentArtisanTask.ItemName == CurrentSmithingRecipe.OutputItemName)
+                    {
+                        if (long.TryParse(CurrentSmithingRecipe.Output.ExperienceGained.Split(':')[1], out long xp))
+                        {
+                            Player.Instance.GainExperience("Artisan", xp / 5);
+                        }
+                        else
+                        {
+                            Player.Instance.GainExperience("Artisan", 15);
+                        }
+                    }
+                }
                 Player.Instance.CurrentFollower.TicksToNextAction = Player.Instance.CurrentFollower.AutoCollectSpeed;
                 if (AutoSmithedItemCount <= 0)
                 {

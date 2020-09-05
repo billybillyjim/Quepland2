@@ -502,6 +502,7 @@ public class Inventory
         }
         totalItems = 0;
         //inventorySlotPos = 0;
+        itemLookupDic.Clear();
         foreach (KeyValuePair<GameItem, int> item in items)
         {
             
@@ -511,7 +512,7 @@ public class Inventory
 
                 if (itemLookupDic.TryGetValue(item.Key.UniqueID, out int v))
                 {
-                    itemLookupDic[item.Key.UniqueID] = item.Value;
+                    itemLookupDic[item.Key.UniqueID] += item.Value;
                 }
                 else
                 {

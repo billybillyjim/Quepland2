@@ -17,6 +17,7 @@
         "skillLevel": 1
       }
     ],
+    "experienceGained": "Leatherworking:10",
     "maxOutputsPerAction": 1
   },
   {
@@ -31,6 +32,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:25",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -51,6 +53,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:30",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -71,6 +74,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:50",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -91,6 +95,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:60",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -111,6 +116,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:20",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -131,6 +137,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:45",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -151,6 +158,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:50",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -171,6 +179,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:70",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -191,6 +200,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:100",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -211,6 +221,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:30",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -231,6 +242,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:70",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -251,6 +263,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:80",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -271,6 +284,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:95",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -291,6 +305,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:110",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -311,6 +326,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:100",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -331,6 +347,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:220",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -351,6 +368,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:240",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -371,6 +389,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:380",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -391,6 +410,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:520",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -411,6 +431,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:120",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -431,6 +452,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:250",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -451,6 +473,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:270",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -471,6 +494,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:390",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -491,6 +515,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:550",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -511,6 +536,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:200",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -531,6 +557,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:420",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -555,6 +582,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:2000",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -576,6 +604,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:440",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -596,6 +625,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:680",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -616,6 +646,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:820",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -636,6 +667,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:300",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -656,6 +688,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:610",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -676,6 +709,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:620",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -696,6 +730,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:950",
     "requirements": [
       {
         "skill": "Leatherworking",
@@ -716,6 +751,7 @@
         "destroyOnUse": false
       }
     ],
+    "experienceGained": "Leatherworking:1350",
     "requirements": [
       {
         "skill": "Leatherworking",

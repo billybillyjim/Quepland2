@@ -218,6 +218,16 @@
         "areaURL": "SahotaIceFields",
         "buttonText": "Enter the underworld",
         "connectsLands": true
+      },
+      {
+        "areaURL": "MtYamaMine",
+        "buttonText": "Break through the crack",
+        "requirements": [
+          {
+            "skill": "Mining",
+            "skillLevel": 60
+          }
+        ]
       }
     ],
     "npcs": [

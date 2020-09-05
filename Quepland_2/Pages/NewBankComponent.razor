@@ -275,7 +275,14 @@
             GameState.CurrentContextMenu = new ContextMenu();
             if (Bank.Instance.IsBanking)
             {
-                GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Withdraw " + Bank.Instance.Amount + " " + item, new Action(() => Withdraw(item))));
+                if (Bank.Instance.Amount == int.MaxValue)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Withdraw All " + item, new Action(() => Withdraw(item, int.MaxValue))));
+                }
+                else
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Withdraw " + Bank.Instance.Amount + " " + item, new Action(() => Withdraw(item))));
+                }
                 if (Bank.Instance.Amount != 1)
                 {
                     GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Withdraw 1 " + item, new Action(() => Withdraw(item, 1))));
@@ -294,7 +301,17 @@
                 }
 
             }
-
+            if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Banking")
+            {
+                if (Bank.Instance.Amount == int.MaxValue)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Sell All " + item, new Action(() => GameState.SellItemFromBank(item))));
+                }
+                else
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Sell " + Bank.Instance.Amount + " " + item, new Action(() => GameState.SellItemFromBank(item))));
+                }
+            }
             GameState.ShowContextMenu(args);
         }
     }
@@ -363,7 +380,7 @@
         GameState.UpdateState();
     }
     public void RemoveTagFromItem(GameItem i)
-    { 
+    {
         i.Rerender = true;
         GameState.UpdateState();
     }

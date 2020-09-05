@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 public class ItemManager
@@ -30,6 +31,7 @@ public class ItemManager
     /// </summary>
     public Dictionary<string, GameItem> UniqueIDLookupDic { get; set; } = new Dictionary<string, GameItem>();
     public List<Recipe> Recipes = new List<Recipe>();
+    public List<Recipe> ArtisanRecipes = new List<Recipe>();
     public List<Recipe> SmithingRecipes = new List<Recipe>();
     public List<Recipe> GemCuttingRecipes = new List<Recipe>();
     public List<Recipe> GemCabochonRecipes = new List<Recipe>();
@@ -106,13 +108,14 @@ public class ItemManager
         }
         //Console.WriteLine("Total Items:" + Items.Count);
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/WoodworkingRecipes.json"));
-        Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/UnpackingRecipes.json"));
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/SushiRecipes.json"));
-        Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/MiscRecipes.json"));
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/LeatherworkingRecipes.json"));
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/GemRecipes.json"));
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/BreadRecipes.json"));
+        ArtisanRecipes.AddRange(Recipes);
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/NecklaceRecipes.json"));
+        Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/MiscRecipes.json"));
+        Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/UnpackingRecipes.json"));
 
         MinigameDropTables.AddRange(await Http.GetFromJsonAsync<MinigameDropTable[]>("data/MinigameDropTables.json"));
 
@@ -120,6 +123,7 @@ public class ItemManager
         GemCuttingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/GemCuttingRecipes.json"));
 
         BakingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/BakingRecipes.json"));
+        ArtisanRecipes.AddRange(BakingRecipes);
 
         SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/AluminumSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/BrassSmithingRecipes.json"));
@@ -137,6 +141,7 @@ public class ItemManager
         SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/StrongtiumSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/TinSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/ZincSmithingRecipes.json"));
+        ArtisanRecipes.AddRange(SmithingRecipes);
     }
 
 
@@ -255,6 +260,19 @@ public class ItemManager
         Console.WriteLine("Failed to find recipe with output:" + output);
         return null;
     }
+    public Recipe GetArtisanRecipeByOutput(string output)
+    {
+        foreach (Recipe recipe in ArtisanRecipes)
+        {
+            if (recipe.OutputItemName == output)
+            {
+                return recipe;
+            }
+        }
+        
+        Console.WriteLine("Failed to find recipe with output:" + output);
+        return null;
+    }
     public GameItem GetItemFromFormula(AlchemicalFormula formula)
     {
         double totalValue = (formula.InputMetal.AlchemyInfo.QueplarValue * formula.LocationMultiplier) +
@@ -303,6 +321,36 @@ public class ItemManager
         }
 
         return "some kind of " + s.Name + " thing";
+    }
+    public ArtisanTask GetNewArtisanTask(string skill)
+    {
+        List<Recipe> possibleRecipes = new List<Recipe>();
+        foreach (Recipe r in ArtisanRecipes)
+        {
+            if (r.Output.Category == "QuestItems" || r.Output.Category == "General" || r.ExperienceGained == "None" || r.Output.Name.Contains("Molten") || r.Output.Name.Contains("Frozen"))
+            {
+                continue;
+            }
+            if (r.GetRequiredSkills().Contains(skill))
+            {
+                if(Player.Instance.GetLevel(skill) >= r.GetRequiredLevel(skill))
+                {
+                    possibleRecipes.Add(r);
+                }
+            }
+        }
+        Recipe task = possibleRecipes[GameState.Random.Next(possibleRecipes.Count)];
+        int amount = GameState.Random.Next(50, 200);
+        if (task.Output.Category == "Leatherworking")
+        {
+            amount /= 2;
+        }
+        else if(task.Output.Category == "Lapidary")
+        {
+            amount /= 5;
+        }
+
+        return new ArtisanTask(task.Output.Name, GameState.Random.Next(50, 200));
     }
 }
 

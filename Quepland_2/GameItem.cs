@@ -172,7 +172,11 @@ public class GameItem
 			hasEquipInfo = true;
 			foreach (Requirement r in ArmorInfo.WearRequirements)
 			{
-				if (r.IsMet() == false || showAll)
+                if (showAll)
+                {
+					req += r.AllRequirementsString() + "\n";
+                }
+				else if (r.IsMet() == false)
 				{
 					req += r.ToString() + "\n";
 				}
@@ -183,7 +187,11 @@ public class GameItem
 			hasEquipInfo = true;
 			foreach (Requirement r in WeaponInfo.WearRequirements)
 			{
-				if (r.IsMet() == false || showAll)
+				if (showAll)
+				{
+					req += r.AllRequirementsString() + "\n";
+				}
+				else if (r.IsMet() == false)
 				{
 					req += r.ToString() + "\n";
 				}
@@ -193,7 +201,11 @@ public class GameItem
 		{
 			foreach (Requirement r in Requirements)
 			{
-				if (r.IsMet() == false || showAll)
+				if (showAll)
+				{
+					req += r.AllRequirementsString() + "\n";
+				}
+				else if (r.IsMet() == false)
 				{
 					req += r.ToString() + "\n";
 				}

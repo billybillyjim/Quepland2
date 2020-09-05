@@ -50,6 +50,10 @@
     {
         <Quepland_2.Pages.SmithyComponent Location="@buildingURL"></Quepland_2.Pages.SmithyComponent>
     }
+    @if (thisBuilding.IsGuild)
+    {
+        <Quepland_2.Components.GuildDepositBoxComponent></Quepland_2.Components.GuildDepositBoxComponent>
+    }
 }
 
 

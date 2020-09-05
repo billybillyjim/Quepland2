@@ -150,7 +150,7 @@
             GameState.CurrentContextMenu = new ContextMenu();
             if (Bank.Instance.IsBanking)
             {
-                if(Bank.Instance.Amount == int.MaxValue)
+                if (Bank.Instance.Amount == int.MaxValue)
                 {
                     GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Deposit All " + item, new Action(() => BankItem(item, Bank.Instance.Amount))));
                 }
@@ -192,13 +192,27 @@
             }
             if (ItemManager.Instance.CurrentShop != null)
             {
+                if(ItemManager.Instance.CurrentShop.LimitBoughtItemsToSoldItems == false || ItemManager.Instance.CurrentShop.HasItem(item))
+                {
+                    if (ItemManager.Instance.SellAmount == int.MaxValue)
+                    {
+                        GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Sell All " + item, new Action(() => GameState.SellItem(item))));
 
+                    }
+                    else
+                    {
+                        GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Sell " + ItemManager.Instance.SellAmount + " " + item, new Action(() => GameState.SellItem(item))));
+                    }
+                }
+
+
+
+                if (item.FoodInfo != null)
+                {
+                    GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Eat " + item, new Action(() => GameState.Eat(item))));
+                }
+                GameState.ShowContextMenu(args);
             }
-            if (item.FoodInfo != null)
-            {
-                GameState.CurrentContextMenu.Buttons.Add(new ContextButton("Eat " + item, new Action(() => GameState.Eat(item))));
-            }
-            GameState.ShowContextMenu(args);
         }
     }
     private int GetMaxHeight()

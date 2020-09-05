@@ -1,13 +1,33 @@
 [
   {
-    "versionNumber": "1.0.5",
+    "versionNumber": "1.0.6",
+    "updates": [
+      "Issues with accessing parts of Koncave Caverns have been fixed.",
+      "You can now right-click sell items in stores.",
+      "Added the recipe to complete the Mercurial sword.",
+      "Leatherworking now gives proper experience.",
+      "Alchemy now properly stops when you leave.",
+      "Alchemy can now be stopped mid action, though you won't get your items back.",
+      "An item's requirements are now always visible by mousing over the item's name in the item viewer.",
+      "If you have Snibbap following you, you can now directly sell items from the bank with a right click option.",
+      "Added the more quest info for some quests.",
+      "Increased the size of dropdown items to make it harder to accidentally mouse-out of them.",
+      "The message menu at the bottom now shows the most recent message even when closed."
+    ]
+  },
+  {
+    "versionNumber": "1.0.5b",
     "updates": [
       "The library is now slightly slower for experience gains.",
       "Dojo tokens are now properly awarded for defeating dojos.",
       "Bank tabs should now save correctly.",
       "The inventory now tells you your used and available spaces.",
       "Fixed a number of UI issues with bank tabs so they work a bit more as intended.",
-      "Item rendering is now quite a bit faster than it was before. Hopefully nothing broke with this change, but if it did please let me know."
+      "Item rendering is now quite a bit faster than it was before. Hopefully nothing broke with this change, but if it did please let me know.",
+      "Added a missing icon to Koncave Gate.",
+      "The Mt. Yama mine is now accessible.",
+      "The root dwellers now properly apply status effects.",
+      "Fixed a huge issue where the game wasn't properly tracking item amounts."
     ]
   },
   {

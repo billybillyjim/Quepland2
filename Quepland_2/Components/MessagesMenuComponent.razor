@@ -4,13 +4,14 @@
 <div class="modal-footer" style="display:contents;">
 
         <table style="margin-top: -10px;">
-            @foreach (Message message in MessageManager.GetReversedMessages())
+            @foreach (Message message in MessageManager.GetReversedMessages().Take(NumToShow))
             {
                 <tr>
                     <td>
                         <pre style="        display: grid;
         margin: 0;
-        width: 520px;
+        width: 100%;
+        max-width:@(GameState.MinWindowWidth - 190)px;
         font-style: normal;
         font-variant-ligatures: normal;
         font-variant-caps: normal;
@@ -23,6 +24,8 @@
         font-family: Arial;
         white-space: pre-line;
         margin-bottom: -5px;       
+        margin-left:@(LeftMargin)px;
+        margin-top:@(TopMargin)px;
         padding:3px;
         color: @(message.Color); @(message.Style)">
                         @message.Text
@@ -38,6 +41,13 @@
 
 
 @functions{
+    [Parameter]
+    public int NumToShow { get; set; }
+    [Parameter]
+    public int LeftMargin { get; set; } = 0;
+    [Parameter]
+    public int TopMargin { get; set; } = 0;
+    
     private bool isHidden;
     protected override void OnInitialized()
     {

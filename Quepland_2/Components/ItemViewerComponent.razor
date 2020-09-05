@@ -15,7 +15,12 @@
 ">
     @if (Item != null && !HideValue)
     {
-        <div style="font-weight:bold;"><img src="data/Images/@(GetLock())" style="height:20px;width:20px;cursor:pointer;margin:-7px 2px -3px -3px;border-radius:0.25rem;@GetLockStyle()" @onclick="@(() => ToggleLock())"/>@Item.Name</div>
+        <div style="font-weight:bold;"  onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.GetRequirementTooltip(true))))"
+                                                      onmouseout="@(new Action(() => GameState.HideTooltip()))">
+        <img src="data/Images/@(GetLock())" style="height:20px;width:20px;cursor:pointer;margin:-7px 2px -3px -3px;border-radius:0.25rem;@GetLockStyle()" 
+             @onclick="@(() => ToggleLock())"/>
+            @Item.Name
+        </div>
         <div style="position:relative;line-height:18px;margin-top:-2px;margin-right:80px;">@Item.Description</div>
         @if ((Item.WeaponInfo != null || Item.ArmorInfo != null) && Item.EquipSlot != "None")
         {
@@ -26,19 +31,18 @@
             }
             else if (Item.ArmorInfo != null && Item.HasArmorRequirements())
             {
-                <div class="item-view-button"><button class="btn btn-light" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.GetRequirementTooltip(true))))"
-                                                      onmouseout="@(new Action(() => GameState.HideTooltip()))" @onclick="@(() => Equip())">Equip</button></div>
+                <div class="item-view-button">
+                <button class="btn btn-light" @onclick="@(() => Equip())">Equip</button></div>
             }
             else if (Item.WeaponInfo != null && Item.HasWeaponRequirements())
             {
-                <div class="item-view-button"><button class="btn btn-light" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.GetRequirementTooltip(true))))"
-                                                      onmouseout="@(new Action(() => GameState.HideTooltip()))" @onclick="@(() => Equip())">Equip</button></div>
+                <div class="item-view-button">
+                <button class="btn btn-light"  @onclick="@(() => Equip())">Equip</button></div>
             }
             else if (Item.HasRequirements() && Item.HasArmorRequirements() == false && Item.HasWeaponRequirements() == false)
             {
-                <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Equip())" 
-                                                      onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.GetRequirementTooltip(true))))"
-                                                      onmouseout="@(new Action(() => GameState.HideTooltip()))">Equip</button></div>
+                <div class="item-view-button">
+                <button class="btn btn-light" @onclick="@(() => Equip())" >Equip</button></div>
 
             }
             else

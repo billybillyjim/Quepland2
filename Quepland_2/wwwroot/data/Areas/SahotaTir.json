@@ -47,12 +47,12 @@
     "name": "Sahota Clearing",
     "id": 102,
     "image": "FrozenFloor",
-    "description": "The tunnel opens up into a bright clearing. A mysterious orb lights the whole area, making it almost indistinguishable from being out on the surface. You spot a small camp a little ways ahead.",
+    "description": "The tunnel opens up into a bright clearing. A mysterious orb lights the whole area, making it almost indistinguishable from being out on the surface. You spot a small camp a little ways ahead. The far end of the opening leads to another dark area of the underworld.",
     "areaURL": "SahotaClearing",
     "unlockableAreas": [
       {
         "areaURL": "KoncaveCityGate",
-        "buttonText": "Head to the gate"
+        "buttonText": "Continue on the path"
       }
 
     ],

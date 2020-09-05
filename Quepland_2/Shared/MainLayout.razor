@@ -41,7 +41,7 @@
                         @onclick="@(() => ToggleMessageMenu())">
                     Hide
                 </button>
-                <Quepland_2.Components.MessagesMenuComponent></Quepland_2.Components.MessagesMenuComponent>
+                <Quepland_2.Components.MessagesMenuComponent NumToShow="100"></Quepland_2.Components.MessagesMenuComponent>
             </div>
         }
         else
@@ -58,6 +58,7 @@
                         @onclick="@(() => ToggleMessageMenu())">
                     Show Messages
                 </button>
+                <Quepland_2.Components.MessagesMenuComponent NumToShow="1" LeftMargin="105" TopMargin="-15"></Quepland_2.Components.MessagesMenuComponent>
             </div>
         }
 

@@ -29,6 +29,7 @@ public class Player
     public int CurrentHP;
     public int TicksToNextAttack { get; set; }
     public int Deaths { get; set; }
+    public int ArtisanPoints { get; set; }
     public bool JustDied { get; set; }
 
     public Skill LastGainedExp { get; set; }
@@ -526,6 +527,7 @@ public class Player
             CurrentHP = CurrentHP,
             MaxHP = MaxHP,
             DeathCount = Deaths,
+            ArtisanPoints = ArtisanPoints,
             InventorySize = Inventory.GetSize(),
             EquippedItems = equipped
         };
@@ -539,6 +541,7 @@ public class Player
         CurrentHP = data.CurrentHP;
         MaxHP = data.MaxHP;
         Deaths = data.DeathCount;
+        ArtisanPoints = data.ArtisanPoints;
         Inventory.SetSize(data.InventorySize);
         try
         {

@@ -1380,6 +1380,24 @@
     }
   },
   {
+    "name": "Mercurial Sword",
+    "description": "A sword of mercury, made from pieces collected from Mercurial creatures.",
+    "value": 1380,
+    "enabledActions": "Swordsmanship",
+    "equipSlot": "R Hand",
+    "icon": "Sword",
+    "weaponInfo": {
+      "attackSpeed": 11,
+      "damage": 230,
+      "wearRequirements": [
+        {
+          "skill": "Swordsmanship",
+          "skillLevel": 65
+        }
+      ]
+    }
+  },
+  {
     "name": "Zombisword",
     "description": "A sword of the undead. It's quite large and feels much heavier than it looks.",
     "value": 3280,

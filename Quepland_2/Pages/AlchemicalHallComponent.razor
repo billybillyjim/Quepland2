@@ -28,13 +28,14 @@
         else
         {
             <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need an element, metal, and action selected to continue.")))"
-             @onmouseout="@(new Action(() => GameState.HideTooltip()))" >
+                    @onmouseout="@(new Action(() => GameState.HideTooltip()))">
                 Attempt Alchemy
             </button>
         }
     }
     @if (GameState.AlchemyStage == 1)
     {
+        <button class="btn btn-primary" style="margin-bottom:10px;" @onclick="@(() => GameState.StopActions())">Stop Alchemy</button>
         <div>
             Adding Metal...
             <div class="progress">
@@ -46,6 +47,7 @@
     }
     @if (GameState.AlchemyStage == 2)
     {
+        <button class="btn btn-primary" style="margin-bottom:10px;" @onclick="@(() => GameState.StopActions())">Stop Alchemy</button>
         <div>
             Applying Element...
             <div class="progress">
@@ -57,6 +59,7 @@
     }
     @if (GameState.AlchemyStage == 3)
     {
+        <button class="btn btn-primary" style="margin-bottom:10px;" @onclick="@(() => GameState.StopActions())">Stop Alchemy</button>
         <div>
             Doing Action...
             <div class="progress">
@@ -189,6 +192,7 @@ else
     }
     public void Dispose()
     {
+        GameState.StopActions();
         GameState.AlchemicalHallComponent = null;
         GameState.StateChanged -= OnGameStateChanged;
     }

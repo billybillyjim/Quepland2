@@ -1,0 +1,59 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+<div>Guild Deposit Box</div>
+@if (GameState.CurrentArtisanTask != null)
+{
+    @if (Player.Instance.Inventory.HasItem(GameState.CurrentArtisanTask.Item))
+    {
+        <button class="btn btn-primary" @onclick="@(() => Deposit())">Deposit @GameState.CurrentArtisanTask.Item</button>
+
+    }
+    else
+    {
+        <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have any " + GameState.CurrentArtisanTask.ItemName + ".")))"
+                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            Deposit @GameState.CurrentArtisanTask.Item
+        </button>
+    }
+}
+else
+{
+    <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have an artisan task right now.")))"
+            @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+        Deposit
+    </button>
+}
+
+
+
+@code {
+
+    public void Deposit()
+    {
+        if (GameState.CurrentArtisanTask == null)
+        {
+            MessageManager.AddMessage("You don't have an artisan task. Speak to a guild member to get one.");
+            return;
+        }
+        if (Player.Instance.Inventory.HasItem(GameState.CurrentArtisanTask.Item))
+        {
+            GameState.CurrentArtisanTask.AmountFulfilled += Player.Instance.Inventory.RemoveItems(GameState.CurrentArtisanTask.Item, GameState.CurrentArtisanTask.AmountRequired - GameState.CurrentArtisanTask.AmountFulfilled);
+            if (GameState.CurrentArtisanTask.AmountFulfilled >= GameState.CurrentArtisanTask.AmountRequired)
+            {
+                GameState.CompleteArtisanTask();
+            }
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}
+

@@ -50,7 +50,7 @@ public class Requirement
 				return false;
 			}
 			if (Item != "None" && Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName(Item)) < ItemAmount)
-			{
+			{			
 				return false;
 			}
 			if (LockedFollower != "None" && FollowerManager.Instance.GetFollowerByName(LockedFollower).IsUnlocked)
@@ -127,4 +127,31 @@ public class Requirement
 		}
 		return req;
     }
+	public string AllRequirementsString()
+    {
+		string req = "";
+		if (Location != "None")
+		{
+			req += "You must be at " + Location;
+		}
+		if (Skill != "None")
+		{
+			req += "You need " + SkillLevel + " " + Skill;
+		}
+		if (Action != "None")
+		{
+			req += "You need a tool for " + Action;
+		}
+		if (Item != "None")
+		{
+			req += "You need " + ItemAmount + " " + Item;
+		}
+		if (Quest != "None")
+		{
+			int progress = QuestManager.Instance.GetQuestByName(Quest).Progress;
+			req += "You need progress in the quest " + Quest;
+			
+		}
+		return req;
+	}
 }

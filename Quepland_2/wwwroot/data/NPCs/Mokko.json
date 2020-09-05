@@ -1,0 +1,18 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Mokko",
+  "id": 53,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi. Welcome to the woodworker's guild. Are you an artisan? We're actually in need of some help right now.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Request artisan task",
+      "responseText": "AssignTask",
+      "parameter": "Smithing,Culinary Arts,Leatherworking",
+      "depth": 1
+    }
+  ]
+}

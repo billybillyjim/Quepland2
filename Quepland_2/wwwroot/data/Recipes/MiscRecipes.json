@@ -65,6 +65,35 @@
     "maxOutputsPerAction": 1
   },
   {
+    "outputItemName": "Mercurial Sword",
+    "ingredients": [
+      {
+        "itemName": "Mercurial Hilt",
+        "amount": 1
+      },
+      {
+        "itemName": "Mercurial Pommel",
+        "amount": 1
+      },
+      {
+        "itemName": "Mercurial Blade",
+        "amount": 1
+      },
+      {
+        "itemName": "Mercurial Shard",
+        "amount": 15
+      }
+    ],
+    "recipeActionString": "You attempt to attach the pieces of the sword together...",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 45
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
     "outputItemName": "Cactus Club",
     "ingredients": [
       {

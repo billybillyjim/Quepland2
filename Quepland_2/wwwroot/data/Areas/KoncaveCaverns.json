@@ -12,11 +12,17 @@
     "unlockableAreas": [
       {
         "areaURL": "KoncaveFallsMine",
-        "buttonText": "Climb the vines to reach the rocks"
+        "buttonText": "Climb the vines to reach the rocks",
+        "requirements": [
+          {
+            "skill": "Deftness",
+            "skillLevel": 73
+          }
+        ]
       },
       {
         "areaURL": "KoncaveCityGate",
-        "buttonText": "Continue on the path"
+        "buttonText": "Head to the gate"
       }
 
     ],
@@ -29,7 +35,7 @@
     "name": "Koncave Falls Mine",
     "id": 111,
     "image": "Mine",
-    "description": "The waterfall is surrounded on all sides by a giant root system. Strange, humanlike creatures dart into the darkness as you approach. There are a number of sparkling rocks jutting out from the roots that cling to the roof of the cavern.",
+    "description": "The mine hangs above the giant root system. Even more strange creatures appear to be hiding in the shadows. You can just barely reach the sparkling rocks jutting out from the roots that cling to the roof of the cavern.",
     "areaURL": "KoncaveFallsMine",
     "actions": [
       "Mine Ores:Platinum Ore,Strongtium Ore,Sahotite Ore"
@@ -45,7 +51,7 @@
     "name": "Koncave City Gate",
     "id": 112,
     "image": "Gate",
-    "description": "Two guards stand watch at the front of a massive gate. You'll have to pass through to continue.",
+    "description": "Two guards stand watch at the front of a massive gate. You'll have to pass through to continue. Off to the side you see a path leads around the castle wall.",
     "areaURL": "KoncaveCityGate",
     "unlockableAreas": [
       {
@@ -57,6 +63,10 @@
             "itemAmount": 1
           }
         ]
+      },
+      {
+        "areaURL": "KoncaveFalls",
+        "buttonText": "Follow the path around"
       }
 
     ],
