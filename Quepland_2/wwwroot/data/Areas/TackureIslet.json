@@ -3,7 +3,7 @@
     "name": "Koya Hasa",
     "id": 80,
     "image": "Docks",
-    "description": "There are a few small boats along the docks. You can see schools of fish swimming in the water below.",
+    "description": "There are a few small boats along the docks. You can see schools of fish swimming in the water below. A newly-built building hangs out from the edge of the shore. It's large enough for a cargo ship to unload inside.",
     "areaURL": "KoyaHasa",
     "actions": [
       "Go fishing:Butterfish,Saury,Abalone",
@@ -20,6 +20,18 @@
         "connectsLands": true
       }
 
+    ],
+    "buildings": [
+      {
+        "name": "Artisan Guild Factory",
+        "buttonText": "Enter House",
+        "url": "ArtisanGuildFactory",
+        "description": "The building is quite expansive. It surrounds the water so boats can dock inside. An important looking man is sitting by a booth near the door, writing very excitedly in a notebook.",
+        "npcs": [
+          "Juis"
+        ],
+        "isGuild": true
+      }
     ]
   },
   {
@@ -47,7 +59,6 @@
           }
         ]
       }
-
     ],
     "buildings": [
       {

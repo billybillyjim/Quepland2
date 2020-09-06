@@ -310,7 +310,7 @@ public class Recipe
             {
                 if (GameState.CurrentArtisanTask.ItemName == OutputItemName)
                 {
-                    if (long.TryParse(Output.ExperienceGained.Split(':')[1], out long xp))
+                    if (long.TryParse(ExperienceGained.Split(':')[1], out long xp))
                     {
                         Player.Instance.GainExperience("Artisan", xp * OutputAmount * maxOutput / 5);
                     }

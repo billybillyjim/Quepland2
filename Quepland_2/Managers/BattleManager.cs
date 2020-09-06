@@ -145,19 +145,31 @@ public class BattleManager
                             }
                             else
                             {
-                                MessageManager.AddMessage("You defeated the " + opponent.Name + ".");
+                                if(drop.Amount > 1)
+                                {
+                                    MessageManager.AddMessage("You defeated the " + opponent.Name + ". It dropped " + drop.Amount + " " + drop.Item.GetPlural());
 
+                                }
+                                else
+                                {
+                                    MessageManager.AddMessage("You defeated the " + opponent.Name + ". It dropped 1 " + drop.ToString());
+
+                                }
                                 if (drop.Item != null && drop.Item.Category == "QuestItems" && (Player.Instance.Inventory.HasItem(drop.Item) || Bank.Instance.Inventory.HasItem(drop.Item)))
                                 {
 
                                 }
                                 else
                                 {
+                                    
                                     Player.Instance.Inventory.AddDrop(drop);
                                 }
                             }
                         }
-
+                    }
+                    else
+                    {
+                        MessageManager.AddMessage("You defeated the " + opponent.Name + ".");
                     }
                     opponent.IsDefeated = true;
                     if(CurrentBoss != null)

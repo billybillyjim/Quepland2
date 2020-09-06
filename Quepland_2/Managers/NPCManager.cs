@@ -157,17 +157,13 @@ public class NPCManager
             string[] s = skills.Split(',');
             string skill = s[GameState.Random.Next(0, s.Length)];
             GameState.CurrentArtisanTask = ItemManager.Instance.GetNewArtisanTask(skill);
-            string itemName = GameState.CurrentArtisanTask.ItemName;
-            if(itemName.EndsWith('s') == false)
-            {
-                itemName += "s";
-            }
-            MessageManager.AddMessage("You've been asked to make " + GameState.CurrentArtisanTask.AmountRequired + " " + itemName);
+
+            MessageManager.AddMessage("You've been asked to make " + GameState.CurrentArtisanTask.AmountRequired + " " + GameState.CurrentArtisanTask.Item.GetPlural());
             SaveManager.SaveGame();
         }
         else
         {
-            MessageManager.AddMessage("You already have a task from the guild. You've been asked to make " + GameState.CurrentArtisanTask.AmountRequired + " " + GameState.CurrentArtisanTask.ItemName + ".(Progress:" + GameState.CurrentArtisanTask.AmountFulfilled + "/" + GameState.CurrentArtisanTask.AmountRequired + ")");
+            MessageManager.AddMessage("You already have a task from the guild. " + GameState.CurrentArtisanTask.ToString());
         }
     }
     public void DieAndGotoArea(string area)

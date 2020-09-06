@@ -1,0 +1,18 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Kawzaik",
+  "id": 57,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello! You must be from the guild, then?",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Request artisan task",
+      "responseText": "AssignTask",
+      "parameter": "Woodworking,Smithing,Culinary Arts",
+      "depth": 1
+    }
+  ]
+}

@@ -35,6 +35,8 @@
     <div>
         <input @bind-value="itemName" />
         <button @onclick="@GetItem">Get @itemName</button>
+        <button @onclick="@Get10Items">Get 10</button>
+        <button @onclick="@Get100Items">Get 100</button>
     </div>
     <div>
         <button @onclick="@(() => GetOneOfAllItems())">
@@ -128,6 +130,20 @@
         {
             Player.Instance.Inventory.AddItem(i.Copy());
             MessageManager.AddMessage("You get 1 " + i.Name);
+        }
+    }
+    public void Get10Items()
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            GetItem();
+        }
+    }
+    public void Get100Items()
+    {
+        for (int i = 0; i < 100; i++)
+        {
+            GetItem();
         }
     }
 

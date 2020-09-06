@@ -1,0 +1,17 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Hoshok",
+  "id": 55,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello. Sorry, I can't talk right now, very busy."
+    },
+    {
+      "buttonText": "Request artisan task",
+      "responseText": "AssignTask",
+      "parameter": "Woodworking,Culinary Arts,Leatherworking",
+      "depth": 1
+    }
+  ]
+}

@@ -109,7 +109,11 @@
         "buttonText": "Huge Smithy",
         "url": "HugeSmithy",
         "description": "The smithy here is massive and can heat any metal strong enough to withstand it.",
-        "hasSmithy": true
+        "hasSmithy": true,
+        "isGuild": true,
+        "npcs": [
+          "Kaji"
+        ]
       }
     ]
   },

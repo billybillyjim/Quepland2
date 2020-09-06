@@ -51,6 +51,10 @@ public class GameItem
 	public TanningInfo TanningInfo { get; set; }
 	public List<Requirement> Requirements { get; set; } = new List<Requirement>();
 
+	public string GetPlural()
+    {
+		return GameState.Pluralizer.Pluralize(Name);
+    }
 	public string GetStats()
     {
 		string stats = "";

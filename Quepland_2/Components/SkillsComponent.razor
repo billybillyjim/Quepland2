@@ -37,15 +37,27 @@
             <button style="margin:5px;" class="btn btn-primary" @onclick="@(() => SetMenu("None"))">Back</button>
 
             <div style="margin:5px;">
-                @if(currentSkill != null)
+                @if (currentSkill != null)
                 {
-                <div style="font-weight:bold;">
-                    @currentSkill.Name
-                </div>
+                    <div style="font-weight:bold;">
+                        @currentSkill.Name
+                    </div>
                     <div>
                         @currentSkill.Description
                     </div>
-                    
+                    @if (currentSkill.Name == "Artisan")
+                    {
+                        <div>Current Points:@Player.Instance.ArtisanPoints</div>
+                        @if (GameState.CurrentArtisanTask != null)
+                        {
+                            <div>Current Task:@GameState.CurrentArtisanTask.ToString()</div>
+
+                        }
+                        else
+                        {
+                            <div>You don't have a task right now. Speak to a guild member to get one.</div>
+                        }
+                    }
                 }
             </div>
             <div class="custom-scroll" style="overflow-y:scroll;max-height:60vh;height:100%">
@@ -64,7 +76,22 @@
                             }
                         </div>
                     </div>
-
+                }
+                @foreach (Recipe r in RelevantRecipes)
+                {
+                    <div style="margin-left:5px;margin-right:5px;@GetBGColor(r)">
+                        <div style="margin-left:5px;font-weight:bold;">
+                            @r.Output.Name
+                        </div>
+                        <div style="margin-left:5px;">
+                            @foreach (string s in GetRequirementsString(r))
+                            {
+                                <div>
+                                    @s
+                                </div>
+                            }
+                        </div>
+                    </div>
                 }
             </div>
 
@@ -76,6 +103,7 @@
     private string activeMenu = "None";
     private Skill currentSkill;
     private List<GameItem> RelevantItems = new List<GameItem>();
+    private List<Recipe> RelevantRecipes = new List<Recipe>();
 
     public void SetMenu(string skill)
     {
@@ -90,11 +118,19 @@
     public void LoadRelevantItems()
     {
         RelevantItems.Clear();
+        RelevantRecipes.Clear();
         foreach(GameItem i in ItemManager.Instance.Items)
         {
-            if (i.GetRequiredSkills().Contains(activeMenu) && i.Name.Contains("Molten") == false)
+            if (i.GetRequiredSkills().Contains(activeMenu) && i.Name.Contains("Molten") == false && i.Name.Contains("Frozen") == false)
             {
                 RelevantItems.Add(i);
+            }
+        }
+        foreach(Recipe r in ItemManager.Instance.Recipes)
+        {
+            if (r.GetRequiredSkills().Contains(activeMenu))
+            {
+                RelevantRecipes.Add(r);
             }
         }
     }
@@ -130,9 +166,29 @@
         }
         return reqs;
     }
+    public List<string> GetRequirementsString(Recipe recipe)
+    {
+        List<string> reqs = new List<string>();
+        foreach (Requirement r in recipe.Requirements)
+        {
+            if (r.Skill != "None")
+            {
+                reqs.Add(r.SkillLevel + " " + r.Skill);
+            }
+        }
+        return reqs;
+    }
     private string GetBGColor(GameItem i)
     {
         if(RelevantItems.IndexOf(i) % 2 == 0)
+        {
+            return "background-color:dimgray";
+        }
+        return "background-color:gray";
+    }
+    private string GetBGColor(Recipe r)
+    {
+        if (RelevantRecipes.IndexOf(r) % 2 == 0)
         {
             return "background-color:dimgray";
         }

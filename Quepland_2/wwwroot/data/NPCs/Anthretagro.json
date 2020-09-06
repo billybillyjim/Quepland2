@@ -37,7 +37,7 @@
     },
     {
       "buttonText": "How do I prove I am worthy?",
-      "responseText": "Give me 10,000 dojo tokens. Only a great warrior would be capable of both acquiring so many and casually giving them away.",
+      "responseText": "Give me 100,000 dojo tokens. Only a great warrior would be capable of both acquiring so many and casually giving them away.",
       "depth": 2,
       "newDepthOnTalk": 3,
       "requirements": [

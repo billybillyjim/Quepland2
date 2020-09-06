@@ -38,7 +38,10 @@ else
         }
         if (Player.Instance.Inventory.HasItem(GameState.CurrentArtisanTask.Item))
         {
-            GameState.CurrentArtisanTask.AmountFulfilled += Player.Instance.Inventory.RemoveItems(GameState.CurrentArtisanTask.Item, GameState.CurrentArtisanTask.AmountRequired - GameState.CurrentArtisanTask.AmountFulfilled);
+            int numToDep = Player.Instance.Inventory.RemoveItems(GameState.CurrentArtisanTask.Item, GameState.CurrentArtisanTask.AmountRequired - GameState.CurrentArtisanTask.AmountFulfilled);
+            GameState.CurrentArtisanTask.AmountFulfilled += numToDep;
+            MessageManager.AddMessage("You deposit " + numToDep + " more " + GameState.CurrentArtisanTask.Item.Name + " into the box.(" + GameState.CurrentArtisanTask.AmountFulfilled + "/" + GameState.CurrentArtisanTask.AmountRequired + ")");
+
             if (GameState.CurrentArtisanTask.AmountFulfilled >= GameState.CurrentArtisanTask.AmountRequired)
             {
                 GameState.CompleteArtisanTask();

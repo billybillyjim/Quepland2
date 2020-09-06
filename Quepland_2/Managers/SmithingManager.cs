@@ -141,7 +141,7 @@ public static class SmithingManager
                 {
                     if (GameState.CurrentArtisanTask.ItemName == CurrentSmithingRecipe.OutputItemName)
                     {
-                        if (long.TryParse(CurrentSmithingRecipe.Output.ExperienceGained.Split(':')[1], out long xp))
+                        if (long.TryParse(CurrentSmithingRecipe.ExperienceGained.Split(':')[1], out long xp))
                         {
                             Player.Instance.GainExperience("Artisan", xp / 5);
                         }

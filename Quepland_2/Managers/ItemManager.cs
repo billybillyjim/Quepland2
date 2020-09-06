@@ -341,13 +341,17 @@ public class ItemManager
         }
         Recipe task = possibleRecipes[GameState.Random.Next(possibleRecipes.Count)];
         int amount = GameState.Random.Next(50, 200);
-        if (task.Output.Category == "Leatherworking")
+        if (task.Output.Category == "Armors")
         {
             amount /= 2;
         }
         else if(task.Output.Category == "Lapidary")
         {
             amount /= 5;
+        }
+        else if (task.Output.Name.Contains("Arrow"))
+        {
+            amount *= 10;
         }
 
         return new ArtisanTask(task.Output.Name, GameState.Random.Next(50, 200));

@@ -11,6 +11,7 @@ using System.Linq;
 using System.Net.Http.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using Pluralize.NET;
 
 
     public class GameState
@@ -25,8 +26,9 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.5b";
+    public static string Version { get; set; } = "1.0.6";
     public static List<Update> Updates { get; set; } = new List<Update>();
+    public static Pluralizer Pluralizer = new Pluralizer();
 
     public static string Location { get; set; } = "";
     public static string BGColor { get; set; } = "#2d2d2d";
@@ -615,12 +617,12 @@ using System.Threading.Tasks;
             else if (Player.Instance.Inventory.AddMultipleOfItem(CurrentSmithingRecipe.Output, CurrentSmithingRecipe.OutputAmount))
             {
                 MessageManager.AddMessage("You withdraw " + CurrentSmithingRecipe.OutputAmount + " " + CurrentSmithingRecipe.Output.Name);
-                Player.Instance.GainExperience(CurrentSmithingRecipe.Output.ExperienceGained);
+                Player.Instance.GainExperience(CurrentSmithingRecipe.ExperienceGained);
                 if(GameState.CurrentArtisanTask != null)
                 {
                     if(GameState.CurrentArtisanTask.ItemName == CurrentSmithingRecipe.OutputItemName)
                     {
-                        if (long.TryParse(CurrentSmithingRecipe.Output.ExperienceGained.Split(':')[1], out long xp))
+                        if (long.TryParse(CurrentSmithingRecipe.ExperienceGained.Split(':')[1], out long xp))
                         {
                             Player.Instance.GainExperience("Artisan", xp / 5);
                         }
@@ -830,6 +832,7 @@ using System.Threading.Tasks;
             Console.WriteLine(e.Message);
             Console.WriteLine(e.StackTrace);
         }
+        CurrentArtisanTask = null;
     }
     public void SetCraftingItem(Recipe recipe)
     {

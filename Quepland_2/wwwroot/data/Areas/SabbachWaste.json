@@ -213,6 +213,16 @@
         "url": "LeuppOven",
         "description": "You enter the public oven. You can bake bread here, if you have the dough.",
         "hasOven": true
+      },
+      {
+        "name": "Artisan Guild Woodworks",
+        "buttonText": "Artisan Guild Warehouse",
+        "url": "GuildWoodworks",
+        "description": "The building seems quite new. Workers are taking the harvested lumber from the village and packing it up for transport.",
+        "isGuild": true,
+        "npcs": [
+          "Kawzaik"
+        ]
       }
     ]
   },
@@ -223,7 +233,7 @@
     "description": "A sturdy fence surrounds the northern half of the city. A lumberjack supply store has been built into part of the wall. A guard stands watch at the gate.",
     "areaURL": "NorthLeupp",
     "actions": [
-      "Chop Basla Trees:Balsa Logs",
+      "Chop Balsa Trees:Balsa Logs",
       "Chop Mahogany Trees:Mahogany Logs"
     ],
     "requirements": [

@@ -1,0 +1,18 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Kaji",
+  "id": 54,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Are you from the guild? It's about time they sent someone out here.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Request artisan task",
+      "responseText": "AssignTask",
+      "parameter": "Woodworking,Culinary Arts,Leatherworking",
+      "depth": 1
+    }
+  ]
+}
