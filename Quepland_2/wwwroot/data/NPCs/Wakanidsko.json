@@ -100,7 +100,7 @@
       "newDepthOnTalk": 7,
       "depth": 6,
       "responseText": "UnlockAndGotoArea",
-      "parameter": "SawokaVault",
+      "parameter": "Sawoka Vault",
       "requirements": [
         {
           "areaUnlocked": "Sawoka Vault",

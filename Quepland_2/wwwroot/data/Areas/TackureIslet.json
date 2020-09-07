@@ -6,13 +6,22 @@
     "description": "There are a few small boats along the docks. You can see schools of fish swimming in the water below. A newly-built building hangs out from the edge of the shore. It's large enough for a cargo ship to unload inside.",
     "areaURL": "KoyaHasa",
     "actions": [
-      "Go fishing:Butterfish,Saury,Abalone",
+      "Go fishing:Butterfish,Saury,Abalone,Shrimp",
       "Gather seaweed:Seaweed"
     ],
     "unlockableAreas": [
       {
         "areaURL": "ManayoVillage",
         "buttonText": "Enter the village"
+      },
+      {
+        "areaURL": "UfagariLanding",
+        "buttonText": "Take an artisan boat to Ufagari",
+        "requirements": [
+          {
+            "action": "Guild Access"
+          }
+        ]
       },
       {
         "areaURL": "EastUragotaDocks",

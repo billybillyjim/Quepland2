@@ -29,7 +29,7 @@ else
         if (GameState.InitCompleted == false)
         {
             await GameState.LoadData(Http, UriHelper, JSRuntime);
-            System.Globalization.CultureInfo.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+            System.Globalization.CultureInfo.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
         }
 
         Player.Instance.CurrentHP = 50;

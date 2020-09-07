@@ -13,8 +13,8 @@
     "name": "Ufagari Village",
     "id": 121,
     "image": "Village",
-    "description": "The coast of the island is entirely surrounded by rocky hills. You'll have to find some other way to get to it.",
-    "areaURL": "Ufgari Village",
+    "description": "A few houses and shops sit near the landing. The rest of the island is an open plain, with cliffs on all sides. A precious metals smithy is operating at the center of the village.",
+    "areaURL": "UfagariVillage",
     "actions": [
       "Go Fishing:Butterfish,Saury,Abalone"
     ],
@@ -27,11 +27,39 @@
         "hasSmithy": true
       }
     ],
+    "unlockableAreas": [
+      {
+        "areaURL": "UfagariFields",
+        "buttonText": "Head through the village"
+      }
+    ]
+  },
+  {
+    "name": "Ufagari Fields",
+    "id": 122,
+    "image": "Field",
+    "description": "The fields to the east of the village are home to strange beasts and totem poles.",
+    "areaURL": "UfagariFields",
+    "actions": [
+      "Carve Totems:Wood Shavings"
+    ],
     "monsters": [
       "Oni",
       "Living Rock"
 
     ]
-    
+  },
+  {
+    "name": "Ufagari Landing",
+    "id": 123,
+    "image": "Docks",
+    "description": "A newly constructed building sits at the edge of the cliffs. Rope ladders and wenches provide a way up from the boat below.",
+    "areaURL": "UfagariLanding",
+    "unlockableAreas": [
+      {
+        "areaURL": "UfagariVillage",
+        "buttonText": "Climb a rope ladder"
+      }
+    ]
   }
 ]

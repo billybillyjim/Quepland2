@@ -11,7 +11,7 @@
                         <pre style="        display: grid;
         margin: 0;
         width: 100%;
-        max-width:@(GameState.MinWindowWidth - 190)px;
+        max-width:@(GetMinWidth());
         font-style: normal;
         font-variant-ligatures: normal;
         font-variant-caps: normal;
@@ -47,7 +47,16 @@
     public int LeftMargin { get; set; } = 0;
     [Parameter]
     public int TopMargin { get; set; } = 0;
-    
+
+    public string GetMinWidth()
+    {
+        if (isHidden)
+        {
+            return "" + (GameState.MinWindowWidth - 190) + "px";
+        }
+        return "100%";
+    }
+
     private bool isHidden;
     protected override void OnInitialized()
     {

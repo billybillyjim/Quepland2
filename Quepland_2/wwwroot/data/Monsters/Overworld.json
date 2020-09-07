@@ -593,6 +593,11 @@
           "itemName": "Coins",
           "weight": 10,
           "amount": 15
+        },
+        {
+          "itemName": "Mercurial Shard",
+          "weight": 1,
+          "amount": 1
         }
       ]
     }
@@ -647,6 +652,11 @@
           "itemName": "Coins",
           "weight": 3,
           "amount": 47
+        },
+        {
+          "itemName": "Mercurial Shard",
+          "weight": 5,
+          "amount": 1
         }
       ]
     }
@@ -695,6 +705,11 @@
         {
           "itemName": "Frost Seed",
           "weight": 3,
+          "amount": 1
+        },
+        {
+          "itemName": "Mercurial Shard",
+          "weight": 7,
           "amount": 1
         }
       ]
@@ -745,6 +760,11 @@
           "itemName": "Frost Seed",
           "weight": 5,
           "amount": 1
+        },
+        {
+          "itemName": "Mercurial Shard",
+          "weight": 10,
+          "amount": 1
         }
       ]
     }
@@ -794,6 +814,11 @@
           "itemName": "Frost Seed",
           "weight": 10,
           "amount": 1
+        },
+        {
+          "itemName": "Mercurial Shard",
+          "weight": 10,
+          "amount": 2
         }
       ]
     }
@@ -843,6 +868,11 @@
           "itemName": "Frost Seed",
           "weight": 10,
           "amount": 1
+        },
+        {
+          "itemName": "Mercurial Shard",
+          "weight": 10,
+          "amount": 3
         }
       ]
     }

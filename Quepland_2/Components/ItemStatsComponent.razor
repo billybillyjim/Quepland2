@@ -5,7 +5,7 @@
 {
     @if (ItemHasCombatStats())
     {
-<div style="width:350px;height:28px;border:solid black 1px;position:relative;background-color:gray;display:flex;">
+<div style="width:350px;height:28px;border:solid black 1px;position:relative;background-color:gray;display:flex;overflow-x:visible;font-size:16px;">
     <div style="margin-right:10px;line-height:28px;flex-grow:1;"
          @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Damage", "This is a measure of how much this item boosts your damage. Higher numbers are better!")))"
          @onmouseout="@(new Action(() => GameState.HideTooltip()))">

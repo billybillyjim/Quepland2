@@ -6,18 +6,18 @@
 <div>
     <h1>Vault</h1>
 
-    <p>Safes line the walls of the room. They come in various sizes and colors.</p>
+    <p>Safes line the walls of the room. They come in various sizes and colors. Whenever you look away they seem to rearrange themselves.</p>
 
     @if (Player.Instance.Inventory.HasItem("Small Red Library Key") || Player.Instance.Inventory.HasItem("Small Orange Library Key") || Player.Instance.Inventory.HasItem("Small Green Library Key"))
     {
-        <div>
+        <div style="margin-top:5px;">
             <button class="btn btn-primary" @onclick="@(() => SearchForSafe())">
                 Find a safe
             </button>
         </div>
         @if (GameState.TicksToNextAction <= 0 && IsSearching)
         {
-            <div>
+            <div style="margin-top:5px;margin-bottom:5px;">
                 <button class="btn btn-primary" @onclick="@(() => UnlockSafe())">
                     Unlock Safe
                 </button>
@@ -25,9 +25,9 @@
         }
         else if (IsSearching)
         {
-            <div>
-                <button class="btn btn-primary" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need to find the safe first.")))"
-                    @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            <div style="margin-top:5px;margin-bottom:5px;">
+                <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need to find the safe first.")))"
+                        @onmouseout="@(new Action(() => GameState.HideTooltip()))">
                     Unlock Safe
                 </button>
             </div>
@@ -37,10 +37,18 @@
     else
     {
         <div>
-            <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have any keys.")))"
+            <button class="btn btn-primary" style="opacity:0.5;margin-top:5px;margin-bottom:5px;" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have any keys.")))"
                     @onmouseout="@(new Action(() => GameState.HideTooltip()))">
                 Find a safe
             </button>
+        </div>
+    }
+    @if (IsSearching)
+    {
+        <div style="margin-top:15px;">
+            <div class="progress" style="width:300px;">
+                <div class="progress-bar" style="@GetProgress()"></div>
+            </div>
         </div>
     }
 </div>
@@ -55,6 +63,7 @@
     private void SearchForSafe()
     {
         MessageManager.AddMessage("You walk around the room with a key in your hand. It begins to vibrate as you get nearer its partner safe.");
+        IsSearching = true;
         GameState.TicksToNextAction = 50;
     }
     private void UnlockSafe()

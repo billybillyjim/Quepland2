@@ -68,6 +68,11 @@
             Unlock Regions
         </button>
     </div>
+    <div>
+        <button @onclick="@(() => GetArtisanPoints())">
+            Get Artisan Points
+        </button>
+    </div>
 </div>
 
 
@@ -145,6 +150,10 @@
         {
             GetItem();
         }
+    }
+    public void GetArtisanPoints()
+    {
+        Player.Instance.ArtisanPoints += 10000;
     }
 
     public void GetUltimateWeapons()

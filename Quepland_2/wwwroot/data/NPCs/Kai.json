@@ -55,7 +55,18 @@
         }
       ],
       "parameter": "ThievesHideout"
-
+    },
+    {
+      "buttonText": "Can you take me to the thieve's hideout?",
+      "responseText": "GotoCustomArea",
+      "requirements": [
+        {
+          "quest": "Grand Theft Camel",
+          "minimumQuestProgress": 22,
+          "maximumQuestProgress": 25
+        }
+      ],
+      "parameter": "ThievesHideout"
     }
   ]
 }

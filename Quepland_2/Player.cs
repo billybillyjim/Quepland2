@@ -216,6 +216,25 @@ public class Player
         }
         return Math.Max(1, total);
     }
+    public void ClearBoosts()
+    {
+        foreach(Skill s in Skills)
+        {
+            s.Boost = 0;
+        }
+    }
+    public int PayArtisanPoints(int amountToPay)
+    {
+        if(ArtisanPoints >= amountToPay)
+        {
+            ArtisanPoints -= amountToPay;
+        }
+        else
+        {
+            return 0;
+        }
+        return amountToPay;
+    }
     public GameItem GetWeapon()
     {
         return equippedItems.Find(x => x.EquipSlot == "R Hand");

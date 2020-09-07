@@ -1,0 +1,83 @@
+﻿@page "/World/EastTsuCity/ArtisanGuild"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+
+
+@if (thisBuilding != null)
+{
+
+    <br />
+    @if (GameState.CurrentAFKAction != null)
+    {
+        <button class="btn btn-primary" style="opacity:0.5"
+                @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You can't leave while training " + GameState.CurrentAFKAction.SkillTrained)))"
+                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            Exit
+        </button>
+
+    }
+    else
+    {
+        <button class="btn btn-primary" @onclick="@(() => Exit())">Exit</button>
+
+    }
+    <br />
+    <div>@thisBuilding.Name</div>
+    <div>@thisBuilding.Description</div>
+    @if (thisBuilding.AlchemicalHall != "None")
+    {
+        <AlchemicalHallComponent QueplarMultiplier="@thisBuilding.QueplarMultiplier" HallName="@thisBuilding.AlchemicalHall"></AlchemicalHallComponent>
+    }
+    @foreach (AFKAction afkAction in thisBuilding.AFKActions)
+    {
+        <Quepland_2.Components.AFKActionComponent AFKAction="@afkAction"></Quepland_2.Components.AFKActionComponent>
+
+    }
+    @foreach (string npc in thisBuilding.NPCs)
+    {
+        <Quepland_2.Components.NPCDialogComponent npc="@npc"></Quepland_2.Components.NPCDialogComponent>
+    }
+    <Quepland_2.Components.ArtisanShopComponent></Quepland_2.Components.ArtisanShopComponent>
+
+    @if (thisBuilding.IsGuild)
+    {
+        <Quepland_2.Components.GuildDepositBoxComponent></Quepland_2.Components.GuildDepositBoxComponent>
+    }
+}
+
+@code {
+    [Parameter]
+    public string areaURL { get; set; }
+    [Parameter]
+    public string buildingURL { get; set; }
+    public Building thisBuilding { get; set; }
+
+    private void Exit()
+    {
+        GameState.GoTo("/World/EastTsuCity/");
+        GameState.UpdateState();
+    }
+    private void Talk(Dialog d)
+    {
+        d.Talk();
+        GameState.UpdateState();
+    }
+    protected override void OnParametersSet()
+    {
+        thisBuilding = AreaManager.Instance.GetAreaByURL("EastTsuCity").GetBuildingByURL("ArtisanGuild");
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e)
+    {
+        StateHasChanged();
+    }
+}

@@ -11,7 +11,7 @@ using System.Linq;
 using System.Net.Http.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using Pluralize.NET;
+//using Pluralize.NET;
 
 
     public class GameState
@@ -26,9 +26,9 @@ using Pluralize.NET;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.6";
+    public static string Version { get; set; } = "1.0.7";
     public static List<Update> Updates { get; set; } = new List<Update>();
-    public static Pluralizer Pluralizer = new Pluralizer();
+    //public static Pluralizer Pluralizer = new Pluralizer();
 
     public static string Location { get; set; } = "";
     public static string BGColor { get; set; } = "#2d2d2d";
@@ -202,6 +202,7 @@ using Pluralize.NET;
             if (CancelEating)
             {
                 CurrentFood = null;
+                Player.Instance.ClearBoosts();
             }
             else
             {
@@ -224,6 +225,7 @@ using Pluralize.NET;
         {
             CurrentFood = null;
             HealingTicks = 0;
+            Player.Instance.ClearBoosts();
             Player.Instance.JustDied = false;
         }
         Player.Instance.TickStatusEffects();

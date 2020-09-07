@@ -28,7 +28,7 @@ public static class SaveManager
             string mode = GameState.CurrentGameMode.ToString();
             await SetItemAsync("Version:" + mode, Compress(GameState.Version));
             await SetItemAsync("Playtime:" + mode, GetSaveString(GameState.CurrentTick));
-            await SetItemAsync("LastSave:" + mode, DateTime.UtcNow);
+            await SetItemAsync("LastSave:" + mode, DateTime.UtcNow.ToString(System.Globalization.CultureInfo.InvariantCulture));
             await SetItemAsync("Skills:" + mode, Compress(GetSkillsSave()));
             await SetItemAsync("Inventory:" + mode, Compress(GetItemSave(Player.Instance.Inventory)));
             await SetItemAsync("Bank:" + mode, Compress(GetItemSave(Bank.Instance.Inventory)));
@@ -78,7 +78,7 @@ public static class SaveManager
         }
         if (await ContainsKeyAsync("LastSave:" + mode))
         {
-            LastSave = DateTime.Parse(await GetItemAsync<string>("LastSave:" + mode));
+            LastSave = DateTime.Parse(await GetItemAsync<string>("LastSave:" + mode), System.Globalization.CultureInfo.InvariantCulture);
         }
         if (await ContainsKeyAsync("Skills:" + mode))
         {
@@ -184,7 +184,9 @@ public static class SaveManager
         file += Compress(JsonConvert.SerializeObject(AreaManager.Instance.GetDojoSaveData())) + ",";
         //15
         file += Compress(JsonConvert.SerializeObject(Bank.Instance.Tabs));
-        
+        //16
+        file += GetSaveString(AreaManager.Instance.GetDungeonSaveData());
+
         return file;
     }
     public static void ImportSave(string file)
@@ -272,13 +274,18 @@ public static class SaveManager
         {
             Bank.Instance.LoadTabs(DeserializeToList(Decompress(data[15])));
         }
+        if(data.Length > 16)
+        {
+            AreaManager.Instance.LoadDungeonSaveData(JsonConvert.DeserializeObject<List<DungeonSaveData>>(Decompress(data[16])));
+
+        }
     }
     public static string GetItemSave(Inventory i)
     { 
         string data = "";
         foreach(KeyValuePair<GameItem, int> pair in i.GetItems())
         {
-            data += pair.Key.UniqueID + "_" + pair.Value + "_" + JsonConvert.SerializeObject(pair.Key.Tabs) + "/";
+            data += pair.Key.UniqueID + "_" + pair.Value + "_" + JsonConvert.SerializeObject(pair.Key.Tabs) +  "_" + pair.Key.IsLocked + "/";
         }
         return data;
     }

@@ -322,5 +322,12 @@
       "buffedSkill": "Deftness",
       "buffAmount": 1
     }
+  },
+  {
+    "name": "Guild Membership Card",
+    "description": "A card that proves you are a true member of the artisan's guild.",
+    "value": 500,
+    "icon": "Card",
+    "enabledActions": "Guild Access"
   }
 ]

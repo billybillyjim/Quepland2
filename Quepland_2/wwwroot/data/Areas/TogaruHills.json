@@ -242,6 +242,22 @@
 
           }
         ]
+      },
+      {
+        "name": "Artisan Guild",
+        "buttonText": "Artisan Guild",
+        "url": "ArtisanGuild",
+        "description": "The shop is full of archery equipment, no surprises there. The only thing out of place is the extraordinarily large teddy bear lofted behind the counter with two arrows sticking out from its chest.",
+        "shops": [
+          {
+            "name": "Artisan Rewards",
+            "costMultiplier": 1,
+            "itemNames": [
+              "Guild Membership Card"
+            ]
+
+          }
+        ]
       }
     ],
     "npcs": [

@@ -24,7 +24,8 @@
     "url": "SawokaDungeon",
     "size": 250,
     "areaURLs": [
-      "SawokaLibrary"
+      "SawokaLibrary",
+      "StrangeWall"
     ],
     "monsterNames": [
       "Ground Grupper",

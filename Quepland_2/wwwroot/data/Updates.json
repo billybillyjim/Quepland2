@@ -1,6 +1,22 @@
 [
   {
-    "versionNumber": "1.0.6",
+    "versionNumber": "1.0.7",
+    "updates": [
+      "The Sawoka Vault is now available. You'll have to spelunk in the Sawoka dungeon to find it.",
+      "You can now access the thieve's hideout any time, so players who failed to get the camels when they first visited still can access it.",
+      "You can now catch shrimp in Tackure.",
+      "Mercurial shards have been added to the mercurial creature drop tables.",
+      "You can now access one of the Ufagari islands through artisan membership.",
+      "The first items from the artisan shop can now be purchased in Tsu City.",
+      "Save exports and imports now properly include dungeon progress.",
+      "Text should no longer overflow the item stats info box.",
+      "There is now a button to stop smithing.",
+      "Item locks now save properly.",
+      "Hopefully the save changes didn't break anything for other cultures. Please let me know if something isn't working!"
+    ]
+  },
+  {
+    "versionNumber": "1.0.6b",
     "updates": [
       "Issues with accessing parts of Koncave Caverns have been fixed.",
       "You can now right-click sell items in stores.",
@@ -16,7 +32,8 @@
       "Anthretagro now tells you his actual price when you speak to him.",
       "The Artisan skill has been added.",
       "I've added a way to make items listed as consistently plural, now I just need to find the places where that matters. If you see an incorrect plural item let me know!",
-      "There were a handful of other fixes but I forgot to write them down... Whoops!"
+      "There were a handful of other fixes but I forgot to write them down... Whoops!",
+      "Removed the Pluralizer until I can figure out why its breaking everything."
     ]
   },
   {
