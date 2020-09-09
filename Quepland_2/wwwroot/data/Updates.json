@@ -1,5 +1,32 @@
 [
   {
+    "versionNumber": "1.0.8b",
+    "updates": [
+      "Fixed another bug that would teleport players after completing battles in dungeons.",
+      "Added the ability to exchange exemption tickets with every artisan task giver.",
+      "Skills menus now show the skill's level.",
+      "The cancel task button now actually works."
+    ]
+  },
+  {
+    "versionNumber": "1.0.8",
+    "updates": [
+      "Players should no longer get teleported away from dojo battles.",
+      "Bows now properly require the archery skill to equip.",
+      "Added a total level counter.",
+      "You can now cancel a task with a Guild Exception Notice you can buy from the artisan guild.",
+      "Fixed a bug that was making library books much faster to read than intended.",
+      "Sahota Castle is now accessible.",
+      "Fixed a bug that made the only droppable gem amberite.",
+      "Fixed an issue that sometimes made food not heal.",
+      "The steelflame axe now enables woodcutting.",
+      "Fixed a bug that broke save import/export",
+      "Saves now calculate max HP and inventory slots based on stats instead of saving and loading them.",
+      "Players with no artisan points and under 5 Artisan are able to visit the artisan guild in Tsu City to cancel their tasks, in case they get one they feel is too difficult for where they are at in their account.",
+      "Skill menus now show their required items and recipes in level-order. Currently it shows items, then recipes. It's a bit of a complicated process to merge those two lists, so for now that's how it will have to be."
+    ]
+  },
+  {
     "versionNumber": "1.0.7",
     "updates": [
       "The Sawoka Vault is now available. You'll have to spelunk in the Sawoka dungeon to find it.",

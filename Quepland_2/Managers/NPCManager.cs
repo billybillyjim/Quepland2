@@ -92,6 +92,10 @@ public class NPCManager
                 {
                     CustomDialogFunctions.TryAdd("AssignTask" + d.Parameter, new Action(() => GetNewArtisanTask(d.Parameter)));
                 }
+                else if (d.ResponseWithParameter == "CancelTask" + d.Parameter)
+                {
+                    CustomDialogFunctions.TryAdd("CancelTask" + d.Parameter, new Action(() => CancelTask(d.Parameter)));
+                }
             }
         }
         
@@ -165,6 +169,16 @@ public class NPCManager
         {
             MessageManager.AddMessage("You already have a task from the guild. " + GameState.CurrentArtisanTask.ToString());
         }
+    }
+    public void CancelTask(string s)
+    {
+        if(Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName("Guild Exception Notice"), 1) == 1)
+        {
+            GameState.CancelTask();
+            MessageManager.AddMessage("Your task has been officially cancelled and the guild has redirected the request to another member. Speak to any guild member to recieve a new artisan task.");
+
+        }
+
     }
     public void DieAndGotoArea(string area)
     {

@@ -40,7 +40,8 @@
     "url": "SahotaDungeon",
     "size": 500,
     "areaURLs": [
-      "SahotaIceFields"
+      "SahotaIceFields",
+      "SahotaCastle"
     ],
     "monsterNames": [
       "Frost Fighter",

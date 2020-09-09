@@ -1,6 +1,6 @@
 [
   {
-    "Location": "QuepleCaveSmithy",
+    "location": "QuepleCaveSmithy",
     "smeltableMetalNames": [
       "Molten Copper Bar",
       "Molten Tin Bar",
@@ -11,7 +11,7 @@
     ]
   },
   {
-    "Location": "BigSmithy",
+    "location": "BigSmithy",
     "smeltableMetalNames": [
       "Molten Nickel Bar",
       "Molten Iron Bar",

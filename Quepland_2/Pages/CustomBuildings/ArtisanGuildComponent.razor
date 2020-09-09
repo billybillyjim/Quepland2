@@ -43,6 +43,12 @@
     {
         <Quepland_2.Components.GuildDepositBoxComponent></Quepland_2.Components.GuildDepositBoxComponent>
     }
+    @if(Player.Instance.GetLevel("Artisan") < 5 && Player.Instance.ArtisanPoints == 0)
+    {
+        <button class="btn btn-primary" style="margin-top:10px;" @onclick="@(() => CancelTask())"
+                @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "As a beginner to the guild, you are allowed to cancel your artisan task if you feel it is too difficult. Once you are more skilled, this won't be an option anymore!")))"
+                @onmouseout="@(new Action(() => GameState.HideTooltip()))">Request Special Task Cancellation</button>
+    }
 }
 
 @code {
@@ -61,6 +67,14 @@
     {
         d.Talk();
         GameState.UpdateState();
+    }
+    private void CancelTask()
+    {
+        if(Player.Instance.GetLevel("Artisan") < 5 &&
+            Player.Instance.ArtisanPoints == 0)
+        {
+            GameState.CancelTask();
+        }
     }
     protected override void OnParametersSet()
     {

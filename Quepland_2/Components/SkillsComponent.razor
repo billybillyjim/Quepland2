@@ -36,6 +36,9 @@
                     </div>
                 </div>
             }
+            <div>
+                Total Level:@Player.Instance.GetTotalLevel()
+            </div>
         }
         else
         {
@@ -45,7 +48,7 @@
                 @if (currentSkill != null)
                 {
                     <div style="font-weight:bold;">
-                        @currentSkill.Name
+                        @currentSkill.Name (@currentSkill.Level)
                     </div>
                     <div>
                         @currentSkill.Description
@@ -138,6 +141,8 @@
                 RelevantRecipes.Add(r);
             }
         }
+        RelevantItems = RelevantItems.OrderBy(x => x.GetRequirementForSkill(activeMenu)).ToList();
+        RelevantRecipes = RelevantRecipes.OrderBy(x => x.GetRequirementForSkill(activeMenu)).ToList();
     }
     public List<string> GetRequirementsString(GameItem item)
     {

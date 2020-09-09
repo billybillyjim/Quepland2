@@ -358,7 +358,7 @@ public class Inventory
         {
             return false;
         }
-        GameItem i = ItemManager.Instance.GetCopyOfItem(drop.ItemName);
+        GameItem i = ItemManager.Instance.GetCopyOfItem(drop.ItemName, drop.ItemParameter);
         if (i.Category == "QuestItems")
         {
             if(Player.Instance.Inventory.HasItem(i) || Bank.Instance.Inventory.HasItem(i))

@@ -104,6 +104,7 @@
     protected override void OnInitialized()
     {
         BattleManager.Instance.CurrentArea = null;
+        BattleManager.Instance.ReturnLocation = null;
         BattleManager.Instance.EndBattle();
 
         GameState.StateChanged += OnGameStateChanged;

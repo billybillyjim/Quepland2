@@ -1420,7 +1420,7 @@
     "name": "Steelflame Axe",
     "description": "A flaming axe. You can use it to chop down trees or enemies very quickly.",
     "value": 32800,
-    "enabledActions": "Axemanship",
+    "enabledActions": "Axemanship Woodcutting",
     "secondaryColor": "#a51414",
     "equipSlot": "R Hand",
     "icon": "SteelflameAxe",

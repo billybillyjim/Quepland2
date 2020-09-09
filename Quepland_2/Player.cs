@@ -235,6 +235,10 @@ public class Player
         }
         return amountToPay;
     }
+    public int GetTotalLevel()
+    {
+        return Skills.Select(x => x.Level).Sum();
+    }
     public GameItem GetWeapon()
     {
         return equippedItems.Find(x => x.EquipSlot == "R Hand");
@@ -558,10 +562,10 @@ public class Player
            SetFollower(FollowerManager.Instance.GetFollowerByName(data.ActiveFollowerName));
         }
         CurrentHP = data.CurrentHP;
-        MaxHP = data.MaxHP;
+        CalculateMaxHP();
         Deaths = data.DeathCount;
         ArtisanPoints = data.ArtisanPoints;
-        Inventory.SetSize(data.InventorySize);
+        CalculateInventorySpaces();
         try
         {
             foreach (string s in data.EquippedItems)
@@ -579,6 +583,32 @@ public class Player
             Console.WriteLine(e.StackTrace);
 
         }
+    }
+    private void CalculateMaxHP()
+    {
+        int hp = 50;
+        for(int i = 0; i < GetLevel("HP"); i++)
+        {
+            if(i % 5 == 0)
+            {
+                hp += 10;
+            }
+            hp += 5;
+        }
+        MaxHP = hp;
+    }
+    private void CalculateInventorySpaces()
+    {
+        int spaces = 30;
+        for(int i = 0; i < GetLevel("Strength"); i++)
+        {
+            if(i % 10 == 0)
+            {
+                spaces++;
+            }
+            spaces++;
+        }
+        Inventory.SetSize(spaces);
     }
 }
 

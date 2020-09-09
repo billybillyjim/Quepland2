@@ -1,7 +1,7 @@
 [
   {
-    "Name": "HP",
-    "Level": 1,
+    "name": "HP",
+    "level": 1,
     "Description": "HP is short for hitpoints, and it is trained by taking damage during combat. When your HP reaches 0, it means you are no longer in a condition to continue fighting, and you must flee your current battle. When you flee, some opponents will not pursue you, but others may require a bribe to let you go."
   },
   {

@@ -368,6 +368,7 @@ public class BattleManager
         else
         {
             GameState.GoTo(ReturnLocation);
+            ReturnLocation = null;
         }
     }
     private Monster GetNextTarget()

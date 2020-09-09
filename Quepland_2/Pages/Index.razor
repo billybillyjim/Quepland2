@@ -30,10 +30,12 @@ else
         {
             await GameState.LoadData(Http, UriHelper, JSRuntime);
             System.Globalization.CultureInfo.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+            System.Globalization.CultureInfo.CurrentUICulture = System.Globalization.CultureInfo.InvariantCulture;
         }
 
         Player.Instance.CurrentHP = 50;
         Bank.Instance.Inventory.AddItem("Stone Axe");
+        
         //Player.Instance.Inventory.AddMultipleOfItem("Small Red Library Key", 5);
         //Player.Instance.Inventory.AddMultipleOfItem("Small Orange Library Key", 5);
         //Player.Instance.Inventory.AddMultipleOfItem("Small Green Library Key", 5);

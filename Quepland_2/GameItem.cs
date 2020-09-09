@@ -109,6 +109,39 @@ public class GameItem
 		}
 		return reqSkills;
 	}
+	public int GetRequirementForSkill(string skillName)
+    {
+		foreach(Requirement r in Requirements)
+        {
+			if(r.Skill == skillName)
+            {
+				return r.SkillLevel;
+            }
+        }
+		if (ArmorInfo != null)
+		{
+			foreach (Requirement r in ArmorInfo.WearRequirements)
+			{
+
+				if (r.Skill == skillName)
+				{
+					return r.SkillLevel;
+				}
+
+			}
+		}
+		if (WeaponInfo != null)
+		{
+			foreach (Requirement r in WeaponInfo.WearRequirements)
+			{
+				if (r.Skill == skillName)
+				{
+					return r.SkillLevel;
+				}
+			}
+		}
+		return 0;
+	}
 	public bool HasRequirements()
     {
 		foreach(Requirement r in Requirements)

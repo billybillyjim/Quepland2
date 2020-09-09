@@ -13,6 +13,17 @@
       "responseText": "AssignTask",
       "parameter": "Woodworking,Smithing,Leatherworking",
       "depth": 1
+    },
+    {
+      "buttonText": "Cancel artisan task",
+      "responseText": "CancelTask",
+      "depth": 1,
+      "requirements": [
+        {
+          "item": "Guild Exception Notice",
+          "itemAmount": 1
+        }
+      ]
     }
   ]
 }

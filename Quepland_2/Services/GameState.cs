@@ -26,7 +26,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.7";
+    public static string Version { get; set; } = "1.0.8b";
     public static List<Update> Updates { get; set; } = new List<Update>();
     //public static Pluralizer Pluralizer = new Pluralizer();
 
@@ -39,6 +39,7 @@ using System.Threading.Tasks;
     private bool stopActions = false;
     private bool stopNoncombatActions = false;
     public bool IsStoppingNextTick { get; set; }
+    private static bool cancelTask;
     public static bool IsOnHuntingTrip { get; set; } 
     public static AFKAction CurrentAFKAction { get; set; }
     private Timer GameTimer { get; set; }
@@ -202,6 +203,7 @@ using System.Threading.Tasks;
             if (CancelEating)
             {
                 CurrentFood = null;
+                CancelEating = false;
                 Player.Instance.ClearBoosts();
             }
             else
@@ -227,6 +229,11 @@ using System.Threading.Tasks;
             HealingTicks = 0;
             Player.Instance.ClearBoosts();
             Player.Instance.JustDied = false;
+        }
+        if (cancelTask)
+        {
+            CurrentArtisanTask = null;
+            cancelTask = false;
         }
         Player.Instance.TickStatusEffects();
         await GetDimensions();
@@ -302,6 +309,10 @@ using System.Threading.Tasks;
             CurrentBook = NewBook;
             NewBook = null;
         }    
+    }
+    public static void CancelTask()
+    {
+        cancelTask = true;
     }
     private void ClearNonCombatActions()
     {
@@ -415,7 +426,7 @@ using System.Threading.Tasks;
             Player.Instance.GainExperience(CurrentBook.Skill, (long)((Player.Instance.GetLevel(CurrentBook.Skill.Name) / 80d) * 900));
             MessageManager.AddMessage("You read another page of the book. You feel more knowledgable about " + CurrentBook.Skill.Name + ".");
             CurrentBook.Progress++;
-            TicksToNextAction = (int)Math.Max(60, ((2 + CurrentBook.Difficulty * 5d) / (Player.Instance.GetLevel(CurrentBook.Skill.Name)) * 60));
+            TicksToNextAction = (int)Math.Max(60, ((2 + CurrentBook.Difficulty * 5d) / (Player.Instance.GetLevel(CurrentBook.Skill.Name))) * 60);
             if (Random.Next(0, CurrentBook.Length) == CurrentBook.Progress)
             {
                 MessageManager.AddMessage("A small key falls out of the book as you turn the page.");

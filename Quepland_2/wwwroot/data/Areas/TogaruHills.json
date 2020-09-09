@@ -247,13 +247,14 @@
         "name": "Artisan Guild",
         "buttonText": "Artisan Guild",
         "url": "ArtisanGuild",
-        "description": "The shop is full of archery equipment, no surprises there. The only thing out of place is the extraordinarily large teddy bear lofted behind the counter with two arrows sticking out from its chest.",
+        "description": "The guild is expansive, though non-members are only allowed in the lobby. You can exchange your reward points for a few different items here.",
         "shops": [
           {
             "name": "Artisan Rewards",
             "costMultiplier": 1,
             "itemNames": [
-              "Guild Membership Card"
+              "Guild Membership Card",
+              "Guild Exception Notice"
             ]
 
           }

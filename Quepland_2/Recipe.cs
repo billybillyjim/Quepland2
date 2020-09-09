@@ -388,4 +388,15 @@ public class Recipe
         }
         return 0;
     }
+    public int GetRequirementForSkill(string skillName)
+    {
+        foreach (Requirement r in Requirements)
+        {
+            if (r.Skill == skillName)
+            {
+                return r.SkillLevel;
+            }
+        }
+        return 0;
+    }
 }

@@ -57,6 +57,7 @@ public class Bank
         }
         foreach(GameItem i in lockedEquippedItems)
         {
+            i.IsLocked = true;
             Player.Instance.Equip(i.Name);
         }
         /*if (inv == Player.Instance.Inventory)

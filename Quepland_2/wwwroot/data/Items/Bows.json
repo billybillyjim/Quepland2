@@ -16,14 +16,14 @@
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 12,
-      "damage": 8
-    },
-    "requirements": [
-      {
-        "skill": "Archery",
-        "skillLevel": 1
-      }
-    ]
+      "damage": 8,
+      "wearRequirements": [
+        {
+          "skill": "Archery",
+          "skillLevel": 1
+        }
+      ]
+    }
   },
   {
     "name": "Poplar Bow(Unstrung)",
@@ -42,14 +42,14 @@
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 12,
-      "damage": 12
-    },
-    "requirements": [
-      {
-        "skill": "Archery",
-        "skillLevel": 5
-      }
-    ]
+      "damage": 12,
+      "wearRequirements": [
+        {
+          "skill": "Archery",
+          "skillLevel": 5
+        }
+      ]
+    }
   },
   {
     "name": "Oak Bow(Unstrung)",
@@ -68,14 +68,14 @@
     "secondaryColor": "#FFD5B0",
     "weaponInfo": {
       "attackSpeed": 12,
-      "damage": 15
-    },
-    "requirements": [
-      {
-        "skill": "Archery",
-        "skillLevel": 15
-      }
-    ]
+      "damage": 15,
+      "wearRequirements": [
+        {
+          "skill": "Archery",
+          "skillLevel": 15
+        }
+      ]
+    }
   },
   {
     "name": "Sugar Maple Bow(Unstrung)",
@@ -94,14 +94,14 @@
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 14,
-      "damage": 30
-    },
-    "requirements": [
-      {
-        "skill": "Archery",
-        "skillLevel": 25
-      }
-    ]
+      "damage": 30,
+      "wearRequirements": [
+        {
+          "skill": "Archery",
+          "skillLevel": 25
+        }
+      ]
+    }
   },
   {
     "name": "Birch Bow(Unstrung)",
@@ -120,14 +120,14 @@
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 10,
-      "damage": 17
-    },
-    "requirements": [
-      {
-        "skill": "Archery",
-        "skillLevel": 25
-      }
-    ]
+      "damage": 17,
+      "wearRequirements": [
+        {
+          "skill": "Archery",
+          "skillLevel": 25
+        }
+      ]
+    }
   },
   {
     "name": "Mesquite Bow(Unstrung)",
@@ -146,14 +146,14 @@
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 10,
-      "damage": 50
-    },
-    "requirements": [
-      {
-        "skill": "Archery",
-        "skillLevel": 40
-      }
-    ]
+      "damage": 50,
+      "wearRequirements": [
+        {
+          "skill": "Archery",
+          "skillLevel": 40
+        }
+      ]
+    }
   },
   {
     "name": "Mahogany Bow(Unstrung)",
@@ -172,14 +172,14 @@
     "secondaryColor": "#AB5F29",
     "weaponInfo": {
       "attackSpeed": 12,
-      "damage": 50
-    },
-    "requirements": [
-      {
-        "skill": "Archery",
-        "skillLevel": 50
-      }
-    ]
+      "damage": 50,
+      "wearRequirements": [
+        {
+          "skill": "Archery",
+          "skillLevel": 50
+        }
+      ]
+    }
   },
   {
     "name": "Ironwood Bow(Unstrung)",
@@ -198,14 +198,14 @@
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 12,
-      "damage": 70
-    },
-    "requirements": [
-      {
-        "skill": "Archery",
-        "skillLevel": 65
-      }
-    ]
+      "damage": 70,
+      "wearRequirements": [
+        {
+          "skill": "Archery",
+          "skillLevel": 65
+        }
+      ]
+    }
   },
   {
     "name": "Snakewood Bow(Unstrung)",
@@ -224,14 +224,14 @@
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 10,
-      "damage": 75
-    },
-    "requirements": [
-      {
-        "skill": "Archery",
-        "skillLevel": 70
-      }
-    ]
+      "damage": 75,
+      "wearRequirements": [
+        {
+          "skill": "Archery",
+          "skillLevel": 70
+        }
+      ]
+    }
   },
   {
     "name": "Snakewood Bow",
@@ -243,14 +243,14 @@
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 12,
-      "damage": 90
-    },
-    "requirements": [
-      {
-        "skill": "Archery",
-        "skillLevel": 72
-      }
-    ]
+      "damage": 90,
+      "wearRequirements": [
+        {
+          "skill": "Archery",
+          "skillLevel": 72
+        }
+      ]
+    }
   },
   {
     "name": "Lignum Vitae Bow(Unstrung)",
@@ -269,14 +269,14 @@
     "icon": "Bow",
     "weaponInfo": {
       "attackSpeed": 12,
-      "damage": 130
-    },
-    "requirements": [
-      {
-        "skill": "Archery",
-        "skillLevel": 85
-      }
-    ]
+      "damage": 130,
+      "wearRequirements": [
+        {
+          "skill": "Archery",
+          "skillLevel": 85
+        }
+      ]
+    }
   },
   {
     "name": "Buloke Bow(Unstrung)",
@@ -295,14 +295,14 @@
     "secondaryColor": "#875B24",
     "weaponInfo": {
       "attackSpeed": 12,
-      "damage": 170
-    },
-    "requirements": [
-      {
-        "skill": "Archery",
-        "skillLevel": 92
-      }
-    ]
+      "damage": 170,
+      "wearRequirements": [
+        {
+          "skill": "Archery",
+          "skillLevel": 92
+        }
+      ]
+    }
   },
   {
     "name": "Great Tree Bow(Unstrung)",
@@ -321,14 +321,14 @@
     "secondaryColor": "#9F6F4F",
     "weaponInfo": {
       "attackSpeed": 10,
-      "damage": 250
-    },
-    "requirements": [
-      {
-        "skill": "Archery",
-        "skillLevel": 99
-      }
-    ]
+      "damage": 250,
+      "wearRequirements": [
+        {
+          "skill": "Archery",
+          "skillLevel": 99
+        }
+      ]
+    }
   },
   {
     "name": "Spine Shooter",
@@ -340,13 +340,13 @@
     "icon": "Shooter",
     "weaponInfo": {
       "attackSpeed": 4,
-      "damage": 30
-    },
-    "requirements": [
-      {
-        "skill": "Archery",
-        "skillLevel": 75
-      }
-    ]
+      "damage": 30,
+      "wearRequirements": [
+        {
+          "skill": "Archery",
+          "skillLevel": 75
+        }
+      ]
+    }
   }
 ]

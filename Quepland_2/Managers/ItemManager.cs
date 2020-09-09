@@ -38,6 +38,7 @@ public class ItemManager
     public List<Recipe> BakingRecipes = new List<Recipe>();
     public List<string> EquipmentSlots = new List<string>();
     public List<MinigameDropTable> MinigameDropTables = new List<MinigameDropTable>();
+    public List<TomeData> Tomes = new List<TomeData>();
     public static List<string> FileNames = new List<string> 
     { "Weapons", "Bows", "Armors", "Necklaces", "Sushi", "Jerkies", "Bread", "Magic",
         "Arrows", "QuestItems", "General", "Elements", "Hunting", 

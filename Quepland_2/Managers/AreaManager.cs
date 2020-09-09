@@ -283,6 +283,17 @@ public class AreaManager
             Dungeons.FirstOrDefault(x => x.Name == save.Name).LoadSaveData(save);
         }
     }
+    public Area GetAreaByAvailableResource(string itemName)
+    {
+        foreach(Area a in Areas)
+        {
+            if(a.IsUnlocked && a.Actions.FirstOrDefault(x => x.Contains(itemName)) != null)
+            {
+                return a;
+            }
+        }
+        return null;
+    }
     public AFKAction GetAFKActionByUniqueID(string id)
     {
         return AFKActions.FirstOrDefault(x => x.UniqueID == id);

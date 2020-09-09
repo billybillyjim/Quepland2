@@ -329,5 +329,11 @@
     "value": 500,
     "icon": "Card",
     "enabledActions": "Guild Access"
+  },
+  {
+    "name": "Guild Exception Notice",
+    "description": "A notice that approves a guild member to cancel their current guild task.",
+    "value": 50,
+    "icon": "Note"
   }
 ]

@@ -1,0 +1,34 @@
+﻿@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+<div style="position:absolute;width:100%;height:100%;">
+    <button class="btn btn-primary" @onclick="@(() => AddItem())">Add Item</button>
+</div>
+@code {
+
+    TomeData tomeData;
+
+    public void AddItem()
+    {
+        Area a = AreaManager.Instance.GetAreaByAvailableResource("White Pine Logs");
+        if (a != null)
+        {
+            Console.WriteLine(a.Name + " has White Pine Logs");
+        }
+        else
+        {
+            Console.WriteLine("No area found.");
+        }
+    }
+    protected override void OnInitialized()
+    {
+
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}
