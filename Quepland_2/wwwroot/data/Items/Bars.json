@@ -165,8 +165,8 @@
   },
   {
     "name": "Bucket of Mercury",
-    "description": "A heavy metal bar.",
-    "gatherString": "You smelt a lead bar.",
+    "description": "A heavy metal bucket.",
+    "gatherString": "You smelt a bucket of mercury.",
     "value": 240,
     "gatherSpeed": 55,
     "icon": "Bucket",

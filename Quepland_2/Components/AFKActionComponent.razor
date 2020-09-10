@@ -100,7 +100,7 @@
     }
     public void CancelAFKing()
     {
-        double hours = Math.Round(Math.Min(DateTime.Now.Subtract(AFKAction.StartTime).TotalHours, 8));
+        double hours = Math.Round(Math.Min(DateTime.UtcNow.Subtract(AFKAction.StartTime).TotalHours, 8));
         if(hours < 0.5)
         {
             hours = 0;

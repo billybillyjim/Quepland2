@@ -77,7 +77,12 @@
                 <Quepland_2.Pages.SettingsComponent></Quepland_2.Pages.SettingsComponent>
             </div>
         }
-
+        @if(GameState.ShowTome)
+        {
+            <div>
+                <Quepland_2.Components.TomeComponent></Quepland_2.Components.TomeComponent>
+            </div>
+        }
     }
     @if (TooltipManager.ShouldShow())
     {

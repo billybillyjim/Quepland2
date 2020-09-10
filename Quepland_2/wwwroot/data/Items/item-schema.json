@@ -12,6 +12,10 @@
         "type": "string",
         "description": "The items's name. Defaults to Unset Name."
       },
+      "isTome": {
+        "type": "boolean",
+        "description": "If the item is a tome that can be used for fast travel."
+      },
       "description": {
         "type": "string",
         "description": "The item's description. Defaults to Unset Description."

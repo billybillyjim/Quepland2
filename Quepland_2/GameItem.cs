@@ -20,6 +20,7 @@ public class GameItem
 	public string EquipSlot { get; set; } = "None";
 	public string PrimaryColor { get; set; } = "white";
 	public string SecondaryColor { get; set; } = "lightgray";
+	public bool IsTome { get; set; }
 	public int Charges { get; set; } = 0;
 	public string Parameter { get; set; } = "";
 
@@ -285,6 +286,7 @@ public class GameItem
 	{
 		return Name;
 	}
+	
 	public GameItem Copy()
     {
 		GameItem copy = new GameItem();
@@ -305,6 +307,7 @@ public class GameItem
 		copy.IsStackable = IsStackable;
 		copy.IsSellable = IsSellable;
 		copy.IsLocked = IsLocked;
+		copy.IsTome = IsTome;
 
 		copy.Value = Value;
 

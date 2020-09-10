@@ -596,6 +596,21 @@ public class Inventory
             }
             string id = s[0];
             GameItem it = ItemManager.Instance.GetItemByUniqueID(id);
+            if (s.Length >= 3)
+            {
+                List<string> tabs = JsonConvert.DeserializeObject<List<string>>(s[2]);
+                foreach (string tag in tabs)
+                {
+                    it.Tabs.Add(tag);
+                }
+            }
+            if (s.Length >= 4)
+            {
+                if (bool.TryParse(s[3], out bool res))
+                {
+                    it.IsLocked = res;
+                }
+            }
             if (int.TryParse(s[1], out int amt))
             {
                 AddMultipleOfItem(it, amt);
@@ -604,21 +619,7 @@ public class Inventory
             {
                 Console.WriteLine("Error loading item in line:" + line);
             }
-            if(s.Length >= 3)
-            {
-                List<string> tabs = JsonConvert.DeserializeObject<List<string>>(s[2]);
-                foreach(string tag in tabs)
-                {                    
-                    it.Tabs.Add(tag);
-                }
-            }
-            if(s.Length >= 4)
-            {
-                if(bool.TryParse(s[3], out bool res))
-                {
-                    it.IsLocked = res;
-                }
-            }
+
         }
         IsLoadingSave = false;
         UpdateItemCount();

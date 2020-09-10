@@ -26,7 +26,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.8b";
+    public static string Version { get; set; } = "1.0.9";
     public static List<Update> Updates { get; set; } = new List<Update>();
     //public static Pluralizer Pluralizer = new Pluralizer();
 
@@ -106,6 +106,8 @@ using System.Threading.Tasks;
     public static int GameWindowWidth { get; set; }
     public static int GameWindowHeight { get; set; }
     public static int GameLoadProgress { get; set; }
+    public static bool ShowTome { get; set; }
+    public static string CurrentTome { get; set; } = "None";
     public int MinWindowWidth { get; set; } = 600;
     public int AlchemyStage;
     public int AutoSmithedItemCount { get; set; } = 0;
@@ -374,7 +376,8 @@ using System.Threading.Tasks;
             }
 
         }
-        if(Player.Instance.Inventory.GetAvailableSpaces() == 0 && RequiredForGatherItem == null)
+        if(Player.Instance.Inventory.GetAvailableSpaces() == 0 && RequiredForGatherItem == null && 
+            !(CurrentGatherItem != null && CurrentGatherItem.IsStackable && Player.Instance.Inventory.HasItem(CurrentGatherItem)))
         {
             if(Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking == false)
             {

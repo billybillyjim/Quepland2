@@ -352,6 +352,11 @@
     }
     public void AddTab(string tab)
     {
+        if (tab.Contains("/") || tab.Contains("_") || tab.Contains(","))
+        {
+            MessageManager.AddMessage("Invalid character used in tab name. Please avoid using Non-alphnumerical characters.");
+            return;
+        }
         if (Bank.Instance.Tabs.Contains(tab) == false)
         {
             Bank.Instance.Tabs.Add(tab);

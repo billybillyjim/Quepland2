@@ -1,0 +1,24 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Companion",
+  "id": 58,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Greetings. Might I inquire if you are here to see my master, sir?",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Who is your master?",
+      "responseText": "Do you walk the halls of Nid Castle without knowledge of the great Nid himself? Surely, you are joking, sir.",
+      "newDepthOnTalk": 1,
+      "depth": 1
+    },
+    {
+      "buttonText": "Take me to him.",
+      "responseText": "\"Of course.\" The creature leads you down back the way you came. Shortly before reaching the entrance, it stops, turns around, and leads you back to where you first met it. It turns to you as if it has never met you.",
+      "newDepthOnTalk": 0,
+      "depth": 1
+    }
+  ]
+}

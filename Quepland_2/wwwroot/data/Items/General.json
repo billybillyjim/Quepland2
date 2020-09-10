@@ -208,6 +208,8 @@
   {
     "name": "Ice",
     "description": "It's cold water.",
+    "gatherString": "You get some ice.",
+    "experienceGained": "Mining:15",
     "value": 5,
     "secondaryColor": "#D2FFF5",
     "icon": "Ice"

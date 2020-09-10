@@ -1,5 +1,19 @@
 [
   {
+    "versionNumber": "1.0.9",
+    "updates": [
+      "Carving a totem now requires a wood carving tool.",
+      "Some more items now have gathering messages.",
+      "The game no longer cancels your gathering if your inventory is full but the item is stackable and you already have it in your inventory.",
+      "Fixed a bug in HP and inventory calculations on load. Your inventory or HP may be over the limit when you load the game today.",
+      "Fixed a bug that sometimes let players gain experience instantly at the gym.",
+      "You can no longer train Strength or Deftness at the library. This is mostly because it doesn't make sense. If there's strong pushback to this change I'm not opposed to reverting it, strange as it is.",
+      "You can now get your hands on a Tome of Logs. It will take you to the location to harvest any logs you want, assuming you've gathered them before and been to the location.",
+      "After finding a number of bugs with lock saving, I think they finally should save even with equipped items. Please let me know if they are somehow still broken for you.",
+      "Fixed a typo in Houchou Dojo"
+    ]
+  },
+  {
     "versionNumber": "1.0.8b",
     "updates": [
       "Fixed another bug that would teleport players after completing battles in dungeons.",

@@ -1,0 +1,30 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Stogkro",
+  "id": 59,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "How'd you get past my barricade? I'm supposed to be the only one here!",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "I chopped it down",
+      "responseText": "You WHAT!? It took me ages to make that! Now I gotta do it all over again... What do you want here anyways? The library is empty.",
+      "newDepthOnTalk": 2,
+      "depth": 1
+    },
+    {
+      "buttonText": "What happened here?",
+      "responseText": "You don't know? This is the castle of Nid, the wizard. He died a long time ago, and none of his descendents were willing to replace him. We in the city formed a parpolity of sorts and things have been swell ever since. I came here to get away from it all, though. As you can see, there's nothing for you here. Please leave.",
+      "depth": 2,
+      "newDepthOnTalk": 3
+    },
+    {
+      "buttonText": "Give me something first",
+      "responseText": "What? I don't have anything to give... Well, I suppose you can have this book. It was the only one I found in here, but there's almost nothing written in it. Seems pretty useless to me.",
+      "itemOnTalk": "Tome of Logs",
+      "depth": 3
+    }
+  ]
+}

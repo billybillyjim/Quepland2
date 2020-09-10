@@ -2,24 +2,110 @@
 @inject NavigationManager UriHelper
 @implements IDisposable
 
-<div style="position:absolute;width:100%;height:100%;">
-    <button class="btn btn-primary" @onclick="@(() => AddItem())">Add Item</button>
+@if (tomeData != null)
+{
+<div style="position:fixed;width:@(GameState.MinWindowWidth)px;height:@(GameState.GameWindowHeight - 300)px;top:60px;left:300px;background-color:#262626;padding:10px;border:solid 5px dimgray">
+    <p style="width:80%">The Tome of @(tomeData.Category). You can add notes of the items you come across to quickly visit there later.</p>
+    @foreach (string i in tomeData.ItemNames)
+    {
+        <div>
+            @i
+            <button class="btn btn-primary" style="margin:10px;" @onclick="@(() => GameState.NavMenu.GoToArea(GetAreaURLForItem(i)))">Travel To @GetAreaNameForItem(i)</button>
+            <button class="btn btn-primary" style="margin:10px;margin-left:0px;" @onclick="@(() => Remove(i))">X</button>
+        </div>
+    }
+    <CustomDropdownComponent DropdownItems="@GetInventoryItemNames()" EmptyText="You have no items that fit this tome" @bind-Value="@selectedItem"></CustomDropdownComponent>
+
+    @if (string.IsNullOrEmpty(selectedItem))
+    {
+        <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Select an item from the dropdown first.")))"
+             @onmouseout="@(new Action(() => GameState.HideTooltip()))" >Add Item</button>
+
+    }
+    else
+    {
+        <button class="btn btn-primary" @onclick="@(() => AddItem())">Add Item</button>
+
+    }
+    <div>
+        <button class="btn btn-primary" style="position:absolute;top:10px;right:10px;" @onclick="@(() => CloseTome())">Close</button>
+    </div>
 </div>
+}
+
 @code {
 
     TomeData tomeData;
+    private string selectedItem;
 
     public void AddItem()
     {
-        Area a = AreaManager.Instance.GetAreaByAvailableResource("White Pine Logs");
-        if (a != null)
+        if (string.IsNullOrEmpty(selectedItem))
         {
-            Console.WriteLine(a.Name + " has White Pine Logs");
+            return;
+        }
+        if (tomeData.ItemNames.Contains(selectedItem))
+        {
+            MessageManager.AddMessage("You already have this item in this tome.");
+            return;
+        }
+        Area a = AreaManager.Instance.GetAreaByAvailableResource(selectedItem);
+        if(a != null)
+        {
+            tomeData.AddItem(selectedItem);
         }
         else
         {
-            Console.WriteLine("No area found.");
+            MessageManager.AddMessage("There doesn't seem to be a place to harvest this item.");
         }
+    }
+    public void Remove(string i)
+    {
+        tomeData.ItemNames.Remove(i);
+    }
+    private List<string> GetInventoryItemNames()
+    {
+        List<string> items = new List<string>();
+        foreach(KeyValuePair<GameItem, int> pair in Player.Instance.Inventory.GetItems())
+        {
+            if(pair.Key.Category == tomeData.Category && pair.Key.Name.Contains("Tome") == false)
+            {
+                if (items.Contains(pair.Key.Name) == false && tomeData.ItemNames.Contains(pair.Key.Name) == false)
+                {
+                    items.Add(pair.Key.Name);
+                }
+            }
+
+        }
+        return items;
+    }
+
+    private void CloseTome()
+    {
+        GameState.ShowTome = false;
+        GameState.CurrentTome = "None";
+    }
+    public string GetAreaNameForItem(string i)
+    {
+        Area a  = AreaManager.Instance.GetAreaByAvailableResource(i);
+        if(a != null)
+        {
+            return a.Name;
+        }
+        return "Nowhere";
+    }
+    public string GetAreaURLForItem(string i)
+    {
+        Area a = AreaManager.Instance.GetAreaByAvailableResource(i);
+        if (a != null)
+        {
+            return a.AreaURL;
+        }
+        return "Nowhere";
+    }
+    protected override void OnParametersSet()
+    {
+        tomeData = ItemManager.Instance.GetTomeDataForCategory(GameState.CurrentTome);
     }
     protected override void OnInitialized()
     {

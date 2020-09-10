@@ -179,6 +179,10 @@
 
     public void GoToArea(string name)
     {
+        if(name == "Nowhere")
+        {
+            return;
+        }
         if(GameState.Location != name)
         {
             GameState.StopActions();

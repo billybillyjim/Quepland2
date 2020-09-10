@@ -10,6 +10,11 @@ public class DPSCalc
     public double AverageKillTime = 0;
     public int TotalKills;
     public int TotalDeaths;
+
+    public int TotalTicksTakenSecond = 0;
+    public double AverageKillTimeSeconds = 0;
+    public int TotalKillsSecond;
+    public int TotalDeathsSecond;
 	public void CalculateDPS()
     {
         TotalTicksTaken = 0;

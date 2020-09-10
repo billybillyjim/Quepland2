@@ -414,6 +414,7 @@
   {
     "name": "Wood Shavings",
     "description": "A pile of shavings from carving a totem pole. Probably worthless.",
+    "gatherString": "You gather some wood shavings.",
     "value": 1,
     "isStackable": true,
     "icon": "Shavings",
@@ -423,6 +424,9 @@
       {
         "skill": "Woodworking",
         "skillLevel": 15
+      },
+      {
+        "action": "Woodworking"
       }
     ]
   },
@@ -430,6 +434,7 @@
     "name": "Tough Wood Shavings",
     "description": "A pile of shavings from carving a totem pole. Probably worthless.",
     "value": 1,
+    "gatherString": "You gather some rather tough wood shavings.",
     "isStackable": true,
     "icon": "Shavings",
     "experienceGained": "Woodworking:145",
@@ -438,12 +443,16 @@
       {
         "skill": "Woodworking",
         "skillLevel": 35
+      },
+      {
+        "action": "Woodworking"
       }
     ]
   },
   {
     "name": "Extremely Tough Wood Shavings",
     "description": "A pile of shavings from carving a totem pole. Probably worthless.",
+    "gatherString": "You gather some extremely tough wood shavings.",
     "value": 1,
     "isStackable": true,
     "icon": "Shavings",
@@ -453,6 +462,9 @@
       {
         "skill": "Woodworking",
         "skillLevel": 55
+      },
+      {
+        "action": "Woodworking"
       }
     ]
   }

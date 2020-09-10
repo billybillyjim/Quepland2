@@ -43,7 +43,7 @@ public static class SaveManager
             await SetItemAsync("TanningInfo:" + mode, Compress(GetTanningSave()));
             await SetItemAsync("Dojos:" + mode, GetSaveString(AreaManager.Instance.GetDojoSaveData()));
             await SetItemAsync("AFKAction:" + mode, GetSaveString(GameState.CurrentAFKAction));
-
+            await SetItemAsync("Tomes:" + mode, GetSaveString(ItemManager.Instance.Tomes));
             LastSave = DateTime.UtcNow;
             GameState.IsSaving = false;
         }
@@ -145,6 +145,10 @@ public static class SaveManager
         {
             GameState.LoadAFKActionData(JsonConvert.DeserializeObject<AFKAction>(Decompress(await GetItemAsync<string>("AFKAction:" + mode))));
         }
+        if(await ContainsKeyAsync("Tomes:" + mode))
+        {
+            ItemManager.Instance.Tomes = JsonConvert.DeserializeObject<List<TomeData>>(Decompress(await GetItemAsync<string>("Tomes:" + mode)));
+        }
         //Console.WriteLine(Compress("This is a test of what I can do"));
     }
     public static string GetSaveExport()
@@ -157,7 +161,7 @@ public static class SaveManager
         //2
         file += Compress(GameState.CurrentTick.ToString()) + ",";
         //3
-        file += Compress(DateTime.UtcNow.ToString()) + ",";
+        file += Compress(DateTime.UtcNow.ToString(System.Globalization.CultureInfo.InvariantCulture)) + ",";
         //4
         file += Compress(GetSkillsSave()) + ",";
         //5
@@ -183,7 +187,9 @@ public static class SaveManager
         //15
         file += Compress(JsonConvert.SerializeObject(Bank.Instance.Tabs)) + ",";
         //16
-        file += GetSaveString(AreaManager.Instance.GetDungeonSaveData());
+        file += GetSaveString(AreaManager.Instance.GetDungeonSaveData()) + ",";
+        //17
+        file += GetSaveString(ItemManager.Instance.Tomes);
 
         return file;
     }
@@ -203,14 +209,27 @@ public static class SaveManager
         {
             GameState.CurrentGameMode = GameState.GameType.Ultimate;
         }
-
+        if(data.Length > 1)
+        {
+            Console.WriteLine(Decompress(data[1]));
+        }
         if (data.Length > 2)
         {
             GameState.CurrentTick = int.Parse(Decompress(data[2]));
         }
         if (data.Length > 3)
         {
-            LastSave = DateTime.Parse(Decompress(data[3]));
+            try
+            {
+                LastSave = DateTime.Parse(Decompress(data[3]));
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+                LastSave = DateTime.MinValue;
+            }
+            
         }
         if (data.Length > 4)
         {
@@ -232,6 +251,7 @@ public static class SaveManager
         if (data.Length > 6)
         {
             Bank.Instance.Inventory.Clear();
+            Console.WriteLine(Decompress(data[6]));
             Bank.Instance.Inventory.LoadData(Decompress(data[6]));
         }
         if (data.Length > 7)
@@ -248,43 +268,35 @@ public static class SaveManager
         }
         if (data.Length > 10)
         {
-            Console.WriteLine("Loading GameState Data:");
             GameState.LoadSaveData(JsonConvert.DeserializeObject<GameStateSaveData>(Decompress(data[10])));
         }
         if (data.Length > 11)
         {
-            Console.WriteLine("Loading Player Data:");
             Player.Instance.LoadSaveData(JsonConvert.DeserializeObject<PlayerSaveData>(Decompress(data[11])));           
         }
         if (data.Length > 12)
         {
-            Console.WriteLine("Loading Follower Data:");
             FollowerManager.Instance.LoadSaveData(Decompress(data[12]));
         }
         if (data.Length > 13)
         {
-            Console.WriteLine("Loading Tanning Data");
-            Console.WriteLine(Decompress(data[13]));
             AreaManager.Instance.LoadTanningSave(JsonConvert.DeserializeObject<List<TanningSaveData>>(Decompress(data[13])));
         }
         if (data.Length > 14)
         {
-            Console.WriteLine("Loading Dojo Data");
-            Console.WriteLine(Decompress(data[14]));
             AreaManager.Instance.LoadDojoSaveData(JsonConvert.DeserializeObject<List<DojoSaveData>>(Decompress(data[14])));
         }
         if (data.Length > 15)
         {
-            Console.WriteLine("Loading Tab Data");
-            Console.WriteLine(Decompress(data[15]));
             Bank.Instance.LoadTabs(DeserializeToList(Decompress(data[15])));
         }
         if(data.Length > 16)
         {
-            Console.WriteLine("Loading Dungeon Data");
-            Console.WriteLine(Decompress(data[16]));
             AreaManager.Instance.LoadDungeonSaveData(JsonConvert.DeserializeObject<List<DungeonSaveData>>(Decompress(data[16])));
-
+        }
+        if(data.Length > 17)
+        {
+            ItemManager.Instance.Tomes = JsonConvert.DeserializeObject<List<TomeData>>(Decompress(data[17]));
         }
     }
     public static string GetItemSave(Inventory i)
@@ -346,8 +358,7 @@ public static class SaveManager
             var len = BitConverter.GetBytes(bytes.Length);
             stream.Write(len, 0, 4);
             using (var compressionStream = new GZipStream(stream, CompressionMode.Compress))
-            {
-                
+            {               
                 compressionStream.Write(bytes, 0, bytes.Length);
             }
             return Convert.ToBase64String(stream.ToArray());
@@ -359,7 +370,6 @@ public static class SaveManager
         {
             return "";
         }
-        Console.WriteLine(s);
         using (var source = new MemoryStream(Convert.FromBase64String(s)))
         {
             byte[] len = new byte[4];

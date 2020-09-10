@@ -15,10 +15,10 @@
 ">
     @if (Item != null && !HideValue)
     {
-        <div style="font-weight:bold;"  onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.GetRequirementTooltip(true))))"
-                                                      onmouseout="@(new Action(() => GameState.HideTooltip()))">
-        <img src="data/Images/@(GetLock())" style="height:20px;width:20px;cursor:pointer;margin:-7px 2px -3px -3px;border-radius:0.25rem;@GetLockStyle()" 
-             @onclick="@(() => ToggleLock())"/>
+        <div style="font-weight:bold;" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.GetRequirementTooltip(true))))"
+             onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            <img src="data/Images/@(GetLock())" style="height:20px;width:20px;cursor:pointer;margin:-7px 2px -3px -3px;border-radius:0.25rem;@GetLockStyle()"
+                 @onclick="@(() => ToggleLock())" />
             @Item.Name
         </div>
         <div style="position:relative;line-height:18px;margin-top:-2px;margin-right:80px;">@Item.Description</div>
@@ -32,17 +32,20 @@
             else if (Item.ArmorInfo != null && Item.HasArmorRequirements())
             {
                 <div class="item-view-button">
-                <button class="btn btn-light" @onclick="@(() => Equip())">Equip</button></div>
+                    <button class="btn btn-light" @onclick="@(() => Equip())">Equip</button>
+                </div>
             }
             else if (Item.WeaponInfo != null && Item.HasWeaponRequirements())
             {
                 <div class="item-view-button">
-                <button class="btn btn-light"  @onclick="@(() => Equip())">Equip</button></div>
+                    <button class="btn btn-light" @onclick="@(() => Equip())">Equip</button>
+                </div>
             }
             else if (Item.HasRequirements() && Item.HasArmorRequirements() == false && Item.HasWeaponRequirements() == false)
             {
                 <div class="item-view-button">
-                <button class="btn btn-light" @onclick="@(() => Equip())" >Equip</button></div>
+                    <button class="btn btn-light" @onclick="@(() => Equip())">Equip</button>
+                </div>
 
             }
             else
@@ -85,6 +88,19 @@
 
 
         }
+        @if (Item.IsTome)
+        {
+            @if (GameState.CurrentTome == Item.Category)
+            {
+                <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => CloseTome())">Close</button></div>
+
+            }
+            else
+            {
+                <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => OpenTome())">Open</button></div>
+
+            }
+        }
         @if (Item.FoodInfo != null)
         {
             <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => EatItem())">Eat</button></div>
@@ -97,18 +113,18 @@
             if (ItemManager.Instance.GetUnpackingRecipe(Item).HasSpace())
             {
                 <div class="item-view-button">
-                    @if(GameState.CurrentRecipe == ItemManager.Instance.GetUnpackingRecipe(Item))
+                    @if (GameState.CurrentRecipe == ItemManager.Instance.GetUnpackingRecipe(Item))
                     {
-                    <div style="position:relative;">
-                        <div class="progress" style="position:absolute;top:0px;width:100%;height:5px;border-radius:0.25rem;z-index:3;">
-                            <div class="progress-bar" style="@GetProgress()"></div>
+                        <div style="position:relative;">
+                            <div class="progress" style="position:absolute;top:0px;width:100%;height:5px;border-radius:0.25rem;z-index:3;">
+                                <div class="progress-bar" style="@GetProgress()"></div>
+                            </div>
                         </div>
-                    </div>
                     }
-                    <button class="btn btn-light"                                                    
-                     @onclick="@(() => GameState.SetCraftingItem(ItemManager.Instance.GetUnpackingRecipe(Item)))">
-                    @ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString
-                        </button>
+                    <button class="btn btn-light"
+                            @onclick="@(() => GameState.SetCraftingItem(ItemManager.Instance.GetUnpackingRecipe(Item)))">
+                        @ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString
+                    </button>
                 </div>
 
             }
@@ -250,6 +266,16 @@
             ClearItem();
         }
         GameState.UpdateState();
+    }
+    private void OpenTome()
+    {
+        GameState.ShowTome = true;
+        GameState.CurrentTome = Item.Category;
+    }
+    private void CloseTome()
+    {
+        GameState.ShowTome = false;
+        GameState.CurrentTome = "None";
     }
     private void Equip()
     {

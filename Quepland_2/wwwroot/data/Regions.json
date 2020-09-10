@@ -145,5 +145,14 @@
       "Ufagari Village",
       "Ufagari Fields"
     ]
+  },
+  {
+    "name": "Castle Nid",
+    "areaNames": [
+      "Castle Nid",
+      "West Wing",
+      "Cathedra",
+      "Athenaeum"
+    ]
   }
 ]

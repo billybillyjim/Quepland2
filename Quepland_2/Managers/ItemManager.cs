@@ -176,7 +176,17 @@ public class ItemManager
     {
         return UniqueIDLookupDic[name + "" + charges + parameter];
     }
-
+    public TomeData GetTomeDataForCategory(string category)
+    {
+        TomeData data = Tomes.FirstOrDefault(x => x.Category == category);
+        if(data != null)
+        {
+            return data;
+        }
+        data = new TomeData(category);
+        Tomes.Add(data);
+        return data;
+    }
     public GameItem GetCopyOfItem(string name)
     {
         return GetItemByName(name).Copy();
@@ -304,6 +314,18 @@ public class ItemManager
     {   
         if(s != null)
         {
+            if(s.Name == "Strength")
+            {
+                s = Player.Instance.Skills.FirstOrDefault(x => x.Name == "Swordsmanship");
+            }
+            if(s.Name == "Deftness")
+            {
+                s = Player.Instance.Skills.FirstOrDefault(x => x.Name == "Knifesmanship");
+            }
+            if(s.Name == "Artisan")
+            {
+                s = Player.Instance.Skills.FirstOrDefault(x => x.Name == "Woodworking");
+            }
             foreach (GameItem item in Items)
             {
                 if (item.GetRequiredSkills().Contains(s.Name) && random.Next(0, 10) > 8)

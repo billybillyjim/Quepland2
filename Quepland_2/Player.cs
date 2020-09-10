@@ -587,7 +587,7 @@ public class Player
     private void CalculateMaxHP()
     {
         int hp = 50;
-        for(int i = 0; i < GetLevel("HP"); i++)
+        for(int i = 1; i < GetLevel("HP"); i++)
         {
             if(i % 5 == 0)
             {
@@ -600,7 +600,7 @@ public class Player
     private void CalculateInventorySpaces()
     {
         int spaces = 30;
-        for(int i = 0; i < GetLevel("Strength"); i++)
+        for(int i = 1; i < GetLevel("Strength"); i++)
         {
             if(i % 10 == 0)
             {

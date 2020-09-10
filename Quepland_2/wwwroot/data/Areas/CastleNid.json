@@ -1,0 +1,75 @@
+[
+  {
+    "name": "Castle Nid",
+    "id": 140,
+    "image": "Castle",
+    "description": "It's impossible to tell if the castle was built from the ground up or downwards from the roots above. The halls are empty and whoever used to live here does not appear to live here any more. Here and there an echoing footstep of a root dweller can be heard down a hallway. Each way forward is blocked off. The floor is missing to the left, the way straight ahead has crumbled, and the way to the right is barracaded shut.",
+    "areaURL": "CastleNid",
+    "unlockableAreas": [
+      {
+        "areaURL": "WestWing",
+        "buttonText": "Jump the left gap",
+        "requirements": [
+          {
+            "skill": "Deftness",
+            "skillLevel": 75
+          }
+        ]
+      },
+      {
+        "areaURL": "Cathedra",
+        "buttonText": "Dig your way forward",
+        "requirements": [
+          {
+            "skill": "Mining",
+            "skillLevel": 70
+          },
+          {
+            "action": "Mining"
+          }
+        ]
+      },
+      {
+        "areaURL": "Athenaeum",
+        "buttonText": "Cut the wooden barricade",
+        "requirements": [
+          {
+            "skill": "Woodcutting",
+            "skillLevel": 70
+          },
+          {
+            "action": "Woodcutting"
+          }
+        ]
+      }
+
+    ]
+  },
+  {
+    "name": "West Wing",
+    "id": 140,
+    "image": "Hallway",
+    "description": "This part of the castle is detached from the rest, and appears to be still in use. You turn a corner and meet a strange metallic being, apparently patrolling the halls.",
+    "areaURL": "WestWing",
+    "npcs": [
+      "Companion"
+    ]
+  },
+  {
+    "name": "Cathedra",
+    "id": 140,
+    "image": "Throne",
+    "description": "The throne room lies dark and dusty. Whatever valuables the room contained have long since been taken. All that remains is a great curtain draping the back wall, its vibrant red dulled with dust and age.",
+    "areaURL": "Cathedra"
+  },
+  {
+    "name": "Athenaeum",
+    "id": 140,
+    "image": "Books",
+    "description": "The expansive library must have once held many books. Now it is home to many creatures, some of which you might be able to catch in a trap. In one corner of the room a soft light glows. It appears someone has made the library their home.",
+    "areaURL": "Athenaeum",
+    "npcs": [
+      "Stogkro"
+    ]
+  }
+]
