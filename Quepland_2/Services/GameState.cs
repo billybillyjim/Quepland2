@@ -26,7 +26,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.9";
+    public static string Version { get; set; } = "1.0.10";
     public static List<Update> Updates { get; set; } = new List<Update>();
     //public static Pluralizer Pluralizer = new Pluralizer();
 
@@ -1021,6 +1021,7 @@ using System.Threading.Tasks;
             {
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.StackTrace);
+                
             }
         }
 

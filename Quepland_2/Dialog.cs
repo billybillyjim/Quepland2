@@ -72,7 +72,7 @@ public class Dialog
 		}
 		if (ItemOnTalk != "None")
 		{
-			if (Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItemByName(ItemOnTalk)) == false)
+			if (Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItemByName(ItemOnTalk).Copy()) == false)
 			{
 				MessageManager.AddMessage("Your inventory is full! Come back after you store something in your bank.", "red");
 				return;

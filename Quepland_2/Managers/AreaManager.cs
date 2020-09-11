@@ -22,6 +22,7 @@ public class AreaManager
         }
     }
     public List<Area> Areas = new List<Area>();
+    public List<Building> Buildings = new List<Building>();
     public List<Region> Regions = new List<Region>();
     public List<Land> Lands = new List<Land>();
     public List<Dungeon> Dungeons = new List<Dungeon>();
@@ -37,7 +38,7 @@ public class AreaManager
             Areas.AddRange(await Http.GetFromJsonAsync<Area[]>("data/Areas/" + region.Name.RemoveWhitespace() + ".json"));
             GameState.GameLoadProgress++;
         }
-        /*List<string> UsedNPCs = new List<string>();
+        List<string> UsedNPCs = new List<string>();
         foreach(Area a in Areas)
         {
             foreach(Building b in a.Buildings)
@@ -47,33 +48,12 @@ public class AreaManager
                 {
                     AFKActions.AddRange(b.AFKActions);
                 }
-                foreach (string npc in b.NPCs)
-                {
-                    if (UsedNPCs.Contains(npc) == false)
-                    {
-                        UsedNPCs.Add(npc);
-
-                    }
-                }
             }
             if(a.AFKActions.Count > 0)
             {
                 AFKActions.AddRange(a.AFKActions);
             }
-            foreach (string npc in a.NPCs)
-            {
-                if (UsedNPCs.Contains(npc) == false)
-                {
-                    UsedNPCs.Add(npc);
-
-                }
-            }
         }
-        foreach(string s in UsedNPCs)
-        {
-            Console.WriteLine("NPC included:" + s);
-        }
-        Console.WriteLine("Used NPC Count:" + UsedNPCs.Count);
         
         var query = Areas.GroupBy(x => x.ID).Where(g => g.Count() > 1).Select(y => y.Key).ToList();
         foreach(int val in query)
@@ -82,7 +62,7 @@ public class AreaManager
             Console.WriteLine("Areas contain duplicate ID:" + val);
             Console.ForegroundColor = ConsoleColor.Black;
         }
-        */
+        
         Lands.AddRange(await Http.GetFromJsonAsync<Land[]>("data/Lands.json"));
         GameState.GameLoadProgress++;
         Dungeons.AddRange(await Http.GetFromJsonAsync<Dungeon[]>("data/Dungeons/QueplandDungeons.json"));
@@ -193,34 +173,31 @@ public class AreaManager
     public List<TanningSaveData> GetTanningSaveData()
     {
         List<TanningSaveData> data = new List<TanningSaveData>();
-        foreach(Area a in Areas)
+
+        foreach (Building b in Buildings)
         {
-            foreach (Building b in a.Buildings)
+            if (b.TanningSlots.Count > 0)
             {
-                if (b.TanningSlots.Count > 0)
+                foreach (TanningSlot slot in b.TanningSlots)
                 {
-                    foreach (TanningSlot slot in b.TanningSlots)
-                    {
-                        TanningSaveData d = slot.GetSaveData();
-                        d.BuildingName = b.Name;
-                        data.Add(d);
-                    }
+                    TanningSaveData d = slot.GetSaveData();
+                    d.BuildingName = b.Name;
+                    data.Add(d);
                 }
             }
-
         }
+        
 
         return data;
     }
     public void LoadTanningSave(List<TanningSaveData> data)
     {
-        foreach(Area a in Areas)
+
+        foreach (Building b in Buildings)
         {
-            foreach (Building b in a.Buildings)
-            {
-                b.LoadedTanningSlotsIterator = 0;
-            }
+            b.LoadedTanningSlotsIterator = 0;
         }
+        
 
         foreach(TanningSaveData d in data)
         {
@@ -296,7 +273,12 @@ public class AreaManager
     }
     public AFKAction GetAFKActionByUniqueID(string id)
     {
-        return AFKActions.FirstOrDefault(x => x.UniqueID == id);
+        AFKAction action = AFKActions.FirstOrDefault(x => x.UniqueID == id);
+        if(action == null)
+        {
+            Console.WriteLine("Action with unique id:" + id + " was not found.");
+        }
+        return action;
     }
 }
 

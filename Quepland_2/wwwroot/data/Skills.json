@@ -7,32 +7,32 @@
   {
     "name": "Knifesmanship",
     "level": 1,
-    "description": "Knifesmanship is your ability to use all kinds of knives as weapons. Knives are the fastest weapons you can wield, but also the weakest. They tend to be good for killing weak things quickly, and rely entirely on your deftness to deal damage."
+    "description": "Knifesmanship is your ability to use all kinds of knives as weapons. Knives are the fastest weapons you can wield, but also the weakest. They tend to be good for killing weak things quickly."
   },
   {
     "name": "Swordsmanship",
     "level": 1,
-    "description": "Swordsmanship is your ability to wield swords. Swords are slower than knives, but quite a bit stronger. They have well-rounded stats that deal decent damage at reasonable speeds. The use both strength and deftness to deal damage."
+    "description": "Swordsmanship is your ability to wield swords. Swords are slower than knives, but quite a bit stronger. They have well-rounded stats that deal decent damage at reasonable speeds."
   },
   {
     "name": "Axemanship",
     "level": 1,
-    "description": "Axemanship is your ability to use axes in combat. They are slower than swords or knives, but faster than hammers. Some enemies are exceptionally weak to axes. They use both strength and deftness to deal damage."
+    "description": "Axemanship is your ability to use axes in combat. They are slower than swords or knives, but faster than hammers. Some enemies are exceptionally weak to axes."
   },
   {
     "name": "Hammermanship",
     "level": 1,
-    "description": "Hammermanship is your ability to swing hammers properly in combat. Hammers are the slowest weapon type you can wield, but also the strongest. They rely heavily on your strength level to function properly."
+    "description": "Hammermanship is your ability to swing hammers properly in combat. Hammers are the slowest weapon type you can wield, but also the strongest."
   },
   {
     "name": "Deftness",
     "level": 1,
-    "description": "Deftness is the speed at which you use weapons. Knives, swords, and axes all use deftness in calculating damage dealt and grant deftness experience when you battle with them, but knives and swords are more reliant on it."
+    "description": "Deftness is the speed at which you use weapons. Knives, swords, and axes all grant deftness experience when you battle with them. Deftness will slightly increase your attack speed."
   },
   {
     "name": "Strength",
     "level": 1,
-    "description": "Strength is the power with which you use weapons. Swords, axes, and hammers all use strength when calculating your damage dealt and grant strength experience when you battle with them, but axes and hammers are more reliant on it. Every level also increases your inventory capacity by 1, and every 10th level by 5."
+    "description": "Strength is the power with which you use weapons. All weapons use strength when calculating your damage dealt but only swords, axes, and hammers grant strength experience when you battle with them. Every level also increases your inventory capacity by 1, and every 10th level by 2."
   },
   {
     "name": "Archery",

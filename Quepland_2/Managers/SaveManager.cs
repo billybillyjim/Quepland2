@@ -42,6 +42,8 @@ public static class SaveManager
             await SetItemAsync("Followers:" + mode, Compress(FollowerManager.Instance.GetSaveData()));
             await SetItemAsync("TanningInfo:" + mode, Compress(GetTanningSave()));
             await SetItemAsync("Dojos:" + mode, GetSaveString(AreaManager.Instance.GetDojoSaveData()));
+            Console.WriteLine(GetSaveString(GameState.CurrentAFKAction));
+            Console.WriteLine(JsonConvert.SerializeObject(GameState.CurrentAFKAction));
             await SetItemAsync("AFKAction:" + mode, GetSaveString(GameState.CurrentAFKAction));
             await SetItemAsync("Tomes:" + mode, GetSaveString(ItemManager.Instance.Tomes));
             LastSave = DateTime.UtcNow;
@@ -251,7 +253,6 @@ public static class SaveManager
         if (data.Length > 6)
         {
             Bank.Instance.Inventory.Clear();
-            Console.WriteLine(Decompress(data[6]));
             Bank.Instance.Inventory.LoadData(Decompress(data[6]));
         }
         if (data.Length > 7)
@@ -276,6 +277,7 @@ public static class SaveManager
         }
         if (data.Length > 12)
         {
+            Console.WriteLine(Decompress(data[12]));
             FollowerManager.Instance.LoadSaveData(Decompress(data[12]));
         }
         if (data.Length > 13)

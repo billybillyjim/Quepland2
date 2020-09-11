@@ -21,7 +21,7 @@ public class DropTable
             return null;
         }
         int size = Drops.Select(x => x.Weight).Sum();
-        int roll = rand.Next(0, size);
+        int roll = rand.Next(0, size + 1);
         foreach(Drop drop in Drops)
         {
             if(roll <= drop.Weight)
@@ -42,7 +42,7 @@ public class DropTable
             return null;
         }
         int size = Drops.Select(x => x.Weight).Sum();
-        int roll = rand.Next(0, size);
+        int roll = rand.Next(0, size + 1);
         foreach (Drop drop in Drops)
         {
             if (roll <= drop.Weight)

@@ -48,7 +48,7 @@
   {
     "name": "West Wing",
     "id": 140,
-    "image": "Hallway",
+    "image": "Door",
     "description": "This part of the castle is detached from the rest, and appears to be still in use. You turn a corner and meet a strange metallic being, apparently patrolling the halls.",
     "areaURL": "WestWing",
     "npcs": [

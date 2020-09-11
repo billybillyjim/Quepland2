@@ -134,6 +134,13 @@
     ],
     "npcs": [
       "Pumpy the Gnome"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "CastleNid",
+        "buttonText": "Go to the castle"
+      }
+
     ]
   }
 

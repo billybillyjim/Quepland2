@@ -141,6 +141,13 @@
                 RelevantRecipes.Add(r);
             }
         }
+        foreach(Recipe r in ItemManager.Instance.SmithingRecipes)
+        {
+            if (r.GetRequiredSkills().Contains(activeMenu) && r.OutputItemName.Contains("Molten") == false && r.OutputItemName.Contains("Frozen") == false)
+            {
+                RelevantRecipes.Add(r);
+            }
+        }
         RelevantItems = RelevantItems.OrderBy(x => x.GetRequirementForSkill(activeMenu)).ToList();
         RelevantRecipes = RelevantRecipes.OrderBy(x => x.GetRequirementForSkill(activeMenu)).ToList();
     }

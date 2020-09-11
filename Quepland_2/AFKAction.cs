@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class AFKAction
 {
-	public int ExpPerHour { get; set; }
-	public int BonusExp { get; set; }
+    public int ExpPerHour { get; set; } = 0;
+    public int BonusExp { get; set; } = 0;
 	public string SkillTrained { get; set; } = "None";
 	public string ButtonText { get; set; } = "None";
 	public List<Requirement> Requirements { get; set; } = new List<Requirement>();

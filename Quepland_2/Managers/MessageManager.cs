@@ -10,14 +10,19 @@ public static class MessageManager
     private static List<Message> Messages = new List<Message>();
     private static string lastMessage;
     private static int repeatMessageCount = 1;
+    public static string CurrentTag = "All";
 
     public static void AddMessage(string message)
     {
-        AddMessage(message, "white");
+        AddMessage(message, "white", "All");
     }
-    public static void AddMessage(string newMessageString, string color)
+    public static void AddMessage(string message, string color)
     {
-        Message newMessage = new Message(newMessageString, color);
+        AddMessage(message, color, "All");
+    }
+    public static void AddMessage(string newMessageString, string color, string tag)
+    {
+        Message newMessage = new Message(newMessageString, color, tag);
         if(Messages.Count > 0)
         {
             Messages.Last().Style = "";
@@ -46,11 +51,19 @@ public static class MessageManager
     }
     public static List<Message> GetMessages()
     {
-        return Messages;
+        if(CurrentTag == "All")
+        {
+            return Messages;
+        }
+        return Messages.Where(x => x.Tag == CurrentTag).ToList();
     }
     public static List<Message> GetReversedMessages()
     {
-        return Messages.Reverse<Message>().ToList();
+        if (CurrentTag == "All")
+        {
+            return Messages.Reverse<Message>().ToList();
+        }
+        return Messages.Where(x => x.Tag == CurrentTag).Reverse<Message>().ToList();
     }
 }
 

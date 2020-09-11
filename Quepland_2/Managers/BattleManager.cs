@@ -147,12 +147,12 @@ public class BattleManager
                             {
                                 if(drop.Amount > 1)
                                 {
-                                    MessageManager.AddMessage("You defeated the " + opponent.Name + ". It dropped " + drop.Amount + " " + drop.Item.GetPlural());
+                                    MessageManager.AddMessage("You defeated the " + opponent.Name + ". It dropped " + drop.Amount + " " + drop.Item.GetPlural(), "white", "Loot");
 
                                 }
                                 else
                                 {
-                                    MessageManager.AddMessage("You defeated the " + opponent.Name + ". It dropped 1 " + drop.ToString());
+                                    MessageManager.AddMessage("You defeated the " + opponent.Name + ". It dropped 1 " + drop.ToString(), "white", "Loot");
 
                                 }
                                 if (drop.Item != null && drop.Item.Category == "QuestItems" && (Player.Instance.Inventory.HasItem(drop.Item) || Bank.Instance.Inventory.HasItem(drop.Item)))

@@ -5,7 +5,7 @@
     "description": "A gemstone, you're not sure what it is though.",
     "icon": "UncutGem",
     "gatherString": "You found a gemstone!",
-    "gatherSpeed": 50,
+    "gatherSpeed": 80,
     "requirements": [
       {
         "skill": "Mining",

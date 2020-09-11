@@ -9,13 +9,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 5
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 1
-      }
-    ]
+    }
   },
   {
     "name": "Tin Bar",
@@ -29,13 +23,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 15
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 4
-      }
-    ]
+    }
   },
   {
     "name": "Zinc Bar",
@@ -47,13 +35,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 25
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 15
-      }
-    ]
+    }
   },
   {
     "name": "Brass Bar",
@@ -65,13 +47,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 35
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 25
-      }
-    ]
+    }
   },
   {
     "name": "Bronze Bar",
@@ -83,13 +59,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 45
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 30
-      }
-    ]
+    }
   },
   {
     "name": "Nickel Bar",
@@ -101,13 +71,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 65
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 35
-      }
-    ]
+    }
   },
   {
     "name": "Silver Bar",
@@ -119,13 +83,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 90
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 40
-      }
-    ]
+    }
   },
   {
     "name": "Iron Bar",
@@ -137,13 +95,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 55
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 45
-      }
-    ]
+    }
   },
   {
     "name": "Lead Bar",
@@ -155,13 +107,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 75
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 55
-      }
-    ]
+    }
   },
   {
     "name": "Bucket of Mercury",
@@ -172,13 +118,7 @@
     "icon": "Bucket",
     "alchemyInfo": {
       "queplarValue": 85
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 60
-      }
-    ]
+    }
   },
   {
     "name": "Aluminum Bar",
@@ -190,13 +130,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 105
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 75
-      }
-    ]
+    }
   },
   {
     "name": "Gold Bar",
@@ -208,13 +142,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 125
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 85
-      }
-    ]
+    }
   },
   {
     "name": "Steel Bar",
@@ -226,13 +154,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 115
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 75
-      }
-    ]
+    }
   },
   {
     "name": "Platinum Bar",
@@ -244,13 +166,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 135
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 93
-      }
-    ]
+    }
   },
   {
     "name": "Strongtium Bar",
@@ -262,13 +178,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 155
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 99
-      }
-    ]
+    }
   },
   {
     "name": "Sahotite Bar",
@@ -280,13 +190,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 175
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 110
-      }
-    ]
+    }
   },
   {
     "name": "Plastinium Bar",
@@ -298,13 +202,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 195
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 122
-      }
-    ]
+    }
   },
   {
     "name": "Queplinium Bar",
@@ -316,13 +214,7 @@
     "icon": "Bar",
     "alchemyInfo": {
       "queplarValue": 205
-    },
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 130
-      }
-    ]
+    }
   },
   {
     "name": "Molten Copper Bar",
@@ -331,13 +223,7 @@
     "value": 50,
     "gatherSpeed": 15,
     "secondaryColor": "#B87333",
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 1
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Molten Tin Bar",
@@ -348,13 +234,7 @@
     "secondaryColor": "#D3D4D5",
     "requiredLevel": 4,
     "requiredAction": "Smithing",
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 4
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Molten Zinc Bar",
@@ -363,13 +243,7 @@
     "secondaryColor": "#9E9EA0",
     "value": 70,
     "gatherSpeed": 20,
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 15
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Molten Brass Bar",
@@ -378,13 +252,7 @@
     "value": 90,
     "gatherSpeed": 25,
     "secondaryColor": "#B5A642",
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 25
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Molten Bronze Bar",
@@ -393,13 +261,7 @@
     "value": 110,
     "gatherSpeed": 30,
     "secondaryColor": "#CD7F32",
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 30
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Molten Nickel Bar",
@@ -408,13 +270,7 @@
     "secondaryColor": "#A9A69B",
     "value": 150,
     "gatherSpeed": 35,
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 35
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Molten Silver Bar",
@@ -423,13 +279,7 @@
     "secondaryColor": "#999999",
     "value": 250,
     "gatherSpeed": 40,
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 40
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Molten Iron Bar",
@@ -438,13 +288,7 @@
     "secondaryColor": "#434341",
     "value": 190,
     "gatherSpeed": 45,
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 45
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Molten Lead Bar",
@@ -453,13 +297,7 @@
     "secondaryColor": "#C0C0C0",
     "value": 190,
     "gatherSpeed": 55,
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 55
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Frozen Mercury Bar",
@@ -467,13 +305,7 @@
     "gatherString": "You cool the mercury into a bar.",
     "value": 240,
     "gatherSpeed": 55,
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 60
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Molten Aluminum Bar",
@@ -482,13 +314,7 @@
     "value": 270,
     "gatherSpeed": 40,
     "secondaryColor": "#F1F3F0",
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 75
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Molten Gold Bar",
@@ -497,13 +323,7 @@
     "secondaryColor": "#FFD700",
     "value": 1000,
     "gatherSpeed": 45,
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 85
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Molten Steel Bar",
@@ -512,13 +332,7 @@
     "secondaryColor": "#9DC6E8",
     "value": 400,
     "gatherSpeed": 50,
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 75
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Molten Platinum Bar",
@@ -527,13 +341,7 @@
     "secondaryColor": "#E5E4E2",
     "value": 1800,
     "gatherSpeed": 50,
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 93
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Molten Strongtium Bar",
@@ -542,13 +350,7 @@
     "value": 2500,
     "gatherSpeed": 50,
     "secondaryColor": "#AF7979",
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 99
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Frozen Sahotite Bar",
@@ -557,13 +359,7 @@
     "value": 3000,
     "gatherSpeed": 70,
     "secondaryColor": "#C3D3F3",
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 110
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Molten Plastinium Bar",
@@ -572,13 +368,7 @@
     "value": 5000,
     "gatherSpeed": 90,
     "secondaryColor": "#718A94",
-    "icon": "MoltenBar",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 122
-      }
-    ]
+    "icon": "MoltenBar"
   },
   {
     "name": "Molten Queplinium Bar",
@@ -587,12 +377,6 @@
     "value": 8000,
     "gatherSpeed": 110,
     "icon": "MoltenBar",
-    "secondaryColor": "#B787DC",
-    "requirements": [
-      {
-        "skill": "Smithing",
-        "skillLevel": 130
-      }
-    ]
+    "secondaryColor": "#B787DC"
   }
 ]

@@ -153,6 +153,7 @@ else if (mineType == "Depths")
     private string mineType = "";
     private Random rand = new Random();
     private DropTable CurrentTable;
+    private Drop nextDrop;
     private int caveDepth;
     public bool isMining;
     private int ticksToNextGather;
@@ -197,7 +198,7 @@ else if (mineType == "Depths")
     public void GetGem()
     {
         CurrentTable = ItemManager.Instance.GetMinigameDropTable("Gem Mine " + mineType).DropTable;
-        GameState.CurrentGatherItem = CurrentTable.GetDrop().Item;
+        nextDrop = CurrentTable.GetDrop();
         ticksToNextGather = GameState.GetTicksToNextGather(ItemManager.Instance.GetItemByName("Gem Mine Gem"), ItemManager.Instance.GetItemByName("Gem Mine Gem").GatherSpeed + Math.Max(0, 105 - (Player.Instance.GetLevel("Mining")))).ToGaussianRandom();
         GameState.TicksToNextAction = ticksToNextGather;
         double roll = rand.NextDouble();
@@ -274,7 +275,7 @@ else if (mineType == "Depths")
             }
             else
             {
-                if (Player.Instance.Inventory.AddItem(GameState.CurrentGatherItem))
+                if (Player.Instance.Inventory.AddDrop(nextDrop))
                 {
                     Player.Instance.GainExperience("Mining", 100);
                     GetGem();

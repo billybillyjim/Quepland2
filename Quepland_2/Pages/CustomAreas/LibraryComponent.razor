@@ -64,9 +64,10 @@
     {
         StopReading();
         FoundBooks.Clear();
+        List<Skill> skills = Player.Instance.Skills.Where(x => x.Name != "Strength" && x.Name != "Deftness" && x.Name != "Artisan").ToList();
         for (int i = 0; i < 3; i++)
         {
-            FoundBooks.Add(new Book(Player.Instance.Skills[random.Next(0, Player.Instance.Skills.Count)], random.Next(0,5), random.Next(-50,50)));
+            FoundBooks.Add(new Book(skills[random.Next(0, skills.Count)], random.Next(0,5), random.Next(-50,50)));
         }
     }
     private void Read(Book book)
@@ -75,7 +76,7 @@
         GameState.StopActions();
         GameState.NewBook = book;
         IsReading = true;
-        GameState.TicksToNextAction = (int)Math.Max(60, ((1 + book.Difficulty * 5d) / (Player.Instance.GetLevel(book.Skill.Name)) * 60));
+        GameState.TicksToNextAction = (int)Math.Max(150, ((1 + book.Difficulty * 5d) / (Player.Instance.GetLevel(book.Skill.Name)) * 150));
         GameState.UpdateState();
     }
     private void StopReading()
@@ -88,7 +89,7 @@
     {
         if(GameState.CurrentBook != null)
         {
-            return "width:" + (100 - ((double)GameState.TicksToNextAction / Math.Max(60, ((1 + GameState.CurrentBook.Difficulty * 5d) / (Player.Instance.GetLevel(GameState.CurrentBook.Skill.Name)) * 60))) * 100d) + "%";
+            return "width:" + (100 - ((double)GameState.TicksToNextAction / Math.Max(150, ((1 + GameState.CurrentBook.Difficulty * 5d) / (Player.Instance.GetLevel(GameState.CurrentBook.Skill.Name)) * 150))) * 100d) + "%";
             
         }
         return "width:" + (100 - ((double)GameState.TicksToNextAction / 60d) * 100d) + "%";

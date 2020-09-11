@@ -538,12 +538,17 @@ public class Player
         List<string> equipped = new List<string>();
         try
         {
-            equipped = equippedItems.Select(x => x.Name).ToList();
+            if(equippedItems.Count > 0) 
+            {
+                equipped = equippedItems.Select(x => x.Name).ToList();
+            }
+            
         }
         catch(Exception e)
         {
             Console.WriteLine(e.Message);
-            Console.WriteLine(e.StackTrace);      
+            Console.WriteLine(e.StackTrace);
+            Console.WriteLine("Failed to set equipped items list.");
         }
         return new PlayerSaveData {
             ActiveFollowerName = CurrentFollower?.Name ?? "None",
@@ -568,6 +573,10 @@ public class Player
         CalculateInventorySpaces();
         try
         {
+            if(data.EquippedItems.Count == 0)
+            {
+                return;
+            }
             foreach (string s in data.EquippedItems)
             {
                 if (s != null && s.Length > 1)

@@ -1,5 +1,16 @@
 [
   {
+    "versionNumber": "1.0.10",
+    "updates": [
+      "Fixed some skill descriptions to be more accurate to the actual game mechanics.",
+      "The library is now quite a bit slower.",
+      "The gem mine is now a bit slower and works properly.",
+      "The drop rates on many rare items are now much better, they were accidentally a bit lower than they were supposed to be.",
+      "Added a simple message filter for loot. Let me know what else can be added to the list and if there are any loot drops that aren't showing up in the loot tab.",
+      "The bank should now render 10 rows of items regardless of the view width, and it will show the bottom row as expected."
+    ]
+  },
+  {
     "versionNumber": "1.0.9",
     "updates": [
       "Carving a totem now requires a wood carving tool.",
@@ -8,7 +19,7 @@
       "Fixed a bug in HP and inventory calculations on load. Your inventory or HP may be over the limit when you load the game today.",
       "Fixed a bug that sometimes let players gain experience instantly at the gym.",
       "You can no longer train Strength or Deftness at the library. This is mostly because it doesn't make sense. If there's strong pushback to this change I'm not opposed to reverting it, strange as it is.",
-      "You can now get your hands on a Tome of Logs. It will take you to the location to harvest any logs you want, assuming you've gathered them before and been to the location.",
+      "You can now get your hands on a Tome of Logs in the Castle Nid in Koncave City. It will take you to the location to harvest any logs you want, assuming you've gathered them before and been to the location.",
       "After finding a number of bugs with lock saving, I think they finally should save even with equipped items. Please let me know if they are somehow still broken for you.",
       "Fixed a typo in Houchou Dojo"
     ]

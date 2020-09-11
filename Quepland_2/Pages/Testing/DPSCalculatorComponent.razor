@@ -49,6 +49,9 @@
         <br />
         <div style="position:relative;width:400px;height:200px">
             <div>
+                HP:<input @bind-value="@Player.Instance.Skills.Find(x => x.Name == "HP").Level" />
+            </div>
+            <div>
                 Strength:<input @bind-value="@Player.Instance.Skills.Find(x => x.Name == "Strength").Level" />
             </div>
             <div>
