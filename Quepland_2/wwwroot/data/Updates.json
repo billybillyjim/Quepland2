@@ -3,11 +3,13 @@
     "versionNumber": "1.0.10",
     "updates": [
       "Fixed some skill descriptions to be more accurate to the actual game mechanics.",
-      "The library is now quite a bit slower.",
+      "The library is now quite a bit slower and worse. I try to avoid nerfing things but it seems like it was the best way to train far too many skills, instead of being an alternative.",
       "The gem mine is now a bit slower and works properly.",
       "The drop rates on many rare items are now much better, they were accidentally a bit lower than they were supposed to be.",
       "Added a simple message filter for loot. Let me know what else can be added to the list and if there are any loot drops that aren't showing up in the loot tab.",
-      "The bank should now render 10 rows of items regardless of the view width, and it will show the bottom row as expected."
+      "The bank should now render 10 rows of items regardless of the view width, and it will show the bottom row as expected.",
+      "Fixed a bug that let you make molten bronze bars but not their products.",
+      "Added a shop in Koncave city that will extract hides and meat from animals directly from your bank for a small fee."
     ]
   },
   {

@@ -1,0 +1,62 @@
+﻿@page "/World/KoncaveCityBackstreets/KoncaveExtractors"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+
+
+@if (thisBuilding != null)
+{
+
+    <br />
+
+        <button class="btn btn-primary" @onclick="@(() => Exit())">Exit</button>
+
+    
+    <br />
+    <div>@thisBuilding.Name</div>
+    <div>@thisBuilding.Description</div>
+
+    @foreach (string npc in thisBuilding.NPCs)
+    {
+        <Quepland_2.Components.NPCDialogComponent npc="@npc"></Quepland_2.Components.NPCDialogComponent>
+    }
+    <Quepland_2.Components.ExtractorShopComponent></Quepland_2.Components.ExtractorShopComponent>
+
+}
+
+@code {
+    [Parameter]
+    public string areaURL { get; set; }
+    [Parameter]
+    public string buildingURL { get; set; }
+    public Building thisBuilding { get; set; }
+
+    private void Exit()
+    {
+        GameState.GoTo("/World/KoncaveCityBackstreets/");
+        GameState.UpdateState();
+    }
+    private void Talk(Dialog d)
+    {
+        d.Talk();
+        GameState.UpdateState();
+    }
+
+    protected override void OnParametersSet()
+    {
+        thisBuilding = AreaManager.Instance.GetAreaByURL("KoncaveCityBackstreets").GetBuildingByURL("KoncaveExtractors");
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e)
+    {
+        StateHasChanged();
+    }
+}

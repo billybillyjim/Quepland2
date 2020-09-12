@@ -47,7 +47,7 @@
   },
   {
     "name": "West Wing",
-    "id": 140,
+    "id": 141,
     "image": "Door",
     "description": "This part of the castle is detached from the rest, and appears to be still in use. You turn a corner and meet a strange metallic being, apparently patrolling the halls.",
     "areaURL": "WestWing",
@@ -57,14 +57,14 @@
   },
   {
     "name": "Cathedra",
-    "id": 140,
+    "id": 142,
     "image": "Throne",
     "description": "The throne room lies dark and dusty. Whatever valuables the room contained have long since been taken. All that remains is a great curtain draping the back wall, its vibrant red dulled with dust and age.",
     "areaURL": "Cathedra"
   },
   {
     "name": "Athenaeum",
-    "id": 140,
+    "id": 143,
     "image": "Books",
     "description": "The expansive library must have once held many books. Now it is home to many creatures, some of which you might be able to catch in a trap. In one corner of the room a soft light glows. It appears someone has made the library their home.",
     "areaURL": "Athenaeum",

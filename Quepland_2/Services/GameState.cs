@@ -426,10 +426,10 @@ using System.Threading.Tasks;
     {
         if(CurrentBook != null)
         {
-            Player.Instance.GainExperience(CurrentBook.Skill, (long)((Player.Instance.GetLevel(CurrentBook.Skill.Name) / 80d) * 900));
+            Player.Instance.GainExperience(CurrentBook.Skill, (long)((Player.Instance.GetLevel(CurrentBook.Skill.Name) / 80d) * 500));
             MessageManager.AddMessage("You read another page of the book. You feel more knowledgable about " + CurrentBook.Skill.Name + ".");
             CurrentBook.Progress++;
-            TicksToNextAction = (int)Math.Max(60, ((2 + CurrentBook.Difficulty * 5d) / (Player.Instance.GetLevel(CurrentBook.Skill.Name))) * 60);
+            TicksToNextAction = (int)Math.Max(100, ((2 + CurrentBook.Difficulty * 5d) / (Player.Instance.GetLevel(CurrentBook.Skill.Name))) * 100);
             if (Random.Next(0, CurrentBook.Length) == CurrentBook.Progress)
             {
                 MessageManager.AddMessage("A small key falls out of the book as you turn the page.");

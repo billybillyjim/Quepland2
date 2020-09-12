@@ -8,6 +8,12 @@
       {
         "itemName": "Tin Bar"
       }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 30
+      }
     ]
   },
   {

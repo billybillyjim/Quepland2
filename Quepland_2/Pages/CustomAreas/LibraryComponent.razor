@@ -76,7 +76,7 @@
         GameState.StopActions();
         GameState.NewBook = book;
         IsReading = true;
-        GameState.TicksToNextAction = (int)Math.Max(150, ((1 + book.Difficulty * 5d) / (Player.Instance.GetLevel(book.Skill.Name)) * 150));
+        GameState.TicksToNextAction = (int)Math.Max(100, ((1 + book.Difficulty * 5d) / (Player.Instance.GetLevel(book.Skill.Name)) * 100));
         GameState.UpdateState();
     }
     private void StopReading()
@@ -89,7 +89,7 @@
     {
         if(GameState.CurrentBook != null)
         {
-            return "width:" + (100 - ((double)GameState.TicksToNextAction / Math.Max(150, ((1 + GameState.CurrentBook.Difficulty * 5d) / (Player.Instance.GetLevel(GameState.CurrentBook.Skill.Name)) * 150))) * 100d) + "%";
+            return "width:" + (100 - ((double)GameState.TicksToNextAction / Math.Max(100, ((1 + GameState.CurrentBook.Difficulty * 5d) / (Player.Instance.GetLevel(GameState.CurrentBook.Skill.Name)) * 100))) * 100d) + "%";
             
         }
         return "width:" + (100 - ((double)GameState.TicksToNextAction / 60d) * 100d) + "%";

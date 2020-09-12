@@ -1,0 +1,218 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (Shop != null)
+{
+    <div style="position:relative">
+        <div>
+            @Shop.Name
+        </div>
+        <div>
+            Quantity:
+            <div>
+                <button class="btn btn-primary" style="@GetButtonStyle(1)" @onclick="@(() => UpdateAmount(1))">1</button>
+                <button class="btn btn-primary" style="@GetButtonStyle(5)" @onclick="@(() => UpdateAmount(5))">5</button>
+                <button class="btn btn-primary" style="@GetButtonStyle(10)" @onclick="@(() => UpdateAmount(10))">10</button>
+                <button class="btn btn-primary" style="@GetButtonStyle(20)" @onclick="@(() => showInput = !showInput)">x</button>
+                <button class="btn btn-primary" style="@GetButtonStyle(int.MaxValue)" @onclick="@(() => UpdateAmount(int.MaxValue))">Max</button>
+            </div>
+        </div>
+        <div style="margin-top:5px;">
+            @if (showInput)
+            {
+                <input type="number" @bind-value="ItemManager.Instance.SellAmount" />
+            }
+            else
+            {
+                <div style="height:30px;"></div>
+            }
+        </div>
+        <div style="position:absolute;right:10px;top:10px;">
+            <Quepland_2.Components.ItemBoxComponent @key="@SelectedItem" Item="@SelectedItem" ShowAmount="@false"></Quepland_2.Components.ItemBoxComponent>
+            @if (SelectedItem != null)
+            {
+        <div style="position:absolute; right:65px;top:2px;">
+            @if (CanAfford(SelectedItem) && GetMaxBuy(SelectedItem) > 0)
+            {
+                <button class="btn btn-primary" style="width:100px;text-align:center;padding:3px;height:50px;" @onclick="@(() => Buy(SelectedItem))">Buy @Math.Min(ItemManager.Instance.SellAmount, GetMaxBuy(SelectedItem))</button>
+
+            }
+            else if (Bank.Instance.Inventory.GetNumberOfItem(SelectedItem) == 0)
+            {
+                <button class="btn btn-primary" style="opacity:0.5;width:100px;text-align:center;padding:3px;height:50px;cursor:default"
+                        @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have any in your bank.")))"
+                        @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                    Buy @ItemManager.Instance.SellAmount
+                </button>
+            }
+            else if (ItemManager.Instance.SellAmount == int.MaxValue)
+            {
+                <button class="btn btn-primary" style="opacity:0.5;width:100px;text-align:center;padding:3px;height:50px;cursor:default"
+                        @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have enough coins")))"
+                        @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                    Buy Max
+                </button>
+
+            }
+            else
+            {
+                <button class="btn btn-primary" style="opacity:0.5;width:100px;text-align:center;padding:3px;height:50px;cursor:default"
+                        @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have enough coins.")))"
+                        @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                    Buy @ItemManager.Instance.SellAmount
+                </button>
+
+            }
+        </div>
+                <div style="position:absolute; width:300px;text-align:right;right:0px;top:50px;">
+                    Extract @(SelectedItem.Name)
+                </div>
+                <div style="position:absolute; width:300px;text-align:right;right:0px;top:67px;">
+                    @(String.Format("{0:n0}", Math.Max(GetMaxBuy(SelectedItem) * 30, 30))) Coins
+                </div>
+            }
+        </div>
+        <div style="display:flex;flex-wrap:wrap;">
+            @foreach (GameItem item in GetItems())
+            {
+                @if (SelectedItem == item)
+                {
+                    <div style="filter: brightness(0.5);"
+                         onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, item.Name, GetTooltip(item))))"
+                         onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                        <Quepland_2.Components.ItemBoxComponent @key="@item.Name" Item="@item" ShowAmount="@false"></Quepland_2.Components.ItemBoxComponent>
+                    </div>
+                }
+                else
+                {
+                    <div @onclick="@(() => SelectItem(item))"
+                         onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, item.Name, GetTooltip(item))))"
+                         onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                        <Quepland_2.Components.ItemBoxComponent @key="@item.Name" Item="@item" ShowAmount="@false"></Quepland_2.Components.ItemBoxComponent>
+                    </div>
+                }
+
+            }
+            @for (int i = 0; i < GetEmptyItemsToFillRow(); i++)
+            {
+                int temp = i;
+                if (temp % itemsPerRow == 0)
+                {
+                    <br />
+                }
+                <Quepland_2.Components.ItemBoxComponent Item="@null"></Quepland_2.Components.ItemBoxComponent>
+            }
+        </div>
+    </div>
+
+}
+@code {
+    private Shop Shop;
+    string shopName = "Koncave Extractors";
+    [Parameter]
+    public int itemsPerRow { get; set; } = 10;
+    private bool showInput;
+    public GameItem SelectedItem;
+
+    private void SelectItem(GameItem i)
+    {
+        SelectedItem = i;
+        SelectedItem.Rerender = true;
+        GameState.UpdateState();
+    }
+
+    private int GetEmptyItemsToFillRow()
+    {
+        return itemsPerRow - (Shop.Items.Count % itemsPerRow);
+    }
+    private void Buy(GameItem item)
+    {
+        if (item == null)
+        {
+            return;
+        }
+        int maxBuy = GetMaxBuy(item);
+        int amtPurchased = Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByUniqueID("Coins0"), (30 * maxBuy)) / 30;
+        Recipe extractionRecipe = ItemManager.Instance.GetUnpackingRecipe(item);
+        Bank.Instance.Inventory.RemoveItems(item, amtPurchased);
+        Bank.Instance.Inventory.AddMultipleOfItem(extractionRecipe.Output, amtPurchased * extractionRecipe.OutputAmount);
+        if(extractionRecipe.SecondaryOutput != null)
+        {
+            Bank.Instance.Inventory.AddMultipleOfItem(extractionRecipe.SecondaryOutput, amtPurchased * extractionRecipe.OutputAmount);
+        }
+        if(extractionRecipe.TertiaryOutput != null)
+        {
+            Bank.Instance.Inventory.AddMultipleOfItem(extractionRecipe.TertiaryOutput, amtPurchased * extractionRecipe.OutputAmount);
+        }
+
+
+        GameState.UpdateState();
+    }
+    private string GetButtonStyle(int val)
+    {
+        if (val == ItemManager.Instance.SellAmount)
+        {
+            return "cursor:pointer;";
+        }
+        else
+        {
+            return "cursor:normal;background-color:darkgray;";
+        }
+    }
+    private string GetTooltip(GameItem item)
+    {
+        string tip = "Extract ";
+        int maxBuy = GetMaxBuy(item);
+        if (maxBuy == 0)
+        {
+            maxBuy = ItemManager.Instance.SellAmount;
+            if (maxBuy == int.MaxValue)
+            {
+                maxBuy = 1;
+            }
+        }
+        tip += maxBuy + " for " + (maxBuy * 30) + " Coins";
+        return tip;
+    }
+    private bool CanAfford(GameItem item)
+    {
+        return Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByUniqueID("Coins0")) >= GetMaxBuy(item);
+    }
+    public void UpdateAmount(int amt)
+    {
+        ItemManager.Instance.SellAmount = amt;
+    }
+
+    private int GetMaxBuy(GameItem item)
+    {
+        int maxBuy = Math.Max(0, ItemManager.Instance.SellAmount);
+        maxBuy = Math.Min(Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByUniqueID("Coins0")) / 30, maxBuy);
+        maxBuy = Math.Min(Bank.Instance.Inventory.GetNumberOfItem(item), maxBuy);
+        return maxBuy;
+    }
+    public List<GameItem> GetItems()
+    {
+        List<GameItem> available = new List<GameItem>();
+        foreach (GameItem i in Shop.Items)
+        {
+            if (Player.Instance.Inventory.HasItem(i))
+            {
+                available.Add(i);
+            }
+            i.Rerender = true;
+        }
+        return available;
+    }
+    protected override void OnInitialized()
+    {
+        Shop = AreaManager.Instance.GetAreaByName("Koncave City Backstreets").GetBuildingByURL("KoncaveExtractors").Shops[0];
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+
+        ItemManager.Instance.CurrentShop = null;
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

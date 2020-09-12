@@ -139,8 +139,56 @@
       {
         "areaURL": "CastleNid",
         "buttonText": "Go to the castle"
+      },
+      {
+        "areaURL": "KoncaveCityBackstreets",
+        "buttonText": "Go down the alleyway"
       }
 
+
+    ]
+  },
+  {
+    "name": "Koncave City Backstreets",
+    "id": 114,
+    "image": "BrokenWall",
+    "description": "The back alleys of Koncave City are damp and dirty. The great sources of light that illuminate the city square are obscured by crumbling walls and ancient passageways. Here and there is appears there are shops that are still operating, despite the conditions.",
+    "areaURL": "KoncaveCityBackstreets",
+    "buildings": [
+      {
+        "name": "Koncave Extractors",
+        "buttonText": "Shady Shack",
+        "url": "KoncaveExtractors",
+        "description": "You enter a dingy room. A single candle lights the space, which is filled with a terrible stench that you can't find the source of. A man with a strange mask is sitting behind a counter and waves in a friendly manner to you as you walk in.",
+        "npcs": [
+          "Hokorb"
+        ],
+        "shops": [
+          {
+            "name": "Koncave Extractors",
+            "itemNames": [
+              "Rabbit",
+              "Deer",
+              "Buck",
+              "Wild Boar",
+              "Black Bear",
+              "Moose",
+              "Grizzly Bear",
+              "Pigeon",
+              "Turkey",
+              "Chicken",
+              "Wild Boar",
+              "Pheasant",
+              "Bison",
+              "Big Moose",
+              "Polar Bear",
+              "Giant Polar Bear",
+              "Woolly Mammoth"
+            ]
+
+          }
+        ]
+      }
     ]
   }
 

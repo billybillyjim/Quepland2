@@ -1,0 +1,23 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Hokorb",
+  "id": 60,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi! Got any corpses lying about you need disassembled? Animals, of course! I'm not a weirdo!",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "How does this work?",
+      "responseText": "Bring an animal to me, and I can tear it apart, as well as any in your bank, for a price.",
+      "depth": 1,
+      "newDepthOnTalk": 2
+    },
+    {
+      "buttonText": "What's the price?",
+      "responseText": "30 coins a pop. Not bad, eh? So, what do you say?",
+      "depth": 2
+    }
+  ]
+}
