@@ -240,7 +240,15 @@ public class BattleManager
             Target = GetNextTarget();
         }
         RollForPlayerAttackEffects();
-        int total = (int)Math.Max(1, Math.Min(Player.Instance.GetTotalDamage().ToRandomDamage() * CalculateTypeBonus(Target) * Extensions.CalculateArmorDamageReduction(Target), Target.CurrentHP));
+        int total = (int)Math.Max(1, Math.Min(Player.Instance.GetTotalDamage().ToRandomDamage() * CalculateTypeBonus(Target), Target.CurrentHP));
+        if(Target.CurrentStatusEffects.OfType<CleaveEffect>().Any())
+        {
+        }
+        else
+        {
+            total = (int)Math.Max(total * Extensions.CalculateArmorDamageReduction(), 1);
+        }
+
         Target.CurrentHP -= total;
         
         if(Player.Instance.GetWeapon() == null)

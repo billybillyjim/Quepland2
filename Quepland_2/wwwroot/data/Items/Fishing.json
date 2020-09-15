@@ -9,16 +9,17 @@
     "equipSlot": "R Hand",
     "weaponInfo": {
       "attackSpeed": 35,
-      "damage": 1
+      "damage": 1,
+      "wearRequirements": [
+        {
+          "skill": "Fishing",
+          "skillLevel": 1
+        }
+      ]
     },
     "gatherSpeedBonus": 0.1,
-    "icon": "Net",
-    "requirements": [
-      {
-        "skill": "Fishing",
-        "skillLevel": 1
-      }
-    ]
+    "icon": "Net"
+
   },
   {
     "name": "Small Net",
@@ -30,16 +31,16 @@
     "secondaryColor": "#F5C242",
     "weaponInfo": {
       "attackSpeed": 35,
-      "damage": 2
+      "damage": 2,
+      "wearRequirements": [
+        {
+          "skill": "Fishing",
+          "skillLevel": 15
+        }
+      ]
     },
     "gatherSpeedBonus": 0.2,
-    "icon": "Net",
-    "requirements": [
-      {
-        "skill": "Fishing",
-        "skillLevel": 15
-      }
-    ]
+    "icon": "Net"
   },
   {
     "name": "Medium Net",
@@ -51,16 +52,16 @@
     "equipSlot": "R Hand",
     "weaponInfo": {
       "attackSpeed": 35,
-      "damage": 3
+      "damage": 3,
+      "wearRequirements": [
+        {
+          "skill": "Fishing",
+          "skillLevel": 40
+        }
+      ]
     },
     "gatherSpeedBonus": 0.30,
-    "icon": "Net",
-    "requirements": [
-      {
-        "skill": "Fishing",
-        "skillLevel": 40
-      }
-    ]
+    "icon": "Net"
   },
   {
     "name": "Large Net",
@@ -71,17 +72,17 @@
     "equipSlot": "R Hand",
     "weaponInfo": {
       "attackSpeed": 35,
-      "damage": 5
+      "damage": 5,
+      "wearRequirements": [
+        {
+          "skill": "Fishing",
+          "skillLevel": 60
+        }
+      ]
     },
     "secondaryColor": "#FFBABA",
     "gatherSpeedBonus": 0.45,
-    "icon": "Net",
-    "requirements": [
-      {
-        "skill": "Fishing",
-        "skillLevel": 60
-      }
-    ]
+    "icon": "Net"
   },
   {
     "name": "Magic Net",
@@ -92,17 +93,17 @@
     "equipSlot": "R Hand",
     "weaponInfo": {
       "attackSpeed": 35,
-      "damage": 8
+      "damage": 8,
+      "wearRequirements": [
+        {
+          "skill": "Fishing",
+          "skillLevel": 75
+        }
+      ]
     },
     "secondaryColor": "#459CED",
     "gatherSpeedBonus": 0.6,
-    "icon": "Net",
-    "requirements": [
-      {
-        "skill": "Fishing",
-        "skillLevel": 75
-      }
-    ]
+    "icon": "Net"
   },
   {
     "name": "Small Fishing Rod",
@@ -114,16 +115,16 @@
     "secondaryColor": "#F5C242",
     "weaponInfo": {
       "attackSpeed": 25,
-      "damage": 8
+      "damage": 8,
+      "wearRequirements": [
+        {
+          "skill": "Fishing",
+          "skillLevel": 15
+        }
+      ]
     },
     "gatherSpeedBonus": 0.2,
-    "icon": "Rod",
-    "requirements": [
-      {
-        "skill": "Fishing",
-        "skillLevel": 15
-      }
-    ]
+    "icon": "Rod"
   },
   {
     "name": "Medium Fishing Rod",
@@ -135,16 +136,16 @@
     "secondaryColor": "#66B4DE",
     "weaponInfo": {
       "attackSpeed": 25,
-      "damage": 18
+      "damage": 18,
+      "wearRequirements": [
+        {
+          "skill": "Fishing",
+          "skillLevel": 35
+        }
+      ]
     },
     "gatherSpeedBonus": 0.3,
-    "icon": "Rod",
-    "requirements": [
-      {
-        "skill": "Fishing",
-        "skillLevel": 35
-      }
-    ]
+    "icon": "Rod"
   },
   {
     "name": "Large Fishing Rod",
@@ -156,16 +157,16 @@
     "secondaryColor": "#FFBABA",
     "weaponInfo": {
       "attackSpeed": 25,
-      "damage": 58
+      "damage": 58,
+      "wearRequirements": [
+        {
+          "skill": "Fishing",
+          "skillLevel": 55
+        }
+      ]
     },
     "gatherSpeedBonus": 0.5,
-    "icon": "Rod",
-    "requirements": [
-      {
-        "skill": "Fishing",
-        "skillLevel": 55
-      }
-    ]
+    "icon": "Rod"
   },
   {
     "name": "Ebisian Fishing Rod",
@@ -177,16 +178,16 @@
     "secondaryColor": "#459CED",
     "weaponInfo": {
       "attackSpeed": 30,
-      "damage": 150
+      "damage": 150,
+      "wearRequirements": [
+        {
+          "skill": "Fishing",
+          "skillLevel": 75
+        }
+      ]
     },
     "gatherSpeedBonus": 0.6,
-    "icon": "Rod",
-    "requirements": [
-      {
-        "skill": "Fishing",
-        "skillLevel": 75
-      }
-    ]
+    "icon": "Rod"
   },
   {
     "name": "Minnows",
@@ -854,6 +855,36 @@
     ]
   },
   {
+    "name": "Sashcom",
+    "description": "A golden, glowing fish. They swim in massive schools around Sulmenka. You could cut the scales off to use as a currency.",
+    "gatherString": "You catch a sashcom.",
+    "value": 70,
+    "gatherSpeed": 30,
+    "secondaryColor": "#FFD700",
+    "experienceGained": "Fishing:48",
+    "icon": "Fish",
+    "requirements": [
+      {
+        "skill": "Fishing",
+        "skillLevel": 30
+      },
+      {
+        "action": "Fishing"
+      }
+    ]
+  },
+  {
+    "name": "Sashcom Scales",
+    "description": "Golden scales scraped from sashcom.",
+    "isStackable": true,
+    "gatherString": "You scrape off the scales of a sashcom.",
+    "value": 10,
+    "gatherSpeed": 3,
+    "secondaryColor": "#FFD700",
+    "experienceGained": "Fishing:48",
+    "icon": "Scales"
+  },
+  {
     "name": "Fisherman Gloves",
     "description": "A special pair of gloves worn by fishermen. Just wearing them makes you learn fishing more quickly.",
     "gatherString": "You found a pair of gloves!",
@@ -924,5 +955,12 @@
     "value": 1,
     "icon": "Bait",
     "isStackable": true
+  },
+  {
+    "name": "Tome of Fish",
+    "description": "A book containing knowledge of fish and their whereabouts.",
+    "value": 50,
+    "icon": "Book",
+    "isTome": true
   }
 ]

@@ -21,7 +21,8 @@
     "description": "A specially designed knife for carving wood.",
     "value": 40,
     "icon": "Knife",
-    "openCraftingMenuText": "Carve"
+    "openCraftingMenuText": "Carve",
+    "enabledActions": "Woodworking"
   },
   {
     "name": "Magic Wood Carving Knife",

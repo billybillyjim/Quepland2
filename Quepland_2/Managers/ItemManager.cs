@@ -366,18 +366,18 @@ public class ItemManager
         int amount = GameState.Random.Next(50, 200);
         if (task.Output.Category == "Armors")
         {
-            amount /= 2;
+            amount /= 3;
         }
         else if(task.Output.Category == "Lapidary")
         {
-            amount /= 5;
+            amount /= 4;
         }
         else if (task.Output.Name.Contains("Arrow"))
         {
-            amount *= 10;
+            amount *= 3;
         }
 
-        return new ArtisanTask(task.Output.Name, GameState.Random.Next(50, 200));
+        return new ArtisanTask(task.Output.Name, amount);
     }
 }
 

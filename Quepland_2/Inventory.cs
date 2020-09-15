@@ -601,7 +601,7 @@ public class Inventory
                 List<string> tabs = JsonConvert.DeserializeObject<List<string>>(s[2]);
                 foreach (string tag in tabs)
                 {
-                    it.Tabs.Add(tag);
+                    it.AddTag(tag);
                 }
             }
             if (s.Length >= 4)

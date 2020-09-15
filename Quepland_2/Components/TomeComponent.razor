@@ -68,7 +68,7 @@
         List<string> items = new List<string>();
         foreach(KeyValuePair<GameItem, int> pair in Player.Instance.Inventory.GetItems())
         {
-            if(pair.Key.Category == tomeData.Category && pair.Key.Name.Contains("Tome") == false)
+            if(pair.Key.Category == tomeData.Category && pair.Key.Name.Contains("Tome") == false && pair.Key.WeaponInfo == null)
             {
                 if (items.Contains(pair.Key.Name) == false && tomeData.ItemNames.Contains(pair.Key.Name) == false)
                 {

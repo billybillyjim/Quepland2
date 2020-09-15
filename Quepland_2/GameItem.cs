@@ -286,6 +286,14 @@ public class GameItem
 	{
 		return Name;
 	}
+
+	public void AddTag(string tag)
+    {
+		if(Tabs.Contains(tag) == false)
+        {
+			Tabs.Add(tag);
+        }
+    }
 	
 	public GameItem Copy()
     {

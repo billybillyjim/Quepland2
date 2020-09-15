@@ -66,33 +66,34 @@
                     </div>
                 }
             }
-            <div style="display:flex;">
+    <div style="display:flex;">
 
-                @if (showTabInput)
-                {
-                    <button class="btn btn-primary" style="width:30px;height:30px;padding:0px;margin:3px;" @onclick="@(() => ToggleTabInput())">X</button>
-                    <input style="width:150px;margin:3px;" type="text" @bind="newTabString" />
-                    <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => AddTab(newTabString))">Confirm</button>
+        @if (showTabInput)
+        {
+            <button class="btn btn-primary" style="width:30px;height:30px;padding:0px;margin:3px;" @onclick="@(() => ToggleTabInput())">X</button>
+            <input style="width:150px;margin:3px;" type="text" @bind="newTabString" />
+            <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => AddTab(newTabString))">Confirm</button>
 
-                }
-                else
-                {
-                    <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => ToggleTabInput())">Add Tab</button>
-                }
-                @if (Bank.Instance.CurrentTab != "Main")
-                {
-                    @if (addingTags)
-                    {
-                        <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => ToggleAddingTags())">End Adding Items</button>
+        }
+        else
+        {
+            <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => ToggleTabInput())">Add Tab</button>
+            <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => RemoveTab(Bank.Instance.CurrentTab))">Delete Tab</button>
+        }
+        @if (Bank.Instance.CurrentTab != "Main")
+        {
+            @if (addingTags)
+            {
+                <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => ToggleAddingTags())">End Adding Items</button>
 
-                    }
-                    else
-                    {
-                        <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => ToggleAddingTags())">Add Items to Tab</button>
+            }
+            else
+            {
+                <button style="margin: 3px;" class="btn btn-primary" @onclick="@(() => ToggleAddingTags())">Add Items to Tab</button>
 
-                    }
-                }
-            </div>
+            }
+        }
+    </div>
             <div>
                 <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => ToggleShowTabs())">Hide Tabs</button>
             </div>
@@ -361,6 +362,7 @@
         if (Bank.Instance.Tabs.Contains(tab) == false)
         {
             Bank.Instance.Tabs.Add(tab);
+            Bank.Instance.HasChanged = true;
             ToggleTabInput();
             GameState.UpdateState();
         }
@@ -368,16 +370,23 @@
     }
     public void ToggleTagOnItem(GameItem i)
     {
-        if (i.Tabs.Contains(i.Name))
+        foreach(string tag in i.Tabs)
+        {
+            Console.WriteLine("Has tag:" + tag);
+        }
+        if (i.Tabs.Contains(Bank.Instance.CurrentTab))
         {
             i.Tabs.Remove(Bank.Instance.CurrentTab);
+            Console.WriteLine("Removing tag:" + Bank.Instance.CurrentTab);
         }
         else
         {
-            i.Tabs.Add(Bank.Instance.CurrentTab);
+            i.AddTag(Bank.Instance.CurrentTab);
 
         }
         i.Rerender = true;
+        Bank.Instance.HasChanged = true;
+        UpdateVisibleItems();
         GameState.UpdateState();
     }
     public void ToggleShowTabs()
@@ -405,6 +414,7 @@
     {
         addingTags = !addingTags;
         Bank.Instance.HasChanged = true;
+        UpdateVisibleItems();
         GameState.UpdateState();
     }
     private void ToggleSearch()
@@ -418,6 +428,18 @@
         {
             searchString = "";
         }
+    }
+    private void RemoveTab(string tab)
+    {
+        if(tab != "Main")
+        {
+            Bank.Instance.Tabs.Remove(tab);
+            Bank.Instance.CurrentTab = "Main";
+            Bank.Instance.HasChanged = true;
+            ToggleTabInput();
+            GameState.UpdateState();
+        }
+
     }
     protected override void OnInitialized()
     {

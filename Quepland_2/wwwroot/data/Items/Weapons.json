@@ -1503,5 +1503,24 @@
         }
       ]
     }
+  },
+  {
+    "name": "Sulmenkan Trident",
+    "description": "A giant fork used for poking things.",
+    "value": 10000,
+    "enabledActions": "Trident Hunting",
+    "secondaryColor": "#259078",
+    "equipSlot": "R Hand",
+    "icon": "Trident",
+    "weaponInfo": {
+      "attackSpeed": 14,
+      "damage": 135,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 55
+        }
+      ]
+    }
   }
 ]

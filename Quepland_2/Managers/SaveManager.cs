@@ -252,6 +252,7 @@ public static class SaveManager
         }
         if (data.Length > 6)
         {
+            //Console.WriteLine(Decompress(data[6]));
             Bank.Instance.Inventory.Clear();
             Bank.Instance.Inventory.LoadData(Decompress(data[6]));
         }
@@ -277,7 +278,7 @@ public static class SaveManager
         }
         if (data.Length > 12)
         {
-            Console.WriteLine(Decompress(data[12]));
+            
             FollowerManager.Instance.LoadSaveData(Decompress(data[12]));
         }
         if (data.Length > 13)
@@ -371,6 +372,38 @@ public static class SaveManager
         if (string.IsNullOrEmpty(s))
         {
             return "";
+        }
+        Span<byte> buffer = new Span<byte>(new byte[s.Length]);
+        if(Convert.TryFromBase64String(s, buffer,out int b) == false)
+        {
+            if(Convert.TryFromBase64String(s.PadRight(s.Length / 4 * 4 + (s.Length % 4 == 0 ? 0 : 4), '='), new Span<byte>(new byte[s.Length]), out int pad))
+            {
+                Console.WriteLine("String Length:" + s.Length);
+                Console.WriteLine("Bytes parsed:" + pad);
+                Console.WriteLine("End padding:" + s.Substring(s.Length - 10));
+                using (var source = new MemoryStream(Convert.FromBase64String(s)))
+                {
+                    byte[] len = new byte[4];
+                    source.Read(len, 0, 4);
+                    var l = BitConverter.ToInt32(len, 0);
+                    using (var decompressionStream = new GZipStream(source, CompressionMode.Decompress))
+                    {
+                        var result = new byte[l];
+                        decompressionStream.Read(result, 0, l);
+                        return Encoding.UTF8.GetString(result);
+                    }
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("Padding failed.");
+                Console.WriteLine("String Length:" + s.Length);
+                Console.WriteLine("Bytes parsed:" + b);
+                Console.WriteLine("End padding:" + s.Substring(s.Length - 10));
+
+            }
+
         }
         using (var source = new MemoryStream(Convert.FromBase64String(s)))
         {
