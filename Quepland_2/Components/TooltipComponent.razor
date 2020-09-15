@@ -59,24 +59,40 @@
 
     private string GetStyle()
     {
-        string style = "text-align:" + Tip.Alignment + ";";
+        System.Text.StringBuilder builder = new System.Text.StringBuilder();
+        builder.Append("text-align:");
+        builder.Append(Tip.Alignment);
+        builder.Append(";");
+        //string style = "text-align:" + Tip.Alignment + ";";
         if (Tip.ShowAbove)
         {
-            style += "top:" + ((yPos - distanceFromMouse - (50))) + "px;";
+            builder.Append("top:");
+            builder.Append((yPos - distanceFromMouse - (50)));
+            builder.Append("px;");
+            //style += "top:" + ((yPos - distanceFromMouse - (50))) + "px;";
         }
         else
         {
-            style += "top:" + (yPos + distanceFromMouse) + "px;";
+            builder.Append("top:");
+            builder.Append((yPos + distanceFromMouse));
+            builder.Append("px;");
+            //style += "top:" + (yPos + distanceFromMouse) + "px;";
         }
         if (faceRight)
         {
-
-            return style + "right:" + (GameState.GameWindowWidth - xPos) + "px;";
+            builder.Append("right:");
+            builder.Append(GameState.GameWindowWidth - xPos);
+            builder.Append("px;");
+            //return style + "right:" + (GameState.GameWindowWidth - xPos) + "px;";
         }
         else
         {
-            return style + "left:" + xPos + "px;";
+            builder.Append("left:");
+            builder.Append(xPos);
+            builder.Append("px;");
+            //return style + "left:" + xPos + "px;";
         }
+        return builder.ToString();
     }
 
     protected override void OnInitialized()

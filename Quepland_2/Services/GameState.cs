@@ -26,7 +26,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.10";
+    public static string Version { get; set; } = "1.0.11";
     public static List<Update> Updates { get; set; } = new List<Update>();
     //public static Pluralizer Pluralizer = new Pluralizer();
 
@@ -139,6 +139,8 @@ using System.Threading.Tasks;
 
     private async Task Tick()
     {
+        Stopwatch timer = new Stopwatch();
+        timer.Start();
         if (IsOnHuntingTrip || CurrentAFKAction != null)
         {
             CurrentTick++;
@@ -186,7 +188,7 @@ using System.Threading.Tasks;
             {
                 BattleManager.Instance.DoBattle();
             }
-            
+
         }
         else if(TicksToNextAction <= 0 && CurrentBook != null)
         {
@@ -252,6 +254,8 @@ using System.Threading.Tasks;
         {
             await SaveManager.SaveGame();
         }
+        timer.Stop();
+        Console.WriteLine("Total Game Tick took:" + timer.ElapsedMilliseconds);
     }
     /// <summary>
     /// Pauses actions at the beginning of the next game tick.
@@ -929,27 +933,27 @@ using System.Threading.Tasks;
     public void ShowTooltip(MouseEventArgs args, string tipName, string tipData)
     {
         TooltipManager.ShowTip(args, tipName, tipData);
-        UpdateState();
+        //UpdateState();
     }
     public void ShowTooltip(MouseEventArgs args, string tipName)
     {
         TooltipManager.ShowTip(args, tipName);
-        UpdateState();
+        //UpdateState();
     }
     public void ShowTooltip(MouseEventArgs args, Tooltip tip)
     {
         TooltipManager.ShowTip(args, tip);
-        UpdateState();
+        //UpdateState();
     }
     public void ShowItemTooltip(MouseEventArgs args, string itemName, string itemDesc)
     {
         TooltipManager.ShowItemTip(args, itemName, itemDesc);
-        UpdateState();
+        //UpdateState();
     }
     public void ShowCraftingTooltip(MouseEventArgs args, string itemName, string itemDesc)
     {
         TooltipManager.ShowCraftingTip(args, itemName, itemDesc);
-        UpdateState();
+        //UpdateState();
     }
     public void ShowContextMenu(MouseEventArgs args)
     {

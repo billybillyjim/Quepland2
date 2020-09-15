@@ -155,5 +155,13 @@
       "Cathedra",
       "Athenaeum"
     ]
+  },
+  {
+    "name": "Sulmenka Kingdom",
+    "areaNames": [
+      "Nakneg Hall",
+      "Rusterak Docks",
+      "Manihoj Market"
+    ]
   }
 ]

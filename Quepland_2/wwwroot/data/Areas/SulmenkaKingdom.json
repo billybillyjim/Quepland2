@@ -3,26 +3,16 @@
     "name": "Nakneg Hall",
     "id": 150,
     "image": "Hall",
-    "description": "You push through a strange force that keeps the water at bay to find yourself at the entrance to a brilliant red palace. Though no light from the surface can reach this deep underwater, giant schools of glowing fish and jellifish illuminate the whole complex as if it were day.",
+    "description": "You push through a strange force that keeps the water at bay to find yourself at the entrance to a brilliant red palace. Though no light from the surface can reach this deep underwater, giant schools of glowing fish and jellifish illuminate the whole complex as if it were day. To the right there is a large docks, straight ahead is a large marketplace.",
     "areaURL": "NaknegHall",
     "unlockableAreas": [
       {
-        "areaURL": "ManayoVillage",
-        "buttonText": "Enter the village"
+        "areaURL": "RusterakDocks",
+        "buttonText": "Visit the docks"
       },
       {
-        "areaURL": "UfagariLanding",
-        "buttonText": "Take an artisan boat to Ufagari",
-        "requirements": [
-          {
-            "action": "Guild Access"
-          }
-        ]
-      },
-      {
-        "areaURL": "EastUragotaDocks",
-        "buttonText": "Sail back to the mainland",
-        "connectsLands": true
+        "areaURL": "ManihojMarket",
+        "buttonText": "Enter the market"
       }
 
     ]
@@ -36,9 +26,9 @@
   },
   {
     "name": "Manihoj Market",
-    "id": 153,
+    "id": 152,
     "image": "Market",
     "description": "Manihoj is the largest marketplace under the sea, if you believe the signage. There are many shops here, mostly consisting of bulk goods. Most places seem to accept gold pieces, though a few only trade via Sashcom Scales.",
-    "areaURL": "RusterakDocks"
+    "areaURL": "ManihojMarket"
   }
 ]

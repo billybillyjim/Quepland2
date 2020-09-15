@@ -1,0 +1,74 @@
+﻿@page "/World/RusterakDocks"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+
+@if (thisArea != null)
+{
+    <h1>@thisArea.Name</h1>
+    <p>@thisArea.Description</p>
+
+    @foreach (string a in thisArea.Actions ?? Enumerable.Empty<string>())
+    {
+
+        <Quepland_2.Components.GatherButtonComponent ActionText="@a"></Quepland_2.Components.GatherButtonComponent>
+        <br />
+
+
+    }
+    <Quepland_2.Components.SashcomHuntingComponent></Quepland_2.Components.SashcomHuntingComponent>
+    <br />
+
+    @foreach (AreaUnlock a in thisArea.UnlockableAreas)
+    {
+        if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false || a.ConnectsLands)
+        {
+
+            <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@a"></Quepland_2.Components.AreaUnlockComponent>
+            <br />
+        }
+    }
+
+
+    @if (thisArea.TrapSlot != null)
+    {
+        <Quepland_2.Components.HuntingTrapComponent Slot="@thisArea.TrapSlot"></Quepland_2.Components.HuntingTrapComponent>
+        <br />
+    }
+    @if (thisArea.HuntingTripInfo != null)
+    {
+        <Quepland_2.Components.HuntingTripComponent TripInfo="@thisArea.HuntingTripInfo" area="@thisArea"></Quepland_2.Components.HuntingTripComponent>
+        <br />
+    }
+    @if (thisArea.NPCs.Count > 0)
+    {
+        @foreach (string npc in thisArea.NPCs)
+        {
+            <Quepland_2.Components.NPCDialogComponent npc="@npc"></Quepland_2.Components.NPCDialogComponent>
+
+        }
+
+    }
+}
+@code {
+
+    public Area thisArea { get; set; }
+
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    protected override void OnParametersSet()
+    {
+        thisArea = AreaManager.Instance.GetAreaByURL("RusterakDocks");
+        GameState.NavMenu.ChangeOpenRegion(AreaManager.Instance.GetRegionForArea(thisArea), false);
+        GameState.UpdateState();
+
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

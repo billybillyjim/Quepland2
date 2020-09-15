@@ -39,6 +39,10 @@
         <button @onclick="@Get100Items">Get 100</button>
     </div>
     <div>
+        <input @bind-value="areaURL" />
+        <button @onclick="@GoToArea">Go to area</button>
+    </div>
+    <div>
         <button @onclick="@(() => GetOneOfAllItems())">
             Get One of All Items
         </button>
@@ -73,6 +77,16 @@
             Get Artisan Points
         </button>
     </div>
+    <div>
+        <button @onclick="@(() => CancelAFK())">
+            Cancel AFK
+        </button>
+    </div>
+    <div>
+        <button @onclick="@(() => CancelHuntingTrip())">
+            Cancel Hunt
+        </button>
+    </div>
 </div>
 
 
@@ -80,6 +94,20 @@
 @code {
 
     private string itemName = "";
+    private string areaURL = "";
+
+    public void CancelAFK()
+    {
+        GameState.CurrentAFKAction = null;
+    }
+    public void CancelHuntingTrip()
+    {
+        GameState.IsOnHuntingTrip = false;
+    }
+    public void GoToArea()
+    {
+        GameState.GoTo(areaURL);
+    }
     public void UnlockAllRegions()
     {
         foreach(Region r in AreaManager.Instance.Regions)

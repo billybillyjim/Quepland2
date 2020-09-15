@@ -1,6 +1,7 @@
 ﻿using Quepland_2.Bosses;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -121,7 +122,7 @@ public class BattleManager
                 }
                 Player.Instance.TicksToNextAttack = Player.Instance.GetWeaponAttackSpeed();
             }
-            foreach(Monster opponent in CurrentOpponents)
+            foreach (Monster opponent in CurrentOpponents)
             {
                 if (opponent.CurrentHP <= 0 && opponent.IsDefeated == false)
                 {
@@ -240,15 +241,15 @@ public class BattleManager
             Target = GetNextTarget();
         }
         RollForPlayerAttackEffects();
-        int total = (int)Math.Max(1, Math.Min(Player.Instance.GetTotalDamage().ToRandomDamage() * CalculateTypeBonus(Target), Target.CurrentHP));
+        int total = (int)Math.Max(1, Player.Instance.GetTotalDamage().ToRandomDamage() * CalculateTypeBonus(Target));
         if(Target.CurrentStatusEffects.OfType<CleaveEffect>().Any())
         {
         }
         else
         {
-            total = (int)Math.Max(total * Extensions.CalculateArmorDamageReduction(), 1);
+            total = (int)Math.Max(total * Extensions.CalculateArmorDamageReduction(Target), 1);
         }
-
+        total = (int)Math.Min(Target.CurrentHP, total);
         Target.CurrentHP -= total;
         
         if(Player.Instance.GetWeapon() == null)

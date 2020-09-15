@@ -124,6 +124,12 @@
 @code {
 
     private string selectedOpponent = "";
+    private System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+    protected override void OnAfterRender(bool firstRender)
+    {
+        timer.Stop();
+        Console.WriteLine("Component render:" + timer.ElapsedMilliseconds + " ms.");
+    }
 
     public List<string> GetPossibleOpponents()
     {
@@ -204,8 +210,12 @@
     public void Dispose()
     {
         BattleManager.Instance.BattleHasEnded = true;
-        
+
         GameState.StateChanged -= OnGameStateChanged;
     }
-    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+    void OnGameStateChanged(object sender, EventArgs e)
+    {
+        timer.Restart();
+        StateHasChanged();
+    }
 }

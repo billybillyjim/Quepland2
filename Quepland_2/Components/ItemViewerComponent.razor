@@ -269,8 +269,15 @@
     }
     private void OpenTome()
     {
-        GameState.ShowTome = true;
-        GameState.CurrentTome = Item.Category;
+        if(GameState.CurrentAFKAction == null && GameState.IsOnHuntingTrip == false)
+        {
+            GameState.ShowTome = true;
+            GameState.CurrentTome = Item.Category;
+        }
+        else
+        {
+            MessageManager.AddMessage("You're too busy with what you're doing to be reading right now.");
+        }
     }
     private void CloseTome()
     {

@@ -6,7 +6,7 @@
     "description": "There are a few small boats along the docks. You can see schools of fish swimming in the water below. A newly-built building hangs out from the edge of the shore. It's large enough for a cargo ship to unload inside.",
     "areaURL": "KoyaHasa",
     "actions": [
-      "Go fishing:Butterfish,Saury,Abalone,Shrimp",
+      "Go fishing:Butterfish,Saury,Abalone,Shrimp,Sardine",
       "Gather seaweed:Seaweed"
     ],
     "unlockableAreas": [

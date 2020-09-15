@@ -1,12 +1,16 @@
 [
   {
-    "versionNumber": "1.0.11",
+    "versionNumber": "1.0.11b",
     "updates": [
       "Fishing gear now correctly requires fishing levels to equip.",
       "Removing items from bank tabs now actually removes them.",
       "Fixed some bugs with items having two of the same tag for bank tabs.",
       "You can now delete bank tabs. Don't worry though, if you accidentally delete a tab, readding it with the same name will bring all your items in the tab back.",
-      "Fixed a bug where artisan tasks weren't using lowered amounts for armor or lapidary tasks."
+      "Fixed a bug where artisan tasks weren't using lowered amounts for armor or lapidary tasks.",
+      "You can now catch sardines in Koya Hasa.",
+      "Made it harder to get softlocked by afk actions and hunting trips.",
+      "Fixed the bug that made armor calculations happen after the damage calculation in a way where you couldn't hit over your opponent's max hp.",
+      "Fixed a bug that made combat sometimes slow down for no apparent reason."
     ]
   },
   {
