@@ -885,6 +885,23 @@
     "icon": "Scales"
   },
   {
+    "name": "Fish Knife",
+    "description": "A special knife made for cleaning fish.",
+    "value": 7000,
+    "secondaryColor": "#FFD700",
+    "icon": "Knife",
+    "weaponInfo": {
+      "attackSpeed": 5,
+      "damage": 15,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 30
+        }
+      ]
+    }
+  },
+  {
     "name": "Fisherman Gloves",
     "description": "A special pair of gloves worn by fishermen. Just wearing them makes you learn fishing more quickly.",
     "gatherString": "You found a pair of gloves!",
@@ -959,7 +976,7 @@
   {
     "name": "Tome of Fish",
     "description": "A book containing knowledge of fish and their whereabouts.",
-    "value": 50,
+    "value": 5000,
     "icon": "Book",
     "isTome": true
   }

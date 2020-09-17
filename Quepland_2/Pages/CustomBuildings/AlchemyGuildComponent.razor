@@ -1,0 +1,58 @@
+﻿@page "/World/NorthTsu/AlchemyGuild"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+
+@if (thisBuilding != null)
+{
+    @if(location == "Entrance")
+    {
+
+    }
+    <br />
+    <div>@location</div>
+    <div>@AlchemyGuild.LocationsAndDescriptions[location]</div>
+
+
+
+
+
+}
+
+@code {
+    private string location = "Entrance";
+    [Parameter]
+    public string areaURL { get; set; }
+    [Parameter]
+    public string buildingURL { get; set; }
+    public Building thisBuilding { get; set; }
+
+    private void Exit()
+    {
+        GameState.GoTo("/World/EastTsuCity/");
+        GameState.UpdateState();
+    }
+    private void Talk(Dialog d)
+    {
+        d.Talk();
+        GameState.UpdateState();
+    }
+
+    protected override void OnParametersSet()
+    {
+        thisBuilding = AreaManager.Instance.GetAreaByURL("NorthTsuCity").GetBuildingByURL("AlchemyGuild");
+        GameState.UpdateState();
+    }
+    protected override void OnInitialized()
+    {
+
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e)
+    {
+        StateHasChanged();
+    }
+}

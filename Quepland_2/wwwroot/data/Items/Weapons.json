@@ -1507,7 +1507,7 @@
   {
     "name": "Sulmenkan Trident",
     "description": "A giant fork used for poking things.",
-    "value": 10000,
+    "value": 40000,
     "enabledActions": "Trident Hunting",
     "secondaryColor": "#259078",
     "equipSlot": "R Hand",

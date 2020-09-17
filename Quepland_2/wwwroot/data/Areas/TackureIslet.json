@@ -37,7 +37,8 @@
         "url": "ArtisanGuildFactory",
         "description": "The building is quite expansive. It surrounds the water so boats can dock inside. An important looking man is sitting by a booth near the door, writing very excitedly in a notebook.",
         "npcs": [
-          "Juis"
+          "Juis",
+          "Rugu"
         ],
         "isGuild": true
       }

@@ -26,7 +26,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.11";
+    public static string Version { get; set; } = "1.0.11b";
     public static List<Update> Updates { get; set; } = new List<Update>();
     //public static Pluralizer Pluralizer = new Pluralizer();
 
@@ -139,8 +139,6 @@ using System.Threading.Tasks;
 
     private async Task Tick()
     {
-        Stopwatch timer = new Stopwatch();
-        timer.Start();
         if (IsOnHuntingTrip || CurrentAFKAction != null)
         {
             CurrentTick++;
@@ -254,8 +252,6 @@ using System.Threading.Tasks;
         {
             await SaveManager.SaveGame();
         }
-        timer.Stop();
-        Console.WriteLine("Total Game Tick took:" + timer.ElapsedMilliseconds);
     }
     /// <summary>
     /// Pauses actions at the beginning of the next game tick.

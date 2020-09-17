@@ -1,0 +1,29 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Rugu",
+  "id": 61,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello, would you like to visit the kingdom of Sulmenka? Our tourism board has started offering free visits to land-folk.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Yes",
+      "responseText": "Wonderful, just climb aboard our vessel and we will depart shortly.",
+      "depth": 1,
+      "newDepthOnTalk": 2
+    },
+    {
+      "buttonText": "No",
+      "responseText": "I'm terribly sorry to hear that. I do hope you may change your mind. If you do, please come talk to me.",
+      "depth": 1
+    },
+    {
+      "buttonText": "Board",
+      "responseText": "UnlockAndGotoArea",
+      "parameter": "Nakneg Hall",
+      "depth": 2
+    }
+  ]
+}

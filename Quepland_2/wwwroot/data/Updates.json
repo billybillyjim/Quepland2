@@ -10,7 +10,8 @@
       "You can now catch sardines in Koya Hasa.",
       "Made it harder to get softlocked by afk actions and hunting trips.",
       "Fixed the bug that made armor calculations happen after the damage calculation in a way where you couldn't hit over your opponent's max hp.",
-      "Fixed a bug that made combat sometimes slow down for no apparent reason."
+      "Fixed a bug that made combat sometimes slow down for no apparent reason.",
+      "Added the Sulmenkan Kingdom."
     ]
   },
   {

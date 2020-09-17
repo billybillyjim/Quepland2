@@ -291,9 +291,19 @@ public class ItemManager
 
         foreach (GameItem i in Items)
         {
-            if (i.AlchemyInfo != null)
+            if (i.AlchemyInfo != null && i.Category == "Bars")
             {
                 if(i.AlchemyInfo.QueplarValue == totalValue)
+                {
+                    return i;
+                }
+            }
+        }
+        foreach (GameItem i in Items)
+        {
+            if (i.AlchemyInfo != null)
+            {
+                if (i.AlchemyInfo.QueplarValue == totalValue)
                 {
                     return i;
                 }

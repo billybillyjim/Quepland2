@@ -29,6 +29,53 @@
     "id": 152,
     "image": "Market",
     "description": "Manihoj is the largest marketplace under the sea, if you believe the signage. There are many shops here, mostly consisting of bulk goods. Most places seem to accept gold pieces, though a few only trade via Sashcom Scales.",
-    "areaURL": "ManihojMarket"
+    "areaURL": "ManihojMarket",
+    "buildings": [
+      {
+        "name": "Sulmenkan Local Goods",
+        "buttonText": "Local Goods Stall",
+        "url": "SulmenkanLocalGoods",
+        "description": "The sizeable stall sells a variety of locally made Sulmenkan products. Most of them are of no use to you, but you notice a few helpful items in a case behind the counter.",
+        "shops": [
+          {
+            "name": "Sulmenkan Local Goods",
+            "limitBoughtItemsToSoldItems": true,
+            "itemNames": [
+              "Sulmenkan Trident",
+              "Fish Knife",
+              "Bucket of Water",
+              "Tome of Fish"
+            ],
+            "costMultiplier": 5
+
+          }
+        ]
+      },
+      {
+        "name": "Hunted Wares",
+        "buttonText": "Hunting Stall",
+        "url": "HuntedWares",
+        "description": "A small and smelly market stall sits in the corner of the plaza. There's a pile of every kind of dead animal, some tanned and some apparently still fresh.",
+        "shops": [
+          {
+            "name": "Hunted Wares",
+            "limitBoughtItemsToSoldItems": true,
+            "itemNames": [
+              "Rabbit",
+              "Deer",
+              "Pigeon",
+              "Rabbit Leather",
+              "Deer Leather",
+              "Wild Boar Leather",
+              "Black Bear Leather",
+              "Moose Leather"
+            ],
+            "costMultiplier": 5,
+            "currencyName": "Sashcom Scales"
+
+          }
+        ]
+      }
+    ]
   }
 ]

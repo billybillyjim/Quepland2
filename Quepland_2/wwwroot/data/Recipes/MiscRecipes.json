@@ -173,5 +173,22 @@
     ],
     "recipeActionString": "You wipe the sword with the cloth...",
     "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Sashcom Scales",
+    "outputAmount": 20,
+    "ingredients": [
+      {
+        "itemName": "Sashcom",
+        "amount": 1
+      },
+      {
+        "itemName": "Fish Knife",
+        "amount": 1,
+        "destroyOnUse": false
+      }
+    ],
+    "recipeActionString": "You clean a sashcom and remove its scales...",
+    "maxOutputsPerAction": 1
   }
 ]

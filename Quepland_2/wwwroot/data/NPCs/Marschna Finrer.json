@@ -1,0 +1,11 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Marschna Finrer",
+  "id": 64,
+  "dialogs": [
+    {
+      "buttonText": "Who are you?",
+      "responseText": "I'm a ghost! Tell the dev where you found me. Boo!"
+    }
+  ]
+}

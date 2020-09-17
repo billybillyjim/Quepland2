@@ -2,64 +2,72 @@
 @implements IDisposable
 
 
-<div style="position:relative">
-    <button class="btn btn-primary" style="margin: 5px;" onclick="@(new Action(() => ReturnForAir()))">Return for air</button>
-</div>
-<div>
-    Air
-    <div class="progress" style="width:300px;margin:5px;">
-        <div class="progress-bar" style="@GetAirProgress()"></div>
-    </div>
-</div>
-@if (IsCorralling == false)
+@if (IsHunting)
 {
-    <div style="position:relative;margin:5px;">
-        <button class="btn btn-primary" onclick="@(new Action(() => CorralFish()))">Chase Fish</button>
+    <div style="position:relative">
+        <button class="btn btn-primary" style="margin: 5px;" onclick="@(new Action(() => ReturnForAir()))">Return for air</button>
     </div>
-}
-else
-{
-    <div style="position:relative;margin:5px;">
-        <button class="btn btn-primary" onclick="@(new Action(() => StopCorralling()))">Stop Chasing Fish</button>
+    <div>
+        Air
+        <div class="progress" style="width:300px;margin:5px;">
+            <div class="progress-bar" style="@GetAirProgress()"></div>
+        </div>
     </div>
-}
-Corralled fish:@availableFish
-@if (availableFish > 0)
-{
-    if (IsGathering)
+    @if (IsCorralling == false)
     {
         <div style="position:relative;margin:5px;">
-            <button class="btn btn-primary" onclick="@(new Action(() => StopGathering()))">Stop Gathering</button>
+            <button class="btn btn-primary" onclick="@(new Action(() => CorralFish()))">Chase Fish</button>
         </div>
     }
     else
     {
-        if (Player.Instance.HasToolRequirement("Trident Hunting"))
+        <div style="position:relative;margin:5px;">
+            <button class="btn btn-primary" onclick="@(new Action(() => StopCorralling()))">Stop Chasing Fish</button>
+        </div>
+    }
+<div>Corralled fish:@availableFish</div>
+@if(availableFish > 0)
+{
+        if (IsGathering)
         {
             <div style="position:relative;margin:5px;">
-                <button class="btn btn-primary" onclick="@(new Action(() => GatherFish()))">Gather Fish</button>
+                <button class="btn btn-primary" onclick="@(new Action(() => StopGathering()))">Stop Gathering</button>
             </div>
         }
         else
         {
-            <div style="position:relative;margin:5px;">
-                <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need some kind of trident to catch these fish.")))"
-                        @onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                    Gather Fish
-                </button>
-            </div>
+            if (Player.Instance.HasToolRequirement("Trident Hunting"))
+            {
+                <div style="position:relative;margin:5px;">
+                    <button class="btn btn-primary" onclick="@(new Action(() => GatherFish()))">Gather Fish</button>
+                </div>
+            }
+            else
+            {
+                <div style="position:relative;margin:5px;">
+                    <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need some kind of trident to catch these fish.")))"
+                            @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                        Gather Fish
+                    </button>
+                </div>
+            }
         }
+    }
+else
+    {
+        <div style="position:relative;margin:5px;">
+            <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need to corral fish first!")))"
+                    @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                Gather Fish
+            </button>
+        </div>
     }
 }
 else
 {
-    <div style="position:relative;margin:5px;">
-        <button class="btn btn-primary" style="opacity:0.5" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need to corral fish first!")))"
-                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
-            Gather Fish
-        </button>
-    </div>
+    <button class="btn btn-primary" style="margin:5px;" @onclick="@(() => Hunt())">Enter Water</button>
 }
+
 
 
 
@@ -76,11 +84,19 @@ else
     private int air;
     private bool IsCorralling;
     private bool IsGathering;
+    private bool IsHunting;
+
+    public void Hunt()
+    {
+        IsHunting = true;
+        GameState.UpdateState();
+    }
 
     public void CorralFish()
     {
         FinishGameTick = GameState.CurrentTick + GameState.Random.Next(10, 25);
         IsCorralling = true;
+        IsGathering = false;
         MessageManager.AddMessage("You start corralling the fish.");
         GameState.UpdateState();
     }
@@ -140,6 +156,7 @@ else
 
     public void Dispose()
     {
+        IsHunting = false;
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e)
@@ -159,10 +176,15 @@ else
             availableFish -= amt;
             FinishGameTick = GameState.CurrentTick + GameState.Random.Next(7, 20);
             Player.Instance.GainExperienceMultipleTimes("Hunting:15", amt);
-            if(availableFish <= 0)
+            if (availableFish <= 0)
             {
+                MessageManager.AddMessage("You caught the last of the fish.");
                 IsGathering = false;
-
+            }
+            else if (Player.Instance.Inventory.GetAvailableSpaces() == 0)
+            {
+                MessageManager.AddMessage("You have run out of inventory space.");
+                IsGathering = false;
             }
         }
         if (LastGameTick != GameState.CurrentTick)
