@@ -160,6 +160,7 @@ public class Area
             TripReturnTime = HuntingTripInfo?.ReturnTime ?? DateTime.MinValue,
             TripStartTime = HuntingTripInfo?.StartTime ?? DateTime.MinValue,
             TrapSize = TrapSlot?.Size ?? 0,
+            dtLocation = HuntingTripInfo?.DropTableLocation ?? "",
             ID = ID };
     }
     public void LoadSaveData(AreaSaveData data)
@@ -173,12 +174,29 @@ public class Area
         }
         if(HuntingTripInfo != null)
         {
-            HuntingTripInfo.LoadSaveData(data.TripIsActive, data.TripReturnTime, data.TripStartTime, data.HuntingBoost, "");
+            try
+            {
+
+                HuntingTripInfo.LoadSaveData(data.TripIsActive, data.TripReturnTime, data.TripStartTime, data.HuntingBoost, "");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+            }
         }
         else if (data.TripIsActive)
         {
-            HuntingTripInfo = new HuntingTripInfo();
-            HuntingTripInfo.LoadSaveData(data.TripIsActive, data.TripReturnTime, data.TripStartTime, data.HuntingBoost, data.dtLocation);
+            if(HuntingTripInfo != null)
+            {
+                HuntingTripInfo.LoadSaveData(data.TripIsActive, data.TripReturnTime, data.TripStartTime, data.HuntingBoost, data.dtLocation);
+
+            }
+            else
+            {
+                HuntingTripInfo = new HuntingTripInfo();
+                HuntingTripInfo.LoadSaveData(data.TripIsActive, data.TripReturnTime, data.TripStartTime, data.HuntingBoost, data.dtLocation);
+            }
         }
         
     }

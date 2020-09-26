@@ -186,7 +186,7 @@
     "icon": "Arrows",
     "isStackable": true,
     "weaponInfo": {
-      "damage": 55,
+      "damage": 65,
       "isArrow": true
     },
     "requirements": [
@@ -204,7 +204,7 @@
     "icon": "HeavyArrows",
     "isStackable": true,
     "weaponInfo": {
-      "damage": 55,
+      "damage": 105,
       "isArrow": true
     },
     "requirements": [
@@ -222,7 +222,7 @@
     "icon": "Arrows",
     "isStackable": true,
     "weaponInfo": {
-      "damage": 62,
+      "damage": 72,
       "isArrow": true
     },
     "requirements": [
@@ -240,7 +240,7 @@
     "icon": "HeavyArrows",
     "isStackable": true,
     "weaponInfo": {
-      "damage": 68,
+      "damage": 118,
       "isArrow": true
     },
     "requirements": [
@@ -258,7 +258,7 @@
     "icon": "Arrows",
     "isStackable": true,
     "weaponInfo": {
-      "damage": 70,
+      "damage": 90,
       "isArrow": true
     },
     "secondaryColor": "#875B24",
@@ -276,7 +276,7 @@
     "icon": "HeavyArrows",
     "isStackable": true,
     "weaponInfo": {
-      "damage": 82,
+      "damage": 152,
       "isArrow": true
     },
     "secondaryColor": "#875B24",
@@ -294,7 +294,7 @@
     "icon": "Arrows",
     "isStackable": true,
     "weaponInfo": {
-      "damage": 55,
+      "damage": 85,
       "isArrow": true
     },
     "requirements": [
@@ -313,7 +313,7 @@
     "isStackable": true,
     "icon": "Arrows",
     "weaponInfo": {
-      "damage": 100,
+      "damage": 200,
       "isArrow": true
     },
     "requirements": [

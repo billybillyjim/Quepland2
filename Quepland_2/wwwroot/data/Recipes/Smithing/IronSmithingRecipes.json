@@ -89,6 +89,21 @@
     ]
   },
   {
+    "outputItemName": "Iron Pickaxe",
+    "ingredients": [
+      {
+        "itemName": "Molten Iron Bar"
+      }
+    ],
+    "experienceGained": "Smithing:95",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 45
+      }
+    ]
+  },
+  {
     "outputItemName": "Iron Bar",
     "ingredients": [
       {

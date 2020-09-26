@@ -168,7 +168,7 @@
         }
         @if (Bank.Instance.IsBanking && Item.IsLocked == false)
         {
-            if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Banking")
+            if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.AutoCollectSkill == "Banking" && Item.IsSellable)
             {
                 @if (SaleValueOverZero())
                 {

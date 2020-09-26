@@ -132,7 +132,11 @@ public class Player
     }
     public void Equip(GameItem item)
     {
-        Unequip(equippedItems.Find(x => x.EquipSlot == item.EquipSlot));
+        GameItem e = equippedItems.FirstOrDefault(x => x.EquipSlot == item.EquipSlot);
+        if(e != null)
+        {
+            Unequip(e);
+        }
         equippedItems.Add(item);
         if(item.WeaponInfo != null)
         {
@@ -171,11 +175,7 @@ public class Player
             if(item.WeaponInfo != null)
             {
                 total += item.WeaponInfo.Damage;
-                if(GetWeapon().Name == "Spine Shooter")
-                {
-                    total -= GetWeapon().WeaponInfo.Damage;
-                }
-                else if (GetWeapon().EnabledActions == "Archery" && Inventory.HasArrows() == false)
+                if (GetWeapon().EnabledActions == "Archery" && Inventory.HasArrows() == false)
                 {
                     total += GetLevel("Strength");
                 }
@@ -506,7 +506,7 @@ public class Player
     }
     public void AddStatusEffect(IStatusEffect effect)
     {
-        CurrentStatusEffects.Add(effect);
+        CurrentStatusEffects.Add(effect.Copy());
     }
     public void TickStatusEffects()
     {

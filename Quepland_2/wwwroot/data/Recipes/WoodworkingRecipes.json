@@ -1705,6 +1705,10 @@
       {
         "skill": "Woodworking",
         "skillLevel": 40
+      },
+      {
+        "skill": "Artisan",
+        "skillLevel": 40
       }
     ],
     "recipeActionString": "You begin adding arrowtips to the arrow...",
@@ -1725,6 +1729,10 @@
     "requirements": [
       {
         "skill": "Woodworking",
+        "skillLevel": 40
+      },
+      {
+        "skill": "Artisan",
         "skillLevel": 40
       }
     ],
@@ -1894,6 +1902,10 @@
       {
         "skill": "Woodworking",
         "skillLevel": 60
+      },
+      {
+        "skill": "Artisan",
+        "skillLevel": 60
       }
     ],
     "recipeActionString": "You begin adding arrowtips to the arrow...",
@@ -1957,6 +1969,10 @@
       {
         "skill": "Woodworking",
         "skillLevel": 70
+      },
+      {
+        "skill": "Artisan",
+        "skillLevel": 70
       }
     ],
     "recipeActionString": "You begin adding arrowtips to the arrow...",
@@ -2019,6 +2035,10 @@
     "requirements": [
       {
         "skill": "Woodworking",
+        "skillLevel": 80
+      },
+      {
+        "skill": "Artisan",
         "skillLevel": 80
       }
     ],

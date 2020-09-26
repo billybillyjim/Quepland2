@@ -25,6 +25,14 @@
             <div style="position:absolute;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);color:white;">
                 @Player.Instance.CurrentHP / @Player.Instance.MaxHP
             </div>
+            @if (GameState.CurrentFood != null)
+            {
+                <div class="progress-bar" style="width:@(GetFoodProgress());background-color:#7d42b2;position:absolute;height:3px;z-index:3" 
+                     @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GameState.CurrentFood.Name, "Remaining:" + TimeSpan.FromSeconds((GameState.HealingTicks * GameState.CurrentFood.FoodInfo.HealSpeed / 5.0)).ToString("h'h 'm'm 's's'"))))"
+                           @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+
+                </div>
+            }
         </div>
     </div>
 @if (activeWindow == "Inventory")
@@ -62,6 +70,10 @@ else if(activeWindow == "Debug")
     {
         return (((double)Player.Instance.CurrentHP / Player.Instance.MaxHP) * 100d) + "%";
     }
+    private string GetFoodProgress()
+    {
+        return (((double)GameState.HealingTicks / GameState.CurrentFood.FoodInfo.HealDuration) * 100d) + "%";
+    }
 
     private string GetBGColor(string window)
     {
@@ -79,7 +91,7 @@ else if(activeWindow == "Debug")
     public bool IsTesting()
     {
         return NavMan.BaseUri.Contains("localhost");
-        
+
     }
     protected override void OnInitialized()
     {

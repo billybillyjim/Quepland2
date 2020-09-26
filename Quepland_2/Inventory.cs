@@ -619,6 +619,10 @@ public class Inventory
             {
                 Console.WriteLine("Error loading item in line:" + line);
             }
+            if(it != null)
+            {
+                it.IsLocked = false;
+            }
 
         }
         IsLoadingSave = false;

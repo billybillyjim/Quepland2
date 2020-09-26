@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
+using Pluralize.NET;
 using Quepland_2.Components;
 using Quepland_2.Pages;
 using Quepland_2.Shared;
@@ -26,9 +27,9 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.11b";
+    public static string Version { get; set; } = "1.0.12";
     public static List<Update> Updates { get; set; } = new List<Update>();
-    //public static Pluralizer Pluralizer = new Pluralizer();
+    public static Pluralizer Pluralizer = new Pluralizer();
 
     public static string Location { get; set; } = "";
     public static string BGColor { get; set; } = "#2d2d2d";
@@ -118,6 +119,7 @@ using System.Threading.Tasks;
 
     public bool SaveGame = false;
     public static bool IsSaving = false;
+    private Stopwatch stopwatch = new Stopwatch();
 
     public void Start()
     {
@@ -813,7 +815,7 @@ using System.Threading.Tasks;
         }
         else if(AlchemyStage == 3)
         {
-            GameItem reward = ItemManager.Instance.GetItemFromFormula(CurrentAlchemyFormula);
+            GameItem reward = ItemManager.Instance.GetItemFromFormula(CurrentAlchemyFormula).Copy();
             if(reward == null)
             {
                 reward = ItemManager.Instance.GetItemByName("Alchemical Dust");

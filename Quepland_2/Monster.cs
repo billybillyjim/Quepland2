@@ -36,13 +36,13 @@ public class Monster
     }
     public void AddStatusEffect(IStatusEffect effect)
     {
-        if (CurrentStatusEffects.Contains(effect))
+        if (HasStatusEffect(effect.Name))
         {
-            CurrentStatusEffects.First(x => x == effect).RemainingTime = effect.Duration;
+            CurrentStatusEffects.First(x => x.Name == effect.Name).RemainingTime = effect.Duration;
         }
         else
         {
-            CurrentStatusEffects.Add(effect);
+            CurrentStatusEffects.Add(effect.Copy());
         }
         
     }

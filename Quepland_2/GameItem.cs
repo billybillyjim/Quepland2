@@ -54,8 +54,7 @@ public class GameItem
 
 	public string GetPlural()
     {
-		//return GameState.Pluralizer.Pluralize(Name);
-		return Name + "s";
+		return GameState.Pluralizer.Pluralize(Name);
     }
 	public string GetStats()
     {

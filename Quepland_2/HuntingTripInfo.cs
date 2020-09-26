@@ -15,10 +15,12 @@ public class HuntingTripInfo
 
 	public void LoadSaveData(bool isActive, DateTime rTime, DateTime sTime, int boost, string dtLocation)
     {
-		IsActive = isActive;
-		ReturnTime = rTime;
-		StartTime = sTime;
-		LevelBoost = boost;
-		DropTableLocation = dtLocation;
+
+			IsActive = isActive;
+			ReturnTime = rTime;
+			StartTime = sTime;
+			LevelBoost = boost;
+			DropTableLocation = dtLocation;
+
     }
 }

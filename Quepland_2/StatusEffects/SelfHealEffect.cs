@@ -12,7 +12,7 @@ public class SelfHealEffect : IStatusEffect
     public int RemainingTime { get; set; }
 
     public double ProcOdds { get; set; }
-
+    private StatusEffectData d;
     public string Message { get; set; }
     public bool SelfInflicted { get; set; }
     public SelfHealEffect(StatusEffectData data)
@@ -24,7 +24,8 @@ public class SelfHealEffect : IStatusEffect
         Power = data.Power;
         Message = data.Message;
         RemainingTime = data.Duration;
-        SelfInflicted = data.SelfInflicted;
+        SelfInflicted = data.SelfInflicted; 
+        d = data;
     }
     public void DoEffect(Monster m)
     {
@@ -41,6 +42,10 @@ public class SelfHealEffect : IStatusEffect
             p.CurrentHP += Power;
             MessageManager.AddMessage("You recover " + Power + " HP!");
         }
+    }
+    public IStatusEffect Copy()
+    {
+        return new SelfHealEffect(d);
     }
 }
 

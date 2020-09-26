@@ -5,7 +5,8 @@
 
 @if (BattleManager.Instance.CurrentOpponents != null)
 {
-    <div style="width:550px;height:300px;">
+<div style="width:550px;height:300px;">
+
         @foreach (Monster opponent in BattleManager.Instance.CurrentOpponents)
         {
         <div>
@@ -118,97 +119,97 @@
             </div>
         </div>
     }
-}
-
-
-@code {
-
-    private string selectedOpponent = "";
-
-    public List<string> GetPossibleOpponents()
-    {
-        if(BattleManager.Instance.CurrentArea?.Monsters == null)
-        {
-            return new List<string>();
-        }
-        return BattleManager.Instance.CurrentArea.Monsters;
     }
 
-    public void SwitchTargets(Monster m)
-    {
-        if (BattleManager.Instance.CurrentOpponents.Contains(m) && m.IsDefeated == false)
+
+    @code {
+
+        private string selectedOpponent = "";
+
+        public List<string> GetPossibleOpponents()
         {
-            BattleManager.Instance.Target = m;
+            if (BattleManager.Instance.CurrentArea?.Monsters == null)
+            {
+                return new List<string>();
+            }
+            return BattleManager.Instance.CurrentArea.Monsters;
         }
 
-        GameState.UpdateState();
-    }
-    private void AutoBattle()
-    {
-        BattleManager.Instance.AutoBattle = true;
-        ContinueBattles();
-        GameState.UpdateState();
-    }
-    private void StopAutoBattle()
-    {
-        BattleManager.Instance.AutoBattle = false;
-        BattleManager.Instance.CurrentOpponents.Clear();
-        BattleManager.Instance.EndBattle();
-        GameState.UpdateState();
-    }
-    private void ContinueBattles()
-    {
-        GameState.StopNonCombatActions();
-        if (BattleManager.Instance.AutoBattle && selectedOpponent != "")
+        public void SwitchTargets(Monster m)
         {
-            BattleManager.Instance.StartBattle(BattleManager.Instance.GetMonsterByName(selectedOpponent));
+            if (BattleManager.Instance.CurrentOpponents.Contains(m) && m.IsDefeated == false)
+            {
+                BattleManager.Instance.Target = m;
+            }
+
+            GameState.UpdateState();
         }
-        else
+        private void AutoBattle()
         {
-            BattleManager.Instance.StartBattle(BattleManager.Instance.CurrentArea);
+            BattleManager.Instance.AutoBattle = true;
+            ContinueBattles();
+            GameState.UpdateState();
         }
+        private void StopAutoBattle()
+        {
+            BattleManager.Instance.AutoBattle = false;
+            BattleManager.Instance.CurrentOpponents.Clear();
+            BattleManager.Instance.EndBattle();
+            GameState.UpdateState();
+        }
+        private void ContinueBattles()
+        {
+            GameState.StopNonCombatActions();
+            if (BattleManager.Instance.AutoBattle && selectedOpponent != "")
+            {
+                BattleManager.Instance.StartBattle(BattleManager.Instance.GetMonsterByName(selectedOpponent));
+            }
+            else
+            {
+                BattleManager.Instance.StartBattle(BattleManager.Instance.CurrentArea);
+            }
 
 
-        GameState.UpdateState();
-    }
-    private string GetPlayerHPPercent()
-    {
-        return (((double)Player.Instance.CurrentHP / Player.Instance.MaxHP) * 100d) + "%";
-    }
-    private string GetOpponentAttackProgress(Monster opponent)
-    {
-        return (100 - (((double)opponent.TicksToNextAttack / opponent.AttackSpeed) * 100d)) + "%";
-    }
-    private string GetPlayerAttackProgress()
-    {
-        return (100 - (((double)Player.Instance.TicksToNextAttack / Player.Instance.GetWeaponAttackSpeed()) * 100d)) + "%";
-    }
-    private void Return()
-    {
-        if (String.IsNullOrEmpty(BattleManager.Instance.ReturnLocation))
-        {
-            GameState.Location = BattleManager.Instance.CurrentArea.AreaURL;
-            UriHelper.NavigateTo("World/" + BattleManager.Instance.CurrentArea.AreaURL);
+            GameState.UpdateState();
         }
-        else
+        private string GetPlayerHPPercent()
         {
-            GameState.Location = BattleManager.Instance.ReturnLocation;
-            BattleManager.Instance.ReturnLocation = "";
-            UriHelper.NavigateTo(GameState.Location);
+            return (((double)Player.Instance.CurrentHP / Player.Instance.MaxHP) * 100d) + "%";
         }
-    }
-    protected override void OnInitialized()
-    {
-        GameState.StateChanged += OnGameStateChanged;
-    }
-    public void Dispose()
-    {
-        BattleManager.Instance.BattleHasEnded = true;
+        private string GetOpponentAttackProgress(Monster opponent)
+        {
+            return (100 - (((double)opponent.TicksToNextAttack / opponent.AttackSpeed) * 100d)) + "%";
+        }
+        private string GetPlayerAttackProgress()
+        {
+            return (100 - (((double)Player.Instance.TicksToNextAttack / Player.Instance.GetWeaponAttackSpeed()) * 100d)) + "%";
+        }
+        private void Return()
+        {
+            if (String.IsNullOrEmpty(BattleManager.Instance.ReturnLocation))
+            {
+                GameState.Location = BattleManager.Instance.CurrentArea.AreaURL;
+                UriHelper.NavigateTo("World/" + BattleManager.Instance.CurrentArea.AreaURL);
+            }
+            else
+            {
+                GameState.Location = BattleManager.Instance.ReturnLocation;
+                BattleManager.Instance.ReturnLocation = "";
+                UriHelper.NavigateTo(GameState.Location);
+            }
+        }
+        protected override void OnInitialized()
+        {
+            GameState.StateChanged += OnGameStateChanged;
+        }
+        public void Dispose()
+        {
+            BattleManager.Instance.BattleHasEnded = true;
 
-        GameState.StateChanged -= OnGameStateChanged;
-    }
-    void OnGameStateChanged(object sender, EventArgs e)
-    {
-        StateHasChanged();
-    }
+            GameState.StateChanged -= OnGameStateChanged;
+        }
+        void OnGameStateChanged(object sender, EventArgs e)
+        {
+            StateHasChanged();
+        }
 }

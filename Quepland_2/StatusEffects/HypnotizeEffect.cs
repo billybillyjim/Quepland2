@@ -15,6 +15,7 @@ public class HypnotizeEffect : IStatusEffect
 
     public string Message { get; set; }
     public bool SelfInflicted { get; set; }
+    private StatusEffectData d;
     public HypnotizeEffect(StatusEffectData data)
     {
         Name = data.Name;
@@ -25,6 +26,7 @@ public class HypnotizeEffect : IStatusEffect
         Message = data.Message;
         RemainingTime = data.Duration;
         SelfInflicted = data.SelfInflicted;
+        d = data;
     }
     public void DoEffect(Monster m)
     {
@@ -41,6 +43,10 @@ public class HypnotizeEffect : IStatusEffect
             p.TicksToNextAttack = p.GetWeaponAttackSpeed();
             MessageManager.AddMessage("You are hypnotized and cannot move!");
         }
+    }
+    public IStatusEffect Copy()
+    {
+        return new HypnotizeEffect(d);
     }
 }
 

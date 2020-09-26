@@ -13,6 +13,7 @@ public class EmptyEffect : IStatusEffect
 
     public double ProcOdds { get; set; }
     public bool SelfInflicted { get; set; }
+    private StatusEffectData d;
 
     public string Message { get; set; }
     public EmptyEffect(StatusEffectData data)
@@ -25,6 +26,7 @@ public class EmptyEffect : IStatusEffect
         Message = data.Message;
         RemainingTime = data.Duration;
         SelfInflicted = data.SelfInflicted;
+        d = data;
     }
     public void DoEffect(Monster m)
     {
@@ -41,6 +43,10 @@ public class EmptyEffect : IStatusEffect
             GameState.CancelEating = true;
             MessageManager.AddMessage("You feel empty inside...");
         }
+    }
+    public IStatusEffect Copy()
+    {
+        return new EmptyEffect(d);
     }
 }
 

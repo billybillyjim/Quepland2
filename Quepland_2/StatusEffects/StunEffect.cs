@@ -13,7 +13,7 @@ public class StunEffect : IStatusEffect
 
     public double ProcOdds { get; set; }
     public bool SelfInflicted { get; set; }
-
+    private StatusEffectData d;
     public string Message { get; set; }
     public StunEffect(StatusEffectData data)
     {
@@ -24,7 +24,8 @@ public class StunEffect : IStatusEffect
         Power = data.Power;
         Message = data.Message;
         RemainingTime = data.Duration;
-        SelfInflicted = data.SelfInflicted;
+        SelfInflicted = data.SelfInflicted; 
+        d = data;
     }
     public void DoEffect(Monster m)
     {
@@ -39,6 +40,10 @@ public class StunEffect : IStatusEffect
         {
             p.TicksToNextAttack = p.GetWeaponAttackSpeed();
         }
+    }
+    public IStatusEffect Copy()
+    {
+        return new StunEffect(d);
     }
 }
 

@@ -15,6 +15,7 @@ public class CleaveEffect : IStatusEffect
     public bool SelfInflicted { get; set; }
 
     public string Message { get; set; }
+    private StatusEffectData d;
     public CleaveEffect(StatusEffectData data)
     {
         Name = data.Name;
@@ -25,6 +26,7 @@ public class CleaveEffect : IStatusEffect
         Message = data.Message;
         RemainingTime = data.Duration;
         SelfInflicted = data.SelfInflicted;
+        d = data;
     }
     public void DoEffect(Monster m)
     {
@@ -39,6 +41,10 @@ public class CleaveEffect : IStatusEffect
         {
             
         }
+    }
+    public IStatusEffect Copy()
+    {
+        return new CleaveEffect(d);
     }
 }
 

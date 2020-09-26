@@ -13,7 +13,7 @@ public class PoisonEffect : IStatusEffect
 
 	public double ProcOdds { get; set; }
     public bool SelfInflicted { get; set; }
-
+    private StatusEffectData d;
     public string Message { get; set; }
     public PoisonEffect(StatusEffectData data)
     {
@@ -25,6 +25,7 @@ public class PoisonEffect : IStatusEffect
         Message = data.Message;
         RemainingTime = data.Duration; 
         SelfInflicted = data.SelfInflicted;
+        d = data;
     }
     public void DoEffect(Monster m)
     {
@@ -41,6 +42,10 @@ public class PoisonEffect : IStatusEffect
             MessageManager.AddMessage("You took " + Power + " damage from the poison.");
             p.CurrentHP -= Power;
         }
+    }
+    public IStatusEffect Copy()
+    {
+        return new PoisonEffect(d);
     }
 }
 

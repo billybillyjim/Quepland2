@@ -36,10 +36,6 @@
           "weight": 50
         },
         {
-          "itemName": "Carp",
-          "weight": 50
-        },
-        {
           "itemName": "Fisherman Gloves",
           "weight": 1
         },
@@ -54,6 +50,10 @@
         {
           "itemName": "Fisherman Pants",
           "weight": 1
+        },
+        {
+          "itemName": "Carp",
+          "weight": 50
         }
       ]
     }

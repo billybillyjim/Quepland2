@@ -15,6 +15,7 @@ public class FreezeEffect : IStatusEffect
     public bool SelfInflicted { get; set; }
 
     public string Message { get; set; }
+    private StatusEffectData d;
     public FreezeEffect(StatusEffectData data)
     {
         Name = data.Name;
@@ -25,6 +26,7 @@ public class FreezeEffect : IStatusEffect
         Message = data.Message;
         RemainingTime = data.Duration;
         SelfInflicted = data.SelfInflicted;
+        d = data;
     }
     public void DoEffect(Monster m)
     {
@@ -41,6 +43,10 @@ public class FreezeEffect : IStatusEffect
             p.TicksToNextAttack = p.GetWeaponAttackSpeed();
             MessageManager.AddMessage("You are frozen in your tracks!");
         }
+    }
+    public IStatusEffect Copy()
+    {
+        return new FreezeEffect(d);
     }
 }
 

@@ -1,5 +1,22 @@
 [
   {
+    "versionNumber": "1.0.12b",
+    "updates": [
+      "Added some error checking for hunting trips, maybe fixed the hunting save issue.",
+      "Fixed a bug with item locks staying locked for all duplicate items created or acquired.",
+      "Trying to add the pluralizer again, hopefully nothing breaks this time.",
+      "Alchemy now produces items properly.",
+      "Fixed the issue with status effects only working the first time.",
+      "Some arrows now have an artisan requirement to create.",
+      "Buffed a number of higher level arrows.",
+      "The spine shooter should no longer shoot arrows.",
+      "You can now smith iron pickaxes.",
+      "Animations are slightly sped up to look less laggy in certain instances.",
+      "Food now has a progress bar above the player's HP. You can mouse over it to see how much time is left and what food it is.",
+      "Fixed a bug that prevented depositing coins into your bank."
+    ]
+  },
+  {
     "versionNumber": "1.0.11b",
     "updates": [
       "Fishing gear now correctly requires fishing levels to equip.",

@@ -13,7 +13,7 @@ public class SummonChickenEffect : IStatusEffect
 
     public double ProcOdds { get; set; }
     public bool SelfInflicted { get; set; }
-
+    private StatusEffectData d;
     public string Message { get; set; }
     public SummonChickenEffect(StatusEffectData data)
     {
@@ -24,7 +24,8 @@ public class SummonChickenEffect : IStatusEffect
         Power = data.Power;
         Message = data.Message;
         RemainingTime = data.Duration;
-        SelfInflicted = data.SelfInflicted;
+        SelfInflicted = data.SelfInflicted; 
+        d = data;
     }
     public void DoEffect(Monster m)
     {
@@ -37,7 +38,11 @@ public class SummonChickenEffect : IStatusEffect
         BattleManager.Instance.ResetOpponent(BattleManager.Instance.GetMonsterByName("Chill Chicken"));
         BattleManager.Instance.CurrentOpponents.Add(BattleManager.Instance.GetMonsterByName("Chill Chicken"));
         RemainingTime = 0;
-        
+
+    }
+    public IStatusEffect Copy()
+    {
+        return new SummonChickenEffect(d);
     }
 }
 

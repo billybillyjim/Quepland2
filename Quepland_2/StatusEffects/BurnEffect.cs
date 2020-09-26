@@ -15,6 +15,7 @@ public class BurnEffect : IStatusEffect
     public bool SelfInflicted { get; set; }
 
     public string Message { get; set; }
+    private StatusEffectData d;
     public BurnEffect(StatusEffectData data)
     {
         Name = data.Name;
@@ -25,6 +26,7 @@ public class BurnEffect : IStatusEffect
         Message = data.Message;
         RemainingTime = data.Duration;
         SelfInflicted = data.SelfInflicted;
+        d = data;
     }
     public void DoEffect(Monster m)
     {
@@ -41,6 +43,10 @@ public class BurnEffect : IStatusEffect
             MessageManager.AddMessage("You took " + Power + " damage from being on fire.");
             p.CurrentHP -= Power;
         }
+    }
+    public IStatusEffect Copy()
+    {
+        return new BurnEffect(d);
     }
 }
 

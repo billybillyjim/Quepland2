@@ -33,5 +33,6 @@ public interface IStatusEffect
 	public bool SelfInflicted { get; set; }
 	public void DoEffect(Monster m);
 	public void DoEffect(Player p);
+	public IStatusEffect Copy();
 	
 }
