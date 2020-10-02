@@ -21,6 +21,8 @@ public class GameItem
 	public string PrimaryColor { get; set; } = "white";
 	public string SecondaryColor { get; set; } = "lightgray";
 	public bool IsTome { get; set; }
+
+	public bool PreventArtisanTask { get; set; }
 	public int Charges { get; set; } = 0;
 	public string Parameter { get; set; } = "";
 

@@ -3,10 +3,10 @@
     "name": "South Ufagari Shore",
     "id": 120,
     "image": "Mountain",
-    "description": "The coast of the island is entirely surrounded by rocky hills. You'll have to find some other way to get to it.",
+    "description": "The coast of the island is entirely surrounded by rocky hills. The southern cliff edge is the lowest on the island. A few villagers sit on the edge, fishing.",
     "areaURL": "SouthUfagariShore",
     "actions": [
-      "Go Fishing:Butterfish,Saury,Abalone"
+      "Go Fishing:Shrimp,Saury"
     ]
   },
   {
@@ -31,6 +31,10 @@
       {
         "areaURL": "UfagariFields",
         "buttonText": "Head through the village"
+      },
+      {
+        "areaURL": "SouthUfagariShore",
+        "buttonText": "Head south"
       }
     ]
   },

@@ -163,5 +163,14 @@
       "Rusterak Docks",
       "Manihoj Market"
     ]
+  },
+  {
+    "name": "Kyusa Sands",
+    "areaNames": [
+      "Horse's Back",
+      "Sunajo Fortress",
+      "Toad Ranch",
+      "Turru Cenopa"
+    ]
   }
 ]

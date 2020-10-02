@@ -1713,7 +1713,8 @@
     ],
     "recipeActionString": "You begin adding arrowtips to the arrow...",
     "maxOutputsPerAction": 10,
-    "outputAmount": 1
+    "outputAmount": 1,
+    "preventArtisanTask": true
   },
   {
     "outputItemName": "Mahogany Arrow",
@@ -1738,7 +1739,8 @@
     ],
     "recipeActionString": "You begin adding arrowtips to the arrow...",
     "maxOutputsPerAction": 10,
-    "outputAmount": 1
+    "outputAmount": 1,
+    "preventArtisanTask": true
   },
   {
     "outputItemName": "Heavy Ironwood Arrow",

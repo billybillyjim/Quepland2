@@ -19,7 +19,8 @@
         "skill": "Smithing",
         "skillLevel": 60
       }
-    ]
+    ],
+    "preventArtisanTask": true
   },
   {
     "outputItemName": "Mercurice Knife",
@@ -34,7 +35,8 @@
         "skill": "Smithing",
         "skillLevel": 60
       }
-    ]
+    ],
+    "preventArtisanTask": true
   },
   {
     "outputItemName": "Mercurice Sword",
@@ -49,7 +51,8 @@
         "skill": "Smithing",
         "skillLevel": 60
       }
-    ]
+    ],
+    "preventArtisanTask": true
   },
   {
     "outputItemName": "Mercurice Axe",
@@ -64,7 +67,8 @@
         "skill": "Smithing",
         "skillLevel": 60
       }
-    ]
+    ],
+    "preventArtisanTask": true
   },
   {
     "outputItemName": "Mercurice Hammer",
@@ -79,7 +83,8 @@
         "skill": "Smithing",
         "skillLevel": 60
       }
-    ]
+    ],
+    "preventArtisanTask": true
   }
 
 ]

@@ -62,7 +62,8 @@
         "skillLevel": 25
       }
     ],
-    "maxOutputsPerAction": 1
+    "maxOutputsPerAction": 1,
+    "preventArtisanTask": true
   },
   {
     "outputItemName": "Mercurial Sword",
@@ -91,7 +92,8 @@
         "skillLevel": 45
       }
     ],
-    "maxOutputsPerAction": 1
+    "maxOutputsPerAction": 1,
+    "preventArtisanTask": true
   },
   {
     "outputItemName": "Cactus Club",
@@ -106,7 +108,8 @@
       }
     ],
     "recipeActionString": "You painstakingly begin sticking all 10,000 cactus spines into the club...",
-    "maxOutputsPerAction": 1
+    "maxOutputsPerAction": 1,
+    "preventArtisanTask": true
   },
   {
     "outputItemName": "Steelflame Axe",
@@ -120,6 +123,7 @@
         "amount": 1
       }
     ],
+    "preventArtisanTask": true,
     "recipeActionString": "You attempt to attach the pieces of the axe together...",
     "requirements": [
       {
@@ -157,7 +161,8 @@
         "minimumQuestProgress": 4
       }
     ],
-    "maxOutputsPerAction": 1
+    "maxOutputsPerAction": 1,
+    "preventArtisanTask": true
   },
   {
     "outputItemName": "Queple's Sword(Inactive)",
@@ -172,7 +177,8 @@
       }
     ],
     "recipeActionString": "You wipe the sword with the cloth...",
-    "maxOutputsPerAction": 1
+    "maxOutputsPerAction": 1,
+    "preventArtisanTask": true
   },
   {
     "outputItemName": "Sashcom Scales",
@@ -189,6 +195,7 @@
       }
     ],
     "recipeActionString": "You clean a sashcom and remove its scales...",
-    "maxOutputsPerAction": 1
+    "maxOutputsPerAction": 1,
+    "preventArtisanTask": true
   }
 ]

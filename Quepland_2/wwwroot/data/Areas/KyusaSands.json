@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Horse's Back",
+    "id": 160,
+    "image": "SandDune",
+    "description": "The path slowly fades into the sands, which grow higher and higher. Eventually you reach the highest point in the dunes. A lone signpost informs you that you are standing on the Horse's Back sand dune. From here you can see a large sandy fortress ahead.",
+    "areaURL": "HorsesBack",
+    "actions": [
+      "Dig Sand:Sand"
+    ],
+    "requirements": [
+      {
+        "action": "Desert Travel"
+      }
+    ]
+  },
+  {
+    "name": "Sunajo Fortress",
+    "id": 161,
+    "image": "SandCastle",
+    "description": "",
+    "areaURL": "SunajoFortress",
+    "requirements": [
+      {
+        "action": "Desert Travel"
+      }
+    ]
+  },
+  {
+    "name": "Toad Ranch",
+    "id": 162,
+    "image": "Toad",
+    "description": "",
+    "areaURL": "ToadRanch",
+    "requirements": [
+      {
+        "action": "Desert Travel"
+      }
+    ]
+  },
+  {
+    "name": "Turru Cenopa",
+    "id": 161,
+    "image": "Volcano",
+    "description": "",
+    "areaURL": "TurruCenopa",
+    "requirements": [
+      {
+        "action": "Desert Travel"
+      }
+    ]
+  }
+]

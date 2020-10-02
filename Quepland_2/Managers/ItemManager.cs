@@ -360,7 +360,7 @@ public class ItemManager
         List<Recipe> possibleRecipes = new List<Recipe>();
         foreach (Recipe r in ArtisanRecipes)
         {
-            if (r.Output.Category == "QuestItems" || r.Output.Category == "General" || r.ExperienceGained == "None" || r.Output.Name.Contains("Molten") || r.Output.Name.Contains("Frozen"))
+            if (r.Output.Category == "QuestItems" || r.Output.Category == "General" || r.ExperienceGained == "None" || r.Output.Name.Contains("Molten") || r.Output.Name.Contains("Frozen") || r.Output.PreventArtisanTask)
             {
                 continue;
             }

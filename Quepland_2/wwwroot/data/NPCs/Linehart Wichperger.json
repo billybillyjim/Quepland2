@@ -4,8 +4,154 @@
   "id": 63,
   "dialogs": [
     {
-      "buttonText": "Who are you?",
-      "responseText": "I'm a ghost! Tell the dev where you found me. Boo!"
+      "buttonText": "Hello",
+      "responseText": "You're not a guild member. What are you doing here?",
+      "newDepthOnTalk": 1,
+      "requirements": [
+        {
+          "quest": "Chrysopoean Crisis",
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "I want to learn alchemy",
+      "responseText": "You do? Well you're going to have a rough time learning it here, with Hadeas in charge.",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "quest": "Chrysopoean Crisis",
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "I want to join the guild",
+      "responseText": "Good luck, we haven't welcomed a new member in decades. With Hadeas in charge, that's unlikely to change either.",
+      "depth": 1,
+      "newDepthOnTalk": 2,
+      "requirements": [
+        {
+          "quest": "Chrysopoean Crisis",
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "Who is Hadeas?",
+      "responseText": "He's a power-hungry newt who somehow managed to become headmaster of the guild by killing the previous headmaster.",
+      "depth": 2,
+      "newDepthOnTalk": 3,
+      "requirements": [
+        {
+          "quest": "Chrysopoean Crisis",
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "Why was he made headmaster if he killed the previous one?",
+      "responseText": "Well no one can prove he did it! He's a sneaky little toad of a man without an ounce of integrity in his slimy body.",
+      "depth": 3,
+      "newDepthOnTalk": 4,
+      "requirements": [
+        {
+          "quest": "Chrysopoean Crisis",
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "Maybe I could prove his guilt",
+      "responseText": "Hmmm... That is quite the idea... Yes, maybe we can work something out. I think I have an idea.",
+      "depth": 4,
+      "newDepthOnTalk": 5,
+      "requirements": [
+        {
+          "quest": "Chrysopoean Crisis",
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "Please stop with the metaphors",
+      "responseText": "Do you want to join the guild and learn alchemy or not? How about you do something for me and I will make sure you can join the guild. Deal?",
+      "depth": 4,
+      "newDepthOnTalk": 5,
+      "requirements": [
+        {
+          "quest": "Chrysopoean Crisis",
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "What do you want me to do?",
+      "responseText": "The plan is simple, plant a vial of poison in his bedroom. I'll take care of the rest. With proof of the murder in place, there won't be any opposition to finally ousting that walking caecilian.",
+      "depth": 5,
+      "newDepthOnTalk": 6,
+      "requirements": [
+        {
+          "quest": "Chrysopoean Crisis",
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "I don't care about any of this, what do you want me to do?",
+      "responseText": "He's a power-hungry newt who somehow managed to become headmaster of the guild by killing the previous headmaster.",
+      "depth": 4,
+      "newDepthOnTalk": 6,
+      "requirements": [
+        {
+          "quest": "Chrysopoean Crisis",
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "Sure, just give me the poison",
+      "responseText": "Wonderful! Here's a vial of poison. Go plant it in the headmaster's room and come back to me.",
+      "depth": 6,
+      "newDepthOnTalk": 7,
+      "quest": "Chrysopoean Crisis",
+      "newQuestProgressValue": 5,
+      "requirements": [
+        {
+          "quest": "Chrysopoean Crisis",
+          "maximumQuestProgress": 3
+        }
+      ]
+    },
+    {
+      "buttonText": "Give me the poison",
+      "responseText": "Wonderful! Here's a vial of poison. Go plant it in the headmaster's room and come back to me.",
+      "depth": 6,
+      "newDepthOnTalk": 7,
+      "quest": "Chrysopoean Crisis",
+      "newQuestProgressValue": 5,
+      "requirements": [
+        {
+          "quest": "Chrysopoean Crisis",
+          "maximumQuestProgress": 4
+        }
+      ]
+    },
+    {
+      "buttonText": "Let me think about it.",
+      "responseText": "Be quick about it. And no word of this to the other alchemists, alright?",
+      "depth": 6,
+      "newDepthOnTalk": 6,
+      "quest": "Chrysopoean Crisis",
+      "newQuestProgressValue": 4,
+      "requirements": [
+        {
+          "quest": "Chrysopoean Crisis",
+          "maximumQuestProgress": 4
+        }
+      ]
     }
+
   ]
 }

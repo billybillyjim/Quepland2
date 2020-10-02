@@ -579,10 +579,11 @@ public class Player
             }
             foreach (string s in data.EquippedItems)
             {
+                Console.WriteLine("Trying to equip:" + s);
                 if (s != null && s.Length > 1)
                 {
                     Equip(Inventory.GetItems().FirstOrDefault(x => x.Key.Name == s).Key);
-
+                    
                 }
             }
         }

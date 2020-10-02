@@ -151,7 +151,8 @@
     }
     public void CancelHunt()
     {
-        GameState.IsOnHuntingTrip = false;
+        GameState.CancelHuntingTrip();
+        
         GameState.UpdateState();
     }
 

@@ -43,8 +43,8 @@
         else
         {
             @if (selectedMode == "Normal" && hasSave ||
-      selectedMode == "Hardcore" && hasHardcore ||
-      selectedMode == "Ultimate" && hasUltimate)
+   selectedMode == "Hardcore" && hasHardcore ||
+   selectedMode == "Ultimate" && hasUltimate)
             {
                 if (hasShownWarning == false)
                 {
@@ -92,6 +92,32 @@
             <button class="btn btn-primary" onclick="@(new Action(() => showAllUpdates = true))">See Updates</button>
         </div>
     }
+    @if (ShowSettings)
+    {
+        <div>
+            You can load an exported save here.
+            @if (exportedSave != "")
+            {
+                <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => ImportSave())">Import Save</button>
+            }
+            else
+            {
+                <button class="btn btn-primary" style="margin:10px;padding:10px;opacity:0.5"> Import Save</button>
+            }
+            <input @bind-value="@exportedSave" />
+        </div>
+        @if (importedSaveComplete)
+        {
+            <div>
+                Save loaded successfully.
+            </div>
+        }
+    }
+    else
+    {
+        <button class="btn btn-primary" @onclick="@(() => ShowSettings = !ShowSettings)">Import Save</button>
+
+    }
 
     <div style="text-align: center;">
         <a target="_blank" href="https://www.patreon.com/billybillyjim"><img style="height:50px;width:50px;background-color:white;border-radius:5px;padding:5px;cursor:pointer;" src="/data/Images/PatreonMark.png" /></a> Please consider supporting development on <a target="_blank" href="https://www.patreon.com/billybillyjim">Patreon</a>
@@ -109,6 +135,8 @@
     @if (IsTesting())
     {
         <button @onclick="@(() => UriHelper.NavigateTo("/Rates/"))">Rates</button>
+        <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => EnableNewCompression())">Compression</button>
+
     }
     @if (ShowCredits)
     {
@@ -162,6 +190,21 @@
     bool hasShownWarning = false;
     bool showAllUpdates = false;
     bool ShowCredits = false;
+    bool ShowSettings = false;
+    bool importedSaveComplete = false;
+    private string exportedSave;
+    public void EnableNewCompression()
+    {
+        GameState.UseNewSaveCompression = true;
+    }
+
+    public void ImportSave()
+    {
+        SaveManager.ImportSave(exportedSave);
+        SaveManager.SaveGame();
+        importedSaveComplete = true;
+        hasSave = true;
+    }
     public List<string> GetGameModes()
     {
         List<string> modes = new List<string>();
@@ -204,6 +247,7 @@
     {
         GameState.ShowStartMenu = false;
         await SaveManager.LoadSaveGame(mode);
+        GameState.GoTo("/World/" + GameState.Location);
     }
     public async Task ShowWarning()
     {

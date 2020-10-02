@@ -20,6 +20,8 @@
       "buttonText": "Where can I find a teacher?",
       "responseText": "The alchemists of Tsu City are known all around Quepland. Perhaps you have heard of them? It would be a good place to start.",
       "newDepthOnTalk": 1,
+      "quest": "Chrysopoeian Crisis",
+      "newQuestProgressValue": 2,
       "requirements": [
         {
           "quest": "Chrysopoeian Crisis",

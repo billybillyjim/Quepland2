@@ -28,8 +28,9 @@
     "name": "Manihoj Market",
     "id": 152,
     "image": "Market",
-    "description": "Manihoj is the largest marketplace under the sea, if you believe the signage. There are many shops here, mostly consisting of bulk goods. Most places seem to accept gold pieces, though a few only trade via Sashcom Scales.",
+    "description": "Manihoj is the largest marketplace under the sea, if you believe the signage. There are many shops here, mostly consisting of bulk goods. Most places seem to accept gold pieces, though a few only trade via Sashcom Scales. A station in the corner appears to be open for anyone skilled at lapidary.",
     "areaURL": "ManihojMarket",
+    "actions": [ "Gem Cutting" ], 
     "buildings": [
       {
         "name": "Sulmenkan Local Goods",

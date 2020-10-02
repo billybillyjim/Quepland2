@@ -27,7 +27,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.12";
+    public static string Version { get; set; } = "1.0.12b";
     public static List<Update> Updates { get; set; } = new List<Update>();
     public static Pluralizer Pluralizer = new Pluralizer();
 
@@ -42,6 +42,7 @@ using System.Threading.Tasks;
     public bool IsStoppingNextTick { get; set; }
     private static bool cancelTask;
     public static bool IsOnHuntingTrip { get; set; } 
+    public static bool UseNewSaveCompression { get; set; }
     public static AFKAction CurrentAFKAction { get; set; }
     private Timer GameTimer { get; set; }
     public int testInt = 0;
@@ -890,6 +891,18 @@ using System.Threading.Tasks;
         return int.MaxValue;
 
     }
+    public void CancelHuntingTrip()
+    {
+        foreach(Area a in AreaManager.Instance.Areas)
+        {
+            if(a.HuntingTripInfo != null && a.HuntingTripInfo.IsActive)
+            {
+                double amountCompleted = DateTime.UtcNow.Subtract(a.HuntingTripInfo.StartTime).TotalHours / a.HuntingTripInfo.ReturnTime.Subtract(a.HuntingTripInfo.StartTime).TotalHours;
+                HuntingManager.EndHunt(a.HuntingTripInfo, amountCompleted, false);
+            }
+        }
+        IsOnHuntingTrip = false;
+    }
     public void ShowTooltip(MouseEventArgs args, string tipName, bool alignRight)
     {
         if (alignRight)
@@ -1005,8 +1018,8 @@ using System.Threading.Tasks;
         {
             CurrentArtisanTask = data.CurrentTask;
         }
+        Location = data.Location;
         CurrentLand = AreaManager.Instance.GetLandByName(data.CurrentLand);
-        GoTo("/World/" + data.Location);
     }
     public static void LoadAFKActionData(AFKAction action)
     {       
