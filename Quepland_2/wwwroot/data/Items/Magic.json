@@ -7,5 +7,22 @@
     "secondaryColor": "#D2FFF5",
     "icon": "Seeds",
     "isStackable": true
+  },
+  {
+    "name": "Transit Branch",
+    "description": "It vibrates slightly in your hand. ",
+    "gatherString": "You get a transit branch.",
+    "value": 55,
+    "secondaryColor": "#FFFFFF",
+    "icon": "Sticks"
+  },
+  {
+    "name": "Glowing Transit Branch",
+    "description": "It vibrates slightly in your hand. If you snap it, it will return you to where it was activated.",
+    "gatherString": "You get a transit branch.",
+    "value": 105,
+    "secondaryColor": "#BBFFBB",
+    "icon": "Sticks",
+    "isStackable": true
   }
 ]

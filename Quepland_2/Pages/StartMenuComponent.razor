@@ -94,7 +94,7 @@
     }
     @if (ShowSettings)
     {
-        <div>
+        <div style="margin-top:10px;">
             You can load an exported save here.
             @if (exportedSave != "")
             {
@@ -115,7 +115,7 @@
     }
     else
     {
-        <button class="btn btn-primary" @onclick="@(() => ShowSettings = !ShowSettings)">Import Save</button>
+        <button class="btn btn-primary" style="margin-top:10px;" @onclick="@(() => ShowSettings = !ShowSettings)">Import Save</button>
 
     }
 

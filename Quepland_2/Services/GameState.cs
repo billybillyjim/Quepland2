@@ -27,7 +27,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.12b";
+    public static string Version { get; set; } = "1.0.13";
     public static List<Update> Updates { get; set; } = new List<Update>();
     public static Pluralizer Pluralizer = new Pluralizer();
 
@@ -101,6 +101,7 @@ using System.Threading.Tasks;
     public static ArtisanTask CurrentArtisanTask;
     public static int TicksToNextAction;
     public static readonly int GameSpeed = 200;
+    public static bool CompactInventoryView;
     public int TicksToNextHeal;
     public int HealingTicks;
     public static int CurrentTick { get; set; }

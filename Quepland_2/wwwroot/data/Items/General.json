@@ -133,7 +133,19 @@
     "isStackable": true,
     "gatherSpeed": 20,
     "gatherString": "You gather some hemp.",
-    "icon": "Hemp"
+    "icon": "Hemp",
+    "tanningInfo": {
+      "tansIntoString": "Rope"
+    }
+  },
+  {
+    "name": "Rope",
+    "description": "A bunch of fibers tied together. You could use this to climb things, probably.",
+    "value": 30,
+    "isStackable": true,
+    "gatherSpeed": 20,
+    "gatherString": "You gather some rope.",
+    "icon": "Rope"
   },
   {
     "name": "Leatherworking Toolkit",

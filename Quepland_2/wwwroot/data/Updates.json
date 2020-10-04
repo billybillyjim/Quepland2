@@ -6,8 +6,11 @@
       "When saves fail, the game will now give an error code to help me diagnose what is going on.",
       "Some difficult recipes have been removed from artisan. No more mahogany arrows or mercurice weapons.",
       "You can now catch shrimp at the southern Ufagari cliffs.",
-      "Added a new area east of the desert.",
       "Added a gem cutting station to the market in Sulmenka.",
+      "Necklace recipes no longer consume lapidary toolkits.",
+      "Some UI has been readjusted.",
+      "The item system has been improved to support items created at runtime.",
+      "Added a compact inventory view that is a bit more similar to how the first game worked.",
       "I finally had the save bug happen to me and I think I was able to diagnose it. Save games going forward will use a different, simpler, and supposedly more reliable form of compression. Let me know if you have any issues! This took a good while to figure out and fix, so the update took much longer than I planned."
 
     ]

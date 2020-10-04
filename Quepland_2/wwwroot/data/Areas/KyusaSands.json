@@ -12,37 +12,83 @@
       {
         "action": "Desert Travel"
       }
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "AbandonedShack",
+        "buttonText": "Head west",
+        "requirements": [
+          {
+            "action": "Desert Travel"
+          }
+        ],
+        "connectsLands": true
+      },
+      {
+        "areaURL": "SunajoFortress",
+        "buttonText": "Go to the fortress",
+        "requirements": [
+          {
+            "action": "Desert Travel"
+          }
+        ]
+      }
+
     ]
   },
   {
     "name": "Sunajo Fortress",
     "id": 161,
     "image": "SandCastle",
-    "description": "",
+    "description": "The sandy walls guard a relatively large inner complex. As the only real point of civilization in this part of the desert, the fortress acts as a trade hub and rest stop for merchants from the east and west.",
     "areaURL": "SunajoFortress",
     "requirements": [
       {
         "action": "Desert Travel"
       }
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "ToadRanch",
+        "buttonText": "Exit the eastern gate",
+        "requirements": [
+          {
+            "action": "Desert Travel"
+          }
+        ]
+      }
+
     ]
   },
   {
     "name": "Toad Ranch",
     "id": 162,
     "image": "Toad",
-    "description": "",
+    "description": "A few dusty buildings surround a pen filled with toads. The fencing is quite short compared to the creatures they guard, but the toads don't seem interested in leaving.",
     "areaURL": "ToadRanch",
     "requirements": [
       {
         "action": "Desert Travel"
       }
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "TurruCenopa",
+        "buttonText": "Hike the mountain",
+        "requirements": [
+          {
+            "action": "Desert Travel"
+          }
+        ]
+      }
+
     ]
   },
   {
     "name": "Turru Cenopa",
-    "id": 161,
+    "id": 163,
     "image": "Volcano",
-    "description": "",
+    "description": "As you reach the summit of the mountain, you find a caldera. Beyond to the east the desert gives way to grasslands, and you can just barely see a tower in the far distance.",
     "areaURL": "TurruCenopa",
     "requirements": [
       {

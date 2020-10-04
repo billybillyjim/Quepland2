@@ -124,6 +124,10 @@ public class Inventory
     {
         return items;
     }
+    public List<KeyValuePair<GameItem, int>> GetUniqueItems()
+    {
+        return items.DistinctBy(x => x.Key.Name, null).ToList();
+    }
 
     /// <summary>
     /// Checks if the inventory contains any items with the same name as the given GameItem.
@@ -595,7 +599,7 @@ public class Inventory
                 continue;
             }
             string id = s[0];
-            GameItem it = ItemManager.Instance.GetItemByUniqueID(id);
+            GameItem it = ItemManager.Instance.LoadItemByUniqueID(id);
             if (s.Length >= 3)
             {
                 List<string> tabs = JsonConvert.DeserializeObject<List<string>>(s[2]);

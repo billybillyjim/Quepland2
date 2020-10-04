@@ -160,18 +160,6 @@
         "alchemicalHall": "Fire Hall",
         "queplarMultiplier": 2.5
       }
-    ],
-    "unlockableAreas": [
-      {
-        "areaURL": "HorsesBack",
-        "buttonText": "Continue east",
-        "requirements": [
-          {
-            "action": "Desert Travel"
-          }
-        ]
-      }
-
     ]
   },
   {

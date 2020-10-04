@@ -13,7 +13,7 @@
       {
         "itemName": "Lapidary Toolkit",
         "amount": 1,
-        "consumeOnUse": false
+        "destroyOnUse": false
       }
     ],
     "experienceGained": "Lapidary:50",
@@ -40,7 +40,7 @@
       {
         "itemName": "Lapidary Toolkit",
         "amount": 1,
-        "consumeOnUse": false
+        "destroyOnUse": false
       }
     ],
     "experienceGained": "Lapidary:75",
@@ -67,7 +67,7 @@
       {
         "itemName": "Lapidary Toolkit",
         "amount": 1,
-        "consumeOnUse": false
+        "destroyOnUse": false
       }
     ],
     "experienceGained": "Lapidary:100",
@@ -94,7 +94,7 @@
       {
         "itemName": "Lapidary Toolkit",
         "amount": 1,
-        "consumeOnUse": false
+        "destroyOnUse": false
       }
     ],
     "experienceGained": "Lapidary:125",
@@ -121,7 +121,7 @@
       {
         "itemName": "Lapidary Toolkit",
         "amount": 1,
-        "consumeOnUse": false
+        "destroyOnUse": false
       }
     ],
     "experienceGained": "Lapidary:150",
@@ -148,7 +148,7 @@
       {
         "itemName": "Lapidary Toolkit",
         "amount": 1,
-        "consumeOnUse": false
+        "destroyOnUse": false
       }
     ],
     "experienceGained": "Lapidary:175",
@@ -175,7 +175,7 @@
       {
         "itemName": "Lapidary Toolkit",
         "amount": 1,
-        "consumeOnUse": false
+        "destroyOnUse": false
       }
     ],
     "experienceGained": "Lapidary:200",
@@ -202,7 +202,7 @@
       {
         "itemName": "Lapidary Toolkit",
         "amount": 1,
-        "consumeOnUse": false
+        "destroyOnUse": false
       }
     ],
     "experienceGained": "Lapidary:250",
@@ -229,7 +229,7 @@
       {
         "itemName": "Lapidary Toolkit",
         "amount": 1,
-        "consumeOnUse": false
+        "destroyOnUse": false
       }
     ],
     "experienceGained": "Lapidary:300",
@@ -256,7 +256,7 @@
       {
         "itemName": "Lapidary Toolkit",
         "amount": 1,
-        "consumeOnUse": false
+        "destroyOnUse": false
       }
     ],
     "experienceGained": "Lapidary:325",
@@ -283,7 +283,7 @@
       {
         "itemName": "Lapidary Toolkit",
         "amount": 1,
-        "consumeOnUse": false
+        "destroyOnUse": false
       }
     ],
     "experienceGained": "Lapidary:350",
@@ -310,7 +310,7 @@
       {
         "itemName": "Lapidary Toolkit",
         "amount": 1,
-        "consumeOnUse": false
+        "destroyOnUse": false
       }
     ],
     "experienceGained": "Lapidary:400",

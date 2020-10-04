@@ -18,6 +18,9 @@
         <div>
             The game autosaves once every half hour, but you can manually save here. If it was successful, the save time in the bottom left corner will change.
         </div>
+        <div>
+            <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => CompactInventory())">Compact Inventory</button>
+        </div>
     </div>
     <div>
         You can export your save to keep a backup somewhere. You can load an exported save from the main menu.
@@ -52,6 +55,12 @@
 
     @code {
         private string exportedSave = "";
+
+        public void CompactInventory()
+        {
+            GameState.CompactInventoryView = !GameState.CompactInventoryView;
+            GameState.UpdateState();
+        }
         public void EnableNewCompression()
         {
             GameState.UseNewSaveCompression = true;

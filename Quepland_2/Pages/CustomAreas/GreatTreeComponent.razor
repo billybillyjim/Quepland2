@@ -1,0 +1,69 @@
+﻿@page "/World/GreatTree"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+
+@if (thisArea != null)
+{
+    <h1>The Great Tree</h1>
+    <p>An incredible tree towers over the landscape. It's entirely dark under the umbrage of the branches far above. Curiously, there is a small glow coming from one of the highest visible branches. Maybe you could climb up to it...</p>
+
+    
+}
+
+@code {
+
+    [Parameter]
+    public string areaURL { get; set; }
+    public Area thisArea { get; set; }
+
+    private void FindBattles()
+    {
+        GameState.StopNonCombatActions();
+        BattleManager.Instance.StartBattle(thisArea);
+        GameState.Location = "Battle";
+        UriHelper.NavigateTo("World/Battle/");
+    }
+
+    private void EnterBuilding(string buildingURL)
+    {
+        GameState.StopActions();
+        GameState.Location = areaURL + "/" + buildingURL;
+        UriHelper.NavigateTo("World/" + areaURL + "/" + buildingURL);
+    }
+    private void EnterDojo(string dojoURL)
+    {
+        GameState.StopActions();
+        GameState.Location = "Dojo/" + dojoURL;
+        UriHelper.NavigateTo("World/Dojo/" + dojoURL);
+    }
+    private void EnterDungeon(string dungeonURL)
+    {
+        GameState.StopActions();
+        GameState.Location = dungeonURL;
+        UriHelper.NavigateTo("Underworld/" + dungeonURL);
+    }
+    private void EnterSmithy()
+    {
+        GameState.StopActions();
+        GameState.Location = "Smithy/" + areaURL;
+        UriHelper.NavigateTo("World/Smithy/" + areaURL);
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    protected override void OnParametersSet()
+    {
+        thisArea = AreaManager.Instance.GetAreaByURL(areaURL);
+        GameState.NavMenu.ChangeOpenRegion(AreaManager.Instance.GetRegionForArea(thisArea), false);
+        GameState.UpdateState();
+
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

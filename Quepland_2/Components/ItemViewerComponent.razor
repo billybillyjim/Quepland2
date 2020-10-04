@@ -101,6 +101,14 @@
 
             }
         }
+        @if (Item.Name == "Transit Branch")
+        {
+            <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Stake())">Stake</button></div>
+        }
+        else if (Item.Name.Contains("Glowing Transit Branch"))
+        {
+            <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Teleport())">Break</button></div>
+        }
         @if (Item.FoodInfo != null)
         {
             <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => EatItem())">Eat</button></div>
@@ -201,6 +209,41 @@
     public GameItem Item { get; set; }
     private bool HideValue;
 
+
+    public void Stake()
+    {
+        if (GameState.Location.Contains('/'))
+        {
+            MessageManager.AddMessage("You should step outside before doing that.");
+            Console.WriteLine(GameState.Location);
+            return;
+        }
+        MessageManager.AddMessage("You stab the branch into the ground and it begins to glow.");
+        GameItem i = ItemManager.Instance.GetCopyOfItem("Glowing Transit Branch");
+        i.Parameter = GameState.Location;
+        i.Name += "(" + AreaManager.Instance.GetAreaByURL(GameState.Location).Name + ")";
+        i.Description += "This one will take you to " + AreaManager.Instance.GetAreaByURL(GameState.Location).Name + ".";
+        i.SecondaryColor = GameState.CurrentLand.TopColor;
+        if(ItemManager.Instance.GetItemByUniqueID(i.UniqueID) == null)
+        {
+            ItemManager.Instance.ItemLookupDic.Add(i.UniqueID, i);
+            ItemManager.Instance.Items.Add(i);
+        }
+
+
+        Player.Instance.Inventory.AddItem(i);
+    }
+    public void Teleport()
+    {
+        Player.Instance.Inventory.RemoveItems(Item, 1);
+        MessageManager.AddMessage("You snap the branch and are teleported away.");
+        GameState.NavMenu.GoToArea(Item.Parameter);
+        if (Player.Instance.Inventory.HasItem(Item) == false)
+        {
+            ClearItem();
+        }
+
+    }
     private string GetValue()
     {
         return (Item.Value * Math.Min(ItemManager.Instance.SellAmount, Player.Instance.Inventory.GetNumberOfItem(Item)) / 2) + " " + ItemManager.Instance.CurrentShop.CurrencyName;

@@ -159,6 +159,31 @@ public class ItemManager
         }
         
     }
+    public GameItem LoadItemByUniqueID(string uniqueID)
+    {
+        //Console.WriteLine("Looking for item with ID:" + uniqueID);
+        if (UniqueIDLookupDic.TryGetValue(uniqueID, out GameItem i))
+        {
+            return i;
+        }
+        else
+        {
+            if(uniqueID.Contains("Glowing Transit Branch"))
+            {
+                GameItem newItem = GetCopyOfItem("Glowing Transit Branch");
+                newItem.Parameter = uniqueID.Split('0')[1];
+                newItem.Name = uniqueID.Split('0')[0];
+                Area a = AreaManager.Instance.GetAreaByURL(newItem.Parameter);
+                newItem.SecondaryColor = AreaManager.Instance.GetLandForArea(a).TopColor;
+                newItem.Description = "It vibrates slightly in your hand. If you snap it, it will return you to where it was activated. This one will take you to " + a.Name + ".";
+                
+                UniqueIDLookupDic.Add(newItem.UniqueID, newItem);
+                Items.Add(newItem);
+                return newItem;
+            }
+        }
+        return null;
+    }
     public GameItem GetItemByUniqueID(string uniqueID)
     {
         //Console.WriteLine("Looking for item with ID:" + uniqueID);
