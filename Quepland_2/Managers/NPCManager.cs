@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -96,6 +97,14 @@ public class NPCManager
                 {
                     CustomDialogFunctions.TryAdd("CancelTask" + d.Parameter, new Action(() => CancelTask(d.Parameter)));
                 }
+                else if (d.ResponseWithParameter == "GetTaskCost" + d.Parameter)
+                {
+                    CustomDialogFunctions.TryAdd("GetTaskCost" + d.Parameter, new Action(() => GetTaskCost(d.Parameter)));
+                }
+                else if (d.ResponseWithParameter == "IdentifyGems" + d.Parameter)
+                {
+                    CustomDialogFunctions.TryAdd("IdentifyGems" + d.Parameter, new Action(() => IdentifyGems()));
+                }
             }
         }
         
@@ -172,13 +181,44 @@ public class NPCManager
     }
     public void CancelTask(string s)
     {
-        if(Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName("Guild Exception Notice"), 1) == 1)
+        if(GameState.CurrentArtisanTask == null)
+        {
+            MessageManager.AddMessage("You don't have an artisan task right now.");
+            return;
+        }
+        if(s == "Free")
+        {
+            if(Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName("Coins")) >= GameState.CurrentArtisanTask.GetGoldCost() * 10)
+            {
+                Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName("Coins"), GameState.CurrentArtisanTask.GetGoldCost() * 10);
+                GameState.CancelTask();
+                MessageManager.AddMessage("Nasitra takes your task from you. You can get another from any guild member.");
+            }
+            else
+            {
+                MessageManager.AddMessage("You don't have enough gold.");
+            }
+
+        }
+        else if (Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName("Guild Exception Notice"), 1) == 1)
         {
             GameState.CancelTask();
             MessageManager.AddMessage("Your task has been officially cancelled and the guild has redirected the request to another member. Speak to any guild member to recieve a new artisan task.");
 
         }
 
+    }
+    public void GetTaskCost(string s)
+    {
+        if(GameState.CurrentArtisanTask == null)
+        {
+            MessageManager.AddMessage("Well, you don't have an artisan task right now... so I can't do it for you.");
+        }
+        else
+        {
+            MessageManager.AddMessage("With a task of " + GameState.CurrentArtisanTask.ToString() + ", it'll be " + (GameState.CurrentArtisanTask.GetGoldCost() * 10) + " coins.");
+
+        }
     }
     public void DieAndGotoArea(string area)
     {
@@ -210,6 +250,46 @@ public class NPCManager
         BattleManager.Instance.ReturnLocation = "World/Ricechild/";
         BattleManager.Instance.StartBattle();
         GameState.GoTo("World/Battle");
+    }
+    public void IdentifyGems()
+    {
+        List<KeyValuePair<GameItem, int>> items = Player.Instance.Inventory.GetItems();
+        List<KeyValuePair<GameItem, int>> itemsToRemove = new List<KeyValuePair<GameItem, int>>();
+        int amt = 0;
+        int coinsToPay = 0;
+        foreach (KeyValuePair<GameItem, int> pair in items)
+        {
+            if(pair.Key.Name == "Unidentified Gem")
+            {
+                if (Player.Instance.Inventory.GetNumberOfItem(ItemManager.Instance.GetItemByName("Coins")) - coinsToPay >= 300)
+                {
+                    coinsToPay += 300;    
+                    itemsToRemove.Add(new KeyValuePair<GameItem, int>(pair.Key, 1));
+
+                }
+            }
+
+        }
+        Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName("Coins"), coinsToPay);
+        foreach (KeyValuePair<GameItem, int> pair in itemsToRemove)
+        {
+            if (Player.Instance.Inventory.RemoveItems(pair.Key, 1) == 1)
+            {
+                GameItem i = ItemManager.Instance.GetCopyOfItem(pair.Key.Parameter);
+                Player.Instance.Inventory.AddItem(i);
+                amt++;
+
+            }
+        }
+        if(amt == 0)
+        {
+            MessageManager.AddMessage("You'll need both money and gems to have me identify them...");
+        }
+        else
+        {
+            MessageManager.AddMessage("Tochtei correctly identifies your gems.");
+        }
+        
     }
     public NPC GetNPCByName(string name)
     {

@@ -2,7 +2,7 @@
   {
     "name": "Horse's Back",
     "id": 160,
-    "image": "SandDune",
+    "image": "Dunes",
     "description": "The path slowly fades into the sands, which grow higher and higher. Eventually you reach the highest point in the dunes. A lone signpost informs you that you are standing on the Horse's Back sand dune. From here you can see a large sandy fortress ahead.",
     "areaURL": "HorsesBack",
     "actions": [
@@ -26,12 +26,7 @@
       },
       {
         "areaURL": "SunajoFortress",
-        "buttonText": "Go to the fortress",
-        "requirements": [
-          {
-            "action": "Desert Travel"
-          }
-        ]
+        "buttonText": "Go to the fortress"
       }
 
     ]
@@ -40,46 +35,80 @@
     "name": "Sunajo Fortress",
     "id": 161,
     "image": "SandCastle",
-    "description": "The sandy walls guard a relatively large inner complex. As the only real point of civilization in this part of the desert, the fortress acts as a trade hub and rest stop for merchants from the east and west.",
+    "description": "The sandy walls guard a relatively large inner complex. As the only real point of civilization in this part of the desert, the fortress is bustling with merchants from the east and west.",
     "areaURL": "SunajoFortress",
-    "requirements": [
-      {
-        "action": "Desert Travel"
-      }
-    ],
     "unlockableAreas": [
       {
         "areaURL": "ToadRanch",
-        "buttonText": "Exit the eastern gate",
-        "requirements": [
+        "buttonText": "Exit the eastern gate"
+      }
+
+    ],
+    "npcs": [
+      "Tochtei"
+    ],
+    "buildings": [
+      {
+        "name": "Suanjo General Store",
+        "buttonText": "General Store",
+        "url": "SunajoGeneralStore",
+        "description": "The store is well lit and tidy. You could almost forget that it's located in the middle of the desert. A jolly man behind the counter welcomes you as you enter. A woman stands behind a small kiosk in the corner of the store under a sign that reads Artisan Task Do-er.",
+        "npcs": [
+          "Nasitra Dutfurya"
+        ],
+        "shops": [
           {
-            "action": "Desert Travel"
+            "name": "Jumbo's Supply Store",
+            "limitBoughtItemsToSoldItems": false,
+            "itemNames": [
+              "Small Net",
+              "Brass Axe",
+              "Bronze Pickaxe",
+              "Wood Carving Knife",
+              "Cheese",
+              "Honey",
+              "Rye Bread (Unleavened)",
+              "Crab Roll"
+            ]
           }
         ]
       }
-
-    ]
+    ],
+    "actions": [
+      "Scan for loose change:Coins"
+    ],
+    "dojoURL": "NittouDojo"
   },
   {
     "name": "Toad Ranch",
     "id": 162,
     "image": "Toad",
-    "description": "A few dusty buildings surround a pen filled with toads. The fencing is quite short compared to the creatures they guard, but the toads don't seem interested in leaving.",
+    "description": "A few dusty buildings surround a pen filled with toads. The fencing is quite short compared to the creatures it guards, but the toads don't seem interested in leaving.",
     "areaURL": "ToadRanch",
-    "requirements": [
+    "buildings": [
       {
-        "action": "Desert Travel"
+        "name": "Toad Barn",
+        "buttonText": "Toad Barn",
+        "url": "ToadBarn",
+        "description": "The inside of the barn is cool and strangely humid. A number of toads have buried themselves under the wet sand, only their eyes peeking above the ground.",
+        "npcs": [
+          "Kyle"
+        ],
+        "shops": [
+          {
+            "name": "Kyle's Toads",
+            "itemNames": [
+              "Kyusa Toad"
+            ]
+
+          }
+        ]
       }
     ],
     "unlockableAreas": [
       {
         "areaURL": "TurruCenopa",
-        "buttonText": "Hike the mountain",
-        "requirements": [
-          {
-            "action": "Desert Travel"
-          }
-        ]
+        "buttonText": "Continue east"
       }
 
     ]
@@ -88,12 +117,10 @@
     "name": "Turru Cenopa",
     "id": 163,
     "image": "Volcano",
-    "description": "As you reach the summit of the mountain, you find a caldera. Beyond to the east the desert gives way to grasslands, and you can just barely see a tower in the far distance.",
+    "description": "As you reach the summit of the mountain, you find a caldera. Various mineral deposits lay above the surface, but it's not possible to see what you're mining. Beyond to the east the desert gives way to grasslands, and you can just barely see a tower in the far distance.",
     "areaURL": "TurruCenopa",
-    "requirements": [
-      {
-        "action": "Desert Travel"
-      }
+    "actions": [
+      "Mine ores:Copper Ore,Calamine,Tin Ore,Pentlandite"
     ]
   }
 ]

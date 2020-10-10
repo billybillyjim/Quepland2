@@ -362,5 +362,117 @@
         }
       ]
     }
+  },
+  {
+    "name": "Daiges",
+    "hp": 9000,
+    "attackSpeed": 8,
+    "armor": 50,
+    "damage": 115,
+    "weaknesses": "Axemanship",
+    "strengths": "Hammermanship",
+    "statusEffectData": [
+      {
+        "name": "Cleave",
+        "power": 5,
+        "speed": 3,
+        "duration": 15,
+        "message": "Daiges swings his second sword unexpectedly! You're completely exposed to the hit!",
+        "procOdds": 0.1
+      }
+    ]
+  },
+  {
+    "name": "Visitang",
+    "hp": 10200,
+    "attackSpeed": 8,
+    "armor": 55,
+    "damage": 120,
+    "weaknesses": "Knifesmanship",
+    "strengths": "Hammermanship",
+    "statusEffectData": [
+      {
+        "name": "Cleave",
+        "power": 5,
+        "speed": 3,
+        "duration": 15,
+        "message": "Visitang swings his second sword unexpectedly! You're completely exposed to the hit!",
+        "procOdds": 0.1
+      }
+    ]
+  },
+  {
+    "name": "Kraewtin",
+    "hp": 12500,
+    "attackSpeed": 12,
+    "armor": 90,
+    "damage": 180,
+    "weaknesses": "Axemanship",
+    "strengths": "Hammermanship",
+    "statusEffectData": [
+      {
+        "name": "Cleave",
+        "power": 5,
+        "speed": 3,
+        "duration": 15,
+        "message": "Kraewtin slashes his second sword with unexpected force! You're completely exposed to the hit!",
+        "procOdds": 0.1
+      }
+    ]
+  },
+  {
+    "name": "Eun",
+    "hp": 18500,
+    "attackSpeed": 6,
+    "armor": 15,
+    "damage": 200,
+    "weaknesses": "Hammermanship",
+    "strengths": "Knifesmanship",
+    "statusEffectData": [
+      {
+        "name": "Empty",
+        "power": 5,
+        "speed": 3,
+        "duration": 1,
+        "message": "Eun sneaks a gut punch in between swings! Your stomach feels empty...",
+        "procOdds": 0.1
+      }
+    ]
+  },
+  {
+    "name": "Arao",
+    "hp": 25000,
+    "attackSpeed": 8,
+    "armor": 155,
+    "damage": 250,
+    "weaknesses": "Knifesmanship",
+    "strengths": "Hammermanship",
+    "statusEffectData": [
+      {
+        "name": "Cleave",
+        "power": 5,
+        "speed": 3,
+        "duration": 15,
+        "message": "Arao slashes his second sword with unexpected force! You're completely exposed to the hit!",
+        "procOdds": 0.1
+      },
+      {
+        "name": "Cleave",
+        "power": 5,
+        "speed": 3,
+        "duration": 15,
+        "message": "Arao slashes his third sword with unexpected force! You're completely exposed to the hit!",
+        "procOdds": 0.08
+      }
+
+    ],
+    "dropTable": {
+      "alwaysDrops": [
+        {
+          "itemName": "Dojo Tokens",
+          "amount": 20000
+        }
+      ]
+    }
   }
 ]

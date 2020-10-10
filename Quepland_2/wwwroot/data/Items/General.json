@@ -5,7 +5,9 @@
     "value": 1,
     "isStackable": true,
     "icon": "Coins",
-    "isSellable": false
+    "isSellable": false,
+    "gatherSpeed": 25,
+    "gatherString": "You found a coin!"
   },
   {
     "name": "Shuniku Berries",
@@ -197,6 +199,13 @@
     "value": 60000,
     "icon": "Camel",
     "enabledActions": "Desert Travel"
+  },
+  {
+    "name": "Kyusa Toad",
+    "description": "A large, dry toad that will let you ride on its back.",
+    "value": 150000,
+    "icon": "Toad",
+    "enabledActions": "Toadback Riding,Desert Travel"
   },
   {
     "name": "River Raft",

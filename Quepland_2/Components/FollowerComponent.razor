@@ -4,21 +4,36 @@
 @foreach (Follower follower in FollowerManager.Instance.GetUnlockedFollowers())
 {
 
-    <div style="position:relative;height:46px;line-height:46px;@GetBG(follower)" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Helps with " + follower.AutoCollectSkill, "Max Level:" + follower.AutoCollectLevel)))"
-             @onmouseout="@(new Action(() => GameState.HideTooltip()))" >
-        @if (Player.Instance.CurrentFollower == follower)
-        {
-            <div style="margin-left:10px;margin-top:-2px;color:black;">@follower.Name</div>
-            <button class="btn btn-primary" style="position:absolute;right:2px;top:2px;" @onclick="@(() => SwitchFollowers(null))">Unassign</button>
+<div style="position:relative;line-height:46px;@GetBG(follower)" >
+    @if (Player.Instance.CurrentFollower == follower)
+    {
+        <div style="margin-left:10px;margin-top:-2px;color:black;" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Helps with " + follower.AutoCollectSkill, "Max Level:" + (follower.AutoCollectLevel + follower.Banking.GetSkillLevelUnboosted()) + "/" + (follower.AutoCollectLevel * 2))))"
+     @onmouseout="@(new Action(() => GameState.HideTooltip()))">@follower.Name</div>
+        <button class="btn btn-primary" style="position:absolute;right:2px;top:2px;" @onclick="@(() => SwitchFollowers(null))">Unassign</button>
 
-        }
-        else
-        {
-            <div style="margin-left:10px;">@follower.Name</div>
-            <button class="btn btn-primary" style="position: absolute; right: 4px; top: 4px;" @onclick="@(() => SwitchFollowers(follower))">Assign</button>
+    }
+    else
+    {
+        <div style="margin-left:10px;" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Helps with " + follower.AutoCollectSkill, "Max Level:" + (follower.AutoCollectLevel + follower.Banking.GetSkillLevelUnboosted()) + "/" + (follower.AutoCollectLevel * 2))))"
+     @onmouseout="@(new Action(() => GameState.HideTooltip()))">@follower.Name</div>
+        <button class="btn btn-primary" style="position: absolute; right: 4px; top: 4px;" @onclick="@(() => SwitchFollowers(follower))">Assign</button>
 
-        }
+    }
+<div class="progress" style="border-radius:0;background-color:darkgray;position:relative;">
+    <div class="progress-bar" style="width:@(follower.Banking.Progress)%;color:black;background-color:#51d051"
+         @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Banking", "Experience:" + follower.Banking.Experience + "/" + String.Format("{0:n0}", Skill.GetExperienceRequired(follower.Banking.GetSkillLevelUnboosted())))))"
+         @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+
     </div>
+    <div style="        
+        position: absolute;
+        width: 100%;
+        height: 30px;
+        margin-top: -15px;
+        text-align: -webkit-center;">
+    Level:@follower.Banking.GetSkillLevelUnboosted()</div>
+</div>
+</div>
     
 }
 @if (HasUnlockedAnyFollower() == false)

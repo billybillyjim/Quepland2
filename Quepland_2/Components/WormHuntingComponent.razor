@@ -1,0 +1,219 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (items != null && items.Count > 0)
+{
+<div style="margin-bottom:10px;">
+    @if (Player.Instance.HasToolRequirement("Toadback Riding") && items[0].HasRequirements())
+    {
+        if (HasCalled)
+        {
+            @if (CanCallAgain)
+            {
+                <div style="margin-top:10px;">
+                    <button class="btn btn-primary" @onclick="@(() => CallForWorms())">Call For Worms</button>
+                </div>
+            }
+            else
+            {
+                <div style="margin-top:10px;">
+                    <button class="btn btn-primary" style="opacity:0.5"
+                            @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "Your toad has recently called for worms and is in the process of eating some of them.")))"
+                            @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                        Call For Worms
+                    </button>
+                </div>
+            }
+            @if (items.Contains(GameState.CurrentGatherItem))
+            {
+                <div style="margin-top:10px;">
+                    <button class="btn btn-primary" @onclick="@(() => StopActions())">Stop Hunting</button>
+                </div>
+            }
+            else
+            {
+                <div style="margin-top:10px;">
+                    <button class="btn btn-primary" @onclick="@(() => GatherItem(GetRandomItem()))">Hunt Worms</button>
+                </div>
+            }
+
+
+        }
+        else
+        {
+            <div style="margin-top:10px;">
+                <button class="btn btn-primary" @onclick="@(() => CallForWorms())">Call For Worms</button>
+            </div>
+
+        }
+    }
+    else
+    {
+        if (Player.Instance.HasToolRequirement("Toadback Riding"))
+        {
+            <button class="btn btn-primary" style="opacity:0.5;"
+                    @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, items[0].GetRequirementTooltip())))"
+                    @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                Hunt Worms
+            </button>
+        }
+        else if (items[0].HasRequirements())
+        {
+            <button class="btn btn-primary" style="opacity:0.5;"
+                    @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need to be riding a toad to do this.")))"
+                    @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                Hunt Worms
+            </button>
+        }
+        else
+        {
+            <button class="btn btn-primary" style="opacity:0.5;"
+                    @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need to be riding a toad to do this.", items[0].GetRequirementTooltip())))"
+                    @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                Hunt Worms
+            </button>
+        }
+
+
+    }
+</div>
+
+}
+
+@code {
+    [Parameter]
+    public string ActionText { get; set; }
+    private List<GameItem> items = new List<GameItem>();
+    private string gatherText = "";
+    private string tooltip = "";
+    private string beginText = "";
+    private Random rand = new Random();
+    private bool IsCuttingHole;
+    private bool HasHole;
+    private int WormsSinceLastCall = 0;
+    private bool HasCalled;
+    private bool CanCallAgain;
+    private int FinishGameTick;
+    private int CallAgainTick;
+    private int NextCatchTick;
+    private int lastTTNG;
+
+    public void CallForWorms()
+    {
+        HasCalled = true;
+        WormsSinceLastCall = 0;
+        CanCallAgain = false;
+        MessageManager.AddMessage("You brush your toad's nose and it begins to croak. The vibrations startle the worms living just underneat the surface.");
+        CallAgainTick = GameState.CurrentTick + 120;
+    }
+    public void StopActions()
+    {
+        GameState.StopActions();
+    }
+    public void GatherItem(GameItem i)
+    {
+        if (i == null)
+        {
+            Console.WriteLine("Item was null");
+            GameState.CurrentGatherItem = null;
+            GameState.UpdateState();
+            return;
+        }
+        if (beginText != "")
+        {
+            MessageManager.AddMessage(beginText);
+        }
+        GameState.CurrentGatherItem = i;
+        GameState.TicksToNextAction = GameState.CurrentGatherItem.GatherSpeed.ToGaussianRandom();
+        NextCatchTick = GameState.TicksToNextAction + GameState.CurrentTick;
+        GameState.UpdateState();
+    }
+    private GameItem GetRandomItem()
+    {
+        GameState.PossibleGatherItems.Clear();
+        foreach (GameItem i in items)
+        {
+            if (i.HasRequirements())
+            {
+                GameState.PossibleGatherItems.Add(i);
+            }
+        }
+        if (GameState.PossibleGatherItems.Count == 0)
+        {
+            return items[0];
+        }
+        return GameState.PossibleGatherItems[rand.Next(0, GameState.PossibleGatherItems.Count - 1)];
+    }
+    private bool CanGatherAny()
+    {
+        foreach (GameItem item in items)
+        {
+            if (item.HasRequirements())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    protected override void OnParametersSet()
+    {
+        items.Clear();
+
+        items.Add(ItemManager.Instance.GetItemByName("Sand Worm"));
+        items.Add(ItemManager.Instance.GetItemByName("Large Sand Worm"));
+        gatherText = "You grip a sand worm and rip it out of the ground.";
+        beginText = "You start harvesting the startled worms.";
+
+
+    }
+
+
+    public string GetLowestReqTooltip()
+    {
+        if (items != null)
+        {
+            GameItem lowest = items[0];
+            int lowestReq = int.MaxValue;
+            foreach (GameItem i in items)
+            {
+                foreach (Requirement r in i.Requirements)
+                {
+                    if (r.Skill != "None")
+                    {
+                        if (r.SkillLevel < lowestReq)
+                        {
+                            lowest = i;
+                        }
+                        lowestReq = Math.Min(r.SkillLevel, lowestReq);
+
+                    }
+                }
+            }
+            return lowest.GetRequirementTooltip();
+
+        }
+        return "";
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e)
+    {
+        if(lastTTNG < GameState.TicksToNextAction)
+        {
+            WormsSinceLastCall++;
+            GameState.TicksToNextAction += WormsSinceLastCall / 3;
+        }
+        lastTTNG = GameState.TicksToNextAction;
+        if(CallAgainTick < GameState.CurrentTick && CanCallAgain == false)
+        {
+            CanCallAgain = true;
+        }
+        StateHasChanged();
+    }
+}

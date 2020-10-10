@@ -108,6 +108,18 @@
     }
   },
   {
+    "name": "Caiman Belt",
+    "value": 2500,
+    "secondaryColor": "#cfb221",
+    "description": "A golden belt wrapped in caiman skin.",
+    "icon": "Belt",
+    "equipSlot": "Waist",
+    "armorInfo": {
+      "damage": 35,
+      "armorBonus": 12
+    }
+  },
+  {
     "name": "Rabbit Gloves",
     "value": 250,
     "description": "A cheap and flimsy pair of leather gloves.",
@@ -805,6 +817,236 @@
         {
           "skill": "Strength",
           "skillLevel": 15
+        }
+      ]
+    }
+
+  },
+  {
+    "name": "Caiman Gloves",
+    "value": 5600,
+    "description": "A pair of gloves made from adding caiman skins to Bison Gloves.",
+    "gatherString": "You make a pair of leather gloves.",
+    "gatherSpeed": 15,
+    "equipSlot": "Hands",
+    "experienceGained": "Leatherworking:200",
+    "icon": "Glove",
+    "secondaryColor": "#66B4DE",
+    "armorInfo": {
+      "armorBonus": 20,
+      "damage": 15,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 85
+        },
+        {
+          "skill": "Deftness",
+          "skillLevel": 85
+        }
+      ]
+    }
+  },
+  {
+    "name": "Caiman Hat",
+    "value": 5700,
+    "description": "A sturdy hat made from caiman skins added to bison leather.",
+    "gatherString": "You make a hat from the caiman skins.",
+    "gatherSpeed": 14,
+    "equipSlot": "Head",
+    "experienceGained": "Leatherworking:230",
+    "icon": "Hat",
+    "secondaryColor": "#66B4DE",
+    "armorInfo": {
+      "armorBonus": 22,
+      "damage": 16,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 80
+        },
+        {
+          "skill": "Deftness",
+          "skillLevel": 85
+        }
+      ]
+    }
+  },
+  {
+    "name": "Caiman Boots",
+    "value": 5900,
+    "description": "A strong pair of leather boots made from caiman skins and bison leather.",
+    "gatherString": "You make a pair of leather boots from the caiman skins.",
+    "gatherSpeed": 15,
+    "experienceGained": "Leatherworking:300",
+    "icon": "Boots",
+    "equipSlot": "Feet",
+    "secondaryColor": "#66B4DE",
+    "armorInfo": {
+      "armorBonus": 28,
+      "damage": 14,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 80
+        },
+        {
+          "skill": "Deftness",
+          "skillLevel": 85
+        }
+      ]
+    }
+  },
+  {
+    "name": "Caiman Pants",
+    "value": 6100,
+    "description": "A strong pair of leather pants made from caiman skins and bison leather.",
+    "gatherString": "You make a pair of caiman leather pants.",
+    "gatherSpeed": 16,
+    "experienceGained": "Leatherworking:350",
+    "icon": "Pants",
+    "equipSlot": "Legs",
+    "secondaryColor": "#66B4DE",
+    "armorInfo": {
+      "armorBonus": 29,
+      "damage": 25,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 80
+        },
+        {
+          "skill": "Deftness",
+          "skillLevel": 85
+        }
+      ]
+    }
+  },
+  {
+    "name": "Caiman Shirt",
+    "value": 6300,
+    "description": "A strong shirt made of caiman skins and bison leather.",
+    "gatherString": "You make a leather shirt.",
+    "gatherSpeed": 17,
+    "equipSlot": "Chest",
+    "experienceGained": "Leatherworking:500",
+    "icon": "Shirt",
+    "secondaryColor": "#66B4DE",
+    "armorInfo": {
+      "armorBonus": 31,
+      "damage": 30,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 80
+        },
+        {
+          "skill": "Deftness",
+          "skillLevel": 85
+        }
+      ]
+    }
+  },
+  {
+    "name": "Mammoth Gloves",
+    "value": 6600,
+    "description": "A pair of gloves made from mammoth leather.",
+    "gatherString": "You make a pair of leather gloves.",
+    "gatherSpeed": 17,
+    "equipSlot": "Hands",
+    "experienceGained": "Leatherworking:550",
+    "icon": "Glove",
+    "secondaryColor": "#9e9589",
+    "armorInfo": {
+      "armorBonus": 35,
+      "damage": 1,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 100
+        }
+      ]
+    }
+  },
+  {
+    "name": "Mammoth Hat",
+    "value": 6700,
+    "description": "A sturdy hat made from mammoth leather.",
+    "gatherString": "You make a hat from the mammoth leather.",
+    "gatherSpeed": 14,
+    "equipSlot": "Head",
+    "icon": "Hat",
+    "secondaryColor": "#9e9589",
+    "armorInfo": {
+      "armorBonus": 38,
+      "damage": 1,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 100
+        }
+      ]
+    }
+
+  },
+  {
+    "name": "Mammoth Boots",
+    "value": 6900,
+    "description": "A strong pair of leather boots made from mammoth leather.",
+    "gatherString": "You make a pair of leather boots from the mammoth leather.",
+    "gatherSpeed": 15,
+    "icon": "Boots",
+    "equipSlot": "Feet",
+    "secondaryColor": "#9e9589",
+    "armorInfo": {
+      "armorBonus": 44,
+      "damage": 1,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 100
+        }
+      ]
+    }
+
+  },
+  {
+    "name": "Mammoth Pants",
+    "value": 7100,
+    "description": "A strong pair of leather pants made from mammoth leather.",
+    "gatherString": "You make a pair of mammoth leather pants.",
+    "gatherSpeed": 16,
+    "icon": "Pants",
+    "equipSlot": "Legs",
+    "secondaryColor": "#9e9589",
+    "armorInfo": {
+      "armorBonus": 48,
+      "damage": 2,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 100
+        }
+      ]
+    }
+
+  },
+  {
+    "name": "Mammoth Shirt",
+    "value": 7500,
+    "description": "A strong shirt made of mammoth leather.",
+    "gatherString": "You make a leather shirt.",
+    "gatherSpeed": 17,
+    "equipSlot": "Chest",
+    "icon": "Shirt",
+    "secondaryColor": "#9e9589",
+    "armorInfo": {
+      "armorBonus": 55,
+      "damage": 3,
+      "wearRequirements": [
+        {
+          "skill": "Strength",
+          "skillLevel": 100
         }
       ]
     }

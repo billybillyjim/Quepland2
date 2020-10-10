@@ -6,7 +6,7 @@
     "value": 50,
     "gatherSpeed": 15,
     "secondaryColor": "#B87333",
-    "icon": "Bar",
+    "icon": "CheapBar",
     "alchemyInfo": {
       "queplarValue": 5
     }
@@ -20,7 +20,7 @@
     "requiredLevel": 4,
     "requiredAction": "Smithing",
     "secondaryColor": "#D3D4D5",
-    "icon": "Bar",
+    "icon": "CheapBar",
     "alchemyInfo": {
       "queplarValue": 15
     }
@@ -32,7 +32,7 @@
     "value": 70,
     "gatherSpeed": 20,
     "secondaryColor": "#9E9EA0",
-    "icon": "Bar",
+    "icon": "CheapBar",
     "alchemyInfo": {
       "queplarValue": 25
     }
@@ -44,7 +44,7 @@
     "secondaryColor": "#B5A642",
     "value": 90,
     "gatherSpeed": 25,
-    "icon": "Bar",
+    "icon": "CheapBar",
     "alchemyInfo": {
       "queplarValue": 35
     }
@@ -56,7 +56,7 @@
     "secondaryColor": "#CD7F32",
     "value": 110,
     "gatherSpeed": 30,
-    "icon": "Bar",
+    "icon": "CheapBar",
     "alchemyInfo": {
       "queplarValue": 45
     }
@@ -80,7 +80,7 @@
     "secondaryColor": "#999999",
     "value": 250,
     "gatherSpeed": 40,
-    "icon": "Bar",
+    "icon": "GoldBar",
     "alchemyInfo": {
       "queplarValue": 90
     }
@@ -139,7 +139,7 @@
     "secondaryColor": "#FFD700",
     "value": 1000,
     "gatherSpeed": 45,
-    "icon": "Bar",
+    "icon": "GoldBar",
     "alchemyInfo": {
       "queplarValue": 125
     }
@@ -163,7 +163,7 @@
     "secondaryColor": "#E5E4E2",
     "value": 1800,
     "gatherSpeed": 50,
-    "icon": "Bar",
+    "icon": "GoldBar",
     "alchemyInfo": {
       "queplarValue": 135
     }

@@ -1,0 +1,105 @@
+﻿@page "/World/HorsesBack"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@implements IDisposable
+
+
+@if (thisArea != null)
+{
+    <h1>@thisArea.Name</h1>
+    <p>@thisArea.Description</p>
+
+    @if (GameState.IsOnHuntingTrip == false)
+    {
+        @foreach (string a in thisArea.Actions ?? Enumerable.Empty<string>())
+        {
+             <Quepland_2.Components.GatherButtonComponent ActionText="@a"></Quepland_2.Components.GatherButtonComponent>
+           
+        }
+
+        <Quepland_2.Components.WormHuntingComponent></Quepland_2.Components.WormHuntingComponent>
+
+        @foreach (AreaUnlock a in thisArea.UnlockableAreas)
+        {
+            if (AreaManager.Instance.GetAreaByURL(a.AreaURL).IsUnlocked == false || a.ConnectsLands)
+            {
+
+                <Quepland_2.Components.AreaUnlockComponent areaToUnlock="@a"></Quepland_2.Components.AreaUnlockComponent>
+                <br />
+            }
+        }
+
+
+        @if (thisArea.TrapSlot != null)
+        {
+            <Quepland_2.Components.HuntingTrapComponent Slot="@thisArea.TrapSlot"></Quepland_2.Components.HuntingTrapComponent>
+            <br />
+        }
+    }
+
+    @if (thisArea.NPCs.Count > 0 && GameState.IsOnHuntingTrip == false)
+    {
+        @foreach (string npc in thisArea.NPCs)
+        {
+            <Quepland_2.Components.NPCDialogComponent npc="@npc"></Quepland_2.Components.NPCDialogComponent>
+
+        }
+
+    }
+}
+
+@code {
+
+    [Parameter]
+    public string areaURL { get; set; }
+    public Area thisArea { get; set; }
+
+    private void FindBattles()
+    {
+        GameState.StopNonCombatActions();
+        BattleManager.Instance.StartBattle(thisArea);
+        GameState.Location = "Battle";
+        UriHelper.NavigateTo("World/Battle/");
+    }
+
+    private void EnterBuilding(string buildingURL)
+    {
+        GameState.StopActions();
+        GameState.Location = areaURL + "/" + buildingURL;
+        UriHelper.NavigateTo("World/" + areaURL + "/" + buildingURL);
+    }
+    private void EnterDojo(string dojoURL)
+    {
+        GameState.StopActions();
+        GameState.Location = "Dojo/" + dojoURL;
+        UriHelper.NavigateTo("World/Dojo/" + dojoURL);
+    }
+    private void EnterDungeon(string dungeonURL)
+    {
+        GameState.StopActions();
+        GameState.Location = dungeonURL;
+        UriHelper.NavigateTo("Underworld/" + dungeonURL);
+    }
+    private void EnterSmithy()
+    {
+        GameState.StopActions();
+        GameState.Location = "Smithy/" + areaURL;
+        UriHelper.NavigateTo("World/Smithy/" + areaURL);
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    protected override void OnParametersSet()
+    {
+        thisArea = AreaManager.Instance.GetAreaByURL("HorsesBack");
+        GameState.NavMenu.ChangeOpenRegion(AreaManager.Instance.GetRegionForArea(thisArea), false);
+        GameState.UpdateState();
+
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

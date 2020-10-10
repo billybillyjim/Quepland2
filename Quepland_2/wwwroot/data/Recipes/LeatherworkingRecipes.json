@@ -759,5 +759,260 @@
       }
     ],
     "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Caiman Gloves",
+    "ingredients": [
+      {
+        "itemName": "Bison Gloves",
+        "amount": 1
+      },
+      {
+        "itemName": "Caiman Leather",
+        "amount": 5
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Leatherworking:250",
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 92
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Caiman Hat",
+    "ingredients": [
+      {
+        "itemName": "Bison Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Caiman Leather",
+        "amount": 10
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Leatherworking:510",
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 93
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Caiman Boots",
+    "ingredients": [
+      {
+        "itemName": "Bison Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Caiman Leather",
+        "amount": 10
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Leatherworking:520",
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 95
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Caiman Pants",
+    "ingredients": [
+      {
+        "itemName": "Bison Leather",
+        "amount": 3
+      },
+      {
+        "itemName": "Caiman Leather",
+        "amount": 15
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Leatherworking:850",
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 97
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Caiman Shirt",
+    "ingredients": [
+      {
+        "itemName": "Bison Leather",
+        "amount": 4
+      },
+      {
+        "itemName": "Caiman Leather",
+        "amount": 20
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Leatherworking:1250",
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 99
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Mammoth Gloves",
+    "ingredients": [
+      {
+        "itemName": "Mammoth Leather",
+        "amount": 1
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Leatherworking:400",
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 101
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Mammoth Hat",
+    "ingredients": [
+      {
+        "itemName": "Mammoth Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Leatherworking:810",
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 102
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Mammoth Boots",
+    "ingredients": [
+      {
+        "itemName": "Mammoth Leather",
+        "amount": 2
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Leatherworking:820",
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 103
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Mammoth Pants",
+    "ingredients": [
+      {
+        "itemName": "Mammoth Leather",
+        "amount": 3
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Leatherworking:1250",
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 104
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Mammoth Shirt",
+    "ingredients": [
+      {
+        "itemName": "Mammoth Leather",
+        "amount": 4
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Leatherworking:1650",
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 105
+      }
+    ],
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Caiman Belt",
+    "ingredients": [
+      {
+        "itemName": "Golden Belt",
+        "amount": 1
+      },
+      {
+        "itemName": "Caiman Leather",
+        "amount": 80
+      },
+      {
+        "itemName": "Leatherworking Toolkit",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Leatherworking:5000",
+    "requirements": [
+      {
+        "skill": "Leatherworking",
+        "skillLevel": 85
+      }
+    ],
+    "maxOutputsPerAction": 1
   }
 ]

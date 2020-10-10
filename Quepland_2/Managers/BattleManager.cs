@@ -229,22 +229,22 @@ public class BattleManager
                 {
                     if (drop != null)
                     {
-                        MessageManager.AddMessage("It also dropped " + d.Amount + " " + d.Item.GetPlural() + ".", "white", "Loot");
+                        MessageManager.AddMessage("You also got " + d.Amount + " " + d.Item.GetPlural() + ".", "white", "Loot");
                     }
                     else
                     {
-                        MessageManager.AddMessage("It dropped " + d.Amount + " " + d.Item.GetPlural() + ".", "white", "Loot");
+                        MessageManager.AddMessage("You got " + d.Amount + " " + d.Item.GetPlural() + ".", "white", "Loot");
                     }                   
                 }
                 else
                 {
                     if (drop != null)
                     {
-                        MessageManager.AddMessage("It also dropped 1 " + d.ToString() + ".", "white", "Loot");
+                        MessageManager.AddMessage("You also got 1 " + d.ToString() + ".", "white", "Loot");
                     }
                     else
                     {
-                        MessageManager.AddMessage("It dropped 1 " + d.ToString() + ".", "white", "Loot");
+                        MessageManager.AddMessage("You got 1 " + d.ToString() + ".", "white", "Loot");
                     }                   
                 }
                 Player.Instance.Inventory.AddDrop(d);
@@ -346,7 +346,15 @@ public class BattleManager
         
         Player.Instance.CurrentHP -= total;
         Player.Instance.GainExperience("HP", total);
-        MessageManager.AddMessage("The " + opponent.Name + " hit you for " + total + " damage!");
+        if(CurrentDojo != null)
+        {
+            MessageManager.AddMessage(opponent.Name + " hit you for " + total + " damage!");
+        }
+        else
+        {
+            MessageManager.AddMessage("The " + opponent.Name + " hit you for " + total + " damage!");
+        }
+        
     }
     public double CalculateTypeBonus(Monster m)
     {

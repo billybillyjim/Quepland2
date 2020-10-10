@@ -43,7 +43,7 @@
     {
         <Quepland_2.Components.GuildDepositBoxComponent></Quepland_2.Components.GuildDepositBoxComponent>
     }
-    @if(Player.Instance.GetLevel("Artisan") < 5 && Player.Instance.ArtisanPoints == 0 && GameState.CurrentArtisanTask != null)
+    @if(Player.Instance.GetLevel("Artisan") < 10 && Player.Instance.ArtisanPoints < 50 && GameState.CurrentArtisanTask != null)
     {
         <button class="btn btn-primary" style="margin-top:10px;" @onclick="@(() => CancelTask())"
                 @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "As a beginner to the guild, you are allowed to cancel your artisan task if you feel it is too difficult. Once you are more skilled, this won't be an option anymore!")))"
@@ -70,8 +70,8 @@
     }
     private void CancelTask()
     {
-        if(Player.Instance.GetLevel("Artisan") < 5 &&
-            Player.Instance.ArtisanPoints == 0)
+        if(Player.Instance.GetLevel("Artisan") < 10 &&
+            Player.Instance.ArtisanPoints < 50)
         {
             MessageManager.AddMessage("You successfully cancelled your artisan task. Speak to another artisan to get a new task.");
             GameState.HideTooltip();

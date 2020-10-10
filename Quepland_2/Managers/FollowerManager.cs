@@ -37,7 +37,7 @@ public class FollowerManager
         string data = "";
         foreach(Follower f in Followers)
         {
-            data += f.Name + ":" + f.IsUnlocked + ",";
+            data += f.Name + ":" + f.IsUnlocked + ":" + f.Banking.Experience + ",";
         }
         return data;
     }
@@ -53,6 +53,11 @@ public class FollowerManager
             string name = line.Split(':')[0];
             bool unlock = bool.Parse(line.Split(':')[1]);
             Followers.Find(x => x.Name == name).IsUnlocked = unlock;
+            if(line.Split(':').Length > 2)
+            {
+                long exp = long.Parse(line.Split(':')[2]);
+                Followers.Find(x => x.Name == name).Banking.LoadExperience(exp);
+            }
         }
     }
 }

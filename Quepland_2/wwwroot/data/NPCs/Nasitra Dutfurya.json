@@ -1,0 +1,49 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Nasitra Dutfurya",
+  "id": 66,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi! You look like an adventurer. Do you by any chance do work for the artisan guild?",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "I do",
+      "responseText": "That's great! Do you want me to do it for you?",
+      "depth": 1,
+      "newDepthOnTalk": 2
+    },
+    {
+      "buttonText": "Yes please",
+      "responseText": "Okay, just pay me the fee and you can say goodbye to your current task.",
+      "depth": 2,
+      "newDepthOnTalk": 3
+    },
+    {
+      "buttonText": "No thanks",
+      "responseText": "Okay, let me know if you change your mind.",
+      "depth": 2,
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "How much?",
+      "responseText": "GetTaskCost",
+      "depth": 3,
+      "newDepthOnTalk": 4
+    },
+    {
+      "buttonText": "Okay, take my task away",
+      "responseText": "CancelTask",
+      "parameter": "Free",
+      "depth": 4,
+      "newDepthOnTalk": 0
+    },
+    {
+      "buttonText": "That's too much",
+      "responseText": "Okay, let me know if you change your mind.",
+      "depth": 4,
+      "newDepthOnTalk": 0
+    }
+  ]
+}

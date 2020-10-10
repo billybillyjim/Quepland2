@@ -19,6 +19,18 @@
         <button @onclick="@(() => UnlockFollowers())">
             Unlock Followers
         </button>
+        <button @onclick="@(() => show())">
+            Show
+        </button>
+        @if (showAllFollowers)
+        {
+            @foreach (Follower f in FollowerManager.Instance.Followers)
+            {
+                <button @onclick="@(() => UnlockFollower(f))">
+                    Unlock @f.Name
+                </button>
+            }
+        }
     </div>
     <button @onclick="@(() => GetMoney())">
         Get 1M
@@ -87,6 +99,11 @@
             Cancel Hunt
         </button>
     </div>
+    <div>
+        <button @onclick="@(() => CancelArtisanTask())">
+            Cancel Artisan Task
+        </button>
+    </div>
 </div>
 
 
@@ -95,10 +112,24 @@
 
     private string itemName = "";
     private string areaURL = "";
+    private bool showAllFollowers;
 
+
+    public void show()
+    {
+        showAllFollowers = true;
+    }
+    public void UnlockFollower(Follower f)
+    {
+        f.IsUnlocked = true;
+    }
     public void CancelAFK()
     {
         GameState.CurrentAFKAction = null;
+    }
+    public void CancelArtisanTask()
+    {
+        GameState.CancelTask();
     }
     public void CancelHuntingTrip()
     {

@@ -1,0 +1,29 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Tochtei",
+  "id": 68,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello. Would you like any help in identifying gems? I can identify any gem in the world for just 300 coins.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "Yes, please",
+      "responseText": "IdentifyGems",
+      "depth": 1
+    },
+    {
+      "buttonText": "No, thanks",
+      "responseText": "Please come back if you change your mind.",
+      "depth": 1,
+      "newDepthOnTalk": 2
+    },
+    {
+      "buttonText": "Identify my gems, please",
+      "responseText": "IdentifyGems",
+      "depth": 2,
+      "newDepthOnTalk": 2
+    }
+  ]
+}

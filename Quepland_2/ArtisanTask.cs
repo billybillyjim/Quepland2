@@ -22,13 +22,17 @@ public class ArtisanTask
 		}
 	}
 
+
 	public ArtisanTask(string itemName, int required)
     {
 		ItemName = itemName;
 		AmountRequired = required;
     }
-
-    public override string ToString()
+	public int GetGoldCost()
+	{
+		return AmountRequired * Item.Value;
+	}
+	public override string ToString()
     {
 		return "The guild has asked you to make " + AmountRequired + " " + Item.GetPlural() + ".(Progress:" + AmountFulfilled + "/" + AmountRequired + ")";
 

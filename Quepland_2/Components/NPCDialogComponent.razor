@@ -39,7 +39,15 @@
     private void Talk(Dialog d)
     {
         d.Talk();
-        NPC.ConversationDepth = d.NewDepthOnTalk;
+        if(d.ResponseText == "GetTaskCost" && GameState.CurrentArtisanTask == null)
+        {
+            NPC.ConversationDepth = 0;
+        }
+        else
+        {
+            NPC.ConversationDepth = d.NewDepthOnTalk;
+        }
+
         GameState.UpdateState();
     }
     protected override void OnInitialized()
@@ -53,6 +61,10 @@
     }
     public void Dispose()
     {
+        if(NPC != null)
+        {
+            NPC.ConversationDepth = 0;
+        }
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();

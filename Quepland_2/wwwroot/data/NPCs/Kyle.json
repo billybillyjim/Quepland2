@@ -1,0 +1,11 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Kyle",
+  "id": 67,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hi! Lookin' to buy a toad? I got a few real nice ones available right now."
+    }
+  ]
+}

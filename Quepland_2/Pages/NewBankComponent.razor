@@ -32,7 +32,7 @@
             <div style=" margin-right: 85px; margin-top: 4px;">
                 @if (showSearch)
                 {
-                    <input style="width:150px;margin-left:40px;" type="text" @bind="searchString" @bind:event="oninput" />
+                    <input style="width:150px;margin-left:40px;" type="text" @bind="searchString" @bind:event="onchange"/>
                     <div style="margin-top:-30px;">
                         <button class="btn btn-primary" style="width:30px;height:30px;padding:0px;" @onclick="@(() => ClearSearch())">X</button>
                     </div>
@@ -242,6 +242,7 @@
         foreach(KeyValuePair<GameItem, int> pair in BankItems)
         {
             pair.Key.Rerender = true;
+            //Console.WriteLine(pair.Key.Name + ":" + pair.Value);
         }
         Bank.Instance.HasChanged = false;
         return BankItems;
@@ -445,6 +446,7 @@
     {
         Bank.Instance.IsBanking = true;
         Bank.Instance.HasChanged = true;
+        Bank.Instance.Inventory.UpdateItemCount();
         BankItems = Bank.Instance.Inventory.GetItems();
         UpdateVisibleItems();
 

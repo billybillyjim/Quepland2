@@ -12,7 +12,7 @@
     {
         @foreach (KeyValuePair<GameItem, int> item in Player.Instance.Inventory.GetUniqueItems().OrderBy(x => x.Key.ID))
         {
-            if (item.Key != null)
+            if (item.Key != null && (GameState.HideLockedItems == false || item.Key.IsLocked == false))
             {
 
                 <div oncontextmenu="return false;" draggable="false"
@@ -26,7 +26,7 @@
     {
         @foreach (KeyValuePair<GameItem, int> item in Player.Instance.Inventory.GetItems().OrderBy(x => x.Key.ID))
         {
-            if (item.Key != null)
+            if (item.Key != null && (GameState.HideLockedItems == false || item.Key.IsLocked == false))
             {
 
                 if (item.Key.IsStackable)
@@ -94,7 +94,7 @@
         {
             if (item.Key != null)
             {
-                <ItemBoxComponent Item="@item.Key" ShowAmount="@false" shouldRender="@item.Key.Rerender" Inventory="@Player.Instance.CurrentFollower.Inventory"></ItemBoxComponent>
+                <ItemBoxComponent Item="@item.Key" ShowAmount="@item.Key.IsStackable" shouldRender="@item.Key.Rerender" Inventory="@Player.Instance.CurrentFollower.Inventory"></ItemBoxComponent>
             }
         }
         @for (int i = 0; i < GetEmptyFollowerInventorySpaces(); i++)

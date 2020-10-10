@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 
@@ -14,6 +15,8 @@ public class Inventory
     private int totalItems { get; set; }
     public bool AllItemsStack;
     public bool IsLoadingSave = false;
+    public bool SkipIndexing = false;
+    public bool FixItems = false;
     public Inventory() 
     {
         items = new List<KeyValuePair<GameItem, int>>();
@@ -156,7 +159,7 @@ public class Inventory
         }
         else
         {
-            Console.WriteLine("No item " + itemName + " exists.");
+            //Console.WriteLine("No item " + itemName + " exists.");
             return false;
         }
         
@@ -165,12 +168,14 @@ public class Inventory
     {
         if (uniqueID == null)
         {
+            //Console.WriteLine("Unique id was null");
             return false;
         }
         if(itemLookupDic.TryGetValue(uniqueID, out int amt))
         {
             return true;
         }
+        //Console.WriteLine("Not Found:" + uniqueID);
         return false;
     }
     public GameItem FindItemCapableOfAction(string action)
@@ -279,6 +284,7 @@ public class Inventory
     {
         if (item == null || (totalItems >= maxSize && (item.IsStackable == false || HasItem(item) == false)))
         {
+            //Console.WriteLine("Item was null:"+(item == null) + " total surpassed max size:" + (totalItems >= maxSize));
             return false;
         }
         if (amount <= 0)
@@ -318,7 +324,6 @@ public class Inventory
         {
             return false;
         }
-
         if (HasItem(item))
         {
             if (item.IsStackable || AllItemsStack)
@@ -328,8 +333,7 @@ public class Inventory
                 items.Remove(pair);
                 pair.Key.Rerender = true;
                 items.Add(new KeyValuePair<GameItem, int>(pair.Key, oldAmt + amount));
-                UpdateItemCount();
-
+                //Console.WriteLine("Adding item:" + item.Name + ", old:" + oldAmt + "/" + (oldAmt + amount));
             }
             else
             {
@@ -344,7 +348,7 @@ public class Inventory
                 item.Rerender = true;
                 //item.itemPos = inventorySlotPos;
                 items.Add(new KeyValuePair<GameItem, int>(item, amount));
-                UpdateItemCount();
+                //Console.WriteLine("Has item was false:" + item.Name + ", adding " + amount);
             }
             else
             {
@@ -390,8 +394,11 @@ public class Inventory
         {
             if(items[i].Key.UniqueID == item.UniqueID)
             {
+                if (items[i].Key.IsLocked || items[i].Key.IsEquipped)
+                {
+                    continue;
+                }
                 KeyValuePair<GameItem, int> pair = items[i];
-                
                 if (items[i].Value > amount)
                 {                   
                     int oldAmt = pair.Value;
@@ -500,7 +507,7 @@ public class Inventory
     }
     public void UpdateItemCount()
     {
-        if (IsLoadingSave)
+        if (IsLoadingSave || SkipIndexing)
         {
             return;
         }
@@ -508,8 +515,7 @@ public class Inventory
         //inventorySlotPos = 0;
         itemLookupDic.Clear();
         foreach (KeyValuePair<GameItem, int> item in items)
-        {
-            
+        {         
             if(item.Key != null)
             {
                 item.Key.Rerender = true;
@@ -522,7 +528,6 @@ public class Inventory
                 {
                     itemLookupDic.Add(item.Key.UniqueID, item.Value);
                 }
-                
 
                 if (item.Key.IsStackable)
                 {
@@ -533,6 +538,15 @@ public class Inventory
                     totalItems += item.Value;
                 }
             }
+        }
+        if (FixItems)
+        {
+            items.Clear();
+            foreach(KeyValuePair<string, int> pair in itemLookupDic)
+            {
+                items.Add(new KeyValuePair<GameItem, int>(ItemManager.Instance.GetItemByUniqueID(pair.Key), pair.Value));
+            }
+            FixItems = false;
         }
     }
 
@@ -583,6 +597,13 @@ public class Inventory
         }
         return total;
     }
+    public void RerenderAll()
+    {
+        foreach (KeyValuePair<GameItem, int> i in items)
+        {
+            i.Key.Rerender = true;
+        }
+    }
     public void LoadData(string data)
     {
         string[] i = data.Split('/');
@@ -629,8 +650,10 @@ public class Inventory
             }
 
         }
+        //FixItems = true;
         IsLoadingSave = false;
         UpdateItemCount();
     }
+
 }
 

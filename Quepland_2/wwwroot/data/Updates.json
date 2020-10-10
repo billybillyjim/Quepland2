@@ -1,6 +1,29 @@
 [
   {
-    "versionNumber": "1.0.13",
+    "versionNumber": "1.0.14b",
+    "updates": [
+      "Followers now have a levelling system. A follower will gain experience every time they bank items for you. A higher level follower will have a larger inventory. There will be more that levelling will do in the future. Big thanks to Patreon Subscriber Moonbreak for the suggestions!",
+      "The requirements for cancelling an artisan task have been changed to 10 Artisan and under 50 artisan points.",
+      "Certain items are now correctly blocked from artisan tasks.",
+      "Artisan tasks now properly load and save from imported save files.",
+      "Some inventory code has been reworked to make adding stacks of items a little bit faster.",
+      "Depositing artisan items will no longer remove equipped or locked items.",
+      "Compact inventory settings are now saved.",
+      "You can now hide locked items in the settings menu.",
+      "Added Kyusa Sands.",
+      "Added worm hunting.",
+      "Artisan tasks can now be cancelled at any level by paying an npc in Sunajo Fortress.",
+      "Added the Nittou dojo to Sunajo.",
+      "Added caiman and mammoth armors.",
+      "Fixed some typos.",
+      "Low level bars and high value bars now have different icons to make telling them apart a little bit easier.",
+      "Added a gem identifier who will identify all the gems in your inventory for a price.",
+      "Library books now tell you your page number.",
+      "Fixed the bug making followers depositing create duplicate item slots."
+    ]
+  },
+  {
+    "versionNumber": "1.0.13b",
     "updates": [
       "You can now import save files from the start menu.",
       "When saves fail, the game will now give an error code to help me diagnose what is going on.",
@@ -11,7 +34,9 @@
       "Some UI has been readjusted.",
       "The item system has been improved to support items created at runtime.",
       "Added a compact inventory view that is a bit more similar to how the first game worked.",
-      "I finally had the save bug happen to me and I think I was able to diagnose it. Save games going forward will use a different, simpler, and supposedly more reliable form of compression. Let me know if you have any issues! This took a good while to figure out and fix, so the update took much longer than I planned."
+      "I finally had the save bug happen to me and I think I was able to diagnose it. Save games going forward will use a different, simpler, and supposedly more reliable form of compression. Let me know if you have any issues! This took a good while to figure out and fix, so the update took much longer than I planned.",
+      "I added a little menu in the settings options that will let you restore your followers. Sorry to everyone who experienced this bug."
+
 
     ]
   },

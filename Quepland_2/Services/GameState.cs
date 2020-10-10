@@ -27,7 +27,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.13";
+    public static string Version { get; set; } = "1.0.14b";
     public static List<Update> Updates { get; set; } = new List<Update>();
     public static Pluralizer Pluralizer = new Pluralizer();
 
@@ -41,7 +41,7 @@ using System.Threading.Tasks;
     private bool stopNoncombatActions = false;
     public bool IsStoppingNextTick { get; set; }
     private static bool cancelTask;
-    public static bool IsOnHuntingTrip { get; set; } 
+    public static bool IsOnHuntingTrip { get; set; }
     public static bool UseNewSaveCompression { get; set; }
     public static AFKAction CurrentAFKAction { get; set; }
     private Timer GameTimer { get; set; }
@@ -102,6 +102,7 @@ using System.Threading.Tasks;
     public static int TicksToNextAction;
     public static readonly int GameSpeed = 200;
     public static bool CompactInventoryView;
+    public static bool HideLockedItems;
     public int TicksToNextHeal;
     public int HealingTicks;
     public static int CurrentTick { get; set; }
@@ -362,8 +363,6 @@ using System.Threading.Tasks;
                 }
             }
         }
-
-
     }
     private bool PlayerGatherItem()
     {
@@ -867,11 +866,11 @@ using System.Threading.Tasks;
         if(CurrentGatherItem != null)
         {
             int baseValue = CurrentGatherItem.GatherSpeed.ToGaussianRandom();
-           // Console.WriteLine("Ticks to next gather:" + baseValue);
+            Console.WriteLine("Ticks to next gather:" + baseValue);
             baseValue = (int)Math.Max(1, (double)baseValue * Player.Instance.GetGearMultiplier(CurrentGatherItem));
-            //Console.WriteLine("Ticks to next gather with gear:" + baseValue);
+            Console.WriteLine("Ticks to next gather with gear:" + baseValue);
             baseValue = (int)Math.Max(1, (double)baseValue * Player.Instance.GetLevelMultiplier(CurrentGatherItem));
-            //Console.WriteLine("Ticks to next gather with gear and level:" + baseValue);
+            Console.WriteLine("Ticks to next gather with gear and level:" + baseValue);
             return baseValue;
         }
         return int.MaxValue;
@@ -1002,7 +1001,13 @@ using System.Threading.Tasks;
     }
     public static GameStateSaveData GetSaveData()
     {
-        return new GameStateSaveData { IsHunting = IsOnHuntingTrip, Location = Location, CurrentLand = CurrentLand.Name, CurrentTask = CurrentArtisanTask };
+        return new GameStateSaveData { IsHunting = IsOnHuntingTrip, 
+            Location = Location, 
+            CurrentLand = CurrentLand.Name, 
+            CurrentTask = CurrentArtisanTask,
+            HideLockedItems = HideLockedItems,
+            CompactInventory = CompactInventoryView
+        };
     }
     public static void LoadSaveData(GameStateSaveData data)
     {
@@ -1015,10 +1020,11 @@ using System.Threading.Tasks;
         {
             data.Location = "QueplandFields";
         }
-        if(data.CurrentTask != null)
-        {
-            CurrentArtisanTask = data.CurrentTask;
-        }
+        HideLockedItems = data.HideLockedItems;
+        CompactInventoryView = data.CompactInventory;
+
+        CurrentArtisanTask = data.CurrentTask;
+        
         Location = data.Location;
         CurrentLand = AreaManager.Instance.GetLandByName(data.CurrentLand);
     }

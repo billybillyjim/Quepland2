@@ -79,6 +79,11 @@ public class Skill
 
         while(Experience >= (long)Skill.GetExperienceRequired(GetSkillLevelUnboosted()))
         {
+
+            if(Level > 350)
+            {
+                break;
+            }
             Level++;
         }
     }

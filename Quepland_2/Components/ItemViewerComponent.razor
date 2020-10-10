@@ -380,7 +380,16 @@
         if(Item != null)
         {
             Item.IsLocked = !Item.IsLocked;
+            Item.Rerender = true;
+            if (Item.IsLocked && GameState.HideLockedItems)
+            {
+                ClearItem();
+                Player.Instance.Inventory.RerenderAll();
+            }
+
         }
+
+
         GameState.UpdateState();
     }
     private string GetProgress()

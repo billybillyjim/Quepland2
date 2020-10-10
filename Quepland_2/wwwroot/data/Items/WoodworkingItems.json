@@ -222,7 +222,8 @@
       }
     ],
     "secondaryColor": "#AB5F29",
-    "isStackable": true
+    "isStackable": true,
+    "preventArtisanTask": true
   },
   {
     "name": "Ironwood Arrow Shafts",

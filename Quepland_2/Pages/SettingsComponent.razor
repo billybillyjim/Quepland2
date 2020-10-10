@@ -2,7 +2,7 @@
 @inject NavigationManager UriHelper
 @implements IDisposable
 
-<div style="position:absolute;left:300px;top:50px;display:flex;margin-top:10px;padding:5px;min-height:350px;background-color:black;width:@(GameState.MinWindowWidth)px">
+<div style="position:absolute;left:300px;top:50px;display:flex;margin-top:10px;padding:5px;min-height:700px;background-color:black;width:@(GameState.MinWindowWidth)px">
     <div>
         <div>
             Set Main Window Size:
@@ -21,6 +21,42 @@
         <div>
             <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => CompactInventory())">Compact Inventory</button>
         </div>
+        <div>
+            <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => HideLockedItems())">Hide Locked Items</button>
+        </div>
+        @if (hasRestoredFollowers == false)
+        {
+            <div style="overflow:auto;max-height:150px;">
+                @if (restoreFollowersMenu)
+                {
+                    <div>Select the followers you lost during the last update, then scroll to the bottom and click restore.</div>
+                    @foreach (Follower f in FollowerManager.Instance.Followers)
+                    {
+                        @if (followersToRestore.Contains(f))
+                        {
+                            <button class="btn btn-primary" style="margin:10px;opacity:0.5" @onclick="@(() => ToggleFollower(f))">Adding @f.Name</button>
+                        }
+                        else
+                        {
+                            <button class="btn btn-primary" style="margin:10px;" @onclick="@(() => ToggleFollower(f))">@f.Name</button>
+                        }
+
+                    }
+                    <div>
+                        <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => RestoreFollowers())">Restore</button>
+                    </div>
+                }
+                else
+                {
+                    <div>
+                        <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => restoreFollowersMenu = true)">Follower Restore</button>
+                    </div>
+                }
+            </div>
+
+        }
+
+
     </div>
     <div>
         You can export your save to keep a backup somewhere. You can load an exported save from the main menu.
@@ -35,7 +71,7 @@
         }
         <input @bind-value="@exportedSave" />
     </div>
-    @if (IsTesting())
+    @if (false)
     {
 <div>
     <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => EnableNewCompression())">Compression</button>
@@ -55,6 +91,40 @@
 
     @code {
         private string exportedSave = "";
+        private bool restoreFollowersMenu;
+        private bool hasRestoredFollowers;
+        private List<Follower> followersToRestore = new List<Follower>();
+
+        public void ToggleFollower(Follower f)
+        {
+            if(followersToRestore.Contains(f) == false)
+            {
+                followersToRestore.Add(f);
+            }
+            else
+            {
+                followersToRestore.Remove(f);
+            }
+            GameState.UpdateState();
+        }
+        public void HideLockedItems()
+        {
+            GameState.HideLockedItems = !GameState.HideLockedItems;
+            Player.Instance.Inventory.RerenderAll();
+            GameState.UpdateState();
+        }
+
+        public void RestoreFollowers()
+        {
+            foreach(Follower f in followersToRestore)
+            {
+                f.IsUnlocked = true;
+                MessageManager.AddMessage(f.Name + " has returned to you.");
+            }
+            hasRestoredFollowers = true;
+            SaveManager.SaveGame();
+            GameState.UpdateState();
+        }
 
         public void CompactInventory()
         {
@@ -63,7 +133,7 @@
         }
         public void EnableNewCompression()
         {
-            GameState.UseNewSaveCompression = true;
+            GameState.UseNewSaveCompression = !GameState.UseNewSaveCompression;
         }
         public bool IsTesting()
         {

@@ -464,14 +464,6 @@
     }
   },
   {
-    "name": "Caiman Skin",
-    "description": "The skin of a caiman. You can tan it into leather at a tannery.",
-    "value": 30,
-    "icon": "Hide",
-    "secondaryColor": "#66B4DE",
-    "experienceGained": "Leatherworking:30"
-  },
-  {
     "name": "Caiman Leather",
     "description": "The tanned hide of a caiman. Made into armor, it might make you stronger.",
     "value": 300,
@@ -608,5 +600,47 @@
     "tanningInfo": {
       "tansIntoString": "Mammoth Leather"
     }
+  },
+  {
+    "name": "Caiman Skin",
+    "description": "The skin of a caiman.",
+    "value": 30,
+    "icon": "CaimanHide",
+    "secondaryColor": "#66B4DE",
+    "tanningInfo": {
+      "tansIntoString": "Caiman Leather"
+    }
+  },
+  {
+    "name": "Sand Worm",
+    "description": "A wriggly creature that normally lives underground.",
+    "value": 70,
+    "icon": "Worm",
+    "secondaryColor": "#C88B7E",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 45
+      }
+    ],
+    "gatherSpeed": 25,
+    "gatherString": "You grip a worm and rip it out of the ground.",
+    "experienceGained": "Hunting:90"
+  },
+  {
+    "name": "Large Sand Worm",
+    "description": "A large, wriggly creature that normally lives underground.",
+    "value": 130,
+    "icon": "Worm",
+    "secondaryColor": "#A86B5E",
+    "requirements": [
+      {
+        "skill": "Hunting",
+        "skillLevel": 65
+      }
+    ],
+    "gatherSpeed": 35,
+    "gatherString": "You grip a big worm and rip it out of the ground.",
+    "experienceGained": "Hunting:250"
   }
 ]
