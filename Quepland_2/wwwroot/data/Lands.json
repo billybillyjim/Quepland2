@@ -40,5 +40,13 @@
     ],
     "topColor": "#c2b280",
     "bottomColor": "#70483c"
+  },
+  {
+    "name": "Karakni Kingdom",
+    "regionNames": [
+      "Sanbon Wood"
+    ],
+    "topColor": "#7bde76",
+    "bottomColor": "#0a9103"
   }
 ]

@@ -9,6 +9,51 @@
     "isStackable": true
   },
   {
+    "name": "Thought Seed",
+    "description": "The essence of thought, extracted from something... or someone. Now it's all that remains.",
+    "gatherString": "You get a thought seed.",
+    "value": 35,
+    "secondaryColor": "#8d69d1",
+    "icon": "Seeds",
+    "isStackable": true
+  },
+  {
+    "name": "Etheral Seed",
+    "description": "The essence of the ether, extracted from something. Now it's all that remains.",
+    "gatherString": "You get an etheral seed.",
+    "value": 35,
+    "secondaryColor": "#cadbd6",
+    "icon": "Seeds",
+    "isStackable": true
+  },
+  {
+    "name": "Warmth Seed",
+    "description": "The essence of warmth, extracted from something. Now it's all that remains.",
+    "gatherString": "You get a warmth seed.",
+    "value": 35,
+    "secondaryColor": "#c7453a",
+    "icon": "Seeds",
+    "isStackable": true
+  },
+  {
+    "name": "Fierce Seed",
+    "description": "The essence of spirit, extracted from something. Now it's all that remains.",
+    "gatherString": "You get a fierce seed.",
+    "value": 35,
+    "secondaryColor": "#fcff52",
+    "icon": "Seeds",
+    "isStackable": true
+  },
+  {
+    "name": "Alimental Seed",
+    "description": "The essence of sustenance, extracted from something. Now it's all that remains.",
+    "gatherString": "You get an alimental seed.",
+    "value": 35,
+    "secondaryColor": "#4fc44d",
+    "icon": "Seeds",
+    "isStackable": true
+  },
+  {
     "name": "Transit Branch",
     "description": "It vibrates slightly in your hand. ",
     "gatherString": "You get a transit branch.",
@@ -18,7 +63,7 @@
   },
   {
     "name": "Glowing Transit Branch",
-    "description": "It vibrates slightly in your hand. If you snap it, it will return you to where it was activated.",
+    "description": "It vibrates in your hand. Snapping it will take you somewhere.",
     "gatherString": "You get a transit branch.",
     "value": 105,
     "secondaryColor": "#BBFFBB",

@@ -2444,5 +2444,81 @@
         "selfInflicted": true
       }
     ]
+  },
+
+  {
+    "name": "Magician",
+    "hp": 3500,
+    "weaknesses": "",
+    "strengths": "Axemanship",
+    "attackSpeed": 9,
+    "armor": 0,
+    "damage": 105,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Frost Seed",
+          "weight": 5,
+          "amount": 5
+        },
+        {
+          "itemName": "Thought Seed",
+          "weight": 5,
+          "amount": 5
+        },
+        {
+          "itemName": "Fierce Seed",
+          "weight": 5,
+          "amount": 5
+        },
+        {
+          "itemName": "Etheral Seed",
+          "weight": 5,
+          "amount": 5
+        },
+        {
+          "itemName": "Alimental Seed",
+          "weight": 5,
+          "amount": 5
+        },
+        {
+          "itemName": "Warmth Seed",
+          "weight": 5,
+          "amount": 5
+        },
+        {
+          "itemName": "Transit Branch",
+          "weight": 3,
+          "amount": 1
+        }
+      ]
+    },
+    "statusEffectData": [
+      {
+        "name": "SelfHeal",
+        "power": 450,
+        "speed": 1,
+        "duration": 1,
+        "message": "The magician casts a spell! He seems healed somehow.",
+        "procOdds": 0.1,
+        "selfInflicted": true
+      },
+      {
+        "name": "Freeze",
+        "power": 25,
+        "speed": 10,
+        "duration": 1,
+        "message": "The magician casts a spell! You've been frozen!",
+        "procOdds": 0.1
+      },
+      {
+        "name": "Empty",
+        "power": 25,
+        "speed": 1,
+        "duration": 1,
+        "message": "The magician casts a spell! You feel empty...",
+        "procOdds": 0.1
+      }
+    ]
   }
 ]

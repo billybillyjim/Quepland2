@@ -59,8 +59,16 @@
     "name": "Cathedra",
     "id": 142,
     "image": "Throne",
-    "description": "The throne room lies dark and dusty. Whatever valuables the room contained have long since been taken. All that remains is a great curtain draping the back wall, its vibrant red dulled with dust and age.",
-    "areaURL": "Cathedra"
+    "description": "The throne room lies dark and dusty. Whatever valuables the room contained have long since been taken. All that remains is a great curtain draping the back wall, its vibrant red dulled with dust and age. You can see a bit of rope dangling out from behind the curtain.",
+    "areaURL": "Cathedra",
+    "unlockableAreas": [
+      {
+        "areaURL": "GreatTree",
+        "buttonText": "Climb up rope",
+        "connectsLands": true
+      }
+
+    ]
   },
   {
     "name": "Athenaeum",

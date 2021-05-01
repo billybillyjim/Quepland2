@@ -30,7 +30,7 @@
       ]
     },
     {
-      "buttonText": "Leve me alone! I know what I'm doing.",
+      "buttonText": "Leave me alone! I know what I'm doing.",
       "responseText": "Wow, okay. I see how it is. Well just so you know, you can grab the axe from your bank to chop down trees. See ya!",
       "quest": "Oriole Ornithology",
       "newQuestprogressValue": 6,

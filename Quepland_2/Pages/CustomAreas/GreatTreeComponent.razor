@@ -6,10 +6,28 @@
 
 @if (thisArea != null)
 {
-    <h1>The Great Tree</h1>
-    <p>An incredible tree towers over the landscape. It's entirely dark under the umbrage of the branches far above. Curiously, there is a small glow coming from one of the highest visible branches. Maybe you could climb up to it...</p>
+    <AreaComponent areaURL="GreatTree"></AreaComponent>
+    @if (false)
+    {
+        @if (Player.Instance.Inventory.HasItem("Rope") && !IsClimbing)
+        {
+            <button class="btn btn-primary" style="margin-top:10px;" @onclick="@(() => StartClimbingTree())">Climb Tree</button>
+        }
+        else if (IsClimbing)
+        {
+            <button class="btn btn-primary" style="margin-top:10px;" @onclick="@(() => StopClimbing())">Stop Climbing Tree</button>
+        }
+        else
+        {
+            <button class="btn btn-primary" style="margin-top:10px;opacity:0.5"
+                    @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e,"You'll need some rope to climb this tree.")))"
+                    @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                Climb Tree
+            </button>
+        }
+    }
 
-    
+
 }
 
 @code {
@@ -17,6 +35,19 @@
     [Parameter]
     public string areaURL { get; set; }
     public Area thisArea { get; set; }
+    public long NextClimbTick;
+    public bool IsClimbing;
+
+    private void StartClimbingTree()
+    {
+        NextClimbTick = GameState.CurrentTick + (100 - Math.Min(90, ((Player.Instance.GetLevel("Strength") / 10) + (Player.Instance.GetLevel("Deftness")) / 10)));
+        IsClimbing = true;
+
+    }
+    private void StopClimbing()
+    {
+        IsClimbing = false;
+    }
 
     private void FindBattles()
     {
@@ -56,6 +87,7 @@
     }
     protected override void OnParametersSet()
     {
+        areaURL = "GreatTree";
         thisArea = AreaManager.Instance.GetAreaByURL(areaURL);
         GameState.NavMenu.ChangeOpenRegion(AreaManager.Instance.GetRegionForArea(thisArea), false);
         GameState.UpdateState();
@@ -65,5 +97,24 @@
     {
         GameState.StateChanged -= OnGameStateChanged;
     }
-    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+    void OnGameStateChanged(object sender, EventArgs e)
+    {
+
+        if (NextClimbTick <= GameState.CurrentTick && IsClimbing)
+        {
+            if (Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItemByName("Rope"), 1) == 1)
+            {
+                MessageManager.AddMessage("You climb further up the tree.");
+                GreatTree.Progress++;
+                StartClimbingTree();
+            }
+            else
+            {
+                MessageManager.AddMessage("You have run out of rope! You'll have to find some more.");
+                IsClimbing = false;
+            }
+        }
+
+        StateHasChanged();
+    }
 }

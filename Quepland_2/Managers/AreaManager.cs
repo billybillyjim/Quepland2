@@ -92,6 +92,19 @@ public class AreaManager
         }
         return a;
     }
+    public bool AreaURLIsValid(string url)
+    {
+        Area a = Areas.FirstOrDefault(x => x.AreaURL == url);
+        if (a == null)
+        {
+            Dungeon d = Dungeons.FirstOrDefault(x => x.URL == url);
+            if (d == null)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
     public Region GetRegionByName(string name)
     {
         return Regions.FirstOrDefault(x => x.Name == name);

@@ -1,5 +1,17 @@
 [
   {
+    "versionNumber": "1.0.15",
+    "updates": [
+      "Fixed a typo in Lumpy's banking message.",
+      "The follower item slot duplication should actually be fixed now.",
+      "Follower levels now save properly.",
+      "Added Sanbon Wood.",
+      "Added Transit Branches.",
+      "You can now extract the yeast from bread dough."
+
+    ]
+  },
+  {
     "versionNumber": "1.0.14b",
     "updates": [
       "Followers now have a levelling system. A follower will gain experience every time they bank items for you. A higher level follower will have a larger inventory. There will be more that levelling will do in the future. Big thanks to Patreon Subscriber Moonbreak for the suggestions!",

@@ -27,7 +27,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.14b";
+    public static string Version { get; set; } = "1.0.15";
     public static List<Update> Updates { get; set; } = new List<Update>();
     public static Pluralizer Pluralizer = new Pluralizer();
 
@@ -146,6 +146,16 @@ using System.Threading.Tasks;
     {
         if (IsOnHuntingTrip || CurrentAFKAction != null)
         {
+            if (SaveGame)
+            {
+                IsSaving = true;
+                await SaveManager.SaveGame();
+                SaveGame = false;
+            }
+            else if (CurrentTick % AutoSaveInterval == 0)
+            {
+                await SaveManager.SaveGame();
+            }
             CurrentTick++;
             StateHasChanged();
             return;
@@ -637,9 +647,9 @@ using System.Threading.Tasks;
             {
                 MessageManager.AddMessage("You withdraw " + CurrentSmithingRecipe.OutputAmount + " " + CurrentSmithingRecipe.Output.Name);
                 Player.Instance.GainExperience(CurrentSmithingRecipe.ExperienceGained);
-                if(GameState.CurrentArtisanTask != null)
+                if(CurrentArtisanTask != null)
                 {
-                    if(GameState.CurrentArtisanTask.ItemName == CurrentSmithingRecipe.OutputItemName)
+                    if(CurrentArtisanTask.ItemName == CurrentSmithingRecipe.OutputItemName)
                     {
                         if (long.TryParse(CurrentSmithingRecipe.ExperienceGained.Split(':')[1], out long xp))
                         {
@@ -866,11 +876,11 @@ using System.Threading.Tasks;
         if(CurrentGatherItem != null)
         {
             int baseValue = CurrentGatherItem.GatherSpeed.ToGaussianRandom();
-            Console.WriteLine("Ticks to next gather:" + baseValue);
+            //Console.WriteLine("Ticks to next gather:" + baseValue);
             baseValue = (int)Math.Max(1, (double)baseValue * Player.Instance.GetGearMultiplier(CurrentGatherItem));
-            Console.WriteLine("Ticks to next gather with gear:" + baseValue);
+           // Console.WriteLine("Ticks to next gather with gear:" + baseValue);
             baseValue = (int)Math.Max(1, (double)baseValue * Player.Instance.GetLevelMultiplier(CurrentGatherItem));
-            Console.WriteLine("Ticks to next gather with gear and level:" + baseValue);
+            //Console.WriteLine("Ticks to next gather with gear and level:" + baseValue);
             return baseValue;
         }
         return int.MaxValue;
@@ -1012,21 +1022,23 @@ using System.Threading.Tasks;
     public static void LoadSaveData(GameStateSaveData data)
     {
         IsOnHuntingTrip = AreaManager.LoadedHuntingInfo;
-        if (data.Location == "Battle")
-        {
-            data.Location = "QueplandFields";
-        }
-        if (data.Location == null || data.Location == "")
-        {
-            data.Location = "QueplandFields";
-        }
         HideLockedItems = data.HideLockedItems;
         CompactInventoryView = data.CompactInventory;
 
         CurrentArtisanTask = data.CurrentTask;
+        if (data.Location == null || data.Location == "" || data.Location == "Battle")
+        {
+            Location = "QueplandFields";
+            CurrentLand = AreaManager.Instance.GetLandByName("Quepland");
+        }
+        else
+        {
+            Location = data.Location;
+            CurrentLand = AreaManager.Instance.GetLandByName(data.CurrentLand);
+        }
+
         
-        Location = data.Location;
-        CurrentLand = AreaManager.Instance.GetLandByName(data.CurrentLand);
+
     }
     public static void LoadAFKActionData(AFKAction action)
     {       

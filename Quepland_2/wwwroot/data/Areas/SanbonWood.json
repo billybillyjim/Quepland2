@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Great Tree",
+    "id": 170,
+    "image": "Tree",
+    "description": "An incredible tree towers over the landscape. It's entirely dark under the umbrage of the branches far above. A path continues away from the tree, though it looks unused. Curiously, there is a small glow coming from one of the highest visible branches.",
+    "areaURL": "GreatTree",
+    "unlockableAreas": [
+      {
+        "areaURL": "Cathedra",
+        "buttonText": "Return underground",
+        "connectsLands": true
+      },
+      {
+        "areaURL": "OvergrownTrail",
+        "buttonText": "Head away from the tree."
+      }
+
+    ]
+  },
+  {
+    "name": "Overgrown Trail",
+    "id": 171,
+    "image": "OvergrownTrail",
+    "description": "The path leads into the woods until reaching a very tall tree. While nothing in comparison to the Great Tree that towers above you, it would otherwise be considered very big. The trail splits into a northern and southern route.",
+    "areaURL": "OvergrownTrail",
+    "unlockableAreas": [
+      {
+        "areaURL": "MagiciansCamp",
+        "buttonText": "Take the path north"
+      },
+      {
+        "areaURL": "SanbonClearing",
+        "buttonText": "Take the path south"
+      }
+
+    ]
+  },
+  {
+    "name": "Magician's Camp",
+    "id": 172,
+    "image": "MagicHat",
+    "description": "The camp here looks recently used, but no one is around. The tents are unfamiliar in design and there are strange instruments sitting out in front of a campfire that appears to be burning from nothing. There is a path that leads away from the Great Tree.",
+    "areaURL": "MagiciansCamp",
+    "monsters": [
+      "Magician",
+      "Oni",
+      "Black Bear",
+      "Angler Squirrel"
+    ]
+  },
+  {
+    "name": "Sanbon Clearing",
+    "id": 173,
+    "image": "Field",
+    "description": "The trees give way to a small plain here. You can still see the Great Tree in the distance. The field is full of flowers and there are a number of spots to collect honey from the bees that pollinate them.",
+    "areaURL": "SanbonClearing",
+    "actions": [
+      "Gather Honey:Honey"
+    ]
+  }
+]

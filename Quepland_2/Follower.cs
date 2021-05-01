@@ -7,6 +7,7 @@ public class Follower
     public string Name { get; set; }
     public string AutoCollectMessage { get; set; }
     public string AutoCollectSkill { get; set; }
+
     public int AutoCollectLevel { get; set; }
     private int autoCollectSpeed;
     public int AutoCollectSpeed { get 
@@ -50,6 +51,7 @@ public class Follower
             GainExperience(itemPair.Value);
         }
         Bank.Instance.Inventory.SkipIndexing = false;
+        Bank.Instance.Inventory.FixItems = true;
         Bank.Instance.Inventory.UpdateItemCount();
         Inventory.Clear();
         IsBanking = false;

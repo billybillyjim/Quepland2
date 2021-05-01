@@ -56,7 +56,7 @@ public class FollowerManager
             if(line.Split(':').Length > 2)
             {
                 long exp = long.Parse(line.Split(':')[2]);
-                Followers.Find(x => x.Name == name).Banking.LoadExperience(exp);
+                Followers.Find(x => x.Name == name).GainExperience(exp);
             }
         }
     }

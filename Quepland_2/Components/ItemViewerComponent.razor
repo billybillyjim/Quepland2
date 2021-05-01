@@ -15,7 +15,7 @@
 ">
     @if (Item != null && !HideValue)
     {
-        <div style="font-weight:bold;" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.GetRequirementTooltip(true))))"
+        <div style="font-weight:bold;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.Name, Item.GetRequirementTooltip(true))))"
              onmouseout="@(new Action(() => GameState.HideTooltip()))">
             <img src="data/Images/@(GetLock())" style="height:20px;width:20px;cursor:pointer;margin:-7px 2px -3px -3px;border-radius:0.25rem;@GetLockStyle()"
                  @onclick="@(() => ToggleLock())" />
@@ -103,7 +103,11 @@
         }
         @if (Item.Name == "Transit Branch")
         {
-            <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Stake())">Stake</button></div>
+            @if (AreaManager.Instance.AreaURLIsValid(GameState.Location))
+            {
+                <div class="item-view-button"><button class="btn btn-light" @onclick="@(() => Stake())">Stake</button></div>
+            }
+
         }
         else if (Item.Name.Contains("Glowing Transit Branch"))
         {
@@ -118,33 +122,67 @@
         }
         @if (ItemManager.Instance.GetUnpackingRecipe(Item) != null)
         {
-            if (ItemManager.Instance.GetUnpackingRecipe(Item).HasSpace())
+            if (Item.FoodInfo != null)
             {
-                <div class="item-view-button">
-                    @if (GameState.CurrentRecipe == ItemManager.Instance.GetUnpackingRecipe(Item))
-                    {
-                        <div style="position:relative;">
-                            <div class="progress" style="position:absolute;top:0px;width:100%;height:5px;border-radius:0.25rem;z-index:3;">
-                                <div class="progress-bar" style="@GetProgress()"></div>
+                if (ItemManager.Instance.GetUnpackingRecipe(Item).HasSpace())
+                {
+                    <div class="item-view-button" style="bottom:45px;">
+                        @if (GameState.CurrentRecipe == ItemManager.Instance.GetUnpackingRecipe(Item))
+                        {
+                            <div style="position:relative;">
+                                <div class="progress" style="position:absolute;top:0px;width:100%;height:5px;border-radius:0.25rem;z-index:3;">
+                                    <div class="progress-bar" style="@GetProgress()"></div>
+                                </div>
                             </div>
-                        </div>
-                    }
-                    <button class="btn btn-light"
-                            @onclick="@(() => GameState.SetCraftingItem(ItemManager.Instance.GetUnpackingRecipe(Item)))">
-                        @ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString
-                    </button>
-                </div>
+                        }
+                        <button class="btn btn-light"
+                                @onclick="@(() => GameState.SetCraftingItem(ItemManager.Instance.GetUnpackingRecipe(Item)))">
+                            @ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString
+                        </button>
+                    </div>
 
+                }
+                else
+                {
+                    <div class="item-view-button"  style="bottom:45px;">
+                        <button class="btn btn-light" style="opacity:0.7" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have enough inventory space.")))"
+                                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                            @ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString
+                        </button>
+                    </div>
+
+                }
             }
             else
             {
-                <div class="item-view-button">
-                    <button class="btn btn-light" style="opacity:0.7" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have enough inventory space.")))"
-                            @onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                        @ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString
-                    </button>
-                </div>
+                if (ItemManager.Instance.GetUnpackingRecipe(Item).HasSpace())
+                {
+                    <div class="item-view-button">
+                        @if (GameState.CurrentRecipe == ItemManager.Instance.GetUnpackingRecipe(Item))
+                        {
+                            <div style="position:relative;">
+                                <div class="progress" style="position:absolute;top:0px;width:100%;height:5px;border-radius:0.25rem;z-index:3;">
+                                    <div class="progress-bar" style="@GetProgress()"></div>
+                                </div>
+                            </div>
+                        }
+                        <button class="btn btn-light"
+                                @onclick="@(() => GameState.SetCraftingItem(ItemManager.Instance.GetUnpackingRecipe(Item)))">
+                            @ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString
+                        </button>
+                    </div>
 
+                }
+                else
+                {
+                    <div class="item-view-button">
+                        <button class="btn btn-light" style="opacity:0.7" @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You don't have enough inventory space.")))"
+                                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                            @ItemManager.Instance.GetUnpackingRecipe(Item).RecipeButtonString
+                        </button>
+                    </div>
+
+                }
             }
         }
         @if (Item.OpenCraftingMenuText != "None")
@@ -222,25 +260,38 @@
         GameItem i = ItemManager.Instance.GetCopyOfItem("Glowing Transit Branch");
         i.Parameter = GameState.Location;
         i.Name += "(" + AreaManager.Instance.GetAreaByURL(GameState.Location).Name + ")";
-        i.Description += "This one will take you to " + AreaManager.Instance.GetAreaByURL(GameState.Location).Name + ".";
+        i.Description += "This was staked in " + AreaManager.Instance.GetAreaByURL(GameState.Location).Name + ".";
         i.SecondaryColor = GameState.CurrentLand.TopColor;
         if(ItemManager.Instance.GetItemByUniqueID(i.UniqueID) == null)
         {
-            ItemManager.Instance.ItemLookupDic.Add(i.UniqueID, i);
+            ItemManager.Instance.ItemLookupDic.Add(i.Name, i);
+            ItemManager.Instance.UniqueIDLookupDic.Add(i.UniqueID, i);
             ItemManager.Instance.Items.Add(i);
         }
 
-
-        Player.Instance.Inventory.AddItem(i);
-    }
-    public void Teleport()
-    {
         Player.Instance.Inventory.RemoveItems(Item, 1);
-        MessageManager.AddMessage("You snap the branch and are teleported away.");
-        GameState.NavMenu.GoToArea(Item.Parameter);
+        Player.Instance.Inventory.AddItem(i);
         if (Player.Instance.Inventory.HasItem(Item) == false)
         {
             ClearItem();
+        }
+    }
+    public void Teleport()
+    {
+        Area a = AreaManager.Instance.GetAreaByURL(Item.Parameter);
+        if (a != null && a.HasRequirements())
+        {
+            Player.Instance.Inventory.RemoveItems(Item, 1);
+            MessageManager.AddMessage("You snap the branch and are teleported away.");
+            GameState.NavMenu.GoToArea(Item.Parameter);
+            if (Player.Instance.Inventory.HasItem(Item) == false)
+            {
+                ClearItem();
+            }
+        }
+        else
+        {
+            MessageManager.AddMessage("The branch refuses to be snapped. Is there something you need at the location it will take you?");
         }
 
     }

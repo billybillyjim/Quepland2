@@ -234,5 +234,73 @@
     ],
     "recipeActionString": "You begin pulling teeth...",
     "recipeButtonString": "Yank"
+  },
+  {
+    "outputItemName": "Yeast",
+    "outputAmount": 3,
+    "ingredients": [
+      {
+        "itemName": "Dough"
+      }
+    ],
+    "recipeActionString": "You begin extracting the yeast from the dough...",
+    "recipeButtonString": "Harvest Yeast"
+  },
+
+  {
+    "outputItemName": "Yeast",
+    "outputAmount": 3,
+    "ingredients": [
+      {
+        "itemName": "Rye Dough"
+      }
+    ],
+    "recipeActionString": "You begin extracting the yeast from the dough...",
+    "recipeButtonString": "Harvest Yeast"
+  },
+
+  {
+    "outputItemName": "Yeast",
+    "outputAmount": 3,
+    "ingredients": [
+      {
+        "itemName": "Durum Dough"
+      }
+    ],
+    "recipeActionString": "You begin extracting the yeast from the dough...",
+    "recipeButtonString": "Harvest Yeast"
+  },
+  {
+    "outputItemName": "Yeast",
+    "outputAmount": 5,
+    "ingredients": [
+      {
+        "itemName": "Advanced Dough"
+      }
+    ],
+    "recipeActionString": "You begin extracting the yeast from the dough...",
+    "recipeButtonString": "Harvest Yeast"
+  },
+  {
+    "outputItemName": "Yeast",
+    "outputAmount": 6,
+    "ingredients": [
+      {
+        "itemName": "Sweet Dough"
+      }
+    ],
+    "recipeActionString": "You begin extracting the yeast from the dough...",
+    "recipeButtonString": "Harvest Yeast"
+  },
+  {
+    "outputItemName": "Yeast",
+    "outputAmount": 5,
+    "ingredients": [
+      {
+        "itemName": "Milk Dough"
+      }
+    ],
+    "recipeActionString": "You begin extracting the yeast from the dough...",
+    "recipeButtonString": "Harvest Yeast"
   }
 ]

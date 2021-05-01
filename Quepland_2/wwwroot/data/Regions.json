@@ -172,5 +172,14 @@
       "Toad Ranch",
       "Turru Cenopa"
     ]
+  },
+  {
+    "name": "Sanbon Wood",
+    "areaNames": [
+      "Great Tree",
+      "Overgrown Trail",
+      "Magician's Camp",
+      "Sanbon Clearing"
+    ]
   }
 ]

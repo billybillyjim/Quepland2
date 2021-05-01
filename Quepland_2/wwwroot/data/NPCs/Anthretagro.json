@@ -15,7 +15,7 @@
     },
     {
       "buttonText": "What can you do?",
-      "responseText": "One the one hand, I am a scout, and I can find monsters for you to fight. On the other hand, I have a keen eye, and can choose the specific creatures you'd prefer to battle with.",
+      "responseText": "On the one hand, I am a scout, and I can find monsters for you to fight. On the other hand, I have a keen eye, and can choose the specific creatures you'd prefer to battle with.",
       "depth": 1,
       "newDepthOnTalk": 1,
       "requirements": [
