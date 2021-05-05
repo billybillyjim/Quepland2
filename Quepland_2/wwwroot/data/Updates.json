@@ -1,5 +1,16 @@
 [
   {
+    "versionNumber": "1.0.16",
+    "updates": [
+      "There are a few changes I failed to document well and have totally forgotten them. Hopefully I didn't break anything here.",
+      "Added the area of Crossmare near Sanbon Woods.",
+      "Fixed an issue with the bank when set to the smallest window width setting. Scrolling should now work as expected.",
+      "Unidentified gems should now work with the compact inventory view.",
+      "Fixed the item icon for Abalones."
+
+    ]
+  },
+  {
     "versionNumber": "1.0.15",
     "updates": [
       "Fixed a typo in Lumpy's banking message.",

@@ -40,12 +40,12 @@ public class ItemManager
     public List<MinigameDropTable> MinigameDropTables = new List<MinigameDropTable>();
     public List<TomeData> Tomes = new List<TomeData>();
     public static List<string> FileNames = new List<string> 
-    { "Weapons", "Bows", "Armors", "Necklaces", "Sushi", "Jerkies", "Bread", "Magic",
+    { "Weapons", "Bows", "Armors", "Shields", "Necklaces", "Sushi", "Jerkies", "Bread", "Magic",
         "Arrows", "QuestItems", "General", "Elements", "Hunting", 
         "Fishing", "Bars", "Ores", "Gems", "Arrowtips", 
         "WoodworkingItems", "Logs" };
     public static List<string> Colors = new List<string> 
-    { "#DC5958", "#33FF88", "#3367d6", "#ffeacf", "#ffa7f4", "#c26761", "#ce8758", "#41a6e0",
+    { "#DC5958", "#33FF88", "#3367d6", "#d19330", "#ffeacf", "#ffa7f4", "#c26761", "#ce8758", "#41a6e0",
         "#c9ad83", "gray", "#ffd066", "#eadf92", "brown", 
         "lightblue", "silver", "dimgray", "#999999" , "#F1C40F",
         "sienna", "tan" };
@@ -142,6 +142,7 @@ public class ItemManager
         SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/StrongtiumSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/TinSmithingRecipes.json"));
         SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/ZincSmithingRecipes.json"));
+        SmithingRecipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/Smithing/IseroiteSmithingRecipes.json"));
         ArtisanRecipes.AddRange(SmithingRecipes);
     }
 

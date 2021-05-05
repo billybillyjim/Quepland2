@@ -120,6 +120,26 @@
     }
   },
   {
+    "name": "Ancient Pickaxe",
+    "description": "A pickaxe of ancient origins. It feels very heavy but is somehow still easy to swing.",
+    "value": 5000,
+    "enabledActions": "Mining",
+    "secondaryColor": "#3b7a0b",
+    "equipSlot": "R Hand",
+    "gatherSpeedBonus": 0.75,
+    "icon": "Pickaxe",
+    "weaponInfo": {
+      "attackSpeed": 25,
+      "damage": 450,
+      "wearRequirements": [
+        {
+          "skill": "Hammermanship",
+          "skillLevel": 85
+        }
+      ]
+    }
+  },
+  {
     "name": "Copper Ore",
     "description": "It's a very soft, green ore.",
     "gatherString": "You mine some copper ore.",
@@ -310,6 +330,25 @@
     ]
   },
   {
+    "name": "Chelonite",
+    "description": "A sturdy stone from the caverns beneath Chelonia. What could it be made of?",
+    "gatherString": "You mine some chelonite.",
+    "secondaryColor": "#3b7a0b",
+    "value": 20,
+    "gatherSpeed": 20,
+    "experienceGained": "Mining:30",
+    "icon": "Ore",
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 78
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
     "name": "Gold Ore",
     "description": "It's got gold in it! Neat!",
     "gatherString": "You mine some gold ore.",
@@ -417,6 +456,26 @@
       {
         "skill": "Mining",
         "skillLevel": 140
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "name": "Chelonic Fragments",
+    "description": "Some fragments mined beneath Chelonia. Someone may be interested in these...",
+    "gatherString": "You mine some chelonic fragments.",
+    "secondaryColor": "#3b7a0b",
+    "value": 15,
+    "gatherSpeed": 20,
+    "experienceGained": "Mining:30",
+    "icon": "Dust",
+    "isStackable": true,
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 78
       },
       {
         "action": "Mining"

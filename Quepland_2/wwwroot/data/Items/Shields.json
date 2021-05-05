@@ -1,0 +1,145 @@
+[
+  {
+    "name": "White Pine Shield",
+    "value": 2,
+    "description": "A very weak wooden shield.",
+    "icon": "WoodShield",
+    "secondaryColor": "#FFE5C4",
+    "equipSlot": "L Hand",
+    "armorInfo": {
+      "armorBonus": 1
+    }
+  },
+  {
+    "name": "Poplar Shield",
+    "value": 5,
+    "description": "A weak wooden shield.",
+    "icon": "WoodShield",
+    "secondaryColor": "#FFDA8A",
+    "equipSlot": "L Hand",
+    "armorInfo": {
+      "armorBonus": 2
+    }
+  },
+  {
+    "name": "Oak Shield",
+    "value": 12,
+    "description": "A wooden shield.",
+    "icon": "WoodShield",
+    "secondaryColor": "#FFD5B0",
+    "equipSlot": "L Hand",
+    "armorInfo": {
+      "armorBonus": 4
+    }
+  },
+  {
+    "name": "Maple Shield",
+    "value": 19,
+    "description": "A nice-looking wooden shield.",
+    "icon": "WoodShield",
+    "secondaryColor": "#FFBD96",
+    "equipSlot": "L Hand",
+    "armorInfo": {
+      "armorBonus": 6
+    }
+  },
+  {
+    "name": "Birch Shield",
+    "value": 15,
+    "description": "A lightly colored wooden shield.",
+    "icon": "WoodShield",
+    "secondaryColor": "#FFF6E0",
+    "equipSlot": "L Hand",
+    "armorInfo": {
+      "armorBonus": 8
+    }
+  },
+  {
+    "name": "Mesquite Shield",
+    "value": 25,
+    "description": "A decent wooden shield.",
+    "icon": "WoodShield",
+    "secondaryColor": "#BD8F57",
+    "equipSlot": "L Hand",
+    "armorInfo": {
+      "armorBonus": 12
+    }
+  },
+  {
+    "name": "Mahogany Shield",
+    "value": 75,
+    "description": "An extravagant wooden shield.",
+    "icon": "WoodShield",
+    "secondaryColor": "#AB5F29",
+    "equipSlot": "L Hand",
+    "armorInfo": {
+      "armorBonus": 10
+    }
+  },
+  {
+    "name": "Ironwood Shield",
+    "value": 55,
+    "description": "A solid wooden shield.",
+    "icon": "WoodShield",
+    "secondaryColor": "#9C491F",
+    "equipSlot": "L Hand",
+    "armorInfo": {
+      "armorBonus": 20
+    }
+  },
+  {
+    "name": "Snakewood Shield",
+    "value": 95,
+    "description": "A twisted but strong wooden shield.",
+    "icon": "WoodShield",
+    "secondaryColor": "#824121",
+    "equipSlot": "L Hand",
+    "armorInfo": {
+      "armorBonus": 26
+    }
+  },
+  {
+    "name": "Lignum Vitae Shield",
+    "value": 175,
+    "description": "An extremely durable wooden shield.",
+    "icon": "WoodShield",
+    "secondaryColor": "#612901",
+    "equipSlot": "L Hand",
+    "armorInfo": {
+      "armorBonus": 35
+    }
+  },
+  {
+    "name": "Buloke Shield",
+    "value": 235,
+    "description": "A powerful wooden shield.",
+    "icon": "WoodShield",
+    "secondaryColor": "#875B24",
+    "equipSlot": "L Hand",
+    "armorInfo": {
+      "armorBonus": 45
+    }
+  },
+  {
+    "name": "Ice Wood Shield",
+    "value": 305,
+    "description": "A magical wooden shield. It's quite cold to the touch.",
+    "icon": "WoodShield",
+    "secondaryColor": "#D2FFF5",
+    "equipSlot": "L Hand",
+    "armorInfo": {
+      "armorBonus": 30
+    }
+  },
+  {
+    "name": "Great Wood Shield",
+    "value": 405,
+    "description": "An amazing wooden shield.",
+    "icon": "WoodShield",
+    "secondaryColor": "#9F6F4F",
+    "equipSlot": "L Hand",
+    "armorInfo": {
+      "armorBonus": 50
+    }
+  }
+]

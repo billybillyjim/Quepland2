@@ -1,0 +1,33 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "At-Plutsnick",
+  "id": 81,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello! You must be an adventurer. We don't get too many visitors on the island.",
+      "newDepthOnTalk": 1,
+      "depth": 0
+    },
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello! You must be an adventurer. We don't get too many visitors on the island.",
+      "newDepthOnTalk": 1,
+      "depth": 1
+    }
+  ],
+  "shop": {
+    "currencyName": "Chelonic Fragments",
+    "itemNames": [
+      "White Belt",
+      "Yellow Belt",
+      "Orange Belt",
+      "Green Belt",
+      "Blue Belt",
+      "Purple Belt",
+      "Brown Belt",
+      "Black Belt",
+      "Golden Belt"
+    ]
+  }
+}

@@ -463,7 +463,7 @@
     "gatherSpeed": 28,
     "secondaryColor": "#66B4DE",
     "experienceGained": "Fishing:60",
-    "icon": "TwoFish",
+    "icon": "Scallop",
     "requirements": [
       {
         "skill": "Fishing",

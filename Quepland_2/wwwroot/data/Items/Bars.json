@@ -157,6 +157,18 @@
     }
   },
   {
+    "name": "Iseroite Bar",
+    "description": "An extremely hard metal bar.",
+    "secondaryColor": "#667a0b",
+    "gatherString": "You smelt an iseroite bar.",
+    "value": 200,
+    "gatherSpeed": 50,
+    "icon": "Bar",
+    "alchemyInfo": {
+      "queplarValue": 70
+    }
+  },
+  {
     "name": "Platinum Bar",
     "description": "A solid platinum bar.",
     "gatherString": "You smelt a platinum bar.",
@@ -288,6 +300,15 @@
     "secondaryColor": "#434341",
     "value": 190,
     "gatherSpeed": 45,
+    "icon": "MoltenBar"
+  },
+  {
+    "name": "Molten Iseroite Bar",
+    "description": "An extremely hard metal liquid.",
+    "secondaryColor": "#667a0b",
+    "gatherString": "You smelt an iseroite bar.",
+    "value": 200,
+    "gatherSpeed": 50,
     "icon": "MoltenBar"
   },
   {

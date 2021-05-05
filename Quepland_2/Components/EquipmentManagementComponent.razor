@@ -24,7 +24,7 @@
 <div style="display:flex;flex-direction:column;flex-flow:wrap;">
     @foreach (string slot in ItemManager.Instance.EquipmentSlots)
     {
-        <div style="width:70px;margin:5px;">
+        <div style="width:60px;margin:5px;">
             @slot
 
             <div @onclick="@(() => Unequip(GetItemAtSlot(slot)))">

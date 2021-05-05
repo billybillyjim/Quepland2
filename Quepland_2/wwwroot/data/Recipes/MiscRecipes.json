@@ -197,5 +197,77 @@
     "recipeActionString": "You clean a sashcom and remove its scales...",
     "maxOutputsPerAction": 1,
     "preventArtisanTask": true
+  },
+  {
+    "outputItemName": "Lizardite Ring",
+    "outputAmount": 1,
+    "ingredients": [
+      {
+        "itemName": "Iseroite Ring",
+        "amount": 1
+      },
+      {
+        "itemName": "Lizardite Cabochon",
+        "amount": 1
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 70
+      }
+    ],
+    "recipeActionString": "You carefully fit the lizardite into the ring...",
+    "maxOutputsPerAction": 1,
+    "experienceGained": "Lapidary:850",
+    "preventArtisanTask": true
+  },
+  {
+    "outputItemName": "Emerald Ring",
+    "outputAmount": 1,
+    "ingredients": [
+      {
+        "itemName": "Iseroite Ring",
+        "amount": 1
+      },
+      {
+        "itemName": "Emerald Cabochon",
+        "amount": 1
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 70
+      }
+    ],
+    "recipeActionString": "You carefully fit the emerald into the ring...",
+    "maxOutputsPerAction": 1,
+    "experienceGained": "Lapidary:850",
+    "preventArtisanTask": true
+  },
+  {
+    "outputItemName": "Chrysoberyl Ring",
+    "outputAmount": 1,
+    "ingredients": [
+      {
+        "itemName": "Iseroite Ring",
+        "amount": 1
+      },
+      {
+        "itemName": "Chrysoberyl Cabochon",
+        "amount": 1
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Lapidary",
+        "skillLevel": 70
+      }
+    ],
+    "recipeActionString": "You carefully fit the chrysoberyl into the ring...",
+    "maxOutputsPerAction": 1,
+    "experienceGained": "Lapidary:850",
+    "preventArtisanTask": true
   }
 ]

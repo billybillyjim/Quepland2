@@ -1,0 +1,68 @@
+[
+  {
+    "outputItemName": "Molten Iseroite Bar",
+    "ingredients": [
+      {
+        "itemName": "Iron Bar"
+      },
+      {
+        "itemName": "Chelonite"
+      }
+    ],
+    "experienceGained": "Smithing:600",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 78
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Iseroite Bar",
+    "ingredients": [
+      {
+        "itemName": "Iron Ore"
+      },
+      {
+        "itemName": "Chelonite"
+      }
+    ],
+    "experienceGained": "Smithing:600",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 78
+      }
+    ]
+  },
+  {
+    "outputItemName": "Molten Iseroite Bar",
+    "ingredients": [
+      {
+        "itemName": "Iseroite Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 78
+      }
+    ]
+  },
+  {
+    "outputItemName": "Iseroite Ring",
+    "ingredients": [
+      {
+        "itemName": "Molten Iseroite Bar"
+      }
+    ],
+    "experienceGained": "Smithing:600",
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 78
+      }
+    ]
+  }
+
+]

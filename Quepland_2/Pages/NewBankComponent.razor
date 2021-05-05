@@ -107,7 +107,7 @@
 
 
     </div>
-    <div @ref="@bankViewReference" style="height:540px;overflow-y:auto;" class="bank-scroll" @onscroll="@(() => UpdateVisibleItems())">
+    <div @ref="@bankViewReference" style="height:540px;overflow-y:scroll;" class="bank-scroll" @onscroll="@(() => UpdateVisibleItems())">
         @if (!addingTags)
         {
             <div style="display: flex; flex-wrap: wrap;align-content: flex-start;padding-top:@(top)px;height:@(windowHeight)px">
@@ -459,8 +459,10 @@
     }
     void OnGameStateChanged(object sender, EventArgs e)
     {
-        itemsPerRow = GameState.MinWindowWidth / 54;
+        //Subtract the left and right padding; 3.5 rem = 56 pixels.
+        itemsPerRow = (GameState.MinWindowWidth - 56) / 54;
         take = itemsPerRow * 10;
+
         StateHasChanged();
     }
 }

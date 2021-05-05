@@ -2131,5 +2131,304 @@
     "recipeActionString": "You begin adding arrowtips to the arrow...",
     "maxOutputsPerAction": 10,
     "outputAmount": 1
+  },
+  {
+    "outputItemName": "White Pine Shield",
+    "ingredients": [
+      {
+        "itemName": "White Pine Logs",
+        "amount": 3
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:6",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 1
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "CraftingSpeed": 20,
+    "recipeActionString": "You start carving a shield..."
+  },
+  {
+    "outputItemName": "Poplar Shield",
+    "ingredients": [
+      {
+        "itemName": "Poplar Logs",
+        "amount": 3
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:12",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 4
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "CraftingSpeed": 20,
+    "recipeActionString": "You start carving a shield..."
+  },
+  {
+    "outputItemName": "Oak Shield",
+    "ingredients": [
+      {
+        "itemName": "Oak Logs",
+        "amount": 3
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:20",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 12
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "CraftingSpeed": 20,
+    "recipeActionString": "You start carving a shield..."
+  },
+  {
+    "outputItemName": "Maple Shield",
+    "ingredients": [
+      {
+        "itemName": "Sugar Maple Logs",
+        "amount": 3
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:30",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 19
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "CraftingSpeed": 20,
+    "recipeActionString": "You start carving a shield..."
+  },
+  {
+    "outputItemName": "Birch Shield",
+    "ingredients": [
+      {
+        "itemName": "Birch Logs",
+        "amount": 3
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:40",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 25
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "CraftingSpeed": 20,
+    "recipeActionString": "You start carving a shield..."
+  },
+  {
+    "outputItemName": "Mesquite Shield",
+    "ingredients": [
+      {
+        "itemName": "Mesquite Logs",
+        "amount": 3
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:60",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 35
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "CraftingSpeed": 20,
+    "recipeActionString": "You start carving a shield..."
+  },
+  {
+    "outputItemName": "Mahogany Shield",
+    "ingredients": [
+      {
+        "itemName": "Mahogany Logs",
+        "amount": 5
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:90",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 52
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "CraftingSpeed": 20,
+    "recipeActionString": "You start carving a shield..."
+  },
+  {
+    "outputItemName": "Ironwood Shield",
+    "ingredients": [
+      {
+        "itemName": "Ironwood Logs",
+        "amount": 3
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:102",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 65
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "CraftingSpeed": 20,
+    "recipeActionString": "You start carving a shield..."
+  },
+  {
+    "outputItemName": "Snakewood Shield",
+    "ingredients": [
+      {
+        "itemName": "Snakewood Logs",
+        "amount": 3
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:120",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 75
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "CraftingSpeed": 20,
+    "recipeActionString": "You start carving a shield..."
+  },
+  {
+    "outputItemName": "Lignum Vitae Shield",
+    "ingredients": [
+      {
+        "itemName": "Lignum Vitae Logs",
+        "amount": 3
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:145",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 83
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "CraftingSpeed": 20,
+    "recipeActionString": "You start carving a shield..."
+  },
+  {
+    "outputItemName": "Buloke Shield",
+    "ingredients": [
+      {
+        "itemName": "Buloke Logs",
+        "amount": 3
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:155",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 92
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "CraftingSpeed": 20,
+    "recipeActionString": "You start carving a shield..."
+  },
+  {
+    "outputItemName": "Ice Wood Shield",
+    "ingredients": [
+      {
+        "itemName": "Ice Logs",
+        "amount": 3
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:205",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 98
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "CraftingSpeed": 20,
+    "recipeActionString": "You start carving a shield..."
+  },
+  {
+    "outputItemName": "Great Wood Shield",
+    "ingredients": [
+      {
+        "itemName": "Great Tree Logs",
+        "amount": 3
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:400",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 105
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "CraftingSpeed": 20,
+    "recipeActionString": "You start carving a shield..."
   }
 ]

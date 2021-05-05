@@ -1051,5 +1051,86 @@
       ]
     }
 
+  },
+  {
+    "name": "Iseroite Ring",
+    "value": 1200,
+    "description": "A strange ring. It makes you feel safe, somehow.",
+    "gatherString": "You make an iseroite ring.",
+    "gatherSpeed": 17,
+    "equipSlot": "Thumb",
+    "icon": "PlainRing",
+    "secondaryColor": "#667a0b",
+    "armorInfo": {
+      "armorBonus": 10,
+      "damage": 0,
+      "wearRequirements": [
+        {
+          "skill": "HP",
+          "skillLevel": 80
+        }
+      ]
+    }
+  },
+  {
+    "name": "Lizardite Ring",
+    "value": 2200,
+    "description": "A strange ring. A Lizardite gem crowns the top. It makes you feel safe, somehow.",
+    "gatherString": "You make a lizardite ring.",
+    "gatherSpeed": 17,
+    "equipSlot": "Thumb",
+    "icon": "CabochonRing",
+    "secondaryColor": "#78a872",
+    "armorInfo": {
+      "armorBonus": 20,
+      "damage": 0,
+      "wearRequirements": [
+        {
+          "skill": "HP",
+          "skillLevel": 80
+        }
+      ]
+    }
+
+  },
+  {
+    "name": "Emerald Ring",
+    "value": 2800,
+    "description": "A strange ring. An emerald crowns the top. It makes you feel safe, somehow.",
+    "gatherString": "You make an emerald ring.",
+    "gatherSpeed": 17,
+    "equipSlot": "Thumb",
+    "icon": "CabochonRing",
+    "secondaryColor": "#45be7e",
+    "armorInfo": {
+      "armorBonus": 10,
+      "damage": 20,
+      "wearRequirements": [
+        {
+          "skill": "HP",
+          "skillLevel": 80
+        }
+      ]
+    }
+  },
+  {
+    "name": "Chrysoberyl Ring",
+    "value": 3500,
+    "description": "A strange ring. A chrysoberyl crowns the top. It makes you feel safe, somehow.",
+    "gatherString": "You make a chrysoberyl ring.",
+    "gatherSpeed": 17,
+    "equipSlot": "Thumb",
+    "icon": "CabochonRing",
+    "secondaryColor": "#d3b31a",
+    "armorInfo": {
+      "armorBonus": 15,
+      "damage": 10,
+      "wearRequirements": [
+        {
+          "skill": "HP",
+          "skillLevel": 80
+        }
+      ]
+    }
   }
 ]

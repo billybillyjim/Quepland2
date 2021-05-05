@@ -129,7 +129,7 @@ public class Inventory
     }
     public List<KeyValuePair<GameItem, int>> GetUniqueItems()
     {
-        return items.DistinctBy(x => x.Key.Name, null).ToList();
+        return items.DistinctBy(x => x.Key.UniqueID, null).ToList();
     }
 
     /// <summary>
