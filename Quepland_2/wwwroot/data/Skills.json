@@ -93,5 +93,10 @@
     "name": "Artisan",
     "level": 1,
     "description": "Artisan covers the general knowledge required to produce skill craftworks. As you improve at artisan you can take on more and larger tasks, as well as unlock access to new areas and items. Speak to a guild member at any craft guild to get started."
+  },
+  {
+    "name": "Textile Arts",
+    "level": 1,
+    "description": "Textile arts include the manipulation of fibers into cloths. There are a variety of materials that can be manipulated into some form of clothing in the world of Quepland."
   }
 ]

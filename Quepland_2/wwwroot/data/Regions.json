@@ -174,12 +174,30 @@
     ]
   },
   {
+    "name": "Pansoph Plains",
+    "areaNames": [
+      "Greenever Hills",
+      "Eightfrets Lodge",
+      "Wavering Woods",
+      "Transient Springs"
+    ]
+  },
+  {
     "name": "Sanbon Wood",
     "areaNames": [
       "Great Tree",
       "Overgrown Trail",
       "Magician's Camp",
       "Sanbon Clearing"
+    ]
+  },
+  {
+    "name": "Crossmare Cove",
+    "areaNames": [
+      "Chelonia",
+      "Subfenton Stows",
+      "Ancient Docks",
+      "Giltgrain Castle"
     ]
   }
 ]

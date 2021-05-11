@@ -359,5 +359,11 @@
     "description": "A notice that approves a guild member to cancel their current guild task.",
     "value": 50,
     "icon": "Note"
+  },
+  {
+    "name": "Bag of Assorted Gems",
+    "description": "A bag full of assorted gems.",
+    "value": 500,
+    "icon": "Bag"
   }
 ]

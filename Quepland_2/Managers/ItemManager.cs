@@ -160,6 +160,18 @@ public class ItemManager
         }
         
     }
+    public List<GameItem> GetItemsWithName(string name)
+    {
+        List<GameItem> matches = new List<GameItem>();
+        foreach(GameItem i in Items)
+        {
+            if(i.Name == name)
+            {
+                matches.Add(i);
+            }
+        }
+        return matches;
+    }
     public GameItem LoadItemByUniqueID(string uniqueID)
     {
         //Console.WriteLine("Looking for item with ID:" + uniqueID);

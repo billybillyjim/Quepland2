@@ -66,10 +66,17 @@ else
     {
         if (HasBait() && GameState.TicksToNextAction <= 0)
         {
-            Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItem("Fishing Bait",0,""), 1);
-            baitSet = true;
-            MessageManager.AddMessage("You add some bait to your hook.");
-            GameState.TicksToNextAction = 3;
+            if(Player.Instance.Inventory.RemoveItems(ItemManager.Instance.GetItem("Fishing Bait",0,""), 1) > 0)
+            {
+                baitSet = true;
+                MessageManager.AddMessage("You add some bait to your hook.");
+                GameState.TicksToNextAction = 3;
+            }
+            else
+            {
+                MessageManager.AddMessage("You failed to take any bait out of your inventory.");
+            }
+
         }
     }
     public void CastLine()

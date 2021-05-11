@@ -66,6 +66,7 @@ public class Recipe
     public string RecipeButtonString { get; set; } = "Unpack";
     public List<Requirement> Requirements { get; set; } = new List<Requirement>();
     public string ExperienceGained { get; set; } = "None";
+    public bool RandomOutputWithSharedName { get; set; } = false;
 
     /// <summary>
     /// Checks to see if the player has enough of each ingredient.
@@ -321,7 +322,19 @@ public class Recipe
                 }
             }
             Output.Rerender = true;
-            Player.Instance.Inventory.AddMultipleOfItem(Output, OutputAmount * maxOutput);
+            if (RandomOutputWithSharedName)
+            {
+                List<GameItem> possibleOutputs = ItemManager.Instance.GetItemsWithName(OutputItemName);
+                for(int i = 0; i < OutputAmount * maxOutput; i++)
+                {
+                    Player.Instance.Inventory.AddItem(possibleOutputs[GameState.Random.Next(0, possibleOutputs.Count)].Copy());
+                }
+            }
+            else
+            {
+                Player.Instance.Inventory.AddMultipleOfItem(Output, OutputAmount * maxOutput);
+            }
+            
             
             if(SecondaryOutputItemName != null)
             {                

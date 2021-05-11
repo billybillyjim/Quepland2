@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Wool",
+    "value": 25,
+    "description": "The hair of a sheep.",
+    "icon": "Wool",
+    "secondaryColor": "#ddccae"
+  },
+  {
+    "name": "Silk",
+    "value": 100,
+    "description": "Fibres of a silkworm cocoon.",
+    "icon": "Silk",
+    "secondaryColor": "#dddddd"
+  },
+  {
+    "name": "Cotton",
+    "value": 50,
+    "description": "A soft, fluffy plant fiber.",
+    "icon": "Cotton",
+    "secondaryColor": "#ffffff"
+  },
+  {
+    "name": "Wool Thread",
+    "value": 90,
+    "description": "The hair of a sheep spun into thread.",
+    "icon": "Thread",
+    "secondaryColor": "#ddccae"
+  },
+  {
+    "name": "Silk Thread",
+    "value": 200,
+    "description": "Fibres of a silkworm cocoon spun into thread.",
+    "icon": "Thread",
+    "secondaryColor": "#dddddd"
+  },
+  {
+    "name": "Cotton Thread",
+    "value": 150,
+    "description": "A soft, fluffy plant fiber spun into thread.",
+    "icon": "Thread",
+    "secondaryColor": "#ffffff"
+  },
+  {
+    "name": "White Wool Cape",
+    "value": 180,
+    "description": "A white cape made from wool. It can protect your back, somewhat.",
+    "icon": "Cape",
+    "secondaryColor": "#ddccae"
+  },
+  {
+    "name": "Red Wool Cape",
+    "value": 180,
+    "description": "A red cape made from wool. It can protect your back, somewhat.",
+    "icon": "Cape",
+    "secondaryColor": "#cc0000"
+  },
+  {
+    "name": "Green Wool Cape",
+    "value": 180,
+    "description": "A green cape made from wool. It can protect your back, somewhat.",
+    "icon": "Cape",
+    "secondaryColor": "#00cc00"
+  },
+  {
+    "name": "Blue Wool Cape",
+    "value": 180,
+    "description": "A blue cape made from wool. It can protect your back, somewhat.",
+    "icon": "Cape",
+    "secondaryColor": "#0000cc"
+  },
+  {
+    "name": "Black Wool Cape",
+    "value": 180,
+    "description": "A black cape made from wool. It can protect your back, somewhat.",
+    "icon": "Cape",
+    "secondaryColor": "#333333"
+  }
+]

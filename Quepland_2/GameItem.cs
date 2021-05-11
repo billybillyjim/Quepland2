@@ -324,6 +324,8 @@ public class GameItem
 		copy.PrimaryColor = PrimaryColor;
 		copy.SecondaryColor = SecondaryColor;
 
+		copy.PreventArtisanTask = PreventArtisanTask;
+
 		copy.GatherSpeed = GatherSpeed;
 		copy.ID = ID;
 		copy.GatherSpeedBonus = GatherSpeedBonus;

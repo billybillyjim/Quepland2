@@ -1,5 +1,6 @@
 ﻿@inject GameState GameState
 @inject NavigationManager UriHelper
+@using QRCoder;
 
 <div style="position:relative">
     <h1>Welcome to Quepland</h1>
@@ -43,8 +44,8 @@
         else
         {
             @if (selectedMode == "Normal" && hasSave ||
-   selectedMode == "Hardcore" && hasHardcore ||
-   selectedMode == "Ultimate" && hasUltimate)
+              selectedMode == "Hardcore" && hasHardcore ||
+              selectedMode == "Ultimate" && hasUltimate)
             {
                 if (hasShownWarning == false)
                 {
@@ -112,6 +113,26 @@
                 Save loaded successfully.
             </div>
         }
+
+        <div>These QR codes can be used to load save data onto the mobile app when it is released.</div>
+        <button class="btn btn-primary" @onclick="@(() => WriteQRCodes())">Show QR Codes</button>
+        @if (byteList.Count > 0)
+        {
+            <div style="width:500px">
+                @foreach (byte[] array in byteList)
+                {
+                <img src="data:image;base64,@System.Convert.ToBase64String(array)" />
+                }
+            </div>
+
+
+        }
+        else if (isLoadingQRCodes)
+        {
+            <div>Loading Codes... <img src="/data/Images/Loading.gif" style="height:30px;width:30px;background:white;border-radius:0.25rem;" /></div>
+            <div>(This will take quite a while with a big save file. Most of the data is what is in your bank account. Consider selling some stuff if it's taking too long or gives you too many codes.</div>
+        }
+
     }
     else
     {
@@ -153,31 +174,31 @@
     }
 </div>
 
-        <!--
-            <br />
-            <div style="margin-left:-10px;">
-                <Quepland_2.Components.CustomDropdownComponent DropdownItems="@GetGameModes()" @bind-Value="@selectedMode" BoxText="Game Mode(Normal)"></Quepland_2.Components.CustomDropdownComponent>
+<!--
+    <br />
+    <div style="margin-left:-10px;">
+        <Quepland_2.Components.CustomDropdownComponent DropdownItems="@GetGameModes()" @bind-Value="@selectedMode" BoxText="Game Mode(Normal)"></Quepland_2.Components.CustomDropdownComponent>
 
-            </div>
+    </div>
+}
+<div>
+    @if (hasSave == false)
+    {
+        if (selectedMode == "Normal")
+        {
+            <div>Normal mode is the normal way to play the game. It's highly recommended you start out playing in this game mode.</div>
         }
-        <div>
-            @if (hasSave == false)
-            {
-                if (selectedMode == "Normal")
-                {
-                    <div>Normal mode is the normal way to play the game. It's highly recommended you start out playing in this game mode.</div>
-                }
-                else if (selectedMode == "Hardcore")
-                {
-                    <div>Hardcore mode gives the player a single life to live. If you die, the game will delete your save and bring you back to the start menu.</div>
-                }
-                else if (selectedMode == "Ultimate")
-                {
-                    <div>Ultimate mode is an extreme version of the game where the player is not allowed to use the bank.</div>
-                }
-            }
-        </div>
-        -->
+        else if (selectedMode == "Hardcore")
+        {
+            <div>Hardcore mode gives the player a single life to live. If you die, the game will delete your save and bring you back to the start menu.</div>
+        }
+        else if (selectedMode == "Ultimate")
+        {
+            <div>Ultimate mode is an extreme version of the game where the player is not allowed to use the bank.</div>
+        }
+    }
+</div>
+-->
 
 
 
@@ -193,6 +214,37 @@
     bool ShowSettings = false;
     bool importedSaveComplete = false;
     private string exportedSave;
+    bool isLoadingQRCodes = false;
+
+    private string qrString;
+    private byte[] qrbytes;
+    private List<byte[]> byteList = new List<byte[]>();
+
+    public async Task WriteQRCodes()
+    {
+        isLoadingQRCodes = true;
+        await Task.Delay(5);
+        string data = SaveManager.GetSaveExport();
+
+        while(data.Length > 0)
+        {
+            string subdata = data.Substring(0, Math.Min(data.Length, 1000));
+
+            WriteQRCode(subdata);
+
+            data = data.Substring(Math.Min(data.Length, 1000));
+        }
+
+    }
+
+    public async Task WriteQRCode(string data)
+    {
+        QRCodeData code = QRCodeGenerator.GenerateQrCode(data, QRCodeGenerator.ECCLevel.L);
+        PngByteQRCode qrCode = new PngByteQRCode(code);
+        byteList.Add(qrCode.GetGraphic(4));
+
+    }
+
     public void EnableNewCompression()
     {
         GameState.UseNewSaveCompression = true;
@@ -221,11 +273,11 @@
         Player.Instance.Inventory.Clear();
         Player.Instance.GetEquippedItems().Clear();
         Bank.Instance.Inventory.Clear();
-        foreach(Area a in AreaManager.Instance.Areas)
+        foreach (Area a in AreaManager.Instance.Areas)
         {
             a.IsUnlocked = false;
         }
-        foreach(Region r in AreaManager.Instance.Regions)
+        foreach (Region r in AreaManager.Instance.Regions)
         {
             r.IsUnlocked = false;
         }
@@ -260,7 +312,7 @@
     public void StartGame()
     {
         SetGameMode();
-        if(GameState.CurrentGameMode == GameState.GameType.Ultimate)
+        if (GameState.CurrentGameMode == GameState.GameType.Ultimate)
         {
             Player.Instance.Inventory.AddItem(ItemManager.Instance.GetItemByName("Stone Axe"));
         }
@@ -270,15 +322,15 @@
     }
     public void SetGameMode()
     {
-        if(selectedMode == "Normal")
+        if (selectedMode == "Normal")
         {
             GameState.CurrentGameMode = GameState.GameType.Normal;
         }
-        else if(selectedMode == "Hardcore")
+        else if (selectedMode == "Hardcore")
         {
             GameState.CurrentGameMode = GameState.GameType.Hardcore;
         }
-        else if(selectedMode == "Ultimate")
+        else if (selectedMode == "Ultimate")
         {
             GameState.CurrentGameMode = GameState.GameType.Ultimate;
         }

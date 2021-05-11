@@ -17,7 +17,7 @@
     {
         <div style="font-weight:bold;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;" onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, Item.Name, Item.GetRequirementTooltip(true))))"
              onmouseout="@(new Action(() => GameState.HideTooltip()))">
-            <img src="data/Images/@(GetLock())" style="height:20px;width:20px;cursor:pointer;margin:-7px 2px -3px -3px;border-radius:0.25rem;@GetLockStyle()"
+            <img src="data/Images/@(GetLock())" style="height:20px;width:20px;cursor:pointer;margin:-7px 2px -3px 3px;border-radius:0.25rem;@GetLockStyle()"
                  @onclick="@(() => ToggleLock())" />
             @Item.Name
         </div>

@@ -302,5 +302,17 @@
     ],
     "recipeActionString": "You begin extracting the yeast from the dough...",
     "recipeButtonString": "Harvest Yeast"
+  },
+  {
+    "outputItemName": "Unidentified Gem",
+    "outputAmount": 15,
+    "ingredients": [
+      {
+        "itemName": "Bag of Assorted Gems"
+      }
+    ],
+    "recipeActionString": "You begin removing gems from the bag...",
+    "recipeButtonString": "Open",
+    "randomOutputWithSharedName": true
   }
 ]

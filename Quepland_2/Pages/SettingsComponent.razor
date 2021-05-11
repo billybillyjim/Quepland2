@@ -1,5 +1,6 @@
 ﻿@inject GameState GameState
 @inject NavigationManager UriHelper
+
 @implements IDisposable
 
 <div style="position:absolute;left:300px;top:50px;display:flex;margin-top:10px;padding:5px;min-height:700px;background-color:black;width:@(GameState.MinWindowWidth)px">
@@ -24,38 +25,6 @@
         <div>
             <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => HideLockedItems())">Hide Locked Items</button>
         </div>
-        @if (hasRestoredFollowers == false)
-        {
-            <div style="overflow:auto;max-height:150px;">
-                @if (restoreFollowersMenu)
-                {
-                    <div>Select the followers you lost during the last update, then scroll to the bottom and click restore.</div>
-                    @foreach (Follower f in FollowerManager.Instance.Followers)
-                    {
-                        @if (followersToRestore.Contains(f))
-                        {
-                            <button class="btn btn-primary" style="margin:10px;opacity:0.5" @onclick="@(() => ToggleFollower(f))">Adding @f.Name</button>
-                        }
-                        else
-                        {
-                            <button class="btn btn-primary" style="margin:10px;" @onclick="@(() => ToggleFollower(f))">@f.Name</button>
-                        }
-
-                    }
-                    <div>
-                        <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => RestoreFollowers())">Restore</button>
-                    </div>
-                }
-                else
-                {
-                    <div>
-                        <button class="btn btn-primary" style="margin:10px;padding:10px;" @onclick="@(() => restoreFollowersMenu = true)">Follower Restore</button>
-                    </div>
-                }
-            </div>
-
-        }
-
 
     </div>
     <div>
@@ -71,6 +40,7 @@
         }
         <input @bind-value="@exportedSave" />
     </div>
+
     @if (false)
     {
 <div>
@@ -90,10 +60,13 @@
 </div>
 
     @code {
+
         private string exportedSave = "";
         private bool restoreFollowersMenu;
         private bool hasRestoredFollowers;
+        private bool QRMenu;
         private List<Follower> followersToRestore = new List<Follower>();
+
 
         public void ToggleFollower(Follower f)
         {

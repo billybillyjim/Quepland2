@@ -6,7 +6,14 @@
       "Added the area of Crossmare near Sanbon Woods.",
       "Fixed an issue with the bank when set to the smallest window width setting. Scrolling should now work as expected.",
       "Unidentified gems should now work with the compact inventory view.",
-      "Fixed the item icon for Abalones."
+      "Fixed the item icon for Abalones.",
+      "You can no longer lock fishing bait and fish for free.",
+      "Added shields.",
+      "Added rings.",
+      "Added QR Codes for the upcoming mobile release.",
+      "Added Textile Arts",
+      "Added capes",
+      "Added Pansoph Plains"
 
     ]
   },
