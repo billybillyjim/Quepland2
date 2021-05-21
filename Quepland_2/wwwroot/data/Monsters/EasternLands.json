@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Stellifowl",
+    "hp": 2900,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Axemanship",
+    "attackSpeed": 12,
+    "armor": 18,
+    "damage": 55,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Feather",
+          "weight": 50,
+          "amount": 10
+        },
+        {
+          "itemName": "Feather",
+          "weight": 50,
+          "amount": 20
+        },
+        {
+          "itemName": "Feather",
+          "weight": 50,
+          "amount": 100
+        },
+        {
+          "itemName": "Glittering Plume",
+          "weight": 2
+        }
+      ],
+      "alwaysDrops": [
+        {
+          "itemName": "Feather",
+          "amount": 35
+        }
+      ]
+    }
+  },
+  {
+    "name": "Jikumena Beast",
+    "hp": 5900,
+    "weaknesses": "Hammermanship",
+    "strengths": "Swordsmanship",
+    "attackSpeed": 55,
+    "armor": 5,
+    "damage": 550,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Yeast",
+          "weight": 50,
+          "amount": 3
+        },
+        {
+          "itemName": "Yeast",
+          "weight": 50,
+          "amount": 5
+        },
+        {
+          "itemName": "Yeast",
+          "weight": 30,
+          "amount": 10
+        },
+        {
+          "itemName": "Silk",
+          "weight": 20
+        }
+      ],
+      "alwaysDrops": [
+        {
+          "itemName": "Silk",
+          "amount": 1
+        }
+      ]
+    }
+  }
+]

@@ -29,7 +29,7 @@
     "name": "Ancient Docks",
     "id": 182,
     "image": "Docks",
-    "description": "The path leads down to a small set of docks made from stone. The water appears to lead out to the sea on one end. It looks like at least one sailor is still using these ancient docks. The path continues along to the north, where the roof of a castle can be seen glowing in the distance.",
+    "description": "The path leads down through the thick forest to a small set of docks made from stone. The water appears to lead out to the sea on one end. It looks like at least one sailor is still using these ancient docks. A number of green plants with yellow flowers grow along where the docks meet the woods. The path continues along to the north, where the roof of a castle can be seen glowing in the distance.",
     "areaURL": "AncientDocks",
     "unlockableAreas": [
       {
@@ -37,6 +37,9 @@
         "buttonText": "Continue north"
       }
 
+    ],
+    "actions": [
+      "Pick Plants:Madder Root:You begin picking the plants."
     ]
   },
   {

@@ -46,34 +46,135 @@
     "value": 180,
     "description": "A white cape made from wool. It can protect your back, somewhat.",
     "icon": "Cape",
-    "secondaryColor": "#ddccae"
+    "secondaryColor": "#ddccae",
+    "gatherString": "You make a wool cape.",
+    "gatherSpeed": 25,
+    "equipSlot": "Cape",
+    "armorInfo": {
+      "armorBonus": 5
+    }
   },
   {
     "name": "Red Wool Cape",
     "value": 180,
     "description": "A red cape made from wool. It can protect your back, somewhat.",
     "icon": "Cape",
-    "secondaryColor": "#cc0000"
+    "secondaryColor": "#cc0000",
+    "gatherString": "You dye the cape red.",
+    "gatherSpeed": 15,
+    "equipSlot": "Cape",
+    "armorInfo": {
+      "armorBonus": 5
+    }
   },
   {
     "name": "Green Wool Cape",
     "value": 180,
     "description": "A green cape made from wool. It can protect your back, somewhat.",
     "icon": "Cape",
-    "secondaryColor": "#00cc00"
+    "secondaryColor": "#00cc00",
+    "gatherString": "You dye the cape green.",
+    "gatherSpeed": 15,
+    "equipSlot": "Cape",
+    "armorInfo": {
+      "armorBonus": 5
+    }
   },
   {
     "name": "Blue Wool Cape",
     "value": 180,
     "description": "A blue cape made from wool. It can protect your back, somewhat.",
     "icon": "Cape",
-    "secondaryColor": "#0000cc"
+    "secondaryColor": "#0000cc",
+    "gatherString": "You dye the cape blue.",
+    "gatherSpeed": 15,
+    "equipSlot": "Cape",
+    "armorInfo": {
+      "armorBonus": 5
+    }
   },
   {
     "name": "Black Wool Cape",
     "value": 180,
     "description": "A black cape made from wool. It can protect your back, somewhat.",
     "icon": "Cape",
-    "secondaryColor": "#333333"
+    "secondaryColor": "#333333",
+    "gatherString": "You dye the cape black.",
+    "gatherSpeed": 15,
+    "equipSlot": "Cape",
+    "armorInfo": {
+      "armorBonus": 5
+    }
+  },
+  {
+    "name": "White Cotton Cape",
+    "value": 280,
+    "description": "A white cape made from cotton. It can protect your back, and it looks kinda cool.",
+    "icon": "Cape",
+    "secondaryColor": "#ffffff",
+    "gatherString": "You make a cotton cape.",
+    "gatherSpeed": 25,
+    "equipSlot": "Cape",
+    "armorInfo": {
+      "armorBonus": 12
+    }
+  },
+  {
+    "name": "White Silk Cape",
+    "value": 520,
+    "description": "A glorious white cape made from silk. It can protect your back, and it looks very cool.",
+    "icon": "Cape",
+    "secondaryColor": "#dddddd",
+    "gatherString": "You make a silk cape.",
+    "gatherSpeed": 25,
+    "equipSlot": "Cape",
+    "armorInfo": {
+      "armorBonus": 18
+    }
+  },
+  {
+    "name": "Madder Root",
+    "value": 35,
+    "description": "The roots of a madder plant. You could probably make dye with this somehow.",
+    "icon": "Root",
+    "secondaryColor": "#aa0000",
+    "gatherString": "You harvest a root.",
+    "gatherSpeed": 15
+  },
+  {
+    "name": "Red Dye",
+    "value": 350,
+    "description": "The roots of a madder plant dissolved in oil of vitriol.",
+    "icon": "Dye",
+    "secondaryColor": "#cc0000",
+    "gatherString": "You make some red dye.",
+    "gatherSpeed": 15
+  },
+  {
+    "name": "Woad Leaves",
+    "value": 25,
+    "description": "The leaves of a woad plant. You could probably make dye with this somehow.",
+    "icon": "Leaf",
+    "secondaryColor": "#246bce",
+    "gatherString": "You harvest a leaf.",
+    "gatherSpeed": 15
+  },
+  {
+    "name": "Blue Dye",
+    "value": 250,
+    "description": "The leaves of a woad plant soaked in water.",
+    "icon": "Dye",
+    "secondaryColor": "#246bce",
+    "gatherString": "You make some blue dye.",
+    "gatherSpeed": 15
+  },
+  {
+    "name": "Green Dye",
+    "value": 250,
+    "description": "Chelonic powder soaked in water.",
+    "icon": "Dye",
+    "secondaryColor": "#3b7a0b",
+    "gatherString": "You make some green dye.",
+    "gatherSpeed": 15
   }
 ]

@@ -47,6 +47,7 @@ public static class SaveManager
             await SetItemAsync("Dojos:" + mode, GetSaveString(AreaManager.Instance.GetDojoSaveData()));
             await SetItemAsync("AFKAction:" + mode, GetSaveString(GameState.CurrentAFKAction));
             await SetItemAsync("Tomes:" + mode, GetSaveString(ItemManager.Instance.Tomes));
+            await SetItemAsync("KC:" + mode, GetSaveString(BattleManager.Instance.GetKillCounts()));
             await SetItemAsync("NewSaveCompression", "true");
             LastSave = DateTime.UtcNow;
             GameState.IsSaving = false;
@@ -177,6 +178,11 @@ public static class SaveManager
                 ItemManager.Instance.Tomes = JsonConvert.DeserializeObject<List<TomeData>>(Decompress(await GetItemAsync<string>("Tomes:" + mode)));
             }
             errorcode++; //17
+            if (await ContainsKeyAsync("KC:" + mode))
+            {
+                BattleManager.Instance.LoadKillCounts(JsonConvert.DeserializeObject<string>(Decompress(await GetItemAsync<string>("KC:" + mode))));
+            }
+            errorcode++; //18
         }
         catch(Exception e)
         {
@@ -225,8 +231,9 @@ public static class SaveManager
         //16
         file += GetSaveString(AreaManager.Instance.GetDungeonSaveData()) + ",";
         //17
-        file += GetSaveString(ItemManager.Instance.Tomes);
-
+        file += GetSaveString(ItemManager.Instance.Tomes) + ",";
+        //18
+        file += GetSaveString(BattleManager.Instance.GetKillCounts());
         return file;
     }
     public static void ImportSave(string file)
@@ -335,6 +342,10 @@ public static class SaveManager
         if(data.Length > 17)
         {
             ItemManager.Instance.Tomes = JsonConvert.DeserializeObject<List<TomeData>>(Decompress(data[17]));
+        }
+        if(data.Length > 18)
+        {
+            BattleManager.Instance.LoadKillCounts(JsonConvert.DeserializeObject<string>(Decompress(data[18])));
         }
     }
     public static string GetItemSave(Inventory i)

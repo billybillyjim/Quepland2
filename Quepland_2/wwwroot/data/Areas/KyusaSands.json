@@ -117,10 +117,13 @@
     "name": "Turru Cenopa",
     "id": 163,
     "image": "Volcano",
-    "description": "As you reach the summit of the mountain, you find a caldera. Various mineral deposits lay above the surface, but it's not possible to see what you're mining. Beyond to the east the desert gives way to grasslands, and you can just barely see a tower in the far distance.",
+    "description": "As you reach the summit of the mountain, you find a caldera. Various mineral deposits lay above the surface, but it's not possible to see what you're mining. Beyond to the east the desert gives way to grasslands, and you can just barely see a tower in the far distance. A burnt-orange river flows along the trail and nothing seems to be able to grow near its banks. ",
     "areaURL": "TurruCenopa",
     "actions": [
-      "Mine ores:Copper Ore,Calamine,Tin Ore,Pentlandite"
+      "Mine ores:Copper Ore,Calamine,Tin Ore,Pentlandite,Iron Ore"
+    ],
+    "conversionActions": [
+      "Gather from the river:Oil of Vitriol:Empty Bottle:You begin drawing water from the river."
     ]
   }
 ]

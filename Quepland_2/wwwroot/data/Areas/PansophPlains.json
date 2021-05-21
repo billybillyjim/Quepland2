@@ -3,34 +3,34 @@
     "name": "Greenever Hills",
     "id": 190,
     "image": "Hills",
-    "description": "",
+    "description": "The land grows hilly and green as you continue eastward. A small community lies at the bottom of the valley ahead. Various plants grow in the fields before you. The tower in the distance still appears to be very far away.",
     "areaURL": "GreeneverHills",
     "unlockableAreas": [
       {
-        "areaURL": "SubfentonStows",
-        "buttonText": "Head up the trail"
-      },
-      {
-        "areaURL": "AncientDocks",
-        "buttonText": "Head north"
+        "areaURL": "EightfretsLodge",
+        "buttonText": "Head down the valley"
       }
 
+    ],
+    "actions": [
+      "Pick plants:Woad Leaves"
     ]
+    
   },
   {
-    "name": "Eightfrets Lodge",
-    "id": 181,
-    "image": "Gate",
-    "description": "The trail leads up to a small community. The houses here look nothing like the strange constructions at the bottom of the hill. A particularly ornate building lies along the entrance, and a rusty sign rests on the gate that towers above the entrance. It reads, \"Subfenton Stows:The last place you'll live!\"",
-    "areaURL": "EightfretsLodge"
+    "name": "Eightsfret Glen",
+    "id": 191,
+    "image": "TwoHouses",
+    "description": "Near the bottom of the valley the road splits in three. The side paths each lead to a small set of buildings, while the middle path leads on toward the tower in the distance.",
+    "areaURL": "EightsfretGlen"
 
   },
   {
-    "name": "Ancient Docks",
-    "id": 182,
-    "image": "Docks",
-    "description": "The path leads down to a small set of docks made from stone. The water appears to lead out to the sea on one end. It looks like at least one sailor is still using these ancient docks. The path continues along to the north, where the roof of a castle can be seen glowing in the distance.",
-    "areaURL": "AncientDocks",
+    "name": "Stormwood",
+    "id": 192,
+    "image": "Woods",
+    "description": "The path leads into a forest of exceptionally tall trees. The canopy above is filled with the calls of wild creatures.",
+    "areaURL": "Stormwood",
     "unlockableAreas": [
       {
         "areaURL": "GiltgrainCastle",
@@ -40,10 +40,10 @@
     ]
   },
   {
-    "name": "Giltgrain Castle",
-    "id": 183,
-    "image": "Castle",
-    "description": "The castle's roof glitters with thousands of ornate jewels. It appears entirely out of place in the dilapidated streets that surround it. A lone guard stands at the gate to the castle's front entrance. A ladder rests along the side of one wall, reaching just high enough to climb over.",
-    "areaURL": "GiltgrainCastle"
+    "name": "Lunacrest Bridge",
+    "id": 193,
+    "image": "Bridge",
+    "description": "The forest opens to a bridge that leads across a shallow but wide river. Here and there along the bridge vendors have set up shop. The tower in the distance seems to be near the center of a large city on the other side of the bridge.",
+    "areaURL": "LunacrestBridge"
   }
 ]

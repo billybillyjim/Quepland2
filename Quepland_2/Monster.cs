@@ -17,6 +17,7 @@ public class Monster
 	public List<IStatusEffect> CurrentStatusEffects { get; set; } = new List<IStatusEffect>();
     public List<IStatusEffect> StatusEffects { get; set; } = new List<IStatusEffect>();
     public List<StatusEffectData> StatusEffectData { get; set; } = new List<StatusEffectData>();
+    public int KillCount { get; set; }
 
 	public DropTable DropTable { get; set; } = new DropTable();
 	public double GetRemainingHPPercent()

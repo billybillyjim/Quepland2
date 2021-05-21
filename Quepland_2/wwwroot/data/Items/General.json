@@ -93,6 +93,15 @@
     "isStackable": true
   },
   {
+    "name": "Glittering Plume",
+    "description": "A beautiful feather that sparkles in the light.",
+    "gatherString": "You separate the feathers into a pile.",
+    "value": 1250,
+    "secondaryColor": "#6600ff",
+    "icon": "Feather",
+    "isStackable": true
+  },
+  {
     "name": "Chicken Egg",
     "description": "A small egg from a chicken.",
     "value": 10,
@@ -365,5 +374,32 @@
     "description": "A bag full of assorted gems.",
     "value": 500,
     "icon": "Bag"
+  },
+  {
+    "name": "Empty Bottle",
+    "value": 5,
+    "description": "An empty bottle for storing things in.",
+    "icon": "Bottle",
+    "secondaryColor": "#ffffff",
+    "gatherString": "You get a bottle.",
+    "gatherSpeed": 15
+  },
+  {
+    "name": "Bottle of Water",
+    "value": 8,
+    "description": "A bottle with water in it.",
+    "icon": "Bottle",
+    "secondaryColor": "#8edfed",
+    "gatherString": "You fill a bottle.",
+    "gatherSpeed": 15
+  },
+  {
+    "name": "Oil of Vitriol",
+    "value": 52,
+    "description": "A bottle of dangerous liquid.",
+    "icon": "Bottle",
+    "secondaryColor": "#dddddd",
+    "gatherString": "You collect some liquid.",
+    "gatherSpeed": 15
   }
 ]

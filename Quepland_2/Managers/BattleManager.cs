@@ -26,12 +26,44 @@ public class BattleManager
     public bool AutoBattle { get; set; }
     public Monster SelectedOpponent { get; set; }
     private static readonly Random random = new Random();
+
+    public string GetKillCounts()
+    {
+        string kc = "";
+        foreach(Monster m in Monsters)
+        {
+            kc += m.Name + "_" + m.KillCount + ",";
+        }
+        return kc.Trim(',');
+    }
+    public void LoadKillCounts(string kc)
+    {
+        string[] lines = kc.Split(',');
+        foreach(string line in lines)
+        {
+            Monster m = Monsters.FirstOrDefault(x => x.Name == line.Split('_')[0]);
+            if(m == null)
+            {
+                Console.WriteLine($"No monster with name:{line} found.");
+                continue;
+            }
+            if (int.TryParse(line.Split('_')[1], out int k))
+            {
+                m.KillCount = k;
+            }
+            else
+            {
+                Console.WriteLine("Failed to parse:" + line);
+            }
+        }
+    }
     public async Task LoadMonsters(HttpClient Http)
     {
         Monsters.AddRange(await Http.GetFromJsonAsync<Monster[]>("data/Monsters/Overworld.json"));
         Monsters.AddRange(await Http.GetFromJsonAsync<Monster[]>("data/Monsters/Underworld.json"));
         Monsters.AddRange(await Http.GetFromJsonAsync<Monster[]>("data/Monsters/Bosses.json"));
         Monsters.AddRange(await Http.GetFromJsonAsync<Monster[]>("data/Monsters/DojoOpponents.json"));
+        Monsters.AddRange(await Http.GetFromJsonAsync<Monster[]>("data/Monsters/EasternLands.json"));
 
         foreach(Monster m in Monsters)
         {
@@ -129,6 +161,7 @@ public class BattleManager
                     opponent.CurrentHP = 0;
                     RollForDrops(opponent);
                     opponent.IsDefeated = true;
+                    opponent.KillCount++;
                     if(CurrentBoss != null)
                     {
                         CurrentBoss.OnDie(opponent);
@@ -276,8 +309,18 @@ public class BattleManager
         }
         total = (int)Math.Min(Target.CurrentHP, total);
         Target.CurrentHP -= total;
+
+        GainCombatExperience(total);
         
-        if(Player.Instance.GetWeapon() == null)
+        if (Target.IsDefeated)
+        {
+            Target = GetNextTarget();
+        }
+    }
+
+    private void GainCombatExperience(int total)
+    {
+        if (Player.Instance.GetWeapon() == null)
         {
             Player.Instance.GainExperience("Strength", total);
             Player.Instance.GainExperience("Deftness", total / 3);
@@ -285,7 +328,7 @@ public class BattleManager
         }
         else
         {
-            if(Player.Instance.GetWeapon().EnabledActions == "Archery")
+            if (Player.Instance.GetWeapon().EnabledActions == "Archery")
             {
                 if (Player.Instance.GetWeapon().Name == "Spine Shooter")
                 {
@@ -300,7 +343,7 @@ public class BattleManager
                         Player.Instance.GainExperience("Strength", total);
                         MessageManager.AddMessage("You whack the " + Target.Name + " with your spine shooter for " + total + " damage!");
                     }
-                }         
+                }
                 else
                 {
                     if (Player.Instance.Inventory.HasArrows())
@@ -323,14 +366,9 @@ public class BattleManager
                 MessageManager.AddMessage("You hit the " + Target.Name + " for " + total + " damage!");
             }
 
-            
+
         }
-        
-        
-        if (Target.IsDefeated)
-        {
-            Target = GetNextTarget();
-        }
+
     }
     public void BeAttacked(Monster opponent)
     {

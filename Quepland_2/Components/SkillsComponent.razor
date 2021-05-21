@@ -39,6 +39,10 @@
             <div>
                 Total Level:@Player.Instance.GetTotalLevel()
             </div>
+            <div @onclick="@(() => SetMenu("Monsters"))" style="cursor:pointer">
+                Beastiary
+            </div>
+
         }
         else
         {
@@ -65,6 +69,18 @@
                         {
                             <div>You don't have a task right now. Speak to a guild member to get one.</div>
                         }
+                    }
+                }
+                @if(activeMenu == "Monsters")
+                {
+                    <div>
+                        Beastiary
+                    </div>
+                    @foreach(Monster m in BattleManager.Instance.Monsters)
+                    {
+                        <div>
+                            @m.Name @m.KillCount 
+                        </div>
                     }
                 }
             </div>
@@ -118,11 +134,25 @@
         activeMenu = skill;
         if(skill != "None")
         {
+            if(skill == "Monsters")
+            {
+                LoadKCMenu();
+                GameState.UpdateState();
+                return;
+            }
             currentSkill = Player.Instance.Skills.FirstOrDefault(x => x.Name == skill);
             LoadRelevantItems();
         }
         GameState.UpdateState();
     }
+
+    public void LoadKCMenu()
+    {
+        RelevantItems.Clear();
+        RelevantRecipes.Clear();
+
+    }
+
     public void LoadRelevantItems()
     {
         RelevantItems.Clear();

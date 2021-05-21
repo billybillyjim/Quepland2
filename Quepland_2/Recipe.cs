@@ -84,7 +84,7 @@ public class Recipe
         }
 		foreach(Ingredient ingredient in Ingredients)
         {
-            if(Player.Instance.Inventory.GetNumberOfItem(ingredient.Item) < ingredient.Amount)
+            if(Player.Instance.Inventory.GetNumberOfUnlockedItem(ingredient.Item) < ingredient.Amount)
             {
                 ingredient.Item.Rerender = true;
                 return false;

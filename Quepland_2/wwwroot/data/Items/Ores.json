@@ -470,8 +470,28 @@
     "value": 15,
     "gatherSpeed": 20,
     "experienceGained": "Mining:30",
-    "icon": "Dust",
+    "icon": "Fragments",
     "isStackable": true,
+    "requirements": [
+      {
+        "skill": "Mining",
+        "skillLevel": 78
+      },
+      {
+        "action": "Mining"
+      }
+    ]
+  },
+  {
+    "name": "Chelonic Powder",
+    "description": "A powder mined beneath Chelonia.",
+    "gatherString": "You mine some chelonic powder.",
+    "secondaryColor": "#3b7a0b",
+    "value": 5,
+    "gatherSpeed": 20,
+    "experienceGained": "Mining:30",
+    "icon": "Dust",
+    "isStackable": false,
     "requirements": [
       {
         "skill": "Mining",
