@@ -379,7 +379,7 @@
     "name": "Empty Bottle",
     "value": 5,
     "description": "An empty bottle for storing things in.",
-    "icon": "Bottle",
+    "icon": "EmptyBottle",
     "secondaryColor": "#ffffff",
     "gatherString": "You get a bottle.",
     "gatherSpeed": 15

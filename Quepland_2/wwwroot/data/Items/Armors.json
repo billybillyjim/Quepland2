@@ -1132,5 +1132,19 @@
         }
       ]
     }
+  },
+  {
+    "name": "Helm of Chelonia",
+    "value": 2500,
+    "description": "A strangely shaped helmet. It's very hard to see out of.",
+    "gatherString": "You make a chelonic helm.",
+    "gatherSpeed": 8,
+    "icon": "Shell",
+    "equipSlot": "Head",
+    "armorInfo": {
+      "armorBonus": 75,
+      "damage": -35
+    },
+    "secondaryColor": "#3b7a0b"
   }
 ]

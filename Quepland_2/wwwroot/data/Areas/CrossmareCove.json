@@ -2,8 +2,8 @@
   {
     "name": "Chelonia",
     "id": 180,
-    "image": "Turtle",
-    "description": "The forest gives way to a number of strangely-shaped dwellings. Each is nearly identical in shape, sporting four windows and a front and back door. ",
+    "image": "Dome",
+    "description": "The forest gives way to a number of strangely-shaped dwellings. Each dome is nearly identical in shape, sporting four windows and a front and back door. One large dome sits at the edge of the village and another dome boasts a sign reading, \"Mines\" above each of the doors and windows.",
     "areaURL": "Chelonia",
     "unlockableAreas": [
       {
@@ -12,9 +12,41 @@
       },
       {
         "areaURL": "AncientDocks",
-        "buttonText": "Head north"
+        "buttonText": "Head east"
       }
 
+    ],
+    "buildings": [
+      {
+        "name": "Chelonium Goods",
+        "buttonText": "Enter the largest dome",
+        "url": "CheloniumGoods",
+        "description": "The dome is well lit and spacious. A woman sits in the center of the room, which is surrounded on all sides by countless bags of gemstones and what appear to be helmets.",
+        "npcs": [
+          "Nodlesh"
+        ],
+        "shops": [
+          {
+            "name": "Chelonia Goods",
+            "currencyName": "Chelonic Fragments",
+            "itemNames": [
+              "Bag of Assorted Gems",
+              "Helm of Chelonia"
+
+            ]
+
+          }
+        ]
+      },
+      {
+        "name": "Chelonia Mines",
+        "buttonText": "Enter the mine",
+        "url": "CheloniaMines",
+        "description": "A ladder leads down into a dark underground tunnel system. Torches light the walls as far as the eye can see.",
+        "actions": [
+          "Mine Walls:Chelonite,Chelonic Fragments,Chelonic Powder,Chelonic Fragments,Chelonic Powder,Chelonic Powder:You swing your pickaxe into the tunnel wall."
+        ]
+      }
     ]
   },
   {
@@ -33,8 +65,8 @@
     "areaURL": "AncientDocks",
     "unlockableAreas": [
       {
-        "areaURL": "GiltgrainCastle",
-        "buttonText": "Continue north"
+        "areaURL": "GraingiltCastle",
+        "buttonText": "Continue along the shore"
       }
 
     ],
@@ -43,10 +75,10 @@
     ]
   },
   {
-    "name": "Giltgrain Castle",
+    "name": "Graingilt Castle",
     "id": 183,
     "image": "Castle",
     "description": "The castle's roof glitters with thousands of ornate jewels. It appears entirely out of place in the dilapidated streets that surround it. A lone guard stands at the gate to the castle's front entrance. A ladder rests along the side of one wall, reaching just high enough to climb over.",
-    "areaURL": "GiltgrainCastle"
+    "areaURL": "GraingiltCastle"
   }
 ]

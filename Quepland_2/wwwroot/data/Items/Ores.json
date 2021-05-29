@@ -490,8 +490,8 @@
     "value": 5,
     "gatherSpeed": 20,
     "experienceGained": "Mining:30",
-    "icon": "Dust",
-    "isStackable": false,
+    "icon": "Powder",
+    "isStackable": true,
     "requirements": [
       {
         "skill": "Mining",

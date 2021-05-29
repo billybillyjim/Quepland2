@@ -8,9 +8,11 @@
     <br />
     @if (GameState.CurrentAFKAction != null)
     {
-        <button class="btn btn-primary" style="opacity:0.5" 
+        <button class="btn btn-primary" style="opacity:0.5"
                 @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You can't leave while training " + GameState.CurrentAFKAction.SkillTrained)))"
-                @onmouseout="@(new Action(() => GameState.HideTooltip()))" >Exit</button>
+                @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+            Exit
+        </button>
 
     }
     else
@@ -21,7 +23,34 @@
     <br />
     <div>@thisBuilding.Name</div>
     <div>@thisBuilding.Description</div>
-    @if(thisBuilding.AlchemicalHall != "None")
+
+    @foreach (string a in thisBuilding.Actions ?? Enumerable.Empty<string>())
+    {
+        if (a == "Smithy")
+        {
+            <SmithyComponent Location="@thisBuilding.URL"></SmithyComponent>
+            <br />
+        }
+        else if (a == "Cabochon")
+        {
+            <Quepland_2.Components.CabochonStoneComponent></Quepland_2.Components.CabochonStoneComponent>
+        }
+        else if (a == "Gem Cutting")
+        {
+            <Quepland_2.Components.GemCuttingComponent></Quepland_2.Components.GemCuttingComponent>
+        }
+        else if (a.Contains("Ice Fish"))
+        {
+            <Quepland_2.Components.IceFishingComponent ActionText="@a"></Quepland_2.Components.IceFishingComponent>
+        }
+        else
+        {
+            <Quepland_2.Components.GatherButtonComponent ActionText="@a"></Quepland_2.Components.GatherButtonComponent>
+            <br />
+        }
+
+    }
+    @if (thisBuilding.AlchemicalHall != "None")
     {
         <AlchemicalHallComponent QueplarMultiplier="@thisBuilding.QueplarMultiplier" HallName="@thisBuilding.AlchemicalHall"></AlchemicalHallComponent>
     }
@@ -46,7 +75,7 @@
     {
         <Quepland_2.Components.OvenComponent></Quepland_2.Components.OvenComponent>
     }
-    @if(thisBuilding.HasSmithy)
+    @if (thisBuilding.HasSmithy)
     {
         <Quepland_2.Pages.SmithyComponent Location="@buildingURL"></Quepland_2.Pages.SmithyComponent>
     }
@@ -67,6 +96,7 @@
 
     private void Exit()
     {
+        GameState.StopActions();
         GameState.GoTo("/World/" + areaURL);
         GameState.UpdateState();
     }

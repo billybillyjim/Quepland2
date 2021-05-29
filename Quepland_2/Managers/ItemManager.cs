@@ -43,12 +43,12 @@ public class ItemManager
     { "Weapons", "Bows", "Armors", "Shields", "Necklaces", "Sushi", "Jerkies", "Bread", "Magic",
         "Arrows", "QuestItems", "General", "Elements", "Hunting", 
         "Fishing", "Bars", "Ores", "Gems", "Arrowtips", 
-        "WoodworkingItems", "Logs" };
+        "WoodworkingItems", "Logs", "Textiles" };
     public static List<string> Colors = new List<string> 
     { "#DC5958", "#33FF88", "#3367d6", "#d19330", "#ffeacf", "#ffa7f4", "#c26761", "#ce8758", "#41a6e0",
         "#c9ad83", "gray", "#ffd066", "#eadf92", "brown", 
         "lightblue", "silver", "dimgray", "#999999" , "#F1C40F",
-        "sienna", "tan" };
+        "sienna", "tan", "orange" };
     public static int baseID;
     public static readonly int MaxItemsPerFile = 100;
     public bool IsSelling = false;

@@ -20,6 +20,7 @@ public class Building
 	public List<TanningSlot> TanningSlots { get; set; } = new List<TanningSlot>();
     public List<Requirement> Requirements { get; set; } = new List<Requirement>();
     public List<AFKAction> AFKActions { get; set; } = new List<AFKAction>();
+    public List<string> Actions { get; set; } = new List<string>();
     public int LoadedTanningSlotsIterator;
 
     public bool HasRequirements()

@@ -136,7 +136,7 @@
     "name": "Madder Root",
     "value": 35,
     "description": "The roots of a madder plant. You could probably make dye with this somehow.",
-    "icon": "Root",
+    "icon": "Madder",
     "secondaryColor": "#aa0000",
     "gatherString": "You harvest a root.",
     "gatherSpeed": 15
@@ -145,7 +145,7 @@
     "name": "Red Dye",
     "value": 350,
     "description": "The roots of a madder plant dissolved in oil of vitriol.",
-    "icon": "Dye",
+    "icon": "Bottle",
     "secondaryColor": "#cc0000",
     "gatherString": "You make some red dye.",
     "gatherSpeed": 15
@@ -154,7 +154,7 @@
     "name": "Woad Leaves",
     "value": 25,
     "description": "The leaves of a woad plant. You could probably make dye with this somehow.",
-    "icon": "Leaf",
+    "icon": "Woad",
     "secondaryColor": "#246bce",
     "gatherString": "You harvest a leaf.",
     "gatherSpeed": 15
@@ -163,7 +163,7 @@
     "name": "Blue Dye",
     "value": 250,
     "description": "The leaves of a woad plant soaked in water.",
-    "icon": "Dye",
+    "icon": "Bottle",
     "secondaryColor": "#246bce",
     "gatherString": "You make some blue dye.",
     "gatherSpeed": 15
@@ -172,7 +172,7 @@
     "name": "Green Dye",
     "value": 250,
     "description": "Chelonic powder soaked in water.",
-    "icon": "Dye",
+    "icon": "Bottle",
     "secondaryColor": "#3b7a0b",
     "gatherString": "You make some green dye.",
     "gatherSpeed": 15

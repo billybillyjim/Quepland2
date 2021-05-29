@@ -39,7 +39,7 @@
   {
     "name": "Magician's Camp",
     "id": 172,
-    "image": "MagicHat",
+    "image": "Camp",
     "description": "The camp here looks recently used, but no one is around. The tents are unfamiliar in design and there are strange instruments sitting out in front of a campfire that appears to be burning from nothing. There is a path that leads away from the Great Tree.",
     "areaURL": "MagiciansCamp",
     "monsters": [
@@ -53,10 +53,17 @@
     "name": "Sanbon Clearing",
     "id": 173,
     "image": "Field",
-    "description": "The trees give way to a small plain here. You can still see the Great Tree in the distance. The field is full of flowers and there are a number of spots to collect honey from the bees that pollinate them.",
+    "description": "The trees give way to a small plain here. You can still see the Great Tree in the distance. The field is full of flowers and there are a number of spots to collect honey from the bees that pollinate them. To the east you can see the ocean coast fading into the skyline. There's a rugged path that seems to lead down toward the shore.",
     "areaURL": "SanbonClearing",
     "actions": [
       "Gather Honey:Honey"
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "Chelonia",
+        "buttonText": "Head downhill"
+      }
+
     ]
   }
 ]
