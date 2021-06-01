@@ -1,0 +1,107 @@
+[
+  {
+    "outputItemName": "Red Dye",
+    "outputAmount": 1,
+    "ingredients": [
+      {
+        "itemName": "Madder Root",
+        "amount": 1
+      },
+      {
+        "itemName": "Oil of Vitriol",
+        "amount": 1
+      }
+    ],
+    "recipeActionString": "You mix the root into the liquid and watch it turn a deep red color.",
+    "maxOutputsPerAction": 1,
+    "preventArtisanTask": true
+  },
+  {
+    "outputItemName": "Blue Dye",
+    "outputAmount": 1,
+    "ingredients": [
+      {
+        "itemName": "Woad Leaves",
+        "amount": 1
+      },
+      {
+        "itemName": "Bottle of Water",
+        "amount": 1
+      }
+    ],
+    "recipeActionString": "You mix the leaves into the water and watch it turn a deep blue color.",
+    "maxOutputsPerAction": 1,
+    "preventArtisanTask": true
+  },
+  {
+    "outputItemName": "Green Dye",
+    "outputAmount": 1,
+    "ingredients": [
+      {
+        "itemName": "Chelonic Powder",
+        "amount": 1
+      },
+      {
+        "itemName": "Bottle of Water",
+        "amount": 1
+      }
+    ],
+    "recipeActionString": "You mix the powder into the water and watch it turn a deep green color.",
+    "maxOutputsPerAction": 1,
+    "preventArtisanTask": true
+  },
+  {
+    "outputItemName": "White Wool Cape",
+    "outputAmount": 1,
+    "ingredients": [
+      {
+        "itemName": "Wool Fabric",
+        "amount": 3
+      },
+      {
+        "itemName": "Needle",
+        "amount": 1,
+        "destroyOnUse": false
+      }
+    ],
+    "recipeActionString": "You carefully sew the fabric into a cape.",
+    "maxOutputsPerAction": 1,
+    "preventArtisanTask": true
+  },
+  {
+    "outputItemName": "White Cotton Cape",
+    "outputAmount": 1,
+    "ingredients": [
+      {
+        "itemName": "Cotton Fabric",
+        "amount": 3
+      },
+      {
+        "itemName": "Needle",
+        "amount": 1,
+        "destroyOnUse": false
+      }
+    ],
+    "recipeActionString": "You carefully sew the fabric into a cape.",
+    "maxOutputsPerAction": 1,
+    "preventArtisanTask": true
+  },
+  {
+    "outputItemName": "White Silk Cape",
+    "outputAmount": 1,
+    "ingredients": [
+      {
+        "itemName": "Silk Fabric",
+        "amount": 3
+      },
+      {
+        "itemName": "Needle",
+        "amount": 1,
+        "destroyOnUse": false
+      }
+    ],
+    "recipeActionString": "You carefully sew the fabric into a cape.",
+    "maxOutputsPerAction": 1,
+    "preventArtisanTask": true
+  }
+]

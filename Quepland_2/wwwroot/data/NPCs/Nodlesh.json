@@ -17,7 +17,8 @@
     {
       "buttonText": "Is it dangerous?",
       "responseText": "Well, no, not quite dangerous. I'm not trying to be cryptic, sorry. There's some weird stuff going on up there and folks tend to get caught up in it. On another note, feel free to browse! We don't have much to offer, but do note that we trade in fragments here, not Queplonian coins. If you are looking to get some yourself, there's a mine in the dome across from this one.",
-      "depth": 2
+      "depth": 2,
+      "newDepthOnTalk": 3
     }
   ]
 }

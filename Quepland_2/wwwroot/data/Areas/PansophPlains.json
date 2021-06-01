@@ -7,7 +7,7 @@
     "areaURL": "GreeneverHills",
     "unlockableAreas": [
       {
-        "areaURL": "EightfretsLodge",
+        "areaURL": "EightsfretGlen",
         "buttonText": "Head down the valley"
       }
 
@@ -15,19 +15,55 @@
     "actions": [
       "Pick plants:Woad Leaves"
     ]
-    
+
   },
   {
     "name": "Eightsfret Glen",
     "id": 191,
     "image": "TwoHouses",
+    "description": "Near the bottom of the valley the road splits in three. The side paths each lead to a small set of buildings, while the middle path leads further down into a thick wooded area. Above the tops of the trees you can still make out the tower in the distance. The path to the left has crumbled away, you'll need to find some special way across.",
+    "areaURL": "EightsfretGlen",
+    "unlockableAreas": [
+      {
+        "areaURL": "ThreeburyHayes",
+        "buttonText": "Jump across the crumbled path",
+        "requirements": [
+          {
+            "Skill": "Deftness",
+            "SkillLevel": 65
+          }
+        ]
+      },
+      {
+        "areaURL": "FithcasterStead",
+        "buttonText": "Take the right path"
+      },
+      {
+        "areaURL": "Stormwood",
+        "buttonText": "Continue into the forest"
+      }
+
+    ]
+  },
+  {
+    "name": "Threebury Hayes",
+    "id": 192,
+    "image": "Gate",
     "description": "Near the bottom of the valley the road splits in three. The side paths each lead to a small set of buildings, while the middle path leads on toward the tower in the distance.",
-    "areaURL": "EightsfretGlen"
+    "areaURL": "ThreeburyHayes"
+
+  },
+  {
+    "name": "Fithcaster Stead",
+    "id": 193,
+    "image": "Hall",
+    "description": "Near the bottom of the valley the road splits in three. The side paths each lead to a small set of buildings, while the middle path leads on toward the tower in the distance.",
+    "areaURL": "FithcasterStead"
 
   },
   {
     "name": "Stormwood",
-    "id": 192,
+    "id": 194,
     "image": "Woods",
     "description": "The path leads into a forest of exceptionally tall trees. The canopy above is filled with the calls of wild creatures.",
     "areaURL": "Stormwood",
@@ -41,7 +77,7 @@
   },
   {
     "name": "Lunacrest Bridge",
-    "id": 193,
+    "id": 195,
     "image": "Bridge",
     "description": "The forest opens to a bridge that leads across a shallow but wide river. Here and there along the bridge vendors have set up shop. The tower in the distance seems to be near the center of a large city on the other side of the bridge.",
     "areaURL": "LunacrestBridge"

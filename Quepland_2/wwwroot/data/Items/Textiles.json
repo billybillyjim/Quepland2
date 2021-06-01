@@ -1,5 +1,22 @@
 [
   {
+    "name": "Needle",
+    "value": 100,
+    "description": "A little pokey piece of metal, for poking things.",
+    "icon": "Needle",
+    "secondaryColor": "#adadad",
+    "weaponInfo": {
+      "attackSpeed": 4,
+      "damage": -15,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 1
+        }
+      ]
+    }
+  },
+  {
     "name": "Wool",
     "value": 25,
     "description": "The hair of a sheep.",
@@ -39,6 +56,27 @@
     "value": 150,
     "description": "A soft, fluffy plant fiber spun into thread.",
     "icon": "Thread",
+    "secondaryColor": "#ffffff"
+  },
+  {
+    "name": "Wool Fabric",
+    "value": 390,
+    "description": "The hair of a sheep spun into thread and woven into fabric.",
+    "icon": "Fabric",
+    "secondaryColor": "#ddccae"
+  },
+  {
+    "name": "Silk Fabric",
+    "value": 500,
+    "description": "Fibres of a silkworm cocoon spun into thread and woven into fabric.",
+    "icon": "Fabric",
+    "secondaryColor": "#dddddd"
+  },
+  {
+    "name": "Cotton Fabric",
+    "value": 450,
+    "description": "A soft, fluffy plant fiber spun into thread and woven into fabric.",
+    "icon": "Fabric",
     "secondaryColor": "#ffffff"
   },
   {
