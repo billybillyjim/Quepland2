@@ -36,7 +36,8 @@
   {
     "name": "Tendak Territories",
     "regionNames": [
-      "Kyusa Sands"
+      "Kyusa Sands",
+      "Pansoph Plains"
     ],
     "topColor": "#c2b280",
     "bottomColor": "#70483c"

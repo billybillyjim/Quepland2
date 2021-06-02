@@ -124,6 +124,13 @@
     ],
     "conversionActions": [
       "Gather from the river:Oil of Vitriol:Empty Bottle:You begin drawing water from the river."
+    ],
+    "unlockableAreas": [
+      {
+        "areaURL": "GreeneverHills",
+        "buttonText": "Cross the river"
+      }
+
     ]
   }
 ]

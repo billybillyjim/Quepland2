@@ -14,7 +14,9 @@
       "Added Textile Arts",
       "Added capes",
       "Added Pansoph Plains",
-      "The game now tracks monster KC in the Beastiary menu at the bottom of the skills tab. I don't love its location so if you think of a better one let me know. Also, your old kills weren't being tracked so this is just for going forward."
+      "The game now tracks monster KC in the Beastiary menu at the bottom of the skills tab. I don't love its location so if you think of a better one let me know. Also, your old kills weren't being tracked so this is just for going forward.",
+      "Reworked how the bank works. Let me know if I accidentally broke everything, but it should run quite a bit faster.",
+      "Fixed a UI misalignment with worm hunting."
     ]
   },
   {

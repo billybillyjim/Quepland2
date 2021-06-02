@@ -49,32 +49,32 @@
     }
     else
     {
-        if (Player.Instance.HasToolRequirement("Toadback Riding"))
-        {
-            <button class="btn btn-primary" style="opacity:0.5;"
-                    @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, items[0].GetRequirementTooltip())))"
-                    @onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                Hunt Worms
-            </button>
-        }
-        else if (items[0].HasRequirements())
-        {
-            <button class="btn btn-primary" style="opacity:0.5;"
-                    @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need to be riding a toad to do this.")))"
-                    @onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                Hunt Worms
-            </button>
-        }
-        else
-        {
-            <button class="btn btn-primary" style="opacity:0.5;"
-                    @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need to be riding a toad to do this.", items[0].GetRequirementTooltip())))"
-                    @onmouseout="@(new Action(() => GameState.HideTooltip()))">
-                Hunt Worms
-            </button>
-        }
-
-
+        <div>
+            @if (Player.Instance.HasToolRequirement("Toadback Riding"))
+            {
+                <button class="btn btn-primary" style="opacity:0.5;"
+                        @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, items[0].GetRequirementTooltip())))"
+                        @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                    Hunt Worms
+                </button>
+            }
+            else if (items[0].HasRequirements())
+            {
+                <button class="btn btn-primary" style="opacity:0.5;"
+                        @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need to be riding a toad to do this.")))"
+                        @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                    Hunt Worms
+                </button>
+            }
+            else
+            {
+                <button class="btn btn-primary" style="opacity:0.5;"
+                        @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, "You need to be riding a toad to do this.", items[0].GetRequirementTooltip())))"
+                        @onmouseout="@(new Action(() => GameState.HideTooltip()))">
+                    Hunt Worms
+                </button>
+            }
+        </div>
     }
 </div>
 

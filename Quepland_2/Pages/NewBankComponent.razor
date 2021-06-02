@@ -104,12 +104,6 @@
                     <button style="margin:3px;" class="btn btn-primary" @onclick="@(() => ToggleShowTabs())">Show Tabs</button>
                 </div>
             }
-            @if (BankItems != null && BankItems.Count > 0)
-            {
-                <div>@BankItems[0].Key.Name</div>
-            }
-
-
         </div>
         <div @ref="@bankViewReference" style="height:540px;overflow-y:scroll;" class="bank-scroll" @onscroll="@(() => UpdateVisibleItems())">
             @if (!addingTags)

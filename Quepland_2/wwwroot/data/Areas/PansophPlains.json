@@ -3,7 +3,7 @@
     "name": "Greenever Hills",
     "id": 190,
     "image": "Hills",
-    "description": "The land grows hilly and green as you continue eastward. A small community lies at the bottom of the valley ahead. Various plants grow in the fields before you. The tower in the distance still appears to be very far away.",
+    "description": "Though the land grows hilly and green as you continue eastward, the sky has taken on an orange hue. A small community lies at the bottom of the valley ahead. Various plants grow in the fields before you. The tower in the distance still appears to be very far away.",
     "areaURL": "GreeneverHills",
     "unlockableAreas": [
       {
@@ -39,7 +39,7 @@
         "buttonText": "Take the right path"
       },
       {
-        "areaURL": "Stormwood",
+        "areaURL": "WaveringWoods",
         "buttonText": "Continue into the forest"
       }
 
@@ -49,27 +49,38 @@
     "name": "Threebury Hayes",
     "id": 192,
     "image": "Gate",
-    "description": "Near the bottom of the valley the road splits in three. The side paths each lead to a small set of buildings, while the middle path leads on toward the tower in the distance.",
-    "areaURL": "ThreeburyHayes"
+    "description": "Past the crumbled pathway you find a few empty houses. One, crumbling apart reveals a number of looms inside, sitting in disuse. An old emblem rests on the ground in front of one of the buildings. What remains of the signage appears to be a goat.",
+    "areaURL": "ThreeburyHayes",
+    "conversionActions": [
+      "Weave Wool Fabric:Wool Fabric:Wool Thread:You begin weaving the wool into fabric.",
+      "Weave Cotton Fabric:Cotton Fabric:Cotton Thread:You begin weaving the cotton into fabric.",
+      "Weave Silk Fabric:Silk Fabric:Silk Thread:You begin weaving the silk into fabric."
+    ]
 
   },
   {
     "name": "Fithcaster Stead",
     "id": 193,
     "image": "Hall",
-    "description": "Near the bottom of the valley the road splits in three. The side paths each lead to a small set of buildings, while the middle path leads on toward the tower in the distance.",
-    "areaURL": "FithcasterStead"
+    "description": "The path ends at the center of a small village, which surrounds tall building with a giant crab engraved above the front entryway. The building lacks walls and is held up by a handfull of not-so sturdy-looking supports. A few spinning wheels sit under its shade.",
+    "areaURL": "FithcasterStead",
+    "conversionActions": [
+      "Spin Wool:Wool Thread:Wool:You begin spinning the wool into thread.",
+      "Spin Cotton:Cotton Thread:Cotton:You begin spinning the cotton into thread.",
+      "Spin Silk:Silk Thread:Silk:You begin spinning the silk into thread."
+    ]
+
 
   },
   {
-    "name": "Stormwood",
+    "name": "Wavering Woods",
     "id": 194,
     "image": "Woods",
     "description": "The path leads into a forest of exceptionally tall trees. The canopy above is filled with the calls of wild creatures.",
-    "areaURL": "Stormwood",
+    "areaURL": "WaveringWoods",
     "unlockableAreas": [
       {
-        "areaURL": "GiltgrainCastle",
+        "areaURL": "LunacrestBridge",
         "buttonText": "Continue north"
       }
 
