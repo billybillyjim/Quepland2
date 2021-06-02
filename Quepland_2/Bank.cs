@@ -24,7 +24,14 @@ public class Bank
             else { amount = value; }
         } }
 
-	public void DepositAll(Inventory inv)
+
+    public void SortItems()
+    {
+        Inventory.InsertSort();
+    }
+
+
+    public void DepositAll(Inventory inv)
     {
         List<KeyValuePair<GameItem, int>> lockedItems = new List<KeyValuePair<GameItem, int>>();
         List<GameItem> lockedEquippedItems = new List<GameItem>();

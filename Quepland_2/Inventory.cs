@@ -123,6 +123,19 @@ public class Inventory
         }
         return maxSize - GetUsedSpaces();
     }
+
+    public void InsertSort()
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            var current = items[i];
+            for (int j = i - 1; j >= 0 && !(current.Key.ID > items[j].Key.ID); j--)
+            {
+                items[j + 1] = items[j];
+                items[j] = current;
+            }
+        }
+    }
     public List<KeyValuePair<GameItem, int>> GetItems()
     {
         return items;

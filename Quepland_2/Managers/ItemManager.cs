@@ -50,7 +50,7 @@ public class ItemManager
         "lightblue", "silver", "dimgray", "#999999" , "#F1C40F",
         "sienna", "tan", "orange" };
     public static int baseID;
-    public static readonly int MaxItemsPerFile = 100;
+    public static readonly int MaxItemsPerFile = 99;
     public bool IsSelling = false;
     public int SellAmount = 1;
     public Shop CurrentShop;

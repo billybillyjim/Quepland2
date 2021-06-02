@@ -182,17 +182,18 @@
         Bank.Instance.Inventory.IsLoadingSave = true;
         foreach(GameItem i in ItemManager.Instance.Items)
         {
-            Bank.Instance.Inventory.AddItem(i.Copy());
+            Bank.Instance.Inventory.AddItem(i);
         }
         Bank.Instance.Inventory.IsLoadingSave = false;
-        Bank.Instance.Inventory.AddItem("Copper Axe");
+        Bank.Instance.Inventory.UpdateItemCount();
+        //Bank.Instance.Inventory.AddItem("Copper Axe");
     }
     public void GetItem()
     {
         GameItem i = ItemManager.Instance.GetItemByName(itemName);
         if(i != null)
         {
-            Player.Instance.Inventory.AddItem(i.Copy());
+            Player.Instance.Inventory.AddItem(i);
             MessageManager.AddMessage("You get 1 " + i.Name);
         }
     }
