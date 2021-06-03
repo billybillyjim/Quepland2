@@ -113,6 +113,7 @@ public class ItemManager
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/LeatherworkingRecipes.json"));
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/GemRecipes.json"));
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/BreadRecipes.json"));
+        Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/TextileRecipes.json"));
         ArtisanRecipes.AddRange(Recipes);
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/NecklaceRecipes.json"));
         Recipes.AddRange(await Http.GetFromJsonAsync<Recipe[]>("data/Recipes/MiscRecipes.json"));

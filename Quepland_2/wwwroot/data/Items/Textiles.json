@@ -17,11 +17,34 @@
     }
   },
   {
+    "name": "Spindle",
+    "value": 150,
+    "description": "A spinny thing that can be used to pull a material into yarn or thread.",
+    "icon": "Spindle",
+    "secondaryColor": "#b57a47",
+    "weaponInfo": {
+      "attackSpeed": 6,
+      "damage": -5,
+      "wearRequirements": [
+        {
+          "skill": "Knifesmanship",
+          "skillLevel": 1
+        }
+      ]
+    }
+  },
+  {
     "name": "Wool",
     "value": 25,
     "description": "The hair of a sheep.",
     "icon": "Wool",
-    "secondaryColor": "#ddccae"
+    "secondaryColor": "#ddccae",
+    "gatherString": "You shear some wool.",
+    "requirements": [
+      {
+        "action": "Shearing"
+      }
+    ]
   },
   {
     "name": "Silk",
@@ -42,21 +65,31 @@
     "value": 90,
     "description": "The hair of a sheep spun into thread.",
     "icon": "Thread",
-    "secondaryColor": "#ddccae"
+    "secondaryColor": "#ddccae",
+    "gatherSpeed": 10
   },
   {
     "name": "Silk Thread",
     "value": 200,
     "description": "Fibres of a silkworm cocoon spun into thread.",
     "icon": "Thread",
-    "secondaryColor": "#dddddd"
+    "secondaryColor": "#dddddd",
+    "gatherSpeed": 10
   },
   {
     "name": "Cotton Thread",
     "value": 150,
     "description": "A soft, fluffy plant fiber spun into thread.",
     "icon": "Thread",
-    "secondaryColor": "#ffffff"
+    "secondaryColor": "#ffffff",
+    "gatherSpeed": 10
+  },
+  {
+    "name": "Baobhan Thread",
+    "value": 350,
+    "description": "Hair from a baobhan spun into thread.",
+    "icon": "Thread",
+    "gatherSpeed": 10
   },
   {
     "name": "Wool Fabric",
@@ -78,6 +111,12 @@
     "description": "A soft, fluffy plant fiber spun into thread and woven into fabric.",
     "icon": "Fabric",
     "secondaryColor": "#ffffff"
+  },
+  {
+    "name": "Baobhan Fabric",
+    "value": 650,
+    "description": "A soft, fluffy plant fiber spun into thread and woven into fabric.",
+    "icon": "Fabric"
   },
   {
     "name": "White Wool Cape",
@@ -168,6 +207,18 @@
     "equipSlot": "Cape",
     "armorInfo": {
       "armorBonus": 18
+    }
+  },
+  {
+    "name": "Baobhan Cape",
+    "value": 780,
+    "description": "A cape made from the hair of a baobhan.",
+    "icon": "Cape",
+    "gatherString": "You make a baobhan cape.",
+    "gatherSpeed": 25,
+    "equipSlot": "Cape",
+    "armorInfo": {
+      "damage": 10
     }
   },
   {

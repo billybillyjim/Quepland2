@@ -69,10 +69,13 @@
         "name": "Tsu Farms",
         "buttonText": "Visit a farm",
         "url": "TsuFarms",
-        "description": "A simple house stands surrounded by a patch of trees. An old man and woman are working in the garden as you approach.",
+        "description": "A simple house stands surrounded by a patch of trees. An old man and woman are working in the garden as you approach. Around the house there are a quite a few farm animals grazing, including a number of very woolly sheep.",
         "npcs": [
           "Old Woman",
           "Old Man"
+        ],
+        "actions": [
+          "Shear Sheep:Wool:You begin shearing a sheep."
         ]
       }
     ]

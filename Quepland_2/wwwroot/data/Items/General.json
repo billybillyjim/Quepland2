@@ -401,5 +401,17 @@
     "secondaryColor": "#dddddd",
     "gatherString": "You collect some liquid.",
     "gatherSpeed": 15
+  },
+  {
+    "name": "Shears",
+    "description": "A special pair of scissors made for harvesting the body hair off of unsuspecting animals.",
+    "value": 150,
+    "equipSlot": "R Hand",
+    "icon": "Shears",
+    "weaponInfo": {
+      "attackSpeed": 11,
+      "damage": -5
+    },
+    "enabledActions": "Shearing"
   }
 ]

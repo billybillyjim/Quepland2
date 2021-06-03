@@ -105,8 +105,12 @@ public class Player
         {
             return 1;
         }
-        string skillName = item.Requirements.FirstOrDefault(x => x.Skill != "None").Skill;
-        Skill s = Skills.FirstOrDefault(x => x.Name == skillName);
+        Requirement req = item.Requirements.FirstOrDefault(x => x.Skill != "None");
+        if(req == null)
+        {
+            return 1;
+        }
+        Skill s = Skills.FirstOrDefault(x => x.Name == req.Skill);
         if(s == null)
         {
             return 1;
