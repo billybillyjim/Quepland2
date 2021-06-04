@@ -274,7 +274,7 @@
         int taken = 0;
         foreach (KeyValuePair<GameItem, int> item in Bank.Instance.Inventory.GetItems())
         {
-            if (iterator > skip)
+            if (iterator >= skip)
             {
 
                 item.Key.Rerender = true;

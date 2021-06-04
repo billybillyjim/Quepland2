@@ -56,7 +56,7 @@
 {
 <div style="margin-left:5px;">
 
-    @if (Player.Instance.CurrentFollower.IsBanking)
+    @if (Player.Instance.CurrentFollower.IsBanking && GameState.CurrentGameMode != GameState.GameType.Ultimate)
     {
         <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Banking...</div>
         <div class="progress" style="height:15px;margin-right:5px;">
@@ -67,7 +67,12 @@
     }
     else if (Player.Instance.CurrentFollower.MeetsRequirements(GameState.CurrentGatherItem))
     {
-        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Gathering...</div>
+        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Gathering...
+            @if(GameState.CurrentGameMode == GameState.GameType.Ultimate)
+            {
+                <button class="btn btn-primary" @onclick="@(() => Player.Instance.CurrentFollower.TakeItems())">Take</button>
+            }
+        </div>
         <div class="progress" style="height:15px;margin-right:5px;">
             <div class="progress-bar" style="width:@(100 -(((double)Player.Instance.CurrentFollower.Inventory.GetAvailableSpaces() / Player.Instance.CurrentFollower.InventorySize) * 100d))%">
 
@@ -76,12 +81,24 @@
     }
     else if (GameState.CurrentGatherItem != null && Player.Instance.CurrentFollower.MeetsRequirements(GameState.CurrentGatherItem) == false)
     {
-        <div style="margin-left:5px;margin-bottom:15px;">@Player.Instance.CurrentFollower.Name Cannot Gather</div>
+<div style="margin-left:5px;margin-bottom:15px;">
+    @Player.Instance.CurrentFollower.Name Cannot Gather
+        @if (GameState.CurrentGameMode == GameState.GameType.Ultimate)
+        {
+            <button class="btn btn-primary" @onclick="@(() => Player.Instance.CurrentFollower.TakeItems())">Take</button>
+        }
+    </div>
     }
     else
     {
-        <div style="margin-left:5px;">@Player.Instance.CurrentFollower.Name Following...</div>
-        @if (Player.Instance.CurrentFollower.Inventory.GetUsedSpaces() > 0)
+<div style="margin-left:5px;">
+    @Player.Instance.CurrentFollower.Name Following...
+        @if (GameState.CurrentGameMode == GameState.GameType.Ultimate)
+        {
+            <button class="btn btn-primary" @onclick="@(() => Player.Instance.CurrentFollower.TakeItems())">Take</button>
+        }
+    </div>
+        @if (Player.Instance.CurrentFollower.Inventory.GetUsedSpaces() > 0 && GameState.CurrentGameMode != GameState.GameType.Ultimate)
         {
             <div><button class="btn btn-primary" style="height:25px;line-height:25px;padding-top:0px;margin-top:0px;" @onclick="@(() => Player.Instance.CurrentFollower.SendToBank())">Send to Bank</button></div>
         }

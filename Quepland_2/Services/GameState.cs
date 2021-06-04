@@ -207,7 +207,7 @@ using System.Threading.Tasks;
         {
             ReadBook();
         }
-        if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking)
+        if (Player.Instance.CurrentFollower != null && Player.Instance.CurrentFollower.IsBanking && (CurrentGameMode != GameType.Ultimate))
         {
             Player.Instance.CurrentFollower.TicksToNextAction--;
             if (Player.Instance.CurrentFollower.TicksToNextAction <= 0)
@@ -983,6 +983,28 @@ using System.Threading.Tasks;
             TooltipManager.xPos = args.ClientX;
             TooltipManager.yPos = args.ClientY;
             TooltipManager.ShowContextMenu(args);
+        }
+
+    }
+    public static void ResetGame()
+    {
+        Player.Instance.ResetStats();
+        Player.Instance.Inventory.Clear();
+        Player.Instance.GetEquippedItems().Clear();
+        Bank.Instance.Inventory.Clear();
+        foreach (Area a in AreaManager.Instance.Areas)
+        {
+            a.IsUnlocked = false;
+        }
+        foreach (Region r in AreaManager.Instance.Regions)
+        {
+            r.IsUnlocked = false;
+        }
+        foreach(Quest q in QuestManager.Instance.Quests)
+        {
+            q.Progress = 0;
+            q.IsComplete = false;
+            
         }
 
     }

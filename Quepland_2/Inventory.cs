@@ -295,6 +295,15 @@ public class Inventory
     }
     public bool AddMultipleOfItem(GameItem item, int amount)
     {
+        return AddMultipleOfItem(item, amount, out _);
+    }
+    public bool AddMultipleOfItem(string itemName, int amount)
+    {
+        return AddMultipleOfItem(ItemManager.Instance.GetItemByName(itemName), amount);
+    }
+    public bool AddMultipleOfItem(GameItem item, int amount, out int added)
+    {
+        added = 0;
         if (item == null || (totalItems >= maxSize && (item.IsStackable == false || HasItem(item) == false)))
         {
             //Console.WriteLine("Item was null:"+(item == null) + " total surpassed max size:" + (totalItems >= maxSize));
@@ -306,15 +315,20 @@ public class Inventory
         }
         if (item.IsStackable || AllItemsStack)
         {
+            added = amount;
             return AddItemStackable(item, amount);
+
         }
         else
         {
+            
             for (int i = 0; i < amount; i++)
             {
+                added++;
                 if (AddItem(item.Copy()) == false)
                 {
                     UpdateItemCount();
+                    
                     return false;
                 }
             }
@@ -322,11 +336,6 @@ public class Inventory
         UpdateItemCount();
         return true;
     }
-    public bool AddMultipleOfItem(string itemName, int amount)
-    {
-        return AddMultipleOfItem(ItemManager.Instance.GetItemByName(itemName), amount);
-    }
-    
     public bool AddItemStackable(GameItem item, int amount)
     {
         if (totalItems >= maxSize && (item.IsStackable == false || HasItem(item) == false))

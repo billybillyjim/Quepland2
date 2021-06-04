@@ -390,8 +390,12 @@ public class Player
     {
         if(GameState.CurrentGameMode == GameState.GameType.Hardcore)
         {
-            MessageManager.AddMessage("Whoops! Looks like you died. As a hardcore account your journey is now over. Better luck next time!");
+            
             JustDied = true;
+            SaveManager.DeleteHCSave();
+            GameState.ResetGame();
+            MessageManager.Clear();
+            GameState.GoTo("/");
             GameState.ShowStartMenu = true;
         }
         else
@@ -533,9 +537,11 @@ public class Player
     {
         foreach(Skill s in Skills)
         {
-            s.SetSkillLevel(0);
+            s.SetSkillLevel(1);
             s.Experience = 0;
         }
+        CalculateMaxHP();
+        CalculateInventorySpaces();
     }
     public PlayerSaveData GetSaveData()
     {

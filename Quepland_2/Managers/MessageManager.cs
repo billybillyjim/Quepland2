@@ -12,6 +12,10 @@ public static class MessageManager
     private static int repeatMessageCount = 1;
     public static string CurrentTag = "All";
 
+    public static void Clear()
+    {
+        Messages.Clear();
+    }
     public static void AddMessage(string message)
     {
         AddMessage(message, "white", "All");

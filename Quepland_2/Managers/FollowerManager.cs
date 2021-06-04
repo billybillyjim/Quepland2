@@ -37,7 +37,7 @@ public class FollowerManager
         string data = "";
         foreach(Follower f in Followers)
         {
-            data += f.Name + ":" + f.IsUnlocked + ":" + f.Banking.Experience + ",";
+            data += f.Name + ":" + f.IsUnlocked + ":" + f.Banking.Experience + ":" + SaveManager.GetItemSave(f.Inventory) + ",";
         }
         return data;
     }
@@ -50,13 +50,23 @@ public class FollowerManager
             {
                 continue;
             }
-            string name = line.Split(':')[0];
-            bool unlock = bool.Parse(line.Split(':')[1]);
-            Followers.Find(x => x.Name == name).IsUnlocked = unlock;
-            if(line.Split(':').Length > 2)
+            string[] d = line.Split(':');
+            Follower f = Followers.Find(x => x.Name == d[0]);
+            if (f == null)
             {
-                long exp = long.Parse(line.Split(':')[2]);
-                Followers.Find(x => x.Name == name).GainExperience(exp);
+                Console.WriteLine("Failed to load save data for follower:" + line);
+            }
+                     
+            f.IsUnlocked = bool.Parse(d[1]);
+
+            if (d.Length > 2)
+            {
+                long exp = long.Parse(d[2]);
+                f.GainExperience(exp);
+            }
+            if(d.Length > 3)
+            {
+                f.Inventory.LoadData(d[3]);
             }
         }
     }

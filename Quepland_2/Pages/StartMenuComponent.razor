@@ -39,28 +39,28 @@
         </div>
         @if (GameState.CurrentGameMode == GameState.GameType.Hardcore && Player.Instance.JustDied)
         {
-            <button class="btn btn-primary" onclick="@(new Action(() => ResetGame()))">Begin New Game</button>
+            <button class="btn btn-primary" onclick="@(new Action(() => ResetGame()))">Begin New Game (@selectedMode)</button>
         }
         else
         {
             @if (selectedMode == "Normal" && hasSave ||
-              selectedMode == "Hardcore" && hasHardcore ||
-              selectedMode == "Ultimate" && hasUltimate)
+             selectedMode == "Hardcore" && hasHardcore ||
+             selectedMode == "Ultimate" && hasUltimate)
             {
                 if (hasShownWarning == false)
                 {
-                    <button class="btn btn-primary" onclick="@(new Action(() => ShowWarning()))">Begin New Game</button>
+                    <button class="btn btn-primary" onclick="@(new Action(() => ShowWarning()))">Begin New Game (@selectedMode)</button>
 
                 }
                 else
                 {
-                    <button class="btn btn-primary" onclick="@(new Action(() => StartGame()))">Begin New Game</button>
+                    <button class="btn btn-primary" onclick="@(new Action(() => StartGame()))">Begin New Game (@selectedMode)</button>
                     <div style="color:red">Warning:Creating a new game will override your current save with this game type.(@selectedMode)</div>
                 }
             }
             else
             {
-                <button class="btn btn-primary" onclick="@(new Action(() => StartGame()))">Begin New Game</button>
+                <button class="btn btn-primary" onclick="@(new Action(() => StartGame()))">Begin New Game (@selectedMode)</button>
             }
         }
     }
@@ -68,6 +68,34 @@
     {
         <button class="btn btn-primary" disabled>Begin New Game</button>
     }
+
+    <br />
+    <div>
+        <Quepland_2.Components.CustomDropdownComponent DropdownItems="@GetGameModes()" @bind-Value="@selectedMode" BoxText="Game Mode(Normal)"></Quepland_2.Components.CustomDropdownComponent>
+
+    </div>
+    <br/>
+    <div>
+        @if (hasSave == false)
+        {
+            if (selectedMode == "Normal")
+            {
+                <div>Normal mode is the normal way to play the game. It's highly recommended you start out playing in this game mode.</div>
+            }
+            else if (selectedMode == "Hardcore")
+            {
+                <div>Hardcore mode gives the player a single life to live. If you die, the game will delete your save and bring you back to the start menu.</div>
+            }
+            else if (selectedMode == "Ultimate")
+            {
+                <div>Ultimate mode is an extreme version of the game where the player is not allowed to use the bank.</div>
+            }
+        }
+        @if (Player.Instance.JustDied) 
+        { 
+            <div>"Whoops! Looks like you died. As a hardcore account your journey is now over. Better luck next time!"</div>
+        }
+    </div>
 
     @if (GameState.Updates.Count > 0 && showAllUpdates)
     {
@@ -121,7 +149,7 @@
             <div style="width:500px">
                 @foreach (byte[] array in byteList)
                 {
-                <img src="data:image;base64,@System.Convert.ToBase64String(array)" />
+                    <img src="data:image;base64,@System.Convert.ToBase64String(array)" />
                 }
             </div>
 
@@ -174,31 +202,9 @@
     }
 </div>
 
-<!--
-    <br />
-    <div style="margin-left:-10px;">
-        <Quepland_2.Components.CustomDropdownComponent DropdownItems="@GetGameModes()" @bind-Value="@selectedMode" BoxText="Game Mode(Normal)"></Quepland_2.Components.CustomDropdownComponent>
 
-    </div>
-}
-<div>
-    @if (hasSave == false)
-    {
-        if (selectedMode == "Normal")
-        {
-            <div>Normal mode is the normal way to play the game. It's highly recommended you start out playing in this game mode.</div>
-        }
-        else if (selectedMode == "Hardcore")
-        {
-            <div>Hardcore mode gives the player a single life to live. If you die, the game will delete your save and bring you back to the start menu.</div>
-        }
-        else if (selectedMode == "Ultimate")
-        {
-            <div>Ultimate mode is an extreme version of the game where the player is not allowed to use the bank.</div>
-        }
-    }
-</div>
--->
+
+
 
 
 
@@ -269,18 +275,7 @@
     }
     public void ResetGame()
     {
-        Player.Instance.ResetStats();
-        Player.Instance.Inventory.Clear();
-        Player.Instance.GetEquippedItems().Clear();
-        Bank.Instance.Inventory.Clear();
-        foreach (Area a in AreaManager.Instance.Areas)
-        {
-            a.IsUnlocked = false;
-        }
-        foreach (Region r in AreaManager.Instance.Regions)
-        {
-            r.IsUnlocked = false;
-        }
+        GameState.ResetGame();
         SetGameMode();
         if (GameState.CurrentGameMode == GameState.GameType.Ultimate)
         {

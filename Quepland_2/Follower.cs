@@ -44,6 +44,10 @@ public class Follower
 
     public void BankItems()
     {
+        if(GameState.CurrentGameMode == GameState.GameType.Ultimate)
+        {
+            return;
+        }
         Bank.Instance.Inventory.SkipIndexing = true;
         foreach(KeyValuePair<GameItem, int> itemPair in Inventory.GetItems())
         {
@@ -56,6 +60,30 @@ public class Follower
         Inventory.Clear();
         IsBanking = false;
 
+    }
+    public void TakeItems()
+    {
+        List<KeyValuePair<GameItem, int>> takenItems = new List<KeyValuePair<GameItem, int>>();
+        foreach (KeyValuePair<GameItem, int> itemPair in Inventory.GetItems())
+        {
+            if(Player.Instance.Inventory.AddMultipleOfItem(itemPair.Key.Copy(), itemPair.Value, out int taken))
+            {
+                takenItems.Add(new KeyValuePair<GameItem, int>(itemPair.Key, taken));
+                GainExperience(itemPair.Value);
+            }
+            else
+            {
+                break;
+            }
+        }
+        Console.WriteLine("Taken items:");
+        foreach (KeyValuePair<GameItem, int> itemPair in takenItems)
+        {
+            Console.WriteLine(itemPair.Value + " "  + itemPair.Key.Name);
+            Inventory.RemoveItems(itemPair.Key, itemPair.Value);
+        }
+            
+        IsBanking = false;
     }
 
     public void GainExperience(long amount)

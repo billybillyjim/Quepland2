@@ -59,6 +59,30 @@ public static class SaveManager
             GameState.IsSaving = false;
         }
     }
+
+    public static async Task DeleteHCSave()
+    {
+        string mode = "Hardcore";
+        await RemoveItemAsync("Version:" + mode);
+        await RemoveItemAsync("Playtime:" + mode);
+        await RemoveItemAsync("LastSave:" + mode);
+        await RemoveItemAsync("Skills:" + mode);
+        await RemoveItemAsync("Inventory:" + mode);
+        await RemoveItemAsync("Bank:" + mode);
+        await RemoveItemAsync("BankTabs:" + mode);
+        await RemoveItemAsync("Areas:" + mode);
+        await RemoveItemAsync("Regions:" + mode);
+        await RemoveItemAsync("Dungeons:" + mode);
+        await RemoveItemAsync("Quests:" + mode);
+        await RemoveItemAsync("GameState:" + mode);
+        await RemoveItemAsync("Player:" + mode);
+        await RemoveItemAsync("Followers:" + mode);
+        await RemoveItemAsync("TanningInfo:" + mode);
+        await RemoveItemAsync("Dojos:" + mode);
+        await RemoveItemAsync("AFKAction:" + mode);
+        await RemoveItemAsync("Tomes:" + mode);
+        await RemoveItemAsync("KC:" + mode);
+    }
     public static async Task LoadSaveGame(string mode)
     {
        
@@ -525,6 +549,15 @@ public static class SaveManager
         {
             return false;
         }
+    }
+    public async static Task RemoveItemAsync(string key)
+    {
+        if (key == null || key.Length == 0)
+        {
+            throw new ArgumentNullException(nameof(key));
+        }
+        await jSRuntime.InvokeVoidAsync("localStorage.removeItem", key);
+        
     }
 }
 
