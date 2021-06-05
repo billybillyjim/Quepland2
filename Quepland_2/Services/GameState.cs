@@ -27,7 +27,7 @@ using System.Threading.Tasks;
     public event EventHandler StateChanged;
     public IJSRuntime JSRuntime;
 
-    public static string Version { get; set; } = "1.0.15";
+    public static string Version { get; set; } = "1.0.16";
     public static List<Update> Updates { get; set; } = new List<Update>();
     public static Pluralizer Pluralizer = new Pluralizer();
 
@@ -123,6 +123,7 @@ using System.Threading.Tasks;
     public bool SaveGame = false;
     public static bool IsSaving = false;
     private Stopwatch stopwatch = new Stopwatch();
+    public static HCDeathInfo HCDeathInfo;
 
     public void Start()
     {
@@ -576,7 +577,7 @@ using System.Threading.Tasks;
         Player.Instance.CurrentHP = Math.Min(Player.Instance.MaxHP, Player.Instance.CurrentHP + CurrentFood.FoodInfo.HealAmount);
         if (Player.Instance.CurrentHP <= 0)
         {
-            Player.Instance.Die();
+            Player.Instance.Die("Food Poisoning");
         }
         HealingTicks--;
         if (HealingTicks <= 0)

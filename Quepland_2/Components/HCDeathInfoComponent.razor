@@ -1,0 +1,73 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (GameState.HCDeathInfo != null)
+{
+<div>
+    <div>Whoops! Looks like you died. As a hardcore account your journey is now over. Better luck next time!</div>
+    <div>Cause of Death:@GameState.HCDeathInfo.CauseOfDeath</div>
+    <div>Total Playtime:@(GetPlaytime())</div>
+    <div>
+        Final Skills:
+        <br />
+        <table style="border:outset">
+            <tr>
+                <th>Skill</th>
+                <th style="text-align:center">Level</th>
+                <th style="text-align:right">Experience</th>
+            </tr>
+            @foreach (Skill s in GameState.HCDeathInfo.FinalLevels)
+            {
+                <tr style="border:outset">
+                    <td>
+                        @s.Name
+                    </td>
+                    <td style="min-width:100px;text-align:center">
+                        @s.Level
+                    </td>
+                    <td style="text-align:right">
+                        @s.Experience
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+   
+
+</div>
+}
+
+@code {
+
+    public string GetPlaytime()
+    {
+        TimeSpan time = TimeSpan.FromMilliseconds(GameState.HCDeathInfo.TotalPlaytime * GameState.GameSpeed);
+        if (time.TotalHours > 1)
+        {
+            return Math.Round(time.TotalHours, 2) + " hours.";
+        }
+        else if (time.TotalMinutes > 1)
+        {
+            return Math.Round(time.TotalMinutes, 2) + " minutes.";
+        }
+        else if (time.TotalSeconds > 1)
+        {
+            return time.TotalSeconds + " seconds.";
+        }
+        else
+        {
+            return time.TotalMilliseconds + " milliseconds!";
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

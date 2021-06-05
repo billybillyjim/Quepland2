@@ -353,6 +353,10 @@
     }
     private void BankItem()
     {
+        if (GameState.CurrentGameMode == GameState.GameType.Ultimate)
+        {
+            return;
+        }
         Bank.Instance.Deposit(Item);
         if(Player.Instance.Inventory.GetNumberOfItem(Item) == 0)
         {

@@ -90,11 +90,9 @@
             {
                 <div>Ultimate mode is an extreme version of the game where the player is not allowed to use the bank.</div>
             }
-        }
-        @if (Player.Instance.JustDied) 
-        { 
-            <div>"Whoops! Looks like you died. As a hardcore account your journey is now over. Better luck next time!"</div>
-        }
+        }           
+        <Quepland_2.Components.HCDeathInfoComponent></Quepland_2.Components.HCDeathInfoComponent>
+        
     </div>
 
     @if (GameState.Updates.Count > 0 && showAllUpdates)

@@ -211,7 +211,15 @@ public class BattleManager
 
             if (Player.Instance.CurrentHP <= 0)
             {
-                Player.Instance.Die();
+                if(CurrentOpponents.Count > 0)
+                {
+                    Player.Instance.Die("Killed by " + CurrentOpponents[0].Name);
+                }
+                else
+                {
+                    Player.Instance.Die();
+                }
+               
                 WonLastBattle = false;
             }
 

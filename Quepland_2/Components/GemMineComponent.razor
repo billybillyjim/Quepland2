@@ -241,7 +241,7 @@ else if (mineType == "Depths")
     {
         isMining = false;
         MessageManager.AddMessage("The walls of the mine collapse around you!", "red");
-        Player.Instance.Die();
+        Player.Instance.Die("Gem mine collapse");
         GameState.StopActions();
         mineType = "";
         GameState.UpdateState();

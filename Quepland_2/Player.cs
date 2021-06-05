@@ -386,11 +386,24 @@ public class Player
 
         }
     }
-    public void Die()
+    public void Die(string cause)
     {
-        if(GameState.CurrentGameMode == GameState.GameType.Hardcore)
+        if (GameState.CurrentGameMode == GameState.GameType.Hardcore)
         {
-            
+            GameState.HCDeathInfo = new HCDeathInfo()
+            {
+                CauseOfDeath = cause,
+                TotalPlaytime = GameState.CurrentTick
+            };
+            foreach (Skill s in Skills)
+            {
+                Skill copy = new Skill();
+                copy.Name = s.Name;
+                copy.Experience = s.Experience;
+                copy.Level = s.Level;
+                GameState.HCDeathInfo.FinalLevels.Add(copy);
+            }
+
             JustDied = true;
             SaveManager.DeleteHCSave();
             GameState.ResetGame();
@@ -421,6 +434,10 @@ public class Player
             BattleManager.Instance.EndBattle();
         }
 
+    }
+    public void Die()
+    {
+        Die("Unknown Reasons");
     }
     public bool FollowerGatherItem(GameItem item)
     {

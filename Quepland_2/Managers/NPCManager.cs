@@ -223,7 +223,7 @@ public class NPCManager
     public void DieAndGotoArea(string area)
     {
         MessageManager.AddMessage("The pirates throw you overboard and you drown.");
-        Player.Instance.Die();
+        Player.Instance.Die("Pirate-Inflicted Drowning");
         MessageManager.AddMessage("You wake up near the docks of Koya Hasa.");
         Area a = AreaManager.Instance.GetAreaByName(area);
         Land l = AreaManager.Instance.GetLandForArea(a);
