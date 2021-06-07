@@ -3,18 +3,11 @@
 
 @if (input != null && dropTable != null)
 {
-    @if (dropTable.DropTable.HasDrop(GameState.CurrentGatherItem))
-    {
-        <div style="position:relative">
-            <button class="btn btn-primary" onclick="@(new Action(() => ConvertItem(null)))">Stop</button>
-        </div>
-    }
-    else
-    {
+
         if (CanGatherAny())
         {
             <div style="position:relative">
-                <button class="btn btn-primary" onclick="@(new Action(() => ConvertItem(dropTable.DropTable.GetDrop())))">@gatherText</button>
+                <button class="btn btn-primary" onclick="@(new Action(() => ConvertItem()))">@gatherText</button>
             </div>
         }
         else
@@ -31,7 +24,7 @@
 
         }
 
-    }
+    
 }
 
 @code {
@@ -44,24 +37,27 @@
     private string beginText = "";
     private Random rand = new Random();
 
-    public void ConvertItem(Drop i)
+    public void ConvertItem()
     {
-        if (i == null)
-        {
-            Console.WriteLine("Item was null");
-            GameState.CurrentGatherItem = null;
-            GameState.UpdateState();
-            return;
-        }
         if (beginText != "")
         {
             MessageManager.AddMessage(beginText);
         }
         GameState.StopActions();
-        GameState.NewRequiredItem = input;
-        GameState.NewGatherItem = i.Item;
-        
-        GameState.TicksToNextAction = input.GatherSpeed;
+        Drop d = dropTable.DropTable.GetDrop();
+        if (Player.Instance.Inventory.RemoveItems(input, 1) == 1)
+        {
+            Player.Instance.Inventory.AddDrop(d);
+            if(d.Amount > 1)
+            {
+                MessageManager.AddMessage("You found " + d.Amount + " " + d.Item.GetPlural() + "!");
+            }
+            else
+            {
+                MessageManager.AddMessage("You found 1 " + d.ItemName + "!");
+            }
+
+        }
         GameState.UpdateState();
     }
 
@@ -90,7 +86,7 @@
         }
         else
         {
-
+            Console.WriteLine(ActionText);
             dropTable = ItemManager.Instance.GetMinigameDropTable(ActionText.Split(':')[1]);
             if (dropTable == null)
             {
