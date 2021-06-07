@@ -75,6 +75,54 @@
     ]
   },
   {
+    "outputItemName": "Red Wool Cape",
+    "outputAmount": 1,
+    "ingredients": [
+      {
+        "itemName": "White Wool Cape",
+        "amount": 1
+      },
+      {
+        "itemName": "Red Dye",
+        "amount": 1
+      }
+    ],
+    "recipeActionString": "You pour the dye onto the cape and it turns a bright red.",
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Blue Wool Cape",
+    "outputAmount": 1,
+    "ingredients": [
+      {
+        "itemName": "White Wool Cape",
+        "amount": 1
+      },
+      {
+        "itemName": "Blue Dye",
+        "amount": 1
+      }
+    ],
+    "recipeActionString": "You pour the dye onto the cape and it turns a bright blue.",
+    "maxOutputsPerAction": 1
+  },
+  {
+    "outputItemName": "Green Wool Cape",
+    "outputAmount": 1,
+    "ingredients": [
+      {
+        "itemName": "White Wool Cape",
+        "amount": 1
+      },
+      {
+        "itemName": "Green Dye",
+        "amount": 1
+      }
+    ],
+    "recipeActionString": "You pour the dye onto the cape and it turns a bright green.",
+    "maxOutputsPerAction": 1
+  },
+  {
     "outputItemName": "White Cotton Cape",
     "outputAmount": 1,
     "ingredients": [

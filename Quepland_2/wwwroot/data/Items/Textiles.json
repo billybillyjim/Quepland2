@@ -219,7 +219,8 @@
     "equipSlot": "Cape",
     "armorInfo": {
       "damage": 10
-    }
+    },
+    "secondaryColor": "#333366"
   },
   {
     "name": "Madder Root",

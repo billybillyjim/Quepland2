@@ -293,7 +293,8 @@
     "name": "Baobhan Hair",
     "description": "Hair from the head of a baobhan. It's quite valuable.",
     "value": 200,
-    "icon": "Hair"
+    "icon": "Hair",
+    "secondaryColor": "#333366"
   },
   {
     "name": "Baobhan Tooth",

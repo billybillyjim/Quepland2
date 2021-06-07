@@ -32,7 +32,10 @@
                 <div style=" margin-right: 85px; margin-top: 4px;">
                     @if (showSearch)
                     {
-                        <input style="width:150px;margin-left:40px;" type="text" @bind="searchString" @bind:event="onchange" />
+                        <input style="width:150px;margin-left:40px;" 
+                               type="text" 
+                               @bind="searchString"
+                               @bind:event="oninput"/>
                         <div style="margin-top:-30px;">
                             <button class="btn btn-primary" style="width:30px;height:30px;padding:0px;" @onclick="@(() => ClearSearch())">X</button>
                         </div>
@@ -180,7 +183,8 @@ else
     private bool addingTags;
     int itemsPerRow = 10;
     int itemBoxSize = 54;
-    private string searchString = "";
+    private string searchString { get; set; } = "";
+    private string prevSearch = "";
     private string newTabString = "";
     private int take = 100;
     private int skip = 0;
@@ -189,6 +193,13 @@ else
     float windowHeight = 0;
 
     private List<KeyValuePair<GameItem, int>> BankItems = new List<KeyValuePair<GameItem, int>>();
+
+    public void UpdateSearchString(EventArgs e)
+    {
+
+        Bank.Instance.HasChanged = true;
+        GameState.UpdateState();
+    }
 
     public async Task UpdateVisibleItems()
     {
@@ -231,7 +242,7 @@ else
                 GetAllItemsForTab(searchString, ref BankItems);
             }
         }
-        
+
         Bank.Instance.HasChanged = false;
         return BankItems;
     }
@@ -513,7 +524,11 @@ else
         //Subtract the left and right padding; 3.5 rem = 56 pixels.
         itemsPerRow = (GameState.MinWindowWidth - 56) / 54;
         take = itemsPerRow * 10;
-
+        if(searchString != prevSearch)
+        {
+            Bank.Instance.HasChanged = true;
+            prevSearch = searchString;
+        }
         StateHasChanged();
     }
 }
