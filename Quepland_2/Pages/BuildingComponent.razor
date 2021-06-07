@@ -50,6 +50,10 @@
         }
 
     }
+    @if(thisBuilding.ItemExchange != "None")
+    {
+        <Quepland_2.Components.ExchangeItemForDropComponent ActionText="@thisBuilding.ItemExchange"></Quepland_2.Components.ExchangeItemForDropComponent>
+    }
     @if (thisBuilding.AlchemicalHall != "None")
     {
         <AlchemicalHallComponent QueplarMultiplier="@thisBuilding.QueplarMultiplier" HallName="@thisBuilding.AlchemicalHall"></AlchemicalHallComponent>

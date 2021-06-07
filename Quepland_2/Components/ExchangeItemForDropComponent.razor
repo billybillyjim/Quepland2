@@ -1,0 +1,147 @@
+﻿@inject GameState GameState
+@implements IDisposable
+
+@if (input != null && dropTable != null)
+{
+    @if (dropTable.DropTable.HasDrop(GameState.CurrentGatherItem))
+    {
+        <div style="position:relative">
+            <button class="btn btn-primary" onclick="@(new Action(() => ConvertItem(null)))">Stop</button>
+        </div>
+    }
+    else
+    {
+        if (CanGatherAny())
+        {
+            <div style="position:relative">
+                <button class="btn btn-primary" onclick="@(new Action(() => ConvertItem(dropTable.DropTable.GetDrop())))">@gatherText</button>
+            </div>
+        }
+        else
+        {
+            <div style="position:relative">
+                <button class="btn btn-primary" style="position:relative" disabled>
+                    @gatherText
+                    <div style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;"
+                         onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, GetLowestReqTooltip())))"
+                         onmouseout="@(new Action(() => GameState.HideTooltip()))"></div>
+                </button>
+
+            </div>
+
+        }
+
+    }
+}
+
+@code {
+    [Parameter]
+    public string ActionText { get; set; }
+    private MinigameDropTable dropTable;
+    private GameItem input;
+    private string gatherText = "";
+    private string tooltip = "";
+    private string beginText = "";
+    private Random rand = new Random();
+
+    public void ConvertItem(Drop i)
+    {
+        if (i == null)
+        {
+            Console.WriteLine("Item was null");
+            GameState.CurrentGatherItem = null;
+            GameState.UpdateState();
+            return;
+        }
+        if (beginText != "")
+        {
+            MessageManager.AddMessage(beginText);
+        }
+        GameState.StopActions();
+        GameState.NewRequiredItem = input;
+        GameState.NewGatherItem = i.Item;
+        
+        GameState.TicksToNextAction = input.GatherSpeed;
+        GameState.UpdateState();
+    }
+
+    private bool CanGatherAny()
+    {
+        return Player.Instance.Inventory.HasItem(input);
+    }
+    protected override void OnInitialized()
+    {
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    protected override void OnParametersSet()
+    {
+        if (ActionText == null || ActionText.Contains(':') == false)
+        {
+            Console.WriteLine("Action Text was null or contained no colon.");
+            if (ActionText == null)
+            {
+                Console.WriteLine("ActionText null:" + (ActionText == null));
+            }
+            else
+            {
+                Console.WriteLine("ActionText:" + ActionText);
+            }
+
+        }
+        else
+        {
+
+            dropTable = ItemManager.Instance.GetMinigameDropTable(ActionText.Split(':')[1]);
+            if (dropTable == null)
+            {
+                Console.WriteLine("Drop Table not found:" + ActionText);
+            }
+
+            gatherText = ActionText.Split(':')[0];
+            if (ActionText.Split(':').Length > 2)
+            {
+                GameItem req = ItemManager.Instance.GetItemByName(ActionText.Split(':')[2]);
+                if (req != null)
+                {
+                    input = req;
+                }
+                else
+                {
+                    Console.WriteLine("Item not found:" + ActionText);
+                }
+                if (ActionText.Split(':').Length > 3)
+                {
+                    beginText = ActionText.Split(':')[3];
+                }
+                else
+                {
+                    beginText = "";
+                }
+            }
+        }
+
+        GameState.UpdateState();
+    }
+    public string GetLowestReqTooltip()
+    {
+        string req = "";
+        if(input != null)
+        {
+            if(req == "")
+            {
+                req += "Requires:" + input;
+            }
+            else
+            {
+                req += "\nRequires:" + input;
+            }
+
+        }
+        return req;
+    }
+    public void Dispose()
+    {
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

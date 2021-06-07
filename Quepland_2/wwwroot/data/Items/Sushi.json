@@ -413,6 +413,22 @@
     }
   },
   {
+    "name": "Bowfish Roll",
+    "description": "Just eating it will make you a better archer.",
+    "gatherString": "You make a bowfish roll.",
+    "value": 1300,
+    "gatherSpeed": 15,
+    "secondaryColor": "#ED6D9C",
+    "icon": "Sushi",
+    "foodInfo": {
+      "healDuration": 300,
+      "healAmount": 28,
+      "healSpeed": 5,
+      "buffedSkill": "Archery",
+      "buffAmount": 7
+    }
+  },
+  {
     "name": "Flounder Roll",
     "description": "A dumb looking fish converted into a tasty snack.",
     "gatherString": "You make a flounder roll.",

@@ -14,6 +14,10 @@ public class Building
     public bool HasSmithy { get; set; }
     public bool IsGuild { get; set; }
     public string AlchemicalHall { get; set; } = "None";
+    /// <summary>
+    /// Shares name with MinigameDropTable it draws from.
+    /// </summary>
+    public string ItemExchange { get; set; } = "None";
     public double QueplarMultiplier { get; set; } = 1;
 	public List<string> NPCs { get; set; } = new List<string>();
 	public List<Shop> Shops { get; set; } = new List<Shop>();

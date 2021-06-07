@@ -2519,5 +2519,186 @@
         "procOdds": 0.1
       }
     ]
+  },
+  {
+    "name": "Graingilt Guard",
+    "hp": 13500,
+    "attackSpeed": 7,
+    "armor": 15,
+    "damage": 80,
+    "weaknesses": "Hammermanship",
+    "strengths": "Knifesmanship",
+    "statusEffectData": [
+      {
+        "name": "Stun",
+        "power": 5,
+        "speed": 1,
+        "duration": 10,
+        "message": "The guard swings with great force! You've been stunned!",
+        "procOdds": 0.1
+      }
+    ],
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Steel Sword",
+          "weight": 5,
+          "amount": 1
+        },
+        {
+          "itemName": "Black Bear Hat",
+          "weight": 5,
+          "amount": 1
+        },
+        {
+          "itemName": "Black Bear Shirt",
+          "weight": 5,
+          "amount": 5
+        },
+        {
+          "itemName": "Black Bear Boots",
+          "weight": 5,
+          "amount": 1
+        },
+        {
+          "itemName": "Black Bear Pants",
+          "weight": 5,
+          "amount": 1
+        },
+        {
+          "itemName": "Moose Gloves",
+          "weight": 15,
+          "amount": 1
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 300
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 500
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 100
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 3000
+        },
+        {
+          "itemName": "Swordfish Roll",
+          "weight": 15,
+          "amount": 1
+        },
+        {
+          "itemName": "Graingilt Key",
+          "weight": 5,
+          "amount": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "Graingilt Archer",
+    "hp": 10500,
+    "attackSpeed": 7,
+    "armor": 15,
+    "damage": 100,
+    "weaknesses": "Swordsmanship",
+    "strengths": "Archery",
+    "statusEffectData": [
+      {
+        "name": "Poison",
+        "power": 20,
+        "speed": 6,
+        "duration": 30,
+        "message": "The guard's arrow was laced with something! You've been poisoned!",
+        "procOdds": 0.1
+      }
+    ],
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Snakewood Bow",
+          "weight": 5,
+          "amount": 1
+        },
+        {
+          "itemName": "Ironwood Arrow",
+          "weight": 5,
+          "amount": 7
+        },
+        {
+          "itemName": "Ironwood Arrow",
+          "weight": 5,
+          "amount": 13
+        },
+        {
+          "itemName": "Heavy Ironwood Arrow",
+          "weight": 5,
+          "amount": 5
+        },
+        {
+          "itemName": "Black Bear Hat",
+          "weight": 5,
+          "amount": 1
+        },
+        {
+          "itemName": "Black Bear Shirt",
+          "weight": 5,
+          "amount": 5
+        },
+        {
+          "itemName": "Black Bear Boots",
+          "weight": 5,
+          "amount": 1
+        },
+        {
+          "itemName": "Black Bear Pants",
+          "weight": 5,
+          "amount": 1
+        },
+        {
+          "itemName": "Moose Gloves",
+          "weight": 15,
+          "amount": 1
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 300
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 500
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 100
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 3000
+        },
+        {
+          "itemName": "Bowfish Roll",
+          "weight": 15,
+          "amount": 1
+        },
+        {
+          "itemName": "Graingilt Key",
+          "weight": 5,
+          "amount": 1
+        }
+      ]
+    }
   }
 ]

@@ -1,0 +1,36 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Giltgrain Guard",
+  "id": 86,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Good day, traveller. If you have no business here, be on your way. The king would not be pleased to see you.",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "How do you know I'm not from here?",
+      "responseText": "You're kidding, right? Take a look at yourself. You don't exactly blend in.",
+      "depth": 1,
+      "newDepthOnTalk": 2
+    },
+    {
+      "buttonText": "Why?",
+      "responseText": "As an outsider I suppose you wouldn't know. The answer is simple. One glance at the roof of this glorious structure should tell you all you need to know about the prosperity of Crossmare and it will then be no surprise to you that many out there seek to have what we do. Our docks have been closed for years so I am unsure of how you smuggled yourself to our island but you would do well to leave before you are found out.",
+      "depth": 1,
+      "newDepthOnTalk": 3
+    },
+    {
+      "buttonText": "Why would the king care I am here?",
+      "responseText": "As an outsider I suppose you wouldn't know. The answer is simple. One glance at the roof of this glorious structure should tell you all you need to know about the prosperity of Crossmare and it will then be no surprise to you that many out there seek to have what we do. Our docks have been closed for years so I am unsure of how you smuggled yourself to our island but you would do well to leave before you are found out.",
+      "depth": 2,
+      "newDepthOnTalk": 3
+    },
+    {
+      "buttonText": "How come no one else seems to care I'm here?",
+      "responseText": "Do you expect random citizens to be concerned with the legality of your presence here..? You ask many questions and I really shouldn't be talking to you at all. Good day.",
+      "depth": 3,
+      "newDepthOnTalk": 4
+    }
+  ]
+}

@@ -58,5 +58,25 @@ public class DropTable
         }
         return null;
     }
-
+    public bool HasDrop(GameItem i)
+    {
+        if(i == null)
+        {
+            Console.WriteLine("Item was null.");
+            return false;
+        }
+        foreach(Drop d in Drops)
+        {
+            if(d == null || d.Item == null)
+            {
+                Console.WriteLine("Drop was null:"+i.Name);
+                return false;
+            }
+            if(d.Item.UniqueID == i.UniqueID)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

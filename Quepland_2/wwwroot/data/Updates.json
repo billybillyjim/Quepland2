@@ -18,7 +18,8 @@
       "Reworked how the bank works. Let me know if I accidentally broke everything, but it should run quite a bit faster.",
       "Fixed a UI misalignment with worm hunting.",
       "Added Hardcore and Ultimate game modes. These work on separate save files and have special rules. Hardcores will erase the save file when you die, Ultimates aren't allowed to access a bank. Followers also work differently for Ultimate accounts.",
-      "Follower inventories are now saved."
+      "Follower inventories are now saved.",
+      "The bank now updates searches per key press."
     ]
   },
   {

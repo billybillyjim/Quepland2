@@ -70,6 +70,13 @@
     "icon": "Key"
   },
   {
+    "name": "Graingilt Treasure Key",
+    "description": "A luxurious key to some of the Graingilt treasure halls.",
+    "value": 600,
+    "secondaryColor": "#AAAAAA",
+    "icon": "Key"
+  },
+  {
     "name": "Yoga Mat",
     "description": "A soft mat to do yoga on. You wouldn't want to have to just use the ground, would you?",
     "value": 1000,
@@ -375,6 +382,13 @@
     "description": "A bag full of assorted gems.",
     "value": 500,
     "icon": "Bag"
+  },
+  {
+    "name": "Giltgrain Treasure",
+    "description": "A bag full of treasure.",
+    "value": 1500,
+    "icon": "Bag",
+    "secondaryColor": "#abcdef"
   },
   {
     "name": "Empty Bottle",

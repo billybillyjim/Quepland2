@@ -748,5 +748,77 @@
         }
       ]
     }
+  },
+  {
+    "areaName": "Graingilt Castle",
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Bag of Assorted Gems",
+          "weight": 2,
+          "amount": 1
+        },
+        {
+          "itemName": "Gold Bar",
+          "weight": 15,
+          "amount": 1
+        },
+        {
+          "itemName": "Platinum Bar",
+          "weight": 15,
+          "amount": 1
+        },
+        {
+          "itemName": "Gold Bar",
+          "weight": 15,
+          "amount": 3
+        },
+        {
+          "itemName": "Platinum Bar",
+          "weight": 15,
+          "amount": 3
+        },
+        {
+          "itemName": "Iseroite Bar",
+          "weight": 20,
+          "amount": 1
+        },
+        {
+          "itemName": "Ruby Cabochon",
+          "weight": 15,
+          "amount": 1
+        },
+        {
+          "itemName": "Diamond Cabochon",
+          "weight": 20,
+          "amount": 1
+        },
+        {
+          "itemName": "Emerald Cabochon",
+          "weight": 15,
+          "amount": 1
+        },
+        {
+          "itemName": "Sapphire Cabochon",
+          "weight": 10,
+          "amount": 1
+        },
+        {
+          "itemName": "Glittering Plume",
+          "weight": 20,
+          "amount": 2
+        },
+        {
+          "itemName": "Silk Fabric",
+          "weight": 5,
+          "amount": 3
+        },
+        {
+          "itemName": "Ancient Pickaxe",
+          "weight": 1,
+          "amount": 1
+        }
+      ]
+    }
   }
 ]
