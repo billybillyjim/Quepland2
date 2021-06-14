@@ -1,0 +1,48 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Inomi",
+  "id": 88,
+  "dialogs": [
+    {
+      "buttonText": "Hello",
+      "responseText": "Hello, adventurer. We do not often see visitors on our island, let alone in this small community. What is your purpose here?",
+      "newDepthOnTalk": 1
+    },
+    {
+      "buttonText": "I'm on an adventure",
+      "responseText": "Hmm... Yes, that much is apparent. I can smell the blood of my kin on you. How many did you slaughter to reach this place? No matter, I have no quarrel with you. We are a peaceful hamlet. If you wish to bring more death and destruction, please kindly go elsewhere.",
+      "newDepthOnTalk": 2,
+      "depth": 1
+    },
+    {
+      "buttonText": "I've killed...",
+      "parameter": "Root Dewller",
+      "responseText": "TellKC",
+      "newDepthOnTalk": 3,
+      "depth": 2
+    },
+    {
+      "buttonText": "No",
+      "responseText": "I will not force you, but you will find very little in terms of adventure in this place. Those who come here seek peace and quiet, and we have managed to maintain both for much longer than you have been around.",
+      "newDepthOnTalk": 0,
+      "depth": 1
+    },
+    {
+      "buttonText": "What is this place?",
+      "responseText": "This is a sanctuary for the weak. A paradise for those who wish for freedom from the troubles and toil of the outside world. My creator gave me the ability to give these things to others, as well as the knowledge to know when and how to use these abilities.",
+      "newDepthOnTalk": 3,
+      "depth": 2
+    },
+    {
+      "buttonText": "Who created you?",
+      "responseText": "I do not speak his name, though you have surely encountered it on your journey here. He was a powerful magician, originally an outsider to those who do magic. They gave him a chance, he took advantage of it. I and a few others were some of his earliest creations. He quickly realized he had created something even beyond himself. You encountered his final creations in the roots of the great tree. ",
+      "depth": 3
+    },
+    {
+      "buttonText": "I don't know",
+      "responseText": "That is quite a light-hearted response for someone with so much blood on their hands. How many did you slaughter to reach this place? No matter, I have no quarrel with you. We are a peaceful hamlet. If you wish to bring more death and destruction, please kindly go elsewhere.",
+      "newDepthOnTalk": 2,
+      "depth": 1
+    }
+  ]
+}

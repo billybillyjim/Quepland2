@@ -54,7 +54,27 @@
     "id": 181,
     "image": "Gate",
     "description": "The trail leads up to a small community. The houses here look nothing like the strange constructions at the bottom of the hill. A particularly ornate building lies along the entrance, and a rusty sign rests on the gate that towers above the entrance. It reads, \"Subfenton Stows:The last place you'll live!\"",
-    "areaURL": "SubfentonStows"
+    "areaURL": "SubfentonStows",
+    "buildings": [
+      {
+        "name": "The Faddium",
+        "buttonText": "Enter the faddium",
+        "url": "TheFaddium",
+        "description": "There are no windows into the building, but it is lit by dozens of bright candles along the walls. The main chamber leads to an ornate throne, upon which a hooded figure sits.",
+        "npcs": [
+          "Inomi"
+        ]
+      },
+      {
+        "name": "Subfenton Square",
+        "buttonText": "Enter the village square",
+        "url": "SubfentonSquare",
+        "description": "All the houses of the community surround a small open area with a few trees. Roots have overgrown the fountain centerpiece which is no longer running. The tallest tree of the plaza shoots out of the main fountainhead.",
+        "npcs": [
+          "Inomi"
+        ]
+      }
+    ]
 
   },
   {

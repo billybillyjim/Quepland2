@@ -26,19 +26,19 @@
       "buttonText": "Why don't you leave?",
       "responseText": "Good question. I don't know the answer to it, either. There's something very strange going on in that tower, and whatever it is, I feel like it's keeping me here...",
       "depth": 2,
-      "newDepthOnTalk": 2
+      "newDepthOnTalk": 3
     },
     {
       "buttonText": "How did everyone die?",
-      "responseText": "Well... That's complicated. And maybe not something I'd really like to get into. It wasn't all just one thing, either. I fled for my life when the warning bell rang. I didn't see what came out of the forest but I could hear it. Such great and terrible sounds...",
-      "depth": 2,
-      "newDepthOnTalk": 2
+      "responseText": "Well... That's complicated. And maybe not something I'd really like to get into. It wasn't all just one thing, either. I fled for my life when the warning bell rang. I didn't see what came out of the forest but I could hear it. ",
+      "depth": 3,
+      "newDepthOnTalk": 3
     },
     {
       "buttonText": "What's with the sky?",
-      "responseText": "A few days after I left the sky changed suddenly. A few days after that, I started feeling the draw to return to this place, and here I am now. I can't say how long I've been staying here, but as far as I know I'm the only one left.",
-      "depth": 2,
-      "newDepthOnTalk": 2
+      "responseText": "A few days after I left the sky changed suddenly. A few days after that, I started feeling... something. I felt like I had to return to this place, and here I am now. I can't say how long I've been here, but as far as I know I'm the only one left.",
+      "depth": 3,
+      "newDepthOnTalk": 3
     }
   ]
 }

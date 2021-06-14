@@ -105,6 +105,10 @@ public class NPCManager
                 {
                     CustomDialogFunctions.TryAdd("IdentifyGems" + d.Parameter, new Action(() => IdentifyGems()));
                 }
+                else if (d.ResponseWithParameter == "TellKC" + d.Parameter)
+                {
+                    CustomDialogFunctions.TryAdd("TellKC" + d.Parameter, new Action(() => TellRootDwellerKC()));
+                }
             }
         }
         
@@ -126,6 +130,27 @@ public class NPCManager
     {
         GameState.BGColor = color;
         MessageManager.AddMessage("The world changes colors as the man disappears in a puff of smoke.");
+    }
+    public void TellRootDwellerKC()
+    {
+        int totalKC = 0;
+        totalKC  += BattleManager.Instance.GetMonsterByName("Root Dweller").KillCount;
+        totalKC += BattleManager.Instance.GetMonsterByName("Stealthy Root Dweller").KillCount;
+        totalKC += BattleManager.Instance.GetMonsterByName("Strong Root Dweller").KillCount;
+        totalKC += BattleManager.Instance.GetMonsterByName("Ravenous Root Dweller").KillCount;
+
+        if(totalKC == 0)
+        {
+            MessageManager.AddMessage("You tell Inomi that you have killed no root dwellers. He responds, \"Just because you have not been keeping track does not mean you have done no wrong. But I also understand. Most of those who still dwell in the roots of the great tree have no mind of their own. The magician who created us made sure of that. I am perhaps the only sentient one left.\"");
+        }
+        else if (totalKC != 1)
+        {
+            MessageManager.AddMessage("You tell Inomi that you have killed " + totalKC + " root dwellers. He responds, \"It is a sick thing to keep count of the lives you have ended. But I also understand. Most of those who still dwell in the roots of the great tree have no mind of their own. The magician who created us made sure of that. I am perhaps the only sentient one left.\"");
+        }
+        else
+        {
+            MessageManager.AddMessage("You tell Inomi that you have killed only one root dweller. He responds, \"Just because you have not been keeping track does not mean you have done no wrong. But I also understand. Most of those who still dwell in the roots of the great tree have no mind of their own. The magician who created us made sure of that. I am perhaps the only sentient one left.\"");
+        }
     }
     public void GetPlaytime()
     {
