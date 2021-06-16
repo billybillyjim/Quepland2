@@ -100,7 +100,10 @@
             "name": "Sun's Harbor Supplies",
             "itemNames": [
               "Leatherworking Toolkit",
-              "Iron Axe"
+              "Iron Axe",
+              "Shears",
+              "Needle",
+              "Spindle"
             ]
 
           }

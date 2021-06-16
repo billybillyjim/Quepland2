@@ -30,7 +30,7 @@
     "image": "Market",
     "description": "Manihoj is the largest marketplace under the sea, if you believe the signage. There are many shops here, mostly consisting of bulk goods. Most places seem to accept gold pieces, though a few only trade via Sashcom Scales. A station in the corner appears to be open for anyone skilled at lapidary.",
     "areaURL": "ManihojMarket",
-    "actions": [ "Gem Cutting" ], 
+    "actions": [ "Gem Cutting" ],
     "buildings": [
       {
         "name": "Sulmenkan Local Goods",
@@ -70,6 +70,28 @@
               "Wild Boar Leather",
               "Black Bear Leather",
               "Moose Leather"
+            ],
+            "costMultiplier": 5,
+            "currencyName": "Sashcom Scales"
+
+          }
+        ]
+      },
+      {
+        "name": "Fin's Fine Fabrics",
+        "buttonText": "Fabrics Stall",
+        "url": "FinsFineFabrics",
+        "description": "A small and smelly market stall sits in the corner of the plaza. There's a pile of every kind of dead animal, some tanned and some apparently still fresh.",
+        "shops": [
+          {
+            "name": "Fin's Fine Fabrics",
+            "limitBoughtItemsToSoldItems": true,
+            "itemNames": [
+              "Needle",
+              "Spindle",
+              "Wool Fabric",
+              "Cotton Fabric",
+              "Fabrician's Gauntlet"
             ],
             "costMultiplier": 5,
             "currencyName": "Sashcom Scales"

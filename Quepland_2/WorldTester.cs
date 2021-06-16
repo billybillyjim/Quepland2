@@ -237,7 +237,15 @@ public class WorldTester
         {
             foreach(Drop d in m.DropTable.Drops)
             {
-                TryAddItem(d.Item);
+                try
+                {
+                    TryAddItem(d.Item);
+                }
+                catch
+                {
+                    Console.WriteLine("No item with name:" + d.ItemName + " was found.");
+                }
+                
             }
         }
     }

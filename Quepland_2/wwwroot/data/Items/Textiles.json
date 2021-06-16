@@ -63,7 +63,7 @@
   {
     "name": "Wool Thread",
     "value": 90,
-    "description": "The hair of a sheep spun into thread.",
+    "description": "The hair of a sheep spun into thread. You'll need some kind of loom to turn it into fabric.",
     "icon": "Thread",
     "secondaryColor": "#ddccae",
     "gatherSpeed": 10
@@ -71,7 +71,7 @@
   {
     "name": "Silk Thread",
     "value": 200,
-    "description": "Fibres of a silkworm cocoon spun into thread.",
+    "description": "Fibres of a silkworm cocoon spun into thread. You'll need some kind of loom to turn it into fabric.",
     "icon": "Thread",
     "secondaryColor": "#dddddd",
     "gatherSpeed": 10
@@ -79,7 +79,7 @@
   {
     "name": "Cotton Thread",
     "value": 150,
-    "description": "A soft, fluffy plant fiber spun into thread.",
+    "description": "A soft, fluffy plant fiber spun into thread. You'll need some kind of loom to turn it into fabric.",
     "icon": "Thread",
     "secondaryColor": "#ffffff",
     "gatherSpeed": 10
@@ -87,7 +87,7 @@
   {
     "name": "Baobhan Thread",
     "value": 350,
-    "description": "Hair from a baobhan spun into thread.",
+    "description": "Hair from a baobhan spun into thread. You'll need some kind of loom to turn it into fabric.",
     "icon": "Thread",
     "gatherSpeed": 10
   },
@@ -266,5 +266,18 @@
     "secondaryColor": "#3b7a0b",
     "gatherString": "You make some green dye.",
     "gatherSpeed": 15
+  },
+  {
+    "name": "Fabrician's Gauntlet",
+    "value": 5000,
+    "description": "By making it harder to work with textiles, you can learn more about the skill, faster!",
+    "secondaryColor": "#eacb68",
+    "icon": "Gauntlet",
+    "equipSlot": "Hands",
+    "armorInfo": {
+      "armorBonus": 2
+    },
+    "experienceBonusSkill": "Textile Arts",
+    "experienceGainBonus": 0.1
   }
 ]
