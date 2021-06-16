@@ -19,7 +19,9 @@
       "Fixed a UI misalignment with worm hunting.",
       "Added Hardcore and Ultimate game modes. These work on separate save files and have special rules. Hardcores will erase the save file when you die, Ultimates aren't allowed to access a bank. Followers also work differently for Ultimate accounts.",
       "Follower inventories are now saved.",
-      "The bank now updates searches per key press."
+      "The bank now updates searches per key press.",
+      "Fixed a bug that made converting items slower for the first item.",
+      "Tomes now scroll to allow more items to be added to them, just like real books do."
     ]
   },
   {

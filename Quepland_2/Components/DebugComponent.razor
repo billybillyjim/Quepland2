@@ -199,17 +199,13 @@
     }
     public void Get10Items()
     {
-        for(int i = 0; i < 10; i++)
-        {
-            GetItem();
-        }
+        GameItem i = ItemManager.Instance.GetItemByName(itemName);
+        Player.Instance.Inventory.AddMultipleOfItem(i, 10);
     }
     public void Get100Items()
     {
-        for (int i = 0; i < 100; i++)
-        {
-            GetItem();
-        }
+        GameItem i = ItemManager.Instance.GetItemByName(itemName);
+        Player.Instance.Inventory.AddMultipleOfItem(i, 100);
     }
     public void GetArtisanPoints()
     {

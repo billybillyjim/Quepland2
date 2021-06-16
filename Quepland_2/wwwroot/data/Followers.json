@@ -115,5 +115,14 @@
     "autoCollectLevel": 100,
     "inventorySize": 0,
     "autoCollectSpeed": 20
+  },
+  {
+    "name": "Testo",
+    "description": "Testo is just a test.",
+    "autoCollectMessage": "Testo dashes off with a load of $.",
+    "autoCollectSkill": "Woodworking",
+    "autoCollectLevel": 115,
+    "inventorySize": 25,
+    "autoCollectSpeed": 50
   }
 ]

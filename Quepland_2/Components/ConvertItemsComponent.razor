@@ -60,7 +60,7 @@
         GameState.StopActions();
         GameState.NewRequiredItem = input;
         GameState.NewGatherItem = i;
-        GameState.TicksToNextAction = input.GatherSpeed;
+        GameState.TicksToNextAction = i.GatherSpeed;
         GameState.UpdateState();
     }
 

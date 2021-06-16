@@ -391,6 +391,21 @@
     "isStackable": true
   },
   {
+    "name": "Great Arrow Shaft Pack",
+    "description": "A pack of magical arrow shafts crafted from wood from the Great Tree. Snap at the base to split them apart.",
+    "gatherString": "You make $ arrow shafts out of the Great Tree wood.",
+    "value": 900,
+    "secondaryColor": "#9F6F4F",
+    "icon": "ArrowShaftPack",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 105
+      }
+    ],
+    "isStackable": true
+  },
+  {
     "name": "Headless Great Arrows",
     "description": "Magical arrow shafts from the Great Tree with feathers attached. Add some arrow heads to make arrows.",
     "gatherString": "You make $ headless Great arrows.",

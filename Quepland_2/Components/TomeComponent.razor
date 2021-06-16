@@ -4,8 +4,9 @@
 
 @if (tomeData != null)
 {
-<div style="position:fixed;width:@(GameState.MinWindowWidth)px;height:@(GameState.GameWindowHeight - 300)px;top:60px;left:300px;background-color:#262626;padding:10px;border:solid 5px dimgray">
-    <p style="width:80%">The Tome of @(tomeData.Category). You can add notes of the items you come across to quickly visit there later.</p>
+<div style="position:fixed;width:@(GameState.MinWindowWidth)px;height:@(GameState.GameWindowHeight - 300)px;top:60px;left:300px;
+background-color:#262626;padding:10px;border:solid 5px dimgray; overflow-y:scroll">
+    <p style="width:80%">A Tome of @(tomeData.Category). You can add notes of the items you come across to quickly visit there later.</p>
     @foreach (string i in tomeData.ItemNames)
     {
         <div>
@@ -68,7 +69,7 @@
         List<string> items = new List<string>();
         foreach(KeyValuePair<GameItem, int> pair in Player.Instance.Inventory.GetItems())
         {
-            if(pair.Key.Category == tomeData.Category && pair.Key.Name.Contains("Tome") == false && pair.Key.WeaponInfo == null)
+            if(pair.Key.Category == tomeData.Category && pair.Key.Name.Contains("Tome") == false && pair.Key.WeaponInfo == null && pair.Key.ArmorInfo == null)
             {
                 if (items.Contains(pair.Key.Name) == false && tomeData.ItemNames.Contains(pair.Key.Name) == false)
                 {

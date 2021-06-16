@@ -53,7 +53,7 @@
     "name": "Subfenton Stows",
     "id": 181,
     "image": "Gate",
-    "description": "The trail leads up to a small community. The houses here look nothing like the strange constructions at the bottom of the hill. A particularly ornate building lies along the entrance, and a rusty sign rests on the gate that towers above the entrance. It reads, \"Subfenton Stows:The last place you'll live!\"",
+    "description": "The trail leads up to a small community. The houses here look nothing like the strange constructions at the bottom of the hill. A particularly ornate building lies along the entrance, and a rusty sign rests on the gate that towers above the entrance. It reads, \"Subfenton Stows:The last place you'll live!\" All the houses of the community surround a small open area with a few trees. Roots have overgrown the fountain centerpiece which is no longer running. The tallest tree of the plaza shoots out of the main fountainhead. A strange machine sits in one corner of the plaza.",
     "areaURL": "SubfentonStows",
     "buildings": [
       {
@@ -64,16 +64,10 @@
         "npcs": [
           "Inomi"
         ]
-      },
-      {
-        "name": "Subfenton Square",
-        "buttonText": "Enter the village square",
-        "url": "SubfentonSquare",
-        "description": "All the houses of the community surround a small open area with a few trees. Roots have overgrown the fountain centerpiece which is no longer running. The tallest tree of the plaza shoots out of the main fountainhead.",
-        "npcs": [
-          "Inomi"
-        ]
       }
+    ],
+    "conversionActions": [
+      "Operate Machine:Great Arrow Shaft Pack:Great Tree Logs:You spin the crank and the machine begins to whir."
     ]
 
   },
@@ -81,8 +75,11 @@
     "name": "Ancient Docks",
     "id": 182,
     "image": "Docks",
-    "description": "The path leads down through the thick forest to a small set of docks made from stone. The water appears to lead out to the sea on one end. It looks like at least one sailor is still using these ancient docks. A number of green plants with yellow flowers grow along where the docks meet the woods. The path continues along to the north, where the roof of a castle can be seen glowing in the distance.",
+    "description": "The path leads down through the thick forest to a small set of docks made from stone. The water appears to lead out to the sea on one end. It looks like at least one sailor is still using these ancient docks. A number of green plants with yellow flowers grow along where the docks meet the woods. The path continues along to the north, where the roof of a castle can be seen glowing in the distance. Strange, rectangular stones line the bottom of the shallow, clear water.",
     "areaURL": "AncientDocks",
+    "npcs": [
+      "Calm Waters"
+    ],
     "unlockableAreas": [
       {
         "areaURL": "GraingiltCastle",
@@ -91,7 +88,8 @@
 
     ],
     "actions": [
-      "Pick Plants:Madder Root:You begin picking the plants."
+      "Pick Plants:Madder Root:You begin picking the plants.",
+      "Go Fishing:Swordfish,Carp,Scallop:You start fishing..."
     ]
   },
   {

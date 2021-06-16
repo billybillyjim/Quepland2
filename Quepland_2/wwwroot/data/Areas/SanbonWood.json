@@ -53,7 +53,7 @@
     "name": "Sanbon Clearing",
     "id": 173,
     "image": "Field",
-    "description": "The trees give way to a small plain here. You can still see the Great Tree in the distance. The field is full of flowers and there are a number of spots to collect honey from the bees that pollinate them. To the east you can see the ocean coast fading into the skyline. There's a rugged path that seems to lead down toward the shore.",
+    "description": "The trees give way to a small plain here. You can still see the Great Tree in the distance. The field is full of flowers and there are a number of spots to collect honey from the bees that pollinate them. To the east you can see the ocean coast fading into the skyline. There's a rugged path that seems to lead down toward the shore. It appears a giant stone has been placed in the way. You'll need to find a way around.",
     "areaURL": "SanbonClearing",
     "actions": [
       "Gather Honey:Honey"
@@ -61,7 +61,36 @@
     "unlockableAreas": [
       {
         "areaURL": "Chelonia",
-        "buttonText": "Head downhill"
+        "buttonText": "Jump the stone",
+        "requirements": [
+          {
+            "skill": "Deftness",
+            "skillLevel": 95
+          }
+        ]
+      },
+      {
+        "areaURL": "Chelonia",
+        "buttonText": "Lift the stone",
+        "requirements": [
+          {
+            "skill": "Strength",
+            "skillLevel": 115
+          }
+        ]
+      },
+      {
+        "areaURL": "Chelonia",
+        "buttonText": "Smash the stone",
+        "requirements": [
+          {
+            "skill": "Mining",
+            "skillLevel": 90
+          },          
+          {
+            "Action": "Mining"
+          }       
+        ]
       }
 
     ]

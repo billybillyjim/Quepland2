@@ -501,5 +501,12 @@
         "action": "Mining"
       }
     ]
+  },
+  {
+    "name": "Tome of Stone",
+    "description": "A book containing knowledge of ores.",
+    "value": 50,
+    "icon": "Book",
+    "isTome": true
   }
 ]

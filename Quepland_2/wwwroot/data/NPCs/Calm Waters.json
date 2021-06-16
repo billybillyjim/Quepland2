@@ -1,0 +1,13 @@
+{
+  "$schema": "npc-schema.json#",
+  "name": "Calm Waters",
+  "id": 89,
+  "dialogs": [
+    {
+      "buttonText": "Dive and grab a stone",
+      "responseText": "You dive down and retrieve a stone. It was actually a book! A bit soggy, but intact.",
+      "itemOnTalk": "Tome of Stone",
+      "newDepthOnTalk": 1
+    }
+  ]
+}
