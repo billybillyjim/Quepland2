@@ -74,5 +74,55 @@
         }
       ]
     }
+  },
+  {
+    "name": "Stormling",
+    "hp": 8900,
+    "weaknesses": "Hammermanship",
+    "strengths": "Swordsmanship",
+    "attackSpeed": 25,
+    "armor": 55,
+    "damage": 350,
+    "dropTable": {
+      "drops": [
+        {
+          "itemName": "Bone Shard",
+          "weight": 3
+        },
+        {
+          "itemName": "Black Wool Cape",
+          "weight": 3
+        },
+        {
+          "itemName": "Storm's Eye",
+          "weight": 1
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 1000
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 2000
+        },
+        {
+          "itemName": "Coins",
+          "weight": 30,
+          "amount": 3000
+        },
+        {
+          "itemName": "Coins",
+          "weight": 5,
+          "amount": 5000
+        },
+        {
+          "itemName": "Coins",
+          "weight": 1,
+          "amount": 8000
+        }
+      ]
+    }
   }
 ]

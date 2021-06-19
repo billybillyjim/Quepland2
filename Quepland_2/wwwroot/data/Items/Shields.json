@@ -88,6 +88,39 @@
     }
   },
   {
+    "name": "Stormwood Shield",
+    "value": 55,
+    "description": "A solid wooden shield.",
+    "icon": "WoodShield",
+    "secondaryColor": "#72b584",
+    "equipSlot": "L Hand",
+    "armorInfo": {
+      "armorBonus": 10,
+      "damage": 10
+    }
+  },
+  {
+    "name": "Stormsight Shield",
+    "value": 550,
+    "description": "A solid wooden shield with a strange eye in the front.",
+    "icon": "WoodShield",
+    "secondaryColor": "#72b584",
+    "equipSlot": "L Hand",
+    "armorInfo": {
+      "armorBonus": 10,
+      "damage": 20,
+      "statusEffectData": [
+        {
+          "name": "Freeze",
+          "speed": 2,
+          "duration": 10,
+          "message": "The shield emits a light and freezes your opponent!",
+          "procOdds": 0.08
+        }
+      ]
+    }
+  },
+  {
     "name": "Snakewood Shield",
     "value": 95,
     "description": "A twisted but strong wooden shield.",

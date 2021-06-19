@@ -172,6 +172,25 @@
     ]
   },
   {
+    "name": "Stormwood Logs",
+    "description": "There is something strange about these logs...",
+    "gatherString": "You chop some stormwood logs.",
+    "gatherSpeed": 35,
+    "value": 10,
+    "secondaryColor": "#72b584",
+    "experienceGained": "Woodcutting:165",
+    "icon": "Log",
+    "requirements": [
+      {
+        "skill": "Woodcutting",
+        "skillLevel": 75
+      },
+      {
+        "action": "Woodcutting"
+      }
+    ]
+  },
+  {
     "name": "Snakewood Logs",
     "description": "A dense, twisty wood named after the tree's snakelike appearance.",
     "gatherString": "You chop some snakewood logs.",

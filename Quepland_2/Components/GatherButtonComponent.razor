@@ -57,7 +57,8 @@
             MessageManager.AddMessage(beginText);
         }
         GameState.CurrentGatherItem = i;
-        GameState.TicksToNextAction = GameState.GetTicksToNextGather().ToGaussianRandom();
+        Console.WriteLine("Starting Game Tick:" + GameState.CurrentTick);
+        GameState.TicksToNextAction = GameState.GetTicksToNextGather();
         GameState.UpdateState();
     }
     private GameItem GetRandomItem()
@@ -143,6 +144,7 @@
             int lowestReq = int.MaxValue;
             foreach(GameItem i in items)
             {
+                Console.WriteLine("Check item:" + i.Name);
                 foreach(Requirement r in i.Requirements)
                 {
                     if(r.Skill != "None")

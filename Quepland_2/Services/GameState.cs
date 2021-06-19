@@ -125,6 +125,8 @@ using System.Threading.Tasks;
     private Stopwatch stopwatch = new Stopwatch();
     public static HCDeathInfo HCDeathInfo;
 
+    public int RolledTick;
+
     public void Start()
     {
         if(GameTimer != null)
@@ -349,6 +351,7 @@ using System.Threading.Tasks;
 
     private void GatherItem()
     {
+        Console.WriteLine("Ending Game Tick:" + GameState.CurrentTick);
         if (HasRequiredItemForGather())
         {
             if (Player.Instance.FollowerGatherItem(CurrentGatherItem) == false)
@@ -876,12 +879,13 @@ using System.Threading.Tasks;
     {
         if(CurrentGatherItem != null)
         {
+            
             int baseValue = CurrentGatherItem.GatherSpeed.ToGaussianRandom();
             //Console.WriteLine("Ticks to next gather:" + baseValue);
             baseValue = (int)Math.Max(1, (double)baseValue * Player.Instance.GetGearMultiplier(CurrentGatherItem));
            // Console.WriteLine("Ticks to next gather with gear:" + baseValue);
             baseValue = (int)Math.Max(1, (double)baseValue * Player.Instance.GetLevelMultiplier(CurrentGatherItem));
-            //Console.WriteLine("Ticks to next gather with gear and level:" + baseValue);
+
             return baseValue;
         }
         return int.MaxValue;

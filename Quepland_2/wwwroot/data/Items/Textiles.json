@@ -51,6 +51,7 @@
     "value": 100,
     "description": "Fibres of a silkworm cocoon.",
     "icon": "Silk",
+    "gatherString": "You harvest some silk cocoons.",
     "secondaryColor": "#dddddd"
   },
   {
@@ -58,6 +59,7 @@
     "value": 50,
     "description": "A soft, fluffy plant fiber.",
     "icon": "Cotton",
+    "gatherString": "You pick some cotton.",
     "secondaryColor": "#ffffff"
   },
   {
@@ -65,37 +67,70 @@
     "value": 90,
     "description": "The hair of a sheep spun into thread. You'll need some kind of loom to turn it into fabric.",
     "icon": "Thread",
+    "gatherString": "You carefully pull the wool into thread.",
     "secondaryColor": "#ddccae",
-    "gatherSpeed": 10
+    "gatherSpeed": 10,
+    "experienceGained": "Textile Arts:15",
+    "requirements": [
+      {
+        "skill": "Textile Arts",
+        "skillLevel": 1
+      }
+    ]
   },
   {
     "name": "Silk Thread",
     "value": 200,
     "description": "Fibres of a silkworm cocoon spun into thread. You'll need some kind of loom to turn it into fabric.",
     "icon": "Thread",
+    "gatherString": "You carefully pull the silk into thread.",
     "secondaryColor": "#dddddd",
-    "gatherSpeed": 10
+    "gatherSpeed": 10,
+    "experienceGained": "Textile Arts:35",
+    "requirements": [
+      {
+        "skill": "Textile Arts",
+        "skillLevel": 20
+      }
+    ]
   },
   {
     "name": "Cotton Thread",
     "value": 150,
     "description": "A soft, fluffy plant fiber spun into thread. You'll need some kind of loom to turn it into fabric.",
     "icon": "Thread",
+    "gatherString": "You carefully pull the cotton into thread.",
     "secondaryColor": "#ffffff",
-    "gatherSpeed": 10
+    "gatherSpeed": 10,
+    "experienceGained": "Textile Arts:25",
+    "requirements": [
+      {
+        "skill": "Textile Arts",
+        "skillLevel": 10
+      }
+    ]
   },
   {
     "name": "Baobhan Thread",
     "value": 350,
     "description": "Hair from a baobhan spun into thread. You'll need some kind of loom to turn it into fabric.",
     "icon": "Thread",
-    "gatherSpeed": 10
+    "gatherString": "You carefully pull the hair into thread.",
+    "gatherSpeed": 10,
+    "experienceGained": "Textile Arts:55",
+    "requirements": [
+      {
+        "skill": "Textile Arts",
+        "skillLevel": 40
+      }
+    ]
   },
   {
     "name": "Wool Fabric",
     "value": 390,
     "description": "The hair of a sheep spun into thread and woven into fabric.",
     "icon": "Fabric",
+    "gatherString": "You carefully weave the thread into a fabric.",
     "secondaryColor": "#ddccae"
   },
   {
@@ -103,6 +138,7 @@
     "value": 500,
     "description": "Fibres of a silkworm cocoon spun into thread and woven into fabric.",
     "icon": "Fabric",
+    "gatherString": "You carefully weave the thread into a fabric.",
     "secondaryColor": "#dddddd"
   },
   {
@@ -110,12 +146,14 @@
     "value": 450,
     "description": "A soft, fluffy plant fiber spun into thread and woven into fabric.",
     "icon": "Fabric",
+    "gatherString": "You carefully weave the thread into a fabric.",
     "secondaryColor": "#ffffff"
   },
   {
     "name": "Baobhan Fabric",
     "value": 650,
     "description": "A soft, fluffy plant fiber spun into thread and woven into fabric.",
+    "gatherString": "You carefully weave the thread into a fabric.",
     "icon": "Fabric"
   },
   {

@@ -6,13 +6,25 @@ public class ArmorInfo
     public int Damage { get; set; }
     public int ArmorBonus { get; set; }
     public List<Requirement> WearRequirements { get; set; } = new List<Requirement>();
-    public List<IStatusEffect> StatusEffects { get; set; } = new List<IStatusEffect>();
+    private List<IStatusEffect> statusEffects;
+    public List<IStatusEffect> StatusEffects
+    {
+        get
+        {
+            if (statusEffects == null)
+            {
+                statusEffects = new List<IStatusEffect>();
+                foreach (StatusEffectData data in StatusEffectData)
+                {
+                    statusEffects.Add(BattleManager.Instance.GenerateStatusEffect(data));
+                }
+            }
+            return statusEffects;
+        }
+    }
     public List<StatusEffectData> StatusEffectData { get; set; } = new List<StatusEffectData>();
     public ArmorInfo()
     {
-        foreach (StatusEffectData data in StatusEffectData)
-        {
-            StatusEffects.Add(BattleManager.Instance.GenerateStatusEffect(data));
-        }
+
     }
 }

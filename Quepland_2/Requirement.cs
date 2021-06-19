@@ -105,7 +105,7 @@ public class Requirement
 		{
 			req += "You need " + SkillLevel + " " + Skill;
 		}
-		else if (Player.Instance.HasSkillRequirement(Skill, SkillLimit + 1))
+		else if (Skill != "None" && Player.Instance.HasSkillRequirement(Skill, SkillLimit + 1))
 		{
 			req += ("Player has too high of skill:" + SkillLimit);
 		}

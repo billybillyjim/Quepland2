@@ -509,6 +509,10 @@ public class Player
     }
     public bool HasSkillRequirement(string skill, int lvl)
     {
+        if(skill == "None")
+        {
+            return true;
+        }
         Skill s = Skills.FirstOrDefault(x => x.Name == skill);
         if (s == null)
         {

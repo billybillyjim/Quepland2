@@ -22,7 +22,11 @@
       "The bank now updates searches per key press.",
       "Fixed a bug that made converting items slower for the first item.",
       "Tomes now scroll to allow more items to be added to them, just like real books do.",
-      "Added a few textile arts items around various shops."
+      "Added a few textile arts items around various shops.",
+      "Fixed a bug concerning tooltips sometimes showing some nonsense about lacking a skill limit of over 2 billion",
+      "Fixed a bug where the first item you gather was actually rolling for gather speed twice, which usually didn't do anything, but it would sometimes cause the first gather to be either extremely fast or painfully slow.",
+      "Fixed a bug that made armor with status effects not work properly. I have no idea if there were any armors with status effects before, but if there were they should work now?",
+      "I'll be monitoring the discord server for the next few days to respond to any major bugs that pop up. I did just get a new job that begins next month. I have no idea what that means for the game, it may mean more time to make updates because I am less focused on other things, or it may mean I run out of time to update the game. Only time will tell. Regardless, the next large update to come out will be the Android mobile port when it is finished."
     ]
   },
   {

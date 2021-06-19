@@ -20,7 +20,7 @@
   {
     "name": "Eightsfret Glen",
     "id": 191,
-    "image": "TwoHouses",
+    "image": "HorizonRoad",
     "description": "Near the bottom of the valley the road splits in three. The side paths each lead to a small set of buildings, while the middle path leads further down into a thick wooded area. Above the tops of the trees you can still make out the tower in the distance. The path to the left has crumbled away, you'll need to find some special way across.",
     "areaURL": "EightsfretGlen",
     "unlockableAreas": [
@@ -83,7 +83,14 @@
         "areaURL": "LunacrestBridge",
         "buttonText": "Continue north"
       }
-
+    ],
+    "actions": [
+      "Chop Trees:Stormwood Logs:You start swinging at a nearby tree..."
+    ],
+    "monsters": [
+      "Stellifowl",
+      "Jikumena Beast",
+      "Stormling"
     ]
   },
   {

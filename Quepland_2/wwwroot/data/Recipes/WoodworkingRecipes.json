@@ -2317,6 +2317,56 @@
     "recipeActionString": "You start carving a shield..."
   },
   {
+    "outputItemName": "Stormwood Shield",
+    "ingredients": [
+      {
+        "itemName": "Stormwood Logs",
+        "amount": 5
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:172",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 75
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "CraftingSpeed": 20,
+    "recipeActionString": "You start carving a shield..."
+  },
+  {
+    "outputItemName": "Stormsight Shield",
+    "ingredients": [
+      {
+        "itemName": "Stormwood Shield",
+        "amount": 1
+      },
+      {
+        "itemName": "Storm's Eye",
+        "amount": 1
+      },
+      {
+        "itemName": "Wood Carving Knife",
+        "destroyOnUse": false
+      }
+    ],
+    "experienceGained": "Woodworking:500",
+    "requirements": [
+      {
+        "skill": "Woodworking",
+        "skillLevel": 90
+      }
+    ],
+    "maxOutputsPerAction": 1,
+    "CraftingSpeed": 20,
+    "recipeActionString": "You manage to adhere the eyeball to the shield..."
+  },
+  {
     "outputItemName": "Snakewood Shield",
     "ingredients": [
       {

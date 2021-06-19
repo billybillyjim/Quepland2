@@ -18,27 +18,27 @@
     },
     {
       "buttonText": "Where is everyone?",
-      "responseText": "I don't suppose you've noticed the orange sky and ominous tower in the distance? Everyone's dead. This used to be a thriving community, I was an up-and-comer merchant. I could have been rich! Now look at me. Driving a cart in a ghost-town, hoping to find buyers. You're probably confused and I get that... Haven't spoken to anyone in such a long time, it's hard to keep coherent, you know?",
+      "responseText": "I don't suppose you've noticed the orange sky and ominous tower in the distance? Everyone's dead. This used to be a thriving community, I was an up-and-comer merchant. I could have been rich! Now look at me. Driving a cart in a ghost-town, hoping to find buyers. You're probably confused and I get that... Haven't spoken to anyone in such a long time, it's hard to keep... coherent, you know?",
       "depth": 1,
       "newDepthOnTalk": 2
     },
     {
       "buttonText": "Why don't you leave?",
-      "responseText": "Good question. I don't know the answer to it, either. There's something very strange going on in that tower, and whatever it is, I feel like it's keeping me here...",
+      "responseText": "Good question. I don't know the answer, either. There's something very strange going on in that tower, and whatever it is, I feel like it's keeping me here.",
       "depth": 2,
       "newDepthOnTalk": 3
     },
     {
       "buttonText": "How did everyone die?",
-      "responseText": "Well... That's complicated. And maybe not something I'd really like to get into. It wasn't all just one thing, either. I fled for my life when the warning bell rang. I didn't see what came out of the forest but I could hear it. ",
+      "responseText": "Well... That's complicated. And not something I'd really like to get into. It wasn't all just one thing, either. I fled for my life when the warning bell rang. I didn't see what came out of the forest... but I could hear it. I'll never forget the sound.",
       "depth": 3,
       "newDepthOnTalk": 3
     },
     {
       "buttonText": "What's with the sky?",
-      "responseText": "A few days after I left the sky changed suddenly. A few days after that, I started feeling... something. I felt like I had to return to this place, and here I am now. I can't say how long I've been here, but as far as I know I'm the only one left.",
+      "responseText": "A few days after I left the sky changed suddenly. A few days after that, I started feeling... something. I felt like I had to return to this place, and here I am now. I can't say how long I've been here, but as far as I know I'm the only one left. Plent of stock left to sell, if you're interested.",
       "depth": 3,
-      "newDepthOnTalk": 3
+      "newDepthOnTalk": 4
     }
   ]
 }

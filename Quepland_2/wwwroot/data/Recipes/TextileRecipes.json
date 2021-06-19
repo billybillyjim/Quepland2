@@ -268,5 +268,30 @@
         "skillLevel": 20
       }
     ]
+  },
+  {
+    "outputItemName": "Baobhan Thread",
+    "outputAmount": 1,
+    "ingredients": [
+      {
+        "itemName": "Baobhan Hair",
+        "amount": 2
+      },
+      {
+        "itemName": "Spindle",
+        "amount": 1,
+        "destroyOnUse": false
+      }
+    ],
+    "CraftingSpeed": 18,
+    "recipeActionString": "You spin the hair into thread.",
+    "maxOutputsPerAction": 1,
+    "experienceGained": "Textile Arts:55",
+    "requirements": [
+      {
+        "skill": "Textile Arts",
+        "skillLevel": 40
+      }
+    ]
   }
 ]

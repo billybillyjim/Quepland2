@@ -3,7 +3,7 @@
 
 @if (items != null && items.Count > 0)
 {
-<div style="margin-bottom:10px;">
+<div style="margin-bottom:10px;margin-top:10px;">
     @if (Player.Instance.HasToolRequirement("Toadback Riding") && items[0].HasRequirements())
     {
         if (HasCalled)
@@ -52,7 +52,7 @@
         <div>
             @if (Player.Instance.HasToolRequirement("Toadback Riding"))
             {
-                <button class="btn btn-primary" style="opacity:0.5;"
+                <button class="btn btn-primary;" style="opacity:0.5;"
                         @onmouseover="@(new Action<MouseEventArgs>(e => GameState.ShowTooltip(e, items[0].GetRequirementTooltip())))"
                         @onmouseout="@(new Action(() => GameState.HideTooltip()))">
                     Hunt Worms

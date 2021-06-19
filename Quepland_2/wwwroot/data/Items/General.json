@@ -109,6 +109,15 @@
     "isStackable": true
   },
   {
+    "name": "Storm's Eye",
+    "description": "A terrifying eyeball. Can it see?",
+    "gatherString": "You find a glowing eye.",
+    "value": 2550,
+    "secondaryColor": "#04ba35",
+    "icon": "Eye",
+    "isStackable": true
+  },
+  {
     "name": "Chicken Egg",
     "description": "A small egg from a chicken.",
     "value": 10,

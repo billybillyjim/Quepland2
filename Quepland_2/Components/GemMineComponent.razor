@@ -199,7 +199,7 @@ else if (mineType == "Depths")
     {
         CurrentTable = ItemManager.Instance.GetMinigameDropTable("Gem Mine " + mineType).DropTable;
         nextDrop = CurrentTable.GetDrop();
-        ticksToNextGather = GameState.GetTicksToNextGather(ItemManager.Instance.GetItemByName("Gem Mine Gem"), ItemManager.Instance.GetItemByName("Gem Mine Gem").GatherSpeed + Math.Max(0, 105 - (Player.Instance.GetLevel("Mining")))).ToGaussianRandom();
+        ticksToNextGather = GameState.GetTicksToNextGather(ItemManager.Instance.GetItemByName("Gem Mine Gem"), ItemManager.Instance.GetItemByName("Gem Mine Gem").GatherSpeed + Math.Max(0, 105 - (Player.Instance.GetLevel("Mining"))));
         GameState.TicksToNextAction = ticksToNextGather;
         double roll = rand.NextDouble();
         if (firstMine)

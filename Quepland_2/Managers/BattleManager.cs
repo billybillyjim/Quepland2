@@ -515,6 +515,7 @@ public class BattleManager
         foreach (GameItem item in Player.Instance.GetEquippedItems())
         {
             double roll = random.NextDouble();
+            
             if (item.WeaponInfo != null)
             {
                 foreach(IStatusEffect e in item.WeaponInfo.StatusEffects)
@@ -538,6 +539,7 @@ public class BattleManager
             {
                 foreach (IStatusEffect e in item.ArmorInfo.StatusEffects)
                 {
+                    
                     if (roll <= e.ProcOdds)
                     {
                         if (e.SelfInflicted)
