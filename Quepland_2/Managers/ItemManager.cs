@@ -337,10 +337,7 @@ public class ItemManager
                     return i;
                 }
             }
-        }
-        foreach (GameItem i in Items)
-        {
-            if (i.AlchemyInfo != null)
+            else if(i.AlchemyInfo != null)
             {
                 if (i.AlchemyInfo.QueplarValue == totalValue)
                 {
@@ -348,16 +345,34 @@ public class ItemManager
                 }
             }
         }
-        return Items.Find(x => x.Name == "Alchemical Dust");
+
+        return GetItemByUniqueID("Alchemical Dust0");
     }
     public List<Recipe> GetCraftableRecipes()
     {
-        return Recipes.Where(x => x.HasSomeIngredients()).ToList();
+        List<Recipe> craftables = new List<Recipe>();
+        foreach (Recipe r in Recipes)
+        {
+            if (r.HasSomeIngredients())
+            {
+                craftables.Add(r);
+            }
+        }
+        return craftables;
+
     }
 
     public MinigameDropTable GetMinigameDropTable(string areaName)
     {
-        return MinigameDropTables.FirstOrDefault(x => x.AreaName == areaName);
+        foreach(MinigameDropTable table in MinigameDropTables)
+        {
+            if(table.AreaName == areaName)
+            {
+                return table;
+            }
+        }
+        Console.WriteLine("No minigame drop table with area name:" + areaName);
+        return null;
     }
     public string GetBookCover(Skill s)
     {   
@@ -365,15 +380,15 @@ public class ItemManager
         {
             if(s.Name == "Strength")
             {
-                s = Player.Instance.Skills.FirstOrDefault(x => x.Name == "Swordsmanship");
+                s = Player.Instance.GetSkill("Swordsmanship");
             }
             if(s.Name == "Deftness")
             {
-                s = Player.Instance.Skills.FirstOrDefault(x => x.Name == "Knifesmanship");
+                s = Player.Instance.GetSkill("Knifesmanship");
             }
             if(s.Name == "Artisan")
             {
-                s = Player.Instance.Skills.FirstOrDefault(x => x.Name == "Woodworking");
+                s = Player.Instance.GetSkill("Woodworking");
             }
             foreach (GameItem item in Items)
             {

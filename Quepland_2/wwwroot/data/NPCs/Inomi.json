@@ -24,7 +24,7 @@
     {
       "buttonText": "No",
       "responseText": "I will not force you, but you will find very little in terms of adventure in this place. Those who come here seek peace and quiet, and we have managed to maintain both for much longer than you have been around.",
-      "newDepthOnTalk": 0,
+      "newDepthOnTalk": -1,
       "depth": 1
     },
     {
@@ -36,7 +36,8 @@
     {
       "buttonText": "Who created you?",
       "responseText": "I do not speak his name, though you have surely encountered it on your journey here. He was a powerful magician, originally an outsider to those who do magic. They gave him a chance, he took advantage of it. I and a few others were some of his earliest creations. He quickly realized he had created something even beyond himself. You encountered his final creations in the roots of the great tree. ",
-      "depth": 3
+      "depth": 3,
+      "newDepthOnTalk": -1
     },
     {
       "buttonText": "I don't know",

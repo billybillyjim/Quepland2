@@ -24,7 +24,7 @@
     },
     {
       "buttonText": "Why don't you leave?",
-      "responseText": "Good question. I don't know the answer, either. There's something very strange going on in that tower, and whatever it is, I feel like it's keeping me here.",
+      "responseText": "Good question. I don't know. There's something very strange going on in that tower, and whatever it is, I feel like it's keeping me here. Of course, you can see that strange glowing barrier behind me, so here I am. I can't go any further in, but for some reason I can't seem to want to leave either.",
       "depth": 2,
       "newDepthOnTalk": 3
     },

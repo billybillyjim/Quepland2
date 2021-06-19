@@ -125,8 +125,6 @@ using System.Threading.Tasks;
     private Stopwatch stopwatch = new Stopwatch();
     public static HCDeathInfo HCDeathInfo;
 
-    public int RolledTick;
-
     public void Start()
     {
         if(GameTimer != null)
@@ -351,7 +349,6 @@ using System.Threading.Tasks;
 
     private void GatherItem()
     {
-        Console.WriteLine("Ending Game Tick:" + GameState.CurrentTick);
         if (HasRequiredItemForGather())
         {
             if (Player.Instance.FollowerGatherItem(CurrentGatherItem) == false)
@@ -830,7 +827,7 @@ using System.Threading.Tasks;
         }
         else if(AlchemyStage == 3)
         {
-            GameItem reward = ItemManager.Instance.GetItemFromFormula(CurrentAlchemyFormula).Copy();
+            GameItem reward = ItemManager.Instance.GetItemFromFormula(CurrentAlchemyFormula);
             if(reward == null)
             {
                 reward = ItemManager.Instance.GetItemByName("Alchemical Dust");

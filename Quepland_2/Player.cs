@@ -48,16 +48,30 @@ public class Player
     {
         Skills.AddRange(await Http.GetFromJsonAsync<Skill[]>("data/Skills.json"));
     }
+    public Skill GetSkill(string skill)
+    {
+        foreach(Skill s in Skills)
+        {
+            if(s.Name == skill)
+            {
+                return s;
+            }
+        }
+        return null;
+    }
     private void IncreaseMaxHPBy(int amount)
     {
         MaxHP += amount;
     }
     public void GainExperience(string skill, long amount)
     {
-        Skill s = Skills.FirstOrDefault(x => x.Name == skill);
-        if (s != null)
+        foreach(Skill s in Skills)
         {
-            GainExperience(s, amount);
+            if(s.Name == skill)
+            {
+                GainExperience(s, amount);
+                return;
+            }
         }
     }
     public void GainExperience(string skillAndExp)
@@ -68,7 +82,14 @@ public class Player
         }
         if (int.TryParse(skillAndExp.Split(':')[1], out int amount))
         {
-            GainExperience(Skills.FirstOrDefault(x => x.Name == skillAndExp.Split(':')[0]), amount);
+            foreach (Skill s in Skills)
+            {
+                if (s.Name == skillAndExp.Split(':')[0])
+                {
+                    GainExperience(s, amount);
+                    return;
+                }
+            }
         }
     }
     public void GainExperienceMultipleTimes(string skillAndExp, int times)
@@ -84,7 +105,17 @@ public class Player
         {
             return 1;
         }
-        string skill = item.Requirements.FirstOrDefault(x => x.Skill != "None")?.Skill ?? "None";
+
+        string skill = "None";
+        foreach(Requirement req in item.Requirements)
+        {
+            if(req.Skill != "None")
+            {
+                skill = req.Skill;
+                continue;
+            }
+        }
+        
         if(skill == "None")
         {
             return 1;
@@ -105,12 +136,24 @@ public class Player
         {
             return 1;
         }
-        Requirement req = item.Requirements.FirstOrDefault(x => x.Skill != "None");
-        if(req == null)
+        string skill = "None";
+        foreach (Requirement req in item.Requirements)
         {
-            return 1;
+            if (req.Skill != "None")
+            {
+                skill = req.Skill;
+                continue;
+            }
         }
-        Skill s = Skills.FirstOrDefault(x => x.Name == req.Skill);
+
+        Skill s = null;
+        foreach(Skill sk in Skills)
+        {
+            if(sk.Name == skill)
+            {
+                s = sk;
+            }
+        }
         if(s == null)
         {
             return 1;
@@ -136,7 +179,16 @@ public class Player
     }
     public void Equip(GameItem item)
     {
-        GameItem e = equippedItems.FirstOrDefault(x => x.EquipSlot == item.EquipSlot);
+        GameItem e = null;
+        foreach (GameItem i in equippedItems)
+        {
+            if(i.EquipSlot == item.EquipSlot)
+            {
+                e = i;
+                continue;
+            }
+        }
+
         if(e != null)
         {
             Unequip(e);
@@ -151,10 +203,13 @@ public class Player
     }
     public void Equip(string itemName)
     {
-        GameItem match = Inventory.GetItems().FirstOrDefault(x => x.Key.Name == itemName).Key;
-        if(match != null)
+        foreach (KeyValuePair<GameItem, int> pair in Inventory.GetItems())
         {
-            Equip(match);
+            if(pair.Key.Name == itemName)
+            {
+                Equip(pair.Key);
+                return;
+            }
         }
     }
     public void Unequip(GameItem item)
@@ -173,7 +228,7 @@ public class Player
     public int GetTotalDamage()
     {
         int total = 0;
-        total += Skills.Find(x => x.Name == "Strength").GetSkillLevel() * 3;
+        total += GetSkill("Strength").GetSkillLevel() * 3;
         foreach(GameItem item in equippedItems)
         {
             if(item.WeaponInfo != null)
@@ -192,7 +247,7 @@ public class Player
                     }
                     else 
                     {
-                        total += Skills.Find(x => x.Name == skill).GetSkillLevel() * 3;
+                        total += GetSkill(skill).GetSkillLevel() * 3;
                     }
                     
                 }

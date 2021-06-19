@@ -116,11 +116,12 @@
     }
     protected override void OnInitialized()
     {
-
+        GameState.StopActions();
         GameState.StateChanged += OnGameStateChanged;
     }
     public void Dispose()
     {
+        GameState.StopActions();
         GameState.StateChanged -= OnGameStateChanged;
     }
     void OnGameStateChanged(object sender, EventArgs e)

@@ -261,7 +261,14 @@ public class Inventory
         {
             if (HasItem(item))
             {
-                KeyValuePair<GameItem, int> pair = items.FirstOrDefault(x => x.Key.Name == item.Name);
+                KeyValuePair<GameItem, int> pair = new KeyValuePair<GameItem, int>();
+                foreach (KeyValuePair<GameItem, int> p in items)
+                {
+                    if(p.Key.Name == item.Name)
+                    {
+                        pair = p;
+                    }
+                }               
                 int oldAmt = pair.Value;
                 items.Remove(pair);
                 items.Add(new KeyValuePair<GameItem, int>(pair.Key, oldAmt + 1));
@@ -350,11 +357,18 @@ public class Inventory
         {
             if (item.IsStackable || AllItemsStack)
             {
-                KeyValuePair<GameItem, int> pair = items.FirstOrDefault(x => x.Key.UniqueID == item.UniqueID);
+                KeyValuePair<GameItem, int> pair = new KeyValuePair<GameItem, int>();
+                foreach (KeyValuePair<GameItem, int> p in items)
+                {
+                    if (p.Key.Name == item.Name)
+                    {
+                        pair = p;
+                    }
+                }
                 int oldAmt = pair.Value;
                 items.Remove(pair);
-                pair.Key.Rerender = true;
-                items.Add(new KeyValuePair<GameItem, int>(pair.Key, oldAmt + amount));
+                //pair.Key.Rerender = true;
+                items.Add(new KeyValuePair<GameItem, int>(pair.Key, oldAmt + 1));
                 //Console.WriteLine("Adding item:" + item.Name + ", old:" + oldAmt + "/" + (oldAmt + amount));
             }
             else
