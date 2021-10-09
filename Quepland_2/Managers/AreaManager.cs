@@ -275,14 +275,78 @@ public class AreaManager
     }
     public Area GetAreaByAvailableResource(string itemName)
     {
-        foreach(Area a in Areas)
+        return GetAreaByAvailableResource(itemName, false);
+    }
+    public Area GetAreaByAvailableResource(string itemName, bool ignoreUnlocks)
+    {
+        foreach (Area a in Areas)
         {
-            if(a.IsUnlocked && a.Actions.FirstOrDefault(x => x.Contains(itemName)) != null)
+            if ((a.IsUnlocked || ignoreUnlocks) && a.Actions.FirstOrDefault(x => x.Contains(itemName)) != null)
             {
                 return a;
             }
         }
         return null;
+    }
+    public List<Area> GetAreasForResource(string itemName, bool ignoreUnlocks)
+    {
+        List<Area> areas = new List<Area>();
+        foreach (Area a in Areas)
+        {
+            if ((a.IsUnlocked || ignoreUnlocks) && a.Actions.FirstOrDefault(x => x.Contains(itemName)) != null || 
+                a.ConversionActions.FirstOrDefault(x => x.Contains(itemName)) != null)
+            {
+                areas.Add(a);
+            }
+        }
+        return areas;
+    }
+    public List<Building> GetBuildingsForResource(GameItem item)
+    {
+        List<Building> buildings = new List<Building>();
+        foreach (Building b in Buildings)
+        {
+            MinigameDropTable table = ItemManager.Instance.GetMinigameDropTable(b.ItemExchange);
+            if ( b.Actions.FirstOrDefault(x => x.Contains(item.Name)) != null ||
+                (table != null && table.DropTable.HasDrop(item)))
+            {
+                buildings.Add(b);
+            }
+        }
+        return buildings;
+    }
+    public List<Shop> GetShopsForResource(GameItem item)
+    {
+        List<Shop> shops = new List<Shop>();
+        foreach(Area area in Areas)
+        {
+            foreach(Shop s in area.Shops)
+            {
+                if (s.HasItem(item))
+                {
+                    shops.Add(s);
+                }
+            }
+        }
+        foreach(Building building in Buildings)
+        {
+            foreach (Shop s in building.Shops)
+            {
+                if (s.HasItem(item))
+                {
+                    shops.Add(s);
+                }
+            }
+        }
+        foreach(NPC npc in NPCManager.Instance.NPCs)
+        {
+            if (npc.Shop != null && npc.Shop.HasItem(item))
+            {
+                shops.Add(npc.Shop);
+            }        
+        }
+
+        return shops;
     }
     public AFKAction GetAFKActionByUniqueID(string id)
     {

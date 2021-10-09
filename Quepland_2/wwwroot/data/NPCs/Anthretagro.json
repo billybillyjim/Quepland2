@@ -1,6 +1,7 @@
 {
   "$schema": "npc-schema.json#",
   "name": "Anthretagro",
+  "description": "A strange man in a flowing robe and sandals. He can be hired as an advanced scout follower for 100,000 dojo tokens.",
   "id": 38,
   "dialogs": [
     {

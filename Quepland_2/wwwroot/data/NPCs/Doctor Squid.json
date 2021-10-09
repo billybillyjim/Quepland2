@@ -1,6 +1,7 @@
 {
   "$schema": "npc-schema.json#",
   "name": "Doctor Squid",
+  "description": "An ugly man. You can tell why they call him squid.",
   "id": 15,
   "dialogs": [
     {

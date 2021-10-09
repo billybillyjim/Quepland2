@@ -131,6 +131,7 @@
     "description": "The hair of a sheep spun into thread and woven into fabric.",
     "icon": "Fabric",
     "gatherString": "You carefully weave the thread into a fabric.",
+    "experienceGained": "Textile Arts:25",
     "secondaryColor": "#ddccae"
   },
   {
@@ -139,6 +140,7 @@
     "description": "Fibres of a silkworm cocoon spun into thread and woven into fabric.",
     "icon": "Fabric",
     "gatherString": "You carefully weave the thread into a fabric.",
+    "experienceGained": "Textile Arts:45",
     "secondaryColor": "#dddddd"
   },
   {
@@ -147,6 +149,7 @@
     "description": "A soft, fluffy plant fiber spun into thread and woven into fabric.",
     "icon": "Fabric",
     "gatherString": "You carefully weave the thread into a fabric.",
+    "experienceGained": "Textile Arts:75",
     "secondaryColor": "#ffffff"
   },
   {
@@ -154,6 +157,7 @@
     "value": 650,
     "description": "A soft, fluffy plant fiber spun into thread and woven into fabric.",
     "gatherString": "You carefully weave the thread into a fabric.",
+    "experienceGained": "Textile Arts:105",
     "icon": "Fabric"
   },
   {

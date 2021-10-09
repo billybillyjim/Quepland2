@@ -1,6 +1,7 @@
 {
   "$schema": "npc-schema.json#",
   "name": "Dwarny the Dwarf",
+  "description": "Dwarny is actually a gnome. Don't tell him!",
   "id": 29,
   "dialogs": [
     {

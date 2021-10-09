@@ -1,6 +1,7 @@
 {
   "$schema": "npc-schema.json#",
   "name": "Fen Pilsk",
+  "description": "The last survivor in Pansoph. He sells fabrics from his cart near Lunacrest Bridge.",
   "id": 87,
   "shop": {
     "itemNames": [

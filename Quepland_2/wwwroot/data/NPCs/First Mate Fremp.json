@@ -1,6 +1,7 @@
 {
   "$schema": "npc-schema.json#",
   "name": "First Mate Fremp",
+  "description": "A pirate aboard the Ustetok. He is a proficient juggler and the second in command of the crew.",
   "id": 12,
   "dialogs": [
     {

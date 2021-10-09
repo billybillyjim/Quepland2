@@ -1,6 +1,7 @@
 {
   "$schema": "npc-schema.json#",
   "name": "Calm Waters",
+  "description": "The calm waters near the dock cover a number of ancient tomes of stone.",
   "id": 89,
   "dialogs": [
     {

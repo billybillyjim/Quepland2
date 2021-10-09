@@ -12,6 +12,8 @@ public class Monster
 	public int AttackSpeed { get; set; }
 	public int TicksToNextAttack { get; set; }
 	public bool IsDefeated { get; set; }
+    public bool IsDojoMember { get; set; }
+    public string Description { get; set; } = "";
     public string Strengths { get; set; } = "None";
     public string Weaknesses { get; set; } = "None";
 	public List<IStatusEffect> CurrentStatusEffects { get; set; } = new List<IStatusEffect>();

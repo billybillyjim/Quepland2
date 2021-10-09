@@ -368,7 +368,7 @@ public class Inventory
                 int oldAmt = pair.Value;
                 items.Remove(pair);
                 //pair.Key.Rerender = true;
-                items.Add(new KeyValuePair<GameItem, int>(pair.Key, oldAmt + 1));
+                items.Add(new KeyValuePair<GameItem, int>(pair.Key, oldAmt + amount));
                 //Console.WriteLine("Adding item:" + item.Name + ", old:" + oldAmt + "/" + (oldAmt + amount));
             }
             else
@@ -641,14 +641,18 @@ public class Inventory
         }
     }
     public void LoadData(string data)
-    {
+    {    
+        IsLoadingSave = true;
+        if (data.Contains(char.MaxValue))
+        {
+            data = data.Replace(char.MaxValue, ',');
+        }
         string[] i = data.Split('/');
-        if(i.Length == 0)
+        if (i.Length == 0)
         {
             return;
         }
-        IsLoadingSave = true;
-        foreach(string line in i)
+        foreach (string line in i)
         {
             string[] s = line.Split('_');
             if(s.Length < 2)

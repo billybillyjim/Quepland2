@@ -116,6 +116,7 @@
   {
     "name": "Ultimate Test Weapon",
     "description": "A weapon for testing.",
+    "TestingItem": true,
     "value": 0,
     "enabledActions": "Swordsmanship",
     "equipSlot": "R Hand",
@@ -135,6 +136,7 @@
     "name": "Ultimate Test Weapon Two, Electric Boogaloo",
     "description": "A weapon for testing UI. This is a very long description to tests what the game does when there is a very long description, hopefully its not too bad.",
     "value": 0,
+    "TestingItem": true,
     "enabledActions": "Swordsmanship",
     "equipSlot": "R Hand",
     "icon": "Sword",

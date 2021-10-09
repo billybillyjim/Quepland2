@@ -381,6 +381,14 @@ public static class SaveManager
         }
         return data;
     }
+    public static string GetFollowerItemSave(Inventory i)
+    {
+        return GetItemSave(i).Replace(',', char.MaxValue);
+    }
+    public static string FixFollowerItemSave(string data)
+    {
+        return data.Replace(char.MaxValue, ',');
+    }
     public static string GetAreaSave()
     {
         return JsonConvert.SerializeObject(AreaManager.Instance.GetAreaSave());

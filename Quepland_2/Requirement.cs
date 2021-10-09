@@ -101,13 +101,17 @@ public class Requirement
 		{
 			req += "You must be at " + Location;
 		}
-		if (Skill != "None" && Player.Instance.HasSkillRequirement(Skill, SkillLevel) == false)
+		if (Skill != "None")
 		{
-			req += "You need " + SkillLevel + " " + Skill;
-		}
-		else if (Skill != "None" && Player.Instance.HasSkillRequirement(Skill, SkillLimit + 1))
-		{
-			req += ("Player has too high of skill:" + SkillLimit);
+			if (Player.Instance.HasSkillRequirement(Skill, SkillLevel) == false)
+            {
+				req += "You need " + SkillLevel + " " + Skill;
+			}
+			else if (Player.Instance.HasSkillRequirement(Skill, SkillLimit + 1))
+			{
+				req += ("Player has too high of skill:" + SkillLimit);
+			}
+
 		}
 		if (Action != "None" && Player.Instance.HasToolRequirement(Action) == false)
 		{

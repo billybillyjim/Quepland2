@@ -13,6 +13,18 @@ public class DropTable
 
     }
 
+    public List<Drop> GetDropsWithName(string itemName)
+    {
+        List<Drop> drops = new List<Drop>();
+        foreach(Drop d in Drops)
+        {
+            if(d.ItemName == itemName)
+            {
+                drops.Add(d);
+            }
+        }
+        return drops;
+    }
     public Drop GetDrop()
     {
         if(Drops.Count == 0)

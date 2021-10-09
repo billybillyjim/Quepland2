@@ -49,6 +49,20 @@
     ]
   },
   {
+    "outputItemName": "Brass Bar",
+    "ingredients": [
+      {
+        "itemName": "Molten Brass Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 25
+      }
+    ]
+  },
+  {
     "outputItemName": "Brass Knife",
     "ingredients": [
       {

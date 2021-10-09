@@ -140,7 +140,7 @@
             </div>
         }
 
-        <div>These QR codes can be used to load save data onto the mobile app when it is released.</div>
+        <div>These QR codes can be used to load save data onto the mobile app when it is released. Generating these codes can take a very long time for a long save file. I don't know if there's a way to make it faster.</div>
         <button class="btn btn-primary" @onclick="@(() => WriteQRCodes())">Show QR Codes</button>
         @if (byteList.Count > 0)
         {
@@ -162,7 +162,7 @@
     }
     else
     {
-        <button class="btn btn-primary" style="margin-top:10px;" @onclick="@(() => ShowSettings = !ShowSettings)">Import Save</button>
+        <button class="btn btn-primary" style="margin-top:10px;" @onclick="@(() => ShowSettings = !ShowSettings)">Show Settings</button>
 
     }
 
@@ -198,6 +198,7 @@
     {
         <button class="btn btn-primary" @onclick="@(() => ShowCredits = !ShowCredits)">Credits</button>
     }
+    <button class="btn btn-primary" @onclick="@(() => UriHelper.NavigateTo("/Wiki/Main"))">Wiki</button>
 </div>
 
 
@@ -223,6 +224,8 @@
     private string qrString;
     private byte[] qrbytes;
     private List<byte[]> byteList = new List<byte[]>();
+
+
 
     public async Task WriteQRCodes()
     {
@@ -339,6 +342,7 @@
         hasSave = await SaveManager.HasSaveFile("Normal");
         hasHardcore = await SaveManager.HasSaveFile("Hardcore");
         hasUltimate = await SaveManager.HasSaveFile("Ultimate");
+
         GameState.StateChanged += OnGameStateChanged;
 
     }

@@ -49,6 +49,20 @@
     ]
   },
   {
+    "outputItemName": "Bronze Bar",
+    "ingredients": [
+      {
+        "itemName": "Molten Bronze Bar"
+      }
+    ],
+    "requirements": [
+      {
+        "skill": "Smithing",
+        "skillLevel": 30
+      }
+    ]
+  },
+  {
     "outputItemName": "Bronze Knife",
     "ingredients": [
       {

@@ -1,5 +1,18 @@
 [
   {
+    "versionNumber": "1.0.16c",
+    "updates": [
+      "Weaving now grants experience."
+    ]
+  },
+  {
+    "versionNumber": "1.0.16b",
+    "updates": [
+      "Fixed a bug that broke stackable items.",
+      "Fixed a bug that made crafting with locked items impossible."
+    ]
+  },
+  {
     "versionNumber": "1.0.16",
     "updates": [
       "There are a few changes I failed to document well and have totally forgotten them. Hopefully I didn't break anything here.",

@@ -1,6 +1,7 @@
 {
   "$schema": "npc-schema.json#",
   "name": "Camel Carl",
+  "description": "An entrepreneur with a confidence problem. Talk to him to start the Grand Theft Camel quest.",
   "id": 22,
   "dialogs": [
     {

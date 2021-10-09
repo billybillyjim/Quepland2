@@ -6,7 +6,8 @@
     "description": "The path leads out of the woods into an open plain. The road continues uphill, winding up out of sight. An earthen fort guards the eastern side of the path.",
     "areaURL": "SouthernTrail",
     "actions": [
-      "Harvest Wheat:Wheat"
+      "Harvest Wheat:Wheat",
+      "Pick Cotton:Cotton:You begin picking cotton."
     ],
     "unlockableAreas": [
       {

@@ -59,10 +59,16 @@ public class BattleManager
     }
     public async Task LoadMonsters(HttpClient Http)
     {
+        Monsters.AddRange(await Http.GetFromJsonAsync<Monster[]>("data/Monsters/DojoOpponents.json"));
+
+        foreach(Monster m in Monsters)
+        {
+            m.IsDojoMember = true;
+        }
         Monsters.AddRange(await Http.GetFromJsonAsync<Monster[]>("data/Monsters/Overworld.json"));
         Monsters.AddRange(await Http.GetFromJsonAsync<Monster[]>("data/Monsters/Underworld.json"));
         Monsters.AddRange(await Http.GetFromJsonAsync<Monster[]>("data/Monsters/Bosses.json"));
-        Monsters.AddRange(await Http.GetFromJsonAsync<Monster[]>("data/Monsters/DojoOpponents.json"));
+        
         Monsters.AddRange(await Http.GetFromJsonAsync<Monster[]>("data/Monsters/EasternLands.json"));
 
         foreach(Monster m in Monsters)
@@ -599,6 +605,18 @@ public class BattleManager
             Console.WriteLine("Warning:" + data.Name + " not in list of status effects in Battle Manager.");
         }
         return null;
+    }
+    public List<Monster> GetMonstersWithDrop(GameItem item)
+    {
+        List<Monster> monsters = new List<Monster>();
+        foreach (Monster m in Monsters)
+        {
+            if (m.DropTable.HasDrop(item))
+            {
+                monsters.Add(m);
+            }
+        }
+        return monsters;
     }
 }
 

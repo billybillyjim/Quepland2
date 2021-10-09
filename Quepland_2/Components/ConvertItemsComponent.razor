@@ -57,6 +57,7 @@
         {
             MessageManager.AddMessage(beginText);
         }
+        GameState.PossibleGatherItems.Clear();
         GameState.StopActions();
         GameState.NewRequiredItem = input;
         GameState.NewGatherItem = i;

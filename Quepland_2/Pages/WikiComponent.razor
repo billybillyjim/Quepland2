@@ -1,0 +1,183 @@
+﻿@page "/Wiki/{topic}"
+@inject GameState GameState
+@inject NavigationManager UriHelper
+@using Quepland_2.Components
+@implements IDisposable
+
+<h1>Wiki</h1>
+
+<div>
+    <input style="width:150px;margin-left:40px;"
+           type="text"
+           @bind="searchString"
+           @bind:event="oninput" />
+    Search
+    <div>
+        <table style="        position: fixed;
+        background-color: darkslategray;">
+            @foreach (SearchResult r in GetMatches())
+            {
+                <tr style="
+                    border: solid white 1px;
+                    margin-bottom: 0px;
+                    padding: 5px;
+                    padding-right:10px;
+                    width: fit-content;
+                    min-width: 300px;
+                    cursor:pointer" @onclick="@(() => SetTopic(r))">
+                    <img style="height:40px;width:40px;" src="data/Images/@(r.image).png" />
+                    @r.name
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+<h2 style="margin:0;padding:0">@topic</h2>
+<hr style="background-color:white;margin-top:5px;"/>
+@if (Info != null)
+{
+    if(Info.Item != null)
+    {
+        <WikiItemComponent Info="@Info" MainPage="@this"></WikiItemComponent>
+    }
+    if(Info.Monster != null)
+    {
+        <WikiMonsterComponent Info="@Info" MainPage="@this"></WikiMonsterComponent>
+    }
+    if(Info.Area != null)
+    {
+        <WikiAreaComponent Info="@Info" MainPage="@this"></WikiAreaComponent>
+    }
+
+}
+
+
+
+@code {
+
+    [Parameter]
+    public string topic { get; set; }
+    public string searchString { get; set; } = "";
+    public WikiInfo Info { get; set; }
+
+    public void SetTopic(Monster monster)
+    {
+        topic = monster.Name;
+        searchString = "";
+        Info = new WikiInfo(monster);
+        GameState.UpdateState();
+    }
+    public void SetTopic(GameItem item)
+    {
+        topic = item.Name;
+        searchString = "";
+        Info = new WikiInfo(item);
+        GameState.UpdateState();
+
+    }
+    public void SetTopic(Area area)
+    {
+        topic = area.Name;
+        searchString = "";
+        Info = new WikiInfo(area);
+        GameState.UpdateState();
+
+    }
+    public void SetTopic(SearchResult result)
+    {
+        LoadInfo(result);
+        topic = result.name;
+        searchString = "";
+        GameState.UpdateState();
+    }
+    public IEnumerable<SearchResult> GetMatches()
+    {
+        List<SearchResult> matches = new List<SearchResult>();
+        if (searchString == "")
+        {
+            return matches;
+        }
+        foreach (GameItem i in ItemManager.Instance.Items)
+        {
+            if (i.Name.ToLower().Contains(searchString.ToLower()) && i.TestingItem == false)
+            {
+
+                matches.Add(new SearchResult(i.Name, i.Icon, "Item"));
+            }
+        }
+        foreach(Area a in AreaManager.Instance.Areas)
+        {
+            if (a.Name.ToLower().Contains(searchString.ToLower()))
+            {
+                matches.Add(new SearchResult(a.Name, a.Image, "Area"));
+            }
+        }
+        foreach(Monster m in BattleManager.Instance.Monsters)
+        {
+            if (m.Name.ToLower().Contains(searchString.ToLower()))
+            {
+                matches.Add(new SearchResult(m.Name, "EvilBook", "Monster"));
+            }
+        }
+
+        foreach(SearchResult r in matches)
+        {
+            if(r.name.ToLower() == searchString.ToLower())
+            {
+                return new List<SearchResult>() { r };
+            }
+        }
+        return matches.Take(7);
+    }
+
+    public void LoadInfo(SearchResult result)
+    {
+        if (result.resultType == "Item")
+        {
+            foreach (GameItem item in ItemManager.Instance.Items)
+            {
+                if (item.Name.ToLower() == result.name.ToLower())
+                {
+                    Info = new WikiInfo(item);
+                    return;
+                }
+            }
+        }
+        else if(result.resultType == "Monster")
+        {
+            Info = new WikiInfo(BattleManager.Instance.GetMonsterByName(result.name));
+            return;
+        }
+        else if(result.resultType == "Area")
+        {
+            Info = new WikiInfo(AreaManager.Instance.GetAreaByName(result.name));
+        }
+    }
+
+    public class SearchResult
+    {
+        public string name;
+        public string image;
+        public string resultType;
+        public SearchResult(string n, string i, string t)
+        {
+            name = n;
+            image = i;
+            resultType = t;
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        topic = "";
+        Info = new WikiInfo("Welcome to the Wiki");
+        GameState.StateChanged += OnGameStateChanged;
+    }
+    public void Dispose()
+    {
+
+        GameState.StateChanged -= OnGameStateChanged;
+    }
+    void OnGameStateChanged(object sender, EventArgs e) => StateHasChanged();
+}

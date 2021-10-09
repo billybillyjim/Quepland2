@@ -1,6 +1,7 @@
 {
   "$schema": "npc-schema.json#",
   "name": "Betty May",
+  "description": "A suspicious woman who can help you get into Koncave City. She charges 20 Great Tree Seeds per passport.",
   "id": 52,
   "dialogs": [
     {

@@ -1,6 +1,7 @@
 {
   "$schema": "npc-schema.json#",
   "name": "Companion",
+  "description": "A being of solid metal. A remnant of a now dilapidated castle Nid.",
   "id": 58,
   "dialogs": [
     {

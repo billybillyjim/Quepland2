@@ -37,7 +37,7 @@ public class FollowerManager
         string data = "";
         foreach(Follower f in Followers)
         {
-            data += f.Name + ":" + f.IsUnlocked + ":" + f.Banking.Experience + ":" + SaveManager.GetItemSave(f.Inventory) + ",";
+            data += f.Name + ":" + f.IsUnlocked + ":" + f.Banking.Experience + ":" + SaveManager.GetFollowerItemSave(f.Inventory) + ",";
         }
         return data;
     }
@@ -55,6 +55,7 @@ public class FollowerManager
             if (f == null)
             {
                 Console.WriteLine("Failed to load save data for follower:" + line);
+                continue;
             }
                      
             f.IsUnlocked = bool.Parse(d[1]);

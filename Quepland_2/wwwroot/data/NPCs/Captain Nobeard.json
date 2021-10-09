@@ -1,6 +1,7 @@
 {
   "$schema": "npc-schema.json#",
   "name": "Captain Nobeard",
+  "description": "The captain of the Ustetok. He has a rare condition that leaves his body entirely hairless. Talk to him to start the Case of the Dead Pirate.",
   "id": 11,
   "dialogs": [
     {

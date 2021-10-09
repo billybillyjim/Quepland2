@@ -98,6 +98,10 @@
           "weight": 1
         },
         {
+          "itemName": "Empty Bottle",
+          "weight": 5
+        },
+        {
           "itemName": "Coins",
           "weight": 30,
           "amount": 1000

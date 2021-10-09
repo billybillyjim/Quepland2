@@ -82,13 +82,25 @@ public class Recipe
         {
             return false;
         }
-		foreach(Ingredient ingredient in Ingredients)
+        foreach (Ingredient ingredient in Ingredients)
         {
-            if(Player.Instance.Inventory.GetNumberOfUnlockedItem(ingredient.Item) < ingredient.Amount)
+            if (ingredient.DestroyOnUse)
             {
-                ingredient.Item.Rerender = true;
-                return false;
+                if (Player.Instance.Inventory.GetNumberOfUnlockedItem(ingredient.Item) < ingredient.Amount)
+                {
+                    ingredient.Item.Rerender = true;
+                    return false;
+                }
             }
+            else
+            {
+                if (Player.Instance.Inventory.GetNumberOfItem(ingredient.Item) < ingredient.Amount)
+                {
+                    ingredient.Item.Rerender = true;
+                    return false;
+                }
+            }
+
         }
         return true;
     }
